@@ -1,0 +1,310 @@
+{
+  "productSlug": "carnet-de-peche-connecte-enregistrez-vos-prises-et-comparez-avec-les-donnees-sci",
+  "oneLiner": "Le carnet de pêche qui compare vos prises avec 50 ans de données scientifiques — voyez comment votre rivière évolue",
+  "problem": "Les pêcheurs tiennent déjà des carnets de prises (papier ou apps comme FishFriender), mais ces carnets sont isolés — ils ne permettent pas de savoir si leurs observations sont normales, exceptionnelles ou inquiétantes. Un pêcheur qui prend moins de truites cette année ne sait pas si c'est lui, la météo, ou un déclin réel de la population. Les données scientifiques de l'OFB (pêches électriques) pourraient répondre à cette question mais sont inaccessibles. Résultat : frustration, manque de perspective, et une déconnexion entre les observations des pêcheurs et la réalité écologique.",
+  "solution": "Un carnet de pêche connecté qui, en plus d'enregistrer les prises (espèce, taille, photo, lieu, date), les compare automatiquement avec les données scientifiques de la station de pêche électrique la plus proche. L'utilisateur voit : (1) ses prises vs les données scientifiques historiques (nombre d'individus, espèces, tailles), (2) l'évolution de la population de chaque espèce sur son spot au fil des décennies, (3) des insights type 'Vous avez pris 3 truites de 25cm — la station OFB la plus proche en a observé 12 en moyenne sur les 10 dernières années, taille moyenne 22cm'.",
+  "uniqueValue": "Seul carnet de pêche qui contextualise les prises personnelles avec des données scientifiques officielles. FishFriender compare avec la communauté (déclaratif) — ici, on compare avec les données de pêches électriques de l'OFB (scientifiquement validées, 50 ans d'historique). Cela transforme le carnet d'un simple log en un outil de compréhension écologique.",
+  "mvpScope": "App web responsive avec : (1) enregistrement de prises (espèce, taille, lieu, date, photo optionnelle), (2) matching automatique avec la station Hub'Eau la plus proche (rayon 5km), (3) dashboard comparatif prises personnelles vs données scientifiques, (4) timeline d'évolution des espèces sur le spot. Sources : Hub'Eau + géolocalisation utilisateur.",
+  "timeToMvp": "8-10 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Moteur de comparaison et données",
+      "description": "Ingestion des données Hub'Eau, algorithme de matching géographique (station la plus proche), calcul des statistiques comparatives (moyenne espèces, tailles, tendances)",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline d'ingestion Hub'Eau",
+        "Algorithme de matching géographique",
+        "API de comparaison prises vs données scientifiques",
+        "Base de données stations avec statistiques pré-calculées"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Carnet de pêche et interface",
+      "description": "Interface d'enregistrement des prises, dashboard comparatif avec graphiques, timeline d'évolution, profil pêcheur avec statistiques",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Formulaire de saisie de prises",
+        "Dashboard comparatif avec graphiques",
+        "Profil pêcheur avec historique",
+        "Page spot avec évolution scientifique"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Social et lancement",
+      "description": "Partage de prises, classements communautaires, badges, export données, tests beta, lancement sur les communautés pêche",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Fonctionnalités sociales (partage, classements)",
+        "Système de badges",
+        "Export CSV/PDF du carnet",
+        "Beta avec 100 pêcheurs",
+        "Lancement communautaire"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les pêcheurs veulent comparer leurs prises avec des données scientifiques",
+      "how": "Sondage dans les groupes Facebook : 'Aimeriez-vous savoir comment vos prises se comparent aux observations scientifiques sur votre rivière ?'",
+      "successCriteria": "70%+ répondent oui, 150+ réponses"
+    },
+    {
+      "check": "Le matching géographique est assez précis (station OFB à proximité)",
+      "how": "Analyser la densité de stations Hub'Eau en France, calculer la distance moyenne entre un point aléatoire et la station la plus proche",
+      "successCriteria": "80%+ des points en zone de pêche ont une station Hub'Eau dans un rayon de 10km"
+    },
+    {
+      "check": "Les utilisateurs de FishFriender sont prêts à changer pour un outil avec des données scientifiques",
+      "how": "Interview de 20 utilisateurs FishFriender, montrer un mockup du dashboard comparatif",
+      "successCriteria": "60%+ se disent intéressés par le switch ou l'usage en complément"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Pêcheurs 'naturalistes' — passionnés d'écologie et de connaissance des milieux aquatiques",
+      "where": "Forums gobages.com, groupes Facebook 'Pêche et écologie', associations type ANPER-TOS (protection des salmonidés)",
+      "howToReach": "Contenu éducatif sur l'évolution des populations piscicoles, partenariats avec des associations de protection des milieux aquatiques"
+    },
+    {
+      "who": "Pêcheurs compétiteurs qui veulent optimiser et analyser leurs performances",
+      "where": "Fédérations de pêche sportive, compétitions de pêche, groupes Facebook 'Pêche sportive France'",
+      "howToReach": "Angle performance : 'Analysez vos sessions comme un pro', système de badges et classements"
+    },
+    {
+      "who": "AAPPMA et gardes-pêche qui font des suivis de populations",
+      "where": "Réseau des AAPPMA, Fédération Nationale de la Pêche, formations de gardes-pêche",
+      "howToReach": "Outil gratuit pour les AAPPMA : les prises de leurs adhérents = données de suivi complémentaires aux pêches électriques"
+    }
+  ],
+  "pricingStrategy": "Freemium : carnet de prises illimité avec comparaison basique (espèces présentes sur la station la plus proche). Premium à 5,99€/mois ou 49,99€/an : comparaison détaillée (quantités, tailles, tendances sur 50 ans), graphiques d'évolution, prédictions d'activité, export PDF du carnet annuel, badges exclusifs, statistiques avancées. Offre AAPPMA à 29€/mois pour le suivi agrégé des prises de leurs adhérents.",
+  "pathTo10kMrr": "Phase 1 (M1-M3) : Beta gratuite, 1 000 utilisateurs, focus rétention et qualité du matching. Phase 2 (M3-M6) : Paywall premium, 3 000 utilisateurs, 180 premium × 5,99€ = 1 078€ MRR. Phase 3 (M6-M12) : App mobile avec photo auto-tagging, gamification (badges, classements), 10 000 utilisateurs, 600 premium × 5,99€ = 3 594€ MRR. Phase 4 (M12-M18) : Partenariats AAPPMA (50 × 29€ = 1 450€), 20 000 utilisateurs, 1 200 premium × 5,99€ = 7 188€ + 1 450€ + 1 000€ sponsoring marques = 9 638€ MRR. Phase 5 (M18-M24) : Extension et optimisation = 10K+ MRR.",
+  "techStack": {
+    "frontend": "Next.js 14 (PWA) + React + Tailwind CSS + Chart.js (graphiques comparatifs) + Leaflet (carte des prises)",
+    "backend": "Next.js API Routes + Node.js + Python (analyse de données, matching géographique)",
+    "database": "PostgreSQL + PostGIS (requêtes géospatiales pour le matching de station)",
+    "hosting": "Vercel (frontend) + Supabase (PostgreSQL + Auth + Storage pour les photos) + Cloudinary (optimisation images)",
+    "apis": [
+      "Hub'Eau État Piscicole (données scientifiques de référence)",
+      "API Adresse BAN (géocodage)",
+      "Mapbox ou Leaflet (cartographie)",
+      "Cloudinary ou Supabase Storage (stockage photos)",
+      "Firebase Cloud Messaging (notifications push)"
+    ],
+    "notes": "Le matching géographique (trouver la station Hub'Eau la plus proche) est une requête PostGIS classique (ST_DWithin, ST_Distance). Le stockage des photos de prises peut représenter un coût significatif à l'échelle — Cloudinary ou un tier de stockage S3 est recommandé. La reconnaissance automatique d'espèce par photo (comme FishFriender) serait un plus mais pas pour le MVP."
+  },
+  "risks": [
+    {
+      "risk": "FishFriender a une avance considérable (1M+ prises enregistrées, app native, communauté établie)",
+      "mitigation": "Ne pas concurrencer frontalement FishFriender sur le carnet — se différencier exclusivement par la comparaison scientifique. Proposer un import des données FishFriender pour faciliter le switch."
+    },
+    {
+      "risk": "Le matching géographique est trop approximatif (station OFB à 10-20km du spot réel)",
+      "mitigation": "Communiquer clairement la distance à la station la plus proche, afficher un indicateur de fiabilité du matching, permettre à l'utilisateur de choisir manuellement la station de référence"
+    },
+    {
+      "risk": "Les données de pêches électriques ne sont pas comparables aux prises de pêche récréative (méthodes différentes)",
+      "mitigation": "Communiquer que la comparaison porte sur la 'présence et tendances' et non sur les 'nombres de prises'. L'angle est éducatif et écologique, pas performance pure."
+    },
+    {
+      "risk": "Faible rétention — les pêcheurs enregistrent quelques prises puis abandonnent",
+      "mitigation": "Gamification (badges, séries, classements), notifications de rappel avant les sorties, contenu éducatif continu, rapports mensuels/annuels automatiques"
+    },
+    {
+      "risk": "Coût de stockage des photos qui explose avec la croissance",
+      "mitigation": "Limiter la taille/résolution des photos, compression automatique, tier gratuit avec limite de stockage photo"
+    }
+  ],
+  "inspirations": "Strava (carnet de sport + comparaison performances + social, 120M utilisateurs, 1,5Md$ de valorisation) est le modèle direct. FishFriender a validé le concept de carnet de pêche connecté en France. eBird (ornithologie participative, 100M+ observations/an) montre comment des amateurs peuvent contribuer à des données scientifiques — ici, on inverse : les données scientifiques enrichissent l'expérience amateur.",
+  "searchVolume": [
+    {
+      "keyword": "carnet de pêche",
+      "monthlyVolume": "6 600",
+      "difficulty": "moyenne",
+      "intent": "mixte"
+    },
+    {
+      "keyword": "carnet de pêche en ligne",
+      "monthlyVolume": "1 300",
+      "difficulty": "faible",
+      "intent": "transactionnelle"
+    },
+    {
+      "keyword": "application carnet de pêche",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "transactionnelle"
+    },
+    {
+      "keyword": "FishFriender",
+      "monthlyVolume": "2 900",
+      "difficulty": "faible",
+      "intent": "navigationnelle"
+    },
+    {
+      "keyword": "enregistrer ses prises de pêche",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "transactionnelle"
+    },
+    {
+      "keyword": "statistiques pêche",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "1,4M de pêcheurs français × 50€/an (abonnement premium) = 70M€/an. Marché global des carnets de pêche connectés estimé à 300M€/an.",
+    "sam": "Pêcheurs connectés qui tiennent déjà un carnet (papier ou app) estimés à 25% = 350K × 50€/an = 17,5M€/an.",
+    "som": "5 000 abonnés premium à 3 ans × 50€/an + 50 AAPPMA × 348€/an = 250K€ + 17,4K€ = 267K€/an.",
+    "methodology": "TAM basé sur les cartes de pêche 2024. Le taux de pêcheurs tenant un carnet (25%) est une estimation basse — FishFriender seul a 1M+ prises, mais beaucoup d'utilisateurs sont à l'étranger. SOM basé sur 1,4% de pénétration du SAM."
+  },
+  "competitorDeep": [
+    {
+      "name": "FishFriender",
+      "url": "https://www.fishfriender.com",
+      "pricing": "Gratuit / Premium 7,99€/mois ou 59,99€/an",
+      "trafficEstimate": "~100K visites/mois, 1M+ prises enregistrées",
+      "reviews": "4,5/5 App Store — leader français du carnet de pêche connecté, apprécié pour l'ergonomie et la reconnaissance photo, critiqué pour le manque de données fiables sur les spots",
+      "strengths": "App mobile native iOS/Android, reconnaissance automatique des espèces par photo, communauté active, partenariats fédérations, indice de pêche, météo intégrée",
+      "weaknesses": "Aucune donnée scientifique officielle, comparaison uniquement communautaire (déclaratif), pas de perspective historique (50 ans), pas de contextualisation écologique des prises"
+    },
+    {
+      "name": "Fishbrain",
+      "url": "https://www.fishbrain.com",
+      "pricing": "Gratuit / Premium 9,99$/mois ou 74,99$/an",
+      "trafficEstimate": "~2M visites/mois (global), 13M+ utilisateurs",
+      "reviews": "4,4/5 — leader mondial, très complet mais orienté marché US/Scandinavie",
+      "strengths": "Base de données massive, forecast AI, cartes de profondeur, marketplace intégrée, communauté mondiale",
+      "weaknesses": "Très peu présent en France, espèces et spots orientés US/Scandinavie, prix élevé, pas de données scientifiques françaises"
+    },
+    {
+      "name": "GeoPeche (carnet de captures premium)",
+      "url": "https://www.geopeche.com",
+      "pricing": "Premium 14,99€/an (inclut carnet de captures)",
+      "trafficEstimate": "~50K visites/mois",
+      "reviews": "Carnet de captures basique, fonctionnel mais sans analyse ni comparaison",
+      "strengths": "Intégré à la carte GeoPeche, partenariats fédéraux, prix accessible",
+      "weaknesses": "Carnet très basique (saisie simple), aucune analyse ni comparaison, pas de photos, pas de données scientifiques, pas de gamification"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données Hub'Eau pour la comparaison",
+      "status": "ok",
+      "detail": "Données ouvertes sous Licence Ouverte Etalab. L'utilisation pour comparer avec des données privées (prises des utilisateurs) est autorisée.",
+      "source": "https://hubeau.eaufrance.fr/page/conditions-utilisation"
+    },
+    {
+      "topic": "Données personnelles des prises (photos, localisation)",
+      "status": "attention",
+      "detail": "Les prises enregistrées avec géolocalisation et photo constituent des données personnelles. Politique de confidentialité claire nécessaire. L'utilisateur doit pouvoir exporter et supprimer ses données (droit à la portabilité et à l'oubli RGPD).",
+      "source": "RGPD / CNIL"
+    },
+    {
+      "topic": "Carnet de pêche obligatoire (certaines espèces)",
+      "status": "ok",
+      "detail": "Pour certaines espèces (saumon, truite de mer), un carnet de pêche est obligatoire. L'app pourrait servir de carnet officiel si validée par les fédérations — opportunité de partenariat.",
+      "source": "Code de l'environnement, Art. R436-64"
+    },
+    {
+      "topic": "Partage de localisation de spots protégés",
+      "status": "attention",
+      "detail": "Certains spots sont dans des réserves ou des zones protégées. Le partage communautaire de prises géolocalisées pourrait exposer des zones sensibles. Nécessite un filtrage des zones protégées.",
+      "source": "Code de l'environnement"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (contenu 'carnet de pêche', 'application pêche')",
+      "cacEstimate": "3-6€",
+      "conversionRate": "3-5% visiteur → inscription",
+      "ltv": "108€ (2,2 ans × 49,99€/an)",
+      "ltvCacRatio": "18-36x"
+    },
+    {
+      "channel": "Communautés pêche (Facebook, forums)",
+      "cacEstimate": "0-2€",
+      "conversionRate": "4-7% clic → inscription",
+      "ltv": "108€",
+      "ltvCacRatio": "54-108x"
+    },
+    {
+      "channel": "Bouche-à-oreille / partage de prises sur réseaux sociaux",
+      "cacEstimate": "0€",
+      "conversionRate": "2-4% (viralité naturelle des photos de prises)",
+      "ltv": "108€",
+      "ltvCacRatio": "∞"
+    },
+    {
+      "channel": "Partenariats AAPPMA et fédérations",
+      "cacEstimate": "0-1€",
+      "conversionRate": "8-12% (recommandation institutionnelle)",
+      "ltv": "108€",
+      "ltvCacRatio": "108x+"
+    }
+  ],
+  "viabilityScore": {
+    "demand": {
+      "score": 70,
+      "detail": "Le carnet de pêche connecté est un marché validé (FishFriender, Fishbrain). La demande de comparaison scientifique est un besoin latent à éduquer — les pêcheurs ne savent pas encore qu'ils en ont besoin."
+    },
+    "feasibility": {
+      "score": 70,
+      "detail": "Stack technique standard, matching géographique simple avec PostGIS. Le défi est l'UX de saisie des prises (doit être plus rapide que le concurrent FishFriender) et la qualité du matching avec les stations Hub'Eau."
+    },
+    "market": {
+      "score": 70,
+      "detail": "FishFriender et Fishbrain ont prouvé le marché. Le positionnement 'données scientifiques' est un différenciateur mais pourrait être perçu comme trop niche ou trop 'sérieux' pour des pêcheurs de loisir."
+    },
+    "competition": {
+      "score": 50,
+      "detail": "FishFriender est bien établi en France avec une app native, une communauté et des partenariats fédéraux. La concurrence frontale est risquée — le positionnement scientifique doit être suffisamment différenciant."
+    },
+    "legal": {
+      "score": 80,
+      "detail": "Données Hub'Eau libres d'utilisation. Points d'attention RGPD standard sur les données personnelles (prises, photos, localisation)."
+    },
+    "overall": {
+      "score": 70,
+      "detail": "Produit intéressant avec un angle scientifique unique, mais face à un concurrent établi (FishFriender). Meilleur en tant que feature d'une plateforme pêche plus large (carte de spots + score qualité + carnet connecté) qu'en standalone."
+    }
+  },
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "API Hub'Eau testée, données disponibles par station avec espèces, quantités et dates. Matching géographique faisable avec PostGIS."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "FishFriender 1M+ prises (vérifié). Nombre de pêcheurs 2024 vérifié via FNPF."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "FishFriender, Fishbrain et GeoPeche vérifiés via App Store, Google Play et sites web. Pricing, fonctionnalités et avis confirmés."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés via outils SEO tiers. Le volume pour 'FishFriender' (2 900/mois) indique un marché actif."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Le taux de pêcheurs tenant un carnet (25%) est une estimation. Le SOM est conservateur face à la concurrence de FishFriender."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Licence Etalab vérifiée. Contraintes RGPD standard bien documentées."
+    },
+    "cac": {
+      "level": "opiné",
+      "detail": "CAC estimés par analogie avec les apps de tracking sportif (Strava, etc.). La viralité des photos de prises est difficile à quantifier."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données et concurrents bien documentés. La principale incertitude est la capacité à se différencier suffisamment de FishFriender."
+    }
+  }
+}

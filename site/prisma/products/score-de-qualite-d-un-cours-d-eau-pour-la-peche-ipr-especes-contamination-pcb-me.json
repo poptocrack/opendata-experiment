@@ -1,0 +1,304 @@
+{
+  "productSlug": "score-de-qualite-d-un-cours-d-eau-pour-la-peche-ipr-especes-contamination-pcb-me",
+  "oneLiner": "Un score simple et visuel pour savoir si un cours d'eau est bon pour la pêche — qualité écologique, espèces et sécurité alimentaire en un coup d'œil",
+  "problem": "Un pêcheur qui découvre un nouveau cours d'eau n'a aucun moyen simple de savoir si l'eau est saine, si les poissons sont présents en nombre, et s'il peut consommer ses prises sans risque. Les données existent (IPR pour la qualité écologique, Hub'Eau pour les espèces, INERIS/OFB pour la contamination PCB/mercure) mais elles sont dispersées dans des rapports scientifiques illisibles. Les scandales de contamination au PCB (Rhône, Seine) ont créé une inquiétude réelle chez les pêcheurs qui consomment leurs prises.",
+  "solution": "Un score de qualité unique sur 100 pour chaque cours d'eau, combinant trois dimensions : (1) Qualité écologique (IPR — indice poisson rivière), (2) Richesse piscicole (nombre d'espèces, abondance, diversité), (3) Sécurité alimentaire (contamination PCB/mercure). Le score est affiché avec un code couleur (vert/orange/rouge) et des détails accessibles en un clic. Accessible via une carte ou en tapant le nom d'un cours d'eau.",
+  "uniqueValue": "Premier outil qui agrège IPR + données espèces + contamination en un score unique compréhensible. Aucun concurrent ne propose cette synthèse — les données sont soit scientifiques et illisibles, soit inexistantes dans les apps de pêche grand public. Le volet sécurité alimentaire (PCB/mercure) est un différenciateur fort et anxiolytique.",
+  "mvpScope": "Application web avec : (1) recherche par nom de cours d'eau ou géolocalisation, (2) affichage du score global sur 100 avec décomposition en 3 sous-scores, (3) carte des contaminations PCB/mercure avec alerte visuelle, (4) fiche détaillée avec évolution historique de l'IPR. Sources : datasets IPR data.gouv.fr + API Hub'Eau + dataset PCB/mercure.",
+  "timeToMvp": "5-7 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Construction du score et ingestion des données",
+      "description": "Téléchargement et parsing des 13 fichiers IPR, connexion API Hub'Eau pour les données espèces, intégration des données contamination PCB/mercure. Définition de l'algorithme de scoring pondéré.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Algorithme de scoring documenté",
+        "Pipeline d'ingestion IPR + Hub'Eau + contamination",
+        "Base de données cours d'eau avec scores calculés"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Interface utilisateur et carte",
+      "description": "Développement de l'interface web avec recherche, carte interactive, affichage des scores avec code couleur, fiches détaillées par cours d'eau",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Page de recherche avec autocomplétion",
+        "Carte avec overlay des scores",
+        "Fiches cours d'eau détaillées",
+        "Alertes contamination visuelles"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Lancement et itération",
+      "description": "Tests utilisateurs avec des pêcheurs, ajustement du scoring, landing page, SEO, lancement communautaire",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Tests utilisateurs (10+ pêcheurs)",
+        "Ajustements scoring",
+        "SEO pages cours d'eau",
+        "Lancement communautés"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les pêcheurs se préoccupent de la qualité de l'eau et de la contamination",
+      "how": "Sondage dans les groupes Facebook pêche : 'Vous inquiétez-vous de la contamination (PCB, mercure) quand vous consommez vos prises ?'",
+      "successCriteria": "70%+ répondent oui ou parfois"
+    },
+    {
+      "check": "Le concept de score unique est compréhensible et utile",
+      "how": "Mockup du score montré à 20 pêcheurs avec interview qualitative",
+      "successCriteria": "80%+ comprennent le score en moins de 10 secondes et le trouvent utile"
+    },
+    {
+      "check": "Les données IPR couvrent suffisamment de cours d'eau",
+      "how": "Analyser les 13 fichiers IPR de data.gouv.fr pour cartographier la couverture géographique",
+      "successCriteria": "Couverture de 70%+ des départements métropolitains"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Pêcheurs qui consomment leurs prises (pêcheurs au coup, truites, carpes asiatiques)",
+      "where": "Groupes Facebook : Pêche au coup passion, La pêche de la truite, forums gobages.com",
+      "howToReach": "Contenu viral sur la contamination PCB avec la solution score, posts éducatifs sur les risques méconnus"
+    },
+    {
+      "who": "Parents pêcheurs inquiets pour la santé de leurs enfants",
+      "where": "Forums parentalité + pêche, groupes Facebook 'Pêche en famille'",
+      "howToReach": "Angle sécurité alimentaire familiale, contenu 'Votre enfant peut-il manger le poisson qu'il a pêché ?'"
+    },
+    {
+      "who": "Associations de pêche et AAPPMA locales",
+      "where": "Fédérations départementales de pêche, salons, réseaux AAPPMA",
+      "howToReach": "Outil gratuit pour les AAPPMA qui veulent informer leurs adhérents sur la qualité de leurs parcours"
+    }
+  ],
+  "pricingStrategy": "Freemium : score global gratuit pour tout cours d'eau. Premium à 3,99€/mois ou 29,99€/an : décomposition détaillée des sous-scores, historique IPR sur 20 ans, alertes contamination personnalisées, export PDF du rapport qualité. API B2B pour fédérations/collectivités à 49€/mois.",
+  "pathTo10kMrr": "Phase 1 (M1-M3) : Lancement gratuit ciblé sur l'angle contamination PCB (viralité potentielle), 3 000 utilisateurs. Phase 2 (M3-M6) : SEO sur 'qualité eau [rivière]' et 'PCB poisson [département]', 8 000 utilisateurs, 200 premium × 3,99€ = 798€ MRR. Phase 3 (M6-M12) : Partenariats AAPPMA (10 fédérations × 49€ = 490€), 800 premium × 3,99€ = 3 192€ + 490€ = 3 682€ MRR. Phase 4 (M12-M24) : Extension aux collectivités (qualité eau potable angle), 2 500 premium + 30 B2B = 11 445€ MRR.",
+  "techStack": {
+    "frontend": "Next.js 14 + React + Tailwind CSS + Chart.js (graphiques historiques IPR)",
+    "backend": "Next.js API Routes + Python (calcul des scores, traitement des fichiers IPR)",
+    "database": "PostgreSQL + PostGIS",
+    "hosting": "Vercel (frontend) + Supabase (PostgreSQL) + Railway (workers Python)",
+    "apis": [
+      "Hub'Eau État Piscicole (espèces par station)",
+      "Datasets IPR data.gouv.fr (fichiers CSV annuels)",
+      "Dataset PCB/mercure data.gouv.fr",
+      "API Adresse BAN (géocodage)",
+      "Mapbox (cartographie)"
+    ],
+    "notes": "Le calcul du score nécessite un algorithme de pondération qui doit être calibré avec des experts halieutiques. Les données IPR sont en fichiers CSV (pas d'API), nécessitant un pipeline d'ingestion batch. Les données contamination PCB sont incomplètes — il faudra afficher 'données non disponibles' pour certains cours d'eau."
+  },
+  "risks": [
+    {
+      "risk": "L'algorithme de scoring est perçu comme arbitraire ou inexact par les experts",
+      "mitigation": "Documenter la méthodologie de manière transparente, collaborer avec des hydrobiologistes, permettre le feedback des experts via l'app"
+    },
+    {
+      "risk": "Les données de contamination PCB/mercure sont incomplètes et créent un faux sentiment de sécurité",
+      "mitigation": "Afficher clairement quand les données ne sont pas disponibles avec un disclaimer 'absence de données ≠ absence de contamination'. Mentionner les arrêtés préfectoraux d'interdiction de consommation."
+    },
+    {
+      "risk": "Les données IPR s'arrêtent en 2013 sur data.gouv.fr — données potentiellement obsolètes",
+      "mitigation": "Compléter avec les données API Hub'Eau (plus récentes), afficher clairement la date de dernière mesure, contacter l'OFB pour obtenir les données plus récentes"
+    },
+    {
+      "risk": "Responsabilité juridique si un utilisateur consomme un poisson contaminé en se fiant au score",
+      "mitigation": "Disclaimer juridique clair : 'outil informatif, ne se substitue pas aux arrêtés préfectoraux'. Ne jamais afficher 'consommation sûre', uniquement des niveaux de risque relatifs."
+    }
+  ],
+  "inspirations": "IQAir (qualité de l'air, score simple et visuel, 100M+ visites/an) a prouvé qu'un score environnemental simple peut devenir viral et référent. Yuka (score nutrition) a montré qu'un score sur 100 avec code couleur est compris instantanément par le grand public. Water Quality Index (WQI) utilisé aux USA pour communiquer la qualité de l'eau au public.",
+  "searchVolume": [
+    {
+      "keyword": "qualité eau rivière",
+      "monthlyVolume": "2 400",
+      "difficulty": "moyenne",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "PCB poisson",
+      "monthlyVolume": "1 600",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "contamination rivière",
+      "monthlyVolume": "1 300",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "peut on manger le poisson",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "indice poisson rivière",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "mercure poisson rivière",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "1,4M de pêcheurs + 5M de baigneurs/kayakistes intéressés par la qualité de l'eau = potentiel de 6,4M d'utilisateurs × 30€/an = 192M€/an.",
+    "sam": "Pêcheurs consommant leurs prises (estimé 60% = 840K) + pêcheurs soucieux de l'environnement = ~1M de personnes × 30€/an = 30M€/an.",
+    "som": "5 000 abonnés premium à 3 ans × 30€/an = 150K€/an + 30 contrats B2B × 588€/an = 17,6K€/an. Total SOM : 168K€/an.",
+    "methodology": "TAM élargi aux usagers récréatifs de l'eau douce. SAM restreint aux pêcheurs qui consomment (hypothèse 60% basée sur enquêtes fédérales). SOM conservateur basé sur 0,5% de pénétration du SAM."
+  },
+  "competitorDeep": [
+    {
+      "name": "GeoPeche",
+      "url": "https://www.geopeche.com",
+      "pricing": "Gratuit / Premium 14,99€/an",
+      "trafficEstimate": "~50K visites/mois",
+      "reviews": "Bien pour la réglementation mais aucune donnée sur la qualité de l'eau ou les espèces",
+      "strengths": "38 fédérations partenaires, données réglementaires, carte interactive",
+      "weaknesses": "Aucun score de qualité, aucune donnée contamination, pas de données scientifiques IPR"
+    },
+    {
+      "name": "Qualité des rivières (agences de l'eau)",
+      "url": "https://www.eaufrance.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "~30K visites/mois",
+      "reviews": "Données exhaustives mais totalement illisibles pour le grand public — interface technique, vocabulaire scientifique",
+      "strengths": "Données officielles complètes, couverture nationale, mises à jour régulières",
+      "weaknesses": "UX catastrophique pour le grand public, aucune synthèse simple, pas orienté pêcheur, pas d'app mobile"
+    },
+    {
+      "name": "FishFriender",
+      "url": "https://www.fishfriender.com",
+      "pricing": "Gratuit / Premium 7,99€/mois",
+      "trafficEstimate": "~100K visites/mois",
+      "reviews": "Bon carnet de pêche mais aucune info sur la qualité de l'eau ou la contamination",
+      "strengths": "App mobile native, communauté, reconnaissance photo des espèces",
+      "weaknesses": "Aucune donnée qualité de l'eau, aucune donnée contamination, focus sur le carnet et non sur l'info environnementale"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données IPR et Hub'Eau",
+      "status": "ok",
+      "detail": "Données ouvertes sous Licence Ouverte Etalab. Utilisation commerciale autorisée avec mention de la source.",
+      "source": "https://hubeau.eaufrance.fr/page/conditions-utilisation"
+    },
+    {
+      "topic": "Données contamination PCB/mercure",
+      "status": "attention",
+      "detail": "Les données sont publiques mais incomplètes. Afficher un score 'pas de contamination détectée' sans données suffisantes pourrait engager la responsabilité. Un disclaimer fort est indispensable.",
+      "source": "https://www.data.gouv.fr"
+    },
+    {
+      "topic": "Responsabilité en cas de consommation de poisson contaminé",
+      "status": "attention",
+      "detail": "Si un utilisateur se fie au score pour décider de consommer un poisson et tombe malade, la responsabilité pourrait être engagée. Nécessite un disclaimer juridique explicite et la mention systématique des arrêtés préfectoraux d'interdiction.",
+      "source": "Code de la consommation, arrêtés préfectoraux"
+    },
+    {
+      "topic": "RGPD",
+      "status": "ok",
+      "detail": "Pas de données sensibles collectées. Conformité RGPD standard.",
+      "source": "RGPD / CNIL"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (contenu 'PCB [rivière]', 'qualité eau [cours d'eau]')",
+      "cacEstimate": "1-3€",
+      "conversionRate": "4-6% visiteur → inscription",
+      "ltv": "72€ (2,4 ans × 30€/an)",
+      "ltvCacRatio": "24-72x"
+    },
+    {
+      "channel": "Contenu viral sur la contamination (réseaux sociaux)",
+      "cacEstimate": "0-1€",
+      "conversionRate": "2-4% vu → inscription",
+      "ltv": "72€",
+      "ltvCacRatio": "72x+"
+    },
+    {
+      "channel": "Partenariats AAPPMA / fédérations",
+      "cacEstimate": "0-2€",
+      "conversionRate": "8-12% via newsletter fédérale",
+      "ltv": "72€",
+      "ltvCacRatio": "36-72x"
+    },
+    {
+      "channel": "Google Ads (requêtes contamination/qualité eau)",
+      "cacEstimate": "5-10€",
+      "conversionRate": "3-5%",
+      "ltv": "72€",
+      "ltvCacRatio": "7-14x"
+    }
+  ],
+  "viabilityScore": {
+    "demand": {
+      "score": 70,
+      "detail": "Besoin réel mais moins évident que 'où pêcher'. L'angle contamination PCB crée de l'urgence. Les scandales récurrents (Rhône, Seine) maintiennent le sujet dans l'actualité."
+    },
+    "feasibility": {
+      "score": 70,
+      "detail": "Données disponibles mais nécessitent un travail d'agrégation conséquent. Les fichiers IPR sont en CSV, pas d'API. Les données contamination sont incomplètes. L'algorithme de scoring nécessite une expertise."
+    },
+    "market": {
+      "score": 70,
+      "detail": "Marché de niche au sein des pêcheurs (ceux qui consomment). Potentiel d'élargissement aux baigneurs, kayakistes, et collectivités."
+    },
+    "competition": {
+      "score": 90,
+      "detail": "Aucun concurrent ne propose de score de qualité agrégé pour les pêcheurs. Les données publiques existent mais personne ne les rend accessibles."
+    },
+    "legal": {
+      "score": 60,
+      "detail": "Point d'attention significatif sur la responsabilité en cas de consommation. Disclaimers indispensables. Les données incomplètes de contamination sont un risque."
+    },
+    "overall": {
+      "score": 70,
+      "detail": "Produit à forte valeur ajoutée avec un angle contamination viral, mais complexité technique et juridique supérieure à la carte de spots. Idéal comme feature premium de la carte interactive plutôt que produit standalone."
+    }
+  },
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Datasets IPR (13 fichiers), stations de pêche (22 fichiers) et PCB/mercure vérifiés sur data.gouv.fr. API Hub'Eau documentée et testée."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et téléchargements des datasets vérifiés sur data.gouv.fr. Nombre de cartes de pêche vérifié via la FNPF."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "GeoPeche, FishFriender, eaufrance.fr vérifiés. Aucun ne propose de score qualité agrégé — confirmé par exploration de leurs fonctionnalités."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés via outils SEO tiers. Les requêtes sur la contamination PCB sont événementielles (pics lors de scandales médiatiques)."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Le taux de pêcheurs qui consomment (60%) est une estimation. Le TAM élargi aux non-pêcheurs est spéculatif."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Analyse juridique préliminaire. Un avis d'avocat spécialisé est recommandé pour le volet responsabilité alimentaire."
+    },
+    "cac": {
+      "level": "opiné",
+      "detail": "CAC estimés par analogie. L'angle contamination pourrait générer une viralité organique difficile à quantifier à l'avance."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données sources vérifiées, analyse concurrentielle fiable. Les estimations de marché et juridiques nécessitent un approfondissement."
+    }
+  }
+}

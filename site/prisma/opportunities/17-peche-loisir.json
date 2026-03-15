@@ -1,0 +1,120 @@
+{
+  "id": "peche-loisir",
+  "rank": 17,
+  "title": "Intelligence pêche de loisir",
+  "slug": "peche-loisir",
+  "sector": "loisirs",
+  "tagline": "Exploiter l'API Poisson (Hub'Eau) + stations de pêche électrique + IPR pour créer l'app de référence des pêcheurs en eau douce",
+  "status": "exploration",
+  "difficulty": "facile",
+  "marketSize": "1.5M cartes de pêche/an en France — marché passionné et sous-équipé en outils numériques",
+  "monetization": "Freemium B2C 4.99-9.99/mois + partenariats marques",
+  "context": "1.5 million de cartes de pêche sont vendues chaque année en France, pour un chiffre d'affaires fédéral de ~100M€. C'est une communauté passionnée, active sur les réseaux (Facebook, forums spécialisés), mais très mal servie en outils numériques. Les pêcheurs passent des heures à chercher où pêcher, quelles espèces sont présentes, et quelles sont les réglementations locales. L'API Hub'Eau (État Piscicole) de l'OFB donne accès à 50+ ans de données de pêches scientifiques à l'électricité : espèces observées, quantités, tailles, géolocalisées par station sur toute la France. L'IPR (Indice Poisson Rivière) mesure la qualité écologique des cours d'eau. Ces données existent mais sont totalement inaccessibles au grand public — elles sont faites pour les scientifiques, pas pour les pêcheurs.",
+  "signals": [
+    {"label": "Cartes de pêche/an", "value": "1.5M", "detail": "Marché captif — chaque pêcheur paie déjà 70-100€/an pour sa carte"},
+    {"label": "API Hub'Eau Poisson", "value": "API gratuite, 50+ ans", "detail": "Données de pêches électriques géolocalisées par station, espèces, quantités"},
+    {"label": "Stations de pêche", "value": "896 visites + 22 fichiers", "detail": "Toutes les stations de mesure avec coordonnées GPS"},
+    {"label": "IPR", "value": "1.4K visites + 13 fichiers", "detail": "Indice de qualité écologique des rivières — proxy de la richesse piscicole"}
+  ],
+  "datasets": [
+    {"datasetId": "5d79f0208b4c412a6ce47740", "name": "Indice Poisson Rivière (IPR)", "description": "Qualité écologique des cours d'eau mesurée par les peuplements de poissons. 13 fichiers annuels (2001-2013).", "visits": "1.4K/an", "downloads": "707/an", "updateFrequency": "Inconnu"},
+    {"datasetId": "59b92830c751df1e19b377db", "name": "Stations de pêche électrique", "description": "Toutes les stations de mesure de l'ONEMA/OFB avec coordonnées GPS. 22 fichiers.", "visits": "896/an", "downloads": "581/an", "updateFrequency": "Inconnu"},
+    {"datasetId": "666326f67683aed116fd1019", "name": "Classes de taille des poissons", "description": "Données de répartition par taille des espèces capturées lors des pêches électriques.", "visits": "758/an", "downloads": "105/an", "updateFrequency": "Inconnu"},
+    {"datasetId": "666327417683aed116fd1062", "name": "PCB et mercure dans les poissons", "description": "Résultats de contamination des poissons — info sécurité alimentaire pour les pêcheurs qui consomment.", "visits": "~500/an", "downloads": "~100/an", "updateFrequency": "Inconnu"}
+  ],
+  "apis": [
+    {"name": "Hub'Eau — État Piscicole (API Poisson)", "description": "50+ ans de données de pêches scientifiques : espèces, quantités, tailles par station géolocalisée. Source : base ASPE de l'OFB.", "baseUrl": "https://hubeau.eaufrance.fr/api"},
+    {"name": "Hub'Eau — Hydrobiologie", "description": "Données de peuplement des cours d'eau (invertébrés, diatomées) — complément pour évaluer la santé d'un cours d'eau.", "baseUrl": "https://hubeau.eaufrance.fr/api"},
+    {"name": "API Adresse (BAN)", "description": "Géocodage pour localiser les spots par rapport à l'utilisateur.", "baseUrl": "https://data.geopf.fr/geocodage/"}
+  ],
+  "productIdeas": [
+    "Carte interactive des spots de pêche : espèces présentes, quantités historiques, qualité du cours d'eau, le tout géolocalisé",
+    "Score de qualité d'un cours d'eau pour la pêche : IPR + espèces + contamination PCB/mercure en un score simple",
+    "Alertes saisonnières : quand les espèces sont les plus actives sur vos spots favoris, basé sur les données historiques",
+    "Guide du pêcheur par département : spots, espèces, réglementation locale, parcours recommandés",
+    "Carnet de pêche connecté : enregistrez vos prises et comparez avec les données scientifiques de la station la plus proche"
+  ],
+  "targetCustomers": [
+    {"segment": "Pêcheurs de loisir (1.5M)", "priceRange": "4.99/mois ou 39.99/an"},
+    {"segment": "Guides de pêche", "priceRange": "14.99/mois"},
+    {"segment": "Fédérations de pêche (94)", "priceRange": "99/mois"},
+    {"segment": "Marques de matériel (partenariats)", "priceRange": "Sponsoring/affiliation"}
+  ],
+  "competitors": [
+    {"name": "GeoPeche", "weakness": "Carte interactive avec 38 fédérations partenaires (14.99€/an premium) — concurrent le plus direct, mais n'exploite pas les données scientifiques OFB (pêches électriques, IPR, contamination)"},
+    {"name": "FishFriender", "weakness": "Carnet de pêche communautaire (7.99€/mois premium, 1M+ prises), pas de données scientifiques officielles"},
+    {"name": "Navionics (Garmin)", "weakness": "Focus navigation/bathymétrie maritime, très peu de couverture eau douce en France"},
+    {"name": "Cartedepeche.fr", "weakness": "Site officiel pour acheter la carte, aucune info sur les spots ou espèces"},
+    {"name": "Groupes Facebook locaux", "weakness": "Information dispersée, non structurée, pas géolocalisée"}
+  ],
+  "swot": {
+    "strengths": [
+      "Données scientifiques exclusives (50+ ans de pêches électriques OFB) inaccessibles au grand public — avantage concurrentiel fort",
+      "Communauté passionnée et engagée : 1.5M de cartes vendues/an, forte activité sur les réseaux sociaux et forums spécialisés",
+      "Modèle freemium adapté à un public habitué à payer (carte de pêche 70-100€/an, matériel souvent 500-2000€/an)",
+      "APIs publiques gratuites (Hub'Eau, BAN) — coût d'infrastructure très faible pour le MVP"
+    ],
+    "weaknesses": [
+      "Données de pêche électrique ≠ données de pêche de loisir : les espèces et quantités mesurées scientifiquement ne reflètent pas directement l'expérience du pêcheur amateur",
+      "Couverture géographique inégale des stations de mesure — zones blanches possibles dans certains départements ruraux",
+      "Public cible souvent peu technophile (moyenne d'âge élevée dans la pêche au coup), adoption mobile pas garantie",
+      "Pas de données temps réel (niveau d'eau, météo, pression) — nécessite des intégrations tierces pour être vraiment utile"
+    ],
+    "opportunities": [
+      "Aucune app n'exploite les données scientifiques officielles — positionnement unique sur le marché français",
+      "Partenariats possibles avec les 94 fédérations départementales de pêche et la FNPF pour la distribution",
+      "Marché du matériel de pêche en France estimé à 1.2Md€ — potentiel d'affiliation et de sponsoring avec les marques (Sensas, Shimano, Daiwa)",
+      "Tendance croissante du tourisme pêche et des parcours labellisés — les guides et hébergeurs cherchent des outils de valorisation"
+    ],
+    "threats": [
+      "FishFriender et autres apps communautaires pourraient intégrer des données scientifiques si le concept est validé — barrière à l'entrée faible",
+      "Réticence culturelle des pêcheurs à partager leurs spots — risque de rejet si l'app est perçue comme révélant des coins secrets",
+      "Réglementation complexe et variable par département (périodes d'ouverture, tailles légales, quotas) — maintenance lourde des données réglementaires",
+      "Dépendance aux APIs publiques (Hub'Eau) dont la pérennité et la fréquence de mise à jour ne sont pas garanties"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Philippe Moreau",
+      "role": "Pêcheur au coup du dimanche",
+      "age": "47 ans",
+      "context": "Technicien de maintenance en Picardie. Pêche au coup depuis 20 ans, surtout les gardons et brèmes dans les étangs et canaux de l'Aisne. Sort 2-3 fois par mois le week-end, souvent avec son fils de 14 ans. Budget matériel modéré (~300€/an chez Pacific Pêche). Membre du groupe Facebook « Pêche au coup passion » (45K membres). Consulte les forums pour les amorces et montages mais ne poste jamais.",
+      "painPoints": [
+        "Ne sait jamais si un étang vaut le déplacement avant d'y aller — se fie au bouche-à-oreille du club local",
+        "A déjà fait 1h de route pour trouver un plan d'eau en travaux ou interdit temporairement",
+        "Cherche des spots adaptés aux enfants (accès facile, poissons actifs) mais l'info n'existe nulle part de façon centralisée"
+      ],
+      "currentSolution": "Demande sur le groupe Facebook local, consulte le site de la fédération 02 pour les parcours, et se fie à 3-4 spots qu'il connaît depuis des années",
+      "budget": "4.99€/mois maximum — « si c'est vraiment utile, je paie comme mon abonnement pêche »",
+      "channels": ["Facebook « Pêche au coup passion »", "Forum pechemaniac.com", "Magazine La Pêche et les Poissons", "Salon de la pêche de Paris"]
+    },
+    {
+      "name": "Julien Carpentier",
+      "role": "Carpiste passionné — sessions de 48-72h",
+      "age": "32 ans",
+      "context": "Développeur web à Lyon. Carpiste depuis 10 ans, pratique le no-kill exclusivement. Fait des sessions de 48-72h sur les grands lacs et gravières (Saône-et-Loire, Ain, Rhône). Budget matériel conséquent (~2000€/an : détecteurs Fox, cannes Nash, bateaux amorceurs). Très actif sur le groupe Facebook « Carpiste français » (80K membres) et la chaîne YouTube « Mikael Fishing ». Utilise déjà FishFriender pour son carnet de captures.",
+      "painPoints": [
+        "Passe des heures à croiser les infos (forums achigan.net, Google Maps, retours Facebook) pour trouver de nouveaux spots avec de gros spécimens",
+        "Aucun moyen fiable de connaître la population réelle de carpes d'un plan d'eau avant d'y poser ses lignes pour 3 jours",
+        "Veut éviter les plans d'eau contaminés (PCB, mercure) car pratique le no-kill et se soucie de la santé des poissons"
+      ],
+      "currentSolution": "Croise les retours du forum achigan.net avec les photos postées sur « Carpiste français », repère les lacs sur Google Maps satellite, et fait des sessions exploratoires à ses frais",
+      "budget": "9.99€/mois sans hésiter — « je dépense 50€ de bouillettes par session, si une app m'évite une session blanche c'est rentabilisé »",
+      "channels": ["Facebook « Carpiste français »", "Forum achigan.net", "YouTube « Mikael Fishing » et « Le Pêcheur Urbain »", "Salon de la pêche de Clermont-Ferrand"]
+    },
+    {
+      "name": "Nathalie Durand",
+      "role": "Chargée de mission à la Fédération de pêche du Puy-de-Dôme (63)",
+      "age": "38 ans",
+      "context": "Ingénieure écologue de formation, travaille à la fédération départementale depuis 6 ans. Gère les parcours de pêche, les inventaires piscicoles et la communication vers les 25 000 pêcheurs du département. Coordonne les lâchers de truites, les suivis de population et l'entretien des parcours labellisés. Doit valoriser le territoire pour attirer le tourisme pêche.",
+      "painPoints": [
+        "Les données d'inventaire piscicole (pêches électriques) sont dans des tableurs Excel éparpillés — impossible de les rendre accessibles aux pêcheurs simplement",
+        "Le site web de la fédération est vieillissant et les pêcheurs appellent au téléphone pour demander « où pêcher la truite ce week-end »",
+        "Doit justifier les investissements en aménagement de parcours auprès des élus avec des données d'usage qu'elle n'a pas"
+      ],
+      "currentSolution": "Publie des infos sur la page Facebook de la fédération, met à jour un PDF de la carte des parcours une fois par an, et répond individuellement aux mails et appels téléphoniques",
+      "budget": "99€/mois sur le budget communication de la fédération — « si ça remplace notre carte PDF et qu'on arrête de répondre au téléphone, c'est un gain de temps énorme »",
+      "channels": ["Réseau des fédérations (FNPF)", "Facebook « Pêche en rivière »", "Salon de la pêche de Clermont-Ferrand", "Congrès annuel des AAPPMA"]
+    }
+  ]
+}

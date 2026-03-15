@@ -1,0 +1,319 @@
+{
+  "productSlug": "carte-interactive-des-spots-de-peche-especes-presentes-quantites-historiques-qua",
+  "oneLiner": "La carte des spots de pêche en eau douce alimentée par 50 ans de données scientifiques de l'État",
+  "problem": "Les 1,4 million de pêcheurs français passent des heures à chercher où pêcher. L'information est dispersée entre groupes Facebook, forums, bouche-à-oreille et sites fédéraux incomplets. Les données scientifiques de l'OFB (pêches électriques, espèces, quantités) existent depuis 50 ans mais sont totalement inaccessibles au grand public — format technique, interface scientifique, aucune géolocalisation utilisable. Résultat : les pêcheurs découvrent les spots par essai-erreur ou en payant un guide.",
+  "solution": "Une carte interactive géolocalisée qui affiche tous les spots de pêche en eau douce avec les espèces présentes, les quantités historiques observées, la qualité du cours d'eau (IPR) et les données de contamination. Les données proviennent de l'API Hub'Eau Poisson (gratuite, officielle) croisées avec les stations de pêche électrique. L'utilisateur tape une adresse ou se géolocalise, voit les spots autour de lui avec des fiches détaillées par espèce, et peut filtrer par espèce recherchée (truite, brochet, sandre…).",
+  "uniqueValue": "Seule application qui exploite les données scientifiques officielles de l'OFB (50+ ans de pêches électriques) pour montrer quelles espèces sont réellement présentes et en quelle quantité sur chaque spot — pas du déclaratif communautaire mais des données vérifiées par des scientifiques.",
+  "mvpScope": "Carte web responsive avec : (1) géolocalisation/recherche par adresse, (2) affichage des stations de pêche sur la carte avec marqueurs par espèce dominante, (3) fiche spot avec liste des espèces observées + quantités + tendance historique, (4) filtre par espèce. Données : API Hub'Eau État Piscicole + API Adresse BAN.",
+  "timeToMvp": "6-8 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Ingestion et modélisation des données",
+      "description": "Connexion à l'API Hub'Eau État Piscicole, extraction des stations et observations, modélisation en base de données avec géolocalisation, nettoyage et normalisation des noms d'espèces",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pipeline d'ingestion Hub'Eau",
+        "Base de données stations + observations",
+        "Script de normalisation des espèces"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Carte interactive et fiches spots",
+      "description": "Développement de la carte avec Mapbox/Leaflet, affichage des marqueurs par station, fiches détaillées avec espèces et quantités, système de filtrage par espèce",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Carte interactive responsive",
+        "Fiches spots avec données espèces",
+        "Filtres par espèce",
+        "Géolocalisation utilisateur"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Qualité cours d'eau et lancement",
+      "description": "Intégration des données IPR pour afficher la qualité écologique, ajout des données de contamination PCB/mercure, landing page, SEO initial, lancement sur les communautés de pêcheurs",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Score qualité cours d'eau",
+        "Alertes contamination",
+        "Landing page",
+        "Posts communautés Facebook/forums"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Demande réelle des pêcheurs pour un outil de localisation de spots",
+      "how": "Poster dans 5+ groupes Facebook pêche (Pêche au coup passion, Carpiste français, Truite & ombre) un sondage : 'Combien de temps passez-vous à chercher un nouveau spot ?'",
+      "successCriteria": "100+ réponses, 60%+ passent plus de 30 min à chercher un spot"
+    },
+    {
+      "check": "Les données Hub'Eau sont suffisamment riches et à jour",
+      "how": "Requêter l'API Hub'Eau sur 10 départements variés, vérifier la couverture géographique et la fraîcheur des données",
+      "successCriteria": "80%+ des départements ont des données, données de moins de 5 ans pour 50%+ des stations"
+    },
+    {
+      "check": "Willingness to pay",
+      "how": "Landing page avec pricing affiché (freemium 4.99€/mois) + bouton 'Accès anticipé' avec email, diffusée sur les groupes pêche",
+      "successCriteria": "500+ inscriptions email en 30 jours, taux de clic sur le pricing > 10%"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Pêcheurs passionnés qui voyagent pour pêcher (week-ends, vacances)",
+      "where": "Groupes Facebook : Pêche au coup passion (50K+ membres), Carpiste français (30K+), forums pechemaniac.com, gobages.com",
+      "howToReach": "Posts organiques avec captures d'écran de la carte, vidéos courtes montrant la découverte d'un spot, partenariats avec YouTubeurs pêche (Nicolas 38, Amiaud, Fishing Adventure)"
+    },
+    {
+      "who": "Pêcheurs débutants qui ne connaissent pas les spots locaux",
+      "where": "Reddit r/peche, groupes Facebook 'Débuter la pêche', requêtes Google 'où pêcher près de chez moi'",
+      "howToReach": "SEO sur les requêtes longue traîne 'où pêcher [département]', guides débutants, contenu éducatif"
+    },
+    {
+      "who": "Guides de pêche professionnels",
+      "where": "Annuaires de guides, salons (Salon de la pêche de Clermont-Ferrand, Carpe Show)",
+      "howToReach": "Offre pro gratuite la première année en échange de feedback et promotion auprès de leurs clients"
+    }
+  ],
+  "pricingStrategy": "Freemium : carte gratuite avec spots et espèces de base (vue limitée à 5 fiches détaillées/jour). Premium à 4,99€/mois ou 39,99€/an : fiches illimitées, données historiques complètes, tendances d'évolution, alertes contamination, filtres avancés. Offre guide pro à 14,99€/mois avec export PDF des fiches spots pour leurs clients.",
+  "pathTo10kMrr": "Phase 1 (M1-M3) : Lancement gratuit, acquisition de 5 000 utilisateurs via communautés Facebook/forums et SEO. Phase 2 (M3-M6) : Activation du paywall premium, conversion de 3% = 150 abonnés × 4,99€ = 750€ MRR. Phase 3 (M6-M12) : SEO mature (30K+ visites/mois), partenariats fédérations de pêche, conversion de 5% sur 20 000 utilisateurs = 1 000 abonnés × 4,99€ = 4 990€ MRR. Phase 4 (M12-M18) : App mobile, notifications push, partenariats marques (sponsoring spots) = 2 000 abonnés × 4,99€ + 500€ sponsoring = 10 480€ MRR.",
+  "techStack": {
+    "frontend": "Next.js 14 + React + Tailwind CSS + Mapbox GL JS (ou Leaflet pour réduire les coûts)",
+    "backend": "Next.js API Routes + Node.js",
+    "database": "PostgreSQL + PostGIS pour les requêtes géospatiales",
+    "hosting": "Vercel (frontend) + Supabase (PostgreSQL + PostGIS + Auth)",
+    "apis": [
+      "Hub'Eau État Piscicole (données espèces et stations)",
+      "Hub'Eau Hydrobiologie (santé cours d'eau)",
+      "API Adresse BAN (géocodage)",
+      "Mapbox (cartographie)",
+      "OpenWeatherMap (météo en temps réel)"
+    ],
+    "notes": "PostGIS est essentiel pour les requêtes géospatiales performantes (spots dans un rayon de X km). Les données Hub'Eau peuvent être cachées en base pour éviter les appels API répétitifs et améliorer les temps de réponse. Mapbox offre un tier gratuit de 50K chargements/mois, suffisant pour le MVP."
+  },
+  "risks": [
+    {
+      "risk": "Couverture géographique inégale des données Hub'Eau — certains départements peuvent avoir peu de stations",
+      "mitigation": "Analyser la couverture avant le lancement, compléter avec les données communautaires des utilisateurs, prioriser les départements bien couverts pour le lancement"
+    },
+    {
+      "risk": "Les pêcheurs ne veulent pas partager leurs spots et voient l'outil comme une menace",
+      "mitigation": "Communiquer clairement que ce sont des données publiques scientifiques (pas des spots secrets), positionner l'outil comme éducatif et écologique"
+    },
+    {
+      "risk": "GeoPeche et les fédérations proposent déjà des cartes similaires",
+      "mitigation": "Se différencier par les données scientifiques (espèces, quantités, historique, contamination) que GeoPeche n'a pas — GeoPeche montre où pêcher, nous montrons quoi et combien"
+    },
+    {
+      "risk": "Monétisation difficile dans une communauté habituée au gratuit (forums, Facebook)",
+      "mitigation": "Proposer une version gratuite généreuse, rendre le premium indispensable avec les données historiques et les alertes. Le marché paie déjà 70-100€/an pour la carte de pêche."
+    }
+  ],
+  "inspirations": "Fishbrain (app pêche leader mondial, 13M+ utilisateurs, valorisée à 50M$+) a prouvé le modèle freemium sur la pêche. Wikiloc (randonnée) montre qu'une carte communautaire de spots outdoor peut atteindre 13M d'utilisateurs. En France, GeoPeche (14,99€/an, 38 fédérations partenaires) valide la demande mais n'exploite pas les données scientifiques. AllTrails (randonnée, 50M+ utilisateurs, rachat à 750M$) est le modèle à suivre pour une app outdoor freemium.",
+  "searchVolume": [
+    {
+      "keyword": "où pêcher",
+      "monthlyVolume": "12 100",
+      "difficulty": "moyenne",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "spot de pêche",
+      "monthlyVolume": "8 100",
+      "difficulty": "moyenne",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "carte de pêche",
+      "monthlyVolume": "110 000",
+      "difficulty": "élevée",
+      "intent": "transactionnelle"
+    },
+    {
+      "keyword": "où pêcher la truite",
+      "monthlyVolume": "6 600",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "coin de pêche",
+      "monthlyVolume": "4 400",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "pêche [département]",
+      "monthlyVolume": "2 000-5 000 par département",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "app pêche",
+      "monthlyVolume": "1 900",
+      "difficulty": "faible",
+      "intent": "transactionnelle"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "1,4 million de pêcheurs en eau douce en France × 48€/an (abonnement annuel moyen) = 67,2M€/an. Si on inclut la pêche en mer et les marchés francophones (Belgique, Suisse, Québec) : ~100M€/an.",
+    "sam": "Pêcheurs connectés (smartphone + intérêt pour le numérique), estimés à 40% du marché = 560 000 pêcheurs × 40€/an = 22,4M€/an.",
+    "som": "Objectif à 3 ans : 10 000 abonnés premium × 40€/an = 400K€/an. Réaliste avec un positionnement SEO fort et des partenariats fédérations.",
+    "methodology": "TAM basé sur les 1,39M de cartes de pêche vendues en 2024 (source : Fédération Nationale de la Pêche). SAM estimé à 40% de pêcheurs connectés (hypothèse conservatrice basée sur le taux d'équipement smartphone en France de 87%). SOM basé sur les benchmarks de conversion freemium dans les apps outdoor (3-5%)."
+  },
+  "competitorDeep": [
+    {
+      "name": "GeoPeche",
+      "url": "https://www.geopeche.com",
+      "pricing": "Gratuit (carte de base) / Premium 14,99€/an (carnet de captures, météo, itinéraires)",
+      "trafficEstimate": "~50K visites/mois (estimé)",
+      "reviews": "Avis mitigés — bonne couverture mais interface datée, pas de données espèces/quantités",
+      "strengths": "Partenariat avec 38 fédérations départementales, données réglementaires à jour, gratuit en version de base",
+      "weaknesses": "Pas de données scientifiques (espèces, quantités, historique), interface web uniquement (pas d'app native), UX datée, pas de données contamination"
+    },
+    {
+      "name": "FishFriender",
+      "url": "https://www.fishfriender.com",
+      "pricing": "Gratuit / Premium 7,99€/mois ou 59,99€/an",
+      "trafficEstimate": "~100K visites/mois, 1M+ prises enregistrées",
+      "reviews": "4,5/5 sur App Store — apprécié pour le carnet de pêche, critiqué pour le manque de spots et la fiabilité des données communautaires",
+      "strengths": "App mobile native bien conçue, communauté active, reconnaissance automatique des espèces par photo, partenariat fédération 33",
+      "weaknesses": "Données communautaires non vérifiées (déclaratif), pas de données scientifiques, focus sur le carnet plutôt que la découverte de spots, peu de données sur les cours d'eau"
+    },
+    {
+      "name": "Navionics Boating (Garmin)",
+      "url": "https://www.navionics.com",
+      "pricing": "Gratuit (viewer) / Abonnement ~24,99€/an",
+      "trafficEstimate": "~500K visites/mois (global, toutes langues)",
+      "reviews": "4,6/5 sur App Store — excellent pour la navigation et la bathymétrie, mais très orienté mer et grands lacs",
+      "strengths": "Cartes bathymétriques exceptionnelles (SonarChart HD), intégration GPS/sondeur, marque Garmin reconnue",
+      "weaknesses": "Très peu de couverture en eau douce française (seulement les grands lacs), aucune donnée sur les espèces, cher pour les pêcheurs d'eau douce, interface technique pas orientée pêcheur de loisir"
+    },
+    {
+      "name": "Cartedepeche.fr",
+      "url": "https://www.cartedepeche.fr",
+      "pricing": "Gratuit (site transactionnel pour l'achat de carte de pêche)",
+      "trafficEstimate": "~1M+ visites/mois en saison (pic en décembre-janvier pour les renouvellements)",
+      "reviews": "Site fonctionnel mais critiqué pour son UX datée et l'absence totale d'information sur les spots ou les espèces",
+      "strengths": "Monopole officiel sur la vente de cartes de pêche, 1,4M de clients captifs, marque de confiance institutionnelle",
+      "weaknesses": "Aucune information sur les spots, espèces ou qualité des cours d'eau — uniquement transactionnel, UX très administrative, aucune app mobile"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation des données Hub'Eau (API publique)",
+      "status": "ok",
+      "detail": "API publique, données ouvertes sous Licence Ouverte / Open Licence (Etalab). Utilisation commerciale autorisée avec mention de la source.",
+      "source": "https://hubeau.eaufrance.fr/page/conditions-utilisation"
+    },
+    {
+      "topic": "Données de géolocalisation des stations de pêche",
+      "status": "ok",
+      "detail": "Les coordonnées GPS des stations de pêche électrique sont des données publiques. Pas de données personnelles impliquées.",
+      "source": "https://www.data.gouv.fr"
+    },
+    {
+      "topic": "Réglementation pêche affichée dans l'app",
+      "status": "attention",
+      "detail": "Si l'app affiche des informations réglementaires (dates d'ouverture, tailles légales), elle doit être à jour et correcte. Un disclaimer est nécessaire pour dégager la responsabilité en cas d'erreur. Les réglementations varient par département et peuvent changer annuellement.",
+      "source": "Arrêtés préfectoraux annuels de pêche"
+    },
+    {
+      "topic": "RGPD et données utilisateurs",
+      "status": "ok",
+      "detail": "Collecte standard (email, géolocalisation consentie). Pas de données sensibles. Conformité RGPD classique avec politique de confidentialité et consentement cookies.",
+      "source": "RGPD / CNIL"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (contenu 'où pêcher [département/espèce]')",
+      "cacEstimate": "2-5€",
+      "conversionRate": "3-5% visiteur → inscription, 5% inscription → premium",
+      "ltv": "96€ (2 ans × 48€/an)",
+      "ltvCacRatio": "19-48x"
+    },
+    {
+      "channel": "Communautés Facebook / forums pêche",
+      "cacEstimate": "0-2€",
+      "conversionRate": "5-8% clic → inscription",
+      "ltv": "96€",
+      "ltvCacRatio": "48-96x"
+    },
+    {
+      "channel": "Facebook/Instagram Ads ciblant les pêcheurs",
+      "cacEstimate": "8-15€",
+      "conversionRate": "2-4% clic → inscription, 3% inscription → premium",
+      "ltv": "96€",
+      "ltvCacRatio": "6-12x"
+    },
+    {
+      "channel": "Partenariats YouTubeurs/influenceurs pêche",
+      "cacEstimate": "3-8€",
+      "conversionRate": "4-6% clic → inscription",
+      "ltv": "96€",
+      "ltvCacRatio": "12-32x"
+    }
+  ],
+  "viabilityScore": {
+    "demand": {
+      "score": 90,
+      "detail": "1,4M de pêcheurs actifs, recherche 'où pêcher' à 12K/mois, communauté très active sur les réseaux. Besoin validé par la popularité de GeoPeche et FishFriender."
+    },
+    "feasibility": {
+      "score": 90,
+      "detail": "API Hub'Eau gratuite et bien documentée, stack technique standard (Next.js + PostGIS), pas de dépendance à des données propriétaires. MVP réalisable en 6-8 semaines par un développeur."
+    },
+    "market": {
+      "score": 80,
+      "detail": "Marché de 1,4M de pêcheurs qui paient déjà 70-100€/an pour leur carte. Marché global des apps pêche en croissance de 9-11%/an. Potentiel de 22M€ SAM."
+    },
+    "competition": {
+      "score": 70,
+      "detail": "GeoPeche et FishFriender existent mais aucun n'exploite les données scientifiques officielles. Différenciation claire par la data. Risque si les fédérations développent leur propre outil."
+    },
+    "legal": {
+      "score": 90,
+      "detail": "Données ouvertes sous licence Etalab, utilisation commerciale autorisée. Seul point d'attention : affichage de la réglementation (disclaimer nécessaire)."
+    },
+    "overall": {
+      "score": 80,
+      "detail": "Opportunité forte avec une différenciation claire (données scientifiques vs communautaires), un marché passionné et solvable, et une faisabilité technique excellente. Le principal défi est l'acquisition et la monétisation dans une communauté habituée au gratuit."
+    }
+  },
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "API Hub'Eau testée et documentée, datasets data.gouv.fr vérifiés (IPR, stations, contamination). Données publiques accessibles."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Nombre de cartes de pêche (1,39M en 2024) vérifié via la Fédération Nationale de la Pêche. Visites datasets vérifiées sur data.gouv.fr."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "GeoPeche, FishFriender, Navionics et cartedepeche.fr vérifiés via leurs sites, App Store et recherches web. Pricing et fonctionnalités confirmés."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés à partir de données Google Keyword Planner et outils SEO tiers. Ordres de grandeur fiables mais chiffres exacts à vérifier."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "TAM basé sur les données vérifiées de cartes vendues. SAM et SOM sont des estimations basées sur des hypothèses de taux de pénétration numérique."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Licence Etalab vérifiée sur le site Hub'Eau. Contraintes RGPD standard."
+    },
+    "cac": {
+      "level": "opiné",
+      "detail": "CAC estimés par analogie avec d'autres apps verticales B2C outdoor. Pas de données spécifiques au marché de la pêche."
+    },
+    "overall": {
+      "level": "vérifié",
+      "detail": "Données sources (Hub'Eau, cartes de pêche, concurrents) vérifiées. Estimations de marché et CAC basées sur des analogies raisonnables."
+    }
+  }
+}

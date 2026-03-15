@@ -1,0 +1,313 @@
+{
+  "productSlug": "guide-du-pecheur-par-departement-spots-especes-reglementation-locale-parcours-re",
+  "oneLiner": "Le guide ultime du pêcheur par département — spots, espèces, réglementation et parcours recommandés, alimenté par les données officielles",
+  "problem": "Un pêcheur qui voyage dans un nouveau département n'a aucune source unique et fiable pour connaître les spots, les espèces présentes, la réglementation locale (qui varie fortement d'un département à l'autre) et les parcours recommandés. L'information est fragmentée entre le site de la fédération locale (souvent mal maintenu), des blogs de pêcheurs locaux, des groupes Facebook départementaux, et les arrêtés préfectoraux en PDF illisibles. Résultat : le pêcheur perd des heures de préparation ou rate les meilleurs spots et enfreint la réglementation sans le savoir.",
+  "solution": "Un guide numérique structuré par département, généré automatiquement à partir des données publiques (Hub'Eau, data.gouv.fr, arrêtés préfectoraux) et enrichi par la communauté. Chaque guide département contient : (1) carte des spots avec espèces et quantités historiques, (2) réglementation synthétisée (dates d'ouverture, tailles légales, réserves), (3) parcours recommandés par type de pêche, (4) qualité des cours d'eau (IPR, contamination), (5) infos pratiques (accès, parking, hébergement pêcheur).",
+  "uniqueValue": "Première plateforme qui structure l'information pêche par département en agrégeant automatiquement les données officielles. Les guides papier existent (Fario, Guide de la pêche) mais sont chers (15-25€), vite obsolètes et non interactifs. Les sites fédéraux sont incomplets et mal conçus. Ici, tout est en un seul endroit, à jour, et interactif.",
+  "mvpScope": "Site web SEO-first avec 10 guides départementaux pilotes : (1) page département avec carte des spots, (2) fiches spots avec espèces Hub'Eau, (3) synthèse réglementaire (saisie manuelle au départ), (4) parcours recommandés (3-5 par département). Sources : Hub'Eau + data.gouv.fr + arrêtés préfectoraux (saisie manuelle initiale).",
+  "timeToMvp": "8-10 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Contenu et données pour 10 départements pilotes",
+      "description": "Sélection de 10 départements (mix urbain/rural, couverture géographique), extraction données Hub'Eau, synthèse réglementaire manuelle, identification des parcours recommandés",
+      "duration": "3 semaines",
+      "deliverables": [
+        "10 guides départementaux rédigés",
+        "Base de données spots/espèces pour 10 départements",
+        "Synthèse réglementaire par département"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Plateforme web et SEO",
+      "description": "Développement du site avec pages département, fiches spots, carte interactive, optimisation SEO pour 'pêche [département]'",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Site web avec 10 guides publiés",
+        "Carte interactive par département",
+        "Fiches spots avec données espèces",
+        "Structure SEO optimisée"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Extension et monétisation",
+      "description": "Extension à 30 départements, système de contribution communautaire, lancement du premium (PDF téléchargeables, alertes réglementation), partenariats fédérations",
+      "duration": "4 semaines",
+      "deliverables": [
+        "30 guides départementaux",
+        "Système contribution communautaire",
+        "PDF premium téléchargeables",
+        "Partenariats fédérations initiés"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les pêcheurs cherchent activement l'info par département",
+      "how": "Vérifier le volume de recherche sur Google pour 'pêche [département]' sur les 10 départements les plus peuplés",
+      "successCriteria": "Volume moyen > 2 000 recherches/mois par département"
+    },
+    {
+      "check": "Le format guide département est valorisé vs les infos dispersées",
+      "how": "Publier un guide PDF test pour 1 département sur les groupes Facebook pêche et mesurer les téléchargements et feedbacks",
+      "successCriteria": "500+ téléchargements et 80%+ d'avis positifs"
+    },
+    {
+      "check": "Les pêcheurs sont prêts à payer pour un guide complet et à jour",
+      "how": "Proposer le guide premium à 2,99€ (achat unique) ou 29,99€/an (tous les départements) via une landing page",
+      "successCriteria": "Taux de conversion > 3% sur les visiteurs de la landing page"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Pêcheurs itinérants / tourisme pêche (vacanciers qui pêchent dans un département nouveau)",
+      "where": "Groupes Facebook 'Pêche en vacances', 'Tourisme pêche', forums gobages.com (section 'où pêcher')",
+      "howToReach": "SEO sur les requêtes 'pêche [département]', contenu saisonnier avant les vacances d'été, partenariats offices de tourisme"
+    },
+    {
+      "who": "Pêcheurs débutants qui ne connaissent pas la réglementation locale",
+      "where": "Groupes Facebook 'Débuter la pêche', requêtes Google 'réglementation pêche [département]'",
+      "howToReach": "Contenu éducatif 'Tout ce qu'il faut savoir pour pêcher dans le [département]', guides débutants"
+    },
+    {
+      "who": "Guides de pêche et moniteurs qui accompagnent des clients",
+      "where": "Annuaires de guides de pêche, réseau des moniteurs-guides de pêche (MGP)",
+      "howToReach": "Offre pro avec accès à tous les départements + possibilité de partager des guides personnalisés avec leurs clients"
+    }
+  ],
+  "pricingStrategy": "Freemium par département : carte des spots et espèces gratuite (vue limitée), réglementation de base gratuite. Premium à 2,99€/département (achat unique) ou 29,99€/an (tous les départements) : guide complet avec parcours recommandés, réglementation détaillée, PDF téléchargeable hors-ligne, alertes changement de réglementation. Offre guide pro à 14,99€/mois avec tous les départements + export PDF brandé.",
+  "pathTo10kMrr": "Phase 1 (M1-M4) : 10 guides gratuits, SEO, 10K visites/mois, 0€ MRR. Phase 2 (M4-M8) : 30 guides, paywall premium, 500 achats unitaires × 2,99€ = 1 495€ (one-shot) + 100 abonnés × 2,50€/mois = 250€ MRR. Phase 3 (M8-M14) : 60 départements, 500 abonnés annuels × 2,50€/mois = 1 250€ MRR + 50 guides pro × 14,99€ = 750€ = 2 000€ MRR. Phase 4 (M14-M24) : 95 départements, partenariats fédérations (accès premium offert aux adhérents, facturé aux fédérations), 2 000 abonnés + 80 fédérations = 5 000€ + 5 600€ = 10 600€ MRR.",
+  "techStack": {
+    "frontend": "Next.js 14 (SSG pour le SEO) + React + Tailwind CSS + Leaflet",
+    "backend": "Next.js API Routes + Node.js",
+    "database": "PostgreSQL + PostGIS",
+    "hosting": "Vercel (SSG, edge caching) + Supabase (PostgreSQL + Auth)",
+    "apis": [
+      "Hub'Eau État Piscicole (espèces par station et département)",
+      "API Adresse BAN (géocodage)",
+      "API Découpage Administratif (limites départementales)",
+      "Mapbox ou Leaflet (cartographie)",
+      "API arrêtés préfectoraux (à terme, saisie manuelle au MVP)"
+    ],
+    "notes": "Architecture SSG (Static Site Generation) essentielle pour le SEO — chaque page département doit être indexable et rapide. Les données réglementaires sont le point dur : pas d'API centralisée, nécessite une saisie manuelle initiale puis une veille annuelle. Possibilité de semi-automatiser avec du scraping des sites fédéraux."
+  },
+  "risks": [
+    {
+      "risk": "La saisie manuelle de la réglementation par département est très chronophage (95 départements × mise à jour annuelle)",
+      "mitigation": "Commencer avec 10 départements, développer des partenariats avec les fédérations pour obtenir les données, explorer le scraping automatique des arrêtés préfectoraux"
+    },
+    {
+      "risk": "Erreur dans la réglementation affichée entraînant une infraction pour l'utilisateur",
+      "mitigation": "Disclaimer systématique 'vérifiez toujours auprès de votre fédération locale', lien direct vers l'arrêté préfectoral source, système de signalement communautaire des erreurs"
+    },
+    {
+      "risk": "Les fédérations départementales voient l'outil comme un concurrent de leurs propres sites",
+      "mitigation": "Positionner l'outil comme complémentaire (plus de visibilité pour les parcours fédéraux), proposer un partenariat win-win (accès premium offert aux adhérents en échange de données)"
+    },
+    {
+      "risk": "Le contenu gratuit cannibalise le premium — les pêcheurs trouvent suffisamment d'info en version gratuite",
+      "mitigation": "Le gratuit donne un aperçu limité (5 spots, réglementation basique), le premium apporte les parcours recommandés, le PDF hors-ligne, et les alertes réglementation"
+    }
+  ],
+  "inspirations": "AllTrails (guides randonnée par zone, 50M+ utilisateurs, rachat 750M$) est le modèle direct — contenu structuré par géographie avec contribution communautaire. Komoot (parcours outdoor, 40M+ utilisateurs) montre la valeur du contenu local structuré. En France, les guides Fario (pêche à la mouche, 18€/guide) prouvent la willingness to pay pour du contenu pêche structuré par territoire.",
+  "searchVolume": [
+    {
+      "keyword": "pêche [département]",
+      "monthlyVolume": "2 000-8 000 par département",
+      "difficulty": "faible à moyenne",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "où pêcher en [département]",
+      "monthlyVolume": "500-2 000 par département",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "réglementation pêche [département]",
+      "monthlyVolume": "300-1 000 par département",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "guide pêche [département]",
+      "monthlyVolume": "200-800 par département",
+      "difficulty": "faible",
+      "intent": "transactionnelle"
+    },
+    {
+      "keyword": "carte de pêche [département]",
+      "monthlyVolume": "1 000-5 000 par département",
+      "difficulty": "moyenne",
+      "intent": "transactionnelle"
+    },
+    {
+      "keyword": "parcours pêche [département]",
+      "monthlyVolume": "100-500 par département",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "1,4M de pêcheurs × 30€/an (guide annuel) = 42M€/an. Si on ajoute le tourisme pêche (gîtes, guides, matériel) : marché connexe de 500M€+.",
+    "sam": "Pêcheurs qui voyagent ou changent de département (estimé 50%) × 30€/an = 21M€/an.",
+    "som": "10 000 abonnés annuels × 30€/an + 80 fédérations × 70€/mois = 300K€ + 67K€ = 367K€/an à 3 ans.",
+    "methodology": "TAM basé sur les cartes de pêche. Le taux de pêcheurs 'itinérants' (50%) est estimé à partir des cartes interfédérales vendues (permettant de pêcher dans plusieurs départements). SOM basé sur 1,4% de pénétration du SAM."
+  },
+  "competitorDeep": [
+    {
+      "name": "GeoPeche",
+      "url": "https://www.geopeche.com",
+      "pricing": "Gratuit / Premium 14,99€/an",
+      "trafficEstimate": "~50K visites/mois",
+      "reviews": "Bonne carte mais pas structuré en guides, réglementation incomplète, pas de parcours recommandés",
+      "strengths": "38 fédérations partenaires, carte interactive, données réglementaires partielles",
+      "weaknesses": "Pas de format 'guide', pas de parcours recommandés, pas de contenu éditorial, UX datée, pas de données espèces"
+    },
+    {
+      "name": "Sites fédéraux départementaux (ex: peche33.com, peche59.com)",
+      "url": "https://www.federationpeche.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "1K-10K visites/mois par site fédéral",
+      "reviews": "Information officielle mais mal structurée, souvent obsolète, design des années 2000",
+      "strengths": "Données réglementaires officielles, parcours fédéraux, partenariats locaux",
+      "weaknesses": "94 sites différents sans cohérence, UX catastrophique, souvent pas à jour, aucune donnée espèce, pas de carte interactive moderne"
+    },
+    {
+      "name": "Guides Fario (pêche à la mouche)",
+      "url": "https://www.fario.fr",
+      "pricing": "15-25€ par guide papier",
+      "trafficEstimate": "~5K visites/mois",
+      "reviews": "Très appréciés par les moucheurs, contenu riche et détaillé, mais cher, niche et vite obsolète",
+      "strengths": "Contenu éditorial de qualité, parcours détaillés avec photos, expertise technique reconnue",
+      "weaknesses": "Niche mouche seulement, papier uniquement (pas interactif), cher, obsolescence rapide, couverture limitée"
+    },
+    {
+      "name": "ComptoirDesPêcheurs",
+      "url": "https://comptoirdespecheurs.com",
+      "pricing": "Gratuit",
+      "trafficEstimate": "~30K visites/mois",
+      "reviews": "Bonne base de spots (45 000+) mais contenu communautaire non vérifié, pas structuré par département",
+      "strengths": "Grande base de spots communautaires, app mobile, contenu varié (mer et eau douce)",
+      "weaknesses": "Données communautaires non vérifiées, pas structuré en guides départementaux, pas de données scientifiques, pas de réglementation"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation des données Hub'Eau et data.gouv.fr",
+      "status": "ok",
+      "detail": "Données ouvertes sous Licence Ouverte Etalab. Utilisation commerciale autorisée avec mention de la source.",
+      "source": "https://hubeau.eaufrance.fr/page/conditions-utilisation"
+    },
+    {
+      "topic": "Affichage de la réglementation pêche",
+      "status": "attention",
+      "detail": "La réglementation pêche est fixée par arrêté préfectoral annuel et peut changer. Afficher des informations erronées pourrait induire en erreur les pêcheurs. Nécessite un disclaimer et un processus de mise à jour fiable.",
+      "source": "Arrêtés préfectoraux annuels"
+    },
+    {
+      "topic": "Droits de propriété intellectuelle sur les parcours",
+      "status": "ok",
+      "detail": "Les parcours de pêche sur le domaine public ne sont pas protégés par le droit d'auteur. Les descriptions originales des parcours sont protégées — ne pas copier les guides Fario ou les contenus fédéraux.",
+      "source": "Code de la propriété intellectuelle"
+    },
+    {
+      "topic": "RGPD",
+      "status": "ok",
+      "detail": "Conformité standard. Les données de localisation des utilisateurs nécessitent un consentement explicite.",
+      "source": "RGPD / CNIL"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages 'pêche [département]', 'où pêcher en [département]')",
+      "cacEstimate": "1-3€",
+      "conversionRate": "3-5% visiteur → inscription, 4% inscription → premium",
+      "ltv": "60€ (2 ans × 30€/an)",
+      "ltvCacRatio": "20-60x"
+    },
+    {
+      "channel": "Contenu saisonnier (guides été/vacances)",
+      "cacEstimate": "0-2€",
+      "conversionRate": "5-8% via partage social",
+      "ltv": "60€",
+      "ltvCacRatio": "30-60x"
+    },
+    {
+      "channel": "Partenariats fédérations de pêche",
+      "cacEstimate": "0€ (coût d'acquisition nul via newsletter fédérale)",
+      "conversionRate": "10-15% newsletter → inscription",
+      "ltv": "60€",
+      "ltvCacRatio": "∞"
+    },
+    {
+      "channel": "Google Ads (requêtes pêche par département)",
+      "cacEstimate": "5-12€",
+      "conversionRate": "3-5%",
+      "ltv": "60€",
+      "ltvCacRatio": "5-12x"
+    }
+  ],
+  "viabilityScore": {
+    "demand": {
+      "score": 90,
+      "detail": "Les requêtes 'pêche [département]' totalisent 200K+ recherches/mois au niveau national. La demande est structurellement liée à la saisonnalité (pic en mars-avril pour les ouvertures). Besoin clairement validé par les ventes de cartes interfédérales."
+    },
+    "feasibility": {
+      "score": 60,
+      "detail": "Les données espèces (Hub'Eau) sont automatisables, mais la réglementation nécessite une saisie manuelle départepar département (95 départements, mise à jour annuelle). C'est le principal frein à la scalabilité."
+    },
+    "market": {
+      "score": 80,
+      "detail": "Les guides papier Fario se vendent à 15-25€ (preuve de willingness to pay). Le format numérique est plus attractif (à jour, interactif, moins cher). Le marché du tourisme pêche est significatif."
+    },
+    "competition": {
+      "score": 70,
+      "detail": "GeoPeche et les sites fédéraux sont les concurrents les plus proches, mais aucun ne propose un format 'guide complet par département'. La fragmentation (94 sites fédéraux) est une opportunité de consolidation."
+    },
+    "legal": {
+      "score": 70,
+      "detail": "Point d'attention sur la responsabilité liée à l'affichage de la réglementation. Disclaimer nécessaire. Les données espèces et spots sont ok juridiquement."
+    },
+    "overall": {
+      "score": 70,
+      "detail": "Fort potentiel SEO et demande validée, mais le goulot d'étranglement est la saisie réglementaire. Le modèle SEO-first peut générer du trafic organique significatif. Idéal pour une stratégie de contenu long-terme avec monétisation progressive."
+    }
+  },
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Hub'Eau et data.gouv.fr vérifiés pour les données espèces et stations. Les données réglementaires ne sont pas disponibles en open data — saisie manuelle nécessaire."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Cartes de pêche 2024, cartes interfédérales, et tendances vérifiées via la FNPF."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "GeoPeche, ComptoirDesPêcheurs, guides Fario et sites fédéraux vérifiés via leurs sites web. Fonctionnalités et pricing confirmés."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes 'pêche [département]' estimés par extrapolation de quelques départements vérifiés. Le total national de 200K+/mois est une estimation."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "TAM basé sur les données vérifiées. Le taux de pêcheurs 'itinérants' (50%) est une hypothèse basée sur les cartes interfédérales."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Analyse préliminaire de la responsabilité réglementaire. Un avis juridique est recommandé."
+    },
+    "cac": {
+      "level": "opiné",
+      "detail": "CAC SEO estimé par analogie avec des sites de contenu outdoor (AllTrails, Komoot). L'acquisition via les fédérations est spéculative."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Demande et concurrence bien documentées. La faisabilité de la saisie réglementaire est le principal point d'incertitude."
+    }
+  }
+}

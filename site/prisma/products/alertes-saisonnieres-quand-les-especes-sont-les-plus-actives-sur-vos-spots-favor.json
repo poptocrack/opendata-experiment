@@ -1,0 +1,305 @@
+{
+  "productSlug": "alertes-saisonnieres-quand-les-especes-sont-les-plus-actives-sur-vos-spots-favor",
+  "oneLiner": "Des alertes push qui vous préviennent quand les espèces sont les plus actives sur vos spots — basées sur 50 ans de données scientifiques",
+  "problem": "Les pêcheurs planifient leurs sorties en se fiant à l'intuition, la météo du jour ou les conseils de forums. Ils ne savent pas précisément quand chaque espèce est la plus active sur un cours d'eau donné. Les données historiques de pêches électriques de l'OFB (50+ ans) montrent des patterns saisonniers clairs par espèce et par station, mais ces données sont inaccessibles au grand public. Résultat : des sorties improductives, de la frustration, et un abandon progressif de la pratique (baisse de 4,5% des cartes vendues en 2024).",
+  "solution": "Un système d'alertes personnalisées qui notifie le pêcheur quand les conditions sont optimales pour ses espèces cibles sur ses spots favoris. L'algorithme croise les données historiques de pêches électriques (périodes d'activité par espèce et par station), la météo en temps réel, et les données hydrologiques (débit, température de l'eau) pour calculer un indice d'activité par espèce et par jour. L'utilisateur enregistre ses spots favoris et espèces cibles, et reçoit une notification push ou email quand l'indice dépasse un seuil.",
+  "uniqueValue": "Seul outil qui base ses prédictions d'activité sur des données scientifiques réelles (pêches électriques OFB) plutôt que sur des tables solunaires génériques ou du déclaratif communautaire. Les concurrents comme FishFriender utilisent des indices basés sur la lune et la pression atmosphérique — ici, les données sont localisées et vérifiées scientifiquement.",
+  "mvpScope": "App web progressive (PWA) avec notifications push : (1) création de profil avec spots favoris (géolocalisation ou recherche), (2) sélection des espèces cibles, (3) dashboard avec indice d'activité par espèce/spot pour les 7 prochains jours, (4) alertes push quand l'indice est élevé. Sources : Hub'Eau + OpenWeatherMap + Hub'Eau Hydrométrie.",
+  "timeToMvp": "8-10 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Modèle prédictif d'activité",
+      "description": "Analyse des données historiques Hub'Eau pour identifier les patterns saisonniers par espèce et par zone géographique. Développement de l'algorithme d'indice d'activité croisant saisonnalité, météo et hydrologie.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Analyse exploratoire des patterns saisonniers",
+        "Algorithme d'indice d'activité v1",
+        "Backtesting sur données historiques",
+        "Documentation méthodologique"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Application et profils utilisateurs",
+      "description": "Développement de la PWA avec système de profils, enregistrement des spots favoris et espèces cibles, dashboard avec indice d'activité sur 7 jours",
+      "duration": "3 semaines",
+      "deliverables": [
+        "PWA responsive",
+        "Système de profils et préférences",
+        "Dashboard indice d'activité",
+        "Intégration météo et hydrologie temps réel"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Notifications et lancement",
+      "description": "Système de notifications push (Service Worker), alertes email, tests avec beta-testeurs pêcheurs, ajustement du modèle, lancement communautaire",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Notifications push opérationnelles",
+        "Alertes email automatisées",
+        "Beta-test avec 50 pêcheurs",
+        "Lancement sur communautés pêche"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les pêcheurs veulent être notifiés des meilleures périodes",
+      "how": "Sondage dans les groupes Facebook : 'Aimeriez-vous recevoir une alerte quand les conditions sont optimales pour pêcher la truite sur votre rivière préférée ?'",
+      "successCriteria": "80%+ répondent oui, 200+ réponses"
+    },
+    {
+      "check": "Les données historiques montrent des patterns saisonniers exploitables",
+      "how": "Analyse exploratoire des données Hub'Eau sur 5 espèces majeures (truite, brochet, sandre, carpe, gardon) sur 20 stations réparties en France",
+      "successCriteria": "Patterns saisonniers clairs identifiables pour 80%+ des combinaisons espèce/station"
+    },
+    {
+      "check": "L'indice d'activité est perçu comme fiable par les pêcheurs expérimentés",
+      "how": "Montrer les prédictions de l'algorithme à 10 pêcheurs expérimentés (guides ou compétiteurs) et comparer avec leur intuition",
+      "successCriteria": "70%+ des pêcheurs valident les prédictions comme cohérentes avec leur expérience"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Pêcheurs compétiteurs et passionnés qui optimisent chaque sortie",
+      "where": "Forums compétition pêche, groupes Facebook 'Pêche sportive', fédérations de pêche sportive",
+      "howToReach": "Partenariats avec des compétiteurs connus, sponsoring de concours de pêche, contenu 'optimisez vos sorties avec la data'"
+    },
+    {
+      "who": "Pêcheurs du week-end qui ont peu de temps et veulent maximiser chaque sortie",
+      "where": "Groupes Facebook généralistes pêche, forums pechemaniac.com, subreddits pêche",
+      "howToReach": "Contenu axé sur le gain de temps : 'Ne gaspillez plus vos week-ends — pêchez au bon moment'"
+    },
+    {
+      "who": "Pêcheurs de carnassiers (brochet, sandre, perche) très sensibles aux conditions",
+      "where": "Groupes Facebook 'Brochet passion', 'Pêche du sandre', chaînes YouTube carnassiers",
+      "howToReach": "Contenu spécialisé sur les fenêtres d'activité des carnassiers, partenariats YouTubeurs spécialisés"
+    }
+  ],
+  "pricingStrategy": "Freemium : 1 spot favori + 1 espèce gratuit avec indice d'activité basique. Premium à 4,99€/mois ou 39,99€/an : spots illimités, toutes les espèces, alertes push personnalisées, prévisions 14 jours, historique d'activité, conseils techniques par espèce selon les conditions.",
+  "pathTo10kMrr": "Phase 1 (M1-M3) : Beta gratuite avec 500 pêcheurs, validation du modèle. Phase 2 (M3-M6) : Lancement paywall, 2 000 inscrits, 150 premium × 4,99€ = 749€ MRR. Phase 3 (M6-M12) : Effet réseau (partage de prédictions confirmées), 8 000 inscrits, 600 premium × 4,99€ = 2 994€ MRR. Phase 4 (M12-M18) : App mobile native avec push, partenariats marques de matériel (alertes sponsorisées), 2 000 premium × 4,99€ + 500€ sponsoring = 10 480€ MRR.",
+  "techStack": {
+    "frontend": "Next.js 14 (PWA) + React + Tailwind CSS + Recharts (graphiques d'activité)",
+    "backend": "Node.js + Python (modèle prédictif) + cron jobs (calcul quotidien des indices)",
+    "database": "PostgreSQL + PostGIS + Redis (cache prédictions)",
+    "hosting": "Vercel (frontend) + Railway (backend Python + cron) + Supabase (PostgreSQL + Auth)",
+    "apis": [
+      "Hub'Eau État Piscicole (données historiques espèces)",
+      "Hub'Eau Hydrométrie (débit, température eau en temps réel)",
+      "OpenWeatherMap (météo et prévisions 14 jours)",
+      "API Adresse BAN (géocodage)",
+      "Firebase Cloud Messaging (notifications push)"
+    ],
+    "notes": "Le modèle prédictif nécessite un travail de data science significatif. Un modèle simple basé sur la saisonnalité historique + météo peut être un bon MVP, avant d'évoluer vers du ML. Les cron jobs quotidiens calculent les indices pour toutes les combinaisons spot/espèce enregistrées par les utilisateurs."
+  },
+  "risks": [
+    {
+      "risk": "Le modèle prédictif n'est pas assez fiable et les pêcheurs sont déçus",
+      "mitigation": "Commencer avec un modèle simple (saisonnalité + météo), communiquer sur le caractère 'indicatif', collecter les retours terrain pour améliorer le modèle itérativement"
+    },
+    {
+      "risk": "Les données de pêches électriques ne sont pas représentatives de la pêche récréative (méthodes différentes)",
+      "mitigation": "Les pêches électriques mesurent la présence et l'abondance, pas la 'mordabilité'. Le positionner comme 'indice de présence' plutôt que 'indice de prise'. Compléter avec les données communautaires."
+    },
+    {
+      "risk": "Le modèle de notifications push génère de la fatigue et du désabonnement",
+      "mitigation": "Contrôle fin de la fréquence des alertes par l'utilisateur, scoring de pertinence, alertes uniquement quand l'indice dépasse un seuil élevé"
+    },
+    {
+      "risk": "Dépendance aux API externes (Hub'Eau, météo) qui peuvent avoir des indisponibilités",
+      "mitigation": "Cache des données en base avec fallback, synchronisation batch quotidienne plutôt que temps réel, monitoring des API"
+    }
+  ],
+  "inspirations": "Surfline (prévisions surf, 3M+ utilisateurs payants) a prouvé qu'un système de prédiction d'activité outdoor peut être massivement monétisé. Windy (météo pour activités outdoor, 50M+ téléchargements) montre la valeur des prévisions spécialisées. FishFriender propose déjà un 'indice de pêche' basé sur la lune/météo mais sans données scientifiques localisées.",
+  "searchVolume": [
+    {
+      "keyword": "quand pêcher",
+      "monthlyVolume": "3 600",
+      "difficulty": "moyenne",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "meilleur moment pour pêcher",
+      "monthlyVolume": "2 900",
+      "difficulty": "moyenne",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "saison pêche truite",
+      "monthlyVolume": "4 400",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "ouverture pêche brochet",
+      "monthlyVolume": "6 600",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "calendrier pêche",
+      "monthlyVolume": "2 400",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    },
+    {
+      "keyword": "indice de pêche",
+      "monthlyVolume": "1 300",
+      "difficulty": "faible",
+      "intent": "informationnelle"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "1,4M de pêcheurs français × 48€/an = 67,2M€/an. Marché européen apps pêche : ~450M€/an (30% du marché mondial de 1,5Md$).",
+    "sam": "Pêcheurs connectés et actifs (sorties régulières, smartphone) estimés à 30% = 420K × 40€/an = 16,8M€/an.",
+    "som": "Objectif 3 ans : 5 000 abonnés premium × 40€/an = 200K€/an.",
+    "methodology": "TAM basé sur les cartes de pêche 2024. SAM restreint aux pêcheurs réguliers et connectés (estimation 30%). SOM basé sur 1,2% de pénétration du SAM, cohérent avec les taux de conversion des apps de niche."
+  },
+  "competitorDeep": [
+    {
+      "name": "FishFriender (indice de pêche)",
+      "url": "https://www.fishfriender.com",
+      "pricing": "Gratuit (basique) / Premium 7,99€/mois (indice détaillé)",
+      "trafficEstimate": "~100K visites/mois",
+      "reviews": "Indice de pêche apprécié mais considéré comme trop générique — basé sur lune et météo, pas localisé",
+      "strengths": "App mobile native, marque établie, communauté active, indice existant",
+      "weaknesses": "Indice basé sur tables solunaires génériques, pas de données scientifiques localisées, pas de personnalisation par espèce/spot"
+    },
+    {
+      "name": "Fishing Points (Marées & Pêche)",
+      "url": "https://apps.apple.com/fr/app/fishing-points/id1203032512",
+      "pricing": "Gratuit / Premium ~4,99€/mois",
+      "trafficEstimate": "10M+ téléchargements (global)",
+      "reviews": "4,7/5 — excellent pour les marées et la pêche en mer, mais très limité en eau douce",
+      "strengths": "Tables solunaires, marées, météo intégrée, interface propre",
+      "weaknesses": "Focus mer, tables solunaires génériques, aucune donnée espèce locale, pas de personnalisation France eau douce"
+    },
+    {
+      "name": "BassForecast",
+      "url": "https://www.bassforecast.com",
+      "pricing": "Gratuit / Premium ~3,99$/mois",
+      "trafficEstimate": "~500K téléchargements",
+      "reviews": "Très apprécié aux USA pour le black bass, mais absent du marché français",
+      "strengths": "Algorithme prédictif basé sur météo et données locales, bonne UX",
+      "weaknesses": "USA uniquement, pas d'espèces européennes, pas de données scientifiques officielles"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation données Hub'Eau pour prédictions",
+      "status": "ok",
+      "detail": "Données ouvertes, utilisation commerciale autorisée. Les prédictions sont dérivées des données, pas les données elles-mêmes.",
+      "source": "Licence Ouverte Etalab"
+    },
+    {
+      "topic": "Notifications push et RGPD",
+      "status": "ok",
+      "detail": "Consentement explicite nécessaire pour les notifications push (géré nativement par les navigateurs/OS). Opt-in conforme RGPD.",
+      "source": "RGPD / CNIL"
+    },
+    {
+      "topic": "Réglementation pêche (dates d'ouverture/fermeture)",
+      "status": "attention",
+      "detail": "Si les alertes sont envoyées pendant une période de fermeture de pêche, cela pourrait inciter à la pêche illégale. Les alertes doivent tenir compte des dates d'ouverture/fermeture par espèce et par département.",
+      "source": "Arrêtés préfectoraux annuels"
+    },
+    {
+      "topic": "Responsabilité des prédictions",
+      "status": "ok",
+      "detail": "Les prédictions sont informatives. Aucune obligation de résultat. Un disclaimer standard suffit.",
+      "source": "Droit de la consommation"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (contenu 'quand pêcher [espèce] [département]')",
+      "cacEstimate": "2-5€",
+      "conversionRate": "4-6% visiteur → inscription",
+      "ltv": "84€ (2,1 ans × 40€/an)",
+      "ltvCacRatio": "17-42x"
+    },
+    {
+      "channel": "Communautés Facebook pêche (posts organiques)",
+      "cacEstimate": "0-1€",
+      "conversionRate": "5-8% clic → inscription",
+      "ltv": "84€",
+      "ltvCacRatio": "84x+"
+    },
+    {
+      "channel": "Partenariats YouTubeurs pêche",
+      "cacEstimate": "4-8€",
+      "conversionRate": "3-5%",
+      "ltv": "84€",
+      "ltvCacRatio": "10-21x"
+    },
+    {
+      "channel": "Facebook Ads ciblant les pêcheurs",
+      "cacEstimate": "10-18€",
+      "conversionRate": "2-3% clic → inscription",
+      "ltv": "84€",
+      "ltvCacRatio": "5-8x"
+    }
+  ],
+  "viabilityScore": {
+    "demand": {
+      "score": 80,
+      "detail": "Forte demande pour savoir 'quand pêcher' — 20K+ recherches/mois sur les requêtes associées. Le concept d'alertes personnalisées résonne fortement avec les pêcheurs du week-end à temps limité."
+    },
+    "feasibility": {
+      "score": 60,
+      "detail": "Le modèle prédictif est le défi principal. Les données existent mais l'extraction de patterns saisonniers fiables nécessite un travail de data science. Le MVP peut utiliser un modèle simple (saisonnalité + météo)."
+    },
+    "market": {
+      "score": 70,
+      "detail": "Surfline a prouvé le modèle des prédictions outdoor payantes. Le marché français est plus petit mais très engagé. Le pricing à 4,99€/mois est dans la zone de confort des pêcheurs."
+    },
+    "competition": {
+      "score": 80,
+      "detail": "FishFriender propose un indice basé sur lune/météo mais pas localisé ni scientifique. Aucun concurrent n'exploite les données de pêches électriques pour des prédictions."
+    },
+    "legal": {
+      "score": 80,
+      "detail": "Peu de contraintes — données ouvertes, prédictions informatives. Point d'attention sur les dates de fermeture de pêche."
+    },
+    "overall": {
+      "score": 70,
+      "detail": "Produit à fort potentiel d'engagement (alertes push = rétention élevée) mais complexité technique du modèle prédictif. Idéal comme feature premium d'une app pêche plus large plutôt que standalone."
+    }
+  },
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "API Hub'Eau testée et documentée. Données de pêches électriques disponibles avec dates, espèces et quantités par station."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Nombre de pêcheurs et tendance à la baisse (−4,5% en 2024) vérifiés via la FNPF."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "FishFriender, Fishing Points et BassForecast vérifiés via App Store et sites web. Fonctionnalités et pricing confirmés."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés via outils SEO. Les requêtes saisonnières (ouverture truite, brochet) ont des pics prévisibles."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Basé sur les cartes de pêche vérifiées. Le taux de pêcheurs 'réguliers et connectés' (30%) est une estimation."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Analyse préliminaire. Le point sur les dates de fermeture nécessite une vérification département par département."
+    },
+    "cac": {
+      "level": "opiné",
+      "detail": "CAC estimés par analogie avec des apps de prédiction outdoor (Surfline, Windy). Pas de données spécifiques au marché français de la pêche."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Bonne confiance sur les données et la demande. La faisabilité du modèle prédictif est le principal point d'incertitude."
+    }
+  }
+}
