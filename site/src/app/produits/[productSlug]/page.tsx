@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import {
   getProductBySlug,
@@ -28,6 +29,25 @@ import type {
 export async function generateStaticParams(): Promise<{ productSlug: string }[]> {
   const products = await getProductSlugs();
   return products.map((p) => ({ productSlug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ productSlug: string }>;
+}): Promise<Metadata> {
+  const { productSlug } = await params;
+  const product = await getProductBySlug(productSlug);
+  if (!product) return {};
+  const detail = product.detail;
+  return {
+    title: product.text,
+    description: detail?.oneLiner ?? `Idée de produit dans le secteur ${product.opportunity.sector}`,
+    openGraph: {
+      title: `${product.text} — Le Filon`,
+      description: detail?.oneLiner ?? product.text,
+    },
+  };
 }
 
 function parseDetail(detail: ProductWithDetail['detail']) {

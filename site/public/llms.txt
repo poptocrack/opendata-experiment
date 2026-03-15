@@ -1,0 +1,31 @@
+# Le Filon — lefilon.net
+
+## What is this site?
+Le Filon is a market research platform that identifies business opportunities hidden in French open data (data.gouv.fr). It analyzes public datasets to find viable SaaS product ideas.
+
+## Content
+- 16 sector analyses (real estate, energy, health, education, disability, etc.)
+- 85 detailed product ideas with execution plans
+- Each product has: market validation, viability scoring, competitor analysis, legal constraints, path to 10K MRR
+- All data sourced from data.gouv.fr (French government open data portal)
+
+## Structure
+- / — Homepage with all opportunities overview
+- /opportunites/[slug] — Detailed sector analysis with SWOT, personas, datasets, APIs
+- /produits/[slug] — Individual product idea with full execution plan
+
+## Key data points
+- Datasets: visits and downloads from data.gouv.fr API (verified)
+- Market sizing (TAM/SAM/SOM): estimated from public statistics
+- Competitor pricing: researched from public pricing pages (March 2026)
+- Search volumes: estimated without professional SEO tools
+- CAC estimates: based on SaaS benchmarks (not field-tested)
+
+## Confidence levels
+Each data point is tagged: "verifie" (verified public source), "estime" (calculated estimate), or "opine" (expert opinion).
+
+## Language
+All content is in French. The site targets French entrepreneurs and developers.
+
+## Contact
+Site owner: Tristan de Broise

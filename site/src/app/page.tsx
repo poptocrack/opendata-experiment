@@ -8,8 +8,25 @@ import { getOpportunities } from "@/lib/queries";
 export default async function Home() {
   const opportunities = await getOpportunities();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Le Filon",
+    url: "https://lefilon.net",
+    description:
+      "Étude de marché sur les opportunités de produits SaaS exploitant les données ouvertes françaises (data.gouv.fr). 16 secteurs, 85 idées de produit.",
+    publisher: {
+      "@type": "Organization",
+      name: "Le Filon",
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero count={opportunities.length} />
       <Methodology />
       <RankingTable opportunities={opportunities} />

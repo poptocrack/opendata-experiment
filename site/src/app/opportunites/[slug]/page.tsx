@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getOpportunityBySlug, getOpportunities } from '@/lib/queries';
@@ -7,6 +8,24 @@ import { Footer } from '@/components/footer';
 export async function generateStaticParams() {
   const opportunities = await getOpportunities();
   return opportunities.map((o) => ({ slug: o.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const opp = await getOpportunityBySlug(slug);
+  if (!opp) return {};
+  return {
+    title: opp.title,
+    description: opp.tagline,
+    openGraph: {
+      title: `${opp.title} — Le Filon`,
+      description: opp.tagline,
+    },
+  };
 }
 
 export default async function OpportunityPage({
