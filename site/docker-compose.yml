@@ -6,9 +6,15 @@ services:
       dockerfile: Dockerfile
     environment:
       - ADMIN_SECRET=${ADMIN_SECRET:-changeme}
+      - DATABASE_URL=file:/data/dev.db
+    volumes:
+      - db_data:/data
     restart: unless-stopped
     networks:
       - caddy_network
+
+volumes:
+  db_data:
 
 networks:
   caddy_network:
