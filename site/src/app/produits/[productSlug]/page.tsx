@@ -28,8 +28,13 @@ import type {
 } from '@/components/product-detail';
 
 export async function generateStaticParams(): Promise<{ productSlug: string }[]> {
-  const products = await getProductSlugs();
-  return products.map((p) => ({ productSlug: p.slug }));
+  try {
+    const products = await getProductSlugs();
+    return products.map((p) => ({ productSlug: p.slug }));
+  } catch {
+    // En dev, DATABASE_URL peut être absent — les pages seront rendues à la demande
+    return [];
+  }
 }
 
 export async function generateMetadata({

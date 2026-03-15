@@ -6,8 +6,12 @@ import { OpportunityCard } from '@/components/opportunity-card';
 import { Footer } from '@/components/footer';
 
 export async function generateStaticParams() {
-  const opportunities = await getOpportunities();
-  return opportunities.map((o) => ({ slug: o.slug }));
+  try {
+    const opportunities = await getOpportunities();
+    return opportunities.map((o) => ({ slug: o.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
