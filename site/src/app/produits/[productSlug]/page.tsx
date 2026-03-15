@@ -93,7 +93,7 @@ export default async function ProductPage({
   const opp = product.opportunity;
 
   // Server-side access control — premium content is NOT sent to the client
-  const hasAccess = false; // TODO: replace with auth check (session, JWT, Stripe, etc.)
+  const hasAccess = product.unlocked;
 
   const parsed = detail && hasAccess ? parseDetail(detail) : null;
 

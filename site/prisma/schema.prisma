@@ -73,6 +73,7 @@ model ProductIdea {
   text          String
   slug          String      @unique
   order         Int         @default(0)
+  unlocked      Boolean     @default(false)
   opportunityId String
   opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
   detail        ProductDetail?
