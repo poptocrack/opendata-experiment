@@ -13,10 +13,10 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 
 # Generate Prisma client + build seed DB (used as template)
-ENV DATABASE_URL="file:./prisma/dev.db"
+ENV DATABASE_URL="file:./dev.db"
 RUN npx prisma generate
 RUN npx prisma db push
-RUN npx tsx prisma/seed.ts
+RUN DATABASE_URL="file:./prisma/dev.db" npx tsx prisma/seed.ts
 
 # Build Next.js
 RUN pnpm build
