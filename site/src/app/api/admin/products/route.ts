@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db";
 
 function isAuthorized(req: NextRequest) {
@@ -28,7 +29,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({ products });
 }
 
-// PATCH — toggle unlock status
+// PATCH — toggle unlock status + revalidate the page
 export async function PATCH(req: NextRequest) {
   if (!isAuthorized(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -43,7 +44,11 @@ export async function PATCH(req: NextRequest) {
   const product = await prisma.productIdea.update({
     where: { id },
     data: { unlocked },
+    select: { id: true, slug: true, unlocked: true },
   });
+
+  // Revalidate the product page — Next.js regénère la page SSG en arrière-plan
+  revalidatePath(`/produits/${product.slug}`);
 
   return NextResponse.json({ ok: true, id: product.id, unlocked: product.unlocked });
 }
