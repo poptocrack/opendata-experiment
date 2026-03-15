@@ -20,10 +20,16 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Data
-*.csv
-*.xlsx
-*.json
-!package.json
+# Node
+node_modules/
+.next/
+
+# Data (raw downloads)
 data/raw/
 data/processed/
+*.csv
+*.xlsx
+
+# SQLite DB (rebuilt by seed)
+site/prisma/dev.db
+site/prisma/dev.db-journal
