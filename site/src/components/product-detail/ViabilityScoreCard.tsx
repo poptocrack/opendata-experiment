@@ -63,7 +63,7 @@ export function ViabilityScoreCard({ viabilityScore }: Props) {
                 </div>
                 <div className="text-xs font-mono mt-0.5 cursor-help">{val}</div>
                 {detail && (
-                  <span className="pointer-events-none absolute left-1/2 z-[100] -translate-x-1/2 whitespace-normal rounded-md border border-border bg-popover px-3 py-2 text-xs text-popover-foreground shadow-lg opacity-0 transition-opacity duration-150 group-hover/score:opacity-100 w-56 text-left font-normal bottom-[calc(100%+8px)]">
+                  <span className="pointer-events-none absolute left-1/2 z-100 -translate-x-1/2 whitespace-normal rounded-md border border-border bg-popover px-3 py-2 text-xs text-popover-foreground shadow-lg opacity-0 transition-opacity duration-150 group-hover/score:opacity-100 w-56 text-left font-normal bottom-[calc(100%+8px)]">
                     {detail}
                   </span>
                 )}

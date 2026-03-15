@@ -15,6 +15,6 @@ jobs:
           username: root
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd ~/projects/research/site
+            cd ~/projects/lefilon/site
             git pull origin main
             docker compose up -d --build
