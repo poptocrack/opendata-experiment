@@ -123,6 +123,13 @@ model ProductDetail {
   confidenceLevels String? // JSON: {datasets, metrics, competitors, searchVolume, tamSamSom, legal, cac, overall}
 }
 
+model WaitlistEntry {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  source    String?  // slug du produit depuis lequel l'inscription a eu lieu
+  createdAt DateTime @default(now())
+}
+
 model TargetCustomer {
   id            Int         @id @default(autoincrement())
   segment       String

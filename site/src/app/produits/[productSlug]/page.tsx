@@ -6,6 +6,7 @@ import {
   type ProductWithDetail,
 } from '@/lib/queries';
 import { Footer } from '@/components/footer';
+import { Paywall } from '@/components/paywall';
 import {
   ProductBreadcrumb,
   ProductHeader,
@@ -90,7 +91,23 @@ export default async function ProductPage({
 
   const detail = product.detail;
   const opp = product.opportunity;
-  const parsed = detail ? parseDetail(detail) : null;
+
+  // Server-side access control — premium content is NOT sent to the client
+  const hasAccess = false; // TODO: replace with auth check (session, JWT, Stripe, etc.)
+
+  const parsed = detail && hasAccess ? parseDetail(detail) : null;
+
+  // Free preview: only problem/solution/score — no roadmap, no validation, no market data
+  const freePreview = detail
+    ? {
+        oneLiner: detail.oneLiner,
+        problem: detail.problem,
+        solution: detail.solution,
+        uniqueValue: detail.uniqueValue,
+        timeToMvp: detail.timeToMvp,
+        viabilityScore: detail.viabilityScore,
+      }
+    : null;
 
   return (
     <div className="min-h-screen">
@@ -105,7 +122,11 @@ export default async function ProductPage({
         />
 
         {detail && parsed ? (
+          // Full access
           <ProductDetailContent detail={detail} opp={opp} parsed={parsed} />
+        ) : detail && freePreview ? (
+          // Free preview + paywall
+          <Paywall freePreview={freePreview} />
         ) : (
           <ProductEmptyState opportunitySlug={opp.slug} opportunityTitle={opp.title} />
         )}
