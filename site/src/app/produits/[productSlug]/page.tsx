@@ -114,6 +114,15 @@ export default async function ProductPage({
       }
     : null;
 
+  let mainContent: React.ReactNode;
+  if (detail && parsed) {
+    mainContent = <ProductDetailContent detail={detail} opp={opp} parsed={parsed} />;
+  } else if (detail && freePreview) {
+    mainContent = <Paywall freePreview={freePreview} />;
+  } else {
+    mainContent = <ProductEmptyState opportunitySlug={opp.slug} opportunityTitle={opp.title} />;
+  }
+
   return (
     <div className="min-h-screen">
       <ProductBreadcrumb opportunitySlug={opp.slug} opportunityTitle={opp.title} />
@@ -126,15 +135,7 @@ export default async function ProductPage({
           detail={detail ? { timeToMvp: detail.timeToMvp, oneLiner: detail.oneLiner } : null}
         />
 
-        {detail && parsed ? (
-          // Full access
-          <ProductDetailContent detail={detail} opp={opp} parsed={parsed} />
-        ) : detail && freePreview ? (
-          // Free preview + paywall
-          <Paywall freePreview={freePreview} />
-        ) : (
-          <ProductEmptyState opportunitySlug={opp.slug} opportunityTitle={opp.title} />
-        )}
+        {mainContent}
       </div>
 
       <Footer />
