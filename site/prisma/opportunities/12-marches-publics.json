@@ -1,0 +1,180 @@
+{
+  "id": "marches-publics-intelligence",
+  "rank": 12,
+  "title": "Intelligence marches publics",
+  "slug": "marches-publics",
+  "sector": "marches-publics",
+  "tagline": "Exploiter les DECP (1545 datasets, 27K visites, 45K téléchargements) pour aider les PME à trouver et remporter des marches publics",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "200Mds/an de commande publique — PME et ETI",
+  "monetization": "SaaS 49-299/mois",
+  "context": "La commande publique représente 200 milliards d'euros par an en France. Les DECP (Données Essentielles de la Commande Publique) contiennent les details de chaque marché attribue : achetéur, titulaire, montant, objet, date. Avec 27K visites et 45K téléchargements, la demande est forte. 1545 datasets existent. Mais les données sont fragmentees et difficiles a exploiter. Un outil qui agrege, analyse les patterns (qui gagne quoi, a quel prix, quand les marches sont renouvelés) et alerte les PME sur les opportunités correspondant à leur profil serait très valuable. Le format tabulaire consolidé par Colmo existe déjà — la matière première est la.",
+  "signals": [
+    {
+      "label": "DECP consolidés",
+      "value": "27K visites + 45K DL",
+      "detail": "Données essentielles de la commande publique — fort trafic"
+    },
+    {
+      "label": "Volume datasets",
+      "value": "1545 datasets",
+      "detail": "Enorme volume mais très fragmente"
+    },
+    {
+      "label": "Marché total",
+      "value": "200Mds/an",
+      "detail": "La commande publique en France"
+    },
+    {
+      "label": "DECP tabulaire Colmo",
+      "value": "6.3K visites",
+      "detail": "Version nettoyée et exploitable des DECP"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5cd57bf68b4c4179299eb0e9",
+      "name": "DECP — Fichiers consolidés",
+      "description": "Données essentielles de tous les marches publics attribues en France.",
+      "visits": "27K/an",
+      "downloads": "45K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "608c055b35eb4e6ee20eb325",
+      "name": "DECP format tabulaire (Colmo)",
+      "description": "Version nettoyée et tabulaire des DECP : identifiants, achetéurs, titulaires, montants, dates.",
+      "visits": "6.3K/an",
+      "downloads": "3.3K/an",
+      "updateFrequency": "Regulier"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Recherche d'Entreprises",
+      "description": "Enrichir les données des titulaires et achetéurs avec les infos SIRENE.",
+      "baseUrl": "https://recherche-entreprises.api.gouv.fr"
+    }
+  ],
+  "productIdeas": [
+    "Alertes marches : soyez prévenu quand un marché correspond a votre secteur/zone/taille",
+    "Analyse concurrentielle : qui gagne les marches dans votre domaine, a quel prix",
+    "Prediction de renouvellement : détection des marches arrivant a échéance",
+    "Score de probabilité de victoire base sur l'historique des attributions",
+    "Generateur de mémoire technique assisté par IA base sur les cahiers des charges"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "PME répondant aux marches publics",
+      "priceRange": "49/mois"
+    },
+    {
+      "segment": "ETI et grandes entreprises",
+      "priceRange": "299/mois"
+    },
+    {
+      "segment": "Cabinets de conseil en marches publics",
+      "priceRange": "149/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "VECTEUR PLUS",
+      "weakness": "Cher et interface datée"
+    },
+    {
+      "name": "Marcoweb",
+      "weakness": "Focus veille, pas d'analyse prédictive"
+    },
+    {
+      "name": "France Marches",
+      "weakness": "Agrément de sources sans intelligence"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "200 milliards EUR/an de commande publique — marché gigantesque ou même une petite part génère des revenus importants",
+      "Les DECP consolidés (27K visites + 45K DL) contiennent l'historique complet des attributions pour un scoring prédictif",
+      "Le format tabulaire Colmo est déjà nettoyé — temps de mise en marché réduit",
+      "Les PME sont paniqueees par la complexité des marches publics — forte willingness-to-pay pour simplifiér"
+    ],
+    "weaknesses": [
+      "Les DECP ne contiennent que les marches attribues, pas les appels d'offres en cours — nécessite d'autres sources (BOAMP, JOUE)",
+      "La qualité des données DECP est inégale — des champs manquants, des montants aberrants, des doublons",
+      "Les gros acteurs (VECTEUR PLUS, France Marches) ont des equipes de veille humaine difficiles a remplacer par la data seule",
+      "Le cycle de vente B2B est long — les PME testent pendant 3-6 mois avant de s'engager"
+    ],
+    "opportunities": [
+      "L'IA generative permet de generer des mémoires techniques assistés — fonctionnalité differenciante a forte valeur ajoutee",
+      "La dématérialisation complète des marches publics (depuis 2022) génère de nouvelles données exploitables",
+      "Les collectivités doivent publier leurs données d'achat (clause Marché) — le volume de DECP va continuer de croitre",
+      "Le marché des marchés publics européens (TED) est accessible et démultiplie le TAM pour une version internationale"
+    ],
+    "threats": [
+      "VECTEUR PLUS (groupe EXPLORE) lève des fonds et enrichit son offre d'intelligence artificielle",
+      "La DAJ (Direction des Affaires Juridiques) pourrait modernisér le portail PLACE et y intégrer de l'analyse",
+      "Les outils gratuits de veille (profils d'achetéur, BOAMP) s'ameliorent et suffisent aux besoins basiques",
+      "Les cabinets de conseil en marches publics pourraient développer leurs propres outils pour clients"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Sebastien",
+      "role": "Dirigeant d'une entreprise de nettoyage industriel (35 salariés) a Strasbourg, 40% du CA en marches publics",
+      "age": "48 ans",
+      "context": "Repond a 30-40 appels d'offres par an, en remporte 8-10. Chaque réponse prend 2-3 jours de travail. Veut augmenter son taux de réussite et détecter les marches plus tot que ses concurrents.",
+      "painPoints": [
+        "Découvre certains appels d'offres trop tard — le délai de réponse est déjà entamé quand il les voit",
+        "Ne sait pas a quel prix ses concurrents remportent les marches similaires — repond un peu au hasard",
+        "Passe 3 jours par réponse a rediger le mémoire technique — pourrait en faire 2x plus s'il avait un assistant"
+      ],
+      "currentSolution": "Profils d'achetéur de 5 collectivités + BOAMP gratuit + veille manuelle tous les lundis matins",
+      "budget": "40-60 EUR/mois — le ROI d'un seul marché remporté (50-200K EUR) justifie largement l'investissement",
+      "channels": [
+        "CPME (Confédération des PME)",
+        "CCI Alsace Eurometropole",
+        "Fédération des Entreprises de Proprete (FEP)",
+        "Salon Pollutec Lyon"
+      ]
+    },
+    {
+      "name": "Amandine",
+      "role": "Responsable développement commercial d'un cabinet d'architectes (12 personnes) a Bordeaux",
+      "age": "35 ans",
+      "context": "Le cabinet repond a 50+ concours et appels d'offres de maitrise d'oeuvre par an. Taux de réussite de 15%. Chaque réponse coute 5-15K EUR en temps de travail. Elle veut cibler les bons marches pour augmenter le taux de conversion.",
+      "painPoints": [
+        "Repond a trop de concours sans savoir lesquels sont 'gagnables' — gaspille 70K EUR/an en réponses perdues",
+        "N'a aucune visibilite sur les jurys et les preferences des maitres d'ouvrage (ont-ils un architecte favori ?)",
+        "Ne détecté pas les renouvellements de marches cadres de maitrise d'oeuvre qui arrivent a échéance"
+      ],
+      "currentSolution": "Abonnement VECTEUR PLUS a 250 EUR/mois + veille manuelle BOAMP + réseau personnel + BET partenaires",
+      "budget": "80-150 EUR/mois si l'outil remplace VECTEUR PLUS et ajoute de l'analyse prédictive",
+      "channels": [
+        "Ordre des Architectes",
+        "Salon des Maires (stand)",
+        "Revue AMC (Architecture, Mouvement, Continuite)",
+        "Groupe LinkedIn 'Architectes et marches publics'"
+      ]
+    },
+    {
+      "name": "Jean-Michel",
+      "role": "Consultant indépendant en marches publics, accompagne 20 PME dans leurs réponses aux appels d'offres",
+      "age": "56 ans",
+      "context": "Ancien directeur des achats d'une collectivité, reconverti en consultant. Facture 800-1500 EUR par réponse accompagnee. Veut industrialiser son activité et offrir plus de valeur ajoutee a ses clients via la data.",
+      "painPoints": [
+        "Passe 2h par client a rechercher manuellement les marches passes de leurs concurrents sur les DECP",
+        "Ne peut pas promettre a ses clients un taux de réussite — aucune donnee pour faire du scoring de probabilité",
+        "Ses clients lui demandent 'a quel prix faut-il repondre ?' et il se base uniquement sur son expérience"
+      ],
+      "currentSolution": "DECP téléchargé en CSV + Excel pour les analyses + Pappers pour les infos concurrents + expérience personnelle",
+      "budget": "100-180 EUR/mois — facture en sus a ses clients comme 'outil d'intelligence marches'",
+      "channels": [
+        "APASP (Association Pour l'Achat dans les Services Publics)",
+        "Formation continue Infopro Digital",
+        "Groupe LinkedIn 'Repondre aux appels d'offres'",
+        "Webinaires Weka marches publics"
+      ]
+    }
+  ]
+}

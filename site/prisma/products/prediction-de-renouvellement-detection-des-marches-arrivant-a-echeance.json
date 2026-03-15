@@ -1,0 +1,310 @@
+{
+  "productSlug": "prediction-de-renouvellement-detection-des-marches-arrivant-a-echeance",
+  "oneLiner": "Détection des marchés publics arrivant a échéance: anticipez les renouvellements 3-6 mois avant la publication officielle.",
+  "problem": "Les marchés publics sont reconductibles (1-4 ans). Les entreprises decouvrent le renouvellement au moment de la publication, avec peu de temps pour préparer une offre solide. Le titulaire sortant a un avantage informationnel énorme. Les DECP contiennent les dates de debut et la durée: on peut predire les renouvellements 3-6 mois a l'avancé.",
+  "solution": "Un calendrier prédictif des renouvellements par secteur et zone. L'outil analyse les DECP pour identifier les marchés arrivant a échéance dans les 3, 6 et 12 prochains mois. Alertes avec détails du marché initial (montant, acheteur, titulaire sortant, durée). Donne 3-6 mois d'avancé pour préparer l'offre.",
+  "uniqueValue": "Personne n'exploité la dimension temporelle des DECP. Les outils existants alertent quand le marché est publié (trop tard). Cet outil alerte quand il va PROBABLEMENT etre publié, donnant un avantage de préparation considerable.",
+  "mvpScope": "Calendrier des renouvellements pour les 6 prochains mois, tous secteurs, France entière. Filtre par CPV et département. Email mensuel. Fiche par marché avec détails du marché initial.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Extraction temporelle DECP",
+      "description": "Ingestion DECP avec extraction des dates (debut, durée, reconduction). Calcul des dates d'échéance. Gestion des cas limites (champs manquants, heuristiques par CPV).",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pipeline DECP temporel",
+        "Calcul échéances pour 200K+ marchés",
+        "Heuristiques pour données manquantes",
+        "Calendrier prévisionnel"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface calendrier et alertes",
+      "description": "Interface calendrier avec filtres CPV/département. Fiches marché détaillées. Alertes email mensuelles personnalisees.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Interface calendrier FullCalendar",
+        "Filtres CPV/département",
+        "Fiches marché",
+        "Alertes email"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et validation predictive",
+      "description": "Marketing cible LinkedIn et federations. Mesurer le taux de précision (combien de predictions se realisent). Webinaires.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "150 abonnes",
+        "Taux de précision mesure",
+        "3 webinaires",
+        "Partenariats federations"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Score de probabilité et bundle",
+      "description": "Score de probabilité de renouvellement. Détails du titulaire sortant. Bundle avec alertes + analyse concurrentielle.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Score probabilité",
+        "Détails titulaire sortant",
+        "Bundle lance",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les DECP contiennent les données temporelles nécessaires",
+      "how": "Analyser 10K marchés DECP: combien ont date de debut ET durée renseignées?",
+      "successCriteria": "50%+ des marchés ont les deux champs"
+    },
+    {
+      "check": "Les marchés sont effectivement renouveles a l'échéance",
+      "how": "Prendre 100 marchés arrivés a échéance il y a 6 mois et vérifier sur BOAMP",
+      "successCriteria": "60%+ sont renouveles dans les 12 mois suivants"
+    },
+    {
+      "check": "L'avantage temporel est valorise par les entreprises",
+      "how": "Proposer un calendrier prévisionnel a 10 entreprises et mesurer la reaction",
+      "successCriteria": "7/10 disent que 3-6 mois d'avancé changerait leur préparation"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "PME du BTP répondant régulièrement aux marchés",
+      "where": "FFB, CAPEB, FNTP, LinkedIn BTP",
+      "howToReach": "Les marchés BTP sont les plus reconductibles. Calendrier prévisionnel gratuit de leur département."
+    },
+    {
+      "who": "ESN challenger sur les marchés IT publics",
+      "where": "Syntec, LinkedIn, salons IT publics",
+      "howToReach": "Les ESN challengers veulent anticiper. L'avantage informationnel est cle dans l'IT public."
+    },
+    {
+      "who": "Sociétés de nettoyage et services aux collectivités",
+      "where": "FEP, LinkedIn, groupes services collectivités",
+      "howToReach": "Le nettoyage = contrats tres reconductibles (3-4 ans). Forte valeur de l'anticipation."
+    }
+  ],
+  "pricingStrategy": "Plan Starter a 24 EUR/mois (1 secteur, 1 région, alertes mensuelles). Plan Business a 59 EUR/mois (multi-secteurs, France entière, alertes hebdo, détails titulaire). Plan Premium a 149 EUR/mois (score probabilité, historique, API, préparation assistee).",
+  "pathTo10kMrr": "200 Starter x 24 EUR = 4 800 EUR + 60 Business x 59 EUR = 3 540 EUR + 12 Premium x 149 EUR = 1 788 EUR = 10 128 EUR MRR. 272 abonnes sur 150K entreprises. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + FullCalendar",
+    "backend": "Next.js API Routes + Python pour parsing temporel DECP",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions + Resend",
+    "apis": [
+      "DECP data.gouv.fr",
+      "API BOAMP (validation)",
+      "API Sirene",
+      "Resend",
+      "Stripe"
+    ],
+    "notes": "Coeur: extraction et calcul date_debut + duree_initiale + nombre_reconductions x duree_reconduction. Champs mal renseignes = heuristiques par CPV. Recalcul mensuel."
+  },
+  "risks": [
+    {
+      "risk": "Données temporelles souvent mal renseignées dans les DECP",
+      "mitigation": "Heuristiques par CPV (nettoyage = 3 ans typique). Afficher niveau de confiance."
+    },
+    {
+      "risk": "Les marchés ne sont pas toujours renouveles a l'identique",
+      "mitigation": "Prédiction probabiliste, pas certitude. Taux de précision 60-70% reste utile vs 0% d'info avant."
+    },
+    {
+      "risk": "Les titulaires sortants gardent un avantage meme avec anticipation",
+      "mitigation": "L'anticipation permet de préparer un dossier solide et de prospecter l'acheteur. Passer de 10% a 25% de chances."
+    }
+  ],
+  "inspirations": "GovWin (Deltek) pour le pipeline forecasting federal US. Bloomberg Government prévisions de contrats. En France aucun outil n'exploité la dimension temporelle des DECP.",
+  "searchVolume": [
+    {
+      "keyword": "renouvellement marché public",
+      "monthlyVolume": "1600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "échéance marché public",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "anticiper marché public",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "reconduction marché public",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "calendrier marchés publics",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "233 Mds EUR commande publique 2024. Sur les 207K marchés, environ 40% sont des renouvellements/reconductions (80K marchés/an). Marché de l'anticipation estimé a 100M EUR/an.",
+    "sam": "80 000 marchés reconductibles x estimation 50 000 entreprises intéressées par l'anticipation. SAM outils prédiction: 50 000 x 40 EUR/mois = 24M EUR/an.",
+    "som": "Objectif an 1: 272 abonnes x 37 EUR ARPU = 121K EUR ARR. Penetration: 0.5% du SAM.",
+    "methodology": "TAM basé sur le barometre commande publique 2024. Estimation 40% de reconductions basee sur les durees moyennes des marchés (3-4 ans). SOM basé sur le mix tarifaire."
+  },
+  "competitorDeep": [
+    {
+      "name": "WanAO",
+      "url": "https://wanao.com",
+      "pricing": "Sur devis. Estimé 100-300 EUR/mois. Solution de gestion + veille.",
+      "trafficEstimate": "20K visites/mois",
+      "reviews": "Propose des alertes automatiques sur les renouvellements et reconductions. Logiciel de gestion des appels d'offres.",
+      "strengths": "Alertes renouvellement integrees, gestion complété du cycle de réponse, veille multi-sources.",
+      "weaknesses": "Solution globale (pas spécialisée prédiction), prix non transparent, interface B2B classique."
+    },
+    {
+      "name": "Vecteur Plus (anticipation projets)",
+      "url": "https://www.vecteurplus.com/trouver-un-marche/",
+      "pricing": "200-500 EUR/mois. Module anticipation inclus dans les plans premium.",
+      "trafficEstimate": "200K visites/mois",
+      "reviews": "Propose l'anticipation des projets publics et prives. 30 ans d'historique.",
+      "strengths": "Anticipation des projets (pas seulement marchés publiés), signaux faibles, accompagnement expert.",
+      "weaknesses": "Prix élève, pas de calendrier prédictif automatise basé sur les échéances DECP."
+    },
+    {
+      "name": "Libel",
+      "url": "https://www.libel.fr",
+      "pricing": "Sur devis. Logiciel de réponse aux appels d'offres.",
+      "trafficEstimate": "15K visites/mois",
+      "reviews": "Logiciel de captation d'appels d'offres avec fonctionnalités d'anticipation.",
+      "strengths": "Anticipation des marchés, gestion de la réponse, SEO bien positionne sur anticipation marchés publics.",
+      "weaknesses": "Pas de calendrier prédictif automatise, solution globale, prix opaque."
+    },
+    {
+      "name": "GovWin (Deltek) - référence US",
+      "url": "https://iq.govwin.com",
+      "pricing": "À partir de 1000 USD/mois. Pipeline forecasting federal US.",
+      "trafficEstimate": "500K visites/mois (US)",
+      "reviews": "Référence mondiale du pipeline forecasting marchés publics. Prédiction des renouvellements fédéraux.",
+      "strengths": "Modèle prédictif avancé, couverture exhaustive marchés fédéraux US, base de données massive.",
+      "weaknesses": "US uniquement, prix tres élève, pas adapte au marché français."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Exploitation des durees de marchés (DECP)",
+      "status": "ok",
+      "detail": "Les durees, dates de debut et conditions de reconduction sont des données publiques dans les DECP. Reutilisation libre.",
+      "source": "Licence Etalab 2.0, DECP"
+    },
+    {
+      "topic": "Prédiction vs information officielle",
+      "status": "attention",
+      "detail": "Les predictions de renouvellement sont des estimations, pas des informations officielles. Nécessaire de communiquer clairement le caractère prédictif et non garanti.",
+      "source": "Code de la consommation (pratiques commerciales trompeuses)"
+    },
+    {
+      "topic": "Identification du titulaire sortant",
+      "status": "ok",
+      "detail": "Le titulaire sortant est une donnée publique (avis d'attribution). Aucune restriction a l'exploitation.",
+      "source": "DECP, BOAMP avis d'attribution"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (renouvellement marché public, anticiper appel offre)",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "4-6%",
+      "ltv": "288 EUR (12 mois x 24 EUR Starter)",
+      "ltvCacRatio": "10-19x"
+    },
+    {
+      "channel": "Email marketing (calendrier gratuit par département)",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "6-10%",
+      "ltv": "708 EUR (12 mois x 59 EUR Business)",
+      "ltvCacRatio": "47-142x"
+    },
+    {
+      "channel": "LinkedIn Ads (responsables commerciaux PME BTP)",
+      "cacEstimate": "80-120 EUR",
+      "conversionRate": "1.5-2.5%",
+      "ltv": "708 EUR",
+      "ltvCacRatio": "6-9x"
+    },
+    {
+      "channel": "Partenariats federations (CAPEB, FFB, FEP)",
+      "cacEstimate": "8-20 EUR",
+      "conversionRate": "7-12%",
+      "ltv": "288 EUR",
+      "ltvCacRatio": "14-36x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 54,
+      "detail": "4.8K recherches/mois cumulees ('renouvellement marché public' 1 600/mois, 'reconduction marché public' 1 300/mois). TAM: 233 Mds EUR. Cibles: PME du BTP répondant, ESN challenger sur les, Sociétés de nettoyage et."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 5 APIs a integrer (DECP, API BOAMP, API Sirene). Stack: Next.js + PostgreSQL."
+    },
+    "market": {
+      "score": 60,
+      "detail": "200 clients a 24 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 121K EUR/an. Pricing 24-149 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: WanAO, Vecteur Plus (anticipation pro, Libel. Leader: WanAO (20K visites/mois). Faiblesse principale: Solution globale (pas spécialisée prédiction)."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "2 points OK, 1 point d'attention. Vigilance: Prédiction vs information officielle."
+    },
+    "overall": {
+      "score": 64,
+      "detail": "Point fort: faisabilité (78/100). Point faible: demande (54/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

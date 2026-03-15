@@ -1,0 +1,315 @@
+{
+  "productSlug": "app-mobile-site-cherchez-un-restaurant-voyez-son-score-hygiene-avant-de-reserver",
+  "oneLiner": "Consultez le score hygiène officiel de n'importe quel restaurant en France avant d'y aller.",
+  "problem": "Les consommateurs francais n'ont aucun moyen simple de vérifier les résultats des contrôles sanitaires des restaurants avant de reserver. Le site Alim'confiance du gouvernement (190K visites/mois) existe mais reste peu connu, mal référence, et son UX est inadaptee au mobile. Les scandales alimentaires font régulièrement la une, creant une anxiete non resolue.",
+  "solution": "Une app mobile et un site web qui géolocalisé les restaurants autour de l'utilisateur et affiche instantanement leur score hygiène officiel (données Alim'confiance), avec un code couleur intuitif (vert/orange/rouge). Recherche par nom, adresse où zone. Historique des contrôles, photos de l'établissement, et possibilite de signaler un problème.",
+  "uniqueValue": "Première app mobile dédiée au score hygiène des restaurants en France, avec une UX pensee pour le consommateur : géolocalisation, code couleur, intégration au parcours de reservation. Le site gouvernemental n'offre rien de comparable en termes d'experience utilisateur.",
+  "mvpScope": "App web responsive (PWA) avec : recherche par localisation/nom, affichage du score hygiène des restaurants dans un rayon de 5km, fiche restaurant avec historique des contrôles, carte interactive. Données Alim'confiance synchronisees quotidiennement.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Ingestion des données et API",
+      "description": "Télécharger et parser le dataset Alim'confiance, créér une base de données géospatiale, exposer une API REST pour la recherche par coordonnées et par nom.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pipeline d'import des données Alim'confiance",
+        "Base PostgreSQL avec PostGIS",
+        "API REST recherche géo + nom",
+        "Job CRON de synchro quotidienne"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Frontend PWA",
+      "description": "Developper l'interface web responsive avec carte interactive, recherche, et fiches restaurants.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Carte interactive Leaflet/MapLibre",
+        "Page de recherche avec autocomplete",
+        "Fiche restaurant avec score et historique",
+        "PWA installable sur mobile"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Lancement et acquisition",
+      "description": "SEO local, soumission aux stores (PWA), campagne de lancement sur les réseaux sociaux et forums foodie.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Landing page SEO optimisee",
+        "Pages ville/quartier pour le SEO local",
+        "Campagne Product Hunt / Twitter / Reddit",
+        "Analytics et tracking des conversions"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les données Alim'confiance sont exploitables et à jour",
+      "how": "Télécharger le dataset, vérifier la couverture géographique, la fréquence de mise à jour, et la qualité des données (adresses géocodables).",
+      "successCriteria": "Plus de 100 000 établissements avec coordonnées GPS valides, mise à jour au moins mensuelle."
+    },
+    {
+      "check": "Les consommateurs veulent vraiment checker l'hygiène avant de reserver",
+      "how": "Sondage rapide sur Twitter/Reddit r/france et groupes Facebook foodie. Landing page avec email capture.",
+      "successCriteria": "200+ réponses au sondage avec 60%+ de oui, où 500 inscriptions email en 2 semaines."
+    },
+    {
+      "check": "Le modèle freemium peut convertir",
+      "how": "Lancer la version gratuite et proposer un upgrade premium (alertes, favoris, historique complet) a 2.99 EUR/mois.",
+      "successCriteria": "Taux de conversion freemium > 3% après 1 mois."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Foodies urbains 25-45 ans, soucieux de la qualité alimentaire",
+      "where": "Groupes Facebook (Foodies Paris, Lyon Gourmand...), subreddits r/france r/paris, comptes Instagram food",
+      "howToReach": "Posts organiques dans les groupes, partenariats avec micro-influenceurs food locaux, SEO sur 'hygiène restaurant [ville]'"
+    },
+    {
+      "who": "Parents de jeunes enfants",
+      "where": "Forums parentalite (Magicmaman, Les Maternelles), groupes Facebook parents",
+      "howToReach": "Articles de blog sur la sécurité alimentaire des enfants au restaurant, partage dans les groupes parents"
+    },
+    {
+      "who": "Touristes en France",
+      "where": "TripAdvisor forums, r/travel, blogs voyage",
+      "howToReach": "Version anglaise de la landing page, SEO sur 'restaurant hygiène score France'"
+    }
+  ],
+  "pricingStrategy": "Freemium : consultation gratuite illimitée avec pubs discretes. Premium a 2.99 EUR/mois où 24.99 EUR/an : sans pub, alertes personnalisées, favoris illimités, historique complet des contrôles, export PDF. Monétisation complémentaire via affiliation avec les plateformes de reservation (TheFork, LaFourchette).",
+  "pathTo10kMrr": "Hypothese : 100K utilisateurs actifs mensuels (realiste vu les 190K visites d'Alim'confiance). Conversion premium 3% = 3 000 abonnes x 2.99 EUR = 8 970 EUR MRR. Compléter avec affiliation reservation (~1 EUR/reservation, 1 500 reservations/mois = 1 500 EUR). Total : ~10 470 EUR MRR. Timeline : 6-9 mois après lancement via SEO local.",
+  "techStack": {
+    "frontend": "Next.js (PWA) + Tailwind CSS + Leaflet/MapLibre",
+    "backend": "Next.js API Routes + Prisma ORM",
+    "database": "PostgreSQL avec PostGIS",
+    "hosting": "Vercel (frontend) + Railway où Supabase (DB)",
+    "apis": [
+      "Alim'confiance data.gouv.fr",
+      "Maptiler/Mapbox tuiles carto",
+      "API Adresse data.gouv.fr géocoding"
+    ],
+    "notes": "Dataset Alim'confiance en open data, pas de clé API requise. Geocoding gratuit via API Adresse. Budget hosting : ~20 EUR/mois au départ."
+  },
+  "risks": [
+    {
+      "risk": "Données Alim'confiance incomplètes où pas à jour",
+      "mitigation": "Compléter avec les données des ARS, afficher clairement la date du dernier contrôle, permettre les signalements utilisateurs."
+    },
+    {
+      "risk": "Problèmes juridiques avec les restaurateurs mal notes",
+      "mitigation": "Ne publiér que les données officielles déjà publiques sur Alim'confiance. Ajouter un disclaimer légal. Consulter un avocat."
+    },
+    {
+      "risk": "Faible adoption face aux habitudes existantes (Google Maps, TheFork)",
+      "mitigation": "Pivoter vers le modèle widget/extension si l'app standalone ne prend pas. Le contenu SEO local restera un actif."
+    }
+  ],
+  "inspirations": "Yuka (score alimentaire, 25M utilisateurs) a prouve que les Francais adoptent massivement les apps de transparence alimentaire. Aux US, NYC et LA publiént les scores hygiène sur les vitrines — l'app digitalise cette experience pour la France.",
+  "searchVolume": [
+    {
+      "keyword": "hygiène restaurant",
+      "monthlyVolume": "5000-10000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "contrôle sanitaire restaurant",
+      "monthlyVolume": "3000-5000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "alim confiance",
+      "monthlyVolume": "8000-15000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "résultat contrôle sanitaire restaurant",
+      "monthlyVolume": "2000-4000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "restaurant ferme hygiène",
+      "monthlyVolume": "3000-5000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "score hygiène restaurant France",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR — 67 millions d'habitants en France x fréquentation restaurants. 179 000 restaurants en France (NAF 56.10, données 2024). Marché de la reservation en ligne + transparence alimentaire (référence Yuka: 25M utilisateurs, valorisation estimée 500M+ EUR)",
+    "sam": "30 millions EUR — population urbaine de 25-55 ans soucieuse de l'hygiène alimentaire (~10M de personnes), convertible à un service freemium. Plus affiliation reservation (TheFork: 80 000 restaurants partenaires en France)",
+    "som": "125 000 EUR — 100K utilisateurs actifs mensuels x 3% conversion premium x 2,99 EUR/mois = 8 970 EUR MRR + affiliation 1 500 EUR/mois. Realiste en 6-9 mois via SEO local. Référence: Alim'confiance officiel fait déjà 190K visites/mois avec une UX mediocre",
+    "methodology": "TAM par analogie avec Yuka (transparence alimentaire) et le marché de la reservation en ligne. 179 000 restaurants en France (source: données NAF juin 2024). 400 000+ résultats de contrôles sanitaires disponibles dans la base Alim'confiance. 67M habitants. SAM restreint à la population urbaine connectee. SOM base sur le trafic existant d'Alim'confiance comme preuve de demande."
+  },
+  "competitorDeep": [
+    {
+      "name": "Alim'confiance (gouvernemental)",
+      "url": "https://alim-confiance.gouv.fr",
+      "pricing": "Gratuit — service public. App disponible sur App Store, Google Play et Windows Store.",
+      "trafficEstimate": "190 000 visites/mois sur le site web (donne dans les specifications produit). App mobile avec peu de téléchargements.",
+      "reviews": "Peu connu du grand public malgre son existence depuis mars 2017. UX critique: résultat d'un contrôle disparait après 1 an. Interface très administrative, non adaptee au mobile.",
+      "strengths": "Source officielle et gratuite. 4 niveaux d'hygiène clairs. Données en open data sur data.gouv.fr. Couverture nationale.",
+      "weaknesses": "UX très mediocre. Pas de recherche par proximite intuitive. Résultats supprimes après 1 an. Pas d'historique. Application mobile quasi abandonee. Aucun marketing. Pas d'alertes."
+    },
+    {
+      "name": "TripAdvisor",
+      "url": "https://www.tripadvisor.fr",
+      "pricing": "Gratuit pour les consommateurs. Monétisation via publicite et leads restaurants.",
+      "trafficEstimate": "~30-50M visites/mois en France. Leader mondial des avis de voyage.",
+      "reviews": "Avis nombreux mais parfois contestés (faux avis). Pas de données d'hygiène officielle.",
+      "strengths": "Audience massive. Avis communautaires abondants. Application mobile très utilisee. Integration reservation.",
+      "weaknesses": "Aucune donnée d'hygiène officielle. Les avis sont subjectifs et parfois manipules. Pas d'intégration Alim'confiance."
+    },
+    {
+      "name": "TheFork (LaFourchette)",
+      "url": "https://www.thefork.fr",
+      "pricing": "Gratuit pour les consommateurs. Modèle commission pour les restaurants (2-5 EUR par couvert reserve).",
+      "trafficEstimate": "~5-10M visites/mois en France. 80 000 restaurants partenaires.",
+      "reviews": "Très apprécié pour la reservation avec réduction. Note 4.5+/5 sur les stores.",
+      "strengths": "Base massive de restaurants partenaires (80K). Reservation intégrée. Reductions attractives. App très bien notee.",
+      "weaknesses": "Aucune donnée d'hygiène. Score base sur les avis clients uniquement, pas les contrôles officiels. Pourrait être un partenaire d'intégration plutot qu'un concurrent."
+    },
+    {
+      "name": "ContrôlesSanitaires.fr",
+      "url": "https://controlessanitaires.fr",
+      "pricing": "Gratuit — site de consultation des résultats de contrôles sanitaires en restauration.",
+      "trafficEstimate": "Faible (<50K visites/mois). Projet de réutilisation des données open data.",
+      "reviews": "Peu connu. Interface basique mais fonctionnelle.",
+      "strengths": "Plus de 400 000 résultats de contrôles accèssibles. Recherche par nom où adresse. Gratuit.",
+      "weaknesses": "Pas d'app mobile. UX basique. Pas de géolocalisation. Pas de modèle economique. Pas d'alertes ni de favoris."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données Alim'confiance",
+      "status": "ok",
+      "detail": "Les données Alim'confiance sont en open data sur data.gouv.fr sous Licence Ouverte. La réutilisation commerciale est autorisée. Les résultats des contrôles sanitaires sont des informations administratives publiques (article L312-1 du CRPA). Pas de restriction majeure identifiée.",
+      "source": "https://www.data.gouv.fr/datasets/resultats-des-controles-officiels-sanitaires-dispositif-dinformation-alimconfiance"
+    },
+    {
+      "topic": "Diffamation / prejudice commercial aux restaurateurs",
+      "status": "attention",
+      "detail": "La republication de données officielles déjà publiques (Alim'confiance) ne constitue pas en soi une diffamation. Toutefois, la mise en avant de mauvais scores pourrait faire l'objet de plaintes de restaurateurs. Protection: ne publiér que les données officielles telles quelles, sans commentaire editorial négatif. Disclaimer precisant la source officielle.",
+      "source": "Loi du 29 juillet 1881 sur la liberté de la presse — Exception de verite"
+    },
+    {
+      "topic": "RGPD - Données des restaurateurs",
+      "status": "ok",
+      "detail": "Les noms commerciaux des restaurants et les résultats de contrôles sanitaires ne sont pas des données personnelles au sens du RGPD. Les personnes physiques ne sont pas identifiées dans les données Alim'confiance (seul l'établissement est mentionne).",
+      "source": "RGPD Art. 4(1) — Définition des données personnelles"
+    },
+    {
+      "topic": "Peremption des données (1 an)",
+      "status": "attention",
+      "detail": "Sur le site officiel Alim'confiance, les résultats sont supprimes après 1 an. La question est de savoir si un réutilisateur peut conserver et afficher des résultats plus anciens. Juridiquement, les données open data telechargees ne sont pas soumises à la même regle de suppression, mais la pertinence d'un contrôle de plus d'un an est discutable. Recommandation: afficher clairement la date du contrôle et signaler les résultats de plus d'un an.",
+      "source": "Arrêté du 28 novembre 2016 relatif à la mise a disposition du public des résultats des controles officiels en matière de sécurité sanitaire des aliments"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO local (hygiène restaurant + ville)",
+      "cacEstimate": "2-5 EUR",
+      "conversionRate": "3-5% (vers premium)",
+      "ltv": "36 EUR (2,99 EUR x 12 mois premium)",
+      "ltvCacRatio": "7:1 a 18:1"
+    },
+    {
+      "channel": "App Store Optimization (ASO)",
+      "cacEstimate": "1-3 EUR",
+      "conversionRate": "2-4% (vers premium)",
+      "ltv": "36 EUR",
+      "ltvCacRatio": "12:1 a 36:1"
+    },
+    {
+      "channel": "Réseaux sociaux (buzz scandales alimentaires)",
+      "cacEstimate": "0.5-2 EUR",
+      "conversionRate": "1-2% (vers premium)",
+      "ltv": "36 EUR",
+      "ltvCacRatio": "18:1 a 72:1"
+    },
+    {
+      "channel": "Partenariats micro-influenceurs food",
+      "cacEstimate": "3-8 EUR",
+      "conversionRate": "2-3%",
+      "ltv": "36 EUR",
+      "ltvCacRatio": "4.5:1 a 12:1"
+    },
+    {
+      "channel": "Affiliation TheFork / plateformes reservation",
+      "cacEstimate": "0 EUR (revenu complémentaire)",
+      "conversionRate": "1-2% des utilisateurs reservent via le lien",
+      "ltv": "1 EUR/reservation x 12 reservations/an = 12 EUR incrementaux",
+      "ltvCacRatio": "N/A (source de revenu additionnelle)"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 69,
+      "detail": "21.5K recherches/mois cumulees ('alim confiance' 8 000/mois, 'hygiène restaurant' 5 000/mois). TAM: 500 millions EUR. Cibles: Foodies urbains 25-45 ans,, Parents de jeunes enfants, Touristes en France."
+    },
+    "feasibility": {
+      "score": 63,
+      "detail": "MVP en 6 semaines. 3 APIs a integrer (Alim'confiance, Maptiler/Mapbox tuiles carto, API Adresse  géocoding). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 45,
+      "detail": "000 clients a 99 EUR pour demarrer. Objectif 10K MRR en 6-9 mois. SOM: 125 000 EUR/an. Pricing 99-99 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Alim'confiance (gouvernemental, TripAdvisor, TheFork (LaFourchette). Leader: Alim'confiance (190 000 visites/mois sur le site web (donne dans les specifications produit). App mobile avec peu de téléchargements.). Faiblesse principale: UX très mediocre."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Diffamation / prejudice commercial aux restaurateu, Peremption des données (1 an)."
+    },
+    "overall": {
+      "score": 58,
+      "detail": "Point fort: demande (69/100). Point faible: competition (45/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

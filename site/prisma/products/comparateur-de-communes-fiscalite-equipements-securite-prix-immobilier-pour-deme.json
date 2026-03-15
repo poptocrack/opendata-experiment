@@ -1,0 +1,306 @@
+{
+  "productSlug": "comparateur-de-communes-fiscalite-equipements-securite-prix-immobilier-pour-deme",
+  "oneLiner": "Comparez les communes de France côte à côte : fiscalite, équipements, sécurité, prix immobilier — pour demenager en connaissance de cause.",
+  "problem": "2.5 millions de Francais demenagent chaque année, mais choisissent leur commune sur des critères emotionnels où des recherches Google fragmentees. Les données existent (impots locaux, BPE, revenus INSEE, DVF, statistiques sécurité) mais sont éclatées sur 10 sites différents et inexploitables pour un particulier. La taxe foncière peut varier du simple au triple entre deux communes voisines (800 EUR a Toulouse vs 2 200 EUR a Blagnac). L'achetéur découvre sa taxe foncière APRES l'achat.",
+  "solution": "Un comparateur qui agregue toutes les données publiques par commune et permet de comparer 2 a 5 communes côte à côte sur : fiscalite locale (taxe foncière, taxe d'habitation residences secondaires, estimation personnalisée), équipements publics (écoles, médecins, commerces, crèches via BPE), sécurité (crimes/delits), prix immobilier (DVF), revenus medians, transports, budget de la commune par habitant. Un score de rapport qualité-fiscalite unique.",
+  "uniqueValue": "Comparaison côte à côte de toutes les données en un seul ecran avec un ratio qualité/cout unique. Les concurrents (Ville-ideale, DataFrance) montrent une commune à la fois et se basent sur des avis subjectifs. Ici on compare comme un outil de choix avec des données factuelles.",
+  "mvpScope": "Comparateur de 2 communes côte à côte : 6 categories (fiscalite avec estimation taxe foncière, équipements BPE par habitant, sécurité, prix immo DVF median, revenus, démographie/budget commune). Score synthetique par categorie. 36 000 communes couvertes. Interface simple desktop + mobile.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Validation virale des comparaisons fiscales",
+      "description": "Publier 5 comparaisons choc (Toulouse vs Blagnac, Marseille vs Aix, Lyon vs Villeurbanne) sur Reddit, Twitter, et forums immobilier. Mesurer les partages et l'engagement. Landing page de collecte.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "5 comparaisons publiées",
+        "1000+ vues",
+        "Landing page",
+        "200+ inscrits"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Comparateur fonctionnel toutes communes",
+      "description": "Ingestion taux impots locaux + BPE INSEE + DVF + comptes des communes. Interface de comparaison cote-a-côté avec graphique radar. Estimation taxe foncière. Score rapport qualité/cout.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline 5 sources data",
+        "Interface comparateur côte à côte",
+        "Estimation taxe foncière",
+        "Score qualité/cout",
+        "36K pages communes pour SEO"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "SEO et 100 premiers abonnes",
+      "description": "36K pages de communes indexées (taxe foncière + ville). Campagne d'articles Top 10 des communes où la taxe foncière est la plus basse. Partenariats blogs immobilier.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "36K pages indexées",
+        "15K visiteurs/mois",
+        "100 abonnes premium",
+        "5 partenariats blogs"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "La fiscalite est un critère de choix de commune",
+      "how": "Sondage auprès de 200 personnes ayant demenage récemment : la taxe foncière a-t-elle influence votre choix de commune ?",
+      "successCriteria": "30%+ disent oui, et 60%+ disent qu'ils auraient aime connaitre la taxe foncière avant l'achat"
+    },
+    {
+      "check": "Les comparaisons générént de la viralité",
+      "how": "Poster les comparaisons choc sur Reddit r/france et Twitter. Mesurer partages et commentaires.",
+      "successCriteria": "200+ upvotes et 50+ commentaires sur au moins 2 des 5 comparaisons"
+    },
+    {
+      "check": "L'estimation de taxe foncière est fiable",
+      "how": "Comparer l'estimation avec la taxe reelle payee par 20 propriétaires volontaires",
+      "successCriteria": "Ecart inferieur a 20% pour 15/20 cas"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Acheteurs immobiliers hesitant entre plusieurs communes",
+      "where": "Forums PAP.fr, groupes Facebook immobilier régional, Reddit r/france et r/vosfinances",
+      "howToReach": "Contenu viral : 'Vous allez achetér a [ville] ? Voici combien vous paierez en taxe foncière vs les villes voisines.'"
+    },
+    {
+      "who": "Teletravailleurs cherchant a quitter Paris pour la province",
+      "where": "Groupes Facebook 'quitter Paris', Reddit r/provinciaux, communautés remote work",
+      "howToReach": "Articles 'Quitter Paris : les 20 communes avec la meilleure qualité de vie et la fiscalite la plus douce'"
+    },
+    {
+      "who": "Agents immobiliers en zone periurbaine et rurale",
+      "where": "Réseaux IAD, Safti, CapiFrance, FNAIM",
+      "howToReach": "Widget gratuit montrant la fiscalite avantageuse de leur secteur. Argument de vente pour attirer les Parisiens."
+    }
+  ],
+  "pricingStrategy": "Freemium + B2B. Gratuit : 2 comparaisons/mois, données de base. Plan Particulier : 5.90 EUR/mois (comparaisons illimitées, estimation taxe foncière personnalisée, alertes). Plan Agent Immo : 24.90 EUR/mois (widget integrable, rapports clients). Plan Portail : 249 EUR/mois (API, marque blanche). Affiliation courtier immobilier : commission sur leads.",
+  "pathTo10kMrr": "700 particuliers x 5.90 EUR = 4 130 EUR + 100 agents immobiliers x 24.90 EUR = 2 490 EUR + 5 portails x 249 EUR = 1 245 EUR + affiliation 2 500 EUR/mois = 10 365 EUR MRR. Le trafic SEO est le moteur : 36K pages de communes, chacune ciblant 'taxe foncière + [commune]'. Atteignable en 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js (ISR pour 36K pages SEO) + Tailwind CSS + Recharts (radars comparatifs)",
+    "backend": "Next.js API Routes",
+    "database": "PostgreSQL (Supabase)",
+    "hosting": "Vercel + Supabase",
+    "apis": [
+      "Impots locaux par commune (data.gouv.fr DGFiP)",
+      "BPE INSEE (équipements, data.gouv.fr)",
+      "DVF Etalab (prix immobilier)",
+      "Comptes des communes (data.gouv.fr)",
+      "Revenus INSEE",
+      "API BAN (géocodage)"
+    ],
+    "notes": "36K pages générées en ISR pour le SEO. Les données fiscales sont mises à jour annuellement (octobre). Le comparateur est une juxtaposition de fiches precalculees, léger côté serveur."
+  },
+  "risks": [
+    {
+      "risk": "L'estimation de taxe foncière est imprécise car elle depend de la valeur locative cadastrale",
+      "mitigation": "Utiliser des fourchettes plutot que des chiffres precis. Expliquer la méthode. Permettre a l'utilisateur d'entrer sa propre valeur locative s'il la connait."
+    },
+    {
+      "risk": "La réforme des valeurs locatives (2026-2028) pourrait changer radicalement les taxes foncières",
+      "mitigation": "C'est une opportunité : tout le monde voudra comparer les nouvelles taxes. Integrer les simulations de la réforme dès qu'elles sont disponibles."
+    },
+    {
+      "risk": "Le trafic SEO met du temps a decoller (6-12 mois)",
+      "mitigation": "Compléter avec du contenu viral (classements, comparaisons choc) et du Google Ads sur les requetes a forte intention."
+    }
+  ],
+  "inspirations": "Niche.com (US, compare villes/écoles, valorise 1Md$), Numbeo (cout de la vie mondial), Ville-ideale (FR, avis subjectifs mais pas de données objectives), MeilleursAgents (prix immo par commune). En UK : SmartAsset compare la fiscalite locale par comte. Le modèle freemium + B2B est inspire de Glassdoor.",
+  "searchVolume": [
+    {
+      "keyword": "comparateur ville",
+      "monthlyVolume": "8 100",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ou demenager en France",
+      "monthlyVolume": "12 000",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "taxe foncière par commune",
+      "monthlyVolume": "22 000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "meilleure ville pour vivre",
+      "monthlyVolume": "18 000",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "classement ville qualité de vie",
+      "monthlyVolume": "9 900",
+      "difficulty": "élevée",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 M EUR (marché de l'aide à la décision immobilière particuliers en France : 2,5M demenagements/an, leads courtiers, services)",
+    "sam": "50 M EUR (monétisation par abonnements, leads agents immobiliers et courtiers, affiliation sur le segment comparaison de communes)",
+    "som": "1,2 M EUR (18 mois, via SEO sur 36K pages communes + conversion freemium + affiliation)",
+    "methodology": "TAM base sur le marché immobilier residentiel (leads, services, courtage). SAM restreint au segment décision de localisation. SOM base sur 100K visiteurs/mois, conversion 2%, ARPU 6 EUR/mois + affiliation."
+  },
+  "competitorDeep": [
+    {
+      "name": "Ville-ideale",
+      "url": "https://www.ville-ideale.fr",
+      "pricing": "Gratuit (finance par la publicite)",
+      "trafficEstimate": "500K visites/mois",
+      "reviews": "91K avis sur 8 500 villes",
+      "strengths": "Base d'avis utilisateurs importante. Bonne notoriété auprès des Francais. SEO bien positionné sur classement ville.",
+      "weaknesses": "Avis subjectifs sans données objectives. Pas de comparaison côte à côte. Pas de données fiscales ni d'équipements. UX datee."
+    },
+    {
+      "name": "City Score",
+      "url": "https://www.cityscore.fr",
+      "pricing": "Gratuit (lancé en 2025)",
+      "trafficEstimate": "20-50K visites/mois (en croissance)",
+      "reviews": "Nouveau, peu de reviews",
+      "strengths": "Approche data-driven avec 9 critères objectifs et 12 sources officielles. Score sur 10 pour 34 920 communes. Modern UX.",
+      "weaknesses": "Nouveau et peu connu. Pas de comparaison fiscale détaillée. Pas de personnalisation (même score pour tous les profils)."
+    },
+    {
+      "name": "Bien-dans-ma-ville",
+      "url": "https://www.bien-dans-ma-ville.fr",
+      "pricing": "Gratuit (publicite)",
+      "trafficEstimate": "200K visites/mois",
+      "reviews": "Avis residents + statistiques officielles",
+      "strengths": "Combine avis residents et données officielles. 35K communes et 2K quartiers couverts. Bonne couverture SEO.",
+      "weaknesses": "Pas de comparaison côte à côte. Pas de simulation fiscale personnalisée. Interface chargee."
+    },
+    {
+      "name": "Chacun Son Lieu",
+      "url": "https://www.chacunsonlieu.fr",
+      "pricing": "Freemium",
+      "trafficEstimate": "10-30K visites/mois",
+      "reviews": "Avis positifs sur le concept",
+      "strengths": "Matching personnalisé avec 100+ critères. Approche innovante et differenciante.",
+      "weaknesses": "Peu connu. Base utilisateurs limitee. Pas de données fiscales détaillées."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données fiscales communales",
+      "status": "ok",
+      "detail": "Les taux d'imposition locaux (taxe foncière, taxe d'habitation) sont publiés annuellement par la DGFiP en open data.",
+      "source": "data.gouv.fr - DGFiP"
+    },
+    {
+      "topic": "Données immobilières DVF",
+      "status": "ok",
+      "detail": "Les données de valeurs foncières (DVF) sont en open data depuis 2019. Réutilisation commerciale autorisée.",
+      "source": "data.gouv.fr - DVF Etalab"
+    },
+    {
+      "topic": "Données BPE INSEE",
+      "status": "ok",
+      "detail": "La Base Permanente des Équipements (BPE) est en open data. Couvre écoles, médecins, commerces, transports.",
+      "source": "INSEE / data.gouv.fr"
+    },
+    {
+      "topic": "Reforme valeurs locatives 2026-2028",
+      "status": "attention",
+      "detail": "La réforme des valeurs locatives cadastrales prevue 2026-2028 va modifier les bases de calcul de la taxe foncière. Opportunité de contenu mais nécessite des mises à jour.",
+      "source": "Ministere des Finances"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO longue traine (36K pages communes)",
+      "cacEstimate": "0,50-2 EUR",
+      "conversionRate": "2-3% du trafic organique",
+      "ltv": "42 EUR (5,90 EUR/mois x 7 mois rétention)",
+      "ltvCacRatio": "21-84x"
+    },
+    {
+      "channel": "Contenu viral Reddit/Twitter (comparaisons choc)",
+      "cacEstimate": "0,30-1 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "42 EUR",
+      "ltvCacRatio": "42-140x"
+    },
+    {
+      "channel": "Affiliation agents immobiliers",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "300 EUR (24,90 EUR/mois x 12 mois)",
+      "ltvCacRatio": "3-6x"
+    },
+    {
+      "channel": "Google Ads sur requetes a forte intention",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "42 EUR",
+      "ltvCacRatio": "2,8-8,4x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 82,
+      "detail": "69 recherches/mois cumulees ('taxe foncière par commune' 22/mois, 'meilleure ville pour vivre' 18/mois). TAM: 500 M EUR. Cibles: Acheteurs immobiliers hesitant entre, Teletravailleurs cherchant a quitter, Agents immobiliers en zone."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 6 APIs a integrer (Impots locaux par commune, BPE INSEE, DVF Etalab). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 50,
+      "detail": "Objectif 10K MRR en 8-10 mois. SOM: 1,2 M EUR/an. Pricing 90-249 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Ville-ideale, City Score, Bien-dans-ma-ville. Leader: Ville-ideale (500K visites/mois). Faiblesse principale: Avis subjectifs sans données objectives."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Reforme valeurs locatives 2026-2028."
+    },
+    "overall": {
+      "score": 67,
+      "detail": "Point fort: demande (82/100). Point faible: competition (45/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

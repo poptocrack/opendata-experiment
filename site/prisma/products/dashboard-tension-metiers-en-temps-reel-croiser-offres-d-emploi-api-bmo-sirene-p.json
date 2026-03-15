@@ -1,0 +1,344 @@
+{
+  "productSlug": "dashboard-tension-metiers-en-temps-reel-croiser-offres-d-emploi-api-bmo-sirene-p",
+  "oneLiner": "Dashboard tension métiers en temps reel croisant offres d'emploi API, BMO, SIRENE pour mesurer la tension de n'importe quel métier par zone.",
+  "problem": "Les indicateurs de tension du marché de l'emploi existent mais sont eclates entre 5 sources, publiés avec 6-18 mois de retard, dans des rapports PDF de 200 pages. Un DRH voulant savoir si son métier est en tension dans sa zone doit croiser manuellement France Travail, DARES, BMO, URSSAF et INSEE. Personne n'a de vision en temps reel.",
+  "solution": "Un dashboard fusionnant en temps reel 5 sources : offres actives (API France Travail), difficultés de recrutement (BMO), effectifs par secteur (URSSAF), demandeurs par métier (STMT), créations/radiations (SIRENE). Un indicateur de tension unique par métier x zone, avec decomposition et historique.",
+  "uniqueValue": "Le seul outil croisant 5 sources publiques en un indicateur de tension unique, MAJ quotidienne, granularite au bassin d'emploi. L'indicateur DARES officiel a 12-18 mois de retard.",
+  "mvpScope": "Selection métier ROME + zone géographique. Dashboard : indicateur de tension (0-10), offres actives, demandeurs, ratio, difficulté BMO, évolution effectifs. Graphique historique 24 mois. Comparaison nationale.",
+  "timeToMvp": "7 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline multi-sources et unification",
+      "description": "Connexion aux 5 sources. Normalisation sur grille commune (ROME x zone d'emploi x periode). Stockage unifie avec MAJ automatique.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Ingestion API Offres France Travail (quotidien)",
+        "Import BMO annuel par bassin x métier",
+        "Import STMT (demandeurs, trimestriel)",
+        "Import effectifs URSSAF (trimestriel)",
+        "Import flux SIRENE (créations/radiations mensuel)",
+        "Schema unifie : table tension par métier x zone x mois"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Indicateur composite et calibration",
+      "description": "Algorithme combinant les 5 sources en indicateur 0-10. Calibration historique. Decomposition par source.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Algorithme tension composite v1",
+        "Calibration 2022-2025",
+        "Decomposition du score par source",
+        "Documentation méthodologie"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Dashboard interactif",
+      "description": "Selecteur métier + zone. Dashboard avec jauge, historique, comparaisons. Export CSV et PDF.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Selecteur ROME + zone avec autocompletion",
+        "Jauge tension avec code couleur",
+        "Graphique historique 24 mois multi-source",
+        "Comparaison zone vs national",
+        "Export CSV et PDF"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Alertes et monétisation",
+      "description": "Surveillancé de métiers/zones avec alertes. Rapport hebdomadaire automatique. Plans payants.",
+      "duration": "0.5 semaine",
+      "deliverables": [
+        "Alertes email sur changements significatifs",
+        "Rapport hebdomadaire automatique",
+        "Plans Stripe actifs"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "L'indicateur composite anticipe les tendances DARES",
+      "how": "Comparer avec l'indice de tension DARES officiel sur 20 métiers. Verifier l'anticipation de 3-6 mois.",
+      "successCriteria": "Correlation > 0.8 avec la tension DARES et détection des changements de tendance 3+ mois en avance"
+    },
+    {
+      "check": "Les DRH et recruteurs veulent un outil de monitoring tension",
+      "how": "Demo a 20 DRH/responsables recrutement avec leur(s) métier(s) cle(s)",
+      "successCriteria": "15/20 trouvent l'outil plus utile que leurs sources actuelles, 8 prêts a payer 50+ EUR/mois"
+    },
+    {
+      "check": "Les données sont mises à jour assez frequemment",
+      "how": "Auditer la fréquence de MAJ de chaque source. Verifier que les offres (quotidiennes) compensent le retard des autres.",
+      "successCriteria": "Indicateur MAJ quotidiennement grâce aux offres même si les autres composantes sont trimestrielles"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "DRH et planification RH d'ETI industrielles (métiers techniques en tension)",
+      "where": "ANDRH, salons Industrie du Futur, LinkedIn groupes RH industrie",
+      "howToReach": "Rapport gratuit de tension pour les 5 métiers les plus recrutes de leur entreprise."
+    },
+    {
+      "who": "Cabinets de recrutement spécialisés (justifier leurs honoraires avec des données)",
+      "where": "Syntec Conseil, LinkedIn recruteurs spécialisés",
+      "howToReach": "Dashboard de tension en marque blanche dans leurs propositions commerciales. La tension justifie le prix de la mission."
+    },
+    {
+      "who": "Observatoires régionaux de l'emploi et OPCO",
+      "where": "CARIF-OREF régionaux, OPCO (11 en France), Cereq",
+      "howToReach": "Accès territoire gratuit 6 mois. Ils produisent des rapports trimestriels et ont besoin d'outils de visualisation."
+    }
+  ],
+  "pricingStrategy": "Gratuit : 1 métier x 1 zone, sans historique. Pro a 49 EUR/mois (10 métiers, toutes zones, historique, alertes). Business a 149 EUR/mois (illimité, API 5000 appels/mois, export, multi-utilisateurs). Observatoire a 349 EUR/mois (API illimitée, données brutes, marque blanche).",
+  "pathTo10kMrr": "100 Pro x 49 EUR = 4 900 EUR + 25 Business x 149 EUR = 3 725 EUR + 5 Observatoire x 349 EUR = 1 745 EUR = 10 370 EUR MRR. Entonnoir gratuit + newsletter hebdo 'métiers les plus en tension'. SEO 'tension recrutement [métier]'. Partenariats OPCO et CARIF-OREF. Timeline : 8-12 mois.",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS + Recharts (graphiques temporels) + MapLibre (carte optionnelle)",
+    "backend": "Next.js API routes + cron jobs quotidiens pour MAJ indicateurs",
+    "database": "PostgreSQL (Supabase) - table pivot : métier_rome x zone_emploi x mois x source -> valeur",
+    "hosting": "Vercel + Supabase",
+    "apis": [
+      "API Offres d'emploi France Travail (temps reel)",
+      "API Marché du travail France Travail (STMT, BMO)",
+      "ROME 4.0 API France Travail",
+      "Effectifs URSSAF (data.gouv.fr)",
+      "Flux SIRENE (data.gouv.fr)",
+      "BMO dataset (data.gouv.fr)"
+    ],
+    "notes": "L'API Marché du travail fournit STMT et BMO. Les offres sont la source la plus fraiche (temps reel) = indicateur avancé. Schema en etoile (fait: tension, dimensions: métier, zone, temps)."
+  },
+  "risks": [
+    {
+      "risk": "Complexite de maintenance de 5 pipelines avec fréquences différentes",
+      "mitigation": "MVP avec 2 sources (offres + BMO) seulement. Ajout incremental. Monitoring avec alertes si pipeline echoue."
+    },
+    {
+      "risk": "Le STMT n'est pas accèssible facilement en open data a granularite fine",
+      "mitigation": "API Marché du travail France Travail pour les agregats. BMO comme proxy en complement."
+    },
+    {
+      "risk": "Concurrence DARES qui publié un indicateur officiel",
+      "mitigation": "L'indicateur DARES a 12-18 mois de retard, niveau national/régional. Se différencier par granularite (zone d'emploi) et fraîcheur (quotidien)."
+    }
+  ],
+  "inspirations": "DARES indicateur de tension (référence mais retard). BMO France Travail (annuel, riche mais pas temps reel). Lightcast/EMSI (analytics emploi US, $50K+/an). Indeed Hiring Lab (tendances macro pas self-service).",
+  "searchVolume": [
+    {
+      "keyword": "métiers en tension france",
+      "monthlyVolume": "6600",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "tension recrutement",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "dashboard RH",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "indicateur tension emploi",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "BMO france travail",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "difficulté recrutement par métier",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "liste métiers en tension 2026",
+      "monthlyVolume": "5400",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "statistiques marché du travail",
+      "monthlyVolume": "1600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR - marché des outils analytics RH et labour market intelligence en France. Lightcast pese 100M+ USD a l'international. 2.4 millions de projets d'embauche en 2025 en France. BMO 2025 publié par France Travail.",
+    "sam": "80 millions EUR - DRH d'ETI industrielles, cabinets de recrutement spécialisés, observatoires régionaux (11 OPCO + CARIF-OREF dans chaque région). Environ 5 000 organisations ciblés avec budget analytics.",
+    "som": "1.2 million EUR - 10 370 EUR MRR (130 clients payants) en 8-12 mois. Newsletter hebdo gratuite sur les tensions + entonnoir conversion payante.",
+    "methodology": "TAM base sur les depenses analytics RH en France (benchmarks Lightcast/EMSI). SAM restreint aux organisations francophones utilisatrices de données emploi. SOM base sur 100 Pro + 25 Business + 5 Observatoire."
+  },
+  "competitorDeep": [
+    {
+      "name": "Lightcast (ex EMSI Burning Glass)",
+      "url": "https://lightcast.io/euro",
+      "pricing": "30 000-80 000+ EUR/an (enterprise uniquement)",
+      "trafficEstimate": "500K visites/mois (global)",
+      "reviews": "Leader mondial analytics emploi. Fusion EMSI + Burning Glass 2021. Actif dans 30+ pays. Données de 65 000 sources, 1 milliard+ offres.",
+      "strengths": "Base massive mondiale, European Workforce Analytics, API robuste, analytics avancees, référence Fortune 500",
+      "weaknesses": "Prix prohibitif (50K+/an), pas de focus France spécifique, pas de données BMO/URSSAF, UX complexe, vend uniquement aux grands comptes"
+    },
+    {
+      "name": "DARES Indicateur de tension",
+      "url": "https://dares.travail-emploi.gouv.fr",
+      "pricing": "Gratuit (publications PDF)",
+      "trafficEstimate": "200K visites/mois",
+      "reviews": "Indicateur officiel de tension du marché du travail en France. Référence pour les politiques publiques.",
+      "strengths": "Indicateur de référence, méthodologie rigoureuse, couverture tous métiers, credibilite institutionnelle",
+      "weaknesses": "12-18 mois de retard, granularite limitee (national/régional), publications PDF non interactives, pas d'API, pas d'outil self-service"
+    },
+    {
+      "name": "Data Emploi (France Travail)",
+      "url": "https://dataemploi.francetravail.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "Portail de données emploi par territoire lancé par France Travail. Cartes et indicateurs.",
+      "strengths": "Gratuit, données officielles, couverture nationale, indicateurs par bassin d'emploi",
+      "weaknesses": "Pas d'indicateur composite de tension, interface basique, pas d'alertes, données en retard, pas d'export API facile"
+    },
+    {
+      "name": "Indeed Hiring Lab",
+      "url": "https://www.hiringlab.org",
+      "pricing": "Gratuit (rapports et études)",
+      "trafficEstimate": "300K visites/mois (global)",
+      "reviews": "Recherche et analyses sur le marché du travail par Indeed. Tendances macro par pays et secteur.",
+      "strengths": "Données Indeed massives, analyses gratuites, couverture internationale, rapports de qualité",
+      "weaknesses": "Macro uniquement (pas de granularite zone d'emploi), pas d'outil self-service, pas de données France Travail/BMO, pas d'alerte ni API"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "API Offres France Travail",
+      "status": "ok",
+      "detail": "Inscription gratuite requise. Accès aux offres actives avec localisation et code ROME. Utilisation commerciale non explicitement interdite pour les données aggregees.",
+      "source": "API Emploi Store, CGU France Travail"
+    },
+    {
+      "topic": "Données BMO et STMT",
+      "status": "ok",
+      "detail": "Datasets en open data sur data.gouv.fr. BMO (enquête annuelle) et STMT (trimestriel) reutilisables librement.",
+      "source": "data.gouv.fr, licence ouverte Etalab"
+    },
+    {
+      "topic": "Publication d'un indicateur concurrent de la DARES",
+      "status": "ok",
+      "detail": "Aucune exclusivite de la DARES sur les indicateurs de tension. Plusieurs acteurs privés publiént des indicateurs alternatifs. Necessaire de documenter la méthodologie.",
+      "source": "Pas de contrainte legale, transparence methodologique recommandee"
+    },
+    {
+      "topic": "Effectifs URSSAF et flux SIRENE",
+      "status": "ok",
+      "detail": "Effectifs par zone et secteur, créations/radiations SIRENE : tout en open data, réutilisation commerciale autorisée.",
+      "source": "data.gouv.fr, URSSAF open data, SIRENE"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (métiers en tension, tension recrutement par métier)",
+      "cacEstimate": "55 EUR",
+      "conversionRate": "5%",
+      "ltv": "590 EUR (Pro 49 EUR x 12 mois)",
+      "ltvCacRatio": "10.7"
+    },
+    {
+      "channel": "Newsletter hebdo gratuite (conversion freemium)",
+      "cacEstimate": "20 EUR",
+      "conversionRate": "8%",
+      "ltv": "590 EUR",
+      "ltvCacRatio": "29.5"
+    },
+    {
+      "channel": "Partenariats OPCO et CARIF-OREF",
+      "cacEstimate": "200 EUR",
+      "conversionRate": "10%",
+      "ltv": "6300 EUR (Observatoire 349 EUR x 18 mois)",
+      "ltvCacRatio": "31.5"
+    },
+    {
+      "channel": "LinkedIn organique (publications indicateurs tensions)",
+      "cacEstimate": "15 EUR",
+      "conversionRate": "2%",
+      "ltv": "590 EUR",
+      "ltvCacRatio": "39.3"
+    },
+    {
+      "channel": "Outreach cabinets recrutement (marque blanche)",
+      "cacEstimate": "150 EUR",
+      "conversionRate": "7%",
+      "ltv": "2700 EUR (Business 149 EUR x 18 mois)",
+      "ltvCacRatio": "18.0"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 69,
+      "detail": "20.3K recherches/mois cumulees ('métiers en tension france' 6 600/mois, 'liste métiers en tension 2026' 5 400/mois). TAM: 500 millions EUR. Cibles: DRH et planification RH, Cabinets de recrutement spécialisés, Observatoires régionaux de l'emploi."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 7 semaines. 6 APIs a integrer (API Offres d'emploi France Tra, API Marché du travail France T, ROME 4.0 API France Travail). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "25 clients a 49 EUR pour demarrer. Objectif 10K MRR en 8-12 mois. Pricing 49-349 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Lightcast (ex EMSI Burning Gla, DARES Indicateur de tension, Data Emploi (France Travail). Leader: Lightcast (500K visites/mois (global)). Faiblesse principale: Prix prohibitif (50K+/an)."
+    },
+    "legal": {
+      "score": 92,
+      "detail": "4 points verifies, tous OK."
+    },
+    "overall": {
+      "score": 58,
+      "detail": "Point fort: legal (92/100). Point faible: competition (45/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

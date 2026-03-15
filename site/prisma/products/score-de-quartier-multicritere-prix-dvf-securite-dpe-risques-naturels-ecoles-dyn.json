@@ -1,0 +1,355 @@
+{
+  "productSlug": "score-de-quartier-multicritere-prix-dvf-securite-dpe-risques-naturels-ecoles-dyn",
+  "oneLiner": "Un score sur 100 pour chaque quartier de France, combinant prix immobiliers, sécurité, performance énergétique, risques naturels, écoles et dynamisme local.",
+  "problem": "Un acheteur immobilier doit consulter 6 a 10 sources differentes (DVF, base des crimes, Georisques, annuaire des écoles, DPE ADEME, permis de construire) pour évaluer un quartier. Cela prend des heures, les données sont brutes et difficiles a comparer. Les agents immobiliers n'ont pas le temps de le faire non plus, et les portails existants (MeilleursAgents, SeLoger) ne croisent pas toutes ces sources.",
+  "solution": "Une application web qui généré un score composite de 0 a 100 pour n'importe quelle adresse en France, en croisant automatiquement les données DVF (prix au m2, tendance), les statistiques de sécurité, les diagnostics DPE du parc immobilier, les risques naturels (Georisques), la proximité des écoles et le dynamisme du quartier (taux de vacance, permis de construire récents). Le score est decompose en sous-scores visuels avec explications.",
+  "uniqueValue": "Aucun service ne combine ces 6+ sources open data en un score unique et actionnable. MeilleursAgents donne les prix, Georisques les risques, mais personne ne les fusionne. Le score multicritère permet de comparer instantanement deux quartiers sur TOUS les critères qui comptent.",
+  "mvpScope": "Page de recherche par adresse + affichage du score global et des 6 sous-scores sur une carte. Données precalculees pour les 50 plus grandes villes de France (couvre 40% de la population). Pas de compte utilisateur au MVP.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider la demande et le willingness-to-pay",
+      "description": "Landing page avec explication du concept + formulaire d'inscription early access. Poster sur les forums immobilier (Devenir Rentier, ImmobilierDanger, Reddit r/vosfinances). Objectif: 200 inscrits en 2 semaines. Mener 10 interviews avec des investisseurs immobiliers.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Landing page deployee",
+        "200+ inscrits early access",
+        "10 interviews investisseurs",
+        "Validation du prix acceptable (sondage)"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Score fonctionnel sur les 50 plus grandes villes",
+      "description": "Pipeline d'ingestion des données DVF, DPE, Georisques, écoles, sécurité. Calcul du score composite. Interface web avec recherche par adresse et affichage carte + sous-scores. 3 recherches gratuites puis paywall.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Pipeline data opérationnel",
+        "API de scoring",
+        "Interface web responsive",
+        "Intégration Stripe pour paiement"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Acquisition des 50 premiers clients payants",
+      "description": "Campagne de lancement auprès des inscrits early access. Publication de contenus SEO (comparatifs de quartiers). Partenariats avec 2-3 blogs immobilier. Offre de lancement a prix réduit.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "50 clients payants",
+        "10 articles SEO publiés",
+        "2 partenariats blogueurs",
+        "Metriques de retention"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Extension nationale et API B2B",
+      "description": "Etendre les données a toute la France. Lancer une API B2B pour les agents immobiliers et portails. Ajouter des alertes email (nouveau score quand les données changent). Programme d'affiliation avec les courtiers.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Couverture nationale",
+        "API B2B documentee",
+        "Alertes email",
+        "10 clients B2B",
+        "Programme affiliation"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Optimisation SEO agressive (pages par ville/quartier). Ads Google sur les requetes d'achat immobilier. White-label pour les réseaux d'agences. Ajout de fonctionnalités premium (comparateur, export PDF, historique).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "1000+ pages SEO indexees",
+        "5 contrats white-label",
+        "Fonctionnalites premium"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les investisseurs immobiliers cherchent-ils activement a comparer des quartiers multicriteres?",
+      "how": "Poster un sondage sur Devenir-Rentier.fr et Reddit r/vosfinances. Analyser les volumes de recherche Google (quartier investissement, score quartier, comparer quartier).",
+      "successCriteria": "70%+ des repondants disent utiliser 3+ sources differentes pour évaluer un quartier, et 50%+ seraient prêts a payer pour un outil qui le fait automatiquement."
+    },
+    {
+      "check": "Les données open data sont-elles suffisamment fraiches et granulaires?",
+      "how": "Télécharger DVF, DPE ADEME, données Georisques et vérifier la couverture géographique et la fraicheur pour 10 villes test.",
+      "successCriteria": "DVF a moins de 6 mois de retard, DPE couvre 80%+ des immeubles dans les grandes villes, Georisques répond en moins de 2s par adresse."
+    },
+    {
+      "check": "Le willingness-to-pay est réel?",
+      "how": "Proposer un pre-achat a 9 euros/mois sur la landing page avec remboursement garanti. Compter les conversions.",
+      "successCriteria": "Taux de conversion de la page > 3% (sur le trafic qualifie des forums immobilier)."
+    },
+    {
+      "check": "Le score composite est-il percu comme fiable et utile?",
+      "how": "Générer 5 exemples de scores pour des quartiers connus (bon et mauvais) et les soumettre a 10 investisseurs pour feedback.",
+      "successCriteria": "8/10 investisseurs trouvent le score coherent avec leur perception du terrain."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Investisseurs immobiliers locatifs actifs (1 a 5 biens)",
+      "where": "Forum Devenir-Rentier.fr (15K+ membres actifs), groupes Facebook Investissement Immobilier Locatif (50K+ membres), Reddit r/vosfinances",
+      "howToReach": "Poster des analyses de quartier gratuites basees sur le score, engager dans les discussions sur le choix de ville/quartier, proposer un accès early access."
+    },
+    {
+      "who": "Primo-accedants en phase de recherche active",
+      "where": "Forums PAP.fr, groupes Facebook primo-accedants, subreddit r/franceimmobilier",
+      "howToReach": "Creer du contenu comparatif (Top 10 quartiers pour familles a Lyon, etc.) et le partager sur ces communautés."
+    },
+    {
+      "who": "Agents immobiliers independants et mandataires (IAD, Safti)",
+      "where": "Groupes LinkedIn agents immobiliers, salons professionnels (RENT, SIMI), forums professionnels",
+      "howToReach": "Proposer un accès gratuit en echange de feedback, puis offrir un plan pro avec widget intégrable sur leurs annonces."
+    }
+  ],
+  "pricingStrategy": "Freemium: 3 recherches gratuites par mois (acquisition). Plan Investisseur a 14,90 euros/mois (recherches illimitées, alertes, export PDF). Plan Pro a 49 euros/mois (API, widget intégrable, marque blanche). Plan Agence a 149 euros/mois (multi-utilisateurs, volume API). Le prix de 14,90 euros est positionne sous le coût d'un cafe par jour, negligeable face à un investissement immobilier de 200K+ euros.",
+  "pathTo10kMrr": "Mix B2C + B2B: 400 abonnes Investisseur x 14,90 euros = 5 960 euros + 50 abonnes Pro x 49 euros = 2 450 euros + 12 agences x 149 euros = 1 788 euros = 10 198 euros MRR. Objectif atteignable en 6-8 mois post-lancement avec un taux de conversion de 3% sur un trafic SEO de 15K visiteurs/mois.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Maplibre GL JS pour les cartes",
+    "backend": "Next.js API Routes + Python scripts pour le pipeline data (ingestion, calcul des scores)",
+    "database": "PostgreSQL avec PostGIS pour les requetes geospatiales, heberge sur Supabase (tier gratuit au debut)",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (pipeline data CRON mensuel)",
+    "apis": [
+      "API DVF data.gouv.fr",
+      "API BDNB (bâtiments)",
+      "API Georisques",
+      "API BAN geocodage",
+      "API ADEME DPE",
+      "API Éducation Nationale (annuaire écoles)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Les données sont precalculees par commune/IRIS et stockees en base. Le score est calcule a la volee uniquement pour l'adresse exacte (geocodage BAN + lookup IRIS). Pipeline data mensuel pour rafraichir les scores."
+  },
+  "risks": [
+    {
+      "risk": "Les données DVF ont 6 mois de retard, rendant le score imprecis dans les marchés volatils",
+      "mitigation": "Combiner DVF avec des estimations temps réel (scraping annonces SeLoger/LeBonCoin via leur flux RSS) et afficher clairement la date de dernière mise à jour. Proposer un ajustement par l'utilisateur."
+    },
+    {
+      "risk": "Le score composite est subjectif et contestable (poids des critères)",
+      "mitigation": "Permettre a l'utilisateur de personnaliser les poids (ex: sécurité x2 pour les familles, rentabilité x2 pour les investisseurs). Documenter la méthodologie de façon transparente."
+    },
+    {
+      "risk": "Competition de MeilleursAgents ou SeLoger qui pourraient ajouter un score similaire",
+      "mitigation": "Se differencier par la transparence open data, la personnalisation, et pivoter rapidement vers le B2B (API/white-label) ou les villes de moins de 50K habitants mal couvertes par les grands portails."
+    }
+  ],
+  "inspirations": "WalkScore.com (US) qui donne un score de marchabilité par adresse et a été rachété par Redfin. AreaVibes.com (US/Canada) qui note les quartiers sur la sécurité, écoles, coût de la vie. Homely.com.au (Australie) avec son suburb review score. En France, MeilleursAgents fait les prix mais pas le scoring multicritère.",
+  "searchVolume": [
+    {
+      "keyword": "score quartier",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ou habiter en France",
+      "monthlyVolume": "5000-10000",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "quartier sur",
+      "monthlyVolume": "2000-5000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "criminalité par commune",
+      "monthlyVolume": "3000-5000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "comparer quartier immobilier",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "prix m2 par quartier",
+      "monthlyVolume": "10000-20000",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "1,2 milliard EUR — 950 000 transactions immobilières/an en France (2025) x ~1 200 EUR de dépense moyenne en services numériques liés a l'achat + 100 000 agents immobiliers x abonnement outils pro",
+    "sam": "180 millions EUR — acheteurs immobiliers actifs (950K transactions x 2 personnes recherchant en moyenne) + 30 000 agences immobilières ciblables avec offre B2B API/white-label",
+    "som": "1,8 million EUR — 400 abonnes B2C x 14,90 EUR x 12 mois + 50 abonnes Pro x 49 EUR x 12 mois + 12 agences x 149 EUR x 12 mois, atteignable en 12-18 mois",
+    "methodology": "TAM basé sur le volume de transactions immobilières 2025 (source: Notaires de France, ~950K transactions a fin septembre 2025 en rythme annuel) et le nombre d'agents immobiliers en France (~100 000 professionnels selon les données 2025). SAM restreint aux acheteurs numeriquement actifs et agences adoptant des outils digitaux. SOM basé sur les objectifs de conversion realistes du business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "Kelquartier",
+      "url": "https://www.kelquartier.com",
+      "pricing": "Gratuit pour les particuliers. Pro: 30 EUR/mois pour agences immobilières, 17 EUR/mois pour promoteurs, 450 EUR pour Ile-de-France (jusqu'a 100K visiteurs/mois). API disponible.",
+      "trafficEstimate": "Trafic modéré, base de 43 000 quartiers et communes couvertes. Pas de données Similarweb publiques.",
+      "reviews": "Bonne reputation auprès des professionnels immobiliers pour l'exhaustivité des points d'intérêt. Pas d'avis grand public sur Trustpilot.",
+      "strengths": "Base de données tres complété sur les points d'intérêt (14 critères). API bien documentee. Prix B2B accessibles. Anciennété sur le marché.",
+      "weaknesses": "UX datee. Pas de score composite unique. Modèle centre sur les avis utilisateurs subjectifs plutot que les données objectives. Pas d'app mobile."
+    },
+    {
+      "name": "CityScan",
+      "url": "https://www.cityscan.fr",
+      "pricing": "À partir de 39 EUR/mois HT pour les professionnels (accès illimité aux avis de valeur marché). Tarification sur devis pour les grands comptes. Rachat par Septeo en 2022.",
+      "trafficEstimate": "Trafic B2B uniquement, pas de présence B2C significative. Intégré dans l'écosystème Septeo/apimo.",
+      "reviews": "Retours tres positifs des professionnels depuis 2017. Note pour la qualité et l'originalité des données.",
+      "strengths": "Outil de geodecision complet pour pros. Intégration avec les logiciels immobiliers (apimo). Avis de valeur marché automatise. Adosse a Septeo (grand groupe PropTech).",
+      "weaknesses": "Aucune offre B2C directe. Recentre sur l'estimation de prix depuis 2022, moins de scoring multicritère. Prix élève pour les independants."
+    },
+    {
+      "name": "MeilleursAgents",
+      "url": "https://www.meilleursagents.com",
+      "pricing": "Gratuit pour les particuliers (estimation de prix). Offre pro Experience Vendeurs en 3 niveaux (Essentiel, Expert, Élite) — prix sur devis via contact commercial (tel: 01 45 66 24 24). Estimé entre 200 et 500 EUR/mois selon le pack.",
+      "trafficEstimate": "Leader du marché. Concurrents directs: SeLoger (16,9M visites/mois), PAP (2,4M), Logic-Immo (3M). MeilleursAgents estimé a 5-8M visites/mois.",
+      "reviews": "Tres bonne notoriété grand public. Référence en estimation de prix immobilier en France.",
+      "strengths": "Notoriété massive. Données de prix tres completes. Partenariat SeLoger/Groupe Aviv. Forte audience SEO. Base de données DVF enrichie.",
+      "weaknesses": "Ne propose pas de scoring multicritère (uniquement prix). Pas de données sécurité, DPE, risques naturels, écoles integrees. Offre pro chere et opaque (prix sur devis)."
+    },
+    {
+      "name": "LyBox",
+      "url": "https://www.lybox.fr",
+      "pricing": "49 a 59 EUR/mois pour particuliers investisseurs. 15 jours d'essai gratuit. Offre pro sur devis. Note 4.6/5 sur Trustpilot.",
+      "trafficEstimate": "Croissance rapide, cible les investisseurs locatifs. Trafic estimé 200-500K visites/mois.",
+      "reviews": "4.6/5 Trustpilot. Tres apprecie pour le gain de temps. Seul bemol: prix legerement superieur a la concurrence.",
+      "strengths": "Moteur de recherche sur 1500+ sites. Calcul de rendement et cashflow intégré. Analyse par quartier/IRIS avec données DVF. Bonne UX.",
+      "weaknesses": "Focalise sur l'investissement locatif, pas un score de quartier généraliste. Pas de données sécurité ou risques naturels. Prix élève pour une utilisation occasionnelle."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "DVF - Données de Valeurs Foncieres",
+      "status": "attention",
+      "detail": "Licence Ouverte v2 mais contient des données personnelles. L'article R112 A-3 du Livre des procédures fiscales interdit la re-identification des personnes. La CNIL impose que la reutilisation ne permette pas l'indexation par des moteurs de recherche externes. Interdiction d'afficher des transactions individuelles nominatives.",
+      "source": "https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres — Decret n°2018-1350"
+    },
+    {
+      "topic": "Données de sécurité/criminalité",
+      "status": "attention",
+      "detail": "Les statistiques de criminalité par commune sont publiees par le Ministere de l'Interieur en open data mais a une granularité limitee (commune, pas quartier). Risque de stigmatisation de certains quartiers — pas de contrainte légale stricte mais risque reputationnel et potentiel de contestation.",
+      "source": "https://www.data.gouv.fr — Base des crimes et delits enregistres par la police et la gendarmerie"
+    },
+    {
+      "topic": "DPE - Diagnostics de Performance Énergétique",
+      "status": "ok",
+      "detail": "Données DPE publiees par l'ADEME en open data sous Licence Ouverte. Pas de restriction majeure pour la reutilisation commerciale. Les DPE individuels sont publics et non consideres comme données personnelles au sens strict.",
+      "source": "https://data.ademe.fr — Base DPE ADEME"
+    },
+    {
+      "topic": "Georisques - Risques naturels",
+      "status": "ok",
+      "detail": "API Georisques en accès libre, données publiques du BRGM. Licence Ouverte. Aucune restriction de reutilisation commerciale identifiée.",
+      "source": "https://www.georisques.gouv.fr"
+    },
+    {
+      "topic": "RGPD global du service",
+      "status": "attention",
+      "detail": "Le croisement de multiples sources de données sur une adresse précise peut constituer un traitement de données personnelles au sens du RGPD si les résultats permettent d'identifier indirectement les occupants/propriétaires. Recommandation: travailler a la maille IRIS (2000 habitants) plutot qu'a l'adresse exacte pour les données sensibles (sécurité, DPE).",
+      "source": "CNIL — Recommandations sur l'ouverture et la reutilisation de données personnelles (2023)"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (contenu quartier par ville)",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "179 EUR (14,90 EUR x 12 mois)",
+      "ltvCacRatio": "6:1 a 12:1"
+    },
+    {
+      "channel": "Google Ads (requetes immobilier + ville)",
+      "cacEstimate": "60-120 EUR",
+      "conversionRate": "2-3%",
+      "ltv": "179 EUR",
+      "ltvCacRatio": "1.5:1 a 3:1"
+    },
+    {
+      "channel": "Forums et communautés immobilier (organique)",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "179 EUR",
+      "ltvCacRatio": "12:1 a 36:1"
+    },
+    {
+      "channel": "Partenariats agents immobiliers (B2B)",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "10-20%",
+      "ltv": "1 788 EUR (149 EUR x 12 mois)",
+      "ltvCacRatio": "4.5:1 a 9:1"
+    },
+    {
+      "channel": "Referral / bouche-a-oreille",
+      "cacEstimate": "5-10 EUR",
+      "conversionRate": "8-12%",
+      "ltv": "179 EUR",
+      "ltvCacRatio": "18:1 a 36:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 69,
+      "detail": "21.5K recherches/mois cumulees ('prix m2 par quartier' 10 000/mois, 'ou habiter en France' 5 000/mois). TAM: EUR. Cibles: Investisseurs immobiliers locatifs actifs, Primo-accedants en phase de, Agents immobiliers independants et."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 7 APIs a integrer (API DVF, API BDNB, API Georisques). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 60,
+      "detail": "400 clients a 90 EUR pour demarrer. Objectif 10K MRR en 6-8 mois. Pricing 49-149 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "4 concurrents identifies: Kelquartier, CityScan, MeilleursAgents. Leader: Kelquartier (Trafic modéré, base de 43 000 quartiers et communes couvertes. Pas de données Similarweb publiques.). Faiblesse principale: UX datee."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "2 points OK, 3 points d'attention. Vigilance: DVF - Données de Valeurs Foncieres, Données de sécurité/criminalité."
+    },
+    "overall": {
+      "score": 61,
+      "detail": "Point fort: demande (69/100). Point faible: compétition (40/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

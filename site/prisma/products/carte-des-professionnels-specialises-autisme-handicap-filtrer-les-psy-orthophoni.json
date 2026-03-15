@@ -1,0 +1,329 @@
+{
+  "productSlug": "carte-des-professionnels-specialises-autisme-handicap-filtrer-les-psy-orthophoni",
+  "oneLiner": "Carte des professionnels spécialisés autisme/handicap : filtrer les psy, orthophonistes, médecins formes au handicap par zone",
+  "problem": "En France, les familles et adultes concernés par l'autisme où le handicap passent des mois a trouver un professionnel de sante qui connait reellement leur problematique. Le RPPS répertorié 700 000+ professionnels de sante mais sans aucun filtre 'spécialisé autisme', 'forme au handicap' où 'accepte les patients handicapes'. Doctolib permet de trouver un creneau mais pas de savoir si le praticien à une compétence en TSA. Résultat : des familles epuisees qui enchainent les rendez-vous inutiles avec des professionnels non formes, des diagnostics retardes, des prises en charge inadaptees. Le cout humain est enorme : un enfant autiste sans orthophoniste forme perd des mois de progression.",
+  "solution": "Une carte interactive des professionnels de sante spécialisés handicap/autisme, construite sur la base du RPPS (localisation, spécialité) et enrichie par du crowdsourcing communautaire. Les utilisateurs (familles, adultes autistes, aidants) peuvent noter et signaler les professionnels formes au handicap, recommandér un praticien, et indiquer s'il accepte de nouveaux patients. Filtres : type de professionnel (psychiatre, orthophoniste, psychologue, psychomotricien, ergotherapeute), specialisation (autisme/TSA, handicap psychique, handicap moteur, DYS), tranche d'age des patients, secteur 1/2, accepte nouveaux patients, telemédecine.",
+  "uniqueValue": "Premier annuaire de professionnels de sante filtrables par compétence en handicap/autisme, enrichi par les recommandations de la communauté. Le RPPS donne la base, la communauté apporte la valeur ajoutee introuvable ailleurs.",
+  "mvpScope": "Carte interactive avec base RPPS filtree sur les professions pertinentes (psychiatres, orthophonistes, psychologues, psychomotriciens, ergotherapeutes). Système de recommandation communautaire : les utilisateurs peuvent recommandér un praticien comme 'spécialisé autisme/handicap'. Fiches praticien avec avis et recommandations. Filtres par zone géographique, profession, specialisation.",
+  "timeToMvp": "10 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Import RPPS et cartographie de base",
+      "description": "Importer les données RPPS pour les professions ciblés (psychiatres, orthophonistes, psychologues, psychomotriciens, ergotherapeutes, neuropediatres). Geocoder les adresses. Créér la carte interactive de base.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline d'import RPPS automatise",
+        "Base de données PostgreSQL avec 150K+ professionnels géocodes",
+        "Carte interactive Leaflet avec filtres de base (profession, zone)",
+        "Fiches praticien avec informations RPPS"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Système de recommandation communautaire",
+      "description": "Permettre aux utilisateurs de créér un compte et de recommandér des praticiens. Système de badge 'recommandé par la communauté' base sur le nombre de recommandations. Moderation des avis.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Système d'authentification utilisateur",
+        "Formulaire de recommandation (specialisation, avis, tranche d'age)",
+        "Badge 'spécialisé autisme' base sur 3+ recommandations",
+        "Moderation automatique + manuelle des avis"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Enrichissement et SEO",
+      "description": "Créér des pages par ville x profession x specialisation pour capter le trafic SEO. Enrichir les fiches avec les formations connues (DU autisme, formations CRA). Partenariats avec associations.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pages SEO générées (ex: 'orthophoniste autisme Paris', 'psychiatre TSA Lyon')",
+        "Enrichissement des fiches avec formations DU autisme",
+        "Partenariats avec 5 associations (CRA, Autisme France)"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Monétisation et croissance",
+      "description": "Offre premium pour les praticiens (fiche enrichie, visibilite). Système de mise en relation. Partenariats avec plateformes de formation.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Profil premium praticien (50 euros/mois)",
+        "Système de demande de rendez-vous",
+        "Partenariats formations DU autisme (affiliation)",
+        "Application mobile PWA"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le RPPS contient assez de professionnels pertinents géocodables",
+      "how": "Télécharger le RPPS, filtrer sur les professions ciblés, vérifier la qualité des adresses et le taux de géocodage.",
+      "successCriteria": "100K+ professionnels pertinents avec adresse géocodable. Couverture de 95%+ des départements."
+    },
+    {
+      "check": "Les familles ont ce besoin et sont prêtes a contribuer",
+      "how": "Poster dans les groupes Facebook 'Autisme adulte', 'TSA au quotidien', 'Parents d'enfants autistes'. Demander : 'Combien de temps avez-vous cherche un orthophoniste/psy spécialisé autisme ?'",
+      "successCriteria": "50+ réponses. 80%+ confirment avoir cherche plus d'un mois. 60%+ prêts a recommandér leur praticien sur une plateforme."
+    },
+    {
+      "check": "Les praticiens acceptent d'etre références comme spécialisés",
+      "how": "Contacter 20 praticiens identifiés comme spécialisés autisme (via CRA, annuaires existants). Proposer la fiche gratuite.",
+      "successCriteria": "15+ praticiens acceptent. 10+ completent leur fiche avec informations supplémentaires."
+    },
+    {
+      "check": "Le trafic SEO est captable sur ces requetes",
+      "how": "Analyser les volumes de recherche avec Ubersuggest/Ahrefs. Créér 3 pages tests.",
+      "successCriteria": "Volume cumule des requetes ciblés > 10 000/mois. Difficulté SEO faible a moyenne."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Parents d'enfants autistes en recherche de professionnels formes, et adultes autistes récemment diagnostiques cherchant un suivi adapte",
+      "where": "Groupes Facebook : 'Autisme adulte - Echanges et soutien' (25K+), 'Parents d'enfants autistes' (30K+), 'TSA au quotidien' (15K+), 'Asperger Amitie' (10K+). Reddit : r/autisme. Forums : Asperansa.org, forum-doctissimo section TSA. Instagram : comptes @autisme_info, @tsa_au_quotidien.",
+      "howToReach": "Temoignage personnel dans les groupes : 'J'ai mis 8 mois a trouver un orthophoniste qui connaissait l'autisme, alors j'ai créé cet outil'. Partenariat contenu avec les admins de groupes. Bouche a oreille communautaire."
+    },
+    {
+      "who": "Professionnels de sante spécialisés autisme/handicap qui veulent se rendre visibles auprès de cette population",
+      "where": "CRA (Centres Ressources Autisme) dans chaque région. Réseau des orthophonistes spécialisées (groupe Facebook 'Orthophonistes et TSA'). DU Autisme des universites. Congres : SFPEADA, journees nationales autisme.",
+      "howToReach": "Email aux CRA pour proposer un partenariat. Post dans les groupes professionnels. Stand où flyer aux congres spécialisés."
+    },
+    {
+      "who": "Associations de familles et d'autistes qui orientent leurs adhérents vers des professionnels",
+      "where": "Autisme France (fédération nationale), APF France handicap, CRA régionaux, associations locales autisme (ex: Autisme 75, Autistes sans frontieres), UNAPEI sections locales.",
+      "howToReach": "Contact direct des délégués régionaux. Proposer l'outil comme ressource pour leurs adhérents. Co-création du contenu avec les associations."
+    }
+  ],
+  "pricingStrategy": "Freemium. Recherche et consultation des fiches gratuite pour tous. Recommandation de praticiens gratuite. Profil premium praticien a 50 euros/mois : fiche enrichie (photo, description détaillée, approche therapeutique, formations), mise en avant dans les résultats, statistiques de consultation, badge 'profil verifie'. Affiliation formations DU autisme (commission 10-15% sur les inscriptions générées). À terme : API pour les associations et CRA (200 euros/mois).",
+  "pathTo10kMrr": "200 praticiens premium a 50 euros/mois = 10 000 euros MRR. Cible atteignable en 12-15 mois. Il y a 15 000+ orthophonistes, 15 000+ psychiatres, 80 000+ psychologues en France. Meme 1% de spécialisés handicap/autisme = 1 000+ praticiens ciblés. Stratégie : commencer par les orthophonistes (profession la plus demandee pour l'autisme), puis elargir aux psychiatres et psychologues. Les praticiens spécialisés sont souvent debordees et veulent filtrer les demandes = forte valeur du profil premium.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS, Leaflet/MapLibre pour la carte",
+    "backend": "Next.js API Routes, Node.js",
+    "database": "PostgreSQL avec PostGIS (recherche géospatiale)",
+    "hosting": "Vercel + Supabase (PostgreSQL + Auth)",
+    "apis": [
+      "RPPS (data.gouv.fr - fichier mensuel)",
+      "API Adresse (adresse.data.gouv.fr) pour géocodage",
+      "Mapbox/MapTiler tiles"
+    ],
+    "notes": "Le RPPS est mis à jour mensuellement. Les données crowdsourcees (recommandations) sont le vrai actif differenciant. Prevoir un système anti-abus robuste (vérification email, moderation). Les psychologues ne sont pas dans le RPPS historique mais dans le nouveau répertoire ADELI/RPPS unifie depuis 2023."
+  },
+  "risks": [
+    {
+      "risk": "Demarrage a froid du crowdsourcing : pas assez de recommandations au lancement pour que l'outil soit utile",
+      "mitigation": "Pre-remplir avec les praticiens déjà références par les CRA (listes publiques). Contacter directement 100 praticiens connus comme spécialisés. Organiser un 'sprint de recommandation' avec les associations partenaires."
+    },
+    {
+      "risk": "Avis faux où malveillants sur les praticiens",
+      "mitigation": "Système de recommandation positive uniquement (pas de notes négatives). Vérification email obligatoire. Moderation manuelle des premiers avis. Signalement possible par les praticiens."
+    },
+    {
+      "risk": "Opposition de l'Ordre des médecins où des syndicats professionnels (publicite deguisee)",
+      "mitigation": "Respecter le code de deontologie : pas de classement par note, pas de publicite. Positionner l'outil comme un service d'information, pas de promotion. Consulter l'Ordre en amont."
+    },
+    {
+      "risk": "Concurrence de Doctolib s'ils ajoutent un filtre 'spécialisé autisme'",
+      "mitigation": "La profondeur de la specialisation (type de handicap, tranche d'age, approche therapeutique, avis communautaires) est impossible a repliquer avec un simple filtre. Se positionnér sur la niche handicap/autisme = trop petit pour Doctolib, assez grand pour une startup."
+    },
+    {
+      "risk": "Les praticiens spécialisés ne veulent pas plus de patients (deja debordees)",
+      "mitigation": "Le profil premium inclut la possibilite de se marquer 'n'accepte plus de nouveaux patients'. La valeur pour eux est la visibilite de leur expertise, pas le volume de patients."
+    }
+  ],
+  "inspirations": "Doctolib (UX de recherche de praticien mais sans specialisation handicap). ZocDoc aux USA (recherche par spécialité + assurance). Yelp (recommandations communautaires). En UK : NHS Find a GP (recherche par service propose). En France : MonPsy.sante.gouv.fr (modèle de profil praticien mais uniquement psychologues conventionnes).",
+  "searchVolume": [
+    {
+      "keyword": "psychiatre autisme adulte",
+      "monthlyVolume": "1 600",
+      "difficulty": "faible",
+      "intent": "recherche de praticien"
+    },
+    {
+      "keyword": "orthophoniste TSA",
+      "monthlyVolume": "1 300",
+      "difficulty": "faible",
+      "intent": "recherche de praticien"
+    },
+    {
+      "keyword": "psychologue handicap",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "recherche de praticien"
+    },
+    {
+      "keyword": "psychomotricien autisme",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "recherche de praticien"
+    },
+    {
+      "keyword": "médecin specialiste autisme",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "recherche de praticien"
+    },
+    {
+      "keyword": "neuropediatre autisme",
+      "monthlyVolume": "1 100",
+      "difficulty": "faible",
+      "intent": "recherche de praticien"
+    },
+    {
+      "keyword": "ergotherapeute handicap",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "recherche de praticien"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "700 000 personnes autistes + 12M personnes handicapees + 11M aidants cherchant des professionnels de sante adaptes. 200K+ professionnels de sante pertinents (psychiatres, orthophonistes, psychologues, psychomotriciens, ergotherapeutes). Marché potentiel : 30M euros/an.",
+    "sam": "15 000 praticiens ayant une compétence reelle en autisme/handicap et pouvant beneficier d'un profil premium. 200K familles/adultes en recherche active de praticien spécialisé. Marché adressable : 9M euros/an.",
+    "som": "200 praticiens premium en année 1. 50K utilisateurs actifs mensuels. Objectif : 120K euros ARR en 15 mois.",
+    "methodology": "TAM base sur le nombre de personnes handicapees (source INSEE 2023) et de professionnels de sante (source DREES/RPPS). SAM base sur estimation du nombre de praticiens reellement spécialisés (source CRA, associations). SOM base sur un taux de conversion de 1.3% des praticiens identifiés."
+  },
+  "competitorDeep": [
+    {
+      "name": "Doctolib",
+      "url": "https://www.doctolib.fr",
+      "pricing": "129 euros/mois pour les praticiens",
+      "trafficEstimate": "60M visites/mois",
+      "reviews": "Excellent pour la prise de RDV mais aucun filtre pour trouver un praticien spécialisé handicap où autisme. Les utilisateurs se plaignent de prendre RDV avec un psy qui ne connait rien a l'autisme.",
+      "strengths": "Base enorme de praticiens. UX excellente. Prise de RDV intégrée. Notoriété massive.",
+      "weaknesses": "Aucun filtre specialisation handicap/autisme. Pas d'avis communautaires. Impossible de savoir si le praticien est forme au TSA. Trop généraliste."
+    },
+    {
+      "name": "Annuaire Sante Ameli",
+      "url": "https://annuairesante.ameli.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "5M visites/mois",
+      "reviews": "Utile pour trouver un praticien par spécialité et secteur tarifaire mais aucune information sur la specialisation en handicap/autisme.",
+      "strengths": "Exhaustif (tous les professionnels conventionnes). Gratuit. Information sur les tarifs et le secteur.",
+      "weaknesses": "Aucune information sur les compétences en handicap. Pas d'avis. Interface basique. Pas de carte interactive."
+    },
+    {
+      "name": "CRA (Centres Ressources Autisme)",
+      "url": "https://www.autisme.fr (portail national)",
+      "pricing": "Gratuit",
+      "trafficEstimate": "20 000 visites/mois (portail national)",
+      "reviews": "Ressource de référence pour l'autisme mais les listes de praticiens sont partielles, pas mises à jour, et varient enormement d'un CRA a l'autre.",
+      "strengths": "Legitimite institutionnelle. Connaissance fine des praticiens formes dans leur région. Formations dispensees.",
+      "weaknesses": "Pas d'annuaire unifie national. Listes souvent en PDF non consultables. Pas de filtre, pas de carte. Mise à jour aleatoire."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation du RPPS",
+      "status": "ok",
+      "detail": "Le RPPS est publié en open data sur data.gouv.fr sous licence ouverte. Les informations professionnelles (nom, prenom, spécialité, adresse d'exercice) sont publiques et reutilisables.",
+      "source": "Arrêté du 18 juin 2017, data.gouv.fr licence ouverte 2.0"
+    },
+    {
+      "topic": "Deontologie médicale et publicite",
+      "status": "attention",
+      "detail": "Le code de deontologie médicale interdit la publicite. L'outil ne doit pas 'classer' les praticiens ni faire de promotion. Les recommandations communautaires doivent être presentees comme des témoignages, pas comme un classement commercial.",
+      "source": "Code de deontologie medicale art. R.4127-19, Ordre des medecins"
+    },
+    {
+      "topic": "RGPD et avis sur les professionnels de sante",
+      "status": "attention",
+      "detail": "Les avis et recommandations sur les praticiens constituent un traitement de données personnelles. Droit de rectification et d'opposition applicable. Necessaire : mentions légales, politique de moderation, procèssus de droit d'opposition pour les praticiens.",
+      "source": "RGPD art. 6 et 21, CNIL recommandation avis en ligne"
+    },
+    {
+      "topic": "Responsabilite sur les recommandations",
+      "status": "attention",
+      "detail": "Si un praticien recommandé s'avéré incompetent où dangereux, risque de mise en cause. Prevoir des CGU claires : 'les recommandations sont des témoignages d'experience, pas des certifications'.",
+      "source": "Loi pour la confiance dans l'économie numérique (LCEN), statut d'hebergeur"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages ville x profession x specialisation)",
+      "cacEstimate": "3 euros",
+      "conversionRate": "4% (visiteur -> création de compte)",
+      "ltv": "0 euros (utilisateur gratuit, valeur indirecte)",
+      "ltvCacRatio": "N/A - acquisition gratuite pour créér la communauté"
+    },
+    {
+      "channel": "Communautés Facebook/Reddit autisme (organique)",
+      "cacEstimate": "0 euros",
+      "conversionRate": "8% (vue du post -> visite site)",
+      "ltv": "0 euros",
+      "ltvCacRatio": "Infini"
+    },
+    {
+      "channel": "Demarchage praticiens pour profil premium (email + LinkedIn)",
+      "cacEstimate": "80 euros (temps commercial)",
+      "conversionRate": "10% (contact -> abonnement premium)",
+      "ltv": "600 euros (50 euros/mois x 12 mois)",
+      "ltvCacRatio": "7.5"
+    },
+    {
+      "channel": "Partenariats CRA et associations (référencement gratuit)",
+      "cacEstimate": "0 euros",
+      "conversionRate": "15% (recommandation CRA -> inscription praticien)",
+      "ltv": "600 euros (si conversion premium)",
+      "ltvCacRatio": "Infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 56,
+      "detail": "2.7K recherches/mois cumulees ('psychologue handicap' 880/mois, 'psychomotricien autisme' 720/mois). TAM: 700 000 personnes. Cibles: Parents d'enfants autistes en, Professionnels de sante spécialisés, Associations de familles et."
+    },
+    "feasibility": {
+      "score": 35,
+      "detail": "MVP en 10 semaines. 3 APIs a integrer (RPPS, API Adresse pour géocodage, Mapbox/MapTiler tiles). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 45,
+      "detail": "Objectif 10K MRR en 12-15 mois. SOM: 120K eur/an. Pricing 50-200 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "3 concurrents identifies: Doctolib, Annuaire Sante Ameli, CRA (Centres Ressources Autism. Leader: Doctolib (60M visites/mois). Faiblesse principale: Aucun filtre specialisation handicap/autisme."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Deontologie médicale et publicite, RGPD et avis sur les professionnels de sante."
+    },
+    "overall": {
+      "score": 46,
+      "detail": "Point fort: demande (56/100). Point faible: faisabilite (35/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

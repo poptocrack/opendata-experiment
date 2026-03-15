@@ -1,0 +1,354 @@
+{
+  "productSlug": "alertes-proprietaires-dpe-qui-expire-nouvelle-aide-disponible",
+  "oneLiner": "Alertes propriétaires : DPE qui expire, nouvelle aide disponible",
+  "problem": "Les propriétaires bailleurs ignorent souvent que leur DPE à une validite de 10 ans et que les anciens DPE (réalisés avant 2018) ont été invalides par la réforme de 2021. Un DPE expire où invalide empeche toute mise en location et expose à des sanctions. Par ailleurs, les aides à la rénovation changent constamment (MaPrimeRenov modifié 3 fois en 2024-2025, nouvelles aides régionales, évolution des plafonds CEE) et les propriétaires ratent des opportunités de financement faute de veille. Les conseillers France Renov sont saturés et ne peuvent pas faire de suivi proactif individuel.",
+  "solution": "Un service d'alertes personnalisées par email et SMS pour les propriétaires. A l'inscription, le propriétaire entre son adresse (ou numéro de DPE). L'outil récupéré automatiquement la date du DPE et sa classe énergétique via l'API ADEME. Ensuite, le système envoie des alertes contextualisees : rappel 6 mois avant expiration du DPE, notification quand une nouvelle aide correspond au profil du logement (ex: 'Nouvelle aide Région IDF pour PAC : vous etes éligible, jusqu'a 3000€'), alerte reglementaire ('Votre logement DPE F sera interdit à la location en 2028, il reste 18 mois'). Chaque alerte inclut un lien vers une action concrete (prendre RDV diagnostiqueur, simuler les aides, demander un devis).",
+  "uniqueValue": "Aucun service n'envoie d'alertes proactives et personnalisées aux propriétaires sur leur DPE et les aides disponibles. Les sites institutionnels (ANAH, ADEME) publiént l'info mais ne font pas de push individualise. C'est le 'Doctolib des rappels rénovation' : on s'inscrit une fois, et on est guide au bon moment.",
+  "mvpScope": "V1 : inscription avec adresse email + adresse du bien → recuperation automatique DPE via API ADEME → envoi d'emails automatiques : (1) rappel expiration DPE 6 mois avant, (2) alerte si classe F/G avec echeance reglementaire, (3) newsletter mensuelle des nouvelles aides nationales. Pas de SMS, pas d'aides locales, pas de personnalisation fine.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Système de collecte et enrichissement données",
+      "description": "Formulaire d'inscription avec adresse du bien. Recuperation automatique des données DPE (classe, date, validite) via API ADEME. Stockage en base avec calcul des echeances (expiration DPE, interdiction location).",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Landing page avec formulaire d'inscription",
+        "Integration API DPE ADEME pour enrichissement automatique",
+        "Base de données utilisateurs avec echeances calculees",
+        "Pipeline de vérification email (double opt-in)"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Moteur d'alertes et templates emails",
+      "description": "Système CRON qui vérifié quotidiennement les echeances et déclenché les emails. Templates d'emails pour chaque type d'alerte. Newsletter mensuelle automatisee sur les nouvelles aides.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "CRON job quotidien de vérification des echeances",
+        "3 templates emails (expiration DPE, alerte reglementaire, nouvelle aide)",
+        "Système de newsletter mensuelle avec les évolutions d'aides",
+        "Tracking ouverture et clics emails"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Lancement et acquisition premiers inscrits",
+      "description": "Distribution sur les groupes propriétaires. SEO sur 'DPE expire que faire', 'validite DPE'. Partenariat avec 3 agences immobilières pour proposer le service à leurs propriétaires bailleurs.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "500 inscrits beta",
+        "Premiers emails envoyes avec métriques (taux ouverture, clics)",
+        "3 articles SEO publiés",
+        "Feedback collecte via formulaire post-email"
+      ]
+    },
+    {
+      "phase": "4",
+      "title": "Monétisation et alertes premium",
+      "description": "Version Premium avec : alertes SMS, aides locales personnalisées, rappel prise de RDV diagnostiqueur, comparatif devis artisans. Modèle freemium où les alertes basiques restent gratuites.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Offre Premium a 4.90€/mois",
+        "Alertes SMS via Twilio/OVH",
+        "Base de données des aides locales (20 metropoles)",
+        "Integration Stripe pour paiement récurrent"
+      ]
+    },
+    {
+      "phase": "5",
+      "title": "Monétisation B2B et partenariats",
+      "description": "Offre B2B pour agences immobilières et administrateurs de biens : dashboard de suivi DPE de leur parc locatif. Commission sur mise en relation diagnostiqueur DPE et artisans.",
+      "duration": "4 semaines (en continu)",
+      "deliverables": [
+        "Dashboard B2B pour gestionnaires de parc immobilier",
+        "API pour intégration dans les logiciels de gestion locative",
+        "Partenariats avec 5 réseaux d'agences immobilières",
+        "50 leads diagnostiqueurs/mois monétisés"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les propriétaires ne suivent pas la validite de leur DPE ni les évolutions d'aides",
+      "how": "Sondage sur les groupes Facebook propriétaires bailleurs : 'Savez-vous quand votre DPE expire ? Connaissez-vous les dernières aides MaPrimeRenov ?' Analyser les requetes Google 'DPE expire', 'validite DPE ancien'.",
+      "successCriteria": "Plus de 60% des répondants ne connaissent pas la date d'expiration de leur DPE. Volume de recherche > 3000/mois sur 'validite DPE'."
+    },
+    {
+      "check": "Les propriétaires s'inscrivent effectivement au service gratuit",
+      "how": "Landing page avec proposition de valeur claire + formulaire d'inscription. Distribuer le lien sur 5 groupes Facebook et 2 forums. Mesurer le taux de conversion visiteur → inscrit.",
+      "successCriteria": "Taux de conversion landing page > 15%. Plus de 200 inscrits en 2 semaines sans budget publicitaire."
+    },
+    {
+      "check": "Les alertes générént de l'engagement (ouverture, clics, actions)",
+      "how": "Mesurer les KPI emails sur les 500 premiers inscrits : taux d'ouverture, taux de clic, taux de désabonnement.",
+      "successCriteria": "Taux d'ouverture > 35% (moyenne secteur immobilier : 25%). Taux de désabonnement < 2% par mois. Taux de clic > 8%."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Propriétaires bailleurs avec 1-3 biens locatifs, souvent en LMNP, qui gèrent seuls sans agence",
+      "where": "Groupes Facebook 'LMNP - Location Meublee Non Professionnelle' (38K membres), 'Propriétaires bailleurs - entraide' (22K membres), 'Investissement locatif rentable' (55K membres). Forum Universimmo. Communauté Loyer Manager.",
+      "howToReach": "Post type : 'Votre DPE expire peut-etre sans que vous le sachiez. J'ai créé un service gratuit qui vous alerte 6 mois avant + vous previent des nouvelles aides. 0 spam, que des infos utiles.' Repondre aux questions sur la validite des DPE dans les groupes."
+    },
+    {
+      "who": "Agences immobilières indépendantes gerant des mandats de gestion locative",
+      "where": "Groupes LinkedIn 'Professionnels de l'immobilier'. Réseau FNAIM (8500 agences). Salons immobiliers régionaux (RENT Paris, etc.).",
+      "howToReach": "Email froid aux responsables gestion locative : 'Combien de DPE de votre parc expirent dans les 12 prochains mois ? Notre outil vous alerte automatiquement et rassure vos propriétaires bailleurs.' Offrir 6 mois gratuits aux 20 premières agences."
+    },
+    {
+      "who": "Diagnostiqueurs immobiliers DPE qui veulent générér des leads",
+      "where": "Groupes Facebook 'Diagnostiqueurs immobiliers France' (5K membres). Annuaire des diagnostiqueurs certifiés. Fédération Interprofessionnelle du Diagnostic Immobilier (FIDI).",
+      "howToReach": "Proposer un partenariat : leur référencement comme diagnostiqueur recommandé dans les emails d'alerte expiration DPE, en echange d'une commission de 15€ par RDV pris."
+    }
+  ],
+  "pricingStrategy": "Freemium + B2B + affiliation. Gratuit : alertes email basiques (expiration DPE, echeances reglementaires, newsletter mensuelle aides nationales). Premium propriétaire : 4.90€/mois (alertes SMS, aides locales personnalisées, rappels proactifs, checklist rénovation personnalisée). B2B agences/gestionnaires : 29€/mois pour les 50 premiers biens, puis 0.50€/bien supplémentaire (dashboard suivi DPE du parc). Affiliation : commission diagnostiqueur DPE (15€/RDV) + commission artisan RGE (50€/lead qualifie).",
+  "pathTo10kMrr": "Phase 1 (mois 1-3) : 2000 inscrits gratuits, taux conversion Premium 3% = 60 abonnes x 4.90€ = 294€ + 10 agences B2B x 29€ = 290€ + 30 commissions diagnostiqueurs x 15€ = 450€ = 1 034€ MRR. Phase 2 (mois 4-6) : 8000 inscrits gratuits (SEO + partenariats agences), 4% Premium = 320 x 4.90€ = 1 568€ + 40 agences x 29€ = 1 160€ + 80 commissions diagnostiqueurs = 1 200€ + 20 leads artisans x 50€ = 1 000€ = 4 928€ MRR. Phase 3 (mois 7-10) : 20 000 inscrits, 5% Premium = 1000 x 4.90€ = 4 900€ + 80 agences x 45€ (upsell parc > 50 biens) = 3 600€ + commissions = 2 500€ = 11 000€ MRR. Levier clé : le B2B agences qui scale plus vite car chaque agence géré 50-200 biens.",
+  "techStack": {
+    "frontend": "Next.js 14 avec Tailwind CSS. Landing page conversion-optimisee. Dashboard utilisateur minimaliste (mes biens, mes alertes, mon historique).",
+    "backend": "Next.js API Routes. Vercel Cron Jobs pour le moteur d'alertes quotidien. Resend où Brevo (ex-Sendinblue) pour l'envoi d'emails transactionnels et newsletter.",
+    "database": "PostgreSQL via Supabase. Tables : users, properties (avec date_dpe, classe_dpe, echeances), alerts_sent, aide_updates.",
+    "hosting": "Vercel (frontend + API + CRON). Supabase (DB + auth). Brevo plan gratuit jusqu'a 300 emails/jour (suffisant pour le MVP).",
+    "apis": [
+      "API Diagnostics de Performance Énergétique ADEME (données DPE par adresse)",
+      "API BAN - Base Adresse Nationale (autocompletion adresse)",
+      "Brevo/Resend API (envoi emails transactionnels et newsletters)",
+      "Twilio où OVH SMS API (alertes SMS Premium)",
+      "Stripe API (abonnements Premium et B2B)"
+    ],
+    "notes": "Le moteur d'alertes est un simple CRON qui tourne chaque jour a 8h : il requete les echeances a J+180 (DPE expire dans 6 mois), J+90, J+30, J+7 et envoie les emails correspondants. Pour la veille sur les aides, une mise à jour manuelle hebdomadaire suffit au debut (scraping sites ANAH, CEE). Brevo est préféré a Resend car il offre aussi la newsletter marketing dans le plan gratuit."
+  },
+  "risks": [
+    {
+      "risk": "Taux d'ouverture des emails faible car les utilisateurs oublient pourquoi ils se sont inscrits",
+      "mitigation": "Email de bienvenue très clair avec récapitulatif du service. Fréquence basse (1 email/mois max hors alertes urgentes). Objet des emails personnalisé avec l'adresse du bien ('Votre DPE au 12 rue de la Paix expire dans 6 mois')."
+    },
+    {
+      "risk": "L'API DPE ADEME ne couvre pas tous les logements (DPE anciens non numérisés)",
+      "mitigation": "Permettre la saisie manuelle de la date et classe DPE en fallback. Envoyer un email pédagogique expliquant comment retrouver son DPE. Proposer de commander un nouveau DPE via un diagnostiqueur partenaire."
+    },
+    {
+      "risk": "Difficulté a monétiser un service d'alertes (les utilisateurs attendent du gratuit)",
+      "mitigation": "Le gratuit sert d'acquisition. La monétisation principale vient du B2B (agences, gestionnaires) et de l'affiliation (diagnostiqueurs, artisans). Le Premium propriétaire est un bonus, pas le revenu principal."
+    },
+    {
+      "risk": "Conformite RGPD : collecte d'adresses de biens immobiliers = données sensibles",
+      "mitigation": "Double opt-in obligatoire. Politique de confidentialite claire. Hebergement des données en France (Supabase région EU). Droit de suppression automatise. Pas de revente de données à des tiers."
+    }
+  ],
+  "inspirations": "Doctolib (rappels de RDV proactifs qui ont change les habitudes), Bankin (alertes personnalisées sur ses finances), Pappers (alertes sur les entreprises surveillees, modèle freemium). Le concept est proche d'un 'Credit Karma pour la rénovation énergétique' : un service gratuit utile qui monétisé via les partenariats (diagnostiqueurs, artisans, banques pour eco-PTZ).",
+  "searchVolume": [
+    {
+      "keyword": "validite DPE",
+      "monthlyVolume": "8100",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "DPE expire que faire",
+      "monthlyVolume": "3600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "aide rénovation énergétique 2026",
+      "monthlyVolume": "14800",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "MaPrimeRenov 2026",
+      "monthlyVolume": "33100",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "DPE obligatoire location",
+      "monthlyVolume": "6600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "7.2 millions de logements locatifs privés en France. Chaque propriétaire bailleur est concerné par la validite DPE et les aides. Marché potentiel : 7.2M x 5 EUR/mois = 432M EUR/an.",
+    "sam": "2.1 millions de propriétaires bailleurs actifs en gestion directe (sans agence). Cibles principales pour un service d'alerte personnalisé. Marché : 2.1M x 4.90 EUR x 12 = 123M EUR/an.",
+    "som": "25 000 inscrits gratuits première année, 5% conversion Premium = 1 250 x 4.90 EUR x 12 = 73 500 EUR + B2B agences 80 x 29 EUR x 12 = 27 840 EUR = ~100K EUR an 1",
+    "methodology": "TAM base sur INSEE 7.2M logements locatifs privés. SAM restreint aux propriétaires gerant seuls (estimation 30% du parc). DPE réalisés avant 2021 invalides depuis 2025 = urgence immédiate pour des millions de propriétaires. SOM prudent base sur acquisition organique SEO + groupes Facebook."
+  },
+  "competitorDeep": [
+    {
+      "name": "France Renov (service public)",
+      "url": "https://france-renov.gouv.fr",
+      "pricing": "100% gratuit. Service public d'accompagnement à la rénovation énergétique. 450 Espaces Conseil.",
+      "trafficEstimate": "2-4M visites/mois",
+      "reviews": "Avis positifs sur la qualité du conseil. Critiques sur les délais de réponse et la saturation des conseillers.",
+      "strengths": "Confiance institutionnelle, gratuit, base de données complète des aides, maillage territorial",
+      "weaknesses": "Pas de push proactif (l'usager doit faire la demarché), pas d'alertes personnalisées, experience digitale limitee, conseillers saturés"
+    },
+    {
+      "name": "ANAH / MaPrimeRenov",
+      "url": "https://www.anah.gouv.fr",
+      "pricing": "Gratuit. Distributeur des aides publiques.",
+      "trafficEstimate": "1-2M visites/mois",
+      "reviews": "Forte insatisfaction sur les délais de traitement (6-12 mois pour recevoir la prime). Complexite administrative critiquée.",
+      "strengths": "Source officielle des aides, budget de plusieurs milliards d'euros",
+      "weaknesses": "Pas d'alertes proactives, interface complexe, délais enormes, changements de regles frequents et mal communiqués"
+    },
+    {
+      "name": "Effy (volet information)",
+      "url": "https://www.effy.fr/aide-energetique",
+      "pricing": "Contenu gratuit, monétisation via mise en relation artisan.",
+      "trafficEstimate": "3-5M visites/mois",
+      "reviews": "Contenu informatif de bonne qualité. Critiques sur le modèle commercial (push vers les artisans partenaires).",
+      "strengths": "SEO très puissant sur les aides, contenu actualise régulièrement, simulateurs en ligne",
+      "weaknesses": "Pas d'alertes personnalisées par email/SMS, objectif = générér des leads artisans (pas du service pur), pas de suivi DPE individuel"
+    },
+    {
+      "name": "Pappers (modèle d'alertes analogue)",
+      "url": "https://www.pappers.fr",
+      "pricing": "Freemium. Alertes entreprises gratuites (limite). Premium à partir de 39 EUR/mois.",
+      "trafficEstimate": "3-5M visites/mois",
+      "reviews": "4.7/5 Trustpilot. Très apprécié pour les alertes et la transparence.",
+      "strengths": "Modèle freemium éprouvé sur les alertes, forte traction, référence en matiere de réutilisation d'open data",
+      "weaknesses": "Pas du tout positionné sur l'immobilier/DPE (inspiration modèle uniquement)"
+    },
+    {
+      "name": "Loyer Manager / logiciels gestion locative",
+      "url": "https://www.loyermanager.fr",
+      "pricing": "29-59 EUR/an pour la gestion locative en ligne.",
+      "trafficEstimate": "100-200K visites/mois",
+      "reviews": "Bons avis pour la gestion quotidienne. Pas de fonctionnalité DPE/alertes énergétiques.",
+      "strengths": "Base installee de propriétaires bailleurs, outils de gestion complete",
+      "weaknesses": "Aucune fonctionnalité de suivi DPE où d'alertes rénovation, pas de veille aides"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "RGPD - Collecte adresses immobilières",
+      "status": "attention",
+      "detail": "L'adresse d'un bien immobilier couplee à un email personnel constitue une donnée à caractère personnel. Double opt-in obligatoire. Politique de confidentialite claire. Hebergement en France/UE.",
+      "source": "cnil.fr - RGPD art. 6 et 7"
+    },
+    {
+      "topic": "Utilisation API DPE ADEME",
+      "status": "ok",
+      "detail": "Les données DPE sont publiques et accèssibles via API ouverte. Pas de restriction de réutilisation pour un service d'alertes. Les DPE réalisés avant 2018 sont invalides depuis 2025.",
+      "source": "service-public.gouv.fr/particuliers/vosdroits/F16096"
+    },
+    {
+      "topic": "Réglementation email marketing / anti-spam",
+      "status": "attention",
+      "detail": "Les emails d'alerte sont des emails de service (transactionnels) et non du marketing si lies à une inscription explicite. Toutefois, les newsletters sur les aides pourraient être considérées comme du marketing. Separer les deux flux.",
+      "source": "CNIL referentiel prospection commerciale"
+    },
+    {
+      "topic": "Responsabilite sur les informations d'aides",
+      "status": "attention",
+      "detail": "Les montants d'aides communiqués doivent être à jour. En cas d'erreur (aide supprimée où modifiée), le service pourrait être tenu responsable d'un prejudice. Ajouter un disclaimer et sourcer chaque information.",
+      "source": "Code de la consommation art. L121-1"
+    },
+    {
+      "topic": "Conservation des données",
+      "status": "ok",
+      "detail": "Durée de conservation proportionnelle à la finalite : 10 ans max (durée de validite d'un DPE). Suppression automatique après désabonnement + periode légale (3 ans CNIL).",
+      "source": "CNIL recommandation durée conservation"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (validite DPE, DPE expire, aide rénovation)",
+      "cacEstimate": "2-8 EUR",
+      "conversionRate": "8-15% (inscription gratuite)",
+      "ltv": "58.80 EUR (4.90 EUR x 12 mois Premium)",
+      "ltvCacRatio": "7:1 a 29:1"
+    },
+    {
+      "channel": "Groupes Facebook propriétaires bailleurs",
+      "cacEstimate": "1-5 EUR",
+      "conversionRate": "5-10% (inscription gratuite)",
+      "ltv": "58.80 EUR (conversion Premium 3%)",
+      "ltvCacRatio": "12:1 a 59:1"
+    },
+    {
+      "channel": "Partenariats agences immobilières (B2B)",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "15-25%",
+      "ltv": "348 EUR (29 EUR x 12 mois)",
+      "ltvCacRatio": "3.5:1 a 7:1"
+    },
+    {
+      "channel": "Affiliation diagnostiqueurs DPE",
+      "cacEstimate": "0 EUR (revenue share)",
+      "conversionRate": "N/A",
+      "ltv": "15 EUR par RDV (commission)",
+      "ltvCacRatio": "infini (pas de cout d'acquisition)"
+    },
+    {
+      "channel": "Google Ads (DPE expire, validite DPE)",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "58.80 EUR",
+      "ltvCacRatio": "2:1 a 4:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources vérifiées via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 81,
+      "detail": "66.2K recherches/mois cumulees ('MaPrimeRenov 2026' 33 100/mois, 'aide rénovation énergétique 2026' 14 800/mois). TAM: logements. Cibles: Propriétaires bailleurs avec 1-3, Agences immobilières indépendantes gerant, Diagnostiqueurs immobiliers DPE qui."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 5 APIs a integrer (API Diagnostics de Performance, API BAN - Base Adresse Nationa, Brevo/Resend API). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 60,
+      "detail": "SOM: 100K EUR/an."
+    },
+    "competition": {
+      "score": 20,
+      "detail": "5 concurrents identifies: France Renov (service public), ANAH / MaPrimeRenov, Effy (volet information). Leader: France Renov (2-4M visites/mois). Faiblesse principale: Pas de push proactif (l'usager doit faire la demarché)."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "2 points OK, 3 points d'attention. Vigilance: RGPD - Collecte adresses immobilières, Réglementation email marketing / anti-spam."
+    },
+    "overall": {
+      "score": 63,
+      "detail": "Point fort: demande (81/100). Point faible: competition (20/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

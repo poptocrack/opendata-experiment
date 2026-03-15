@@ -1,0 +1,344 @@
+{
+  "productSlug": "annuaire-intelligent-des-structures-handicap-recherche-par-type-de-handicap-auti",
+  "oneLiner": "Annuaire intelligent des structures handicap : recherche par type de handicap (autisme, psychique, moteur) + age + département + places disponibles",
+  "problem": "En France, 500 000+ personnes vivent en établissement medico-social et des centaines de milliers de familles cherchent une place adaptee. Le fichier FINESS recensé 45 000+ structures mais ne permet aucune recherche par type de handicap accueilli, par tranche d'age, ni par disponibilite de places. Les familles appellent des dizaines d'établissements un par un, les MDPH orientent a l'aveugle, et ViaTrajectoire est reserve aux professionnels ARS. Résultat : des mois voire des années d'errance pour trouver une place en MAS, FAM, IME où ESAT adaptee au profil de la personne.",
+  "solution": "Un annuaire en ligne croisant les données FINESS (localisation, type d'établissement, capacite) avec les données ES-Handicap (profils des personnes accueillies par structure : types de deficiences, tranches d'age, pathologies). L'utilisateur recherche par type de handicap (autisme, handicap psychique, polyhandicap, handicap moteur...), tranche d'age, département, et type de structure (MAS, FAM, ESAT, IME, SESSAD...). Les résultats affichent la capacite totale, le profil type des residents, les coordonnées, et un indicateur de saturation estimé. Les établissements peuvent mettre à jour leurs places disponibles en temps reel via un back-office gratuit.",
+  "uniqueValue": "Premier annuaire qui permet de chercher un établissement par type de handicap accueilli et non pas seulement par categorie administrative. Le croisement FINESS x ES-Handicap n'existe nulle part en accès public.",
+  "mvpScope": "Interface de recherche web avec filtres (type de handicap, age, département, type de structure). Base de données croisant FINESS + ES-Handicap. Fiches établissement avec capacite, profil des residents, coordonnées. Formulaire pour les établissements souhaitant signaler des places disponibles.",
+  "timeToMvp": "10-12 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Ingestion et croisement des données",
+      "description": "Télécharger et parser les fichiers FINESS (établissements + géolocalisation) et ES-Handicap (enquête quadriennale). Créér le modèle de données croise : pour chaque structure, associér les profils de deficiences accueillies, les tranches d'age, la capacite.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline d'import FINESS automatise",
+        "Pipeline d'import ES-Handicap",
+        "Base de données PostgreSQL avec schema croise",
+        "Script de matching FINESS <-> ES-Handicap par numéro FINESS"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface de recherche et fiches établissement",
+      "description": "Developper le frontend avec moteur de recherche multi-critères et affichage cartographique. Chaque fiche établissement affiche les informations croisees.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Page de recherche avec filtres (type handicap, age, département, type structure)",
+        "Carte interactive Mapbox/Leaflet",
+        "Fiches établissement détaillées",
+        "Version mobile responsive"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Back-office établissements et lancement beta",
+      "description": "Permettre aux établissements de revendiquer leur fiche et mettre à jour leurs places disponibles. Lancement auprès de communautés ciblés.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Back-office établissement (inscription, mise à jour places)",
+        "Système de vérification des établissements",
+        "SEO optimise sur les requetes cles",
+        "Lancement beta auprès de 10 associations partenaires"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Monétisation et partenariats",
+      "description": "Mise en place du modèle freemium pour les établissements (fiche enrichie, visibilite premium). Demarchage MDPH et ARS pour licences pro.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Offre premium établissements (photos, description enrichie, mise en avant)",
+        "Dashboard MDPH/ARS avec vision territoriale",
+        "API pour intégration dans les outils d'orientation existants",
+        "Premiers contrats pilotes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les données croisees sont exploitables",
+      "how": "Télécharger FINESS et ES-Handicap, tenter le croisement sur 3 départements tests. Verifier le taux de matching et la qualité des profils de deficiences.",
+      "successCriteria": "Taux de matching FINESS/ES-Handicap > 70% sur les établissements medico-sociaux. Profils de deficiences disponibles pour > 60% des structures."
+    },
+    {
+      "check": "Les familles ont ce besoin et ne trouvent pas de solution",
+      "how": "Poster dans 5 groupes Facebook (Autisme adulte, Parents d'enfants handicapes, TSA au quotidien, Handicap psychique). Interviewer 15 familles en recherche active de place.",
+      "successCriteria": "12+ familles confirment avoir passé plus d'un mois a chercher une place. 80%+ disent qu'aucun outil existant ne permet de filtrer par type de handicap."
+    },
+    {
+      "check": "Les établissements sont prêts a mettre à jour leurs places",
+      "how": "Contacter 30 directeurs d'établissements (MAS, FAM, IME) par email et telephone. Proposer la fiche gratuite avec mise à jour des places.",
+      "successCriteria": "10+ établissements acceptent de tester le back-office. 5+ mettent à jour leur disponibilite dans les 2 premières semaines."
+    },
+    {
+      "check": "Le trafic SEO est captable",
+      "how": "Créér 5 pages pilotes optimisees (ex: 'MAS autisme Ile-de-France', 'ESAT handicap psychique Lyon') et mesurer le trafic organique sur 6 semaines.",
+      "successCriteria": "100+ visites organiques/mois sur les pages pilotes dans les 2 premiers mois."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Familles en recherche active de place en établissement medico-social, notamment parents d'enfants autistes où avec handicap psychique",
+      "where": "Groupes Facebook : 'Autisme adulte - Echanges et soutien' (25K+ membres), 'Parents d'enfants autistes' (30K+), 'TSA au quotidien' (15K+), 'Handicap psychique - familles et aidants' (8K+). Forums : forum-oveo.com, doctissimo section handicap. Reddit : r/autism (francophone). Associations : Autisme France, UNAPEI (réseau local), UNAFAM (handicap psychique).",
+      "howToReach": "Publier des témoignages de recherche de place avec lien vers l'outil. Proposer aux admins de groupes un partenariat contenu. Contacter les delegations départementales UNAPEI et UNAFAM pour relayer."
+    },
+    {
+      "who": "Professionnels MDPH (agents d'orientation, équipes pluridisciplinaires) qui orientent les personnes handicapees",
+      "where": "Réseau des 104 MDPH. CNSA (Caisse Nationale de Solidarite pour l'Autonomie). Colloques MDPH. LinkedIn groupes professionnels medico-social.",
+      "howToReach": "Contacter les directeurs de MDPH par email institutionnel. Proposer un accès gratuit en echange de feedback. Presenter lors des journees nationales CNSA."
+    },
+    {
+      "who": "Assistantes sociales et travailleurs sociaux en hopital, CAMSP, CMP, qui aident les familles dans leurs démarches",
+      "where": "ANAS (Association Nationale des Assistants de Service Social). Groupes Facebook 'Travailleurs sociaux'. Forums professionnels medico-social.",
+      "howToReach": "Flyers dans les CAMSP et CMP. Emailing aux cadres socio-educatifs des hopitaux. Stand lors du congres national du travail social."
+    }
+  ],
+  "pricingStrategy": "Freemium. Recherche gratuite et illimitée pour les familles et professionnels. Fiche de base gratuite pour les établissements. Offre Premium établissement a 49 euros/mois (fiche enrichie avec photos, description détaillée, mise en avant dans les résultats, statistiques de consultation). Licence MDPH/ARS a 500 euros/mois (dashboard territorial, export de données, vision multi-départementale). API pour intégration a 200 euros/mois.",
+  "pathTo10kMrr": "200 établissements premium a 49 euros/mois = 9 800 euros. Plus 1-2 licences MDPH/ARS a 500 euros/mois. Cible atteignable en 12-18 mois : il y a 35 000+ établissements medico-sociaux en France, dont 8 000+ MAS/FAM/IME avec des besoins de visibilite. Les MDPH sont en demande d'outils de pilotage. Stratégie : commencer par 3 départements pilotes, demontrer la valeur, puis deployer nationalement.",
+  "techStack": {
+    "frontend": "Next.js 14 avec App Router, Tailwind CSS, Leaflet pour la cartographie",
+    "backend": "Next.js API Routes, Node.js",
+    "database": "PostgreSQL avec PostGIS pour les requetes géospatiales",
+    "hosting": "Vercel (frontend) + Supabase (PostgreSQL + auth)",
+    "apis": [
+      "API FINESS (data.gouv.fr)",
+      "API ES-Handicap (data.gouv.fr)",
+      "API Adresse (adresse.data.gouv.fr) pour géocodage",
+      "Mapbox où Leaflet tiles pour cartographie"
+    ],
+    "notes": "Les données FINESS sont mises à jour mensuellement. ES-Handicap est une enquête quadriennale (tous les 4 ans) donc les profils de deficiences evoluent lentement. Prevoir un pipeline de mise à jour automatique pour FINESS et un enrichissement crowdsource pour les données ES-Handicap entre deux enquêtes."
+  },
+  "risks": [
+    {
+      "risk": "Qualité des données ES-Handicap : enquête quadriennale, données potentiellement obsolètes pour certaines structures",
+      "mitigation": "Permettre aux établissements de mettre à jour leur profil manuellement. Croiser avec d'autres sources (sites web des structures, rapports d'activité). Indiquer clairement la date de dernière mise à jour."
+    },
+    {
+      "risk": "Taux de matching faible entre FINESS et ES-Handicap (identifiants différents, structures ayant change)",
+      "mitigation": "Faire un POC de matching sur 3 départements avant de développer. Utiliser le numéro FINESS comme clé primaire. Prevoir un matching fuzzy sur nom + adresse en fallback."
+    },
+    {
+      "risk": "Les établissements refusent de communiquér leurs places disponibles (peur d'etre submerges de demandes)",
+      "mitigation": "Proposer un système de mise en relation mediate plutot qu'un contact direct. Permettre de masquer le telephone. Offrir de la valeur (statistiques de consultation, visibilite) en echange."
+    },
+    {
+      "risk": "Concurrence de ViaTrajectoire si l'outil s'ouvre au grand public",
+      "mitigation": "Se différencier par l'UX grand public vs l'interface professionnelle de ViaTrajectoire. Se positionnér sur la recherche en amont (exploration) plutot que sur l'admission (procèssus administratif)."
+    },
+    {
+      "risk": "Sensibilite des données : afficher des informations sur des établissements accueillant des personnes vulnerables",
+      "mitigation": "Ne publiér que des données déjà publiques (FINESS est open data). Ne jamais afficher de données individuelles. Respecter le RGPD. Consulter la CNIL si doute."
+    }
+  ],
+  "inspirations": "Doctolib (recherche de praticiens par spécialité et localisation, mais pour les établissements handicap). Annuaire-sante.ameli.fr (modèle de fiche professionnelle). Keldoc.com (prise de rendez-vous). Carenity.com (communauté de patients). En UK : CQC (Care Quality Commission) qui note et répertorié tous les établissements de soins avec filtres détaillés.",
+  "searchVolume": [
+    {
+      "keyword": "MAS autisme",
+      "monthlyVolume": "1 200",
+      "difficulty": "faible",
+      "intent": "recherche de place"
+    },
+    {
+      "keyword": "FAM place disponible",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "recherche de place"
+    },
+    {
+      "keyword": "ESAT handicap psychique",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "recherche de place"
+    },
+    {
+      "keyword": "IME proche",
+      "monthlyVolume": "1 600",
+      "difficulty": "faible",
+      "intent": "recherche de place"
+    },
+    {
+      "keyword": "annuaire FINESS",
+      "monthlyVolume": "2 400",
+      "difficulty": "moyenne",
+      "intent": "recherche d'établissement"
+    },
+    {
+      "keyword": "établissement handicap",
+      "monthlyVolume": "3 200",
+      "difficulty": "moyenne",
+      "intent": "recherche d'établissement"
+    },
+    {
+      "keyword": "place en MAS",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "recherche de place"
+    },
+    {
+      "keyword": "foyer de vie handicap",
+      "monthlyVolume": "1 900",
+      "difficulty": "faible",
+      "intent": "recherche de place"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 000 familles en recherche active + 104 MDPH + 35 000 établissements medico-sociaux. Marché potentiel total : 50M euros/an (établissements + acteurs publics + services associés).",
+    "sam": "8 000 établissements MAS/FAM/IME/ESAT susceptibles de prendre une fiche premium + 104 MDPH. Marché adressable : 6M euros/an.",
+    "som": "200 établissements premium + 5 MDPH/ARS en année 1-2. Objectif : 150K euros ARR en 18 mois.",
+    "methodology": "TAM base sur le nombre de familles ayant une personne handicapee en attente d'orientation (source : rapport CNSA 2023, étude DREES). SAM base sur les établissements ayant un intérêt à la visibilite (structures avec listes d'attente longues). SOM base sur un taux de conversion de 2.5% des établissements contactes."
+  },
+  "competitorDeep": [
+    {
+      "name": "Annuaire FINESS (sante.gouv.fr)",
+      "url": "https://finess.sante.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "50 000 visites/mois",
+      "reviews": "Très critiqué par les usagers : interface datee, pas de filtre par handicap, données brutes inexploitables par le grand public",
+      "strengths": "Exhaustif (45 000+ structures), données officielles, mis à jour régulièrement",
+      "weaknesses": "Aucune recherche par type de handicap. Interface des années 2000. Pas de notion de places disponibles. Incomprehensible pour les familles."
+    },
+    {
+      "name": "Mon Parcours Handicap",
+      "url": "https://www.monparcourshandicap.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "200 000 visites/mois",
+      "reviews": "Bien concu mais purement informatif, ne permet pas de trouver une structure concrete adaptee a sa situation",
+      "strengths": "Plateforme officielle, contenu pédagogique de qualité, bonne UX",
+      "weaknesses": "Pas d'annuaire de structures. Pas de recherche par type de handicap. Reste au niveau de l'information générale, ne resout pas le problème concret de trouver une place."
+    },
+    {
+      "name": "ViaTrajectoire",
+      "url": "https://trajectoire.sante-ra.fr",
+      "pricing": "Gratuit pour les professionnels (accès restreint)",
+      "trafficEstimate": "30 000 visites/mois (essentiellement professionnels)",
+      "reviews": "Utile pour les pros mais inaccèssible aux familles. Interface complexe.",
+      "strengths": "Outil d'orientation officiel des ARS. Gere les admissions. Données sur les places disponibles en temps reel (pour les structures qui l'utilisent).",
+      "weaknesses": "Reserve aux professionnels. Non accèssible au grand public. Couverture inégale selon les régions. Interface professionnelle peu intuitive."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation des données FINESS",
+      "status": "ok",
+      "detail": "FINESS est publié en open data sous licence ouverte Etalab. Réutilisation libre y compris commerciale.",
+      "source": "data.gouv.fr, licence ouverte 2.0"
+    },
+    {
+      "topic": "Réutilisation des données ES-Handicap",
+      "status": "attention",
+      "detail": "Les données ES-Handicap publiées sur data.gouv.fr sont agrègees et anonymisees, donc reutilisables. Verifier que les croisements ne permettent pas de re-identifiér des personnes (petites structures avec peu de residents).",
+      "source": "DREES, CNIL recommandations open data"
+    },
+    {
+      "topic": "RGPD et données de sante",
+      "status": "attention",
+      "detail": "L'outil ne traite pas de données individuelles de sante. Cependant, si des familles créént un compte pour chercher une structure, leur profil de recherche (type de handicap) est une donnée sensible au sens du RGPD art. 9. Necessaire : consentement explicite, DPO, analyse d'impact (AIPD).",
+      "source": "RGPD art. 9, CNIL guide données de sante"
+    },
+    {
+      "topic": "Responsabilite sur les informations de places disponibles",
+      "status": "attention",
+      "detail": "Si l'outil affiche des places disponibles et qu'elles sont erronees, risque de deception et de plaintes. Prevoir des mentions légales claires : 'informations fournies par les établissements, verifiez directement'.",
+      "source": "Code de la consommation, obligation d'information loyale"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages par type de handicap x département)",
+      "cacEstimate": "5 euros",
+      "conversionRate": "3% (visiteur -> recherche complete)",
+      "ltv": "0 euros (utilisateur gratuit, valeur indirecte via effet réseau)",
+      "ltvCacRatio": "N/A - acquisition gratuite pour créér le réseau"
+    },
+    {
+      "channel": "Groupes Facebook handicap/autisme (publication organique)",
+      "cacEstimate": "0 euros",
+      "conversionRate": "5% (vue du post -> visite site)",
+      "ltv": "0 euros (utilisateur gratuit)",
+      "ltvCacRatio": "Infini (cout nul)"
+    },
+    {
+      "channel": "Demarchage direct établissements (email + telephone)",
+      "cacEstimate": "150 euros (temps commercial)",
+      "conversionRate": "8% (contact -> abonnement premium)",
+      "ltv": "588 euros (49 euros/mois x 12 mois)",
+      "ltvCacRatio": "3.9"
+    },
+    {
+      "channel": "Partenariats associations (UNAPEI, Autisme France, APF)",
+      "cacEstimate": "0 euros (partenariat contenu)",
+      "conversionRate": "2% (newsletter asso -> visite site)",
+      "ltv": "0 euros (trafic gratuit, valeur SEO)",
+      "ltvCacRatio": "Infini"
+    },
+    {
+      "channel": "Demarchage MDPH/ARS (vente B2G)",
+      "cacEstimate": "2 000 euros (cycle de vente long, demos, POC)",
+      "conversionRate": "5% (contact -> contrat)",
+      "ltv": "6 000 euros (500 euros/mois x 12 mois)",
+      "ltvCacRatio": "3.0"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 62,
+      "detail": "2.2K recherches/mois cumulees ('FAM place disponible' 880/mois, 'ESAT handicap psychique' 720/mois). TAM: 50M eur. Cibles: Familles en recherche active, Professionnels MDPH, Assistantes sociales et travailleurs."
+    },
+    "feasibility": {
+      "score": 20,
+      "detail": "MVP en 10-12 semaines. 4 APIs a integrer (API FINESS, API ES-Handicap, API Adresse pour géocodage). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 48,
+      "detail": "2 clients a 49 EUR pour demarrer. Objectif 10K MRR en 12-18 mois. SOM: 150K eur/an. Pricing 49-500 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: Annuaire FINESS (sante.gouv.fr, Mon Parcours Handicap, ViaTrajectoire. Leader: Annuaire FINESS (50 000 visites/mois). Faiblesse principale: Aucune recherche par type de handicap."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Réutilisation des données ES-Handicap, RGPD et données de sante."
+    },
+    "overall": {
+      "score": 46,
+      "detail": "Point fort: demande (62/100). Point faible: faisabilite (20/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

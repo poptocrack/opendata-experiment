@@ -1,0 +1,326 @@
+{
+  "productSlug": "outil-de-pilotage-pour-mdph-ars-cartographie-des-besoins-vs-offre-disponible-par",
+  "oneLiner": "Outil de pilotage pour MDPH/ARS : cartographie des besoins vs offre disponible par territoire, détection de zones sous-dotees",
+  "problem": "Les 104 MDPH et 18 ARS pilotent l'offre médico-sociale sans outil de visualisation croise de l'offre et de la demande. D'un côté, les données de demande existent : nombre de bénéficiaires AAH par département, demandes d'orientation en attente, listes d'attente des établissements. De l'autre, les données d'offre existent : FINESS (établissements, capacité), ES-Handicap (profils accueillis). Mais ces données ne sont jamais croisees dans un outil actionnable. Résultat : des territoires ou il y a 500 personnes orientées MAS pour 200 places disponibles, sans que personne ne le visualise clairement. Les PRIAC (plans régionaux) sont faits sur Excel avec des données partielles. Les décisions de création de places se font sans vision complète.",
+  "solution": "Un SaaS B2G de pilotage territorial qui croise les données de demande (bénéficiaires AAH, orientations MDPH, listes d'attente) avec les données d'offre (FINESS, ES-Handicap, capacités) pour produire des cartographies de gap analysis par type de handicap, par type de structuré, et par territoire. Dashboards interactifs : carte des zones sous-dotees, indicateurs de tension (ratio demande/offre), évolution temporelle, comparaison inter-départementale. Alertes automatiques quand un territoire dépasse un seuil de tension. Export pour les rapports PRIAC et CPOM.",
+  "uniqueValue": "Premier outil de gap analysis territoriale offre/demande médico-sociale en France. Croise des données open data jamais combinees dans un outil decisonnel. Remplace des analyses Excel manuelles par un dashboard temps réel.",
+  "mvpScope": "Dashboard web avec carte de France interactive. Croisement FINESS (offre) x données AAH (demande approximative) pour les 104 départements. Indicateurs de tension par type de structuré (MAS, FAM, IME, ESAT). Comparateur inter-departemental. Export PDF/CSV des tableaux de bord.",
+  "timeToMvp": "12-14 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Modelisation et intégration des données",
+      "description": "Intégrer les données FINESS (offre), AAH par département (demande proxy), ES-Handicap (profils). Modeliser les indicateurs de tension. Définir les zones géographiques (département, bassin de vie).",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline d'import FINESS avec capacités par type de structuré",
+        "Pipeline d'import données AAH par département (data.gouv.fr)",
+        "Pipeline d'import ES-Handicap",
+        "Modèle de données unifie avec indicateurs de tension"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Dashboard et cartographie",
+      "description": "Développer le dashboard interactif avec carte de France, filtres par type de handicap et de structuré, indicateurs cles. Comparaison inter-départementale.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Carte de France interactive avec indicateurs par département",
+        "Dashboard par département (offre vs demande, taux de tension)",
+        "Comparateur inter-departemental",
+        "Filtres par type de structuré et type de handicap"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "POC avec MDPH/ARS pilotes",
+      "description": "Déployer le POC auprès de 3-5 MDPH et 1-2 ARS volontaires. Collecter le feedback. Itérer sur les indicateurs et la présentation.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Déploiement pilote auprès de 3-5 MDPH",
+        "Sessions de feedback avec les utilisateurs",
+        "Itérations sur le dashboard",
+        "Export PDF pour les rapports PRIAC"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Commercialisation et enrichissement",
+      "description": "Formaliser l'offre commerciale. Enrichir avec les données de listes d'attente (si partenariat MDPH). Ajouter les alertes automatiques et les prédictions.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Offre commerciale formalisee (grille tarifaire, contrat)",
+        "Système d'alertes automatiques (seuils de tension)",
+        "Intégration optionnelle des listes d'attente MDPH",
+        "Module de projection (évolution démographique)"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les données open data suffisent pour calculer des indicateurs de tension pertinents",
+      "how": "Croiser FINESS et données AAH pour 5 départements. Calculer le ratio bénéficiaires AAH / places en établissement. Vérifier si les résultats correspondent aux constats terrain (zones connues comme sous-dotees).",
+      "successCriteria": "Les 5 départements tests montrent des ratios cohérents avec les rapports CNSA existants. Les zones identifiées comme sous-dotees correspondent aux remontees terrain."
+    },
+    {
+      "check": "Les MDPH/ARS ont ce besoin et n'ont pas d'outil équivalent",
+      "how": "Interviewer 5 directeurs de MDPH et 3 responsables ARS sur leurs outils de pilotage actuels. Présenter une maquette du dashboard.",
+      "successCriteria": "4+ confirment utiliser Excel pour le pilotage. 3+ se disent intéressés par un outil dédié. Aucun ne cite un outil équivalent existant."
+    },
+    {
+      "check": "Le budget est disponible dans les MDPH/ARS pour ce type d'outil",
+      "how": "Discuter budget avec les contacts MDPH/ARS. Vérifier les lignes budgetaires 'systèmes d'information' dans les budgets MDPH publies.",
+      "successCriteria": "Budget moyen SI d'une MDPH : 100K-500K euros/an. Notre tarif (500 euros/mois) représente < 2% du budget SI = décision opérationnelle, pas politique."
+    },
+    {
+      "check": "Le cycle de vente B2G est compatible avec la tresorerie d'une startup",
+      "how": "Mapper le processus de décision d'achat d'un outil SaaS par une MDPH (qui décidé, quel budget, quel délai).",
+      "successCriteria": "Cycle de décision < 6 mois. Possibilité de commencer avec un POC gratuit puis facturer. Pas de marché public obligatoire sous 40K euros."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Directeurs de MDPH innovants, en général dans des départements de taille moyenne (pas trop gros pour etre agiles, assez grands pour avoir le budget)",
+      "where": "Réseau des directeurs de MDPH (CNSA organise des rencontres annuelles). LinkedIn : 'Directeur MDPH'. Colloques CNSA (Journees nationales des MDPH). Salon Autonomic.",
+      "howToReach": "Email personnalise avec le diagnostic de leur département génère automatiquement (carte de tension). Demande de rendez-vous visio de 20 minutes. Proposition de POC gratuit de 3 mois."
+    },
+    {
+      "who": "ARS (Agences Régionales de Sante) en charge de la planification médico-sociale (delegations départementales, direction de l'autonomie)",
+      "where": "18 ARS avec delegations départementales. Services 'offre médico-sociale' ou 'autonomie'. PRIAC (Plans Régionaux). LinkedIn : responsables planification médico-sociale.",
+      "howToReach": "Approche par la CNSA (tutelle des MDPH et interlocuteur des ARS). Présentation lors des COPIL régionaux. Proposition de démo personnalisee avec les données de leur territoire."
+    },
+    {
+      "who": "CNSA (Caisse Nationale de Solidarite pour l'Autonomie) elle-même, qui a pour mission de piloter l'offre médico-sociale nationale",
+      "where": "CNSA Paris. Direction de la compensation. Observatoire national des MDPH.",
+      "howToReach": "Contact direct via le site cnsa.fr ou LinkedIn. L'outil repond directement a leur mission. Possibilité de co-construction ou de soutien financier via appel a projets CNSA."
+    }
+  ],
+  "pricingStrategy": "SaaS B2G avec tarification par taille de territoire. MDPH départementale : 500 euros/mois (1 département, 5 utilisateurs, dashboard complet, export). ARS régionale : 2 000 euros/mois (multi-départements, comparaison inter-territoriale, alertes, 20 utilisateurs). CNSA national : sur devis (vision nationale, tous départements, API). POC gratuit de 3 mois pour les 5 premiers MDPH. Tarif dégressif pour les multi-annuelles.",
+  "pathTo10kMrr": "10 MDPH a 500 euros/mois = 5 000 euros + 2 ARS a 2 000 euros/mois = 4 000 euros + services complémentaires (formation, personnalisation) = 1 000 euros/mois. Total : 10 000 euros/mois. Atteignable en 18-24 mois. Il y a 104 MDPH, toutes financees par la CNSA. Les ARS ont des budgets SI significatifs. La CNSA elle-même pourrait devenir cliente pour la vision nationale. Stratégie : 5 MDPH pilotes gratuites -> prouver la valeur -> convertir 10 payantes -> pitch ARS -> pitch CNSA.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS, D3.js pour les cartographies et visualisations, Recharts pour les graphiques",
+    "backend": "Next.js API Routes ou FastAPI (Python) si besoin de calculs lourds",
+    "database": "PostgreSQL avec PostGIS",
+    "hosting": "Scalingo ou OVH Cloud (hébergement souverain requis pour B2G)",
+    "apis": [
+      "FINESS (data.gouv.fr)",
+      "Données AAH par département (data.gouv.fr / CNAF)",
+      "ES-Handicap (data.gouv.fr / DREES)",
+      "API INSEE (données démographiques par territoire)",
+      "API Adresse (géocodage)"
+    ],
+    "notes": "Hébergement souverain (pas AWS/GCP) potentiellement requis par les clients publics. SecNumCloud serait un plus mais pas obligatoire pour des données open data. Considérer Scalingo (hébergeur francais PaaS) ou OVH Cloud. Si les MDPH partagent des données internes (listes d'attente), un hébergement HDS (Hébergeur de Données de Sante) sera nécessaire."
+  },
+  "risks": [
+    {
+      "risk": "Les données open data ne suffisent pas pour un pilotage précis (granularite insuffisante, données trop anciennes)",
+      "mitigation": "Commencer avec les données open data comme 'version 1' puis proposer aux MDPH d'enrichir avec leurs données internes. Positionner le POC comme un apercu de ce que l'outil pourrait faire avec les données complètes."
+    },
+    {
+      "risk": "Cycle de vente B2G très long (6-18 mois) et marchés publics complexes",
+      "mitigation": "Rester sous le seuil des marchés publics (40K euros HT). Proposer des POC gratuits pour accelerer la décision. Cibler les MDPH déjà identifiées comme innovantes (ex: MDPH du Nord, MDPH de la Gironde). Chercher un soutien CNSA."
+    },
+    {
+      "risk": "Un acteur institutionnel (CNSA, Serafin-PH) developpe un outil équivalent en interne",
+      "mitigation": "Se positionner comme partenaire, pas concurrent. Proposer une marque blanche a la CNSA. L'agilite d'une startup vs un projet institutionnel est un avantage temporel de 2-3 ans minimum."
+    },
+    {
+      "risk": "Résistance au changement des équipes MDPH (habituees a Excel)",
+      "mitigation": "UX très simple, copiant les habitudes Excel (tableaux, export CSV). Formation gratuite incluse. Montrer le gain de temps concret : 'votre analyse PRIAC en 2 clics au lieu de 2 semaines'."
+    },
+    {
+      "risk": "Sensibilité politique des indicateurs de tension (pointer les insuffisances d'un territoire)",
+      "mitigation": "Ne pas publier les données par département en acces libre (outil réservé aux clients). Présenter les indicateurs comme des outils d'amélioration, pas de critique. Laisser le client maître de sa communication."
+    }
+  ],
+  "inspirations": "Geoclip/France Decouverte (cartographie statistique francaise). Dataiku (plateforme data, mais pour le secteur public). Tableau Public (dashboards interactifs). En sante : GeoSante (ARS Île-de-France), Scan Sante (ATIH). En UK : Local Insight (data platform for local authorities). Aux USA : PolicyMap (data mapping for public sector).",
+  "searchVolume": [
+    {
+      "keyword": "pilotage MDPH",
+      "monthlyVolume": "170",
+      "difficulty": "faible",
+      "intent": "outil professionnel"
+    },
+    {
+      "keyword": "cartographie médico-sociale",
+      "monthlyVolume": "210",
+      "difficulty": "faible",
+      "intent": "outil professionnel"
+    },
+    {
+      "keyword": "offre médico-sociale département",
+      "monthlyVolume": "320",
+      "difficulty": "faible",
+      "intent": "information professionnelle"
+    },
+    {
+      "keyword": "PRIAC ARS",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "professionnel planification"
+    },
+    {
+      "keyword": "places MAS disponibles",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "mixte (familles + pro)"
+    },
+    {
+      "keyword": "liste attente établissement handicap",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "mixte"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "104 MDPH + 18 ARS + 100 delegations territoriales ARS + CNSA + Conseils departementaux (pilotage autonomie). Marché potentiel : 15M euros/an (outils SI médico-sociaux publics).",
+    "sam": "104 MDPH (budget SI moyen 200K euros/an) + 18 ARS (budget SI offre médico-sociale). Marché adressable : 8M euros/an.",
+    "som": "10 MDPH + 2 ARS en année 1-2. Objectif : 120K euros ARR en 24 mois.",
+    "methodology": "TAM base sur le nombre d'acteurs publics impliques dans le pilotage médico-social (source CNSA, annuaire des MDPH). SAM base sur les budgets SI observes. SOM base sur un taux de pénétration de 10% des MDPH en 2 ans (cible réaliste pour un produit B2G innovant avec POC gratuit)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Outils internes CNSA/MDPH (Excel, Business Objects)",
+      "url": "N/A",
+      "pricing": "Coûts internes (licences BO : 5K-50K euros/an)",
+      "trafficEstimate": "N/A",
+      "reviews": "Les professionnels MDPH se plaignent de l'absence d'outil dédié. Les analyses sont faites sur Excel, laborieuses, non partagees entre MDPH. Business Objects est utilisé par certaines mais peu convivial.",
+      "strengths": "Contrôle total des données. Intégration avec les SI internes. Pas de dépendance a un prestataire.",
+      "weaknesses": "Pas de vision croisee offre/demande. Pas de cartographie. Pas de comparaison inter-départementale. Maintenance couteuse. Compétences BI rares dans les MDPH."
+    },
+    {
+      "name": "ViaTrajectoire",
+      "url": "https://trajectoire.sante-ra.fr",
+      "pricing": "Gratuit (finance par les ARS)",
+      "trafficEstimate": "30 000 visites/mois",
+      "reviews": "Outil d'orientation individuelle, pas de pilotage territorial. Ne fait pas de gap analysis.",
+      "strengths": "Données sur les places disponibles en temps réel (pour les structures connectees). Couverture nationale. Finance par les ARS.",
+      "weaknesses": "Outil d'admission, pas de pilotage. Pas de vision offre vs demande. Pas de cartographie des besoins. Couverture inégale."
+    },
+    {
+      "name": "SI-MDPH (système d'information national des MDPH)",
+      "url": "N/A (interne CNSA)",
+      "pricing": "Finance par la CNSA",
+      "trafficEstimate": "N/A",
+      "reviews": "Projet en cours de déploiement (harmonisation des SI MDPH). Couvre le traitement des dossiers, pas le pilotage territorial de l'offre.",
+      "strengths": "Projet national, soutien CNSA, harmonisation des pratiques.",
+      "weaknesses": "Focus traitement dossier, pas pilotage. Déploiement lent (plusieurs années). Pas de croisement avec les données d'offre (FINESS). Pas de cartographie."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation des données open data (FINESS, AAH, ES-Handicap)",
+      "status": "ok",
+      "detail": "Toutes les données utilisées sont open data sous licence ouverte Etalab. Réutilisation libre y compris commerciale.",
+      "source": "data.gouv.fr, licence ouverte 2.0"
+    },
+    {
+      "topic": "Hébergement de données publiques",
+      "status": "attention",
+      "detail": "Si les MDPH partagent des données internes (listes d'attente nominatives), un hébergement HDS (Hébergeur de Données de Sante) est requis. Pour les données open data seules, pas de contrainte spécifique mais un hébergement souverain est un plus commercial.",
+      "source": "Code de la sante publique art. L1111-8, CNIL, doctrine cloud de l'Etat"
+    },
+    {
+      "topic": "Marchés publics",
+      "status": "attention",
+      "detail": "Les achats publics de moins de 40K euros HT peuvent se faire sans procédure formelle. Au-delà, marché public nécessaire. Notre tarif (500-2000 euros/mois) reste sous ce seuil pour les contrats annuels de MDPH individuelles.",
+      "source": "Code de la commande publique, seuils 2024"
+    },
+    {
+      "topic": "RGPD et données agregees",
+      "status": "ok",
+      "detail": "L'outil utilisé uniquement des données agregees (nombre de bénéficiaires par département, capacités par structuré). Pas de données individuelles. Pas de traitement de données personnelles sauf si intégration de données MDPH internes (dans ce cas, AIPD requise).",
+      "source": "RGPD, CNIL recommandation open data"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Démarchage direct MDPH (email personnalise + diagnostic offert)",
+      "cacEstimate": "2 000 euros (temps commercial, 2-4 mois de cycle)",
+      "conversionRate": "10% (contact -> contrat apres POC)",
+      "ltv": "6 000 euros (500 euros/mois x 12 mois)",
+      "ltvCacRatio": "3.0"
+    },
+    {
+      "channel": "Congres CNSA et salon Autonomic (présence physique)",
+      "cacEstimate": "5 000 euros par événement (stand + deplacement)",
+      "conversionRate": "3 contacts qualifiés par événement",
+      "ltv": "6 000 euros par contrat",
+      "ltvCacRatio": "3.6 (si 1 contrat par événement)"
+    },
+    {
+      "channel": "Recommandation par MDPH pilotes (bouche a oreille institutionnel)",
+      "cacEstimate": "0 euros",
+      "conversionRate": "30% (recommandation -> intérêt)",
+      "ltv": "6 000 euros",
+      "ltvCacRatio": "Infini"
+    },
+    {
+      "channel": "Publication de rapports open data sur les inégalités territoriales",
+      "cacEstimate": "500 euros (temps d'analyse)",
+      "conversionRate": "N/A (notoriété + crédibilité)",
+      "ltv": "N/A",
+      "ltvCacRatio": "Élevé (inbound B2G)"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 41,
+      "detail": "2.3K recherches/mois cumulees ('places MAS disponibles' 720/mois, 'liste attente établissement handicap' 480/mois). TAM: 15M eur. Cibles: Directeurs de MDPH innovants,, ARS, CNSA."
+    },
+    "feasibility": {
+      "score": 15,
+      "detail": "MVP en 12-14 semaines. 5 APIs a intégrer (FINESS, Données AAH par département, ES-Handicap). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "Objectif 10K MRR en 18-24 mois. SOM: 120K eur/an. Pricing 0-500 EUR."
+    },
+    "competition": {
+      "score": 65,
+      "detail": "3 concurrents identifiés: Outils internes CNSA/MDPH (Exc, ViaTrajectoire, SI-MDPH (système d'information. Leader: Outils internes CNSA/MDPH (N/A). Faiblesse principale: Pas de vision croisee offre/demande."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Hébergement de données publiques, Marchés publics."
+    },
+    "overall": {
+      "score": 53,
+      "detail": "Point fort: marché (88/100). Point faible: faisabilité (15/100). Idee intéressante, risques significatifs a mitiger."
+    }
+  }
+}

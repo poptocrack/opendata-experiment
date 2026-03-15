@@ -1,0 +1,336 @@
+{
+  "productSlug": "rapport-d-attractivite-pour-collectivites-comment-se-positionner-vs-les-communes",
+  "oneLiner": "Rapport d'attractivité automatise pour collectivités : positionnez votre territoire vs les communes comparables sur 20 indicateurs.",
+  "problem": "Les collectivités investissent des millions pour attirer habitants et entreprises, mais n'ont pas de vision claire de leur positionnement par rapport aux communes comparables. Les diagnostics territoriaux coutent 30-80K EUR auprès de cabinets de conseil et sont obsoletes en 2 ans. Les élus prennent des décisions d'investissement sans benchmark objectif.",
+  "solution": "Un rapport d'attractivité généré automatiquement qui positionne la collectivité sur 20 indicateurs cles (fiscalité, équipements, demographie, emploi, immobilier, sécurité, éducation, santé) par rapport aux communes de meme strate demographique. Actualise annuellement. Recommandations d'actions prioritaires basees sur les faiblesses identifiées.",
+  "uniqueValue": "Automatisation complété du diagnostic d'attractivité là où les cabinets facturent 50K+ pour un rapport statique. Benchmark dynamique avec des communes comparables (meme strate, meme région). Mise à jour annuelle automatique vs rapport one-shot.",
+  "mvpScope": "Rapport PDF auto-généré pour une commune : 10 indicateurs cles (fiscalité, BPE/habitant, prix immobilier, revenus, demographie, emploi), positionnement dans le decile de sa strate demographique, 3 points forts et 3 axes d'amélioration. Benchmark avec 5 communes comparables selectionnees automatiquement.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Modèle d'attractivité et benchmark",
+      "description": "Definir les 10 indicateurs d'attractivité, collecter les données par commune (data.gouv.fr), calculer les percentiles par strate demographique, identifier les communes comparables.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "10 indicateurs definis et documentes",
+        "Base de données 36K communes",
+        "Algorithme de sélection communes comparables",
+        "Calcul des percentiles par strate"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Générateur de rapport",
+      "description": "Template de rapport PDF professionnel, génération automatique avec graphiques radar, tableaux comparatifs, recommandations. Interface de commande en ligne.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Template rapport PDF",
+        "Graphiques radar et comparatifs",
+        "Module recommandations",
+        "Interface de commande"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Commercialisation collectivités",
+      "description": "Rapports gratuits pour 10 collectivités pilotes, demarchage via les réseaux d'élus, stand au salon des maires.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "10 rapports pilotes",
+        "Kit commercial",
+        "Presentation salon des maires",
+        "Temoignages pilotes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les collectivités ont un budget pour ce type de diagnostic",
+      "how": "Contacter 15 DGS (Directeurs Generaux des Services) de communes 10-50K habitants, présenter le concept, demander budget disponible",
+      "successCriteria": "8 réponses, 5 confirment un budget de 3-10K EUR/an pour ce type d'outil"
+    },
+    {
+      "check": "Le rapport automatise est juge credible par les élus",
+      "how": "Générer 3 rapports test pour des communes qui ont récemment fait un diagnostic avec un cabinet, comparer les conclusions",
+      "successCriteria": "Conclusions alignees a 70% avec les diagnostics cabinet sur les points forts/faibles"
+    },
+    {
+      "check": "Les recommandations sont actionnables",
+      "how": "Presenter le rapport a 5 élus et demander s'ils identifient des actions concretes a mener",
+      "successCriteria": "4/5 élus identifient au moins 2 actions concretes basees sur le rapport"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Maires et DGS de communes 10 000 - 50 000 habitants (assez grandes pour le budget, trop petites pour un cabinet)",
+      "where": "AMF (Association des Maires de France), AMRF (petites communes), salons des maires",
+      "howToReach": "Rapport gratuit pour la commune du maire comme demo, envoi postal personnalise aux 500 communes de la strate cible"
+    },
+    {
+      "who": "Agences de développement économique territorial",
+      "where": "CNER (fédération des agences), LinkedIn, conferences développement territorial",
+      "howToReach": "Proposition de licence multi-territoires pour leurs missions de promotion territoriale"
+    },
+    {
+      "who": "Cabinets de conseil en collectivités locales cherchant a industrialiser leurs diagnostics",
+      "where": "LinkedIn, salons des maires, annuaire des cabinets conseil collectivités",
+      "howToReach": "Licence white-label : le cabinet vend le rapport sous sa marque, nous fournissons la data et la génération"
+    }
+  ],
+  "pricingStrategy": "SaaS annuel + rapports a la carte. Rapport unitaire : 990 EUR (vs 50K+ cabinet). Abonnement commune : 249 EUR/mois (rapport annuel + dashboard de suivi + alertes évolution). Licence agence : 599 EUR/mois (5 territoires). Licence cabinet : 999 EUR/mois (rapports illimités, white-label).",
+  "pathTo10kMrr": "25 communes a 249 EUR/mois (6 225 EUR) + 3 agences a 599 EUR/mois (1 797 EUR) + 2 cabinets a 999 EUR/mois (1 998 EUR) = 10 020 EUR MRR. Les cycles de vente collectivité sont longs (3-6 mois) mais le churn est quasi nul. L'envoi du rapport gratuit personnalise est un levier de conversion puissant. Timeline : 12-15 mois.",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS",
+    "backend": "Next.js API routes + Python (génération PDF)",
+    "database": "PostgreSQL (Supabase)",
+    "hosting": "Vercel + Railway (Python) + Supabase",
+    "apis": [
+      "data.gouv.fr (impôts locaux, BPE, DVF, revenus, demographie)",
+      "API Geo gouv.fr",
+      "API BANATIC (referentiel intercommunalité)"
+    ],
+    "notes": "Génération PDF avec ReportLab (Python) ou Puppeteer pour un rendu HTML-to-PDF de qualité. Le rapport doit etre 'imprimable' car les élus impriment. Graphiques generes côté serveur avec matplotlib ou Chart.js SSR."
+  },
+  "risks": [
+    {
+      "risk": "Cycle de vente tres long avec les collectivités (deliberations, budget annuel vote en avancé)",
+      "mitigation": "Viser les achats sous le seuil des marchés (< 40K EUR). Le rapport unitaire a 990 EUR peut etre achété sur budget de fonctionnement sans délibération."
+    },
+    {
+      "risk": "Les indicateurs ne refletent pas la perception d'attractivité des habitants",
+      "mitigation": "Completer avec des indicateurs de perception (avis Google, attractivité touristique) et permettre a la collectivité d'ajouter ses propres indicateurs."
+    },
+    {
+      "risk": "Sensibilité politique : un rapport qui montre des faiblesses peut etre mal reçu",
+      "mitigation": "Presenter les faiblesses comme des 'axes d'amélioration' avec des recommandations positives. Option de rapport 'confidentiel' non public."
+    }
+  ],
+  "inspirations": "McKinsey/BCG pour les diagnostics territoriaux (mais a 100K+), Manty (SaaS data pour collectivités, levé 5.4M EUR total), Datactivist (conseil open data collectivités). Le concept s'inspire de ce que HubSpot Website Grader fait pour les sites web : un audit automatise gratuit qui généré des leads.",
+  "searchVolume": [
+    {
+      "keyword": "attractivité territoriale",
+      "monthlyVolume": "1600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "diagnostic territorial",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "benchmark communes",
+      "monthlyVolume": "320",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "comparateur communes France",
+      "monthlyVolume": "880",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "classement communes attractives",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "indicateurs attractivité commune",
+      "monthlyVolume": "210",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "développement économique territorial",
+      "monthlyVolume": "1300",
+      "difficulty": "élevée",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "34 875 communes (au 1er jan 2025, vie-publique.fr) + 1 254 EPCI a fiscalité propre (21 metropoles, 14 communautés urbaines, 230 communautés d'agglo, 989 communautés de communes, source DGCL). Coût diagnostic cabinet: 30-80K EUR. TAM = 36 000 entites x 5K EUR/an (prix SaaS moyen) = 180M EUR/an. Marché logiciel secteur public FR: 9 Mds EUR en 2025 (Markess), croissance 2.7%/an.",
+    "sam": "Communes de 5 000-100 000 habitants ayant un budget de fonctionnement suffisant (env. 4 500 communes) + 1 254 EPCI + 100 agences de développement économique. SAM = 5 850 entites x 3K EUR/an (mix rapport unitaire + abonnement) = 17.5M EUR/an.",
+    "som": "Objectif an 1: 25 communes x 249 EUR/mois + 3 agences x 599 EUR/mois + 2 cabinets x 999 EUR/mois = 10 020 EUR MRR = 120K EUR ARR. Penetration: 0.5% du SAM.",
+    "methodology": "TAM basé sur le referentiel communes/EPCI (DGCL, jan 2025). SAM filtre sur les communes > 5000 hab (budget suffisant pour un outil SaaS, achat sous seuil marché public < 40K EUR HT sans formalité, releve a 60K EUR HT en avril 2026 par decrets 2025-1386/1383). Benchmark avec Manty (50+ collectivités clientes, 5.4M EUR leves: 2.4M en 2020 Banque des Territoires/Kima/Axeleo + 3M en 2022 Relyens) qui valide le marché SaaS collectivités."
+  },
+  "competitorDeep": [
+    {
+      "name": "Manty",
+      "url": "https://www.manty.eu",
+      "pricing": "Sur devis. Estimation 5 000-20 000 EUR/an selon taille de collectivité. Plateforme Manty Vision pour pilotage financier et RH.",
+      "trafficEstimate": "25K visites/mois",
+      "reviews": "5.4M EUR leves au total (2.4M en mars 2020 auprès Banque des Territoires, Kima Ventures, Axeleo Capital + 3M en mars 2022 auprès Relyens). 50+ collectivités clientes (Rambouillet, Biarritz, Clermont-Ferrand). Fondee en 2017 par 3 diplomes École Centrale.",
+      "strengths": "Plateforme data complété (finances + RH + pilotage), adosse a la Banque des Territoires, 50+ références, connaissance fine du marché collectivités, équipé technique solide.",
+      "weaknesses": "Focus pilotage interne (finances/RH), pas de benchmark inter-communes, pas de rapport d'attractivité externe, prix élève pour petites communes, pas de module de recommandations actionnables."
+    },
+    {
+      "name": "Cabinets conseil (Katalyse, Terre d'avancé, CODE Consultants, TGS France)",
+      "url": "https://www.katalyse.com",
+      "pricing": "30 000-80 000 EUR par diagnostic territorial complet. Missions de 3-6 mois. Accompagnement stratégique inclus. Expertise concurrentielle, identification enjeux prospectifs, plan d'actions.",
+      "trafficEstimate": "5-15K visites/mois (chacun)",
+      "reviews": "Cabinets spécialisés collectivités depuis 20+ ans. Katalyse: stratégie d'attractivité et zones d'activités. Terre d'avancé: valorisation ressources territoriales. CODE: expertise depuis 1991.",
+      "strengths": "Expertise humaine approfondie, personnalisation totale, légitimité auprès des élus, prise en compte du contexte politique, entretiens qualitatifs avec acteurs locaux.",
+      "weaknesses": "30-80K EUR par mission, rapport statique obsolété en 2 ans, délai 3-6 mois, pas de mise à jour automatique, pas scalable, pas de benchmark dynamique."
+    },
+    {
+      "name": "Attractivité des territoires (beta.gouv.fr)",
+      "url": "https://beta.gouv.fr/startups/attractivite.des.territoires.html",
+      "pricing": "Gratuit (service public). Porte par la Fabrique numérique des Finances publiques.",
+      "trafficEstimate": "N/A (outil interne en construction)",
+      "reviews": "Startup d'État visant a fournir des outils visuels et prospectifs aux conseillers des décideurs locaux pour renforcer la crédibilité de leurs projets d'investissement.",
+      "strengths": "Gratuit, légitimité institutionnelle, accès direct aux données publiques, cible les petites communes.",
+      "weaknesses": "Périmètre limite (accompagnement projets d'investissement, pas benchmark global), pas de rapport complet d'attractivité, dependant du financement public, adoption lente, pas opérationnel a grande échelle."
+    },
+    {
+      "name": "Datactivist",
+      "url": "https://datactivist.coop",
+      "pricing": "Missions de conseil 10 000-50 000 EUR. Accompagnement open data et stratégie data. Partenariat avec Eurogroup Consulting. Co-fondateur Data Publica.",
+      "trafficEstimate": "20K visites/mois",
+      "reviews": "Leader du conseil open data en France. Cooperative. Accompagnement du CD31 (Haute-Garonne) pour l'ouverture des données des communes du territoire.",
+      "strengths": "Expertise open data de référence, légitimité auprès des collectivités, partenariats solides (Eurogroup, Banque des Territoires), valeurs cooperatives.",
+      "weaknesses": "Conseil pur (pas de produit SaaS), pas de rapport d'attractivité automatise, modèle non scalable (dependant consultants), prix élève pour petites communes."
+    },
+    {
+      "name": "Observatoire des Territoires (ANCT)",
+      "url": "https://www.observatoire-des-territoires.gouv.fr",
+      "pricing": "Gratuit (service public). Données et analyses territoriales en accès libre.",
+      "trafficEstimate": "150K visites/mois",
+      "reviews": "Outil de référence pour les indicateurs territoriaux. Modelisation attractivité sur 78 indicateurs (30 principaux + 48 secondaires), notation sur 100. Disparites géographiques détaillées.",
+      "strengths": "Gratuit, données exhaustives, légitimité institutionnelle, couverture nationale, 78 indicateurs standardises, notation sur 100.",
+      "weaknesses": "Pas de rapport personnalise pour une commune, pas de benchmark dynamique entre communes comparables, interface technique complexe, pas de recommandations actionnables, pas de mise à jour en temps réel."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Marchés publics - Seuil d'achat sans formalité",
+      "status": "ok",
+      "detail": "Achat < 40 000 EUR HT sans publicité ni mise en concurrence (releve a 60 000 EUR HT au 1er avril 2026, decrets 2025-1386 et 2025-1383). Un rapport a 990 EUR ou un abonnement a 249 EUR/mois (2 988 EUR/an) passe largement sous le seuil. Achat possible sur budget de fonctionnement sans délibération du conseil.",
+      "source": "Decrets 2025-1386 et 2025-1383. Code de la commande publique. service-public.fr."
+    },
+    {
+      "topic": "Open data - Données communales",
+      "status": "ok",
+      "detail": "Les données utilisees (fiscalité locale, BPE, DVF, revenus, demographie) sont toutes en open data sur data.gouv.fr et data.économie.gouv.fr. Licence Etalab 2.0: reutilisation commerciale autorisee. Les collectivités > 3 500 hab ont l'obligation de publier leurs données (loi Republique Numérique 2016).",
+      "source": "Licence Etalab 2.0, data.gouv.fr. Loi Republique Numérique, 7 oct 2016. CNIL guide collectivités open data."
+    },
+    {
+      "topic": "RGPD et données communales",
+      "status": "ok",
+      "detail": "Les indicateurs utilises (fiscalité, équipements, demographie, prix immobilier) sont des données agregees au niveau communal, pas de données personnelles. Pas de contrainte RGPD sur le traitement.",
+      "source": "RGPD, CNIL"
+    },
+    {
+      "topic": "Sensibilité politique des classements",
+      "status": "attention",
+      "detail": "Un rapport qui classe ou note les communes peut etre percu comme politiquement sensible par les élus. Risque de pression pour modifier les résultats ou de refus d'achat. Presenter comme 'positionnement' et 'axes d'amélioration', pas comme classement critique. Option rapport confidentiel non public.",
+      "source": "Retour d'experience cabinets conseil collectivités (Katalyse, CODE Consultants)"
+    },
+    {
+      "topic": "Cycle budgetaire collectivités",
+      "status": "attention",
+      "detail": "Les budgets des collectivités sont votés en fin d'année N-1 pour N. Démarcher sept-oct pour achat année suivante. Credits non consommés en fin d'exercice = levier de vente en novembre-décembre.",
+      "source": "Code Général des Collectivités Territoriales, art. L1612-1 et suivants"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Rapport gratuit personnalise (lead magnet: rapport PDF offert pour la commune du maire)",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "10-20%",
+      "ltv": "2988 EUR (12 mois x 249 EUR commune)",
+      "ltvCacRatio": "199-598x"
+    },
+    {
+      "channel": "Salon des Maires de France (stand + demo live)",
+      "cacEstimate": "300-600 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "7188 EUR (24 mois x 249 EUR, churn quasi nul collectivités)",
+      "ltvCacRatio": "12-24x"
+    },
+    {
+      "channel": "SEO (diagnostic territorial, attractivité territoriale, benchmark communes)",
+      "cacEstimate": "30-80 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "2988 EUR",
+      "ltvCacRatio": "37-100x"
+    },
+    {
+      "channel": "Partenariats AMF, AMRF, CNER (fédération agences développement)",
+      "cacEstimate": "15-40 EUR",
+      "conversionRate": "8-15%",
+      "ltv": "7188 EUR (agences: 599 EUR/mois x 12)",
+      "ltvCacRatio": "180-479x"
+    },
+    {
+      "channel": "Prospection email personnalisee DGS communes 10-50K hab (avec extrait rapport)",
+      "cacEstimate": "150-350 EUR",
+      "conversionRate": "3-6%",
+      "ltv": "5976 EUR (24 mois x 249 EUR)",
+      "ltvCacRatio": "17-40x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 57,
+      "detail": "7.3K recherches/mois cumulees ('diagnostic territorial' 2 400/mois, 'attractivité territoriale' 1 600/mois). TAM: 80K EUR. Cibles: Maires et DGS de, Agences de développement économique, Cabinets de conseil en."
+    },
+    "feasibility": {
+      "score": 63,
+      "detail": "MVP en 6 semaines. 3 APIs a integrer (, API Geo gouv.fr, API BANATIC). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "Objectif 10K MRR en 3-6 mois. SOM: 120K EUR/an. Pricing 249-999 EUR."
+    },
+    "competition": {
+      "score": 35,
+      "detail": "5 concurrents identifies: Manty, Cabinets conseil (Katalyse, Te, Attractivité des territoires (. Leader: Manty (25K visites/mois). Faiblesse principale: Focus pilotage interne (finances/RH)."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "3 points OK, 2 points d'attention. Vigilance: Sensibilité politique des classements, Cycle budgetaire collectivités."
+    },
+    "overall": {
+      "score": 64,
+      "detail": "Point fort: marché (88/100). Point faible: compétition (35/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

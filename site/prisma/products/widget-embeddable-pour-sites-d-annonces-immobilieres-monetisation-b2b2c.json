@@ -1,0 +1,299 @@
+{
+  "productSlug": "widget-embeddable-pour-sites-d-annonces-immobilieres-monetisation-b2b2c",
+  "oneLiner": "Un widget JavaScript embeddable qui affiche le score quartier directement sur les annonces immobilières, monetise en B2B2C.",
+  "problem": "Les portails immobiliers (SeLoger, LeBonCoin, PAP) affichent des annonces sans contexte quartier. Les visiteurs quittent le site pour chercher ces infos ailleurs, ce qui réduit le temps passe sur la plateforme et le taux de conversion.",
+  "solution": "Un widget JavaScript leger (<50kb) que les sites d'annonces integrent en une ligne de code. À partir de l'adresse de l'annonce, le widget affiche un mini-rapport quartier : prix m2 moyen, score sécurité, écoles proches, DPE moyen. Le site d'annonces paie un abonnement mensuel ou au nombre d'affichages.",
+  "uniqueValue": "Solution plug-and-play qui enrichit les annonces immobilières sans développement côté client. Première offre B2B2C de score quartier en France.",
+  "mvpScope": "Widget JavaScript vanilla qui s'intégré via un tag <script> + un attribut data-address. Affiche 3 indicateurs : prix m2 (DVF), risques naturels (Georisques), écoles proches. Design minimaliste et responsive. Limite a 1000 affichages/mois en plan gratuit.",
+  "timeToMvp": "3-4 semaines solo dev",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Widget JavaScript et API",
+      "description": "Développement du widget JS embeddable avec shadow DOM (pas de conflit CSS), et de l'API backend qui sert les données quartier à partir d'une adresse.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Widget JS <50kb",
+        "API /widget/data?address=...",
+        "Shadow DOM pour isolation CSS",
+        "Documentation d'intégration"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Dashboard partenaire et analytics",
+      "description": "Dashboard pour les sites partenaires : stats d'utilisation, personnalisation du widget (couleurs, indicateurs affiches), cle API.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Dashboard partenaire",
+        "Personnalisation couleurs/indicateurs",
+        "Analytics d'affichage"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Monétisation et prospection",
+      "description": "Plans tarifaires, Stripe Billing pour la facturation récurrente, et démarrage de la prospection commerciale B2B.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Plans tarifaires implementes",
+        "Stripe Billing",
+        "Kit commercial (deck + demo)",
+        "Liste de 50 prospects"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les portails immobiliers veulent enrichir leurs annonces avec du contenu quartier",
+      "how": "Contacter 20 petits portails immobiliers régionaux (moins de décision layers que les gros) avec une demo fonctionnelle. Cold email personnalise avec screenshot du widget sur leur site.",
+      "successCriteria": "3+ portails acceptent un test gratuit de 30 jours"
+    },
+    {
+      "check": "Le widget augmente le temps passe sur la page d'annonce",
+      "how": "Mesurer le temps passe sur la page avant/après intégration du widget chez les beta-testeurs.",
+      "successCriteria": "Augmentation du temps passe >20%, taux d'interaction avec le widget >10%"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Petits portails immobiliers régionaux (100-500 annonces)",
+      "where": "Annuaires de sites immo régionaux, recherche Google 'immobilier [ville]', LinkedIn",
+      "howToReach": "Cold email avec screenshot du widget sur leur site + offre d'essai gratuit 60 jours"
+    },
+    {
+      "who": "Sites d'annonces de particulier a particulier",
+      "where": "PAP.fr, Bien'ici, sites de petites annonces locales",
+      "howToReach": "Approche via le product manager ou le CTO, demo en ligne avec intégration en 5 minutes"
+    },
+    {
+      "who": "Agences immobilières avec leur propre site web",
+      "where": "LinkedIn, annuaires FNAIM, salons professionnels (RENT, MIPIM)",
+      "howToReach": "Partenariat avec des editeurs de sites pour agences (Netty, Apimo, Hektor)"
+    }
+  ],
+  "pricingStrategy": "Plan Starter gratuit : 1000 affichages/mois, 2 indicateurs, branding 'Powered by ScoreQuartier'. Plan Pro a 99 EUR/mois : 10 000 affichages, tous les indicateurs, sans branding. Plan Enterprise a 499 EUR/mois : affichages illimités, indicateurs custom, support dédié. Surcharge a 0.01 EUR/affichage au-delà du quota.",
+  "pathTo10kMrr": "Phase 1 (M1-M3) : 10 portails régionaux en Starter gratuit pour valider. Phase 2 (M3-M6) : conversion de 5 portails en Pro (495 EUR/mois) + 20 agences avec site propre en Pro (1 980 EUR/mois) = 2 475 EUR. Phase 3 (M6-M12) : 1 portail Enterprise (499 EUR) + 50 agences Pro (4 950 EUR) + 15 portails Pro (1 485 EUR) + partenariat éditeur de sites agences (2 000 EUR/mois de revshare) = 8 934 EUR. M14 : 10K via croissance organique des partenariats editeurs.",
+  "techStack": {
+    "frontend": "Widget en Vanilla JS/TypeScript compile avec Vite, Shadow DOM",
+    "backend": "Next.js API Routes ou Fastify pour les performances",
+    "database": "PostgreSQL avec PostGIS, Redis pour le cache (TTL 24h par adresse)",
+    "hosting": "Cloudflare Workers pour le widget JS (edge), Railway pour l'API backend",
+    "apis": [
+      "API BAN",
+      "API DVF",
+      "API Georisques",
+      "API ADEME DPE",
+      "Stripe Billing API"
+    ],
+    "notes": "Le widget doit etre ultra-performant (< 200ms de chargement). Utiliser Cloudflare Workers pour servir le JS depuis l'edge. Cache agressif des données par adresse. Rate limiting par cle API."
+  },
+  "risks": [
+    {
+      "risk": "Les gros portails (SeLoger, LeBonCoin) developpent la fonctionnalité en interne",
+      "mitigation": "Cibler les petits et moyens portails qui n'ont pas les ressources. Se positionner pour un rachat éventuel par un gros acteur."
+    },
+    {
+      "risk": "Cycle de vente B2B long (3-6 mois pour les gros comptes)",
+      "mitigation": "Commencer par les petits portails et agences (décision en 1-2 semaines). Utiliser les cas clients pour remonter vers les gros."
+    },
+    {
+      "risk": "Coût d'API élève si le volume d'affichages explose",
+      "mitigation": "Cache agressif par adresse (les annonces restent en ligne des semaines), import des datasets en base plutot qu'appels API en temps réel"
+    }
+  ],
+  "inspirations": "Trustpilot Widget (modèle B2B2C de widget de confiance embeddable, >100M EUR ARR). Walk Score (US, score de walkability intégré sur Zillow et Redfin, rachété par Redfin). Disqus (modèle de widget embeddable avec freemium, référence en B2B2C).",
+  "searchVolume": [
+    {
+      "keyword": "widget immobilier",
+      "monthlyVolume": "320",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "API données quartier",
+      "monthlyVolume": "210",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "enrichir annonces immobilières données",
+      "monthlyVolume": "170",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "API immobilier France",
+      "monthlyVolume": "880",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "score quartier API",
+      "monthlyVolume": "90",
+      "difficulty": "low",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR - Marché B2B des outils et APIs pour portails immobiliers et agences en France (SaaS immo + proptech B2B)",
+    "sam": "25 millions EUR - Sous-segment widgets et APIs de données quartier pour les 30K+ portails et agences avec site web",
+    "som": "1.5 millions EUR - 50 agences Pro a 99 EUR/mois + 15 portails Pro + 1 Enterprise, atteignable a M12",
+    "methodology": "TAM basé sur le marché SaaS immobilier B2B France. SAM = segment data quartier parmi les 30K agences avec site + portails régionaux. SOM = pipeline commercial realisable."
+  },
+  "competitorDeep": [
+    {
+      "name": "CityScan",
+      "url": "https://www.cityscan.fr",
+      "pricing": "B2B sur devis, estimé 50-200 EUR/mois",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "70 indicateurs, carte interactive, outil pro",
+      "strengths": "70 indicateurs, intégration annonces existante, positionnement B2B pro établi, partenariats editeurs logiciels immo",
+      "weaknesses": "Pas de widget embeddable simple, focus sur les gros comptes, prix élève pour les petits portails"
+    },
+    {
+      "name": "IZIRED",
+      "url": "https://izired.com",
+      "pricing": "Sur devis (API + widgets)",
+      "trafficEstimate": "5K-15K visites/mois",
+      "reviews": "Widgets et APIs immobiliers modulaires (cadastre, estimations, simulateurs)",
+      "strengths": "Widgets prêts a l'emploi, large gamme (cadastre, estimations, coûts), API documentee",
+      "weaknesses": "Focus foncier/réglementaire, pas de score quartier global, pas de données sécurité/écoles/DPE integrees"
+    },
+    {
+      "name": "Casapulse",
+      "url": "https://casapulse.fr",
+      "pricing": "API sur devis",
+      "trafficEstimate": "5K-10K visites/mois",
+      "reviews": "Boîte a outils data pour proptechs",
+      "strengths": "API complété pour les proptechs, entrepot de données immobilières",
+      "weaknesses": "Cible les startups tech, pas de widget plug-and-play, pas de focus quartier/qualité de vie"
+    },
+    {
+      "name": "Walk Score (US)",
+      "url": "https://www.walkscore.com",
+      "pricing": "API gratuite (basique) a 1000+ USD/mois (pro)",
+      "trafficEstimate": "5M+ visites/mois",
+      "reviews": "Référence mondiale, intégré dans Zillow/Redfin, rachété par Redfin pour 90M USD",
+      "strengths": "Modèle B2B2C eprouve, devenu un standard immo US, API simple a intégrer",
+      "weaknesses": "US uniquement, pas de données françaises, pas d'équivalent en France"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Intégration tierce (widget JS)",
+      "status": "attention",
+      "detail": "Le widget charge du JS tiers sur les sites partenaires. Respecter les CGU des navigateurs, informer sur les cookies éventuels. Certains sites d'annonces ont des politiques strictes sur les scripts tiers.",
+      "source": "Directive ePrivacy - Cookies et traceurs"
+    },
+    {
+      "topic": "Données personnelles via le widget",
+      "status": "ok",
+      "detail": "Le widget utilise uniquement l'adresse de l'annonce (déjà publique). Pas de collecte de données personnelles des visiteurs si pas de cookie/tracking.",
+      "source": "RGPD"
+    },
+    {
+      "topic": "Reutilisation données publiques",
+      "status": "ok",
+      "detail": "Toutes les sources (DVF, Georisques, DPE) sont open data.",
+      "source": "Licence Ouverte v2"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Cold email portails régionaux",
+      "cacEstimate": "100-200 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "1188 EUR (99 EUR/mois x 12 mois)",
+      "ltvCacRatio": "6-12x"
+    },
+    {
+      "channel": "Partenariats editeurs sites agences (Netty, Apimo)",
+      "cacEstimate": "500-1000 EUR (temps commercial)",
+      "conversionRate": "5-10%",
+      "ltv": "5988 EUR (499 EUR/mois Enterprise x 12)",
+      "ltvCacRatio": "6-12x"
+    },
+    {
+      "channel": "Salon RENT / MIPIM",
+      "cacEstimate": "300-500 EUR par lead",
+      "conversionRate": "15-25%",
+      "ltv": "1188 EUR",
+      "ltvCacRatio": "2.5-4x"
+    },
+    {
+      "channel": "LinkedIn outreach CTO/Product",
+      "cacEstimate": "80-150 EUR",
+      "conversionRate": "8-12%",
+      "ltv": "1188 EUR",
+      "ltvCacRatio": "8-15x"
+    },
+    {
+      "channel": "Referral partners (agents satisfaits)",
+      "cacEstimate": "0-50 EUR",
+      "conversionRate": "20-30%",
+      "ltv": "1188 EUR",
+      "ltvCacRatio": "24x+"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 38,
+      "detail": "1.7K recherches/mois cumulees ('API immobilier France' 880/mois, 'widget immobilier' 320/mois). TAM: 500 millions EUR. Cibles: Petits portails immobiliers régionaux, Sites d'annonces de particulier, Agences immobilières avec leur."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 3-4 semaines solo dev. 5 APIs a integrer (API BAN, API DVF, API Georisques). Stack: Widget + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "Pricing 1-499 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "4 concurrents identifies: CityScan, IZIRED, Casapulse. Leader: CityScan (50K-100K visites/mois). Faiblesse principale: Pas de widget embeddable simple."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "2 points OK, 1 point d'attention. Vigilance: Intégration tierce (widget JS)."
+    },
+    "overall": {
+      "score": 65,
+      "detail": "Point fort: marché (88/100). Point faible: demande (38/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

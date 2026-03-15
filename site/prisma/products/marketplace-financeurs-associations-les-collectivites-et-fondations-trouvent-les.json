@@ -1,0 +1,303 @@
+{
+  "productSlug": "marketplace-financeurs-associations-les-collectivites-et-fondations-trouvent-les",
+  "oneLiner": "Marketplace ou les collectivités et fondations trouvent les associations les plus pertinentes pour leurs appels a projets.",
+  "problem": "Les collectivités et fondations publient des appels a projets mais recoivent soit trop peu de candidatures (manque de visibilité), soit des candidatures hors sujet (mauvais ciblage). Côté associations, les plus petites n'ont pas acces aux mêmes réseaux que les grosses structures. Le matching financeurs/associations est inefficace et opaque.",
+  "solution": "Une marketplace bilaterale ou les financeurs (collectivités, fondations, entreprises mécénat) publient leurs appels a projets et trouvent directement des associations qualifiées grâce à un moteur de recherche enrichi par les données RNA. Les associations creent un profil enrichi (RNA + données complémentaires) et recoivent des sollicitations directes.",
+  "uniqueValue": "Le moteur de recherche d'associations le plus complet de France, enrichi par le RNA (1,5M associations), les données financières (Journal Officiel), et un scoring de qualité. Côté financeur : un pipeline de candidatures pre-qualifiées au lieu d'un flux non filtre.",
+  "mvpScope": "Marketplace web avec : annuaire d'associations enrichi RNA (recherche par secteur, territoire, taille), profil association éditable, publication d'appels a projets par les financeurs, matching automatique financeur/associations, messagerie interne.",
+  "timeToMvp": "10 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Annuaire enrichi RNA",
+      "description": "Importer le RNA complet, enrichir avec les données Journal Officiel (création, modifications), créer un moteur de recherche performant.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Import RNA complet (1,5M associations)",
+        "Enrichissement Journal Officiel",
+        "Moteur de recherche Typesense",
+        "Fiches associations publiques"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Profils et marketplace",
+      "description": "Comptes financeurs et associations, publication d'appels a projets, matching automatique, messagerie.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Inscription/profil association éditable",
+        "Compte financeur avec publication d'appels",
+        "Algorithme de matching bidirectionnel",
+        "Messagerie interne sécurisée"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Lancement et acquisition bilaterale",
+      "description": "Acquisition des deux côtés du marché : financeurs via LinkedIn/salons, associations via réseaux tetes de réseau.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "10 financeurs pilotes inscrits",
+        "500 associations avec profil enrichi",
+        "Landing pages distinctes financeurs/associations",
+        "Webinaire de lancement"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les financeurs ont un vrai problème de sourcing d'associations",
+      "how": "Interviewer 10 responsables mécénat/subventions dans des collectivités et fondations. Quantifier leur processus actuel.",
+      "successCriteria": "7/10 confirment que le sourcing est chronophage et inefficace, et seraient prêts a utiliser une plateforme."
+    },
+    {
+      "check": "Les associations veulent etre trouvees par les financeurs",
+      "how": "Proposer un profil enrichi gratuit a 100 associations via les maisons des associations.",
+      "successCriteria": "60+ associations completent leur profil en 2 semaines."
+    },
+    {
+      "check": "Le modèle marketplace est viable economiquement",
+      "how": "Tester la willingness-to-pay des financeurs pour un abonnement de recherche/publication.",
+      "successCriteria": "5+ financeurs acceptent un tarif de 199-499 EUR/mois pour un acces premium."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Services vie associative des collectivités (mairies, départements, régions)",
+      "where": "LinkedIn (responsable vie associative, charge de mission associations), salons des maires (AMF), CNFPT",
+      "howToReach": "Prospection LinkedIn ciblee. Présentation lors des commissions vie associative. Partenariat CNFPT pour formation."
+    },
+    {
+      "who": "Fondations d'entreprise et fonds de dotation",
+      "where": "Admical (réseau du mécénat), Centre Francais des Fonds et Fondations, LinkedIn",
+      "howToReach": "Adhésion Admical pour le réseau. Présentation lors des événements du Centre Francais des Fonds et Fondations."
+    },
+    {
+      "who": "Associations actives en recherche de financement",
+      "where": "HelloAsso (partenariat), maisons des associations, DLA (Dispositifs Locaux d'Accompagnement)",
+      "howToReach": "Partenariat HelloAsso pour cross-promotion. Interventions dans les DLA. Présence aux forums associatifs."
+    }
+  ],
+  "pricingStrategy": "Associations : gratuit (profil enrichi + réception de sollicitations). Financeurs : Decouverte gratuite (recherche basique, 1 publication/mois). Pro a 199 EUR/mois (recherche avancee, publications illimitées, filtres scoring). Enterprise a 499 EUR/mois (API, export, multi-utilisateurs, support dédié). Commission optionnelle : 5% sur les subventions versees via la plateforme (modèle marketplace).",
+  "pathTo10kMrr": "Côté offre : 5 000 financeurs potentiels en France (collectivités + fondations + entreprises mécénat). M1-M3 : 5 financeurs Pro (gratuit pendant le pilote) + 200 associations. M3-M6 : 15 Pro + 3 Enterprise = 15x199 + 3x499 = 4 482 EUR MRR + 1 000 associations. M6-M12 : 30 Pro + 8 Enterprise = 30x199 + 8x499 = 9 962 EUR MRR + 3 000 associations. Timeline : ~10-12 mois pour 10K MRR.",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS + Radix UI",
+    "backend": "Next.js API Routes + Prisma",
+    "database": "PostgreSQL + Typesense (recherche)",
+    "hosting": "Vercel + Railway",
+    "apis": [
+      "RNA data.gouv.fr",
+      "Journal Officiel Associations",
+      "API Entreprise",
+      "Stripe (paiements)",
+      "Resend (emails)",
+      "Stream (messagerie)"
+    ],
+    "notes": "La messagerie est critique pour la marketplace. Stream.io offre un free tier généreux. Budget total : ~80 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Problème de la poule et de l'oeuf : pas de financeurs sans associations et vice versa",
+      "mitigation": "Démarrer avec l'annuaire enrichi (valeur standalone pour les financeurs). Pré-remplir 10K profils depuis le RNA. Les financeurs viennent pour la recherche, les associations suivent."
+    },
+    {
+      "risk": "Cycle de vente B2G (collectivités) très long",
+      "mitigation": "Commencer par les fondations (décision plus rapide). Offrir un pilote gratuit de 3 mois aux collectivités. Cibler les petites collectivités (< 50K habitants) qui décident plus vite."
+    },
+    {
+      "risk": "Les associations ne maintiennent pas leur profil à jour",
+      "mitigation": "Pré-remplissage automatique depuis le RNA. Rappels annuels. Gamification (badge profil complet). Les sollicitations recues incitent a maintenir le profil."
+    }
+  ],
+  "inspirations": "LinkedIn pour le modèle marketplace professionnel bilaterale. Malt pour la marketplace freelance/entreprise (modèle commission). Benevolt pour le matching bénévoles/associations (mais pas le matching financeurs/associations).",
+  "searchVolume": [
+    {
+      "keyword": "trouver association a financer",
+      "monthlyVolume": "320",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "annuaire associations France",
+      "monthlyVolume": "5400",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "mécénat association",
+      "monthlyVolume": "2400",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "appel a projets fondation",
+      "monthlyVolume": "1900",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "recherche association par secteur",
+      "monthlyVolume": "720",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "3.5 milliards EUR - Marché des subventions publiques aux associations + mécénat d'entreprise en France (source: INJEP + Admical)",
+    "sam": "100 millions EUR - Sous-segment outils de mise en relation financeurs/associations et gestion des appels a projets",
+    "som": "1.2 millions EUR - 30 Pro a 199 EUR/mois + 8 Enterprise a 499 EUR/mois, atteignable a M12",
+    "methodology": "TAM = volume total subventions publiques (2 milliards EUR, INJEP) + mécénat (1.5 milliard EUR, Admical). SAM = marché outils numériques intermédiation. SOM = pipeline B2B."
+  },
+  "competitorDeep": [
+    {
+      "name": "Data.Subvention (beta.gouv)",
+      "url": "https://datasubvention.beta.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Données croisees sur 1.5M associations, outil pour agents publics",
+      "strengths": "Données officielles complètes, initiative beta.gouv, recherche par territoire et secteur",
+      "weaknesses": "Outil pour agents publics uniquement, pas de marketplace, pas de matching bidirectionnel, pas de messagerie"
+    },
+    {
+      "name": "Admical",
+      "url": "https://www.admical.org",
+      "pricing": "Adhésion 500-5000 EUR/an",
+      "trafficEstimate": "30K-80K visites/mois",
+      "reviews": "Réseau de référence du mécénat en France",
+      "strengths": "Réseau établi, crédibilité institutionnelle, événements de mise en relation, études sectorielles",
+      "weaknesses": "Réseau physique pas une plateforme tech, pas de matching algorithmique, adhésion chere pour les petites fondations"
+    },
+    {
+      "name": "Benevolt",
+      "url": "https://benevolt.fr",
+      "pricing": "Gratuit pour associations, premium pour collectivités",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Matching bénévoles/associations",
+      "strengths": "Concept de matching éprouvé dans l'univers associatif, UX moderne",
+      "weaknesses": "Focus bénévoles (pas financeurs), pas de données RNA enrichies, segment différent"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Import et affichage données RNA",
+      "status": "ok",
+      "detail": "Le RNA est en open data. L'affichage de fiches associations publiques est libre. Les associations peuvent demander la correction de leurs données.",
+      "source": "data.gouv.fr - RNA Open Data"
+    },
+    {
+      "topic": "Commission sur subventions",
+      "status": "attention",
+      "detail": "Prendre une commission sur des subventions publiques pourrait etre juridiquement et ethiquement sensible. Privilégier un modèle d'abonnement fixe plutot qu'un pourcentage.",
+      "source": "Code de la commande publique - Principes de transparence"
+    },
+    {
+      "topic": "Données financières des associations",
+      "status": "ok",
+      "detail": "Les comptes des associations recevant plus de 153K EUR de subventions doivent etre publies au Journal Officiel. Réutilisation libre.",
+      "source": "Loi ESS 2014 - Obligations de publication"
+    },
+    {
+      "topic": "Marketplace et intermédiation",
+      "status": "ok",
+      "detail": "La plateforme est un outil de mise en relation, pas un intermédiaire financier. Pas de licence spécifique requise.",
+      "source": "Code du commerce"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "LinkedIn prospection collectivités",
+      "cacEstimate": "100-250 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "2388 EUR (199 EUR/mois x 12)",
+      "ltvCacRatio": "10-24x"
+    },
+    {
+      "channel": "Salon AMF / congres des maires",
+      "cacEstimate": "300-600 EUR par lead",
+      "conversionRate": "15-25%",
+      "ltv": "5988 EUR (499 EUR/mois x 12)",
+      "ltvCacRatio": "10-20x"
+    },
+    {
+      "channel": "Partenariat Admical (réseau mécénat)",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "2388 EUR",
+      "ltvCacRatio": "24-48x"
+    },
+    {
+      "channel": "Annuaire RNA pre-rempli (inbound)",
+      "cacEstimate": "0-5 EUR (SEO)",
+      "conversionRate": "0.5-1% (associations)",
+      "ltv": "0 EUR (gratuit) mais génère le côté offre de la marketplace",
+      "ltvCacRatio": "N/A - strategic pour alimenter la marketplace"
+    },
+    {
+      "channel": "Webinaire Admical/CNFPT",
+      "cacEstimate": "20-50 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "2388 EUR",
+      "ltvCacRatio": "48-119x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources verifiees via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "10.7K recherches/mois cumulees ('annuaire associations France' 5 400/mois, 'mécénat association' 2 400/mois). TAM: 3.5 milliards EUR. Cibles: Services vie associative des, Fondations d'entreprise et fonds, Associations actives en recherche."
+    },
+    "feasibility": {
+      "score": 30,
+      "detail": "MVP en 10 semaines. 6 APIs a intégrer (RNA, Journal Officiel Associations, API Entreprise). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 58,
+      "detail": "Objectif 10K MRR en 10-12 mois. Pricing 199-499 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifiés: Data.Subvention (beta.gouv), Admical, Benevolt. Leader: Data.Subvention (10K-30K visites/mois). Faiblesse principale: Outil pour agents publics uniquement."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Commission sur subventions."
+    },
+    "overall": {
+      "score": 55,
+      "detail": "Point fort: legal (78/100). Point faible: faisabilité (30/100). Idee intéressante, risques significatifs a mitiger."
+    }
+  }
+}

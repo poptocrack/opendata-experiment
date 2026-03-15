@@ -1,0 +1,333 @@
+{
+  "productSlug": "carte-des-tensions-ou-sont-les-talents-pour-un-metier-donne-vs-ou-sont-les-entre",
+  "oneLiner": "Visualisez sur une carte où se trouvent les talents d'un métier vs où sont les entreprises qui recrutent, pour identifiér les desequilibres géographiques.",
+  "problem": "Les recruteurs publiént des offres la où se trouve leur entreprise, sans savoir que les talents qu'ils cherchent sont concentres ailleurs. Les candidats ne savent pas où leur profil est le plus demande. Résultat : des offres sans réponse dans certaines zones et des talents sous-employes dans d'autres. Les données existent (offres France Travail, effectifs URSSAF, ROME) mais personne ne les croise géographiquement.",
+  "solution": "Une carte interactive a deux couches : (1) la densité des offres d'emploi par métier ROME et par zone, (2) la densité des actifs dans ce métier par zone (via effectifs URSSAF par secteur NAF). Le ratio offres/actifs révélé les tensions : zones où la demande dépassé l'offre de talents (rouge) et zones avec un surplus de candidats potentiels (vert). Filtrable par métier ROME, niveau de qualification, type de contrat.",
+  "uniqueValue": "Première carte croisant offres d'emploi en temps reel et bassin de talents par zone, avec un ratio de tension actionnable pour les recruteurs, les candidats et les territoires.",
+  "mvpScope": "Carte de France avec heatmap des offres d'emploi par code ROME. Superposition des effectifs par secteur NAF correspondant. Ratio tension par bassin d'emploi (zone d'emploi INSEE). Top 10 des zones les plus tendues et les moins tendues pour un métier donne.",
+  "timeToMvp": "7 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Ingestion offres d'emploi et mapping ROME/NAF",
+      "description": "Connexion a l'API Offres d'emploi France Travail pour collecter les offres actives par code ROME et localisation. Mapping ROME -> NAF pour croiser avec les effectifs URSSAF. Import des effectifs par zone d'emploi.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline d'ingestion API Offres France Travail (quotidien)",
+        "Table de correspondance ROME <-> NAF",
+        "Import effectifs URSSAF par zone d'emploi et secteur",
+        "Calcul du ratio tension par zone x métier"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Carte interactive et visualisation",
+      "description": "Carte MapLibre avec heatmap bi-couche (offres vs talents). Selecteur de métier ROME avec autocompletion. Zoom par région > département > zone d'emploi. Info-bulle avec statistiques détaillées par zone.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Carte heatmap bi-couche (offres et talents)",
+        "Selecteur ROME avec recherche full-text",
+        "Info-bulle : nb offres, nb actifs estimés, ratio tension",
+        "Top 10 zones les plus/moins tendues"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Rapports et alertes",
+      "description": "Rapport de zone détaillé : évolution de la tension sur 12 mois, salaires proposes, types de contrat dominants, compétences les plus demandees. Alerte quand la tension change significativement dans une zone surveillee.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Rapport de zone PDF/web",
+        "Graphique d'évolution de la tension sur 12 mois",
+        "Analyse des salaires proposes par zone",
+        "Système d'alertes sur changement de tension"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les recruteurs utilisent la carte pour adapter leur stratégie de sourcing",
+      "how": "Montrer la carte a 20 recruteurs/RH avec leur métier ciblé. Observer s'ils découvrent des zones auxquelles ils n'avaient pas pense.",
+      "successCriteria": "15/20 découvrent au moins une zone inattendue, 10 veulent un accès regulier"
+    },
+    {
+      "check": "Le croisement offres/effectifs produit un signal pertinent",
+      "how": "Comparer le ratio calcule avec les données BMO (Besoins en Main d'Oeuvre) de France Travail pour 20 métiers. Verifier la corrélation.",
+      "successCriteria": "Correlation > 0.7 entre le ratio offres/effectifs et les difficultés de recrutement BMO"
+    },
+    {
+      "check": "Le volume d'offres est suffisant pour une granularite locale",
+      "how": "Compter le nombre d'offres actives par code ROME et par zone d'emploi. Identifier les métiers avec assez de données.",
+      "successCriteria": "Au moins 200 métiers ROME avec > 50 offres actives au niveau national, > 5 par zone d'emploi en moyenne"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Cabinets de recrutement spécialisés (IT, BTP, sante, industrie) cherchant a sourcer dans de nouvelles zones",
+      "where": "Syntec Conseil en recrutement, LinkedIn groupes recruteurs, salons RH (HR Technologies, RH Solutions)",
+      "howToReach": "Generer une carte gratuite de leur métier de spécialité et l'envoyer aux directeurs d'agence. Ex: 'Voici où sont concentres les developpeurs Java vs où sont les offres : 3 zones sous-exploitees'."
+    },
+    {
+      "who": "DRH d'entreprises multi-sites cherchant a optimiser le recrutement par site",
+      "where": "ANDRH (Association Nationale des DRH), conferences RH, LinkedIn",
+      "howToReach": "Proposer une analyse gratuite pour leur groupe : quelle tension pour chaque métier clé dans chacune de leurs implantations."
+    },
+    {
+      "who": "Collectivites territoriales et agences de développement economique",
+      "where": "Intercommunalites, conseils régionaux, agences de développement (Business France local, ADI, ARDI)",
+      "howToReach": "Proposer un rapport territorial gratuit montrant les desequilibres de leur zone. Les collectivites ont du budget pour les outils d'attractivité."
+    }
+  ],
+  "pricingStrategy": "Gratuit : carte nationale avec zoom limite au département, 3 recherches/mois. Recruteur a 49 euros/mois : zoom zone d'emploi, métiers illimités, rapport de zone, alertes sur 5 zones. Entreprise a 149 euros/mois : multi-utilisateurs, export données, API, comparaison multi-zones, historique 24 mois. Territoire a 299 euros/mois : marque blanche, données exhaustives de la zone, benchmark inter-zones, accompagnement.",
+  "pathTo10kMrr": "100 Recruteur (4900) + 25 Entreprise (3725) + 5 Territoire (1495) = ~10.1K MRR. Acquisition : outil gratuit viral (partage de cartes sur LinkedIn), SEO sur 'tension recrutement [métier] [ville]', partenariats avec 3 ATS (Applicant Tracking Systems) pour intégration native, content marketing (carte mensuelle des tensions par secteur).",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS + MapLibre GL JS + deck.gl (heatmap bi-couche performante)",
+    "backend": "Next.js API routes + workers de calcul des ratios (mise à jour quotidienne)",
+    "database": "PostgreSQL + PostGIS (Supabase) - tables offres, effectifs, zones d'emploi avec géometries",
+    "hosting": "Vercel + Supabase + Railway (workers)",
+    "apis": [
+      "API Offres d'emploi France Travail",
+      "API Marché du travail France Travail (statistiques)",
+      "ROME 4.0 API France Travail",
+      "Effectifs URSSAF data.gouv.fr",
+      "Contours zones d'emploi INSEE (data.gouv.fr)"
+    ],
+    "notes": "L'API Offres d'emploi France Travail nécessite une inscription (gratuite) et fournit les offres actives avec localisation et code ROME. Les effectifs URSSAF par zone d'emploi et secteur NAF sont en open data. Le mapping ROME <-> NAF est disponible dans la nomenclature ROME 4.0."
+  },
+  "risks": [
+    {
+      "risk": "Le mapping ROME -> NAF est imparfait (un métier peut concerner plusieurs secteurs NAF)",
+      "mitigation": "Utiliser une table de correspondance enrichie manuellement pour les 50 métiers les plus recherches. Afficher un indicateur de confiance du ratio. Permettre a l'utilisateur d'ajuster les NAF inclus."
+    },
+    {
+      "risk": "Les offres France Travail ne representent qu'une partie du marché (beaucoup de recrutements directs)",
+      "mitigation": "Indiquer clairement que les données sont basees sur les offres declarees. Enrichir avec d'autres sources à terme (APEC, LinkedIn). Le ratio relatif reste pertinent même avec une couverture partielle."
+    },
+    {
+      "risk": "Difficulté a estimer le nombre de 'talents disponibles' vs simplement les actifs du secteur",
+      "mitigation": "Commencer par un proxy : effectifs du secteur NAF = bassin de talents potentiels. Affiner avec les données de demandeurs d'emploi par ROME (STMT France Travail). Être transparent sur la méthodologie."
+    },
+    {
+      "risk": "Performance de la carte avec des millions de points d'offres",
+      "mitigation": "Agrèger les offres par zone d'emploi (304 zones en France), pas par point. Utiliser des tuiles vectorielles pre-calculees. Le volume est geraable : ~500K offres actives, pas 12M comme SIRENE."
+    }
+  ],
+  "inspirations": "DARES Tensions (rapports statistiques mais pas interactifs ni en temps reel), BMO France Travail (enquête annuelle mais pas de carte dynamique), TalentNeuron/Gartner (analytics RH mais 50K+/an), LinkedIn Talent Insights (carte des talents LinkedIn mais 10K+/an et biais vers les cols blancs), Indeed Hiring Lab (études macro mais pas d'outil self-service).",
+  "searchVolume": [
+    {
+      "keyword": "tension recrutement par territoire",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "métiers en tension par région",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "carte métiers en tension",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "bassin emploi recrutement",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ou recruter en france",
+      "monthlyVolume": "720",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "difficulté recrutement par zone",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "talent insights france",
+      "monthlyVolume": "320",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "penurie talent par région",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "43 milliards EUR - marché global du recrutement en France (interim + permanent, source Xerfi). 2.4 millions de projets d'embauche en 2025. Les outils analytics RH representent environ 500M EUR de ce marché.",
+    "sam": "150 millions EUR - cabinets de recrutement (1 700-1 800 actifs en France), DRH d'ETI multi-sites, et collectivites territoriales avec budget analytics emploi. Environ 10 000 organisations ciblés.",
+    "som": "1.2 million EUR - 10 100 EUR MRR (130 clients payants) en 12-18 mois. Outil gratuit viral (cartes partagees LinkedIn) + conversion payante.",
+    "methodology": "TAM base sur marché recrutement France (Xerfi 43 Md EUR). SAM restreint aux achetéurs d'outils analytics/data RH. SOM base sur mix 100 Recruteur + 25 Entreprise + 5 Territoire."
+  },
+  "competitorDeep": [
+    {
+      "name": "LinkedIn Talent Insights",
+      "url": "https://business.linkedin.com/talent-solutions/talent-insights",
+      "pricing": "Sur devis, estimé 8 000-15 000 EUR/an. Vendu avec LinkedIn Recruiter.",
+      "trafficEstimate": "Integre dans LinkedIn (900M+ membres dont 25M en France)",
+      "reviews": "Outil analytics de référence pour les RH. Permet de miner les données par région, attrition, flux. Biais vers les cols blancs et profils tech.",
+      "strengths": "Base massive (25M membres France), données temps reel, analyse flux de talents, attrition, benchmark concurrent, marque LinkedIn",
+      "weaknesses": "Très cher (8-15K/an), biais LinkedIn (sous-représentation ouvriers, BTP, sante), pas de données offres France Travail, pas de croisement BMO/URSSAF"
+    },
+    {
+      "name": "France Travail - Data Emploi",
+      "url": "https://dataemploi.francetravail.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "Portail officiel de données emploi par territoire. Cartes et indicateurs par bassin d'emploi.",
+      "strengths": "Gratuit, données officielles (BMO, STMT, offres), couverture tous métiers, granularite bassin d'emploi",
+      "weaknesses": "Interface datee, pas de carte de tension croisee offres/talents, pas d'alertes, données souvent en retard (6-12 mois), pas d'API self-service"
+    },
+    {
+      "name": "Lightcast (ex EMSI Burning Glass)",
+      "url": "https://lightcast.io/euro",
+      "pricing": "30 000-80 000+ EUR/an (enterprise uniquement)",
+      "trafficEstimate": "500K visites/mois (global)",
+      "reviews": "Leader mondial analytics emploi. Données de 65 000 sources, 1 milliard+ d'offres. Actif dans 30+ pays.",
+      "strengths": "Base massive mondiale, analytics avancees, European Workforce Analytics, données temps reel, API robuste",
+      "weaknesses": "Prix prohibitif (50K+/an), pas de focus spécifique France, pas de données BMO/URSSAF/ROME, UX complexe pour PME"
+    },
+    {
+      "name": "Observatoire France Travail Occitanie",
+      "url": "https://www.observatoire-emploi-occitanie.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "Modèle régional de l'observatoire emploi. Collections par bassin d'emploi publiées régulièrement.",
+      "strengths": "Données fines par bassin, gratuit, fiches sectorielles détaillées, rapports BMO",
+      "weaknesses": "Couverture régionale uniquement, pas de carte interactive nationale, rapports PDF statiques, pas d'outil self-service"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation API Offres France Travail",
+      "status": "ok",
+      "detail": "L'API Offres d'emploi France Travail est gratuite après inscription. Conditions d'utilisation standard. Pas de restriction commerciale explicite pour les données aggregees.",
+      "source": "API Emploi Store, CGU France Travail"
+    },
+    {
+      "topic": "Données BMO et STMT",
+      "status": "ok",
+      "detail": "Les données BMO (Besoins en Main d'Oeuvre) et STMT (Statistiques du Marché du Travail) sont en open data sur data.gouv.fr. Réutilisation libre.",
+      "source": "data.gouv.fr, licence ouverte"
+    },
+    {
+      "topic": "Effectifs URSSAF",
+      "status": "ok",
+      "detail": "Les effectifs par établissement et zone sont en open data. Réutilisation commerciale autorisée.",
+      "source": "data.gouv.fr, URSSAF open data"
+    },
+    {
+      "topic": "Anonymisation des offres individuelles",
+      "status": "attention",
+      "detail": "Les offres individuelles peuvent contenir des informations sur l'entreprise qui recrute. Agrèger par zone pour eviter tout problème de concurrence.",
+      "source": "CGU API France Travail"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (métiers en tension par région, carte recrutement)",
+      "cacEstimate": "70 EUR",
+      "conversionRate": "4%",
+      "ltv": "590 EUR (Recruteur 49 EUR x 12 mois)",
+      "ltvCacRatio": "8.4"
+    },
+    {
+      "channel": "LinkedIn organique (cartes de tension virales)",
+      "cacEstimate": "20 EUR",
+      "conversionRate": "2%",
+      "ltv": "590 EUR",
+      "ltvCacRatio": "29.5"
+    },
+    {
+      "channel": "Partenariats ATS (Applicant Tracking Systems)",
+      "cacEstimate": "80 EUR",
+      "conversionRate": "10%",
+      "ltv": "1790 EUR (Entreprise 149 EUR x 12 mois)",
+      "ltvCacRatio": "22.4"
+    },
+    {
+      "channel": "Content marketing (carte mensuelle des tensions par secteur)",
+      "cacEstimate": "35 EUR",
+      "conversionRate": "3%",
+      "ltv": "590 EUR",
+      "ltvCacRatio": "16.9"
+    },
+    {
+      "channel": "Outreach collectivites territoriales",
+      "cacEstimate": "500 EUR",
+      "conversionRate": "8%",
+      "ltv": "5400 EUR (Territoire 299 EUR x 18 mois)",
+      "ltvCacRatio": "10.8"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 56,
+      "detail": "6.3K recherches/mois cumulees ('métiers en tension par région' 2 400/mois, 'carte métiers en tension' 880/mois). TAM: 43 milliards EUR. Cibles: Cabinets de recrutement spécialisés, DRH d'entreprises multi-sites cherchant, Collectivites territoriales et agences."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 7 semaines. 5 APIs a integrer (API Offres d'emploi France Tra, API Marché du travail France T, ROME 4.0 API France Travail). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 95,
+      "detail": "Pricing 49-299 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: LinkedIn Talent Insights, France Travail - Data Emploi, Lightcast (ex EMSI Burning Gla. Leader: LinkedIn Talent Insights (Integre dans LinkedIn (900M+ membres dont 25M en France)). Faiblesse principale: Très cher (8-15K/an)."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Anonymisation des offres individuelles."
+    },
+    "overall": {
+      "score": 64,
+      "detail": "Point fort: marche (95/100). Point faible: competition (45/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

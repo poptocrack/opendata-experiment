@@ -1,0 +1,301 @@
+{
+  "productSlug": "alertes-nouveau-controle-sanitaire-negatif-pres-de-chez-vous",
+  "oneLiner": "Alertes quand un restaurant près de chez vous reçoit un contrôle sanitaire négatif.",
+  "problem": "Les contrôles sanitaires sont publiés discretement sur Alim confiance. Un restaurant fréquenté peut recevoir un score A corriger sans que les clients le sachent. Les consommateurs n ont aucun moyen de surveiller les restaurants de leur quartier.",
+  "solution": "Alertes géolocalisées: inscription avec adresse, notification quand un restaurant dans un rayon configurable reçoit un contrôle négatif (a améliorer où à corriger). Alerte avec nom, adresse, score et lien vers le rapport.",
+  "uniqueValue": "Google Alerts géolocalisé pour la sécurité alimentaire. Personne ne propose d alertes proactives sur les contrôles sanitaires.",
+  "mvpScope": "Alertes email pour les 20 plus grandes villes. Surveillancé mensuelle Alim confiance. Alerte quand un restaurant dans le rayon passé a améliorer/corriger.",
+  "timeToMvp": "3 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline de surveillance",
+      "description": "Surveillancé mensuelle Alim confiance. Détection nouveaux contrôles négatifs. Matching géolocalise. Alertes email.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Surveillancé mensuelle",
+        "Détection négatifs",
+        "Matching géolocalise",
+        "Alertes email"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface et acquisition",
+      "description": "Page inscription. Contenu viral sur premiers contrôles détectés. Diffusion groupes food.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Interface inscription",
+        "5000 inscrits",
+        "Contenu viral",
+        "Premières alertes"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Monétisation",
+      "description": "Premium avec push notifications. Historique. Widget blogs food. App native.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Plan premium",
+        "Push notifications",
+        "Historique",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les consommateurs veulent être alertes",
+      "how": "Sondage Instagram food",
+      "successCriteria": "80%+ répondent oui"
+    },
+    {
+      "check": "Alim confiance est mis à jour assez souvent",
+      "how": "Mesurer la fréquence sur data.gouv.fr",
+      "successCriteria": "Mise à jour au moins mensuelle"
+    },
+    {
+      "check": "Volume d alertes suffisant",
+      "how": "Calculer contrôles négatifs/mois dans les grandes villes",
+      "successCriteria": "100+ contrôles négatifs/mois dans les 20 grandes villes"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Consommateurs urbains soucieux",
+      "where": "Groupes Facebook alimentation saine, Instagram food",
+      "howToReach": "Contenu choc: Ce restaurant que vous adorez vient de recevoir un contrôle négatif."
+    },
+    {
+      "who": "Parents",
+      "where": "Groupes Facebook parents, Magicmaman",
+      "howToReach": "Cantines et restaurants: comment protégér vos enfants."
+    },
+    {
+      "who": "Journalistes locaux",
+      "where": "Redactions presse locale",
+      "howToReach": "Chaque contrôle négatif = potentiel article citant l outil."
+    }
+  ],
+  "pricingStrategy": "Freemium: alertes email mensuelles gratuites. Premium a 1.90 EUR/mois (push temps reel, historique, rayon perso). Pro a 9.90 EUR/mois (multi-adresses, API blogs food). Affiliation restaurants bons scores.",
+  "pathTo10kMrr": "15K inscrits gratuits. 3000 premium x 1.90 EUR = 5 700 EUR + 200 pro x 9.90 EUR = 1 980 EUR + affiliation = 2 500 EUR/mois = 10 180 EUR MRR. Acquisition virale. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre",
+    "backend": "Next.js API Routes + Python surveillance",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions + Resend",
+    "apis": [
+      "Alim confiance data.gouv.fr",
+      "API BAN",
+      "Resend",
+      "Stripe"
+    ],
+    "notes": "Pipeline mensuel: détecté nouveaux contrôles négatifs, matche avec abonnes par rayon (PostGIS ST_DWithin), envoie alertes."
+  },
+  "risks": [
+    {
+      "risk": "Restaurants menacent de poursuites",
+      "mitigation": "Données publiques officielles du Ministere. Pas de diffamation."
+    },
+    {
+      "risk": "Volume d alertes trop faible",
+      "mitigation": "Envoyer aussi alertes positives. Diversifier le contenu."
+    },
+    {
+      "risk": "App officielle Alim confiance s améliore",
+      "mitigation": "L app officielle ne fait pas d alertes proactives. Notre valeur = proactivité + personnalisation."
+    }
+  ],
+  "inspirations": "Google Alerts. Yuka alertes rappels. Apps food inspection alerts US (NYC, LA). En France rien de similaire.",
+  "searchVolume": [
+    {
+      "keyword": "contrôle sanitaire restaurant",
+      "monthlyVolume": "12100",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "alim confiance",
+      "monthlyVolume": "8100",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "hygiène restaurant contrôle",
+      "monthlyVolume": "3600",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "résultat contrôle sanitaire restaurant",
+      "monthlyVolume": "2400",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "restaurant ferme hygiène",
+      "monthlyVolume": "1900",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "67M de consommateurs francais qui fréquentent des restaurants (population adulte)",
+    "sam": "15M de consommateurs urbains dans les 20 plus grandes villes soucieux de l'hygiène alimentaire",
+    "som": "150K utilisateurs inscrits aux alertes la première année (1% du SAM)",
+    "methodology": "TAM base sur la population adulte francaise frequentant la restauration (INSEE). SAM restreint aux urbains des 20 plus grandes villes sensibles à la sécurité alimentaire. SOM base sur un taux de pénétration de 1% via SEO et viralité social media."
+  },
+  "competitorDeep": [
+    {
+      "name": "Alim'confiance (officiel)",
+      "url": "https://alim-confiance.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "190K visites/mois",
+      "reviews": "UX très basique, pas d'alertes proactives, données visibles seulement 1 an",
+      "strengths": "Source officielle du Ministere, couverture nationale, données fiables",
+      "weaknesses": "Pas d'alertes, UX obsolète, pas de personnalisation, pas de géolocalisation proactive"
+    },
+    {
+      "name": "contrôlessanitaires.fr",
+      "url": "https://controlessanitaires.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "5K visites/mois",
+      "reviews": "Réutilisation des données Alim'confiance avec carte interactive amélioree",
+      "strengths": "Interface plus moderne qu'Alim'confiance, carte interactive",
+      "weaknesses": "Pas d'alertes, pas d'app mobile, pas de monétisation visible, projet amateur"
+    },
+    {
+      "name": "Alim'Contrôle (app iOS)",
+      "url": "https://apps.apple.com/fr/app/alimcontrole/id6742196378",
+      "pricing": "Gratuit",
+      "trafficEstimate": "Inconnue (app récente)",
+      "reviews": "App iOS lancée récemment",
+      "strengths": "Format app mobile natif",
+      "weaknesses": "App récente, base d'utilisateurs limitee, pas d'alertes push proactives"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation des données publiques Alim'confiance",
+      "status": "ok",
+      "detail": "Les données Alim'confiance sont publiées en open data sous licence ouverte Etalab. Réutilisation libre y compris commerciale.",
+      "source": "data.gouv.fr - Licence Ouverte Etalab 2.0"
+    },
+    {
+      "topic": "Droit a l'image et diffamation des restaurants",
+      "status": "attention",
+      "detail": "La republication de données publiques officielles n'est pas diffamatoire. Cependant, le ton des alertes doit rester factuel et neutre pour eviter des poursuites en dénigrement.",
+      "source": "Article 29 de la loi du 29 juillet 1881 sur la liberté de la presse"
+    },
+    {
+      "topic": "RGPD et données personnelles",
+      "status": "ok",
+      "detail": "Les données Alim'confiance concernent des établissements (personnes morales), pas des individus. Les emails des abonnes doivent être collectes avec consentement explicite.",
+      "source": "RGPD Article 6"
+    },
+    {
+      "topic": "Arret des mises à jour Alim'confiance",
+      "status": "attention",
+      "detail": "Le Ministere de l'Agriculture a interrompu les mises à jour du fichier depuis novembre 2025 sans date de reprise annoncée. Risque de données obsolètes.",
+      "source": "data.gouv.fr - dernière mise à jour novembre 2025"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (contrôle sanitaire restaurant + ville)",
+      "cacEstimate": "0.50 EUR",
+      "conversionRate": "5%",
+      "ltv": "22.80 EUR (12 mois premium)",
+      "ltvCacRatio": "45.6"
+    },
+    {
+      "channel": "Contenu viral Instagram/TikTok food",
+      "cacEstimate": "1.20 EUR",
+      "conversionRate": "3%",
+      "ltv": "22.80 EUR",
+      "ltvCacRatio": "19.0"
+    },
+    {
+      "channel": "Facebook Ads groupes alimentation saine",
+      "cacEstimate": "3.50 EUR",
+      "conversionRate": "2%",
+      "ltv": "22.80 EUR",
+      "ltvCacRatio": "6.5"
+    },
+    {
+      "channel": "Partenariats presse locale",
+      "cacEstimate": "0.30 EUR",
+      "conversionRate": "4%",
+      "ltv": "22.80 EUR",
+      "ltvCacRatio": "76.0"
+    },
+    {
+      "channel": "Bouche a oreille et partage d'alertes",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "8%",
+      "ltv": "22.80 EUR",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 77,
+      "detail": "28.1K recherches/mois cumulees ('contrôle sanitaire restaurant' 12 100/mois, 'alim confiance' 8 100/mois). Cibles: Consommateurs urbains soucieux, Parents, Journalistes locaux."
+    },
+    "feasibility": {
+      "score": 83,
+      "detail": "MVP en 3 semaines. 4 APIs a integrer (Alim confiance, API BAN, Resend). Stack: Next.js + PostgreSQL."
+    },
+    "market": {
+      "score": 50,
+      "detail": "3000 clients a 90 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. Pricing 90-90 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: Alim'confiance (officiel), contrôlessanitaires.fr, Alim'Contrôle (app iOS). Leader: Alim'confiance (officiel) (190K visites/mois). Faiblesse principale: Pas d'alertes."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Droit a l'image et diffamation des restaurants, Arret des mises à jour Alim'confiance."
+    },
+    "overall": {
+      "score": 68,
+      "detail": "Point fort: faisabilite (83/100). Point faible: marche (50/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

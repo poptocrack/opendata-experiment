@@ -1,0 +1,336 @@
+{
+  "productSlug": "recommandation-d-implantation-ou-ouvrir-un-bureau-usine-en-fonction-du-bassin-d-",
+  "oneLiner": "Trouvez la zone ideale pour ouvrir votre prochain site en croisant bassin de talents ROME, coûts, concurrence recruteur et accessibilité.",
+  "problem": "Quand une entreprise veut ouvrir un nouveau bureau, usine ou agence, le choix de la localisation se fait au feeling ou par opportunisme immobilier. Les études d'implantation par des cabinets coutent 20-50K EUR et prennent 3 mois. Les données publiques (effectifs URSSAF par zone, offres France Travail, concurrence, transports) permettraient de recommander les meilleures zones de manière data-driven. Data : ROME 96K visites, SIRENE, BMO, APIs France Travail.",
+  "solution": "Un moteur de recommandation d'implantation prenant en entree vos besoins (métiers ROME recherches, nombre de postes, budget immobilier, contraintes logistiques) et recommandant les 10 meilleures zones en France en croisant : disponibilité des talents (effectifs URSSAF par NAF/ROME), tension emploi (ratio offres/demandeurs), concurrence recruteur, coût immobilier, accessibilité transport, qualité de vie.",
+  "uniqueValue": "Un moteur multi-critères quantitatif qui remplace une étude d'implantation a 30K EUR par un outil self-service a 200 EUR/mois. Couvre les 304 zones d'emploi INSEE.",
+  "mvpScope": "Formulaire : 1-5 métiers ROME, nombre de postes, contraintes optionnelles (région, budget max). Résultat : classement 20 meilleures zones d'emploi avec score détaillé. Fiche zone avec données cles. Comparaison 3 zones côté à côté.",
+  "timeToMvp": "9 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Base territoriale multi-critères",
+      "description": "Base exhaustive par zone d'emploi (304 zones) avec effectifs par NAF, offres par ROME, salaires, entreprises, demographie, accessibilité transport.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Import effectifs URSSAF par zone x NAF",
+        "Import offres et tensions par zone x ROME (API France Travail)",
+        "Import demographiques INSEE",
+        "Import accessibilité transport (gares, autoroutes, aeroports)",
+        "Base consolidee : 304 zones x 20+ indicateurs"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Moteur de recommandation",
+      "description": "Algorithme scoring multi-critères avec ponderation personnalisable. Classement des zones avec explication du score.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Algorithme scoring normalise",
+        "Ponderation par défaut et personnalisable",
+        "Classement avec decomposition",
+        "Gestion des contraintes géographiques"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Interface et rapports",
+      "description": "Formulaire de besoins intuitif. Résultats sur carte + tableau. Fiche zone détaillée. Comparaison multi-zones. Export PDF.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Formulaire avec autocompletion ROME",
+        "Carte des zones recommandees",
+        "Comparateur côté a cote",
+        "Export PDF rapport"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les entreprises multi-sites cherchent un outil d'aide a l'implantation",
+      "how": "Contacter 15 directeurs immobilier/développement d'ETI et grands groupes. Montrer un mock du rapport.",
+      "successCriteria": "10/15 confirment l'utilité, 5 paieraient 200+ EUR/mois"
+    },
+    {
+      "check": "Les recommandations sont pertinentes",
+      "how": "Lancer le moteur pour 10 cas réels d'implantation passee (usine Stellantis, centre services Capgemini). Vérifier que les zones choisies apparaissent dans le top 20.",
+      "successCriteria": "8/10 implantations reelles apparaissent dans le top 20"
+    },
+    {
+      "check": "Les données publiques couvrent assez de critères",
+      "how": "Auditer la couverture par zone d'emploi : % de zones avec données completes sur les 5 critères cles",
+      "successCriteria": "Couverture > 90% des zones d'emploi sur les critères cles"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Directeurs immobilier et développement de groupes multi-sites (industrie, logistique, services)",
+      "where": "ADI (Association des Directeurs Immobiliers), SIMI, LinkedIn",
+      "howToReach": "Rapport gratuit de recommandation pour un de leurs métiers cles. Montrer les zones sous-exploitees."
+    },
+    {
+      "who": "Réseaux de franchise en expansion (restauration, fitness, services a la personne)",
+      "where": "FFF (Fédération Française de la Franchise), Salon de la Franchise, LinkedIn développement",
+      "howToReach": "Rapport de maillage territorial : les 'trous' dans la couverture croises avec les zones de recrutement facile."
+    },
+    {
+      "who": "Agences de développement économique et collectivités",
+      "where": "Régions, metropoles, technopoles",
+      "howToReach": "Rapport d'attractivité de leur zone pour démarcher les entreprises. Co-branding possible."
+    }
+  ],
+  "pricingStrategy": "Explorer a 99 EUR/mois (3 analyses/mois, 1 métier, top 20 zones). Pro a 249 EUR/mois (illimité, multi-métiers, comparaison, export PDF/CSV). Enterprise a 599 EUR/mois (API, personnalisation critères, intégration données internes, accompagnement).",
+  "pathTo10kMrr": "30 Explorer x 99 EUR = 2 970 EUR + 20 Pro x 249 EUR = 4 980 EUR + 5 Enterprise x 599 EUR = 2 995 EUR = 10 945 EUR MRR. Marché niche mais ticket moyen élève. Acquisition : SEO 'implantation entreprise [région]', partenariats agences immo entreprise, études annuelles 'meilleures zones pour recruter des [métier]'. Timeline : 10-14 mois.",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS + MapLibre (carte recommandations) + Recharts",
+    "backend": "Next.js API routes + algorithme scoring Python (FastAPI) ou Node.js",
+    "database": "PostgreSQL (Supabase) avec table zone_emploi x indicateurs + PostGIS",
+    "hosting": "Vercel + Supabase + Railway (si service Python separe)",
+    "apis": [
+      "API Offres d'emploi France Travail",
+      "API Marché du travail France Travail",
+      "ROME 4.0 API France Travail",
+      "Effectifs URSSAF (data.gouv.fr)",
+      "Demographiques INSEE (data.gouv.fr)",
+      "Base permanente équipements INSEE",
+      "Gares SNCF/transports (data.gouv.fr)"
+    ],
+    "notes": "304 zones d'emploi INSEE = bon grain d'analyse. Base Permanente des Équipements INSEE fournit transport, santé, éducation par commune."
+  },
+  "risks": [
+    {
+      "risk": "Trop de critères, risque d'usine a gaz",
+      "mitigation": "MVP avec 5 critères cles (effectifs, tension, concurrence, demographie, accessibilité). Ajouter progressivement."
+    },
+    {
+      "risk": "Concurrence des cabinets de conseil en implantation (Arthur Loyd, BNP Paribas RE)",
+      "mitigation": "Outil de pre-étude rapide a 200 EUR/mois vs 30K EUR l'étude complete. Partenariat possible avec les cabinets."
+    },
+    {
+      "risk": "Données publiques ne couvrent pas l'immobilier pro ni les coûts salariaux locaux",
+      "mitigation": "Prix m2 résidentiel comme proxy immo. Salaires des offres France Travail comme proxy salaires."
+    },
+    {
+      "risk": "Marché de niche : peu d'entreprises ouvrent des sites chaque année",
+      "mitigation": "Elargir : relocalisation, teletravail distribue (ou recruter en remote), benchmarking territorial des sites existants."
+    }
+  ],
+  "inspirations": "Arthur Loyd (conseil implantation 30K+). Smappen (zone de chalandise mais pas emploi). Cushman & Wakefield MarketBeat (rapports immo pas croises emploi). Site Sélection Magazine (US, implantation industrielle).",
+  "searchVolume": [
+    {
+      "keyword": "implantation entreprise france",
+      "monthlyVolume": "1600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ou ouvrir un bureau",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "choix localisation entreprise",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "aide implantation entreprise",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "étude implantation industrielle",
+      "monthlyVolume": "320",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ou installer son entreprise",
+      "monthlyVolume": "720",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "bassin emploi recrutement zone",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "zone franche entreprise",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "3 milliards EUR - marché du conseil en immobilier d'entreprise et implantation en France. Arthur Loyd seul : 80+ agences. Inclut les études d'implantation (20-50K EUR/étude), le conseil immobilier pro, et les aides régionales a l'implantation.",
+    "sam": "200 millions EUR - ETI et groupes multi-sites (industrie, logistique, services, franchises) qui ouvrent des sites chaque année. Environ 3 000 projets d'implantation/an necessitant une étude.",
+    "som": "1.3 million EUR - 10 945 EUR MRR (55 clients payants) en 12-18 mois. Ticket moyen élève (199 EUR/mois) compense le faible volume.",
+    "methodology": "TAM basé sur CA Arthur Loyd, Cushman & Wakefield, BNP Paribas RE France. SAM restreint aux projets d'implantation avec composante RH/bassin d'emploi. SOM basé sur 30 Explorer + 20 Pro + 5 Enterprise."
+  },
+  "competitorDeep": [
+    {
+      "name": "Arthur Loyd",
+      "url": "https://www.arthur-loyd.com",
+      "pricing": "Études d'implantation : 20 000-50 000 EUR. Conseil immobilier : honoraires sur transaction.",
+      "trafficEstimate": "400K visites/mois",
+      "reviews": "Premier réseau français de conseil en immobilier d'entreprise. 80+ agences dans 80+ villes. 30+ ans d'experience.",
+      "strengths": "Réseau national dense (80 villes), expertise immobilier pro complete, études de marché publiees, marque forte, accompagnement sur-mesure",
+      "weaknesses": "Tres cher (20-50K EUR/étude), process long (2-3 mois), pas de self-service, focus immobilier (pas de croisement bassin d'emploi/compétences)"
+    },
+    {
+      "name": "Pole Implantation Entreprises",
+      "url": "https://www.pole-implantation.org",
+      "pricing": "Gratuit. Service public d'appui territorial.",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "Réseau de services d'appui des territoires pour l'implantation. Gratuit pour les entreprises.",
+      "strengths": "Gratuit, réseau national de territoires, accompagnement personnalise, connaissance locale, aides financières",
+      "weaknesses": "Pas d'outil self-service, pas de scoring multi-critères, process lent, biais pro-domo (chaque territoire vend sa zone), pas de comparaison objective"
+    },
+    {
+      "name": "Smappen",
+      "url": "https://www.smappen.com",
+      "pricing": "À partir de 99 EUR/mois.",
+      "trafficEstimate": "200K visites/mois",
+      "reviews": "Outil geomarketing leader franchise avec 850+ clients. Zone de chalandise et analyse concurrentielle.",
+      "strengths": "UX intuitive, analyse zone de chalandise, données INSEE, 99 EUR/mois accessible, mapping concurrentiel",
+      "weaknesses": "Focus zone de chalandise (commerce), pas de croisement bassin d'emploi/ROME/compétences, pas de recommandation d'implantation multi-critères"
+    },
+    {
+      "name": "ODIL (INSEE)",
+      "url": "https://www.insee.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "50K visites/mois (page ODIL)",
+      "reviews": "Outil d'Aide au Diagnostic d'Implantation Locale de l'INSEE. Permet de mieux définir son projet d'implantation.",
+      "strengths": "Gratuit, données officielles INSEE, aide au diagnostic, couverture nationale",
+      "weaknesses": "Interface obsolete, pas de croisement emploi/compétences, pas de scoring, pas d'analyse concurrentielle, fonctionnalités tres basiques"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données territoriales multi-sources",
+      "status": "ok",
+      "detail": "Toutes les données utilisees (effectifs URSSAF, offres France Travail, demographiques INSEE, Base Permanente des Équipements) sont en open data. Reutilisation commerciale autorisee.",
+      "source": "Licence Ouverte Etalab v2.0"
+    },
+    {
+      "topic": "Recommandation d'implantation et responsabilité",
+      "status": "attention",
+      "detail": "Une recommandation erronee pourrait causer un prejudice (investissement dans une zone inadaptee). Disclaimer que l'outil est indicatif et ne remplace pas une étude d'implantation professionnelle.",
+      "source": "Code civil art. 1240, responsabilité du fait d'information"
+    },
+    {
+      "topic": "Données immobilières proxy",
+      "status": "ok",
+      "detail": "Utilisation de prix residentiels (DVF) comme proxy immobilier pro. Pas de données immobilier d'entreprise en open data. Indiquer clairement que c'est un proxy.",
+      "source": "DVF open data, transparence méthodologique"
+    },
+    {
+      "topic": "Zones franches et aides",
+      "status": "ok",
+      "detail": "L'information sur les ZFU et aides régionales est publique. Pas de contrainte a la redistribuer.",
+      "source": "Code général des impôts, sites régionaux"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (implantation entreprise, ou ouvrir un bureau)",
+      "cacEstimate": "120 EUR",
+      "conversionRate": "3%",
+      "ltv": "3000 EUR (Pro 249 EUR x 12 mois)",
+      "ltvCacRatio": "25.0"
+    },
+    {
+      "channel": "Outreach directeurs immobilier ETI",
+      "cacEstimate": "400 EUR",
+      "conversionRate": "5%",
+      "ltv": "7200 EUR (Enterprise 599 EUR x 12 mois)",
+      "ltvCacRatio": "18.0"
+    },
+    {
+      "channel": "Partenariats agences développement économique",
+      "cacEstimate": "200 EUR",
+      "conversionRate": "8%",
+      "ltv": "3000 EUR",
+      "ltvCacRatio": "15.0"
+    },
+    {
+      "channel": "Salon de la Franchise (stand développement réseau)",
+      "cacEstimate": "350 EUR",
+      "conversionRate": "12%",
+      "ltv": "3000 EUR",
+      "ltvCacRatio": "8.6"
+    },
+    {
+      "channel": "Content (études annuelles meilleures zones pour recruter)",
+      "cacEstimate": "60 EUR",
+      "conversionRate": "2%",
+      "ltv": "1200 EUR (Explorer 99 EUR x 12 mois)",
+      "ltvCacRatio": "20.0"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 57,
+      "detail": "7.7K recherches/mois cumulees ('zone franche entreprise' 1 900/mois, 'implantation entreprise france' 1 600/mois). TAM: 3 milliards EUR. Cibles: Directeurs immobilier et développement, Réseaux de franchise en, Agences de développement économique."
+    },
+    "feasibility": {
+      "score": 30,
+      "detail": "MVP en 9 semaines. 7 APIs a integrer (API Offres d'emploi France Tra, API Marché du travail France T, ROME 4.0 API France Travail). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 58,
+      "detail": "Objectif 10K MRR en 10-14 mois. Pricing 99-599 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Arthur Loyd, Pole Implantation Entreprises, Smappen. Leader: Arthur Loyd (400K visites/mois). Faiblesse principale: Tres cher (20-50K EUR/étude)."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Recommandation d'implantation et responsabilité."
+    },
+    "overall": {
+      "score": 51,
+      "detail": "Point fort: legal (78/100). Point faible: faisabilité (30/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

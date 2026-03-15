@@ -1,0 +1,309 @@
+{
+  "productSlug": "score-de-probabilite-de-victoire-base-sur-l-historique-des-attributions",
+  "oneLiner": "Score de probabilité de victoire pour chaque appel d'offres, basé sur l'historique des attributions et le profil de l'entreprise.",
+  "problem": "Une PME passe 40 heures a préparer une réponse a un marché public, pour un taux de victoire de 15-20%. Sur 10 réponses, 8 sont des pertes seches. L'entreprise ne sait pas si le marché est domine par un acteur, si le prix moyen est compatible avec ses coûts, ou si l'acheteur favorise les locaux.",
+  "solution": "Un score 0-100 attribué a chaque appel d'offres en fonction du profil de l'entreprise. L'algorithme analyse les DECP pour déterminer: concentration du marché (HHI), probabilité de victoire selon la taille, prix moyen d'attribution, préférence locale de l'acheteur, nombre de candidats habituels. L'entreprise ne répond qu'aux marchés score > 50, economisant 200+ heures/an.",
+  "uniqueValue": "Passage de la veille passive a la stratégie active. Aucun outil ne fournit de probabilité de victoire personnalisee. Comme un credit scoring mais pour les appels d'offres.",
+  "mvpScope": "Score pour marchés de travaux (CPV 45) et services IT (CPV 72). 3 critères: concentration HHI, prix moyen d'attribution, localité acheteur. L'utilisateur entre son SIRET et CA pour la personnalisation.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Modèle statistique sur DECP",
+      "description": "Entrainer un modèle (gradient boosting) sur 3 ans de DECP. Features: concentration HHI, taille relative, distance géographique, prix relatif, historique acheteur.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Modèle entraîné sur 100K+ marchés",
+        "Validation croisee",
+        "Features engineering",
+        "Taux de précision mesure"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface scoring",
+      "description": "Interface: l'utilisateur entre son SIRET, voit ses marchés potentiels avec score et détail des facteurs. Intégration avec alertes.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Interface scoring",
+        "Détail des facteurs",
+        "Intégration alertes",
+        "Export rapport go/no-go"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Beta et calibration",
+      "description": "Beta auprès de 50 entreprises. Mesure du taux de précision réel. Calibration du modèle.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "50 beta testeurs",
+        "Taux de précision réel mesure",
+        "Modèle calibre",
+        "100 abonnes"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Extension et bundle",
+      "description": "Etendre a tous secteurs CPV. Recommandation de prix optimal. Bundle avec alertes + analyse + prédiction.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Tous secteurs CPV",
+        "Prix optimal",
+        "Bundle complet",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le score retro-actif est pertinent",
+      "how": "Calculer le score pour 200 marchés passés connus. Vérifier si gagnés ont score plus élève que perdus.",
+      "successCriteria": "Marchés gagnés ont score moyen 20+ points superieur aux perdus"
+    },
+    {
+      "check": "Les entreprises changeraient leur stratégie avec un score",
+      "how": "Montrer le score a 15 entreprises sur leurs marchés passés",
+      "successCriteria": "10/15 auraient évité au moins 1 marché perdu (économie 40h+)"
+    },
+    {
+      "check": "Les DECP suffisent pour un modèle prédictif",
+      "how": "Vérifier le volume avec attributaire, montant, CPV, localité sur 3 ans",
+      "successCriteria": "100K+ marchés avec les 4 champs, suffisant pour un modèle robuste"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "PME du BTP (10-100 salariés) répondant a 20+ marchés/an",
+      "where": "FFB, FNTP, LinkedIn BTP, Batimat",
+      "howToReach": "Ces PME perdent des centaines d'heures. Essai gratuit sur 10 prochains marchés."
+    },
+    {
+      "who": "ESN de taille moyenne (50-500 salariés) sur marchés IT publics",
+      "where": "Syntec, LinkedIn, FIC",
+      "howToReach": "Outil d'aide a la décision go/no-go pour les responsables avant-vente."
+    },
+    {
+      "who": "Cabinets de conseil en réponse aux marchés publics",
+      "where": "LinkedIn, CCPA, conferences marchés publics",
+      "howToReach": "Le score enrichit leur prestation. Plan white-label."
+    }
+  ],
+  "pricingStrategy": "Plan Solo a 39 EUR/mois (score sur son secteur, 1 région). Plan PME a 89 EUR/mois (multi-secteurs, national, prix recommande). Plan Pro a 199 EUR/mois (score personnalise, API, historique). Plan Cabinet a 399 EUR/mois (multi-clients, white-label). ROI immédiat: 1 réponse evitee/mois = 40h x 50 EUR = 2 000 EUR economises.",
+  "pathTo10kMrr": "100 Solo x 39 EUR = 3 900 EUR + 40 PME x 89 EUR = 3 560 EUR + 10 Pro x 199 EUR = 1 990 EUR + 2 Cabinets x 399 EUR = 798 EUR = 10 248 EUR MRR. 152 abonnes sur 150K entreprises = 0.1%. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts",
+    "backend": "Next.js API Routes + Python (scikit-learn, pandas)",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "DECP data.gouv.fr",
+      "API Sirene (profil entreprise)",
+      "API BOAMP",
+      "Stripe"
+    ],
+    "notes": "Modèle = gradient boosting entraîné sur DECP. Features: HHI, taille relative, distance, prix relatif, historique acheteur. Score recalcule a chaque nouveau marché. Re-entrainement mensuel."
+  },
+  "risks": [
+    {
+      "risk": "Le modèle n'est pas assez précis (faux positifs/negatifs)",
+      "mitigation": "Commencer simple (3 features) et valider empiriquement. Afficher comme indicateur, pas prédiction certaine. Mesurer et communiquer la précision."
+    },
+    {
+      "risk": "Les entreprises sont retives a un score automatique pour décision stratégique",
+      "mitigation": "Aide a la décision, pas remplacement du jugement. Fournir le détail des facteurs."
+    },
+    {
+      "risk": "Les DECP ne capturent pas tous les facteurs (qualité offre, relation acheteur)",
+      "mitigation": "Le score capture les facteurs structurels. Déjà precieux pour filtrer les marchés ou le structurel est defavorable."
+    }
+  ],
+  "inspirations": "GovWin (Deltek) win probability scoring marchés fédéraux US. LinkedIn Recruiter score de probabilité de réponse. Credit scoring (meme principe: features + historique = probabilité).",
+  "searchVolume": [
+    {
+      "keyword": "gagner appel offre",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "taux réussite marché public",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "go no go marché public",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "scoring appel offre IA",
+      "monthlyVolume": "210",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "probabilité victoire marché public",
+      "monthlyVolume": "170",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "233 Mds EUR commande publique 2024. 150 000 entreprises repondantes. Marché outils d'aide a la décision go/no-go: estimé a 150M EUR/an.",
+    "sam": "50 000 PME répondant a 5+ marchés/an (besoin de priorisation). SAM = 50 000 x 70 EUR/mois = 42M EUR/an.",
+    "som": "Objectif an 1: 152 abonnes x 67 EUR ARPU = 122K EUR ARR. Penetration: 0.3% du SAM.",
+    "methodology": "TAM basé sur commande publique 2024. SAM estimé a 1/3 des entreprises repondantes ayant un volume suffisant pour justifier un outil de scoring. SOM basé sur mix tarifaire."
+  },
+  "competitorDeep": [
+    {
+      "name": "Tengo",
+      "url": "https://www.tengo.cc",
+      "pricing": "Non communique. Startup IA marchés publics.",
+      "trafficEstimate": "10K visites/mois",
+      "reviews": "Promet d'identifier, analyser et répondre via IA. Scoring Go/No-Go en développement.",
+      "strengths": "Approche IA native, scoring automatise, UX moderne.",
+      "weaknesses": "Startup récente, pas de track record, couverture et précision a prouver."
+    },
+    {
+      "name": "Doubletrade (scoring 2025)",
+      "url": "https://www.doubletrade.com",
+      "pricing": "150-400 EUR/mois. Scoring IA annonce pour 2025.",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "30 ans, 10K clients. Scoring innovant annonce pour 2025.",
+      "strengths": "Base massive de 400K marchés/an, crédibilité, scoring IA en cours.",
+      "weaknesses": "Scoring basique (pas de probabilité personnalisee), prix élève, pas encore lance."
+    },
+    {
+      "name": "Specgen",
+      "url": "https://specgen.ai",
+      "pricing": "Non communique. IA souveraine pour appels d'offres.",
+      "trafficEstimate": "5K visites/mois",
+      "reviews": "IA 100% confidentielle et souveraine pour réponses aux appels d'offres. Score qualité de dossier.",
+      "strengths": "Souverainété données (100% confidentiel), analyse qualité dossier, score d'amélioration.",
+      "weaknesses": "Score qualité dossier (pas probabilité victoire marché), startup récente, marché a eduquer."
+    },
+    {
+      "name": "GovWin (Deltek) - référence US",
+      "url": "https://iq.govwin.com",
+      "pricing": "1000+ USD/mois. Win probability scoring.",
+      "trafficEstimate": "500K visites/mois (US)",
+      "reviews": "Référence mondiale du win probability sur marchés fédéraux US.",
+      "strengths": "Modèle prédictif avancé, 20+ ans de data, référence du marché US.",
+      "weaknesses": "US uniquement, prix inaccessible PME, modèle non transposable directement."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation des données d'attribution pour le scoring",
+      "status": "ok",
+      "detail": "Les DECP (attributaire, montant, CPV, localité) sont des données ouvertes. L'entrainement d'un modèle ML dessus est légal.",
+      "source": "Licence Etalab 2.0"
+    },
+    {
+      "topic": "Responsabilité en cas de mauvaise prédiction",
+      "status": "attention",
+      "detail": "Le score est un indicateur statistique, pas une garantie. CGV doivent exclure toute responsabilité sur les décisions prises sur la base du score.",
+      "source": "Code civil Art. 1231-1, CGV"
+    },
+    {
+      "topic": "Transparence algorithmique",
+      "status": "attention",
+      "detail": "Si le scoring influence des décisions économiques, l'utilisateur doit pouvoir comprendre les facteurs. Obligation d'explicabilité du score.",
+      "source": "Reglement IA (AI Act) Art. 13, RGPD Art. 22"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (gagner appel offre, go no go marché public)",
+      "cacEstimate": "20-40 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "468 EUR (12 mois x 39 EUR Solo)",
+      "ltvCacRatio": "12-23x"
+    },
+    {
+      "channel": "Essai gratuit (10 marchés scores gratuitement)",
+      "cacEstimate": "10-25 EUR",
+      "conversionRate": "8-15%",
+      "ltv": "1068 EUR (12 mois x 89 EUR PME)",
+      "ltvCacRatio": "43-107x"
+    },
+    {
+      "channel": "LinkedIn Ads (responsables avant-vente ESN)",
+      "cacEstimate": "100-160 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "1068 EUR",
+      "ltvCacRatio": "7-11x"
+    },
+    {
+      "channel": "Partenariats cabinets conseil (white-label)",
+      "cacEstimate": "20-50 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "4788 EUR (12 mois x 399 EUR Cabinet)",
+      "ltvCacRatio": "96-239x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 52,
+      "detail": "2.5K recherches/mois cumulees ('gagner appel offre' 1 300/mois, 'taux réussite marché public' 480/mois). TAM: 233 Mds EUR. Cibles: PME du BTP, ESN de taille moyenne, Cabinets de conseil en."
+    },
+    "feasibility": {
+      "score": 63,
+      "detail": "MVP en 6 semaines. 4 APIs a integrer (DECP, API Sirene, API BOAMP). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 60,
+      "detail": "152 clients a 39 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 122K EUR/an. Pricing 0-399 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: Tengo, Doubletrade (scoring 2025), Specgen. Leader: Tengo (10K visites/mois). Faiblesse principale: Startup récente."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 2 points d'attention. Vigilance: Responsabilité en cas de mauvaise prédiction, Transparence algorithmique."
+    },
+    "overall": {
+      "score": 58,
+      "detail": "Point fort: faisabilité (63/100). Point faible: demande (52/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

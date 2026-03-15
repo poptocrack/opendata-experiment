@@ -1,0 +1,354 @@
+{
+  "productSlug": "outil-pour-syndics-cartographie-dpe-de-la-copropriete-plan-pluriannuel",
+  "oneLiner": "Outil pour syndics : cartographie DPE de la copropriété + plan pluriannuel",
+  "problem": "Depuis la loi Climat et Résilience (2021), les copropriétés de plus de 200 lots doivent réaliser un DPE collectif avant 2024, celles de 50-200 lots avant 2025, et toutes les copropriétés avant 2026. Les syndics doivent aussi établir un Plan Pluriannuel de Travaux (PPT) obligatoire sur 10 ans. Or, les syndics gèrent en moyenne 15-30 copropriétés et n'ont aucun outil pour visualiser l'état énergétique de leur parc, prioriser les copropriétés les plus urgentes, ni planifier les travaux sur plusieurs années. Ils compilent manuellement des tableaux Excel avec les DPE individuels de chaque lot, ce qui prend des heures et génère des erreurs. Le PPT est souvent sous-traite a des bureaux d'études a 5000-15000€ par copropriété, sans outil de suivi dans le temps.",
+  "solution": "Un tableau de bord SaaS pour syndics de copropriété qui agrege automatiquement les DPE de chaque lot (via API ADEME + BDNB) et affiche une cartographie thermique de la copropriété (batiment par batiment, étage par étage). L'outil génère automatiquement une synthèse du DPE collectif estime, identifié les lots les plus énergivores, et propose un Plan Pluriannuel de Travaux (PPT) chiffré avec priorisation par impact énergétique et budget. Le syndic peut exporter le tout en PDF pour les AG de copropriété et suivre l'avancement des travaux votes d'une année sur l'autre.",
+  "uniqueValue": "Premier outil spécialisé qui croise les données DPE individuelles des lots (API ADEME) avec les données batiment (BDNB) pour générer automatiquement une vision consolidee de la copropriété. Les logiciels syndics existants (Crypto, ICS, Powimo) ne gèrent pas du tout la dimension énergétique. Les bureaux d'études thermiques facturent 5000-15000€ par copropriété pour un audit que cet outil peut pre-générer en 5 minutes.",
+  "mvpScope": "V1 : le syndic saisit l'adresse de la copropriété et le nombre de lots. L'outil recupere les DPE disponibles via API ADEME, affiche une synthèse (repartition des classes énergétiques, % de passoires thermiques). Génération d'un rapport PDF basique avec recommandations de travaux prioritaires. Pas de PPT complet, pas de suivi pluriannuel, pas d'intégration logiciel syndic.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Agregation des données DPE par copropriété",
+      "description": "Recuperer les DPE de tous les lots d'une copropriété à partir de l'adresse. Croiser avec la BDNB pour les données batiment (année construction, materiaux, chauffage collectif/individuel). Gérer le cas ou certains lots n'ont pas de DPE.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "API qui retourne les DPE agreges par adresse de copropriété",
+        "Synthèse statistique (repartition classes A-G, moyenne, écart-type)",
+        "Identification des lots sans DPE ou DPE expire",
+        "Données batiment enrichies via BDNB"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Dashboard syndic et visualisation",
+      "description": "Interface web avec vue copropriété : graphique en barres de la repartition DPE, indicateurs cles (% passoires, date DPE collectif obligatoire), et liste des lots critiques. Multi-copropriété : le syndic voit toutes ses copropriétés en un coup d'oeil.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Dashboard multi-copropriétés avec KPIs",
+        "Vue détaillée par copropriété (repartition DPE, lots critiques)",
+        "Graphiques interactifs (Chart.js/Recharts)",
+        "Export PDF de la synthèse énergétique"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Beta test avec syndics partenaires",
+      "description": "Recruter 5 syndics en Île-de-France pour tester l'outil sur leurs copropriétés reelles. Itérer sur les fonctionnalites selon leurs retours.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "5 syndics beta testeurs actifs",
+        "20 copropriétés saisies dans l'outil",
+        "Retours structures et priorisation des évolutions",
+        "Témoignages video/ecrit pour le marketing"
+      ]
+    },
+    {
+      "phase": "4",
+      "title": "Plan Pluriannuel de Travaux (PPT) automatisé",
+      "description": "Module de génération automatique du PPT : liste des travaux recommandes sur 10 ans, chiffrage estimatif, ordre de priorité, impact sur la classe énergétique, aides mobilisables. Export PDF conforme aux attendus legaux.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Moteur de génération PPT avec priorisation",
+        "Chiffrage estimatif base sur les référentiels ADEME (prix moyens travaux)",
+        "Simulation de l'impact énergétique post-travaux",
+        "PDF PPT conforme aux obligations légales"
+      ]
+    },
+    {
+      "phase": "5",
+      "title": "Monétisation et expansion",
+      "description": "Lancement commercial avec pricing par copropriété. Intégration API avec les logiciels syndics (Crypto, ICS). Expansion nationale via les chambres syndicales FNAIM/UNIS.",
+      "duration": "4 semaines (en continu)",
+      "deliverables": [
+        "Pricing SaaS valide avec 20 syndics payants",
+        "API d'intégration avec au moins 1 logiciel syndic",
+        "Présence commerciale via FNAIM/UNIS",
+        "100 copropriétés gérées dans l'outil"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les syndics ont un vrai problème de gestion énergétique de leur parc",
+      "how": "Interviewer 10 syndics (5 cabinets indépendants, 5 groupes) par téléphone. Questions : 'Comment gerez-vous aujourd'hui les DPE de vos copropriétés ? Combien de temps passez-vous sur le PPT ? Quel budget y consacrez-vous ?'",
+      "successCriteria": "8 syndics sur 10 confirment utiliser Excel ou rien du tout. Temps moyen passe > 2 heures par copropriété pour compiler les DPE. Budget PPT > 5000€ par copropriété en sous-traitance."
+    },
+    {
+      "check": "Les syndics sont prêts à payer pour un outil SaaS",
+      "how": "Présenter une maquette Figma a 10 syndics et leur demander ce qu'ils paieraient. Proposer un pre-lancement a 89€/mois avec engagement 6 mois.",
+      "successCriteria": "Au moins 3 syndics sur 10 acceptent de pre-payer ou de s'engager sur un pilote payant."
+    },
+    {
+      "check": "Les données DPE sont suffisamment disponibles par copropriété",
+      "how": "Tester la recuperation des DPE via API ADEME sur 20 adresses de copropriétés connues. Mesurer le taux de couverture (nombre de lots avec DPE / nombre total de lots).",
+      "successCriteria": "Taux de couverture DPE > 50% sur les copropriétés de plus de 50 lots en Île-de-France (suffisant pour une synthèse statistique significative)."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Syndics de copropriété indépendants gerant 10-50 copropriétés, souvent debordés par les nouvelles obligations environnementales",
+      "where": "Chambre syndicale FNAIM Gestion section syndics. UNIS (Union des Syndicats de l'Immobilier) sections régionales. Groupes LinkedIn 'Syndics de copropriété' (3K membres). Salon Copropriété Expo (Paris, annuel).",
+      "howToReach": "Email cible aux syndics indépendants en IDF (liste via Société.com, code NAF 6832A). Pitch : 'Vous devez produire un PPT pour toutes vos copros avant 2026. Notre outil vous fait gagner 80% du temps. Essai gratuit 1 mois.' Présence au salon Copropriété Expo."
+    },
+    {
+      "who": "Présidents de conseils syndicaux de grandes copropriétés (>100 lots) confrontes aux obligations DPE collectif",
+      "where": "Association des Responsables de Copropriété (ARC, 15 000 adhérents). Forums copropriété-facile.com. Groupes Facebook 'Copropriété - entraide et conseils' (8K membres).",
+      "howToReach": "Partenariat avec l'ARC pour proposer l'outil a leurs adhérents. Articles dans leur magazine 'Le Particulier Copropriété'. Webinaires gratuits sur 'Comment préparer le PPT de votre copropriété'."
+    },
+    {
+      "who": "Bureaux d'études thermiques qui realisent des DPE collectifs et DTG",
+      "where": "Federation CINOV (ingénieurs et bureaux d'études). LinkedIn avec filtre 'bureau d'études thermiques'. Annuaire OPQIBI (qualification ingénieurs).",
+      "howToReach": "Proposer l'outil comme complément a leur offre : ils peuvent utiliser le dashboard pour présenter leurs résultats aux syndics de facon plus visuelle. Partenariat win-win : ils recommandent l'outil, on recommandé leurs services pour l'audit approfondi."
+    }
+  ],
+  "pricingStrategy": "SaaS B2B par nombre de copropriétés gérées. Offre Decouverte : 1 copropriété gratuite (pour tester). Offre Syndic : 49€/mois jusqu'a 10 copropriétés (synthèse DPE + export PDF). Offre Syndic Pro : 129€/mois jusqu'a 30 copropriétés (tout Syndic + PPT automatisé + suivi pluriannuel). Offre Groupe : 299€/mois copropriétés illimitées + API intégration logiciel syndic + support prioritaire. Option a la carte : génération PPT détaillé pour une copropriété spécifique : 199€ one-shot (alternative a la sous-traitance bureau d'études a 5000€+).",
+  "pathTo10kMrr": "Le marché cible en France : ~15 000 cabinets de syndics gerant ~750 000 copropriétés. Phase 1 (mois 1-4) : 10 syndics en offre Syndic a 49€ = 490€ + 5 syndics Pro a 129€ = 645€ + 10 PPT one-shot a 199€ = 1 990€ = 3 125€ MRR équivalent. Phase 2 (mois 5-8) : 25 syndics a 49€ = 1 225€ + 15 Pro a 129€ = 1 935€ + 3 Groupe a 299€ = 897€ + 20 PPT = 3 980€ = 8 037€ MRR. Phase 3 (mois 9-12) : 35 syndics a 49€ + 25 Pro a 129€ + 5 Groupe a 299€ + 25 PPT = 1 715 + 3 225 + 1 495 + 4 975 = 11 410€ MRR. Levier principal : le PPT one-shot qui génère du revenu immédiat et convainc les syndics de passer a l'abonnement.",
+  "techStack": {
+    "frontend": "Next.js 14 avec Tailwind CSS et shadcn/ui. Recharts pour les graphiques (repartition DPE, évolution dans le temps). Dashboard multi-copropriétés responsive.",
+    "backend": "Next.js API Routes + tRPC. Moteur de génération PPT en TypeScript (logique métier : priorisation travaux, chiffrage, simulation impact).",
+    "database": "PostgreSQL via Supabase. Schema : organizations (cabinets syndics), copropriétés, lots, dpe_data, ppt_plans, travaux. Row Level Security pour isolation multi-tenant.",
+    "hosting": "Vercel (frontend + API). Supabase (DB + auth + storage pour les PDF génères). Stockage des PDF génères sur Supabase Storage.",
+    "apis": [
+      "API Diagnostics de Performance Énergétique ADEME (DPE par adresse/lot)",
+      "BDNB - Base de Données Nationale des Batiments (données batiment, année, materiaux)",
+      "API BAN - Base Adresse Nationale (autocompletion et géocodage)",
+      "Registre national des copropriétés (données ANAH, nombre de lots, informations syndic)",
+      "Stripe API (abonnements SaaS et paiements one-shot PPT)"
+    ],
+    "notes": "La génération PDF du PPT est critique et doit etre soignee (c'est le livrable que le syndic présenté en AG). Utiliser @react-pdf/renderer pour un rendu professionnel. Le multi-tenant est important des le debut : chaque syndic ne doit voir que ses copropriétés (Row Level Security Supabase). Prévoir un import CSV pour les syndics qui ont déjà compile leurs DPE manuellement."
+  },
+  "risks": [
+    {
+      "risk": "Les données DPE par lot ne sont pas disponibles en volume suffisant via les APIs publiques",
+      "mitigation": "Permettre au syndic d'importer manuellement les DPE (upload CSV ou saisie lot par lot). Proposer un service de collecte : le syndic demande aux copropriétaires de partager leur DPE via un lien unique. Croiser avec la BDNB qui a des données batiment même sans DPE individuel."
+    },
+    {
+      "risk": "Cycle de vente B2B long (les syndics sont lents a adopter de nouveaux outils)",
+      "mitigation": "Offrir la première copropriété gratuite pour réduire la friction. Cibler d'abord les syndics indépendants (décision rapide, 1 décideur) plutot que les groupes (Nexity, Foncia). Urgence réglementaire du PPT comme levier de vente : 'L'échéance approche, vous etes en conformité ?'."
+    },
+    {
+      "risk": "Le PPT génère automatiquement n'est pas assez fiable pour un document légal",
+      "mitigation": "Positionner l'outil comme 'pre-étude PPT' qui fait 80% du travail, le bureau d'études n'ayant plus qu'à valider et completer. Disclaimer clair : 'Ce document est une aide a la décision, il ne remplace pas un audit énergétique réglementaire.' Partenariat avec des bureaux d'études qui valident les PPT génères."
+    },
+    {
+      "risk": "Concurrence des logiciels syndics existants qui pourraient ajouter cette fonctionnalite",
+      "mitigation": "Bouger vite pour capter les premiers clients et construire un avantage data (plus de copropriétés dans la base = meilleurs benchmarks). Proposer une API d'intégration pour devenir un module complémentaire plutot qu'un concurrent. Les logiciels syndics sont lents a innover (Crypto n'a pas change son UI depuis 15 ans)."
+    }
+  ],
+  "inspirations": "Deepki (plateforme ESG immobilier pour les fonciers, 160M€ leves - même concept mais pour le tertiaire et les gros portfolios). Powimo/ICS (logiciels syndics, pas de module énergétique). Hxperience (IoT + data pour les batiments). Le modèle Deepki applique au marché des copropriétés résidentielles est inexistant et c'est une opportunité majeure avec l'obligation PPT. En plus petit : Syndic One (outil de gestion syndic bénévole) montre qu'il y a un marché pour des outils spécialisés copropriété.",
+  "searchVolume": [
+    {
+      "keyword": "DPE collectif copropriété",
+      "monthlyVolume": "4400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "plan pluriannuel travaux copropriété",
+      "monthlyVolume": "6600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "PPT copropriété obligatoire",
+      "monthlyVolume": "3600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "logiciel syndic copropriété",
+      "monthlyVolume": "2900",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "DPE copropriété 2026 obligation",
+      "monthlyVolume": "2400",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "873 358 copropriétés en France (données ANIL/Coproff janvier 2023), représentant 13 millions de logements. Toutes soumises a l'obligation PPT. Marché PPT + DPE collectif : 873K x 5 000 EUR (coût moyen PPT bureau d'études) = 4.4 milliards EUR one-shot.",
+    "sam": "Environ 15 000 cabinets de syndics professionnels gerant ~740 000 copropriétés. Marché SaaS syndic : 15 000 x 129 EUR/mois x 12 = 23.2M EUR/an en abonnements + revenus PPT one-shot.",
+    "som": "200 syndics clients an 1, mix offres : 100 x 49 EUR + 70 x 129 EUR + 30 x 299 EUR = 22 830 EUR MRR = 274K EUR/an + PPT one-shot 500 x 199 EUR = 100K = ~374K EUR an 1",
+    "methodology": "TAM base sur données officielles ANIL 873K copropriétés. Toutes les copros < 50 lots soumises au PPT depuis 2025 (loi Climat Résilience). SAM restreint aux 15 000 cabinets syndics (source CCI-France, 5 088 detenteurs carte S). SOM prudent a 200 syndics via acquisition directe et salons pro."
+  },
+  "competitorDeep": [
+    {
+      "name": "Deepki",
+      "url": "https://www.deepki.com",
+      "pricing": "Enterprise uniquement, sur devis. Clients : foncières, asset managers. A rachete Sobre Énergie et Fabriq. 600+ clients, 70 000+ utilisateurs, 90+ pays.",
+      "trafficEstimate": "200-400K visites/mois",
+      "reviews": "Référence dans l'ESG immobilier. 160M EUR leves. Acquisition aggressive de concurrents.",
+      "strengths": "Leader ESG immobilier, plateforme data puissante, gros moyens financiers, acquisitions strategiques",
+      "weaknesses": "Cible le tertiaire et gros portfolios uniquement, pas adapte aux copropriétés résidentielles, prix inaccessible pour un syndic indépendant"
+    },
+    {
+      "name": "Crypto / ICS (logiciels syndics historiques)",
+      "url": "https://www.crypto.fr",
+      "pricing": "Licence logiciel, sur devis. Estimation 200-500 EUR/mois selon taille du parc.",
+      "trafficEstimate": "50-100K visites/mois",
+      "reviews": "Logiciels de référence chez les syndics, mais UX jugee archaique. ICS n'a pas change son interface depuis 15+ ans.",
+      "strengths": "Forte pénétration chez les syndics, fonctionnalites comptables complètes, habitudes installees",
+      "weaknesses": "Aucun module énergétique ni PPT, interface datee, innovation très lente, pas de données DPE intégrées"
+    },
+    {
+      "name": "SOCOTEC (bureau d'études PPT)",
+      "url": "https://www.socotec.fr",
+      "pricing": "PPT : 3 000 a 8 000 EUR par copropriété. DPE collectif : 2 000 a 4 000 EUR.",
+      "trafficEstimate": "300-500K visites/mois",
+      "reviews": "Réputation solide pour les diagnostics. Prix élevés. Délais parfois longs.",
+      "strengths": "Expertise technique reconnue, marque de confiance, couverture nationale",
+      "weaknesses": "Pas de plateforme digitale pour syndics, modèle one-shot cher, pas de suivi dans le temps, pas d'automatisation"
+    },
+    {
+      "name": "Vilogi (logiciel syndic SaaS)",
+      "url": "https://www.vilogi.com",
+      "pricing": "SaaS full web, tarif sur devis. Gestion syndic + gestion locative.",
+      "trafficEstimate": "30-60K visites/mois",
+      "reviews": "Bons retours sur la modernite de l'interface par rapport aux concurrents historiques.",
+      "strengths": "SaaS moderne, full web, gestion syndic + locatif intégrée",
+      "weaknesses": "Pas de module DPE/PPT spécifique, positionnement généraliste, faible part de marché vs Crypto/ICS"
+    },
+    {
+      "name": "Copriciel",
+      "url": "https://www.copriciel.com",
+      "pricing": "SaaS pour syndics, tarif sur devis.",
+      "trafficEstimate": "10-20K visites/mois",
+      "reviews": "Positionne sur les enjeux modernes de la copropriété (dont énergétique). Petit acteur.",
+      "strengths": "Positionnement innovant, sensibilité aux enjeux énergétiques",
+      "weaknesses": "Faible notoriété, pas d'intégration DPE automatisée, petit acteur vs leaders établis"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Obligation PPT - Loi Climat Résilience",
+      "status": "ok",
+      "detail": "Toutes les copropriétés sont soumises a l'obligation PPT depuis 2025 (dernière tranche < 50 lots). Le PPT doit etre mis à jour tous les 10 ans. Cette obligation réglementaire est le principal driver du marché.",
+      "source": "service-public.gouv.fr/particuliers/vosdroits/F36760"
+    },
+    {
+      "topic": "Valeur légale du PPT génère",
+      "status": "attention",
+      "detail": "Le PPT génère automatiquement ne peut pas se substituer au projet de PPT établi par un professionnel mandate par l'AG. Le positionner comme 'pre-étude PPT' ou 'aide a la décision' avec disclaimer juridique clair.",
+      "source": "ecologie.gouv.fr - PPT coproprietes"
+    },
+    {
+      "topic": "Acces aux données DPE individuelles des lots",
+      "status": "attention",
+      "detail": "Les DPE sont publics mais l'agregation par copropriété peut poser des questions de vie privée. Obtenir le consentement du syndic (qui représenté le syndicat) avant de recuperer les DPE des lots.",
+      "source": "CNIL - RGPD art. 6"
+    },
+    {
+      "topic": "BDNB - Conditions réutilisation",
+      "status": "ok",
+      "detail": "La Base de Données Nationale des Batiments est en open data sous licence ouverte Etalab. Réutilisation commerciale autorisee.",
+      "source": "bdnb.io"
+    },
+    {
+      "topic": "Secret des délibérations AG copropriété",
+      "status": "ok",
+      "detail": "Les données de travaux votes en AG ne sont pas publiques. L'outil se limite aux données DPE/batiment publiques, sans acceder aux PV d'AG.",
+      "source": "Loi du 10 juillet 1965 art. 18"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Email froid syndics indépendants (IDF)",
+      "cacEstimate": "60-120 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "1 548 EUR (129 EUR x 12 mois)",
+      "ltvCacRatio": "13:1 a 26:1"
+    },
+    {
+      "channel": "Salons professionnels (Copropriété Expo)",
+      "cacEstimate": "150-300 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "1 548 EUR",
+      "ltvCacRatio": "5:1 a 10:1"
+    },
+    {
+      "channel": "Partenariats FNAIM/UNIS",
+      "cacEstimate": "30-60 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "1 548 EUR",
+      "ltvCacRatio": "26:1 a 52:1"
+    },
+    {
+      "channel": "PPT one-shot (entree en relation)",
+      "cacEstimate": "0 EUR (le PPT est la porte d'entree)",
+      "conversionRate": "20-30% de conversion vers abonnement",
+      "ltv": "199 EUR one-shot + 1 548 EUR abonnement",
+      "ltvCacRatio": "infini (auto-finance)"
+    },
+    {
+      "channel": "LinkedIn Ads ciblage syndics / gestionnaires",
+      "cacEstimate": "100-200 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "1 548 EUR",
+      "ltvCacRatio": "8:1 a 15:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources verifiees via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "19.9K recherches/mois cumulees ('plan pluriannuel travaux copropriété' 6 600/mois, 'DPE collectif copropriété' 4 400/mois). TAM: logements. Cibles: Syndics de copropriété indépendants, Présidents de conseils syndicaux, Bureaux d'études thermiques qui."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 5 APIs a intégrer (API Diagnostics de Performance, BDNB - Base de Données Nationa, API BAN - Base Adresse Nationa). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 83,
+      "detail": "SOM: 274K EUR/an."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "5 concurrents identifiés: Deepki, Crypto / ICS (logiciels syndic, SOCOTEC (bureau d'études PPT). Leader: Deepki (200-400K visites/mois). Faiblesse principale: Cible le tertiaire et gros portfolios uniquement."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "3 points OK, 2 points d'attention. Vigilance: Valeur légale du PPT génère, Acces aux données DPE individuelles des lots."
+    },
+    "overall": {
+      "score": 66,
+      "detail": "Point fort: marché (83/100). Point faible: competition (45/100). Potentiel réel mais hypotheses cles a valider."
+    }
+  }
+}

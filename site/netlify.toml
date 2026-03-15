@@ -1,0 +1,8 @@
+# Build: Prisma (generate + push + seed) puis Next.js
+# Les pages sont pré-rendues au build (generateStaticParams), pas de DB au runtime.
+[build]
+  command = "pnpm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

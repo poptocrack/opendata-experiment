@@ -1,0 +1,325 @@
+{
+  "productSlug": "generateur-de-memoire-technique-assiste-par-ia-base-sur-les-cahiers-des-charges",
+  "oneLiner": "Générateur de mémoire technique par IA: uploadez le CCTP, repondez a 10 questions, obtenez un draft de 20 pages en 10 minutes.",
+  "problem": "La rédaction du mémoire technique prend 20-40 heures pour 30-100 pages. Le mémoire doit répondre point par point au CCTP et représente 40-60% de la note. Les PME n'ont qu'une personne pour le rédiger. Les cabinets facturent 2-10K EUR par mémoire.",
+  "solution": "Un outil IA qui analyse le CCTP (upload PDF), identifié les critères d'évaluation, et génère un premier draft structuré. L'utilisateur uploade le CCTP, repond a 10 questions (effectifs, références, moyens), obtient un draft de 20-30 pages en 10 minutes, éditable et exportable en Word/PDF.",
+  "uniqueValue": "ChatGPT ne comprend pas la structuré des marchés publics. Ce générateur est spécialisé: il connait les attentes des acheteurs, la structuré des mémoires gagnants, et les formulations qui scorent. Gain de 20h par mémoire.",
+  "mvpScope": "Générateur pour marchés de services et travaux. Upload CCTP PDF. Extraction critères via IA. Questions entreprise. Draft structuré 15-20 pages. Export Word.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline CCTP et extraction IA",
+      "description": "Parsing PDF des CCTP (OCR si scanné). Extraction des critères d'évaluation et points a adresser via GPT-4. Structuration du plan du mémoire.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Parsing PDF/OCR",
+        "Extraction critères via GPT-4",
+        "Structuration plan mémoire",
+        "Tests sur 10 CCTP réels"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Génération et interface",
+      "description": "Génération du draft via GPT-4 avec prompt engineering spécialisé. Formulaire entreprise. Éditeur rich text. Export Word/PDF.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Génération draft GPT-4",
+        "Formulaire entreprise",
+        "Éditeur TipTap",
+        "Export Word via Pandoc"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et qualité",
+      "description": "Premier mémoire gratuit. Marketing LinkedIn et CAPEB. Évaluation par 3 consultants spécialisés. Itération qualité.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "100 mémoires génères",
+        "NPS mesure",
+        "3 partenariats CCI",
+        "50 clients payants"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Templates et scale",
+      "description": "Bibliotheque de 20 templates sectoriels. Gestion des références entreprise (auto-remplissage). Mode collaboratif. Formation en ligne.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "20 templates",
+        "Gestion références",
+        "Mode collaboratif",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le draft génère est de qualité suffisante comme base",
+      "how": "5 drafts évalués par 3 consultants spécialisés sur échelle 1-10",
+      "successCriteria": "Score moyen >= 6/10 avec commentaire 'bonne base de travail'"
+    },
+    {
+      "check": "Le gain de temps est réel",
+      "how": "Mesurer temps de rédaction avec vs sans outil sur 5 mémoires réels",
+      "successCriteria": "Réduction 50%+ du temps (30h a 15h ou moins)"
+    },
+    {
+      "check": "Le prix est acceptable vs le gain",
+      "how": "Tester 3 prix (49, 99, 199 EUR par mémoire) auprès de 20 entreprises",
+      "successCriteria": "60%+ acceptent 99 EUR (vs 2000+ EUR consultant et 30h de travail interne)"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "TPE du BTP (artisans) répondant a leurs premiers marchés",
+      "where": "CAPEB (300K adhérents), groupes Facebook artisans, CMA",
+      "howToReach": "Webinaire gratuit Comment répondre a votre premier marché public. L'outil comme rampe de lancement."
+    },
+    {
+      "who": "PME de services (nettoyage, gardiennage, restauration collective)",
+      "where": "FEP, SNES, SNRC, LinkedIn services collectivités",
+      "howToReach": "Les mémoires de services sont relativement standardises. Bon secteur pour commencer."
+    },
+    {
+      "who": "Consultants indépendants en marchés publics",
+      "where": "LinkedIn, CCPA, forums marchés publics",
+      "howToReach": "L'outil accelere leur travail 3x. Plan consultant avec volume."
+    }
+  ],
+  "pricingStrategy": "A l'acte: 99 EUR par mémoire (TPE). Pack 5 mémoires a 399 EUR (PME régulières). Abonnement Pro a 199 EUR/mois (illimité, templates premium, gestion références). Abonnement Consultant a 349 EUR/mois (illimité, multi-clients, white-label). ROI immédiat: 99 EUR vs 2000+ EUR consultant ou 30h de travail interne.",
+  "pathTo10kMrr": "30 unitaires x 99 EUR = 2 970 EUR + 10 packs amortis = 1 330 EUR/mois + 20 Pro x 199 EUR = 3 980 EUR + 5 consultants x 349 EUR = 1 745 EUR = 10 025 EUR MRR. 50K marchés/an et 150K entreprises répondantes. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + TipTap (éditeur rich text)",
+    "backend": "Next.js API Routes + Python (parsing PDF, orchestration IA)",
+    "database": "PostgreSQL sur Supabase + S3 (stockage documents)",
+    "hosting": "Vercel + Supabase + AWS S3 + GitHub Actions",
+    "apis": [
+      "API OpenAI GPT-4 (génération)",
+      "PyMuPDF (parsing PDF)",
+      "Tesseract OCR",
+      "Pandoc (export Word)",
+      "Stripe"
+    ],
+    "notes": "Parsing CCTP = partie complexe (PDF scannés = OCR). GPT-4 pour extraction critères et génération draft. Coût IA: 2-5 EUR par mémoire. Export Word via Pandoc."
+  },
+  "risks": [
+    {
+      "risk": "Le draft est trop générique et ne convainc pas les évaluateurs",
+      "mitigation": "Le draft est une base, pas un produit fini. Investir dans le fine-tuning sur mémoires gagnants pour améliorer la qualité."
+    },
+    {
+      "risk": "Les acheteurs detectent et pénalisent les mémoires IA",
+      "mitigation": "L'outil génère une structuré et des formulations, l'utilisateur personnalise avec ses spécificités et références. Résultat final unique."
+    },
+    {
+      "risk": "Coût API IA (GPT-4) rogne les marges",
+      "mitigation": "GPT-4 coute 2-5 EUR/mémoire. A 99 EUR de vente, marge confortable. Migrer vers Mistral/Llama à terme."
+    }
+  ],
+  "inspirations": "Jasper.ai (génération contenu, 200M USD ARR). Copy.ai pour rédaction assistee. En France aucun outil spécialisé mémoire technique. Aux US, Deltek GovWin propose du capture management.",
+  "searchVolume": [
+    {
+      "keyword": "mémoire technique marché public",
+      "monthlyVolume": "6600",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "exemple mémoire technique",
+      "monthlyVolume": "4400",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "rédiger mémoire technique",
+      "monthlyVolume": "2900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "IA appel offre",
+      "monthlyVolume": "1600",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "générateur mémoire technique",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "50 000 marchés/an nécessitent un mémoire technique. Coût moyen rédaction interne: 2 000 EUR (40h x 50 EUR). TAM = 50 000 x 2 000 EUR = 100M EUR/an. Si on ajoute les cabinets conseil (2-10K EUR/mémoire), TAM total = 200M EUR/an.",
+    "sam": "Cibler les PME et consultants qui produisent 5+ mémoires/an (30 000 entites). SAM = 30 000 x 150 EUR/mois moyen = 54M EUR/an.",
+    "som": "Objectif an 1: 65 abonnes payants + 30 achats unitaires/mois. 10K EUR MRR. Pénétration: 0.2% du SAM.",
+    "methodology": "TAM base sur le nombre de marchés (DECP) nécessitant un mémoire technique. SAM réduit aux entites produisant régulièrement des mémoires. SOM base sur le mix acte/abonnement."
+  },
+  "competitorDeep": [
+    {
+      "name": "MA-IA",
+      "url": "https://ma-ia.app",
+      "pricing": "Non communique publiquement. Première IA spécialisée marchés publics. Récompensée Cas d'or de la digitalisation du droit 2025.",
+      "trafficEstimate": "15K visites/mois",
+      "reviews": "Première IA de rédaction de documents marchés publics. Génère CCTP, CCAP, RC. Analyse IA des candidatures et offres. Base de 900K DCE.",
+      "strengths": "900K DCE en base, rédaction de TOUS les documents (pas seulement mémoire technique), reconnaissance juridique (Cas d'or 2025), positionnement acheteur ET entreprise.",
+      "weaknesses": "Positionnement large (pas spécialisé mémoire technique), prix non public, cible aussi les acheteurs publics."
+    },
+    {
+      "name": "Tenderbolt",
+      "url": "https://www.tenderbolt.ai",
+      "pricing": "Non communique. SaaS IA pour réponse aux appels d'offres.",
+      "trafficEstimate": "8K visites/mois",
+      "reviews": "IA pour la rédaction de réponses aux appels d'offres publics. Analyse DCE et génération de réponses.",
+      "strengths": "Spécialisé réponse (pas acheteur), IA de génération de réponse, interface moderne.",
+      "weaknesses": "Startup récente, base de données limitee vs MA-IA, positionnement international (pas que France)."
+    },
+    {
+      "name": "Odecia",
+      "url": "https://www.odecia.fr",
+      "pricing": "Sur devis. Cabinet conseil + outil IA.",
+      "trafficEstimate": "10K visites/mois",
+      "reviews": "Accompagnement et outil pour la rédaction de mémoires techniques.",
+      "strengths": "Expertise conseil + outil, contenu SEO fort sur mémoire technique, approche hybride humain+IA.",
+      "weaknesses": "Plus cabinet que SaaS, scalabilité limitee, prix élevé."
+    },
+    {
+      "name": "Smart4 (top 6 outils AO)",
+      "url": "https://www.smart4.ai",
+      "pricing": "Non communique. IA pour appels d'offres.",
+      "trafficEstimate": "5K visites/mois",
+      "reviews": "Classe dans les meilleurs outils IA pour répondre aux appels d'offres.",
+      "strengths": "IA spécialisée appels d'offres, automatisation de l'analyse.",
+      "weaknesses": "Startup récente, peu de visibilité marché francais."
+    },
+    {
+      "name": "Consultants indépendants et cabinets (marché traditionnel)",
+      "url": "https://www.memoire-technique.net",
+      "pricing": "2 000-10 000 EUR par mémoire technique.",
+      "trafficEstimate": "N/A",
+      "reviews": "Marché fragmente de consultants. Qualité variable. Délai 1-3 semaines.",
+      "strengths": "Expertise humaine, personnalisation poussee, connaissance du secteur.",
+      "weaknesses": "Prix élevé (2-10K EUR/mémoire), délai long, pas scalable, qualité variable selon le consultant."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation de l'IA pour rédiger des documents contractuels",
+      "status": "attention",
+      "detail": "Le mémoire technique engage juridiquement l'entreprise. L'IA est un assistant de rédaction, l'utilisateur reste responsable du contenu final. Mentionner clairement que l'outil ne se substitue pas a la validation humaine.",
+      "source": "Code de la commande publique, responsabilite contractuelle"
+    },
+    {
+      "topic": "Détection de contenu IA par les acheteurs",
+      "status": "attention",
+      "detail": "Pas d'interdiction légale d'utiliser l'IA pour rédiger, mais certains acheteurs pourraient percevoir négativement un mémoire visiblement génère par IA. L'outil doit produire du contenu personnalise et non détectable.",
+      "source": "Jurisprudence emergente, pas de reglementation specifique"
+    },
+    {
+      "topic": "Confidentialite des CCTP uploades",
+      "status": "attention",
+      "detail": "Les CCTP uploades peuvent contenir des informations sensibles. Nécessaire de garantir la confidentialite et le non-stockage des documents clients (ou stockage sécurisé et efface).",
+      "source": "RGPD, obligation de confidentialite"
+    },
+    {
+      "topic": "Propriété intellectuelle du contenu génère",
+      "status": "ok",
+      "detail": "Le contenu génère par IA n'est pas protégé par le droit d'auteur. L'utilisateur est libre de l'utiliser sans restriction.",
+      "source": "Droit d'auteur francais (oeuvre de l'esprit = creation humaine)"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (mémoire technique marché public, exemple mémoire technique)",
+      "cacEstimate": "10-20 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "1188 EUR (6 mémoires x 99 EUR + passage abonnement)",
+      "ltvCacRatio": "59-119x"
+    },
+    {
+      "channel": "Webinaires (Comment répondre a votre premier marché public)",
+      "cacEstimate": "25-50 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "2388 EUR (12 mois x 199 EUR Pro)",
+      "ltvCacRatio": "48-96x"
+    },
+    {
+      "channel": "Partenariats CAPEB/CMA (artisans premiers marchés)",
+      "cacEstimate": "8-20 EUR",
+      "conversionRate": "8-15%",
+      "ltv": "594 EUR (6 mémoires x 99 EUR)",
+      "ltvCacRatio": "30-74x"
+    },
+    {
+      "channel": "LinkedIn Ads (responsables AO, consultants marchés)",
+      "cacEstimate": "80-130 EUR",
+      "conversionRate": "1.5-3%",
+      "ltv": "4188 EUR (12 mois x 349 EUR Consultant)",
+      "ltvCacRatio": "32-52x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "16.2K recherches/mois cumulees ('mémoire technique marché public' 6 600/mois, 'exemple mémoire technique' 4 400/mois). TAM: 2 000 EUR. Cibles: TPE du BTP, PME de services, Consultants indépendants en marchés."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 5 APIs a intégrer (API OpenAI GPT-4, PyMuPDF, Tesseract OCR). Stack: Next.js + PostgreSQL."
+    },
+    "market": {
+      "score": 48,
+      "detail": "Objectif 10K MRR en 10-12 mois. SOM: . 10K EUR/an. Pricing 99-399 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "5 concurrents identifiés: MA-IA, Tenderbolt, Odecia. Leader: MA-IA (15K visites/mois). Faiblesse principale: Positionnement large (pas spécialisé mémoire technique)."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Utilisation de l'IA pour rédiger des documents con, Détection de contenu IA par les acheteurs."
+    },
+    "overall": {
+      "score": 56,
+      "detail": "Point fort: demande (68/100). Point faible: competition (45/100). Idee intéressante, risques significatifs a mitiger."
+    }
+  }
+}

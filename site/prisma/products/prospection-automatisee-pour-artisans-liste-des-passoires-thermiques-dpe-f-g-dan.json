@@ -1,0 +1,342 @@
+{
+  "productSlug": "prospection-automatisee-pour-artisans-liste-des-passoires-thermiques-dpe-f-g-dan",
+  "oneLiner": "Prospection automatisee pour artisans RGE : liste des passoires thermiques DPE F/G dans leur zone avec carte et export.",
+  "problem": "Les artisans RGE savent que la demande de rénovation explose avec les interdictions de location DPE G (2025) et F (2028), mais n'ont aucun moyen de trouver proactivement les propriétaires concernes. Ils dependent du bouche-a-oreille ou de leads achetes a 80-150 EUR aux courtiers en travaux (Effy, Hellio) avec 10-15% de conversion. Les petites entreprises RGE (1-5 salariés, 80% du marché) n'ont pas de commercial. Les données DPE sont publiques (API ADEME, BDNB) mais inexploitables sans outil.",
+  "solution": "Un SaaS exploitant les données DPE publiques (API ADEME) et la BDNB pour générer des listes de logements F et G dans un rayon défini. Carte thermique, filtres par type de travaux (isolation, chauffage, fenetres), infos de prospection (adresse, type bâtiment, année, chauffage actuel). Export CSV, mailing postal cible, mini-CRM de suivi.",
+  "uniqueValue": "Premier outil transformant l'open data énergétique en outil de prospection actionnable pour artisans RGE. Coût par lead 10x inferieur aux courtiers car l'artisan prospecte en direct.",
+  "mvpScope": "V1 : l'artisan entre son code postal et un rayon (5-30km). Carte des logements DPE F et G avec adresse et année. Export CSV avec filtres (maison/appartement, type chauffage). Pas de CRM ni mailing automatise en V1.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Base de données passoires thermiques",
+      "description": "Import et indexation des DPE publiques ADEME (~10M). Filtrage F et G valides (< 10 ans). Geocodage. Enrichissement BDNB (type bâtiment, année, chauffage).",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Base PostgreSQL ~2M logements DPE F/G geolocalises",
+        "Index PostGIS pour requetes par rayon",
+        "Enrichissement BDNB",
+        "Pipeline MAJ mensuelle"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface carte et filtres",
+      "description": "Carte interactive centree sur le code postal. Filtres : rayon, type logement, classe DPE, type chauffage. Liste résultats + export CSV.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Carte Leaflet avec clusters",
+        "Filtres dynamiques",
+        "Liste paginee",
+        "Export CSV"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Beta test artisans RGE",
+      "description": "10 artisans RGE testeurs gratuits pendant 2 semaines. Mesurer prospects contactes et taux de réponse.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "10 beta testeurs actifs",
+        "Metriques d'usage",
+        "Feedback structure",
+        "Premiers chantiers temoignages"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "CRM et prospection",
+      "description": "Mini-CRM (contacte, devis, signe). Templates courriers de prospection. Intégration mailing postal. Scoring des prospects les plus probables.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Mini-CRM pipeline 5 statuts",
+        "Templates courriers",
+        "Statistiques conversion",
+        "Scoring probabilité rénovation"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les artisans RGE cherchent des leads et sont frustres par les solutions existantes",
+      "how": "Appeler 20 artisans RGE (10 plombiers-chauffagistes, 5 couvreurs, 5 menuisiers). Coût leads actuel, satisfaction.",
+      "successCriteria": "15+ confirment payer pour des leads. Coût moyen > 50 EUR/lead. Satisfaction < 6/10"
+    },
+    {
+      "check": "Les données DPE sont assez precises pour la prospection locale",
+      "how": "Tester sur 5 codes postaux (urbain, periurbain, rural). Vérifier densité F/G, précision adresses, fraicheur.",
+      "successCriteria": "100+ logements F/G par code postal en urbain. Adresses avec numéro + rue. DPE < 8 ans."
+    },
+    {
+      "check": "Les artisans obtiennent des résultats concrets (chantiers signes)",
+      "how": "Suivre 10 beta pendant 1 mois. Tracker courriers, taux réponse, devis, chantiers.",
+      "successCriteria": "3/10 signent au moins 1 chantier dans le mois. Taux réponse courriers > 3%."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Plombiers-chauffagistes RGE (remplacement chaudieres fioul/gaz)",
+      "where": "Groupes Facebook 'Plombiers chauffagistes de France' (15K), 'Chauffagistes entraide pro' (6K). CAPEB departementales. Salons Interclima.",
+      "howToReach": "Post Facebook : 'J'ai créé un outil qui montre toutes les passoires thermiques dans votre zone. 2000 chaudieres fioul a remplacer dans un rayon de 20km. Qui veut tester ?' Appels directs via Pages Jaunes/Google Maps."
+    },
+    {
+      "who": "Entreprises d'isolation RGE (ITE, combles, planchers) en croissance",
+      "where": "Groupes Facebook 'Isolation thermique ITE' (4K). Qualibat. Salons Batimat, BePositive.",
+      "howToReach": "Cibler 5-15 salariés avec capacité de production mais manque de leads. Carte de leur zone : '3500 maisons DPE F/G dans un rayon de 25km. Voici leurs adresses.'"
+    },
+    {
+      "who": "Commerciaux independants et courtiers en travaux freelance",
+      "where": "LinkedIn 'commercial rénovation énergétique'. Malt. Réseaux mandataires rénovation.",
+      "howToReach": "Pitch : 'Arretez de payer 100 EUR/lead partage avec 3 concurrents. Pour 59 EUR/mois, la liste complété des passoires thermiques en exclusivité.'"
+    }
+  ],
+  "pricingStrategy": "SaaS B2B mensuel. Starter : 39 EUR/mois (1 code postal, 50 exports/mois). Pro : 79 EUR/mois (rayon 30km, exports illimités, filtres avancés, mini-CRM). Business : 149 EUR/mois (rayon 50km, scoring prospects, courriers postaux, multi-utilisateurs). Essai gratuit 14 jours, sans engagement.",
+  "pathTo10kMrr": "Phase 1 (mois 1-3) : 50 Starter x 39 EUR + 20 Pro x 79 EUR + 5 Business x 149 EUR = 1 950 + 1 580 + 745 = 4 275 EUR. Phase 2 (mois 4-6) : 80 Starter + 50 Pro + 15 Business = 3 120 + 3 950 + 2 235 = 9 305 EUR. Phase 3 (mois 7) : +10 Pro = 10 095 EUR MRR. Levier : bouche-a-oreille artisans (marché tres local). 180 000 entreprises RGE en France. Churn estimé 8%/mois. Timeline : 7-9 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Leaflet.js (carte thermique + heatmap). Composants shadcn/ui.",
+    "backend": "Next.js API Routes. Script Node.js pour ingestion initiale DPE (CSV 2Go ADEME) et MAJ mensuelle.",
+    "database": "PostgreSQL via Supabase avec PostGIS. Index spatial sur coordonnees GPS. Table dpe_records (~2M lignes F/G).",
+    "hosting": "Vercel (frontend + API). Supabase (PostgreSQL/PostGIS + auth). VPS temporaire OVH pour ingestion initiale.",
+    "apis": [
+      "Base DPE ADEME (CSV complet ~10M enregistrements)",
+      "BDNB (enrichissement type bâtiment, materiaux)",
+      "API BAN (geocodage)",
+      "Stripe (abonnements)",
+      "La Poste API (mailing postal optionnel)"
+    ],
+    "notes": "Defi technique principal : ingestion et geocodage de la base DPE complete. ~2M en F/G. Geocodage API BAN gratuit mais 50 req/s. 1-2 jours de traitement initial. PostGIS ST_DWithin pour le rayon. Cache des recherches repetees."
+  },
+  "risks": [
+    {
+      "risk": "Problème légal : utilisation des données DPE pour prospection commerciale (RGPD, CNIL)",
+      "mitigation": "DPE publiques et anonymisees (pas de nom, juste adresse + classe). Prospection postale autorisee pour les professionnels. Consulter un avocat RGPD avant lancement."
+    },
+    {
+      "risk": "Les artisans ne savent pas prospecter et n'utilisent pas l'outil",
+      "mitigation": "Modèles de courriers cles en main. Tutoriels video 5 min. Accompagnement 1:1 premier mois (call 30 min)."
+    },
+    {
+      "risk": "Churn élève quand carnet de commandes plein",
+      "mitigation": "Evoluer vers CRM complet (pas juste prospection). Alertes nouveaux DPE F/G, scoring prospects, benchmark vs concurrents locaux."
+    },
+    {
+      "risk": "Base DPE incomplété en zones rurales",
+      "mitigation": "Afficher taux de couverture par zone. Completer avec BDNB (estimation classe énergétique par année/type). Cibler d'abord urbain/periurbain."
+    }
+  ],
+  "inspirations": "Kaspr/Lusha (prospection B2B avec données publiques, meme logique BTP). Homescan (Belgique, potentiel rénovation par bâtiment). Les courtiers Effy/Hellio font cette prospection mais gardent les leads et prennent 20-30% de marge. L'idée : donner ce pouvoir aux artisans a 10x moins cher.",
+  "searchVolume": [
+    {
+      "keyword": "prospection artisan BTP",
+      "monthlyVolume": "1300",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "trouver chantier rénovation",
+      "monthlyVolume": "2900",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "passoire thermique DPE F G carte",
+      "monthlyVolume": "3600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "lead artisan rénovation énergétique",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "liste passoire thermique par commune",
+      "monthlyVolume": "1600",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "63 000 entreprises RGE actives en France (source ADEME 2025). Coût moyen actuel d'acquisition de leads : 80-150 EUR/lead via courtiers. Dépense moyenne prospection/an par artisan : ~3 000-5 000 EUR. TAM = 63K x 3 500 EUR = 220M EUR/an.",
+    "sam": "~50 000 petits artisans RGE (1-10 salariés) qui n'ont pas de commercial dédié et sont les plus demandeurs d'outils de prospection. SAM = 50K x 79 EUR x 12 = 47.4M EUR/an.",
+    "som": "180 clients payants an 1 (mix Starter/Pro/Business) = ~9 300 EUR MRR = 112K EUR/an. Cible : 0.36% des artisans RGE.",
+    "methodology": "TAM basé sur le nombre d'entreprises RGE recense par ADEME (63K) et le budget moyen de prospection. SAM restreint aux artisans < 10 salariés (80% du marché). Concurrent direct identifié : ProChantier (prospection DPE F/G geolocalisee). SOM basé sur acquisition Facebook + appels directs."
+  },
+  "competitorDeep": [
+    {
+      "name": "ProChantier",
+      "url": "https://prochantier.fr",
+      "pricing": "Accès aux biens DPE F/G geolocalises et enrichis. Tarif sur inscription (estimation 50-100 EUR/mois). Ciblage géographique + qualification automatique + contact propriétaires.",
+      "trafficEstimate": "5-15K visites/mois (lancement récent)",
+      "reviews": "Peu d'avis publics disponibles. Produit récent sur le marché.",
+      "strengths": "Exactement le meme positionnement, données ADEME + DVF enrichies, scoring de priorité, contact direct propriétaires",
+      "weaknesses": "Produit récent (peu de traction visible), pas de CRM intégré, historique limite, pas de communauté artisans"
+    },
+    {
+      "name": "Effy (courtier en travaux)",
+      "url": "https://www.effy.fr",
+      "pricing": "Leads vendus 80-150 EUR/lead aux artisans partenaires. Commission 20-30% sur chaque chantier via mecanisme CEE.",
+      "trafficEstimate": "3-5M visites/mois",
+      "reviews": "3.5/5 Trustpilot. Artisans critiquent le coût des leads et le partage avec d'autres artisans.",
+      "strengths": "Volume de leads massif, marque connue, accompagnement propriétaire complet",
+      "weaknesses": "Leads chers (80-150 EUR), partages entre 3-5 artisans, commission élevée, artisan dependant du courtier"
+    },
+    {
+      "name": "Hellio (courtier CEE)",
+      "url": "https://pro.hellio.com",
+      "pricing": "Commission integree dans les primes CEE. Pas de coût direct pour l'artisan mais marge prelevee sur les CEE.",
+      "trafficEstimate": "500K-1M visites/mois",
+      "reviews": "Bilan contraste 2025. Retards de versement des primes CEE critiques.",
+      "strengths": "Expertise CEE, partenariats institutionnels, volume",
+      "weaknesses": "Opacité sur les commissions, délais de versement longs, artisan pas autonome"
+    },
+    {
+      "name": "Kaspr / Lusha (analogie B2B)",
+      "url": "https://www.kaspr.io",
+      "pricing": "Freemium, puis 49-99 EUR/mois. Données de contacts B2B (emails, telephones) à partir de LinkedIn.",
+      "trafficEstimate": "500K-1M visites/mois",
+      "reviews": "4.4/5 G2. Tres populaire en prospection B2B.",
+      "strengths": "Modèle eprouve de prospection data-driven, UX excellente, forte croissance",
+      "weaknesses": "Pas du tout adapte au BTP/artisanat, données LinkedIn uniquement, pas de DPE"
+    },
+    {
+      "name": "Go-Kelvin (annuaires artisans RGE)",
+      "url": "https://www.go-kelvin.com",
+      "pricing": "Conseils et annuaires gratuits pour artisans RGE isolation. Modèle contenu/affiliation.",
+      "trafficEstimate": "20-50K visites/mois",
+      "reviews": "Contenu de qualité pour les artisans RGE.",
+      "strengths": "Bonne comprehension du marché artisan RGE, contenu éducatif",
+      "weaknesses": "Pas d'outil de prospection, modèle média/affiliation, pas de SaaS"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation données DPE pour prospection commerciale",
+      "status": "attention",
+      "detail": "Les DPE sont des données publiques anonymisees (adresse + classe, pas de nom de propriétaire). La prospection postale B2C est autorisee en opt-out. Cependant, l'utilisation a des fins de prospection commerciale de données publiques doit respecter le RGPD (finalité, proportionnalité). Consulter un avocat RGPD avant lancement.",
+      "source": "CNIL - Referentiel prospection commerciale + RGPD art. 14"
+    },
+    {
+      "topic": "Prospection postale (mailing direct)",
+      "status": "ok",
+      "detail": "La prospection par voie postale est autorisee sans consentement préalable en France (regime opt-out). Le destinataire doit pouvoir s'opposer facilement. Indiquer la source des données.",
+      "source": "CCI Paris - prospection telephone et postale"
+    },
+    {
+      "topic": "Précision des adresses DPE",
+      "status": "attention",
+      "detail": "Certaines adresses DPE sont partielles (pas de numéro). Un courrier mal cible pourrait etre percu negativement. Filtrer les adresses incompletes.",
+      "source": "API ADEME - documentation technique"
+    },
+    {
+      "topic": "Responsabilité en cas de harassment / demarchage abusif",
+      "status": "attention",
+      "detail": "Si les artisans utilisent l'outil pour du demarchage agressif (telephonique non sollicité), la plateforme pourrait etre indirectement mise en cause. Ajouter des CGU claires et des bonnes pratiques.",
+      "source": "Code de la consommation - demarchage"
+    },
+    {
+      "topic": "Données BDNB - Licence ouverte",
+      "status": "ok",
+      "detail": "La BDNB est en open data sous licence Etalab. Reutilisation commerciale autorisee sans restriction.",
+      "source": "bdnb.io"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Groupes Facebook artisans BTP",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "948 EUR (79 EUR x 12 mois Pro)",
+      "ltvCacRatio": "63:1 a 190:1"
+    },
+    {
+      "channel": "Appels directs artisans (Pages Jaunes/Google Maps)",
+      "cacEstimate": "30-50 EUR",
+      "conversionRate": "8-12%",
+      "ltv": "948 EUR",
+      "ltvCacRatio": "19:1 a 32:1"
+    },
+    {
+      "channel": "Google Ads (trouver chantier rénovation)",
+      "cacEstimate": "60-100 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "948 EUR",
+      "ltvCacRatio": "9:1 a 16:1"
+    },
+    {
+      "channel": "Salons CAPEB / FFB departementaux",
+      "cacEstimate": "80-150 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "948 EUR",
+      "ltvCacRatio": "6:1 a 12:1"
+    },
+    {
+      "channel": "Bouche a oreille artisans (referral)",
+      "cacEstimate": "0-10 EUR",
+      "conversionRate": "15-25%",
+      "ltv": "948 EUR",
+      "ltvCacRatio": "95:1+ (quasi gratuit)"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 60,
+      "detail": "10.3K recherches/mois cumulees ('passoire thermique DPE F G carte' 3 600/mois, 'trouver chantier rénovation' 2 900/mois). TAM: 63 000 entreprises. Cibles: Plombiers-chauffagistes RGE, Entreprises d'isolation RGE, Commerciaux independants et courtiers."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 5 APIs a integrer (Base DPE ADEME, BDNB, API BAN). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 48,
+      "detail": "50 clients a 39 EUR pour demarrer. Objectif 10K MRR en 7-9 mois. SOM: 112K EUR/an. Pricing 39-149 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "5 concurrents identifies: ProChantier, Effy (courtier en travaux), Hellio (courtier CEE). Leader: ProChantier (5-15K visites/mois (lancement récent)). Faiblesse principale: Produit récent (peu de traction visible)."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "2 points OK, 3 points d'attention. Vigilance: Utilisation données DPE pour prospection commercia, Précision des adresses DPE."
+    },
+    "overall": {
+      "score": 56,
+      "detail": "Point fort: faisabilité (68/100). Point faible: compétition (45/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

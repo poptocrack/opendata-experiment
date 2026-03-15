@@ -1,0 +1,334 @@
+{
+  "productSlug": "rapport-copropriete-avant-achat-charges-travaux-votes-dpe-collectif-prix-de-vent",
+  "oneLiner": "Un rapport complet sur une copropriété avant achat: charges, travaux votés, DPE collectif, prix de vente historiques, sinistralité.",
+  "problem": "800 000 transactions immobilières/an en France concernent des coproprietes. L'acheteur découvre les charges, les travaux prévus et l'état de la copro APRES la signature du compromis, dans un dossier de 200 pages illisible. Les mauvaises surprises (ravalement a 15K euros, charges en explosion, copro en difficulté) sont frequentes. Le registre des coproprietes existe (119K visites/mois) mais est brut et inaccessible au grand public.",
+  "solution": "Un rapport automatique généré à partir du numéro de la copropriété (registre national) croisant: charges moyennes par lot, travaux votés en AG, DPE collectif, historique des prix de vente (DVF), taux d'impayes, nombre de lots, anciennété du syndic. Le rapport donne un score de santé de la copro sur 100 et des alertes (travaux lourds prévus, charges anormalement elevees, impayes importants). Format PDF imprimable pour le notaire.",
+  "uniqueValue": "Aucun service ne croise le registre des coproprietes avec DVF et les DPE. Les acheteurs doivent demander les PV d'AG et les releves de charges au vendeur, qui peut trainer. Ce rapport donne une vision objective et independante en 30 secondes.",
+  "mvpScope": "Rapport pour les coproprietes de Paris et Ile-de-France (40% des transactions). Données du registre national des coproprietes + DVF + DPE ADEME. Score de santé simplifie. Export PDF.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le willingness-to-pay des acheteurs",
+      "description": "Creer 3 exemples de rapports pour des coproprietes connues de Paris. Les montrer a 20 acheteurs récents et 10 agents immobiliers. Tester le prix acceptable.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "3 rapports exemples",
+        "30 interviews",
+        "Prix valide",
+        "Landing page"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Rapport automatise sur l'Ile-de-France",
+      "description": "Intégration API registre coproprietes + DVF + DPE ADEME. Génération automatique du rapport PDF. Interface web: entrer l'adresse, obtenir le rapport. Paiement Stripe.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Pipeline data 3 sources",
+        "Génération PDF automatique",
+        "Interface web",
+        "Paiement en ligne"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "100 premiers rapports vendus",
+      "description": "Marketing sur les forums immobilier (PAP, SeLoger community). Partenariats avec 5 chasseurs immobiliers parisiens. Ads Google sur achat copropriété + arrondissement.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "100 rapports vendus",
+        "5 partenariats chasseurs",
+        "Campagne Google Ads",
+        "Retours utilisateurs"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Extension nationale et abonnement pro",
+      "description": "Couverture France entière. Plan pro pour les agents immobiliers et notaires (rapports illimités). Ajout données: sinistralité, age du bâtiment, historique syndic.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Couverture nationale",
+        "Plan pro lance",
+        "50 abonnes pro",
+        "500 rapports/mois"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR",
+      "description": "API pour les portails immobiliers (SeLoger, LeBonCoin). Widget intégrable. Volume de 2000+ rapports/mois. Partenariats notaires.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "2000 rapports/mois",
+        "API B2B",
+        "10 partenariats notaires"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les acheteurs sont-ils prêts a payer pour un rapport copro avant achat?",
+      "how": "Poster sur les forums PAP et Reddit immobilier une offre de rapport a 29 euros. Mesurer les conversions.",
+      "successCriteria": "10+ ventes sur les 2 premières semaines sans marketing pousse."
+    },
+    {
+      "check": "Les données du registre des coproprietes sont-elles exploitables?",
+      "how": "Télécharger les données registre copro sur data.gouv.fr et vérifier la couverture (combien de copros, quelles données disponibles).",
+      "successCriteria": "Au moins 60% des coproprietes d'IDF sont dans le registre avec des données de charges et de lots."
+    },
+    {
+      "check": "Le croisement avec DVF apporte-t-il une valeur significative?",
+      "how": "Pour 10 coproprietes, croiser les données registre avec DVF et vérifier si les prix de vente sont coherents et enrichissants.",
+      "successCriteria": "Pour 8/10 coproprietes, DVF fournit au moins 3 transactions dans les 5 dernières années."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Chasseurs immobiliers (500+ en IDF)",
+      "where": "LinkedIn, FNAIM Chasseurs, salons immobiliers",
+      "howToReach": "Proposer 10 rapports gratuits pour test. Les chasseurs facturent 2-4% du prix d'achat et ont besoin d'outils de due diligence pour justifier leurs honoraires."
+    },
+    {
+      "who": "Acheteurs primo-accedants a Paris et IDF",
+      "where": "Forums PAP, groupes Facebook immobilier Paris, Reddit r/paris",
+      "howToReach": "Contenu éducatif: Les 5 choses a vérifier avant d'acheter en copro. CTA vers le rapport."
+    },
+    {
+      "who": "Notaires (pour enrichir leur devoir de conseil)",
+      "where": "Chambres des notaires, Notaires de France, LinkedIn",
+      "howToReach": "Proposer un plan pro en marque blanche intégrable dans leur processus de vente."
+    }
+  ],
+  "pricingStrategy": "Rapport unitaire a 29 euros (acheteur ponctuel). Pack 3 rapports a 69 euros (acheteur en recherche active). Plan Pro Agent a 79 euros/mois (10 rapports/mois). Plan Pro Chasseur a 149 euros/mois (30 rapports/mois). Plan Notaire a 249 euros/mois (illimité, marque blanche). API pour portails immobiliers sur devis (1-3 euros/rapport selon volume).",
+  "pathTo10kMrr": "200 rapports unitaires x 29 euros = 5 800 euros + 40 abonnes Pro Agent x 79 euros = 3 160 euros + 10 chasseurs x 149 euros = 1 490 euros = 10 450 euros MRR. Avec 800K transactions copro/an en France, meme 0.5% de penetration = 4 000 rapports/an. Atteignable en 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS",
+    "backend": "Next.js API Routes + Python pour le croisement data et la génération PDF (WeasyPrint)",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "API Registre national des coproprietes",
+      "API DVF data.gouv.fr",
+      "API DPE ADEME",
+      "API BAN geocodage",
+      "Stripe"
+    ],
+    "notes": "Le rapport est généré a la demande (pas precalcule) car il croise les dernières données. Cache de 24h pour éviter les appels API redondants. Le PDF est généré côté serveur avec WeasyPrint."
+  },
+  "risks": [
+    {
+      "risk": "Le registre des coproprietes est incomplet (beaucoup de copros non enregistrees)",
+      "mitigation": "Afficher clairement quand des données sont manquantes et completer avec d'autres sources (DVF, DPE). Commencer par les grandes villes ou le registre est mieux rempli."
+    },
+    {
+      "risk": "Les données de charges et travaux ne sont pas dans le registre public",
+      "mitigation": "Les données du registre incluent le budget prévisionnel. Pour les charges détaillées, proposer un service premium ou l'utilisateur uploade ses PV d'AG pour analyse automatique."
+    },
+    {
+      "risk": "Risques juridiques: diffusion d'informations sur une copropriete",
+      "mitigation": "Toutes les données utilisees sont publiques (registre national, DVF, DPE). Pas de données personnelles. Vérifier avec un avocat la conformité RGPD."
+    }
+  ],
+  "inspirations": "Pappers Immobilier (qui donne des infos sur les coproprietes mais sans scoring). Lybox (outil d'investissement locatif). Aux US, CondoBlackBook pour les condos a Miami. En UK, HomeOwners Alliance fournit des rapports leasehold.",
+  "searchVolume": [
+    {
+      "keyword": "charges copropriete",
+      "monthlyVolume": "12100",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "copropriété achat appartement",
+      "monthlyVolume": "3600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "registre copropriete",
+      "monthlyVolume": "5400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "vérifier copropriété avant achat",
+      "monthlyVolume": "1900",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "travaux copropriété votés AG",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "DPE collectif copropriete",
+      "monthlyVolume": "2900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "945K transactions/an dont ~50% en copropriété = 472K. A 29 EUR/rapport = 13,7M EUR/an. + B2B: 30K syndics + 5K chasseurs + 10K notaires = 45K pros x 100 EUR/mois x 12 = 54M EUR/an",
+    "sam": "200K transactions copro/an en IDF et grandes villes x 29 EUR = 5,8M EUR/an (B2C) + 5 000 chasseurs/agents x 79 EUR x 12 = 4,7M EUR/an (B2B)",
+    "som": "2 000 rapports unitaires + 100 abonnes pro année 1 = 153K EUR/an",
+    "methodology": "TAM: 873 358 coproprietes en France (ANAH). 619 402 immatriculees au RNIC (couverture ~2/3). 945K transactions/an (Notaires 2025). Registre copro: 119K visites/mois (data.gouv.fr) prouvant la demande. SAM restreint a IDF + 20 grandes villes ou le registre est le mieux rempli."
+  },
+  "competitorDeep": [
+    {
+      "name": "Pappers Immobilier",
+      "url": "https://immobilier.pappers.fr",
+      "pricing": "Gratuit. API sur devis",
+      "trafficEstimate": "500K-1M visites/mois",
+      "reviews": "Excellent, référence open data immo",
+      "strengths": "DVF + DPE gratuit, 28M transactions, marque forte, données copro partielles",
+      "weaknesses": "Pas de rapport copropriété structure, pas de scoring de santé, pas de croisement registre/DVF/DPE, pas de PDF"
+    },
+    {
+      "name": "Le Comptoir de la Copropriete",
+      "url": "https://www.le-comptoir-de-la-copropriete.fr",
+      "pricing": "Gratuit (statistiques). Services sur devis",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Base de 619K+ coproprietes, données ANAH Q3 2025",
+      "strengths": "Base de données coproprietes la plus complete, statistiques agregees",
+      "weaknesses": "Pas de rapport individuel, pas de scoring, interface basique, pas de croisement DVF/DPE"
+    },
+    {
+      "name": "Annuaire des Coproprietes",
+      "url": "https://annuairedescoproprietes.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "30K-80K visites/mois",
+      "reviews": "Utile pour la recherche basique, données du registre national",
+      "strengths": "Accès direct aux fiches du registre, recherche par adresse",
+      "weaknesses": "Données brutes non interpretees, pas de scoring, pas de croisement avec DVF/DPE, UX basique"
+    },
+    {
+      "name": "Chasseurs immobiliers (service manuel)",
+      "url": "Varies",
+      "pricing": "2-4% du prix d'achat (2 000-12 000 EUR)",
+      "trafficEstimate": "N/A",
+      "reviews": "Bons avis pour le service personnalise",
+      "strengths": "Due diligence complete, accompagnement humain, expertise locale",
+      "weaknesses": "Tres cher, pas scalable, pas systematique, délais longs pour obtenir les PV d'AG"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Registre national des coproprietes (RNIC)",
+      "status": "ok",
+      "detail": "Données publiees en open data sur data.gouv.fr. 619K+ coproprietes immatriculees (obligation légale depuis 2019). Données declaratives par les syndics. Couverture estimée a 2/3 des coproprietes. Pas de contrôle a posteriori des déclarations.",
+      "source": "https://www.data.gouv.fr/datasets/registre-national-dimmatriculation-des-coproprietes"
+    },
+    {
+      "topic": "Données financières des coproprietes",
+      "status": "attention",
+      "detail": "Le registre inclut le budget prévisionnel mais pas les charges détaillées par poste ni les PV d'AG. Les données d'impayes sont presentes mais partiellement renseignées. Attention a ne pas diffuser des informations fausses sur une copropriété spécifique (risque de responsabilité civile).",
+      "source": "Loi ALUR - Registre national des coproprietes"
+    },
+    {
+      "topic": "Données DVF pour les prix de vente",
+      "status": "attention",
+      "detail": "Licence Ouverte v2, interdiction de re-identification. Pour un rapport sur une copropriété spécifique, les prix de vente des lots de cette copropriété sont des données sensibles. Afficher des fourchettes et medianes plutot que des transactions individuelles.",
+      "source": "Article R112 A-3 du LPF"
+    },
+    {
+      "topic": "Responsabilité sur le scoring",
+      "status": "attention",
+      "detail": "Un score de santé de copropriété peut influencer les décisions d'achat. Mentionner clairement que le score est indicatif, basé sur des données declaratives, et ne se substitue pas a une analyse complété (PV d'AG, carnet d'entretien). Disclaimers obligatoires.",
+      "source": "Code civil - Responsabilité du fait des informations"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (copropriété achat + vérifier copro avant achat)",
+      "cacEstimate": "15-25 EUR",
+      "conversionRate": "3% clic-to-purchase sur pages educatives. Volume: 12K recherches/mois charges copro",
+      "ltv": "29-69 EUR (rapport unitaire) ou 948 EUR (79 EUR x 12 mois plan Pro Agent)",
+      "ltvCacRatio": "1,5:1 (unitaire) a 40:1 (Pro)"
+    },
+    {
+      "channel": "Google Ads (rapport copropriete, diagnostic copro achat)",
+      "cacEstimate": "40-70 EUR",
+      "conversionRate": "4% clic-to-purchase. CPC: 2-3 EUR",
+      "ltv": "29 EUR (unitaire), ROI negatif sans upsell",
+      "ltvCacRatio": "0,5:1 (unitaire) - viable uniquement avec funnel vers abo Pro"
+    },
+    {
+      "channel": "Partenariats chasseurs immobiliers IDF",
+      "cacEstimate": "20-40 EUR (commission par rapport généré)",
+      "conversionRate": "15% conversion recommandation chasseur, 50% retention Pro",
+      "ltv": "1 788 EUR (149 EUR x 12 mois plan Chasseur)",
+      "ltvCacRatio": "45:1 a 90:1"
+    },
+    {
+      "channel": "Partenariats notaires",
+      "cacEstimate": "100-200 EUR (prospection initiale)",
+      "conversionRate": "5% conversion après demo, long cycle de vente",
+      "ltv": "2 988 EUR (249 EUR x 12 mois plan Notaire)",
+      "ltvCacRatio": "15:1 a 30:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 77,
+      "detail": "28.3K recherches/mois cumulees ('charges copropriete' 12 100/mois, 'registre copropriete' 5 400/mois). TAM: 945K transactions. Cibles: Chasseurs immobiliers, Acheteurs primo-accedants a Paris, Notaires."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 5 APIs a integrer (API Registre national des copr, API DVF, API DPE ADEME). Stack: Next.js + PostgreSQL."
+    },
+    "market": {
+      "score": 85,
+      "detail": "40 clients a 29 EUR pour demarrer. Objectif 10K MRR en 8-10 mois. SOM: 153K EUR/an. Pricing 3-249 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "4 concurrents identifies: Pappers Immobilier, Le Comptoir de la Copropriete, Annuaire des Coproprietes. Leader: Pappers Immobilier (500K-1M visites/mois). Faiblesse principale: Pas de rapport copropriété structure."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Données financières des coproprietes, Données DVF pour les prix de vente."
+    },
+    "overall": {
+      "score": 69,
+      "detail": "Point fort: marché (85/100). Point faible: compétition (40/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

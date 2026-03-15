@@ -1,0 +1,334 @@
+{
+  "productSlug": "carte-de-chaleur-concurrentielle-visualiser-la-densite-d-entreprises-d-un-secteu",
+  "oneLiner": "Visualisez en un clic la densité concurrentielle de n'importe quel secteur sur une carte de France, pour trouver les zones sous-exploitees.",
+  "problem": "Avant d'ouvrir un commerce, une franchise où une agence, il faut evaluer la concurrence locale. Aujourd'hui, ca veut dire chercher manuellement sur Google Maps, les Pages Jaunes, où payer un cabinet d'études de marché 3000-10000 euros pour un rapport d'implantation. Les données SIRENE contiennent la position géographique de chaque entreprise par code NAF, mais personne ne les rend visuellement exploitables.",
+  "solution": "Une carte de chaleur interactive montrant la densité d'entreprises par secteur NAF, superposee aux données de population et de pouvoir d'achat. En un clic : choisissez un code NAF, zoomez sur une zone, et voyez les zones saturees (rouge) vs sous-exploitees (vert). Ajoutez des couches : population, revenus medians, flux de transport, pour identifiér les meilleurs emplacements.",
+  "uniqueValue": "La seule carte concurrentielle basee sur les données SIRENE exhaustives (pas un echantillon Google Maps) avec superposition démographique, accèssible pour moins de 50 euros/mois.",
+  "mvpScope": "Carte de France interactive. Selection d'un code NAF dans un menu deroulant. Heatmap de la densité d'entreprises actives dans ce secteur. Zoom du niveau département au niveau commune. Compteur d'entreprises dans la zone visible. Filtre par date de création (voir les tendances récentes).",
+  "timeToMvp": "7 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Geocodage et indexation SIRENE",
+      "description": "Import du fichier SIRENE complet avec géocodage des adresses. Indexation spatiale par code NAF pour des requetes rapides sur n'importe quelle zone géographique.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Import SIRENE complet avec coordonnées GPS",
+        "Index spatial PostGIS par code NAF",
+        "API de requete : entreprises dans un rectangle/rayon par NAF",
+        "Statistiques de couverture du géocodage"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Carte interactive et heatmap",
+      "description": "Interface cartographique avec heatmap de densité. Selection du secteur NAF, zoom interactif, info-bulle avec statistiques de la zone. Couche de population INSEE en superposition.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Carte MapLibre avec heatmap de densité",
+        "Selecteur de code NAF avec recherche",
+        "Zoom multi-niveaux (département > commune > quartier)",
+        "Couche population INSEE en superposition",
+        "Compteur d'entreprises dans la vue courante"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Analyse de zone et rapport",
+      "description": "Outil de selection de zone (dessin sur la carte où adresse + rayon). Rapport d'analyse avec statistiques détaillées : nombre de concurrents, ratio concurrents/habitants, tendance (créations vs radiations sur 3 ans), profil type des entreprises du secteur dans la zone.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Selection de zone par dessin où adresse + rayon",
+        "Rapport de zone avec KPIs cles",
+        "Graphique tendance créations/radiations",
+        "Export PDF du rapport"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les porteurs de projet utilisent la carte pour choisir leur emplacement",
+      "how": "Landing page avec un mini-outil gratuit (heatmap d'un seul secteur NAF, ex: boulangeries). Tracker le nombre de recherches et le temps passé sur la carte.",
+      "successCriteria": "1000 recherches uniques en 30 jours, temps moyen > 3 minutes sur la carte"
+    },
+    {
+      "check": "Les franchises paieraient pour cet outil",
+      "how": "Contacter 15 responsables développement de réseaux de franchise (restauration, services, commerce). Montrer la heatmap de leur secteur NAF.",
+      "successCriteria": "10/15 confirment l'utilite, 5 veulent un accès payant"
+    },
+    {
+      "check": "Le géocodage SIRENE est assez precis pour une analyse locale",
+      "how": "Verifier le taux de géocodage réussi et la precision (rue vs commune) sur un echantillon de 10000 entreprises.",
+      "successCriteria": "Geocodage réussi > 90%, precision au niveau rue > 70%"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Franchiseurs et responsables développement de réseaux (restauration rapide, immobilier, services à la personne)",
+      "where": "Salon de la Franchise (Paris), Fédération Francaise de la Franchise, LinkedIn groupes franchise",
+      "howToReach": "Generer une carte gratuite de leur secteur NAF et l'envoyer par email au responsable développement. Ex: 'Voici la carte de densité des pizzerias en France, avec les 10 zones les moins concurrentielles'."
+    },
+    {
+      "who": "Createurs d'entreprise en phase d'étude de marché (commercants, artisans, professions liberales)",
+      "where": "CCI (Chambres de Commerce), BGE (anciennement Boutiques de Gestion), ADIE, plateformes de création (LegalStart, Shine)",
+      "howToReach": "Partenariat avec les CCI pour intégrér l'outil dans leur parcours d'accompagnement. Offre gratuite pour les porteurs de projet accompagnes."
+    },
+    {
+      "who": "Cabinets d'études de marché et consultants en implantation commerciale",
+      "where": "Annuaires de consultants (Malt, 110 Consulting), LinkedIn",
+      "howToReach": "Proposer un accès Pro avec export de données brutes et marque blanche pour intégrér dans leurs rapports d'études."
+    }
+  ],
+  "pricingStrategy": "Gratuit : carte heatmap basique avec zoom limite (niveau département). Explorer a 29 euros/mois : zoom illimité, 3 codes NAF, compteurs et ratios, couche population. Pro a 79 euros/mois : codes NAF illimités, rapport de zone PDF, historique 5 ans, couches supplémentaires (revenus, transports). Franchise a 199 euros/mois : multi-utilisateurs, export données brutes, API, marque blanche, comparaison de zones.",
+  "pathTo10kMrr": "80 Explorer (2320) + 70 Pro (5530) + 15 Franchise (2985) = ~10.8K MRR. Le gratuit sert d'entonnoir de conversion. Acquisition : SEO sur 'étude de marché [secteur] [ville]', partenariats CCI (15 CCI = accès à des milliers de createurs), Google Ads sur 'implantation commerce [ville]', content (articles 'ou ouvrir un/une [type de commerce] en 2026').",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS + MapLibre GL JS (carte) + deck.gl (heatmap haute performance)",
+    "backend": "Next.js API routes + API de tuiles vectorielles servies depuis PostGIS",
+    "database": "PostgreSQL + PostGIS (Supabase où base dédiée type Crunchy Data pour les performances spatiales)",
+    "hosting": "Vercel (frontend) + Railway où Fly.io (API spatiale PostGIS) + Supabase (auth, metadata)",
+    "apis": [
+      "Fichier stock SIRENE data.gouv.fr (géocode)",
+      "API Recherche Entreprises (enrichissement)",
+      "Données population INSEE (data.gouv.fr)",
+      "Données revenus fiscaux INSEE (Filosofi)",
+      "Tuiles de fond OpenStreetMap où IGN"
+    ],
+    "notes": "Le fichier stock SIRENE contient les coordonnées GPS des établissements (géo_adresse). L'enjeu technique principal est la performance de la heatmap sur 12M+ établissements : utiliser des tuiles vectorielles pre-calculees par niveau de zoom et code NAF. deck.gl géré le rendu GPU pour les grosses volumetries."
+  },
+  "risks": [
+    {
+      "risk": "Performance : afficher une heatmap de 12M+ points est techniquement complexe",
+      "mitigation": "Pre-calculer des grilles hexagonales (H3) par code NAF et niveau de zoom. Servir des tuiles vectorielles et non des points individuels. Utiliser deck.gl pour le rendu GPU côté client."
+    },
+    {
+      "risk": "Geocodage SIRENE incomplet où imprecis dans les zones rurales",
+      "mitigation": "Utiliser la BAN (Base Adresse Nationale) pour re-géocoder les adresses avec precision insuffisante. Afficher un indicateur de confiance de la carte par zone."
+    },
+    {
+      "risk": "Faible willingness-to-pay des createurs individuels",
+      "mitigation": "Le modèle freemium permet d'attirer du volume gratuit. La monétisation repose sur les pros (franchiseurs, consultants, CCI) qui ont un budget et un usage regulier."
+    },
+    {
+      "risk": "Les données SIRENE incluent des entreprises inactives non radiees",
+      "mitigation": "Filtrer sur le champ 'état_administratif' = Actif. Croiser avec les effectifs URSSAF pour exclure les entreprises sans salarié si souhaite. Indiquer la date de dernière mise à jour."
+    }
+  ],
+  "inspirations": "Google Maps (visualisation d'entreprises mais pas de heatmap de densité ni de données démographiques), Smappen (analyse de zone de chalandise mais 200+ euros/mois), Codata (géomarketing mais oriente grands comptes), MyTraffic (flux pietons mais pas de données concurrentielles SIRENE), Kepler.gl (outil de visualisation géospatiale open source, inspiration UX).",
+  "searchVolume": [
+    {
+      "keyword": "analyse concurrentielle géographique",
+      "monthlyVolume": "720",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "étude de marché implantation commerce",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "zone de chalandise",
+      "monthlyVolume": "6600",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "mapping concurrentiel",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ou ouvrir un commerce",
+      "monthlyVolume": "3600",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "densité commerciale par zone",
+      "monthlyVolume": "260",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "géomarketing outil",
+      "monthlyVolume": "880",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "carte concurrence par secteur",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "800 millions EUR - marché du géomarketing et des études de marché d'implantation en France. Inclut les études de marché a 3 000-10 000 EUR par cabinet, les outils SaaS géomarketing, et les services aux franchises.",
+    "sam": "80 millions EUR - porteurs de projet, franchiseurs et consultants en implantation qui ont besoin d'analyses concurrentielles géographiques. 150 000 créations de commerces/an + 2 000 franchiseurs + 5 000 consultants.",
+    "som": "1.3 million EUR - 10 800 EUR MRR (165 clients payants) en 12-18 mois. Entonnoir freemium (carte basique gratuite) vers conversion payante.",
+    "methodology": "TAM base sur les depenses en études de marché et géomarketing (Xerfi, fédération franchise). SAM restreint aux utilisateurs acceptant un outil self-service SaaS. SOM base sur 80 Explorer + 70 Pro + 15 Franchise."
+  },
+  "competitorDeep": [
+    {
+      "name": "Smappen",
+      "url": "https://www.smappen.com",
+      "pricing": "Gratuit (population seule). Payant à partir de 99 EUR/mois. GEO Business concurrent à partir de 199 EUR/mois.",
+      "trafficEstimate": "200K visites/mois",
+      "reviews": "Leader du marché franchise avec 850+ clients actifs et 80 000 utilisateurs mensuels. Créé en 2018 (ex-Oalley).",
+      "strengths": "UX intuitive, analyse zone de chalandise complète, données INSEE intégrées, mapping concurrentiel, marque forte auprès des franchiseurs",
+      "weaknesses": "Pas de heatmap de densité SIRENE exhaustive, focus zone de chalandise (pas carte nationale), prix élevé pour les porteurs de projet individuels (99 EUR/mois)"
+    },
+    {
+      "name": "Data Expertise / data.gouv.fr",
+      "url": "https://www.data.gouv.fr/reuses/lanalyse-concurrentielle-avec-data-expertise",
+      "pricing": "Sur devis",
+      "trafficEstimate": "20K visites/mois",
+      "reviews": "Réutilisation open data SIRENE pour l'analyse concurrentielle. Moins connu que Smappen.",
+      "strengths": "Base SIRENE exhaustive, données officielles, réutilisation data.gouv.fr",
+      "weaknesses": "Interface basique, pas de heatmap interactive, pas de couches démographiques, pas de self-service SaaS"
+    },
+    {
+      "name": "Geoptis",
+      "url": "https://www.geoptis.com",
+      "pricing": "Sur devis, estimé 200-500 EUR/mois",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "Outil de mapping concurrentiel spécialisé franchise.",
+      "strengths": "Specialise développement réseau franchise, mapping concurrentiel avancé, accompagnement",
+      "weaknesses": "Niche franchise uniquement, prix élevé, pas de version freemium, pas de carte publique"
+    },
+    {
+      "name": "Articque (Cartes & Données)",
+      "url": "https://www.articque.com",
+      "pricing": "À partir de 300 EUR/mois. Licences annuelles.",
+      "trafficEstimate": "40K visites/mois",
+      "reviews": "Logiciel de cartographie commerciale pour structurer les secteurs et optimiser les équipes terrain.",
+      "strengths": "Cartographie avancee, sectorisation commerciale, intégration CRM, formation",
+      "weaknesses": "Outil complexe, pas self-service, oriente grands comptes, pas de heatmap concurrentielle simple"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation SIRENE et géocodage",
+      "status": "ok",
+      "detail": "Le fichier SIRENE géolocalisé est sous licence ouverte Etalab. Réutilisation commerciale autorisée. La Base Adresse Nationale (BAN) est egalement en open data.",
+      "source": "Licence Ouverte Etalab v2.0"
+    },
+    {
+      "topic": "Données de population INSEE",
+      "status": "ok",
+      "detail": "Les données de population et revenus fiscaux (Filosofi) sont en open data. Réutilisation libre.",
+      "source": "INSEE, licence ouverte"
+    },
+    {
+      "topic": "Affichage de données individuelles d'entreprises sur la carte",
+      "status": "ok",
+      "detail": "Les informations d'entreprises affichees (nom, adresse, secteur) sont des données publiques SIRENE. Pas de problème a les afficher sur une carte.",
+      "source": "Art. L123-1-1 Code de commerce, SIRENE"
+    },
+    {
+      "topic": "Tuiles de fond cartographique",
+      "status": "ok",
+      "detail": "OpenStreetMap (licence ODbL) où IGN (API gratuite) sont utilisables commercialement avec mention de la source.",
+      "source": "ODbL OpenStreetMap, IGN API Geoportail"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (étude de marché implantation, où ouvrir un commerce)",
+      "cacEstimate": "50 EUR",
+      "conversionRate": "5%",
+      "ltv": "950 EUR (Pro 79 EUR x 12 mois)",
+      "ltvCacRatio": "19.0"
+    },
+    {
+      "channel": "Google Ads (zone de chalandise, analyse concurrentielle)",
+      "cacEstimate": "200 EUR",
+      "conversionRate": "6%",
+      "ltv": "950 EUR",
+      "ltvCacRatio": "4.8"
+    },
+    {
+      "channel": "Partenariats CCI (15 CCI = milliers de createurs)",
+      "cacEstimate": "30 EUR",
+      "conversionRate": "8%",
+      "ltv": "700 EUR (Explorer 29 EUR x 24 mois)",
+      "ltvCacRatio": "23.3"
+    },
+    {
+      "channel": "Content marketing (articles où ouvrir un/une [commerce])",
+      "cacEstimate": "40 EUR",
+      "conversionRate": "4%",
+      "ltv": "700 EUR",
+      "ltvCacRatio": "17.5"
+    },
+    {
+      "channel": "Salon de la Franchise (stand + demo)",
+      "cacEstimate": "300 EUR",
+      "conversionRate": "15%",
+      "ltv": "3600 EUR (Franchise 199 EUR x 18 mois)",
+      "ltvCacRatio": "12.0"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "16.1K recherches/mois cumulees ('zone de chalandise' 6 600/mois, 'ou ouvrir un commerce' 3 600/mois). TAM: 800 millions EUR. Cibles: Franchiseurs et responsables développement, Createurs d'entreprise en phase, Cabinets d'études de marché."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 7 semaines. 5 APIs a integrer (Fichier stock SIRENE, API Recherche Entreprises, Données population INSEE). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Pricing 29-199 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: Smappen, Data Expertise / data.gouv.fr, Geoptis. Leader: Smappen (200K visites/mois). Faiblesse principale: Pas de heatmap de densité SIRENE exhaustive."
+    },
+    "legal": {
+      "score": 92,
+      "detail": "4 points verifies, tous OK. Donnees sous licence ouverte Etalab."
+    },
+    "overall": {
+      "score": 59,
+      "detail": "Point fort: legal (92/100). Point faible: faisabilite (45/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

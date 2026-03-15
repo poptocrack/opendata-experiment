@@ -1,0 +1,318 @@
+{
+  "productSlug": "alertes-investissement-permis-de-construire-depose-signal-de-valorisation-du-qua",
+  "oneLiner": "Recevez une alerte dès qu'un permis de construire est déposé dans votre zone : signal précoce de valorisation immobilière.",
+  "problem": "Les permis de construire (PC) sont un signal avancé de valorisation d'un quartier : nouvelle école, centre commercial, rénovation urbaine, programme neuf. Mais les données Sitadel/ADS sont difficiles d'accès, non géocodees, et arrivent avec du retard. Les investisseurs immobiliers découvrent ces projets trop tard, quand les prix ont déjà monte.",
+  "solution": "Un service d'alertes email/SMS qui surveille les permis de construire déposés dans les zones définies par l'utilisateur. Chaque alerte inclut le type de projet (logement, commerce, équipement public), la surface, le promoteur, et un score d'impact estimé sur les prix du quartier. L'utilisateur peut filtrer par type de permis, surface minimale, et rayon géographique.",
+  "uniqueValue": "Premier service en France qui transforme les données brutes de permis de construire en signaux d'investissement actionnables. Les mairies publiént les PC mais personne ne les agrège, géocode et analyse à l'échelle nationale en temps reel.",
+  "mvpScope": "Alertes email pour les permis de construire de plus de 500m2 dans les 20 plus grandes metropoles. Interface web simple pour configurer ses zones de surveillancé (dessin sur carte où code postal). Pas de score d'impact au MVP, juste les infos brutes du permis.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Confirmer que les PC sont un signal d'achat utilise par les investisseurs",
+      "description": "Interviewer 15 investisseurs immobiliers actifs. Poster sur Devenir-Rentier un article montrant la corrélation PC / hausse des prix dans 3 villes. Collecter des inscriptions early accèss.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "15 interviews réalisées",
+        "Article corrélatif PC/prix publié",
+        "150+ inscrits early accèss"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Pipeline de données PC + alertes email fonctionnelles",
+      "description": "Ingestion automatique des données Sitadel (data.gouv.fr) et/ou scraping des panneaux d'affichage numériques des mairies. Geocodage via BAN. Interface web de configuration des zones. Envoi d'alertes email via Resend.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline data Sitadel opérationnel",
+        "Geocodage des PC",
+        "Interface de configuration zones",
+        "Système d'alertes email"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "100 premiers abonnes payants",
+      "description": "Activation des inscrits early accèss. SEO sur les requetes permis de construire + ville. Partenariats avec 3 blogueurs immobilier. Offre fondateur à 50% de réduction à vie.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "100 abonnes payants",
+        "5 articles SEO",
+        "3 partenariats blogueurs",
+        "Offre fondateur lancée"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Score d'impact et enrichissement des alertes",
+      "description": "Ajouter un score d'impact estimant l'effet du PC sur les prix (base sur des données historiques DVF). Enrichir avec le nom du promoteur, les projets similaires passes. Ajouter des alertes SMS. API pour les pros.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Score d'impact opérationnel",
+        "Alertes SMS",
+        "API B2B",
+        "Enrichissement promoteur"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Couverture nationale et 10K MRR",
+      "description": "Extension a toute la France. Partenariats avec des réseaux d'agences et des plateformes de crowdfunding immobilier. Contenu SEO massif (page par ville). Ads Google ciblées.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Couverture nationale",
+        "10K MRR",
+        "5 partenariats B2B",
+        "500+ pages SEO"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les investisseurs surveillent-ils déjà les permis de construire manuellement?",
+      "how": "Sondage sur Devenir-Rentier.fr et groupes Facebook investissement immobilier. Question: comment surveillez-vous les projets de construction dans vos zones ciblés?",
+      "successCriteria": "40%+ disent surveiller les PC de facon informelle (mairie, bouche a oreille) et 60%+ trouveraient utile un service automatise."
+    },
+    {
+      "check": "Les données Sitadel sont-elles exploitables en quasi temps reel?",
+      "how": "Télécharger les 3 dernières publications Sitadel sur data.gouv.fr. Verifier la fréquence de mise à jour, la complétude des champs (adresse, type, surface) et le délai entre dépôt et publication.",
+      "successCriteria": "Mise à jour au moins trimestrielle, 80%+ des PC ont une adresse exploitable, délai inferieur a 3 mois."
+    },
+    {
+      "check": "Correlation vérifiable entre PC déposés et évolution des prix?",
+      "how": "Croiser les PC de 2020-2022 avec l'évolution DVF 2022-2024 dans 5 villes. Calculer la hausse moyenne des prix dans un rayon de 500m autour des gros PC.",
+      "successCriteria": "Hausse de prix 10%+ supérieure à la moyenne de la ville dans les zones avec PC majeurs."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Investisseurs immobiliers locatifs multi-biens (3+ biens)",
+      "where": "Forum Devenir-Rentier.fr, groupes Telegram investissement immobilier, clubs d'investisseurs locaux (CGPI, associations d'investisseurs)",
+      "howToReach": "Proposer une alerte gratuite sur une zone pendant 3 mois. Publier des études de cas montrant des PC qui ont précédé des hausses de prix."
+    },
+    {
+      "who": "Marchands de biens et promoteurs indépendants",
+      "where": "LinkedIn (recherche titre marchand de biens), salons professionnels (SIMI, MIPIM pour les plus gros), groupes Facebook marchands de biens",
+      "howToReach": "Message direct LinkedIn avec un exemple d'alerte pour leur zone d'activité. Offre d'essai gratuit 30 jours."
+    },
+    {
+      "who": "Chasseurs immobiliers et mandataires (IAD, Safti, Capifrance)",
+      "where": "Groupes Facebook mandataires, événements réseau IAD/Safti, LinkedIn",
+      "howToReach": "Proposer un plan gratuit en echange de feedback + témoignage. Pitch: aidez vos clients a achetér avant la hausse."
+    }
+  ],
+  "pricingStrategy": "Freemium: 1 zone surveillee gratuitement (alerte mensuelle). Plan Investisseur a 19 euros/mois: 5 zones, alertes hebdomadaires, historique des PC. Plan Pro a 59 euros/mois: zones illimitées, alertes quotidiennes, score d'impact, export CSV, API. Plan Agence a 199 euros/mois: multi-utilisateurs, white-label, intégration CRM. Le prix de 19 euros est justifie par le fait qu'un seul bon signal peut générér 10K+ euros de plus-value.",
+  "pathTo10kMrr": "350 abonnes Investisseur x 19 euros = 6 650 euros + 40 abonnes Pro x 59 euros = 2 360 euros + 6 agences x 199 euros = 1 194 euros = 10 204 euros MRR. Le funnel: 20K visiteurs SEO/mois x 5% inscription gratuite = 1000 free users x 4% conversion payante = 40 nouveaux payants/mois. Objectif 10K MRR en 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS (dessin de zones sur carte)",
+    "backend": "Next.js API Routes + scripts Python pour l'ingestion Sitadel et le géocodage",
+    "database": "PostgreSQL + PostGIS sur Supabase, table de zones utilisateur avec géometries",
+    "hosting": "Vercel + Supabase + Resend (emails transactionnels) + GitHub Actions (CRON ingestion)",
+    "apis": [
+      "API Sitadel data.gouv.fr (permis de construire)",
+      "API BAN géocodage",
+      "API DVF data.gouv.fr (pour le score d'impact)",
+      "Resend (emails)",
+      "Stripe (paiements)"
+    ],
+    "notes": "Le pipeline d'ingestion tourne en CRON (quotidien pour scraping, mensuel pour Sitadel bulk). Les zones utilisateur sont stockees comme polygones PostGIS, ce qui permet une requete spatiale efficace pour matcher PC et zones."
+  },
+  "risks": [
+    {
+      "risk": "Les données Sitadel ont un délai de 3-6 mois, réduisant la valeur du signal précoce",
+      "mitigation": "Compléter avec le scraping des panneaux d'affichage numériques des mairies (API Plat'AU si disponible) et les publications au Journal Officiel. À terme, partenariat direct avec des services d'urbanisme."
+    },
+    {
+      "risk": "Faible rétention si les alertes sont trop rares où peu actionnables",
+      "mitigation": "Enrichir les alertes avec du contexte (prix DVF du quartier, évolution récente, comparaison avec des projets similaires). Ajouter un digest mensuel même sans nouveau PC (récap du marché local)."
+    },
+    {
+      "risk": "Les gros acteurs (SeLoger, MeilleursAgents) pourraient copier la feature",
+      "mitigation": "Aller vite vers le B2B (API, white-label) pour créér du lock-in. Se spécialisér sur l'analyse d'impact (pas juste la data brute). Construire une communauté d'investisseurs fidèles."
+    }
+  ],
+  "inspirations": "Permitium (US) qui agrège les permis de construire pour les commerciaux B2B. BuildZoom (US) qui utilise les données de permis pour scorer les entrepreneurs. En France, CityScoot avait utilise les données d'urbanisme pour son expansion. Le modèle d'alerte est inspire de Google Alerts mais pour l'immobilier.",
+  "searchVolume": [
+    {
+      "keyword": "permis de construire",
+      "monthlyVolume": "40500",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "permis de construire en ligne",
+      "monthlyVolume": "12100",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "permis de construire consultation",
+      "monthlyVolume": "3600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "urbanisme projet construction quartier",
+      "monthlyVolume": "1900",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "alerte immobilier investissement",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "valorisation quartier projet construction",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "945 000 transactions immobilières/an en France (notaires 2025). Si 30% des achetéurs/investisseurs payaient 19 EUR/mois pour un outil d'alerte = 54M EUR/an",
+    "sam": "200 000 investisseurs immobiliers actifs en France (multi-biens + marchands de biens + chasseurs) x 19 EUR/mois = 45,6M EUR/an",
+    "som": "2 000 investisseurs actifs dans les 20 metropoles couvertes au lancement x 19 EUR/mois x 12 = 456K EUR/an (première année)",
+    "methodology": "TAM base sur 945K transactions/an (Notaires de France 2025). SAM restreint aux investisseurs actifs (estimations forums + CGPI). SOM = 1% du SAM en année 1 sur les 20 metropoles."
+  },
+  "competitorDeep": [
+    {
+      "name": "Pappers Immobilier",
+      "url": "https://immobilier.pappers.fr",
+      "pricing": "Gratuit (site web). API payante sur devis (100 credits gratuits pour test)",
+      "trafficEstimate": "500K-1M visites/mois (estimation basee sur la marque Pappers)",
+      "reviews": "Très positif, reconnu comme référence open data immobilier en France",
+      "strengths": "28M transactions DVF, données DPE, permis de construire intégrés, gratuit, marque forte",
+      "weaknesses": "Pas d'alertes automatiques, pas de scoring d'impact, interface générique non spécialisée investissement"
+    },
+    {
+      "name": "MeilleursAgents",
+      "url": "https://www.meilleursagents.com",
+      "pricing": "Gratuit pour les particuliers. Offres pro pour agents immobiliers",
+      "trafficEstimate": "1,2M visiteurs uniques/mois",
+      "reviews": "Référence du marché pour l'estimation de prix, forte notoriété",
+      "strengths": "Carte des prix détaillée, forte marque, gros trafic SEO, données notariales",
+      "weaknesses": "Pas d'alertes permis de construire, pas d'angle investissement, pas de signal précoce"
+    },
+    {
+      "name": "Horiz.io (ex Rendement Locatif)",
+      "url": "https://horiz.io",
+      "pricing": "29 EUR/mois sans engagement, 15 EUR/mois avec engagement 12 mois",
+      "trafficEstimate": "200K-400K visites/mois",
+      "reviews": "Trustpilot: avis mixtes. Reconnu pour le simulateur mais critiqué sur le service client",
+      "strengths": "Simulateur de rentabilité complet, notoriété dans la communauté investisseurs, depuis 2016",
+      "weaknesses": "Pas de données permis de construire, pas d'alertes territoriales, focus sur le calcul pas le signal"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données Sitadel (permis de construire)",
+      "status": "ok",
+      "detail": "Données publiées en open data sur data.gouv.fr sous Licence Ouverte v2. Réutilisation libre avec mention de la source. Pas de données personnelles dans les PC agrèges.",
+      "source": "https://www.data.gouv.fr/datasets/base-des-permis-de-construire-sitadel"
+    },
+    {
+      "topic": "Données DVF pour le score d'impact",
+      "status": "attention",
+      "detail": "DVF sous Licence Ouverte v2 mais contient des données à caractère personnel. Interdiction de re-identification des personnes et interdiction d'indexation par les moteurs de recherche externes. Agrèger par zone/quartier pour eviter tout risque.",
+      "source": "https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncières"
+    },
+    {
+      "topic": "RGPD sur les alertes email/SMS",
+      "status": "attention",
+      "detail": "Consentement explicite requis pour les alertes (opt-in). Droit de désinscription obligatoire. Stockage des emails conforme RGPD. Base légale: consentement où execution du contrat d'abonnement.",
+      "source": "RGPD Article 6 et 7"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (permis de construire + ville)",
+      "cacEstimate": "15-25 EUR",
+      "conversionRate": "4-5% free signup, 4% free-to-paid",
+      "ltv": "228 EUR (19 EUR x 12 mois rétention moyenne)",
+      "ltvCacRatio": "9:1 a 15:1"
+    },
+    {
+      "channel": "Google Ads (investissement immobilier alertes)",
+      "cacEstimate": "80-120 EUR",
+      "conversionRate": "2-3% clic-to-trial, 10% trial-to-paid",
+      "ltv": "228 EUR",
+      "ltvCacRatio": "2:1 a 3:1"
+    },
+    {
+      "channel": "Partenariats blogueurs/YouTubers immobilier",
+      "cacEstimate": "30-50 EUR",
+      "conversionRate": "3% clic-to-signup, 8% free-to-paid",
+      "ltv": "228 EUR",
+      "ltvCacRatio": "4:1 a 7:1"
+    },
+    {
+      "channel": "LinkedIn outbound (marchands de biens, chasseurs)",
+      "cacEstimate": "60-100 EUR",
+      "conversionRate": "5% réponse, 20% demo, 30% conversion",
+      "ltv": "708 EUR (59 EUR x 12 mois plan Pro)",
+      "ltvCacRatio": "7:1 a 12:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 80,
+      "detail": "59.2K recherches/mois cumulees ('permis de construire' 40 500/mois, 'permis de construire en ligne' 12 100/mois). TAM: 945 000 transactions. Cibles: Investisseurs immobiliers locatifs multi-biens, Marchands de biens et, Chasseurs immobiliers et mandataires."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 5 APIs a integrer (API Sitadel, API BAN géocodage, API DVF). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "350 clients a 19 EUR pour demarrer. Objectif 10K MRR en 8-10 mois. SOM: 456K EUR/an. Pricing 19-199 EUR."
+    },
+    "competition": {
+      "score": 50,
+      "detail": "3 concurrents identifies: Pappers Immobilier, MeilleursAgents, Horiz.io (ex Rendement Locatif. Leader: Pappers Immobilier (500K-1M visites/mois (estimation basee sur la marque Pappers)). Faiblesse principale: Pas d'alertes automatiques."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 2 points d'attention. Vigilance: Données DVF pour le score d'impact, RGPD sur les alertes email/SMS."
+    },
+    "overall": {
+      "score": 66,
+      "detail": "Point fort: demande (80/100). Point faible: competition (50/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

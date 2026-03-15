@@ -1,0 +1,335 @@
+{
+  "productSlug": "outil-d-aide-a-l-installation-pour-medecins-ou-s-installer-pour-maximiser-patien",
+  "oneLiner": "Un outil de recommandation géographique pour médecins en quete d'installation, croisant démographie, concurrence et aides financières.",
+  "problem": "Chaque année, 3 000 médecins cherchent a s'installer en libéral. Ils n'ont aucun outil pour identifier les meilleures communes: ou la demande est forte, la concurrence faible, et les aides a l'installation genereuses. Le choix se fait au feeling, par bouche-a-oreille, ce qui perpétue les déserts médicaux. Les ARS publient des zonages (ZAC, ZIP) en PDF difficiles a exploiter.",
+  "solution": "Un moteur de recommandation qui génère un score d'attractivité pour chaque commune, croisant: le nombre de patients potentiels (population/nombre de médecins), l'age des médecins en place (départs prévisibles), les aides financières disponibles (CESP, aides ARS, exonerations fiscales ZRR), la qualité de vie (écoles, transports, immobilier), et le potentiel de revenus. Le médecin entre ses critères (spécialité, région préférée, taille de ville) et obtient un top 20 de communes ideales.",
+  "uniqueValue": "Aucun outil ne croise toutes ces dimensions. Les sites ARS listent les zones éligibles aux aides mais sans comparaison ni scoring. Installation-médecin.fr donne des infos générales mais pas de recommandation personnalisee. Cet outil est le Tinder du médecin et de sa commune ideale.",
+  "mvpScope": "Recommandation pour médecins généralistes uniquement. Filtres: région, taille de ville (rural/périurbain/urbain), priorité revenus vs qualité de vie. Top 20 communes avec score et fiche détaillée. Données pour la France métropolitaine.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin auprès des internes et jeunes médecins",
+      "description": "Poster sur les groupes Facebook d'internes en médecine (Remede.org, groupes promo). Interview de 15 internes en fin de cursus sur leur processus de choix d'installation. Landing page avec formulaire.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "15 interviews d'internes",
+        "Landing page",
+        "150+ inscrits",
+        "Validation du concept"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Moteur de recommandation pour généralistes",
+      "description": "Ingestion FINESS, Ameli, INSEE, zonages ARS. Algorithme de scoring multicritere. Interface web avec formulaire de préférences + carte des résultats + fiches communes. 3 recherches gratuites.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Pipeline data",
+        "Algorithme de scoring",
+        "Interface web",
+        "Fiches pour 35 000 communes"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers utilisateurs via les facs de médecine",
+      "description": "Partenariat avec 5 facultes de médecine pour présenter l'outil aux internes. Communication sur Remede.org et What's Up Doc. Offre gratuite pour les internes.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "5 partenariats facs",
+        "500 utilisateurs",
+        "20 premiers abonnes payants"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Extension aux spécialités et monétisation B2B",
+      "description": "Ajouter les spécialités (dentistes, kines, infirmiers). Lancer un service B2B pour les collectivités qui veulent attirer des médecins (profil de leur commune, mise en avant). Dashboard collectivités.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "10 spécialités couvertes",
+        "Offre B2B collectivités",
+        "50 abonnes médecins",
+        "10 collectivités clientes"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR et position de référence",
+      "description": "Partenariats avec les ordres professionnels et les ARS. Offre premium avec mise en relation médecin-commune. Commission sur les installations reussies.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "Partenariat Ordre des Médecins",
+        "100 communes premium",
+        "50 installations facilitees"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les internes et jeunes médecins utilisent-ils des outils pour choisir leur lieu d'installation?",
+      "how": "Sondage sur Remede.org et groupes Facebook internes. Question: comment avez-vous choisi (ou comptez-vous choisir) votre lieu d'installation?",
+      "successCriteria": "60%+ disent que le choix est difficile et qu'ils manquent d'informations structurées."
+    },
+    {
+      "check": "Les collectivités sont-elles prêtes à payer pour attirer des médecins?",
+      "how": "Contacter 10 maires de communes en désert médical. Proposer un service de mise en avant de leur commune.",
+      "successCriteria": "7/10 confirment avoir un budget dédié a l'attractivité médicale (souvent 5-50K euros/an)."
+    },
+    {
+      "check": "L'algorithme de scoring produit-il des recommandations pertinentes?",
+      "how": "Tester l'algo sur 5 médecins récemment installes: l'outil aurait-il recommandé leur commune?",
+      "successCriteria": "Pour 4/5 médecins, leur commune apparaît dans le top 30 des recommandations."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Internes en médecine en 5e-6e année (3 000/an en phase de choix)",
+      "where": "Remede.org, groupes Facebook promo médecine, What's Up Doc magazine",
+      "howToReach": "Présenter l'outil lors des journees d'orientation des facs. Poster des analyses Ou s'installer en 2026 sur les forums."
+    },
+    {
+      "who": "Médecins remplacants souhaitant s'installer (5 000 en France)",
+      "where": "Groupes Facebook médecins remplacants, plateforme Medadom, SOS Médecins",
+      "howToReach": "Partenariat avec les plateformes de remplacement pour promouvoir l'outil."
+    },
+    {
+      "who": "Communes et communautés de communes en déficit médical",
+      "where": "AMF, congres des maires, prefectures",
+      "howToReach": "Proposer un profil commune gratuit + option premium pour etre mis en avant dans les recommandations."
+    }
+  ],
+  "pricingStrategy": "Freemium pour les médecins: 3 recherches gratuites, Plan Médecin a 29 euros/mois (recherches illimitées, alertes nouvelles aides, comparateur détaillé). Côté B2B collectivités: Plan Commune a 199 euros/mois (profil premium, mise en avant, analytics sur les médecins qui consultent leur fiche). Plan Intercommunalite a 499 euros/mois (multi-communes, rapports trimestriels). Le prix B2C est modeste car le volume de médecins est limite, le gros du CA vient du B2B collectivités.",
+  "pathTo10kMrr": "80 médecins x 29 euros = 2 320 euros + 30 communes x 199 euros = 5 970 euros + 4 intercos x 499 euros = 1 996 euros = 10 286 euros MRR. Il y a 1 254 intercos en France, 30 communes sur 35 000 = 0.1% de pénétration. Atteignable en 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS",
+    "backend": "Next.js API Routes + Python pour le scoring et l'ingestion data",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "API FINESS",
+      "Annuaire Ameli",
+      "API INSEE",
+      "API BAN géocodage",
+      "API zonages ARS",
+      "Stripe"
+    ],
+    "notes": "Le scoring est précalculé pour chaque commune et recalcule mensuellement. L'interface est un formulaire de préférences + carte des résultats. Les fiches communes sont generees statiquement (ISR Next.js) pour le SEO."
+  },
+  "risks": [
+    {
+      "risk": "Le marché B2C est petit (3 000 internes/an) et le cycle de décision est long (1 an)",
+      "mitigation": "Pivoter rapidement vers le B2B collectivités qui ont des budgets recurents et un besoin permanent. Le B2C sert d'acquisition pour le B2B."
+    },
+    {
+      "risk": "Les ARS lancent un outil similaire gratuit",
+      "mitigation": "Les ARS sont lentes a innover. Se positionner sur l'UX et la personnalisation que les outils publics ne proposent pas. Proposer un partenariat plutot qu'une competition."
+    },
+    {
+      "risk": "Les médecins choisissent principalement par critères personnels (famille, conjoint) pas optimisables",
+      "mitigation": "Intégrer les critères de qualité de vie (écoles, immobilier, emploi du conjoint) dans le scoring pour couvrir aussi les facteurs personnels."
+    }
+  ],
+  "inspirations": "Rezone.fr (carte des zones de revitalisation). Installation-médecin.fr (guide général sans scoring). Aux US, 3RNet (Rural Recruitment and Retention Network) met en relation médecins et communautés rurales. En Australie, DoctorConnect fait de même avec un algorithme de matching.",
+  "searchVolume": [
+    {
+      "keyword": "installation médecin zone sous-dotee",
+      "monthlyVolume": "880",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "aide installation médecin",
+      "monthlyVolume": "2900",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ou s installer médecin",
+      "monthlyVolume": "1300",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "CESP médecin",
+      "monthlyVolume": "1900",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "zone installation médecin 2026",
+      "monthlyVolume": "720",
+      "difficulty": "low",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "200 millions EUR - Budget total aides installation médecins (CESP, CAIM, ARS) + budgets collectivités attractivité médicale + marché outils orientation sante",
+    "sam": "20 millions EUR - Sous-segment outils d'aide a la décision pour les 3 000 internes/an + 5 000 remplacants + 1 254 intercos en déficit médical",
+    "som": "1.2 millions EUR - 80 médecins a 29 EUR/mois + 30 communes a 199 EUR/mois + 4 intercos a 499 EUR/mois, atteignable a M10",
+    "methodology": "TAM base sur les budgets publics attractivité médicale (CAIM 50K EUR/installation x 3000 installations/an potentielles). SAM = segment outils numériques. SOM = pipeline B2C médecins + B2B collectivités. 237 200 médecins en activité en France (DREES 2025), 124 796 en libéral."
+  },
+  "competitorDeep": [
+    {
+      "name": "Rezone (Ameli)",
+      "url": "https://rezone.ameli.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "20K-50K visites/mois",
+      "reviews": "Carte officielle des zones éligibles aux aides, mise à jour tous les 2 ans",
+      "strengths": "Officiel, référence pour l'éligibilité aux aides, crédibilité CNAM, gratuit",
+      "weaknesses": "Pas de recommandation personnalisee, pas de scoring multicritere, pas de qualité de vie, carte statique sans comparaison, mise à jour tous les 2 ans seulement"
+    },
+    {
+      "name": "Installation-médecin.fr (cabinetmoncab)",
+      "url": "https://cabinetmoncab.fr",
+      "pricing": "Gratuit (information)",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Guide complet zonage ARS, aides CESP/CAIM, carte zones sous-denses",
+      "strengths": "Contenu détaillé sur les aides et le zonage, SEO bien positionne, guides pratiques",
+      "weaknesses": "Information statique (pas de scoring), pas de recommandation personnalisee, pas de comparaison de communes, pas de données démographiques croisees"
+    },
+    {
+      "name": "Remede.org (forums)",
+      "url": "https://www.remede.org",
+      "pricing": "Gratuit (forum communautaire)",
+      "trafficEstimate": "200K-500K visites/mois",
+      "reviews": "Forum historique des étudiants en médecine, discussions installation",
+      "strengths": "Communauté active d'internes, retours d'experience réels, confiance des étudiants",
+      "weaknesses": "Forum générique (pas d'outil structuré), informations dispersées dans les fils, pas de données objectives croisees"
+    },
+    {
+      "name": "3RNet (US)",
+      "url": "https://www.3rnet.org",
+      "pricing": "Gratuit pour les médecins, payant pour les communautés",
+      "trafficEstimate": "100K-200K visites/mois",
+      "reviews": "Mise en relation médecins-communautés rurales aux US, référence nationale",
+      "strengths": "Modèle B2B collectivités éprouvé, 7000+ postes publies, matching médecin-communauté",
+      "weaknesses": "US uniquement, non applicable en France, mais modèle de référence inspirant"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données RPPS et Ameli",
+      "status": "ok",
+      "detail": "Le RPPS est en open data sur data.gouv.fr. L'annuaire sante Ameli est public. Utilisation libre des données professionnelles (spécialité, localisation).",
+      "source": "data.gouv.fr - RPPS Open Data"
+    },
+    {
+      "topic": "Age des médecins",
+      "status": "attention",
+      "detail": "L'age exact n'est pas dans le RPPS public. Utiliser l'année de these comme proxy (RPPS contient la date de première inscription). Ne pas publier d'age individuel identifiable.",
+      "source": "RPPS - Limites donnees publiques"
+    },
+    {
+      "topic": "Mise en avant payante de communes",
+      "status": "attention",
+      "detail": "Si les communes paient pour etre mises en avant dans les recommandations, le distinguer clairement du classement objectif (similaire a la distinction résultats organiques/sponsorises sur Google).",
+      "source": "Code de la consommation - Publicite identifiable"
+    },
+    {
+      "topic": "Aides publiques et information",
+      "status": "ok",
+      "detail": "Les informations sur les aides CESP, CAIM, ZRR sont publiques. Pas de restriction a leur agregation.",
+      "source": "ameli.fr - Aides publiques"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (aide installation médecin + zone)",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "174 EUR (29 EUR/mois x 6 mois)",
+      "ltvCacRatio": "12-35x"
+    },
+    {
+      "channel": "Partenariat facs médecine",
+      "cacEstimate": "2-5 EUR par interne",
+      "conversionRate": "5-10%",
+      "ltv": "174 EUR",
+      "ltvCacRatio": "35-87x"
+    },
+    {
+      "channel": "Remede.org et forums internes",
+      "cacEstimate": "0-3 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "174 EUR",
+      "ltvCacRatio": "58x+"
+    },
+    {
+      "channel": "Email direct maires (B2B collectivités)",
+      "cacEstimate": "100-250 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "2388 EUR (199 EUR/mois x 12)",
+      "ltvCacRatio": "10-24x"
+    },
+    {
+      "channel": "Profil commune gratuit (inbound B2B)",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "10-15% upsell vers premium",
+      "ltv": "2388 EUR",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 57,
+      "detail": "7.7K recherches/mois cumulees ('aide installation médecin' 2 900/mois, 'CESP médecin' 1 900/mois). TAM: 200 millions EUR. Cibles: Internes en médecine en, Médecins remplacants souhaitant s'installer, Communes et communautés de."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 6 APIs a intégrer (API FINESS, Annuaire Ameli, API INSEE). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Objectif 10K MRR en 8-10 mois. Pricing 29-499 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifiés: Rezone (Ameli), Installation-médecin.fr (cabin, Remede.org (forums). Leader: Rezone (Ameli) (20K-50K visites/mois). Faiblesse principale: Pas de recommandation personnalisee."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Age des médecins, Mise en avant payante de communes."
+    },
+    "overall": {
+      "score": 59,
+      "detail": "Point fort: faisabilité (68/100). Point faible: competition (45/100). Idee intéressante, risques significatifs a mitiger."
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "productSlug": "simulateur-pour-decisions-business-impact-carbone-d-un-changement-de-fournisseur",
+  "oneLiner": "Simulateur d impact carbone des décisions business: changement de fournisseur, de transport, de materiau.",
+  "problem": "Les entreprises engagees dans une démarche carbone doivent évaluer l impact de chaque décision: changer de fournisseur, passer au ferroviaire, utiliser un materiau recycle. Aujourd hui c est fait au doigt mouille ou avec un consultant a 500 EUR/jour. La Base Carbone ADEME contient les facteurs d émission mais personne ne les met dans un simulateur actionnable.",
+  "solution": "Un simulateur ou le décideur entre un changement envisage (ex: remplacer le transport routier par le ferroviaire sur le trajet Lyon-Marseille, 50 tonnes/an) et obtient instantanement l impact en tonnes de CO2 evitees, avec le calcul détaillé et les sources (Base Carbone ADEME). Plusieurs scenarios comparables côté à côté.",
+  "uniqueValue": "Aucun outil ne transforme la Base Carbone en simulateur de décisions business. Les outils de bilan carbone comptent les émissions passees, celui-ci projette les émissions futures selon differents scenarios. C est un outil de décision, pas de reporting.",
+  "mvpScope": "Simulateur pour 3 types de décisions: transport (modal shift), énergie (changement de source), materiaux (vierge vs recycle). Facteurs d émission de la Base Carbone ADEME. 2 scenarios comparables. Rapport PDF.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Moteur de simulation Base Carbone",
+      "description": "Import des facteurs d émission pertinents de la Base Carbone. Modèle de simulation par type de décision. API de calcul.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Import Base Carbone (transport, énergie, materiaux)",
+        "Modèle de simulation",
+        "API de calcul",
+        "3 types de décisions"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface et rapport",
+      "description": "Interface de simulation avec formulaire par type de décision. Comparaison 2 scenarios côté à côté. Graphiques d impact. Export rapport PDF.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Interface simulation",
+        "Comparaison scenarios",
+        "Graphiques impact",
+        "Export PDF"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et premiers clients",
+      "description": "Cibler les responsables RSE et achats via LinkedIn. Webinaire Comment prendre des décisions business bas carbone. Partenariats B Corp.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "100 utilisateurs",
+        "30 abonnes",
+        "3 webinaires",
+        "Partenariat B Corp"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Extension et API",
+      "description": "Ajouter: fournisseurs (émission par pays d origine), emballages, digital (cloud vs on-premise). API pour les ERP. Plan Enterprise.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "6 types de décisions",
+        "API ERP",
+        "Plan Enterprise",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les entreprises evaluent l impact carbone de leurs décisions",
+      "how": "Sondage LinkedIn auprès de 50 responsables RSE/achats: evaluez-vous l impact carbone avant un changement de fournisseur/transport?",
+      "successCriteria": "60%+ disent vouloir le faire mais manquer d outils"
+    },
+    {
+      "check": "Le simulateur donne des résultats coherents",
+      "how": "Simuler 10 changements classiques et comparer avec des études de cas publiees (ADEME)",
+      "successCriteria": "Écart < 20% avec les références ADEME"
+    },
+    {
+      "check": "Le format simulateur est préféré au format consultant",
+      "how": "Proposer les deux options a 15 entreprises: simulateur a 99 EUR/mois vs consultant a 3K EUR par simulation",
+      "successCriteria": "10/15 preferent le simulateur pour les décisions courantes"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Responsables RSE de PME et ETI (250-5000 salariés)",
+      "where": "LinkedIn RSE, C3D (College des Directeurs du DD), réseau B Corp",
+      "howToReach": "Contenu: Combien de CO2 economiseriez-vous en changeant de transport? Testez notre simulateur gratuit."
+    },
+    {
+      "who": "Responsables achats (qui doivent intégrer le carbone dans les critères)",
+      "where": "LinkedIn achats, CNA (Conseil National des Achats), salons achats",
+      "howToReach": "Le simulateur aide a justifier un fournisseur plus cher mais moins carbone. Argument budgetaire."
+    },
+    {
+      "who": "Consultants RSE et bureaux d études carbone",
+      "where": "LinkedIn, CINOV, conferences climat",
+      "howToReach": "L outil accéléré leurs missions de conseil. Plan consultant avec volume."
+    }
+  ],
+  "pricingStrategy": "Plan Starter a 49 EUR/mois (3 types de simulation, 10 simulations/mois). Plan Business a 99 EUR/mois (6 types, illimité, rapports PDF, historique). Plan Enterprise a 299 EUR/mois (API ERP, multi-users, custom). Plan Consultant a 199 EUR/mois (multi-clients, white-label). Simulation unitaire a 29 EUR (one-shot).",
+  "pathTo10kMrr": "50 Starter x 49 EUR = 2 450 EUR + 40 Business x 99 EUR = 3 960 EUR + 5 Enterprise x 299 EUR = 1 495 EUR + 10 Consultants x 199 EUR = 1 990 EUR = 9 895 EUR MRR. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts",
+    "backend": "Next.js API Routes",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Base Carbone ADEME data.gouv.fr",
+      "API Sirene",
+      "Stripe"
+    ],
+    "notes": "Le calcul est simple: quantité x facteur d émission (Base Carbone). La valeur est dans l UX et la contextualisation business, pas dans la complexité du calcul."
+  },
+  "risks": [
+    {
+      "risk": "Le calcul est trop simple et les entreprises ne font pas confiance",
+      "mitigation": "Sourcer chaque facteur d émission (Base Carbone ADEME est la référence officielle). Afficher les hypothèses et les sources."
+    },
+    {
+      "risk": "Les outils de bilan carbone (Greenly, Sweep) ajoutent des fonctionnalités de simulation",
+      "mitigation": "Se specialiser sur la simulation de décisions (pas le reporting). Etre le meilleur sur le use case décision d achat/logistique."
+    },
+    {
+      "risk": "Le marché est petit (seules les entreprises engagees RSE)",
+      "mitigation": "La CSRD et les exigences des donneurs d ordre elargissent le marché chaque année. Commencer par les entreprises engagees puis elargir."
+    }
+  ],
+  "inspirations": "Greenly (bilan carbone SaaS). Ecolab de Google Cloud (impact carbone du cloud). Climatiq (API facteurs d émission). Base Carbone ADEME (référence). Aux US, Watershed propose du scenario modeling.",
+  "searchVolume": [
+    {
+      "keyword": "impact carbone entreprise",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "calculateur empreinte carbone transport",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "simulateur bilan carbone",
+      "monthlyVolume": "880",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "réduire empreinte carbone entreprise",
+      "monthlyVolume": "720",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "facteur émission Base Carbone",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "170 000 entreprises de 50+ salariés en France. Marché de la gestion carbone entreprises: 500M-1Md EUR/an (logiciels + conseil). Segment simulation/décision: estimé a 100M EUR/an.",
+    "sam": "50 000 entreprises engagees RSE ou soumises a des exigences carbone (donneurs d'ordre, CSRD, B Corp). SAM = 50 000 x 80 EUR/mois = 48M EUR/an.",
+    "som": "Objectif an 1: 105 clients x 95 EUR ARPU = 120K EUR ARR. Penetration: 0.25% du SAM.",
+    "methodology": "TAM basé sur les entreprises de 50+ salariés (INSEE). Segment simulation estimé a 10-20% du marché gestion carbone. SOM basé sur mix tarifaire."
+  },
+  "competitorDeep": [
+    {
+      "name": "Greenly (module simulation)",
+      "url": "https://greenly.earth",
+      "pricing": "5 000-15 000 EUR/an. Simulation incluse dans les plans premium.",
+      "trafficEstimate": "300K visites/mois",
+      "reviews": "Propose un tableau de bord interactif avec simulation d'actions de réduction. 2 000 clients.",
+      "strengths": "Simulation integree au bilan carbone, données bancaires/comptables, 2 000 clients, forte crédibilité.",
+      "weaknesses": "Simulation = fonctionnalité secondaire du bilan, pas spécialisée décisions business, prix élève pour la simulation seule."
+    },
+    {
+      "name": "Carbo (plan de réduction)",
+      "url": "https://www.hellocarbo.com",
+      "pricing": "2 000-10 000 EUR/an.",
+      "trafficEstimate": "150K visites/mois",
+      "reviews": "Tableau de bord interactif avec suivi des émissions et simulation d'actions de réduction.",
+      "strengths": "Simulation d'actions incluse, interface intuitive, bon contenu pedagogique.",
+      "weaknesses": "Simulation liée au bilan (pas standalone), pas de comparaison fournisseurs, focus reporting."
+    },
+    {
+      "name": "EcoTransIT World",
+      "url": "https://www.ecotransit.org",
+      "pricing": "Version basique gratuite. Business Solutions payantes (sur devis).",
+      "trafficEstimate": "50K visites/mois",
+      "reviews": "Calculateur d'émissions transport (route, rail, maritime, aerien). Référence pour la logistique.",
+      "strengths": "Référence mondiale pour le transport, données OAG/AIS, gratuit pour la version basique.",
+      "weaknesses": "Transport uniquement (pas materiaux, énergie, fournisseurs), interface technique, pas de contexte business."
+    },
+    {
+      "name": "Impact CO2 (ADEME)",
+      "url": "https://impactco2.fr",
+      "pricing": "Gratuit (service public ADEME).",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "Outils ADEME de comparaison d'impact CO2 par mode de transport et par produit.",
+      "strengths": "Gratuit, source officielle ADEME, widget intégrable, pedagogique.",
+      "weaknesses": "Pas de contexte business (grand public), pas de simulation de décision entreprise, pas de scenarios."
+    },
+    {
+      "name": "Climatiq",
+      "url": "https://www.climatiq.io",
+      "pricing": "API: gratuit jusqu'a 1000 requetes/mois, puis 99-499 USD/mois.",
+      "trafficEstimate": "20K visites/mois",
+      "reviews": "API de facteurs d'émission. Utilise par les développeurs pour intégrer le calcul carbone.",
+      "strengths": "API complété de facteurs d'émission, multi-sources (Base Carbone, EPA, DEFRA), developer-friendly.",
+      "weaknesses": "API technique (pas d'interface business), pas de simulation de scenarios, cible développeurs."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Précision des simulations",
+      "status": "attention",
+      "detail": "Les simulations basees sur des facteurs d'émission moyens ont une incertitude de 20-50%. Nécessaire d'afficher les hypothèses et marges d'erreur.",
+      "source": "Méthodologie Base Carbone ADEME, incertitudes des facteurs d'émission"
+    },
+    {
+      "topic": "Utilisation Base Carbone ADEME",
+      "status": "ok",
+      "detail": "La Base Carbone est en open data. Reutilisation commerciale autorisee.",
+      "source": "ADEME, licence ouverte"
+    },
+    {
+      "topic": "Greenwashing et communication environnementale",
+      "status": "attention",
+      "detail": "Les affirmations de réduction d'émissions doivent etre etayees et verifiables. Interdiction de communication trompeuse sur l'impact environnemental.",
+      "source": "Loi Climat et Resilience 2021, Art. L229-68 Code environnement"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (calculateur empreinte carbone, simulateur bilan carbone)",
+      "cacEstimate": "25-50 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "1188 EUR (12 mois x 99 EUR Business)",
+      "ltvCacRatio": "24-48x"
+    },
+    {
+      "channel": "Content marketing (Combien de CO2 economisez-vous en changeant de transport?)",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "588 EUR (12 mois x 49 EUR Starter)",
+      "ltvCacRatio": "20-39x"
+    },
+    {
+      "channel": "Partenariats B Corp et réseaux RSE",
+      "cacEstimate": "20-50 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "1188 EUR",
+      "ltvCacRatio": "24-59x"
+    },
+    {
+      "channel": "LinkedIn Ads (responsables RSE et achats)",
+      "cacEstimate": "100-180 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "3588 EUR (12 mois x 299 EUR Enterprise)",
+      "ltvCacRatio": "20-36x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données sources vérifiées via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 55,
+      "detail": "5.4K recherches/mois cumulees ('calculateur empreinte carbone transport' 1 900/mois, 'impact carbone entreprise' 1 300/mois). TAM: 170 000 entreprises. Cibles: Responsables RSE de PME, Responsables achats, Consultants RSE et bureaux."
+    },
+    "feasibility": {
+      "score": 73,
+      "detail": "MVP en 5 semaines. 3 APIs a integrer (Base Carbone ADEME, API Sirene, Stripe). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 45,
+      "detail": "50 clients a 49 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 120K EUR/an. Pricing 29-299 EUR."
+    },
+    "competition": {
+      "score": 35,
+      "detail": "5 concurrents identifies: Greenly (module simulation), Carbo (plan de réduction), EcoTransIT World. Leader: Greenly (300K visites/mois). Faiblesse principale: Simulation = fonctionnalité secondaire du bilan."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 2 points d'attention. Vigilance: Précision des simulations, Greenwashing et communication environnementale."
+    },
+    "overall": {
+      "score": 54,
+      "detail": "Point fort: faisabilité (73/100). Point faible: compétition (35/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

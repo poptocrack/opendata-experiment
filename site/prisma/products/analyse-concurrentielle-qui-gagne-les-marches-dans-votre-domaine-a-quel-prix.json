@@ -1,0 +1,309 @@
+{
+  "productSlug": "analyse-concurrentielle-qui-gagne-les-marches-dans-votre-domaine-a-quel-prix",
+  "oneLiner": "Analyse concurrentielle des marchés publics: qui gagne dans votre domaine, a quel prix, avec quel taux de réussite.",
+  "problem": "Une entreprise qui repond à un marché public fixe son prix au hasard. Les données d'attribution (200 Mds EUR/an) existent dans les DECP mais sont des CSV de millions de lignes inexploitables. L'entreprise ne sait pas qui gagne habituellement, a quel prix, ni quel est le taux de remise moyen. Les mieux informes gagnent systematiquement.",
+  "solution": "Un outil d'intelligence concurrentielle analysant les DECP par secteur (CPV) et zone géographique: top attributaires par volume et montant, prix moyens d'attribution, ratio estimation/prix final, achetéurs les plus actifs, tendances. L'utilisateur entre son CPV et sa zone, obtient un panorama concurrentiel complet.",
+  "uniqueValue": "Le Société.com des marchés publics. Les DECP sont publiques mais inexploitables sans outil. Aucun service ne propose de panorama concurrentiel par secteur avec les prix d'attribution.",
+  "mvpScope": "Analyse par code CPV (niveau 2) sur la France entière. Top 10 attributaires par volume/montant, prix moyen d'attribution, nombre de marches/an par achetéur. Filtre par département et année. 3 dernières années de données.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Ingestion et normalisation DECP",
+      "description": "Parsing des DECP (3 ans). Normalisation CPV, SIRET attributaires, montants. Calcul des aggregats par secteur x zone.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline DECP 3 ans",
+        "Normalisation CPV/SIRET/montants",
+        "Aggregats par secteur x zone",
+        "100K+ marchés indexes"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface d'analyse",
+      "description": "Interface de recherche par CPV et zone. Tableaux top attributaires. Graphiques tendances prix. Fiches concurrents détaillées.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Recherche par CPV/zone",
+        "Tableaux top attributaires",
+        "Graphiques tendances",
+        "Fiches concurrents"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et acquisition",
+      "description": "3 rapports sectoriels gratuits (BTP, IT, nettoyage). LinkedIn Ads ciblés. SEO sur analyse marchés publics.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "3 rapports gratuits",
+        "200 abonnes",
+        "Campagne LinkedIn",
+        "SEO lance"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Features avancees",
+      "description": "Alertes concurrentielles. Prediction de prix optimal. Profils détaillés (forces, faiblesses). API pour CRM.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Alertes concurrents",
+        "Prediction prix",
+        "Profils détaillés",
+        "API B2B",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les entreprises cherchent a connaitre les prix concurrents",
+      "how": "Sondage LinkedIn auprès de 100 responsables marchés. Question: connaissez-vous les prix de vos concurrents sur les marchés perdus?",
+      "successCriteria": "80%+ non et 60%+ paieraient pour cette info"
+    },
+    {
+      "check": "Les DECP contiennent les données d'attribution",
+      "how": "Analyser les DECP 12 derniers mois: complétude des champs attributaire, montant, CPV",
+      "successCriteria": "60%+ des marchés ont attributaire et montant renseignés"
+    },
+    {
+      "check": "L'analyse par CPV produit des insights utiles",
+      "how": "Generer l'analyse CPV 45 (construction) sur IDF et montrer a 5 responsables BTP",
+      "successCriteria": "4/5 trouvent les infos utiles et actionnables"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Directeurs commerciaux de PME du BTP (50-500 salariés)",
+      "where": "FFB, FNTP, LinkedIn BTP, salons Batimat",
+      "howToReach": "Rapports sectoriels gratuits BTP. Le BTP est le premier secteur des marchés publics."
+    },
+    {
+      "who": "ESN et SSII répondant aux marchés IT publics",
+      "where": "Syntec Numérique, LinkedIn DSI/SSII, forums marchés IT",
+      "howToReach": "Analyse gratuite marchés IT d'une région. Les ESN sont data-driven."
+    },
+    {
+      "who": "Cabinets de conseil en marchés publics",
+      "where": "LinkedIn, CCPA, conferences marchés publics",
+      "howToReach": "Plan cabinet avec white-label pour enrichir leur offre de conseil."
+    }
+  ],
+  "pricingStrategy": "Plan Starter a 29 EUR/mois (1 CPV, analyse basique, top 10). Plan Business a 79 EUR/mois (CPV illimités, alertes, historique complet). Plan Premium a 199 EUR/mois (prediction prix, profils détaillés, API, rapports PDF). Plan Enterprise sur devis.",
+  "pathTo10kMrr": "150 Starter x 29 EUR = 4 350 EUR + 50 Business x 79 EUR = 3 950 EUR + 10 Premium x 199 EUR = 1 990 EUR = 10 290 EUR MRR. 210 abonnes sur 150K entreprises = 0.14% pénétration. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts + AG Grid",
+    "backend": "Next.js API Routes + Python pour parsing et analyse DECP",
+    "database": "PostgreSQL sur Supabase + Typesense (recherche full-text entreprises)",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "DECP data.gouv.fr",
+      "API Sirene (identification entreprises)",
+      "Stripe"
+    ],
+    "notes": "DECP = millions de lignes. Parsing et normalisation = gros du travail technique. Analyses precalculees par CPV x département et mises en cache. Rafraichissement mensuel."
+  },
+  "risks": [
+    {
+      "risk": "DECP incomplètes (tous les achetéurs ne declarent pas correctement)",
+      "mitigation": "Compléter avec avis d'attribution BOAMP. Être transparent sur la couverture. Utile même a 60-70% de couverture."
+    },
+    {
+      "risk": "Les données de prix sont sensibles et les entreprises ne veulent pas être exposees",
+      "mitigation": "Les DECP sont des données publiques (transparence). Communiquer que tout le monde peut y acceder."
+    },
+    {
+      "risk": "Vecteur Plus où France Marchés ajoutent cette fonctionnalité",
+      "mitigation": "Être plus agile et moins cher. Se spécialisér sur l'analytics concurrentielle plutot que la veille."
+    }
+  ],
+  "inspirations": "Tussell (UK, leve 10M GBP) analyse les marchés publics britanniques. GovWin (Deltek) pour l'intelligence marchés federaux US. En France les DECP sont sous-exploitees.",
+  "searchVolume": [
+    {
+      "keyword": "analyse marchés publics",
+      "monthlyVolume": "880",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "qui a gagne le marché public",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "attribution marché public",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "avis attribution BOAMP",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "intelligence economique marchés publics",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "233 Mds EUR de commande publique en 2024. 207 355 marchés recensés. Marché de l'intelligence concurrentielle marchés publics estimé a 200M EUR/an (analytics + conseil).",
+    "sam": "150 000 entreprises répondant aux marchés publics. Cible: les 30 000 PME qui répondent a 10+ marches/an et ont besoin d'intelligence concurrentielle. SAM = 30 000 x 80 EUR/mois = 28.8M EUR/an.",
+    "som": "Objectif an 1: 210 abonnes x 50 EUR ARPU = 126K EUR ARR. Pénétration: 0.7% du SAM.",
+    "methodology": "TAM base sur barometre commande publique 2024 (achat-logistique.info). SAM estimant 20% des entreprises répondantes comme ciblé analytique. SOM base sur le mix de plans tarifaires."
+  },
+  "competitorDeep": [
+    {
+      "name": "Tussell",
+      "url": "https://www.tussell.com",
+      "pricing": "Abonnement mensuel, prix non public. Estime 500-2000 GBP/mois pour les entreprises. Seed funding 1M GBP (valorisation 5M GBP).",
+      "trafficEstimate": "50K visites/mois",
+      "reviews": "Leader UK de l'analytics marchés publics. Utilise par 75% des Strategic Suppliers du gouvernement UK.",
+      "strengths": "Data UK exhaustive, credibilite gouvernementale, analytics avancees, 10 ans de data historique.",
+      "weaknesses": "UK uniquement, prix élevé, pas de présence en France."
+    },
+    {
+      "name": "Vecteur Plus (module analytics)",
+      "url": "https://www.vecteurplus.com",
+      "pricing": "Inclus dans les plans premium 300-500 EUR/mois. Pas de module analytics standalone.",
+      "trafficEstimate": "200K visites/mois (site global)",
+      "reviews": "Offre des données d'attribution mais sans analytics concurrentielle poussee.",
+      "strengths": "Base de données historique massive, 400K marches/an, 30 ans d'historique.",
+      "weaknesses": "Analytics basiques (pas de HHI, pas de benchmarking concurrentiel), prix élevé, interface datee."
+    },
+    {
+      "name": "France Marchés (avis d'attribution)",
+      "url": "https://www.francemarches.com",
+      "pricing": "Inclus dans l'abonnement 99-299 EUR/mois.",
+      "trafficEstimate": "150K visites/mois",
+      "reviews": "Accès aux avis d'attribution BOAMP/JOUE mais sans analytics concurrentielle.",
+      "strengths": "Couverture des avis d'attribution, interface moderne.",
+      "weaknesses": "Pas d'analytics (pas de top attributaires, pas de tendances prix), données brutes non exploitees."
+    },
+    {
+      "name": "Explore (module intelligence)",
+      "url": "https://www.explore.fr",
+      "pricing": "Sur devis, estimé 200-500 EUR/mois.",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "Detecte appels d'offres et donne accès à des informations strategiques.",
+      "strengths": "Couverture multi-sources, informations strategiques, positionnément intelligence economique.",
+      "weaknesses": "Pas d'analytics concurrentielle automatisee, prix opaque, interface B2B classique."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Publication des données d'attribution (DECP)",
+      "status": "ok",
+      "detail": "Les DECP incluent l'attributaire, le montant et le CPV. Données publiques ouvertes reutilisables commercialement.",
+      "source": "Art. 107 du decret marchés publics, licence Etalab 2.0"
+    },
+    {
+      "topic": "Exposition des prix des concurrents",
+      "status": "attention",
+      "detail": "Les prix d'attribution sont publics mais l'exposition systematique peut générér des tensions commerciales. Pas d'obstacle légal mais prudence sur la communication.",
+      "source": "CADA, transparence commande publique"
+    },
+    {
+      "topic": "Données SIRET des attributaires",
+      "status": "ok",
+      "detail": "Les SIRET et raisons sociales des attributaires sont des données publiques (DECP + Sirene). Aucune restriction de réutilisation.",
+      "source": "Licence Etalab, API Sirene"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (attribution marché public, analyse concurrentielle)",
+      "cacEstimate": "20-35 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "948 EUR (12 mois x 79 EUR plan Business)",
+      "ltvCacRatio": "27-47x"
+    },
+    {
+      "channel": "Content marketing (rapports sectoriels gratuits BTP, IT, nettoyage)",
+      "cacEstimate": "10-20 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "348 EUR (12 mois x 29 EUR Starter)",
+      "ltvCacRatio": "17-35x"
+    },
+    {
+      "channel": "LinkedIn Ads (directeurs commerciaux PME)",
+      "cacEstimate": "90-150 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "948 EUR",
+      "ltvCacRatio": "6-11x"
+    },
+    {
+      "channel": "Partenariats cabinets conseil marchés publics",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "6-10%",
+      "ltv": "2388 EUR (12 mois x 199 EUR Premium)",
+      "ltvCacRatio": "80-159x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 56,
+      "detail": "6.3K recherches/mois cumulees ('attribution marché public' 2 400/mois, 'avis attribution BOAMP' 1 900/mois). TAM: 233 Mds EUR. Cibles: Directeurs commerciaux de PME, ESN et SSII répondant, Cabinets de conseil en."
+    },
+    "feasibility": {
+      "score": 73,
+      "detail": "MVP en 5 semaines. 3 APIs a integrer (DECP, API Sirene, Stripe). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 60,
+      "detail": "150 clients a 29 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 126K EUR/an. Pricing 29-199 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: Tussell, Vecteur Plus (module analytics, France Marchés (avis d'attribu. Leader: Tussell (50K visites/mois). Faiblesse principale: UK uniquement."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "2 points OK, 1 point d'attention. Vigilance: Exposition des prix des concurrents."
+    },
+    "overall": {
+      "score": 63,
+      "detail": "Point fort: legal (78/100). Point faible: competition (55/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

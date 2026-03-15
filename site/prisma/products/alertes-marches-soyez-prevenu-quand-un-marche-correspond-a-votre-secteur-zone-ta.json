@@ -1,0 +1,332 @@
+{
+  "productSlug": "alertes-marches-soyez-prevenu-quand-un-marche-correspond-a-votre-secteur-zone-ta",
+  "oneLiner": "Alertes personnalisées pour PME: soyez prévenu quand un marché public correspond a votre secteur, zone et taille.",
+  "problem": "Les marchés publics representent 200 milliards d'euros/an en France (DECP: 27K visites, 45K DL, 1 545 datasets). Les PME ratent 80% des opportunités car la veille est un cauchemar: dizaines de plateformes (BOAMP, JOUE, AWS), formats différents, mises à jour quotidiennes. Un plombier a Bordeaux rate les marchés de sa zone parce qu'il ne sait pas où chercher. Les outils existants (Vecteur Plus, France Marches) coutent 100-300 EUR/mois, trop cher pour les TPE.",
+  "solution": "Un système d'alertes qui agrège DECP + BOAMP et envoie des alertes personnalisées par email: l'utilisateur configure son secteur (codes CPV/NAF), sa zone géographique, et sa taille de marché max. Email quotidien avec les nouveaux marchés, résumé IA de chaque objet, et dates clés. UX simple, prix accèssible.",
+  "uniqueValue": "5 a 10x moins cher que Vecteur Plus, avec un résumé IA des marchés qui fait gagner 2h de lecture par opportunité. Cible les TPE/PME que les gros acteurs ignorent.",
+  "mvpScope": "Alertes basees sur les DECP data.gouv.fr + BOAMP. Filtrage par code CPV, département, et montant. Email quotidien. Résumé IA du titre et objet. 3 alertes gratuites puis paywall.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline DECP + BOAMP",
+      "description": "Scraping/API quotidien des DECP et BOAMP. Normalisation des données. Moteur de matching CPV x département x montant.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Pipeline DECP + BOAMP quotidien",
+        "Normalisation CPV/NAF",
+        "Moteur de matching",
+        "Base de 500K+ marches"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Alertes email et interface",
+      "description": "Interface de configuration des alertes. Email quotidien personalise avec résumé IA. Dashboard historique.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Interface de configuration",
+        "Alertes email quotidiennes",
+        "Résumé IA par marche",
+        "Dashboard historique"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et acquisition",
+      "description": "Partenariats CAPEB/FFB. SEO sur alertes marchés publics. Webinaires Comment gagner votre premier marché public.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "200 abonnes payants",
+        "3 partenariats fédérations/CCI",
+        "SEO lance",
+        "2 webinaires"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Features avancees et scale",
+      "description": "Résumé IA des DCE complets (upload PDF). Sources additionnelles (AWS, achatpublic.com). Score de pertinence. Plan Premium avec analyse concurrentielle.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Résumé IA des DCE",
+        "3 sources additionnelles",
+        "Score de pertinence",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les TPE/PME ratent des marchés par manque de veille",
+      "how": "Demander a 20 TPE répondant aux marchés publics combien elles en ratent par trimestre",
+      "successCriteria": "15/20 confirment rater au moins 1 marche/trimestre faute de veille"
+    },
+    {
+      "check": "Le prix de 19 EUR/mois est attractif vs les solutions existantes",
+      "how": "Comparer avec Vecteur Plus (200+ EUR), France Marchés (100+ EUR). Tester sur landing page.",
+      "successCriteria": "Taux de conversion > 5% sur le trafic qualifie"
+    },
+    {
+      "check": "Les données DECP sont suffisamment à jour et complètes",
+      "how": "Comparer les marchés DECP avec ceux sur BOAMP pour les 3 derniers mois",
+      "successCriteria": "DECP couvrent au moins 70% des marchés BOAMP"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Artisans et PME du BTP (premier secteur des marchés publics)",
+      "where": "CAPEB (300K adhérents), FFB, groupes Facebook BTP",
+      "howToReach": "Partenariat CAPEB pour offre préférentielle. Webinaire Comment gagner votre premier marché public."
+    },
+    {
+      "who": "ESN et sociétés de conseil IT (marchés informatiques publics)",
+      "where": "Syntec Numérique, LinkedIn ESN, salons IT publics",
+      "howToReach": "Alertes IT ciblées pour les ESN 10-50 personnes sans équipe dédiée marchés."
+    },
+    {
+      "who": "Bureaux d'études et cabinets d'architecture",
+      "where": "Ordre des architectes, CINOV, LinkedIn urbanisme",
+      "howToReach": "Les marchés de maîtrise d'oeuvre sont nombreux et bien documentés dans les DECP."
+    }
+  ],
+  "pricingStrategy": "Plan Solo a 19 EUR/mois (1 profil, 1 département, email quotidien). Plan PME a 49 EUR/mois (3 profils, France entière, résumé IA, historique). Plan Pro a 99 EUR/mois (illimité, analyse concurrentielle, alertes temps reel). Plan Cabinet a 249 EUR/mois (multi-utilisateurs, white-label). Positionnement 5-10x moins cher que Vecteur Plus.",
+  "pathTo10kMrr": "200 Solo x 19 EUR = 3 800 EUR + 80 PME x 49 EUR = 3 920 EUR + 20 Pro x 99 EUR = 1 980 EUR + 2 Cabinets x 249 EUR = 498 EUR = 10 198 EUR MRR. 150K entreprises répondent aux marchés publics, 300 abonnes = 0.2% pénétration. Timeline: 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS",
+    "backend": "Next.js API Routes + Python pour scraping/parsing DECP et BOAMP",
+    "database": "PostgreSQL sur Supabase + Typesense (recherche full-text)",
+    "hosting": "Vercel + Supabase + GitHub Actions (pipeline quotidien) + Resend",
+    "apis": [
+      "DECP data.gouv.fr",
+      "API BOAMP",
+      "API OpenAI (résumé IA)",
+      "Resend (email)",
+      "Stripe"
+    ],
+    "notes": "Pipeline quotidien a 6h. Matching en SQL (CPV LIKE + département + montant BETWEEN). Resumes IA générés en batch la nuit. Emails a 8h."
+  },
+  "risks": [
+    {
+      "risk": "Concurrence etablie: Vecteur Plus (30M EUR CA), France Marchés ont des années d'avance",
+      "mitigation": "Se différencier par le prix (5-10x moins cher), l'UX mobile-first, et le résumé IA. Cibler les TPE/PME non clientes des solutions existantes."
+    },
+    {
+      "risk": "Les DECP ne couvrent pas tous les marchés (obligations déclaratives inégalement respectées)",
+      "mitigation": "Compléter avec BOAMP et plateformes de dématérialisation. À terme scraper les sites achetéurs."
+    },
+    {
+      "risk": "Churn élevé car les entreprises ne répondent pas en continu",
+      "mitigation": "Offre annuelle avec remise. Ajouter de la valeur au-dela des alertes: historique, analyse, préparation."
+    }
+  ],
+  "inspirations": "Vecteur Plus (leader FR, CA 30M EUR, 10K clients). GovWin (Deltek) pour le federal procurement US. BidNet pour les marchés locaux US. Tussell en UK pour l'analytics marchés publics.",
+  "searchVolume": [
+    {
+      "keyword": "veille marchés publics",
+      "monthlyVolume": "2400",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "alerte appel offre",
+      "monthlyVolume": "1600",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "appel offre marché public",
+      "monthlyVolume": "8100",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "BOAMP appel offre",
+      "monthlyVolume": "5400",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "marché public PME",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "233 Mds EUR de commande publique en France en 2024 (207 355 marchés recensés). Marché des outils de veille et intelligence marchés publics estimé a 500M EUR/an (logiciels + conseil + formations).",
+    "sam": "150 000 entreprises répondent activement aux marchés publics. 60% sont des PME (90 000). Marché adressable outils de veille PME: 90 000 x 50 EUR/mois moyen = 54M EUR/an.",
+    "som": "Cibler les TPE/PME < 50 salariés non équipees (estimées a 50 000). Objectif an 1: 300 abonnes x 35 EUR ARPU = 126K EUR ARR. Pénétration: 0.6% du SAM.",
+    "methodology": "TAM base sur le barometre commande publique 2024 (233.2 Mds EUR, source Vecteur Plus/achat-logistique.info). SAM base sur les 150K entreprises répondantes (estimation OECP). SOM base sur le positionnément low-cost ciblant les TPE non équipees."
+  },
+  "competitorDeep": [
+    {
+      "name": "Vecteur Plus",
+      "url": "https://www.vecteurplus.com",
+      "pricing": "200-500 EUR/mois selon profil. Abonnement annuel. Positionnement premium avec accompagnement expert.",
+      "trafficEstimate": "200K visites/mois (estimation SimilarWeb)",
+      "reviews": "Leader historique, 30 ans d'experience, 10 000 clients. Reputation solide auprès des grands comptes.",
+      "strengths": "30M EUR CA, couverture exhaustive (400K marches/an), anticipation des projets privés, accompagnement humain, 30 ans de data historique.",
+      "weaknesses": "Prix élevé inaccèssible aux TPE, interface vieillissante, pas de résumé IA, contrats annuels rigides."
+    },
+    {
+      "name": "France Marches",
+      "url": "https://www.francemarches.com",
+      "pricing": "À partir de 99 EUR/mois. Plans de 99 a 299 EUR/mois selon fonctionnalités.",
+      "trafficEstimate": "150K visites/mois",
+      "reviews": "Portail n1 auto-proclame. Bonne couverture BOAMP/JOUE. Interface moderne.",
+      "strengths": "Bonne UX, couverture large, contenu editorial (blog, actualites marchés publics), SEO fort.",
+      "weaknesses": "Prix encore élevé pour les TPE, pas de résumé IA, fonctionnalités d'analyse limitees."
+    },
+    {
+      "name": "Doubletrade",
+      "url": "https://www.doubletrade.com",
+      "pricing": "Sur devis, estimé 150-400 EUR/mois. Scoring IA annonce pour 2025.",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "30 ans, 10 000 clients. Detecte 400K marches/an. Scoring IA en cours de déploiement.",
+      "strengths": "Couverture exhaustive marchés publics et privés, alertes < 24h, scoring IA en 2025, formation incluse.",
+      "weaknesses": "Prix opaque (sur devis), interface B2B classique, ciblé grands comptes."
+    },
+    {
+      "name": "Tengo",
+      "url": "https://www.tengo.cc",
+      "pricing": "Non communiqué publiquement. Positionnement IA/startup.",
+      "trafficEstimate": "10K visites/mois (startup récente)",
+      "reviews": "Nouvel entrant IA. Promet d'identifiér, analyser et répondre aux appels d'offres via IA.",
+      "strengths": "Approche IA native, UX moderne, positionnément startup agile.",
+      "weaknesses": "Startup récente, base clients limitee, pricing non transparent, couverture à valider."
+    },
+    {
+      "name": "Klekoon",
+      "url": "https://www.klekoon.com",
+      "pricing": "Gratuit (modèle freemium) pour la veille basique. Options payantes.",
+      "trafficEstimate": "50K visites/mois",
+      "reviews": "Plateforme de dématérialisation + veille. Positionnement agre PDP facturation.",
+      "strengths": "Gratuit pour la veille basique, plateforme intégrée (veille + réponse + facturation).",
+      "weaknesses": "Fonctionnalités de veille basiques, pas de résumé IA, ciblé achetéurs publics autant que fournisseurs."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation des données DECP (open data)",
+      "status": "ok",
+      "detail": "Les DECP sont des données ouvertes sous licence Etalab. Réutilisation commerciale autorisée sans restriction.",
+      "source": "Decret n2022-767 du 2 mai 2022, licence Etalab 2.0"
+    },
+    {
+      "topic": "Scraping du BOAMP",
+      "status": "attention",
+      "detail": "Le BOAMP est un service public mais le scraping intensif peut être contesté. Privilegier l'API officielle quand disponible.",
+      "source": "CGU boamp.fr, directive PSI"
+    },
+    {
+      "topic": "RGPD sur les données des marchés",
+      "status": "ok",
+      "detail": "Les noms des signataires et attributaires sont des données publiques dans les DECP. Pas de traitement de données personnelles sensibles.",
+      "source": "RGPD Art. 6.1.e (mission d'interet public), CADA avis 20184437"
+    },
+    {
+      "topic": "Concurrence deloyale vs acteurs etablis",
+      "status": "ok",
+      "detail": "Le marché est libre. L'utilisation de données ouvertes pour créér un service concurrent est parfaitement légale.",
+      "source": "Code de commerce, liberté d'entreprendre"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (veille marchés publics, alerte appel offre)",
+      "cacEstimate": "15-25 EUR",
+      "conversionRate": "4-6%",
+      "ltv": "228 EUR (12 mois x 19 EUR)",
+      "ltvCacRatio": "9-15x"
+    },
+    {
+      "channel": "LinkedIn Ads (ciblage dirigeants PME BTP/IT)",
+      "cacEstimate": "80-120 EUR",
+      "conversionRate": "1.5-2.5%",
+      "ltv": "588 EUR (12 mois x 49 EUR plan PME)",
+      "ltvCacRatio": "5-7x"
+    },
+    {
+      "channel": "Partenariats fédérations (CAPEB, FFB)",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "8-12%",
+      "ltv": "228 EUR",
+      "ltvCacRatio": "15-45x"
+    },
+    {
+      "channel": "Webinaires (Comment gagner son premier marché public)",
+      "cacEstimate": "20-40 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "15-29x"
+    },
+    {
+      "channel": "Google Ads (appel offre + secteur)",
+      "cacEstimate": "60-100 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "6-10x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "18.8K recherches/mois cumulees ('appel offre marché public' 8 100/mois, 'BOAMP appel offre' 5 400/mois). TAM: 233 Mds EUR. Cibles: Artisans et PME du, ESN et sociétés de, Bureaux d'études et cabinets."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 5 APIs a integrer (DECP, API BOAMP, API OpenAI). Stack: Next.js + PostgreSQL."
+    },
+    "market": {
+      "score": 50,
+      "detail": "300 clients a 19 EUR pour demarrer. Objectif 10K MRR en 8-10 mois. SOM: 126K EUR/an. Pricing 19-249 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "5 concurrents identifies: Vecteur Plus, France Marches, Doubletrade. Leader: Vecteur Plus (200K visites/mois (estimation SimilarWeb)). Faiblesse principale: Prix élevé inaccèssible aux TPE."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Scraping du BOAMP."
+    },
+    "overall": {
+      "score": 61,
+      "detail": "Point fort: legal (78/100). Point faible: competition (45/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

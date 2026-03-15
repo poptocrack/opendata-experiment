@@ -1,0 +1,180 @@
+{
+  "id": "fiscalite-locale",
+  "rank": 11,
+  "title": "Comparateur fiscalité locale",
+  "slug": "fiscalite-locale",
+  "sector": "territoire",
+  "tagline": "Croiser impots locaux + budgets communes + équipements pour aider les entreprises et particuliers à choisir où s'implantér",
+  "status": "exploration",
+  "difficulty": "facile",
+  "marketSize": "Entreprises en implantation, particuliers en déménagement",
+  "monetization": "Rapports 9.99-49.99 + SaaS collectivités",
+  "context": "Les impots locaux (taxe foncière, CFE) varient enormêment d'une commune à l'autre. Croise avec les budgets des communes (recettes, dépenses, dette), les équipements (BPE : 28K visites) et la qualité de vie, on peut créer un comparateur d'attractivité territoriale. Les entreprises qui choisissent ou implantér un bureau/usine et les particuliers qui deménagent paieraient pour ce type d'analyse comparative.",
+  "signals": [
+    {
+      "label": "Impots locaux",
+      "value": "18K visites/an",
+      "detail": "Les gens comparent la fiscalité entre communes"
+    },
+    {
+      "label": "Budgets communes",
+      "value": "83 datasets",
+      "detail": "Finances locales détaillées par collectivité"
+    },
+    {
+      "label": "BPE Équipements",
+      "value": "28K visites/an",
+      "detail": "Tous les équipements d'une commune (écoles, sport, santé, commerce)"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5369965fa3a729239d204999",
+      "name": "Impots locaux",
+      "description": "Taux de taxe foncière, taxe d'habitation, CFE par commune.",
+      "visits": "18K/an",
+      "downloads": "4.4K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "5f68c4ec93e22c89418021e3",
+      "name": "Comptes consolidés des communes",
+      "description": "Budgets, recettes, dépenses, dette de chaque commune.",
+      "visits": "4.5K/an",
+      "downloads": "1.9K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "548acaf2c751df1eac4120e7",
+      "name": "Base permanente des équipements (BPE)",
+      "description": "Tous les équipements par commune : écoles, médecins, commerces, sport, culture.",
+      "visits": "28K/an",
+      "downloads": "5.8K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "687ae011ddfd9c43eb553747",
+      "name": "Revenus et pauvreté par commune",
+      "description": "Niveau de vie médian, taux de pauvreté — pour évaluer le pouvoir d'achat local.",
+      "visits": "~5K/an",
+      "downloads": "~2K/an",
+      "updateFrequency": "Annuel"
+    }
+  ],
+  "apis": [],
+  "productIdeas": [
+    "Comparateur de communes : fiscalité + équipements + sécurité + prix immobilier — pour déménagement ou implantation",
+    "Simulateur fiscal entreprise : combien coûte la CFE + taxe foncière dans chaque commune vs les services rendus",
+    "Rapport d'attractivité pour collectivités : comment se positionner vs les communes voisines pour attirer des entreprises",
+    "Widget intégrable pour sites d'annonces immobilières : fiscalité locale de la commune du bien"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Entreprises en implantation",
+      "priceRange": "49.99/rapport"
+    },
+    {
+      "segment": "Particuliers en déménagement",
+      "priceRange": "9.99/rapport"
+    },
+    {
+      "segment": "Collectivités (benchmark)",
+      "priceRange": "149/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Impots.gouv.fr",
+      "weakness": "Données brutes, pas de comparaison ni de croisement"
+    },
+    {
+      "name": "JDN Villes",
+      "weakness": "Comparateur basique, pas d'analyse multi-sources"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Le croisement impots locaux + budgets communes + BPE équipements est unique — aucun comparateur ne le fait complètement",
+      "18K visites/an sur les impots locaux + 28K sur BPE prouvent une demande réelle de comparaison territoriale",
+      "Difficulté technique faible — les 4 datasets sont bien structurés et en CSV facile a exploiter",
+      "Le modèle rapport payant (9.99-49.99 EUR) à une conversion naturelle au moment d'un déménagement ou d'une implantation"
+    ],
+    "weaknesses": [
+      "La fiscalité locale change chaque année — maintenance continue des données nécessaire",
+      "Les taux d'imposition seuls ne suffisent pas — il faut intégrer les bases d'imposition pour un calcul réel d'impot",
+      "Le marché des particuliers en déménagement est très saisonnier (mai-septembre)",
+      "JDN Villes et d'autres comparateurs gratuits couvrent déjà une partie du besoin de manière basique"
+    ],
+    "opportunities": [
+      "Les entreprises en teletravail redeploient leurs bureaux en région — besoin de comparaison fiscale entre villes moyennes",
+      "Les collectivités veulent se benchmarker pour attirer des entreprises — marché B2G premium (rapports d'attractivité)",
+      "La suppression de la taxe d'habitation recentre l'attention sur la taxe foncière — sujet mediatique",
+      "Les cabinets de conseil en implantation d'entreprise (Deloitte, EY) pourraient licencier l'outil en marque blanche"
+    ],
+    "threats": [
+      "Le ministere des Finances pourrait créer un simulateur officiel de comparaison fiscale plus complet",
+      "Les sites immobiliers (SeLoger, LeBonCoin) pourraient intégrer la fiscalité locale dans leurs annonces",
+      "La réforme des valeurs locatives (en cours) pourrait rendre les données historiques obsolètes",
+      "Les agences de développement économique régional produisent des rapports gratuits pour attirer les entreprises"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Olivier",
+      "role": "Dirigeant d'une PME de services informatiques (25 salariés), basee à Paris 12e, envisage de deplacer ses locaux",
+      "age": "45 ans",
+      "context": "Paie 35K EUR/an de CFE + taxe foncière pour ses 200m2 de bureaux à Paris. Le teletravail hybride réduit le besoin de surface. Envisage de déménager vers une ville moyenne (Orleans, Tours, Reims) pour diviser ses charges par 3.",
+      "painPoints": [
+        "Ne peut pas comparer facilement le coût fiscal réel (CFE + foncière) entre 5 villes candidates",
+        "Les sites officiels donnent les taux mais pas le calcul réel d'impot pour ses 200m2 de bureaux",
+        "Veut aussi comparer la qualité de vie (écoles, transports, santé) pour convaincre ses salariés de suivre"
+      ],
+      "currentSolution": "Appelle les mairies une par une + demande des simulations à son expert-comptable (1h par ville)",
+      "budget": "35-50 EUR pour un rapport comparatif complet de 5 villes",
+      "channels": [
+        "CPME (Confédération des PME)",
+        "CCI locale",
+        "Groupe LinkedIn 'Dirigeants de PME'",
+        "Webinaire BPI France 'S'implantér en région'"
+      ]
+    },
+    {
+      "name": "Valerie",
+      "role": "Famille de 4 personnes, cadre superieur en teletravail complet, quitte Lyon pour une ville moyenne",
+      "age": "41 ans",
+      "context": "En teletravail à 100% depuis 2022 chez un grand groupe. Avec son conjoint (aussi en teletravail), ils veulent quitter Lyon pour une ville moyenne offrant un meilleur cadre de vie. Budget immobilier de 300K EUR (vs 180K EUR equivalent à Lyon).",
+      "painPoints": [
+        "Les classéments 'meilleures villes' des magazines donnent des résultats différents et contradictoires chaque année",
+        "N'arrive pas a estimer le coût fiscal réel (taxe foncière + anciennes taxes residuelles) d'une maison dans chaque ville",
+        "Veut comparer les équipements (piscine, mediatheque, pediatrès, écoles Montessori) entre 6 villes candidates"
+      ],
+      "currentSolution": "Classement du magazine L'Express + Ville-idéale.fr (avis subjectifs) + visites sur place (3 weekends déjà dépenses)",
+      "budget": "9.99 EUR par rapport de ville — en achetérait 4-6",
+      "channels": [
+        "Groupe Facebook 'Quitter la grande ville'",
+        "Subreddit r/france section déménagement",
+        "Blog 'Paris je te quitte'",
+        "Groupe Telegram 'Teletravail et mobilité'"
+      ]
+    },
+    {
+      "name": "Bernard",
+      "role": "DGS (Directeur General des Services) d'une communauté d'agglomeration de 80K habitants dans le Centre-Val de Loire",
+      "age": "55 ans",
+      "context": "Pilote la stratégie d'attractivité du territoire. L'agglomeration perd des habitants et des entreprises au profit de Tours et Orleans. Il veut comprendre comment se positionner fiscalement et en équipements vs ses voisins pour ajuster la stratégie.",
+      "painPoints": [
+        "N'a aucun benchmark automatisé des taux d'imposition vs les agglos comparables en taille et en région",
+        "Les élus lui demandent 'comment se situe-t-on ?' et il met 2 semaines à compiler les données manuellement",
+        "Veut simulér l'impact d'une baisse de taxe foncière sur l'attractivité vs le manque a gagner budgétaire"
+      ],
+      "currentSolution": "Rapports annuels DGFIP en PDF + extraction manuelle des taux sur impots.gouv.fr + comparaison Excel ad hoc",
+      "budget": "120-180 EUR/mois — budget direction générale, valide sans appel d'offres sous 25K EUR/an",
+      "channels": [
+        "ADCF (Assemblee des Communautes de France)",
+        "Salon des Maires Paris",
+        "La Gazette des Communes",
+        "Réseau des DGS (SNDGCT)"
+      ]
+    }
+  ]
+}

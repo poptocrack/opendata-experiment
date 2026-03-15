@@ -1,0 +1,164 @@
+{
+  "id": "associations-intelligence",
+  "rank": 7,
+  "title": "Intelligence associative",
+  "slug": "associations",
+  "sector": "associatif",
+  "tagline": "Exploiter le RNA (442K visites/an) + subventions pour aider les associations à se financer et les financeurs à trouver les bons projets",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "1.5M associations en France + collectivités + fondations",
+  "monetization": "SaaS 29-149/mois + marketplace",
+  "context": "Le RNA (Répertoire National des Associations) génère 442K visites/an — c'est le 3eme dataset le plus visite de data.gouv.fr. 1.5 million d'associations en France, la plupart galèrent à trouver des financements. De l'autre cote, les collectivités et fondations cherchent des projets à financer. L'API Associations existe déjà. Croise avec les données de subventions, on peut créer un marketplace financeurs/associations ou un outil de veille subventions pour associations.",
+  "signals": [
+    {
+      "label": "Visites RNA",
+      "value": "442K/an",
+      "detail": "3eme dataset le plus visite de data.gouv.fr"
+    },
+    {
+      "label": "Téléchargements RNA",
+      "value": "48K/an",
+      "detail": "Forte demande d'exploitation des données"
+    },
+    {
+      "label": "Nombre d'associations",
+      "value": "1.5M en France",
+      "detail": "Marché massif et sous-équipé en outils numériques"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "58e53811c751df03df38f42d",
+      "name": "Répertoire National des Associations (RNA)",
+      "description": "Toutes les associations loi 1901 : nom, objet, adresse, date création. 141 fichiers.",
+      "visits": "442K/an",
+      "downloads": "48K/an",
+      "updateFrequency": "Mensuel"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Associations (RNA)",
+      "description": "Recherche d'associations par nom, objet, localisation. Informations et documents officiels.",
+      "baseUrl": "https://siva-integ1.cegedim.cloud/apim/api-asso/api/"
+    }
+  ],
+  "productIdeas": [
+    "Veille subventions pour associations : alertes quand un appel a projets correspond a votre objet",
+    "Marketplace financeurs/associations : les collectivités et fondations trouvent les bons projets",
+    "CRM associatif : gestion adherents + recherche de financements + reporting subventions",
+    "Annuaire enrichi pour les collectivités : cartographie des associations de leur territoire + indicateurs de vitalité",
+    "Scoring d'association pour les financeurs : ancienneté, activité, transparence financiere",
+    "Outil de transparence : croiser RNA + subventions versees pour montrer où va l'argent public associatif"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Associations (veille subventions)",
+      "priceRange": "29/mois"
+    },
+    {
+      "segment": "Collectivités (cartographie)",
+      "priceRange": "149/mois"
+    },
+    {
+      "segment": "Fondations (sourcing projets)",
+      "priceRange": "99/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Le Compte Asso",
+      "weakness": "Outil officiel de declaration, pas de veille"
+    },
+    {
+      "name": "HelloAsso",
+      "weakness": "Focus paiement/billetterie, pas d'intelligence données"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "RNA à 442K visites/an (3eme dataset data.gouv.fr) prouve un intérêt massif pour les données associatives",
+      "1.5M d'associations en France forment un marché captif et sous-équipé en outils numériques",
+      "API Associations déjà existante et gratuite — pas besoin de scraper ou de parser des CSV",
+      "Les associations ont une culture de la mutualisation — le bouche-a-oreille fonctionne très bien dans le secteur"
+    ],
+    "weaknesses": [
+      "Les associations ont des budgets très faibles — 70% ont moins de 10K EUR de budget annuel",
+      "HelloAsso est déjà très installe pour les outils de gestion — marque forte et gratuite",
+      "Les données RNA ne contiennent pas les budgets, l'activité réelle ni le nombre d'adherents — enrichissement nécessaire",
+      "Le secteur associatif est fragmente (sport, culture, social, santé) — difficile d'adresser tous les segments avec un seul outil"
+    ],
+    "opportunities": [
+      "Le Contrat d'Engagement Republicain (2022) oblige les associations à plus de transparence — besoin de reporting",
+      "Les collectivités cherchent a rationaliser leurs subventions — un scoring d'associations les aiderait",
+      "Les fondations d'entreprise (mécénat) ont du mal à trouver des projets pertinents — marketplace à créer",
+      "L'essor du bénévolat de compétences post-COVID crée un nouveau segment (matching bénévoles/associations)"
+    ],
+    "threats": [
+      "HelloAsso pourrait ajouter des fonctionnalités de veille subventions sur sa plateforme gratuite",
+      "Le gouvernement développé 'Le Compte Asso' qui pourrait intégrer de l'intelligence de financement",
+      "Les collectivités créent leurs propres plateformes de subventions en ligne (ex: démarches-simplifiées.fr)",
+      "Le secteur associatif est politiquement sensible — risque de polémique sur le scoring/notation d'associations"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Nadia",
+      "role": "Directrice d'une association d'aide aux migrants (15 salariés, 80 bénévoles) basee à Marseille",
+      "age": "43 ans",
+      "context": "Budget annuel de 450K EUR, 80% provenant de subventions publiques (État, département, ville, fondations). Passe 30% de son temps à chercher des financements et a monter des dossiers de subventions. A rate plusieurs appels a projets par manque de veille.",
+      "painPoints": [
+        "Rate régulierement des appels a projets parce qu'elle les découvre trop tard ou par hasard",
+        "Passe 2 jours par mois à chercher les subventions disponibles sur 10+ sites différents",
+        "N'a aucune visibilité sur ce que touchent les associations similaires dans d'autres départements"
+      ],
+      "currentSolution": "Veille manuelle sur les sites de la DREETS, du département, de la ville + newsletter CPCA + bouche-a-oreille",
+      "budget": "25-40 EUR/mois — le budget est serré mais un outil qui fait gagner 3 jours/mois se justifie",
+      "channels": [
+        "CPCA (Le Mouvement associatif)",
+        "Forum national des associations",
+        "Groupe Facebook 'Directeurs d'associations'",
+        "Réseau RNMA (Maisons des associations)"
+      ]
+    },
+    {
+      "name": "Laurent",
+      "role": "Charge de mission vie associative à la mairie de Nantes (300K habitants, 6000 associations sur le territoire)",
+      "age": "38 ans",
+      "context": "Gère un budget de subventions de 2M EUR/an pour les associations locales. Doit cartographier les associations du territoire, évaluer les demandes de subventions, et rendre compte de l'impact des financements accordés.",
+      "painPoints": [
+        "N'a aucune cartographie fiable des 6000 associations de la ville — le RNA est incomplet et pas à jour",
+        "Recoit 400 demandes de subventions/an et les évalué manuellement sans benchmark objectif",
+        "Les élus lui demandent un bilan d'impact des subventions versees — il n'a pas les données pour répondre"
+      ],
+      "currentSolution": "Fichier Excel de suivi des subventions + extraction RNA manuelle + questionnaire annuel aux associations (30% de réponse)",
+      "budget": "100-180 EUR/mois — budget service vie associative de la collectivité",
+      "channels": [
+        "RNMA (Réseau National des Maisons des Associations)",
+        "Salon des Maires et des Collectivités Locales",
+        "Groupe LinkedIn 'Agents de collectivités territoriales'",
+        "Revue La Gazette des Communes"
+      ]
+    },
+    {
+      "name": "Helene",
+      "role": "Responsable mécénat d'une fondation d'entreprise (Total Énergies Foundation), budget annuel de 5M EUR",
+      "age": "52 ans",
+      "context": "Doit identifier des projets associatifs à financer dans les domaines de l'insertion professionnelle et de la transition écologique. Recoit 800 candidatures spontanees par an mais cherche aussi à être proactive.",
+      "painPoints": [
+        "Ne trouve pas les petites associations de terrain qui font du bon travail mais ne savent pas communiquer",
+        "Aucun moyen de vérifier rapidement la solidite et la transparence d'une association avant de la financer",
+        "Les 800 candidatures spontanees sont de qualité très inégale — 80% ne correspondent pas aux critères"
+      ],
+      "currentSolution": "Appel a projets annuel + Centre Français des Fonds et Fondations + réseau personnel + LinkedIn",
+      "budget": "80-120 EUR/mois — négligeable vs le risque de financer un mauvais projet",
+      "channels": [
+        "Centre Français des Fonds et Fondations",
+        "Admical (association mécénat)",
+        "Salon ChangeNow Paris",
+        "Réseau IMS-Entreprendre pour la Cite"
+      ]
+    }
+  ]
+}

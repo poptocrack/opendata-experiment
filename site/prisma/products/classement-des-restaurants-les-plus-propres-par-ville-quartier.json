@@ -1,0 +1,300 @@
+{
+  "productSlug": "classement-des-restaurants-les-plus-propres-par-ville-quartier",
+  "oneLiner": "Classement des restaurants les plus propres par ville et quartier, base sur les contrôles sanitaires officiels.",
+  "problem": "Les consommateurs choisissent un restaurant sur Google Maps où TripAdvisor en se basant sur les avis clients. Mais aucun site ne montre le score hygiène officiel (Alim confiance: 190K visites). Un restaurant 5 etoiles peut avoir un score A corriger d urgence. Les consommateurs veulent manger propre mais n ont pas les outils.",
+  "solution": "Un classement des restaurants par ville et quartier base sur les scores hygiène officiels (Alim confiance). Croise: score du dernier contrôle, historique des contrôles, type de restaurant. Le consommateur cherche un quartier et voit les restaurants du plus propre au moins propre.",
+  "uniqueValue": "Aucun site ne classe les restaurants par hygiène. TripAdvisor classe par avis, Google par note, Le Fooding par gastronomie. Le classement hygiène est un angle completement nouveau et viral.",
+  "mvpScope": "Classement pour les 20 plus grandes villes. Page par ville + quartier. Fiche restaurant avec dernier score, date de contrôle, historique. 50K pages SEO.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline et classement",
+      "description": "Import Alim confiance. Geocodage et rattachement quartier. Classement par ville/quartier. Pages SEO.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Import et géocodage",
+        "Classement par ville/quartier",
+        "50K pages SEO",
+        "Fiches restaurant"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface et viralité",
+      "description": "Interface carte + classement. Contenu viral: Les restaurants les plus et les moins propres de [ville]. TikTok/Instagram.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Interface carte + classement",
+        "Contenu viral",
+        "Lancement TikTok",
+        "20K visiteurs/mois"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Monétisation",
+      "description": "Affiliation TheFork. Badge propre pour les restaurants. Plan premium sans pub. SEO mature.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Affiliation TheFork",
+        "Badge restaurant",
+        "Premium sans pub",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les consommateurs sont intéressés par le score hygiène",
+      "how": "Publier 5 classements hygiène de villes sur Reddit et Instagram food",
+      "successCriteria": "200+ partages et 500+ commentaires cumules"
+    },
+    {
+      "check": "Les données Alim confiance couvrent assez de restaurants",
+      "how": "Mesurer la couverture dans les 20 grandes villes",
+      "successCriteria": "60%+ des restaurants sur Google Maps ont un contrôle Alim confiance"
+    },
+    {
+      "check": "Le SEO généré du trafic sur ces requetes",
+      "how": "Analyser la concurrence sur restaurant propre + ville",
+      "successCriteria": "Peu de concurrence (blue ocean SEO)"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Foodies urbains soucieux de qualité",
+      "where": "Instagram food, TikTok food, groupes Facebook foodies",
+      "howToReach": "Contenu choc: Classement hygiène de vos restaurants préférés - surprises garanties."
+    },
+    {
+      "who": "Restaurants avec de bons scores",
+      "where": "LinkedIn restaurateurs, salons CHR",
+      "howToReach": "Badge Restaurant très propre a afficher sur vitrine et site."
+    },
+    {
+      "who": "Journalistes food et presse locale",
+      "where": "Redactions presse, blogs food",
+      "howToReach": "Le classement hygiène est un sujet très mediagenique."
+    }
+  ],
+  "pricingStrategy": "Freemium: classements gratuits (SEO). Monétisation: affiliation TheFork (5 EUR/reservation), badge Restaurant Verifie Propre a 29 EUR/mois, plan premium sans pub a 1.90 EUR/mois, widget guides food a 99 EUR/mois.",
+  "pathTo10kMrr": "Affiliation TheFork 600 reservations x 5 EUR = 3 000 EUR + 150 badges x 29 EUR = 4 350 EUR + 1000 premium x 1.90 EUR = 1 900 EUR + 10 widgets x 99 EUR = 990 EUR = 10 240 EUR MRR. SEO = 50K pages, trafic massif. Timeline: 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre",
+    "backend": "Next.js API Routes + ISR",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Alim confiance data.gouv.fr",
+      "API BAN géocodage",
+      "Stripe"
+    ],
+    "notes": "50K pages ISR. Données Alim confiance mises à jour mensuellement."
+  },
+  "risks": [
+    {
+      "risk": "Les restaurants mal notes font pression",
+      "mitigation": "Les données sont publiques (publication officielle). Pas de risque juridique."
+    },
+    {
+      "risk": "Les données ne sont pas assez fraiches",
+      "mitigation": "Afficher la date du dernier contrôle. Proposer aux restaurants de soumettre un contrôle recent."
+    },
+    {
+      "risk": "La viralité est ephemere",
+      "mitigation": "Le SEO est le moteur long terme. Mises à jour mensuelles = nouveau contenu."
+    }
+  ],
+  "inspirations": "Scores on the Doors (UK). NYC Restaurant Inspection Results (US). Yelp Health Score (US). En France Alim confiance existe mais personne ne fait de classement.",
+  "searchVolume": [
+    {
+      "keyword": "restaurant hygiène classement",
+      "monthlyVolume": "1600",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "meilleur restaurant propre",
+      "monthlyVolume": "880",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "contrôle sanitaire restaurant Paris",
+      "monthlyVolume": "2900",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "restaurant hygiène score",
+      "monthlyVolume": "1300",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "restaurant ferme hygiène ville",
+      "monthlyVolume": "720",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "67M de consommateurs francais qui fréquentent des restaurants. 300K+ établissements contrôles dans Alim'confiance.",
+    "sam": "20M de consommateurs urbains dans les 20 plus grandes villes qui cherchent activement un restaurant (via Google Maps, TripAdvisor, TheFork)",
+    "som": "500K visiteurs uniques/mois la première année via SEO (50K pages ville/quartier) et viralité sociale",
+    "methodology": "TAM = population adulte frequentant la restauration. SAM = consommateurs urbains utilisant des outils de recherche de restaurants. SOM base sur le trafic SEO généré par 50K pages longue traine (restaurant + hygiène + ville/quartier)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Alim'confiance (officiel)",
+      "url": "https://alim-confiance.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "190K visites/mois",
+      "reviews": "Carte interactive basique sans classement",
+      "strengths": "Source officielle, couverture nationale, données fiables",
+      "weaknesses": "Pas de classement, pas de comparaison, UX très basique, pas de contenu editorial, mises à jour interrompues"
+    },
+    {
+      "name": "Clean Restaurant (data.gouv.fr réutilisation)",
+      "url": "https://www.data.gouv.fr/reuses/clean-restaurant",
+      "pricing": "Gratuit",
+      "trafficEstimate": "<1K visites/mois",
+      "reviews": "Projet amateur reutilisant les données Alim'confiance",
+      "strengths": "Première tentative de valoriser les données",
+      "weaknesses": "Projet abandonne, pas de classement structure, pas de SEO, pas de monétisation"
+    },
+    {
+      "name": "TripAdvisor France",
+      "url": "https://www.tripadvisor.fr",
+      "pricing": "Gratuit (pub + affiliation)",
+      "trafficEstimate": "50M+ visites/mois France",
+      "reviews": "Référence mondiale des avis restaurants",
+      "strengths": "Base massive d'avis, SEO dominant, marque connue, 8M d'avis en France",
+      "weaknesses": "Aucun score hygiène officiel, uniquement des avis subjectifs, faux avis repandus"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Publication de classements bases sur des données publiques",
+      "status": "ok",
+      "detail": "Les classements bases sur des données officielles Alim'confiance sont protégés par la liberté d'expression. Licence Etalab autorise la réutilisation.",
+      "source": "Licence Ouverte Etalab 2.0 + Article 10 CEDH"
+    },
+    {
+      "topic": "Denigrement commercial",
+      "status": "attention",
+      "detail": "Un classement des pires restaurants pourrait être qualifie de dénigrement si le ton est excèssif. Rester factuel: présenter les scores officiels sans commentaire négatif.",
+      "source": "Article 1240 Code civil (responsabilite civile)"
+    },
+    {
+      "topic": "Droit de réponse des restaurateurs",
+      "status": "ok",
+      "detail": "Les restaurateurs pourraient demander un droit de réponse. Prevoir un mecanisme de signalement et de mise à jour.",
+      "source": "Loi du 29 juillet 1881"
+    },
+    {
+      "topic": "Fraicheur des données",
+      "status": "attention",
+      "detail": "Les scores Alim'confiance expirent après 1 an. Afficher clairement la date du dernier contrôle et ne pas présenter un score expire comme actuel.",
+      "source": "data.gouv.fr - documentation Alim'confiance"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO longue traine (restaurant propre + ville/quartier)",
+      "cacEstimate": "0.20 EUR",
+      "conversionRate": "3%",
+      "ltv": "22.80 EUR (12 mois premium)",
+      "ltvCacRatio": "114.0"
+    },
+    {
+      "channel": "Contenu viral TikTok/Instagram (classements choc)",
+      "cacEstimate": "0.30 EUR",
+      "conversionRate": "5%",
+      "ltv": "22.80 EUR",
+      "ltvCacRatio": "76.0"
+    },
+    {
+      "channel": "Affiliation TheFork (reservation restaurants bien notes)",
+      "cacEstimate": "0 EUR (revenus directs)",
+      "conversionRate": "2%",
+      "ltv": "5 EUR/reservation",
+      "ltvCacRatio": "infini"
+    },
+    {
+      "channel": "Badges restaurants (B2B2C)",
+      "cacEstimate": "50 EUR (demarchage)",
+      "conversionRate": "10%",
+      "ltv": "348 EUR (29 EUR x 12 mois)",
+      "ltvCacRatio": "7.0"
+    },
+    {
+      "channel": "PR et presse locale (chaque classement = article potentiel)",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "N/A",
+      "ltv": "N/A (trafic SEO indirect)",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 57,
+      "detail": "7.4K recherches/mois cumulees ('contrôle sanitaire restaurant Paris' 2 900/mois, 'restaurant hygiène classement' 1 600/mois). Cibles: Foodies urbains soucieux de, Restaurants avec de bons, Journalistes food et presse."
+    },
+    "feasibility": {
+      "score": 83,
+      "detail": "MVP en 4 semaines. 3 APIs a integrer (Alim confiance, API BAN géocodage, Stripe). Stack: Next.js + PostgreSQL."
+    },
+    "market": {
+      "score": 50,
+      "detail": "1000 clients a 5 EUR pour demarrer. Objectif 10K MRR en 8-10 mois. Pricing 5-99 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: Alim'confiance (officiel), Clean Restaurant (data.gouv.fr, TripAdvisor France. Leader: Alim'confiance (officiel) (190K visites/mois). Faiblesse principale: Pas de classement."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Denigrement commercial, Fraicheur des données."
+    },
+    "overall": {
+      "score": 63,
+      "detail": "Point fort: faisabilite (83/100). Point faible: marche (50/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

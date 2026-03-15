@@ -1,0 +1,317 @@
+{
+  "productSlug": "dashboard-carbone-pour-collectivites-emissions-du-territoire-leviers-de-reductio",
+  "oneLiner": "Dashboard carbone pour collectivites: émissions du territoire, leviers de réduction, et suivi du plan climat (PCAET).",
+  "problem": "Les collectivites doivent elaborer un PCAET (Plan Climat Air Énergie Territorial) et suivre les émissions de leur territoire. Aujourd hui, elles commandent un diagnostic a 30-80K EUR à un cabinet qui produit un rapport PDF statique, obsolète en 2 ans. Les données existent (Base Carbone, SDES, PCAET existants) mais sont éclatées et inexploitables.",
+  "solution": "Un dashboard interactif qui estimé les émissions GES du territoire par secteur (transport, batiment, agriculture, industrie) en croisant les données publiques: conso énergétique (SDES), parc automobile (immatriculations), DPE du parc immobilier, activités agricoles (RPG). Benchmark avec des territoires comparables. Suivi annuel automatique.",
+  "uniqueValue": "Remplace un diagnostic carbone a 50K EUR par un dashboard a 499 EUR/mois mis à jour chaque année. Le benchmark territorial est unique: comment se positionné ma commune vs les autres? Les cabinets ne proposent pas de suivi annuel automatise.",
+  "mvpScope": "Dashboard pour EPCI de plus de 20K habitants. 3 secteurs: transport (parc auto), batiment (DPE), énergie (conso). Benchmark vs EPCI de même strate. Export PDF pour le PCAET. Données annuelles.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline émissions territoriales",
+      "description": "Ingestion données SDES (énergie), immatriculations (transport), DPE (batiment). Estimation émissions par secteur et par EPCI.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline 3 sources",
+        "Estimation émissions par EPCI",
+        "Benchmark par strate",
+        "Couverture 500 EPCI"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Dashboard et rapport",
+      "description": "Dashboard interactif par EPCI. Graphiques par secteur. Benchmark. Export PDF pour PCAET.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Dashboard interactif",
+        "Graphiques sectoriels",
+        "Benchmark territorial",
+        "Export PDF PCAET"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Premiers clients EPCI",
+      "description": "Diagnostic gratuit pour 10 EPCI. Presentation aux conferences climat. Partenariats ADEME et AMORCE.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "10 diagnostics gratuits",
+        "5 EPCI clients",
+        "Partenariat AMORCE",
+        "Conference climat"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Leviers et suivi",
+      "description": "Ajout des leviers de réduction (scenarios). Suivi annuel automatique. Module simulation (impact rénovation, mobilite douce). Plan Région.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Leviers de réduction",
+        "Suivi annuel",
+        "Simulation",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les EPCI ont un budget pour des outils de suivi carbone",
+      "how": "Contacter 10 charges de mission climat d EPCI. Verifier les budgets PCAET.",
+      "successCriteria": "7/10 ont un budget identifié (souvent subventionne ADEME)"
+    },
+    {
+      "check": "Les estimations territoriales sont fiables",
+      "how": "Comparer les estimations avec les diagnostics PCAET existants (publics) pour 5 EPCI",
+      "successCriteria": "Ecart < 20% sur les émissions totales vs le diagnostic cabinet"
+    },
+    {
+      "check": "Le benchmark motive les collectivites",
+      "how": "Presenter le benchmark a 5 EPCI et mesurer la reaction",
+      "successCriteria": "4/5 trouvent le benchmark utile pour leur PCAET"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "EPCI en cours d elaboration où revision de PCAET",
+      "where": "AMORCE, ADEME, réseau des charges de mission climat",
+      "howToReach": "Identifier les EPCI dont le PCAET arrive a echeance (renouvellement tous les 6 ans). Proposer un diagnostic gratuit."
+    },
+    {
+      "who": "ADEME directions régionales",
+      "where": "ADEME, LinkedIn, conferences climat",
+      "howToReach": "L ADEME finance les PCAET. Proposer un outil qui reduit le cout et améliore le suivi."
+    },
+    {
+      "who": "Bureaux d études climat (comme outil pour leurs missions)",
+      "where": "LinkedIn, CINOV, salons professionnels",
+      "howToReach": "Plan white-label: le bureau d études utilise l outil et facture sa valeur ajoutee d analyse."
+    }
+  ],
+  "pricingStrategy": "Plan EPCI a 499 EUR/mois (1 territoire, dashboard, benchmark, export PDF). Plan Département a 999 EUR/mois (tous les EPCI, comparaison interne). Plan Région a 1 999 EUR/mois (région entière, API, multi-users). Plan Bureau d études a 799 EUR/mois (multi-territoires, white-label).",
+  "pathTo10kMrr": "12 EPCI x 499 EUR = 5 988 EUR + 2 départements x 999 EUR = 1 998 EUR + 1 région x 1 999 EUR = 1 999 EUR = 9 985 EUR MRR. 756 EPCI de plus de 20K hab en France. 12 clients = 1.6% pénétration. Timeline: 12-14 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts + Maplibre",
+    "backend": "Next.js API Routes + Python pour les calculs d émissions",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Base Carbone ADEME",
+      "Données énergétiques SDES data.gouv.fr",
+      "Immatriculations data.gouv.fr",
+      "DPE ADEME",
+      "API INSEE",
+      "Stripe"
+    ],
+    "notes": "Les émissions sont estimées par approche top-down: conso énergétique x facteur d émission. Le calcul est annuel. Le benchmark compare les EPCI par strate (taille, urbanite)."
+  },
+  "risks": [
+    {
+      "risk": "Les estimations top-down sont trop imprécises pour un PCAET officiel",
+      "mitigation": "Positionner comme outil de suivi et de benchmark, pas comme diagnostic officiel. Le diagnostic reste nécessaire mais l outil le complète."
+    },
+    {
+      "risk": "Les observatoires régionaux (OREGES) fournissent déjà des données d émissions",
+      "mitigation": "Les OREGES fournissent des données brutes, pas des dashboards ni des benchmarks. Se positionnér comme couche d analyse au-dessus."
+    },
+    {
+      "risk": "Cycle de vente long avec les collectivites",
+      "mitigation": "Diagnostic gratuit comme porte d entree. Budget PCAET (subventionne ADEME) pour financer l abonnement."
+    }
+  ],
+  "inspirations": "Territoires-climat.ademe.fr (plateforme ADEME mais pas de dashboard). Atmo France (qualité de l air par territoire). Aux UK, BEIS publié des émissions par Local Authority. Manty (SaaS data collectivites, leve 4M EUR).",
+  "searchVolume": [
+    {
+      "keyword": "bilan carbone collectivite",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "PCAET",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "BEGES territorial",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "émissions GES territoire",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "plan climat collectivite",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "756 EPCI de plus de 20K habitants obliges PCAET. Cout diagnostic cabinet: 30-80K EUR. TAM diagnostic territorial = 756 x 50K EUR = 37.8M EUR/an (renouvellement tous les 6 ans = 6.3M EUR/an). TAM suivi annuel: 756 x 6K EUR = 4.5M EUR/an. TAM total: ~11M EUR/an.",
+    "sam": "500 EPCI en cours de revision où renouvellement de PCAET (cycle 6 ans). SAM dashboard SaaS: 500 x 500 EUR/mois = 3M EUR/an.",
+    "som": "Objectif an 1: 15 clients x 665 EUR ARPU = 120K EUR ARR. Pénétration: 3% du SAM (collectivites = cycle vente long mais churn quasi nul).",
+    "methodology": "TAM base sur les 756 EPCI > 20K hab (source BANATIC). Cout diagnostic cabinet source: beta.gouv.fr startup BEGES-T (~30K EUR / 20 jours-personnes). SOM prudent vu les cycles de vente collectivites."
+  },
+  "competitorDeep": [
+    {
+      "name": "BEGES-T (beta.gouv.fr)",
+      "url": "https://beta.gouv.fr/startups/beges.html",
+      "pricing": "Gratuit (service public en construction). Startup d'État incubee a beta.gouv.fr.",
+      "trafficEstimate": "5K visites/mois",
+      "reviews": "Service public numérique en construction pour fournir le BEGES-T en quelques clics a toutes les collectivites francaises. Soutenu par APCC.",
+      "strengths": "Gratuit (service public), légitimité institutionnelle (beta.gouv + ADEME + APCC), objectif de couvrir toutes les collectivites.",
+      "weaknesses": "En construction (pas encore opérationnel), pas de dashboard interactif, pas de benchmark, fonctionnalités limitees au BEGES-T calcul."
+    },
+    {
+      "name": "Manty",
+      "url": "https://www.manty.eu",
+      "pricing": "Abonnement annuel. Estime 500-2000 EUR/mois. 5.4M EUR leves (Banque des Territoires, Kima, Relyens).",
+      "trafficEstimate": "15K visites/mois",
+      "reviews": "SaaS data pour collectivites. 50+ collectivites clientes (Rambouillet, Biarritz, Clermont-Ferrand, départements Var et Reunion).",
+      "strengths": "50+ clients collectivites, financement Banque des Territoires (credibilite), multi-domaines (pas que carbone).",
+      "weaknesses": "Pas spécialisé carbone/PCAET, plateforme data généraliste, pas de benchmark émissions."
+    },
+    {
+      "name": "Cabinets conseil climat (Costraten, Lamy Environnement, Ithea)",
+      "url": "https://costraten.fr",
+      "pricing": "30 000-80 000 EUR par diagnostic territorial. 20 jours-personnes minimum.",
+      "trafficEstimate": "N/A",
+      "reviews": "Marché fragmente de bureaux d'études. Recours quasi-systematique malgre le cout élevé.",
+      "strengths": "Expertise humaine, personnalisation, légitimité auprès des elus, inclusion Scope 3.",
+      "weaknesses": "30-80K EUR par diagnostic, rapport PDF statique obsolète en 2 ans, pas de suivi annuel, délai 3-6 mois."
+    },
+    {
+      "name": "Territoires-climat.ademe.fr",
+      "url": "https://territoire-energie-climat.ademe.fr",
+      "pricing": "Gratuit (plateforme ADEME).",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "Plateforme ADEME de suivi des PCAET. Données de référence.",
+      "strengths": "Gratuit, données de référence ADEME, légitimité institutionnelle.",
+      "weaknesses": "Pas de dashboard interactif, pas de benchmark automatise, pas de calcul d'émissions, interface datee."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Obligation PCAET pour les EPCI > 20K hab",
+      "status": "ok",
+      "detail": "Les EPCI de plus de 20 000 habitants sont obliges d'elaborer un PCAET incluant un BEGES-T. Renouvellement tous les 6 ans. Marché reglementaire porte.",
+      "source": "Loi TECV 2015, Art. L229-26 Code de l'environnement"
+    },
+    {
+      "topic": "BEGES-T Scope 1+2 uniquement",
+      "status": "ok",
+      "detail": "Le BEGES territorial n'exige que les Scopes 1 et 2 (émissions directes du territoire). Plus simple que le BEGES reglementaire des entreprises.",
+      "source": "Methodologie PCIT, ADEME"
+    },
+    {
+      "topic": "Concurrence avec un service public (BEGES-T beta.gouv)",
+      "status": "attention",
+      "detail": "La startup d'État BEGES-T vise a fournir gratuitement le calcul BEGES-T. Se positionnér sur la valeur ajoutee (dashboard, benchmark, suivi, leviers) et non sur le calcul brut.",
+      "source": "beta.gouv.fr/startups/beges.html"
+    },
+    {
+      "topic": "Marchés publics pour l'achat de l'outil",
+      "status": "attention",
+      "detail": "Les collectivites achetént via marchés publics. Sous 40K EUR = achat direct possible. Au-dessus = procédure formalisee. Viser un prix sous le seuil.",
+      "source": "Code de la commande publique, seuils 2024-2025"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Diagnostic gratuit (10 EPCI pilotes)",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "30-50%",
+      "ltv": "5988 EUR (12 mois x 499 EUR EPCI)",
+      "ltvCacRatio": "60-120x"
+    },
+    {
+      "channel": "Conferences climat et salons (AMORCE, assises PCAET)",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "5988 EUR",
+      "ltvCacRatio": "15-30x"
+    },
+    {
+      "channel": "Partenariat ADEME directions régionales",
+      "cacEstimate": "30-80 EUR",
+      "conversionRate": "10-20%",
+      "ltv": "11988 EUR (12 mois x 999 EUR Département)",
+      "ltvCacRatio": "150-400x"
+    },
+    {
+      "channel": "Demarchage direct DGS/charges mission climat",
+      "cacEstimate": "300-600 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "5988 EUR",
+      "ltvCacRatio": "10-20x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 55,
+      "detail": "5.5K recherches/mois cumulees ('PCAET' 2 400/mois, 'bilan carbone collectivite' 1 300/mois). TAM: 20K habitants. Cibles: EPCI en cours d, ADEME directions régionales, Bureaux d études climat."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 6 APIs a integrer (Base Carbone ADEME, Données énergétiques SDES, Immatriculations). Stack: Next.js + PostgreSQL."
+    },
+    "market": {
+      "score": 85,
+      "detail": "12 clients a 499 EUR pour demarrer. Objectif 10K MRR en 12-14 mois. SOM: 120K EUR/an. Pricing 499-999 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: BEGES-T (beta.gouv.fr), Manty, Cabinets conseil climat (Costr. Leader: BEGES-T (beta.gouv.fr) (5K visites/mois). Faiblesse principale: En construction (pas encore opérationnel)."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Concurrence avec un service public (BEGES-T beta.g, Marchés publics pour l'achat de l'outil."
+    },
+    "overall": {
+      "score": 63,
+      "detail": "Point fort: marche (85/100). Point faible: competition (45/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

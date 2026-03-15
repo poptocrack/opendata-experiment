@@ -1,0 +1,333 @@
+{
+  "productSlug": "matching-entreprise-territoire-recommander-ou-recruter-en-fonction-des-offres-co",
+  "oneLiner": "Recommandez a une entreprise ou recruter en France en matchant ses besoins RH avec les territoires offrant le meilleur bassin de candidats.",
+  "problem": "Les entreprises multi-sites postent des offres depuis leur siège sans savoir que d'autres territoires offriraient un vivier plus large, moins de concurrence, et des coûts inferieurs. Le télétravail et le multi-site rendent le recrutement géographiquement flexible, mais personne ne fournit de recommandation data-driven sur 'ou recruter'.",
+  "solution": "Un moteur de matching prenant les besoins RH (métiers ROME, volume, profil) et recommandant les territoires optimaux en croisant : vivier (demandeurs + effectifs), concurrence recruteur (offres du même ROME), salaires, tension, formations disponibles (La bonne alternance), coûts immobiliers proxy.",
+  "uniqueValue": "Inverse la logique du recrutement : au lieu de publier et attendre, l'entreprise découvre ou sont les candidats via des données objectives. Le seul outil qui fait ce matching métier x territoire.",
+  "mvpScope": "Formulaire : 1-3 métiers ROME, volume, contraintes (distance, région). Résultat : top 15 zones d'emploi avec score détaillé. Comparaison de 3 zones. Fiche zone avec offres, demandeurs, formations, entreprises du secteur.",
+  "timeToMvp": "8 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Base territoriale emploi multi-critères",
+      "description": "Base par zone d'emploi (304 zones) avec tous les indicateurs RH. MAJ automatique.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Import demandeurs par ROME x zone",
+        "Import offres par ROME x zone",
+        "Import effectifs par NAF x zone (URSSAF)",
+        "Import formations alternance par zone",
+        "Base consolidee 304 zones x indicateurs RH"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Algorithme de matching",
+      "description": "Scoring multi-critères classant les zones par besoins spécifiques. Ponderation dynamique. Gestion des contraintes géographiques.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Algorithme matching avec scoring normalise",
+        "Ponderation personnalisable",
+        "Contraintes (distance, région, taille ville)",
+        "Decomposition score par critère"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Interface et rapports",
+      "description": "Formulaire intuitif. Carte + tableau classement. Fiche zone. Comparateur. Export PDF.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Formulaire multi-métiers autocompletion ROME",
+        "Carte zones recommandées",
+        "Tableau classement avec score",
+        "Comparateur 3 zones côté a côté",
+        "Fiche zone détaillée",
+        "Export PDF"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les entreprises multi-sites sont interessees par 'ou recruter'",
+      "how": "Contacter 15 DRH d'entreprises multi-sites (ESN, industrie, retail). Présenter le concept et un mock rapport.",
+      "successCriteria": "12/15 trouvent le concept intéressant, 8 identifient un cas d'usage concret dans les 6 mois"
+    },
+    {
+      "check": "Les recommandations sont pertinentes et actionnables",
+      "how": "Lancer le moteur pour 10 cas réels. Comparer avec les implantations et zones de recrutement reelles.",
+      "successCriteria": "7/10 recommandations incluent des zones utilisées OU confirmees comme pertinentes"
+    },
+    {
+      "check": "La donnée demandeurs d'emploi par ROME est assez granulaire",
+      "how": "Vérifier disponibilité STMT par zone d'emploi et ROME pour 30 métiers en tension",
+      "successCriteria": "Données disponibles pour > 80% des combinaisons zone x métier"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "DRH et talent acquisition d'ESN (recrutement en volume, multi-villes)",
+      "where": "Syntec Numérique, salons Tech, LinkedIn groupes RH tech",
+      "howToReach": "Rapport gratuit sur les 5 métiers tech les plus recrutes avec les meilleures zones hors Paris."
+    },
+    {
+      "who": "Groupes industriels ouvrant des sites de production",
+      "where": "UIMM (metallurgie), GIFAS (aeronautique), France Industrie, LinkedIn directeurs industriels",
+      "howToReach": "Étude de cas : 'ou installer une usine en fonction du bassin de soudeurs/techniciens'. Partenariat agences de développement économique."
+    },
+    {
+      "who": "Cabinets de recrutement nationaux ouvrant de nouvelles agences",
+      "where": "Prism'emploi, Syntec Conseil",
+      "howToReach": "Rapport d'implantation de leur prochaine agence base sur la demande de recrutement par zone pour leurs spécialités."
+    }
+  ],
+  "pricingStrategy": "Starter a 79 EUR/mois (3 analyses/mois, 1 métier, top 15 zones). Pro a 199 EUR/mois (illimité, multi-métiers, comparateur, export PDF/CSV). Enterprise a 499 EUR/mois (API, historiques, personnalisation poids, intégration SIRH, accompagnement 2 calls/mois).",
+  "pathTo10kMrr": "50 Starter x 79 EUR = 3 950 EUR + 25 Pro x 199 EUR = 4 975 EUR + 3 Enterprise x 499 EUR = 1 497 EUR = 10 422 EUR MRR. Marché B2B ticket moyen élevé. Acquisition : outreach 500 DRH d'ETI, partenariats ESN (top 20), SEO 'ou recruter [métier]', rapport annuel 'carte du recrutement en France'. Timeline : 8-12 mois.",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS + MapLibre (carte recommandations) + Recharts",
+    "backend": "Next.js API routes + moteur scoring (Python/FastAPI si calculs complexes)",
+    "database": "PostgreSQL (Supabase) avec table pivot zone_emploi x rome x indicateur, PostGIS",
+    "hosting": "Vercel + Supabase + Railway (workers Python)",
+    "apis": [
+      "API Offres d'emploi France Travail",
+      "API Marché du travail France Travail (STMT, BMO)",
+      "ROME 4.0 API France Travail",
+      "La bonne alternance API (formations par zone)",
+      "Effectifs URSSAF (data.gouv.fr)",
+      "API Recherche Entreprises (info SIRET)"
+    ],
+    "notes": "La bonne alternance ajoute le 'pipeline de talents futurs'. Scoring simple (somme ponderee normalisee) evoluant vers ML si nécessaire. 304 zones d'emploi INSEE = bon grain d'analyse."
+  },
+  "risks": [
+    {
+      "risk": "Overlap avec le produit 'recommandation d'implantation'",
+      "mitigation": "Positionnement différent : ce produit est spécifiquement RH (ou recruter, pas ou ouvrir un site). Plus léger et orienté recrutement a distance."
+    },
+    {
+      "risk": "Les grandes entreprises ont des équipes analytics RH internes",
+      "mitigation": "Cibler les ETI (200-5000 salariés) sans data team RH. Pour les grands groupes, complément self-service pour managers opérationnels."
+    },
+    {
+      "risk": "Le full remote réduit l'intérêt de la dimension géographique",
+      "mitigation": "Même en remote, localisation compte (fuseau horaire, déplacements, coût salarial). 'Ou sont les candidats disponibles en remote' reste valable."
+    }
+  ],
+  "inspirations": "Lightcast/EMSI (analytics territoire emploi US, $50K+/an). LinkedIn Talent Insights (carte talents, biais LinkedIn, $10K+/an). Textkernel/Jobfeed (analyse marché emploi Europe). Welcome to the Jungle (attractivité employeur, pas géographique).",
+  "searchVolume": [
+    {
+      "keyword": "ou recruter en france",
+      "monthlyVolume": "720",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "bassin emploi par métier",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "recrutement géographique",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "recruter en région",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "vivier candidats par zone",
+      "monthlyVolume": "210",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "recrutement multi-sites",
+      "monthlyVolume": "320",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "zone emploi recrutement",
+      "monthlyVolume": "260",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "talent mapping géographique",
+      "monthlyVolume": "170",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "43 milliards EUR - marché global du recrutement en France (interim + permanent, Xerfi). Les outils analytics RH representent ~500M EUR. Le télétravail et le multi-site rendent le recrutement géographiquement flexible.",
+    "sam": "100 millions EUR - ESN (top 20 = 100K+ recrutements/an), groupes industriels multi-sites, cabinets de recrutement nationaux, et DRH d'ETI. Environ 5 000 entreprises multi-sites en France.",
+    "som": "1.3 million EUR - 10 422 EUR MRR (78 clients payants) en 8-12 mois. Ticket moyen élevé (134 EUR/mois) grace au positionnement B2B premium.",
+    "methodology": "TAM base sur marché recrutement France (Xerfi). SAM restreint aux entreprises multi-sites avec flexibilite géographique de recrutement. SOM base sur 50 Starter + 25 Pro + 3 Enterprise."
+  },
+  "competitorDeep": [
+    {
+      "name": "LinkedIn Talent Insights",
+      "url": "https://business.linkedin.com/talent-solutions/talent-insights",
+      "pricing": "Sur devis, estime 8 000-15 000 EUR/an.",
+      "trafficEstimate": "Intégré dans LinkedIn (25M membres France)",
+      "reviews": "Analytics talent de référence. Carte des talents, flux, attrition. 25M membres en France.",
+      "strengths": "Base massive, données temps réel, flux de talents entre zones et entreprises, benchmark concurrents recruteurs, marque LinkedIn",
+      "weaknesses": "Très cher (8-15K/an), biais LinkedIn (pas d'ouvriers, BTP, sante), pas de données France Travail/BMO/URSSAF, pas de matching zone optimale automatisé"
+    },
+    {
+      "name": "Lightcast (ex EMSI)",
+      "url": "https://lightcast.io/euro",
+      "pricing": "30 000-80 000+ EUR/an",
+      "trafficEstimate": "500K visites/mois (global)",
+      "reviews": "Leader mondial labour market analytics. European Workforce Analytics disponible. 1 milliard+ offres analysees.",
+      "strengths": "Données massives mondiales, analytics avancees, API robuste, 30+ pays couverts",
+      "weaknesses": "Prix prohibitif, pas de focus France spécifique, pas de données BMO/URSSAF/ROME, UX complexe, grands comptes uniquement"
+    },
+    {
+      "name": "Data Emploi (France Travail)",
+      "url": "https://dataemploi.francetravail.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "Portail officiel données emploi par territoire. Lance pour aider les acteurs régionaux.",
+      "strengths": "Gratuit, données officielles, couverture nationale, indicateurs par bassin d'emploi",
+      "weaknesses": "Pas de moteur de matching/recommandation, interface basique, pas d'export API, pas de comparateur de zones, données en retard"
+    },
+    {
+      "name": "La bonne alternance",
+      "url": "https://labonnealternance.apprentissage.beta.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "500K visites/mois",
+      "reviews": "Service public de matching formations alternance / entreprises par zone. Start-up d'État.",
+      "strengths": "Données formations par zone, matching entreprises/alternants, gratuit, API disponible",
+      "weaknesses": "Limite a l'alternance, pas de recrutement général, pas de scoring territorial global, pas d'analytics avancees"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "API France Travail (offres, STMT, BMO)",
+      "status": "ok",
+      "detail": "APIs gratuites apres inscription. Données offres et marché du travail accessibles pour des analyses statistiques. Pas de restriction explicite sur l'utilisation commerciale des données aggregees.",
+      "source": "API Emploi Store, CGU France Travail"
+    },
+    {
+      "topic": "Données URSSAF et SIRENE",
+      "status": "ok",
+      "detail": "Effectifs par zone/NAF et données SIRENE en open data. Réutilisation commerciale autorisee sous licence Etalab.",
+      "source": "data.gouv.fr, licence ouverte Etalab"
+    },
+    {
+      "topic": "La bonne alternance API",
+      "status": "ok",
+      "detail": "API publique de La bonne alternance accessible. Données formations par zone réutilisables.",
+      "source": "labonnealternance.apprentissage.beta.gouv.fr"
+    },
+    {
+      "topic": "Overlap avec le produit recommandation d'implantation",
+      "status": "attention",
+      "detail": "Risque de cannibalisation entre les deux produits. Bien différencier le positionnement : ce produit est spécifiquement RH (ou recruter, pas ou ouvrir un site). Peut etre fusionne à terme.",
+      "source": "Strategie produit interne"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (ou recruter en france, bassin emploi par métier)",
+      "cacEstimate": "100 EUR",
+      "conversionRate": "4%",
+      "ltv": "2400 EUR (Pro 199 EUR x 12 mois)",
+      "ltvCacRatio": "24.0"
+    },
+    {
+      "channel": "Outreach DRH ETI et ESN (500 cibles)",
+      "cacEstimate": "300 EUR",
+      "conversionRate": "6%",
+      "ltv": "6000 EUR (Enterprise 499 EUR x 12 mois)",
+      "ltvCacRatio": "20.0"
+    },
+    {
+      "channel": "Partenariats ESN top 20 (programme pilot)",
+      "cacEstimate": "200 EUR",
+      "conversionRate": "15%",
+      "ltv": "6000 EUR",
+      "ltvCacRatio": "30.0"
+    },
+    {
+      "channel": "Content (rapport annuel carte du recrutement en France)",
+      "cacEstimate": "60 EUR",
+      "conversionRate": "3%",
+      "ltv": "950 EUR (Starter 79 EUR x 12 mois)",
+      "ltvCacRatio": "15.8"
+    },
+    {
+      "channel": "LinkedIn organique (études de cas multi-sites)",
+      "cacEstimate": "25 EUR",
+      "conversionRate": "2%",
+      "ltv": "950 EUR",
+      "ltvCacRatio": "38.0"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources verifiees via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 45,
+      "detail": "3.1K recherches/mois cumulees ('ou recruter en france' 720/mois, 'recruter en région' 590/mois). TAM: 43 milliards EUR. Cibles: DRH et talent acquisition, Groupes industriels ouvrant des, Cabinets de recrutement nationaux."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 8 semaines. 6 APIs a intégrer (API Offres d'emploi France Tra, API Marché du travail France T, ROME 4.0 API France Travail). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "50 clients a 79 EUR pour démarrer. Objectif 10K MRR en 8-12 mois. Pricing 79-499 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifiés: LinkedIn Talent Insights, Lightcast (ex EMSI), Data Emploi (France Travail). Leader: LinkedIn Talent Insights (Intégré dans LinkedIn (25M membres France)). Faiblesse principale: Très cher (8-15K/an)."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Overlap avec le produit recommandation d'implantat."
+    },
+    "overall": {
+      "score": 51,
+      "detail": "Point fort: legal (78/100). Point faible: competition (45/100). Idee intéressante, risques significatifs a mitiger."
+    }
+  }
+}

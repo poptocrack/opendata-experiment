@@ -1,0 +1,187 @@
+{
+  "id": "copropriete-intelligence",
+  "rank": 9,
+  "title": "Intelligence copropriété",
+  "slug": "copropriete",
+  "sector": "immobilier",
+  "tagline": "Exploiter le registre des copropriétés (119K visites) + DPE + DVF pour aider achetéurs et syndics a évaluer une copropriété",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "Acheteurs en copropriété + syndics + investisseurs",
+  "monetization": "Rapports 9.99-29.99 + SaaS syndics 99/mois",
+  "context": "Le registre national des copropriétés génère 119K visites/an — les gens veulent savoir dans quoi ils mettent les pieds avant d'achetér en copropriété. Nombre de lots, charges, travaux votes, DPE collectif, procédures judiciaires... Croise avec DVF (prix de vente dans l'immeuble) et DPE (classé énergétique), on peut génèrer un rapport de due diligence copropriété complet. Les syndics paieraient aussi pour un outil de benchmarking.",
+  "signals": [
+    {
+      "label": "Registre copropriétés",
+      "value": "119K visites/an",
+      "detail": "Forte demande, pic à 22K visites en avril"
+    },
+    {
+      "label": "Téléchargements",
+      "value": "14K/an",
+      "detail": "Besoin d'exploitation des données"
+    },
+    {
+      "label": "DVF",
+      "value": "573K/an",
+      "detail": "Prix réels des transactions dans l'immeuble"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "62da71c068871f4c54258c7c",
+      "name": "Registre national des copropriétés",
+      "description": "Copropriétés immatriculées : nombre de lots, charges, travaux, procédures.",
+      "visits": "119K/an",
+      "downloads": "14K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "5c4ae55a634f4117716d5656",
+      "name": "DVF — Valeurs foncières",
+      "description": "Prix réels des ventes dans chaque immeuble.",
+      "visits": "573K/an",
+      "downloads": "128K/an",
+      "updateFrequency": "Semestriel"
+    },
+    {
+      "datasetId": "67f7e557cb268460ce66c8d4",
+      "name": "DPE Logements existants",
+      "description": "Classe énergétique des logements de la copropriété.",
+      "visits": "~28K/an",
+      "downloads": "~4K/an",
+      "updateFrequency": "Hebdomadaire"
+    },
+    {
+      "datasetId": "689c42dc21932fa1640d99c3",
+      "name": "RPLS — Logements sociaux",
+      "description": "Logements sociaux dans la copropriété — indicateur de mixite sociale.",
+      "visits": "nouveau",
+      "downloads": "nouveau",
+      "updateFrequency": "Annuel",
+      "order": 3
+    }
+  ],
+  "apis": [
+    {
+      "name": "API DPE logements (ADEME)",
+      "description": "DPE par adresse pour évaluer la performance énergétique de la copropriété.",
+      "baseUrl": "https://data.ademe.fr/data-fair/api/v1/datasets/dpe-france"
+    }
+  ],
+  "productIdeas": [
+    "Rapport copropriété avant achat : charges, travaux votes, DPE collectif, prix de vente recents, procédures",
+    "Score de santé copropriété : détection des copropriétés en difficulté (charges impayées, travaux urgents)",
+    "Outil syndic : benchmarking charges vs copropriétés similaires, alerte réglementaire (DPE collectif obligatoire)",
+    "Alertes investisseur : copropriétés en difficulté avec potentiel de redressement (rachat a bas prix)"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Acheteurs en copropriété",
+      "priceRange": "14.99/rapport"
+    },
+    {
+      "segment": "Syndics de copropriété",
+      "priceRange": "99/mois"
+    },
+    {
+      "segment": "Investisseurs",
+      "priceRange": "29.99/rapport"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Registre-copropriétés.gouv.fr",
+      "weakness": "Données brutes, pas d'analyse ni de croisement"
+    },
+    {
+      "name": "Syndic compare",
+      "weakness": "Focus comparaison syndics, pas de due diligence copropriété"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "119K visites/an sur le registre copropriétés prouve un besoin fort et non satisfait d'information avant achat",
+      "Le croisement registre + DVF + DPE est unique — aucun concurrent ne le propose aujourd'hui",
+      "Les données du registre sont détaillées (charges, travaux, procédures) et permettent un vrai scoring de santé",
+      "Le modèle pay-per-report est naturel — les achetéurs paient déjà pour des diagnostics et états des lieux"
+    ],
+    "weaknesses": [
+      "Le registre des copropriétés est encore incomplet — 60-70% des copropriétés immatriculées seulement",
+      "Les données de charges et travaux sont déclaratives et parfois inexactes",
+      "Le croisement entre numéro d'immatriculation copro et adresse DVF/DPE n'est pas trivial techniquement",
+      "Le marché des syndics est très conservateur — adoption lente des nouveaux outils numériques"
+    ],
+    "opportunities": [
+      "Le DPE collectif devient obligatoire 2025-2028 selon la taille de la copropriété — nouveau flux de données",
+      "Le Plan Pluriannuel de Travaux (PPT) est obligatoire depuis 2023 — les syndics ont besoin d'outils",
+      "Les neo-syndics (Matera, Cotoit) sont en forte croissance et cherchent des outils différénciants",
+      "L'ANAH cible les copropriétés dégradées — marché B2G pour un outil de détection des copros en difficulté"
+    ],
+    "threats": [
+      "Le registre officiel (registre-copropriétés.gouv.fr) pourrait être modernisé et enrichi par l'État",
+      "Les notaires ont accès à des données copropriétés via leur propre base (PERVAL) qu'ils pourraient exploiter",
+      "Matera et les neo-syndics pourraient intégrer ces croisements de données dans leur offre",
+      "La loi pourrait restreindre l'accès aux données financieres des copropriétés pour proteger la vie privée"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Marine",
+      "role": "Primo-accedante en recherche d'un appartement de 3 pieces à Nantes, budget 220K EUR",
+      "age": "30 ans",
+      "context": "Achete pour la première fois avec son conjoint. Visite 2-3 biens par weekend mais ne sait absolument pas évaluer la santé d'une copropriété. A failli signer pour un bien dont la copropriété avait 80K EUR de travaux votes qu'elle n'a découvert qu'au dernier moment.",
+      "painPoints": [
+        "Ne comprend pas les PV d'AG et les appels de charges que l'agent lui transmet — trop technique",
+        "A découvert des travaux de ravalement votes pour 15K EUR par lot APRES avoir fait une offre",
+        "N'a aucun moyen de savoir si les charges de 250 EUR/mois sont normales pour ce type de copropriété"
+      ],
+      "currentSolution": "Demande les 3 derniers PV d'AG à l'agent + Google 'comment évaluer une copropriété' + conseil du notaire (rapide)",
+      "budget": "12-18 EUR par rapport — prêt a en achetér 3-5 pour comparer les copropriétés visitees",
+      "channels": [
+        "Groupe Facebook 'Primo-accedants immobilier'",
+        "Forum LeBonCoin Immobilier",
+        "Blog SeLoger conseils achat",
+        "Subreddit r/vosfinances"
+      ]
+    },
+    {
+      "name": "Philippe",
+      "role": "Président du conseil syndical d'une copropriété de 85 lots à Toulouse, en conflit avec son syndic actuel",
+      "age": "58 ans",
+      "context": "Copropriétaire depuis 12 ans, élu président du conseil syndical pour mettre de l'ordre. Soupçonne le syndic de surfacturer les charges par rapport à des copropriétés equivalentes. Veut changer de syndic mais n'a aucun benchmark.",
+      "painPoints": [
+        "Ne sait pas si les charges de 42 EUR/m2/an sont dans la norme pour une copropriété de cette taille et ancienneté",
+        "N'a aucune donnee comparative pour negocier les honoraires du syndic lors de l'appel d'offres",
+        "Doit preparer le PPT (Plan Pluriannuel de Travaux) obligatoire sans savoir par quoi commencer"
+      ],
+      "currentSolution": "Comparaison avec 2-3 amis copropriétaires + site Syndic-compare + devis de 3 syndics concurrents",
+      "budget": "25-40 EUR pour un rapport de benchmarking complet de sa copropriété",
+      "channels": [
+        "ARC (Association des Responsables de Copropriété)",
+        "Forum ForumCopro.com",
+        "Groupe Facebook 'Conseillers syndicaux et copropriétaires'",
+        "Revue Le Particulier Immobilier"
+      ]
+    },
+    {
+      "name": "Mathieu",
+      "role": "Directeur d'agence chez un syndic de copropriété (Nexity Lamy), gère 120 copropriétés (8500 lots)",
+      "age": "40 ans",
+      "context": "Doit gèrer la transition vers les PPT obligatoires et les DPE collectifs pour ses 120 copropriétés. Son équipé de 6 gestionnaires est débordée. Il veut des outils pour industrialisér le benchmarking et le reporting.",
+      "painPoints": [
+        "Doit produire 120 PPT dans les 3 prochaînes années sans outil de simulation ni de benchmarking",
+        "Les copropriétaires comparent ses honoraires avec ceux des neo-syndics (Matera) — pression sur les prix",
+        "Passe 3h par copropriété a preparer les présentations de benchmarking charges pour les AG"
+      ],
+      "currentSolution": "Logiciel métier interne (proprietary) + Excel pour les simulations + pas de benchmarking externe",
+      "budget": "80-120 EUR/mois pour 120 copropriétés — coût par copropriété négligeable",
+      "channels": [
+        "FNAIM syndic",
+        "UNIS (Union des Syndics)",
+        "Salon de la copropriété Paris",
+        "Revue Informations Rapides de la Copropriété"
+      ]
+    }
+  ]
+}

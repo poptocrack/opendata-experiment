@@ -1,0 +1,337 @@
+{
+  "productSlug": "carte-des-deserts-medicaux-zones-sans-medecin-specialiste-dans-un-rayon-de-x-km",
+  "oneLiner": "Une carte interactive des déserts médicaux en France, montrant les zones sans médecin généraliste où specialiste dans un rayon configurable.",
+  "problem": "7 millions de Francais vivent dans un désert médical. Les elus locaux, les ARS et les citoyens n'ont aucun outil simple pour visualiser les zones sous-dotees en professionnels de sante. Les données existent (FINESS avec 128K téléchargements, Annuaire Ameli, pathologies par territoire) mais sont eparpillees, brutes et inexploitables sans compétence data. Un maire qui veut attirer un médecin ne sait même pas quantifier le deficit de son canton.",
+  "solution": "Une application web qui croise les bases FINESS (établissements de sante), l'annuaire Ameli (médecins en exercice par spécialité), et les données démographiques INSEE pour générér une carte interactive des déserts médicaux. L'utilisateur choisit une spécialité (généraliste, dentiste, ophtalmo, pediatre...) et un rayon (5km, 10km, 20km). La carte colore les zones en fonction du ratio médecins/habitants et identifié les zones blanches. Des fiches par commune donnent le detail: nombre de médecins, age moyen, projections de départs à la retraite.",
+  "uniqueValue": "Les outils ARS existants sont des PDF statiques mis à jour annuellement. Aucun outil ne permet de filtrer par spécialité ET par rayon, ni de croiser avec les données démographiques en temps reel. La dimension prédictive (départs à la retraite estimés via l'age des médecins) est unique.",
+  "mvpScope": "Carte interactive couvrant les médecins généralistes sur toute la France metropolitaine. Filtrage par rayon (5/10/20km). Coloration par ratio médecins/habitants selon les seuils ARS. Fiche commune avec nombre de généralistes, age moyen, population desservie. Pas de compte utilisateur au MVP.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Confirmer la demande auprès des collectivites et citoyens",
+      "description": "Créér une landing page montrant un prototype statique (capture d'ecran d'une carte avec zones colorees). Diffuser sur les groupes Facebook d'elus locaux, les forums de patients (Doctissimo, Carenity), et contacter 5 ARS directement.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Landing page avec prototype visuel",
+        "300+ inscrits early accèss",
+        "5 entretiens avec des elus où agents ARS",
+        "Validation du pricing"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Carte fonctionnelle des généralistes sur toute la France",
+      "description": "Ingestion des données FINESS et annuaire Ameli. Geocodage des cabinets médicaux. Calcul du ratio médecins/habitants par maille IRIS/commune. Interface carte avec Maplibre. Fiche par commune.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline data FINESS + Ameli",
+        "Carte interactive France entière",
+        "Filtre par rayon",
+        "Fiches communes",
+        "Déploiement Vercel"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients collectivites",
+      "description": "Demarchage direct des communautés de communes en zones sous-dotees. Offre d'essai gratuit 1 mois. Publication d'une étude gratuite sur les 20 pires déserts médicaux de France (PR).",
+      "duration": "4 semaines",
+      "deliverables": [
+        "20 collectivites en essai gratuit",
+        "5 premiers contrats signes",
+        "Couverture presse locale",
+        "Étude déserts médicaux publiée"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Ajout des spécialités et du prédictif",
+      "description": "Ajouter toutes les spécialités (dentistes, ophtalmos, pediatres...). Integrer les données d'age des médecins pour projetér les départs à la retraite. Dashboard personnalisé par collectivite avec export PDF.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "15 spécialités couvertes",
+        "Projections départs retraite",
+        "Dashboard collectivite",
+        "Export PDF rapport",
+        "30 clients payants"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR via abonnements collectivites et API",
+      "description": "API pour les mutuelles et assureurs (intégration dans leurs outils). Partenariats avec les ordres professionnels. Couverture DROM-COM. Alertes automatiques pour les ARS.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "API B2B lancée",
+        "3 contrats mutuelles/assureurs",
+        "Couverture nationale complete"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les collectivites ont-elles un budget pour un outil de cartographie sante?",
+      "how": "Contacter 10 communautés de communes en zones sous-dotees (Creuse, Cher, Ardeche) et proposer une demo. Verifier si le sujet est dans leurs priorités budgetaires.",
+      "successCriteria": "6/10 confirment que c'est un sujet prioritaire et 3/10 ont un budget identifié (même modeste: 200-500 euros/mois)."
+    },
+    {
+      "check": "Les données FINESS et Ameli sont-elles suffisamment à jour?",
+      "how": "Comparer les données FINESS avec la realite terrain sur 5 communes (appeler les mairies pour vérifier le nombre de médecins).",
+      "successCriteria": "Ecart inferieur a 10% entre les données et la realite."
+    },
+    {
+      "check": "Y a-t-il un trafic de recherche significatif?",
+      "how": "Analyser Google Trends et Keyword Planner pour désert médical, médecin près de chez moi, trouver un médecin.",
+      "successCriteria": "Plus de 10K recherches/mois sur les termes lies."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Communautés de communes en zones sous-dotees (Creuse, Cher, Nievre, Ardeche)",
+      "where": "Association des Maires de France (AMF), congres des maires, forums d'elus locaux",
+      "howToReach": "Envoyer un rapport gratuit personnalisé a 50 communautés de communes montrant leur deficit en médecins. Proposer une demo de 15 minutes."
+    },
+    {
+      "who": "ARS (Agences Régionales de Sante) - équipes Accès aux soins",
+      "where": "Annuaire des ARS, LinkedIn (chefs de projet accès aux soins), conferences sante publique",
+      "howToReach": "Proposer un POC gratuit sur un département. Les ARS ont des budgets innovation et des besoins en dataviz."
+    },
+    {
+      "who": "Mutuelles et assureurs sante (pour enrichir leurs outils adhérents)",
+      "where": "Salons InsurTech, LinkedIn décision-makers mutuelles, partenariats FNMF",
+      "howToReach": "Proposer un widget integrable dans l'espace adhérent montrant l'accèssibilite sante autour de leur domicile."
+    }
+  ],
+  "pricingStrategy": "Freemium: carte publique gratuite avec données de base (acquisition SEO). Plan Collectivite a 299 euros/mois (dashboard personnalisé, export PDF, alertes, données spécialités). Plan ARS/Région a 799 euros/mois (multi-départements, API, projections retraites). API B2B pour mutuelles sur devis (1000-3000 euros/mois selon volume). Le gratuit généré du trafic SEO massif (une page par commune = 35K pages indexables).",
+  "pathTo10kMrr": "25 collectivites x 299 euros = 7 475 euros + 2 ARS x 799 euros = 1 598 euros + 1 mutuelle x 1 500 euros = 1 500 euros = 10 573 euros MRR. Atteignable en 8-10 mois. La France compte 1 254 communautés de communes, même 2% de pénétration = 25 clients.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS pour la carte interactive",
+    "backend": "Next.js API Routes + Python scripts pour l'ingestion et le calcul des ratios médecins/habitants",
+    "database": "PostgreSQL avec PostGIS sur Supabase pour les requetes géospatiales (rayon autour d'un point)",
+    "hosting": "Vercel (frontend) + Supabase (DB) + GitHub Actions (pipeline data mensuel)",
+    "apis": [
+      "API FINESS data.gouv.fr",
+      "Annuaire sante Ameli",
+      "API BAN géocodage",
+      "API INSEE populations communales",
+      "Stripe pour paiements"
+    ],
+    "notes": "Les données FINESS sont mises à jour mensuellement. Pipeline CRON mensuel pour rafraichir. Les tuiles de carte sont precalculees pour la performance. Le géocodage des cabinets est fait une fois puis incremental."
+  },
+  "risks": [
+    {
+      "risk": "Les ARS ont déjà des outils internes et ne veulent pas d'un outil externe",
+      "mitigation": "Se positionnér comme complémentaire (interface citoyenne) et non concurrent. Cibler d'abord les collectivites locales qui n'ont PAS d'outils, puis les mutuelles en B2B."
+    },
+    {
+      "risk": "Les données FINESS ne refletent pas les médecins reellement en exercice (retard de mise à jour)",
+      "mitigation": "Croiser avec l'annuaire Ameli (plus à jour) et permettre aux utilisateurs de signaler des erreurs. Afficher la date de dernière vérification."
+    },
+    {
+      "risk": "Le sujet est politiquement sensible - les elus n'aiment pas voir leur territoire en rouge",
+      "mitigation": "Presenter l'outil comme une aide a l'action (attirer des médecins) et non comme un outil de denonciation. Fournir des recommandations, pas juste un diagnostic."
+    }
+  ],
+  "inspirations": "Rezone.fr (carte des zones de revitalisation rurale). DREES qui publié des études statiques sur la démographie médicale. ATLAS de la démographie médicale de l'Ordre des Médecins (PDF annuel). Aux US, HRSA Health Professional Shortage Areas (HPSA) designator est un outil federal similaire mais plus avancé.",
+  "searchVolume": [
+    {
+      "keyword": "désert medical",
+      "monthlyVolume": "14800",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "médecin par commune",
+      "monthlyVolume": "3600",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "carte déserts médicaux France",
+      "monthlyVolume": "4400",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "zone sous-dotee médecin",
+      "monthlyVolume": "1300",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "trouver médecin près de chez moi",
+      "monthlyVolume": "22000",
+      "difficulty": "high",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "718 millions EUR - Budget France 2030 sante numérique + budget ARS innovation + marché mutuelles/assureurs data sante",
+    "sam": "50 millions EUR - Sous-segment outils cartographie et data démographie médicale pour collectivites (1 254 intercos) + ARS (18) + mutuelles (500+)",
+    "som": "1.3 millions EUR - 25 collectivites a 299 EUR/mois + 2 ARS a 799 EUR/mois + 1 mutuelle a 1500 EUR/mois, atteignable a M10",
+    "methodology": "TAM base sur France 2030 sante numérique (718M EUR) + budgets innovation ARS. SAM = segment démographie médicale/cartographie. SOM = pipeline B2G realisable. 87% du territoire est en fragilite médicale (source: Ministere Sante 2025)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Rezone CPTS (Ameli)",
+      "url": "https://rezonecpts.ameli.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "20K-50K visites/mois",
+      "reviews": "Outil officiel de cartographie des CPTS et zonages ARS",
+      "strengths": "Officiel CNAM, données de référence, zonages ARS intégrés, credibilite institutionnelle",
+      "weaknesses": "Focus CPTS (pas vue globale déserts médicaux), UX institutionnelle, pas de filtre par spécialité/rayon, pas de projection départs retraite"
+    },
+    {
+      "name": "CartoSante",
+      "url": "https://cartosante.atlasante.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "30K-80K visites/mois",
+      "reviews": "Cartographie officielle des densités médicales et accèssibilite",
+      "strengths": "Données officielles, couverture nationale, indicateurs ARS de référence",
+      "weaknesses": "Interface technique complexe, pas de score synthetique, pas de fiche commune lisible, pas de mode prédictif"
+    },
+    {
+      "name": "Atlas démographie médicale (CNOM)",
+      "url": "https://www.conseil-national.medecin.fr",
+      "pricing": "Gratuit (PDF annuel)",
+      "trafficEstimate": "N/A (publication PDF)",
+      "reviews": "Publication annuelle de référence sur la démographie médicale",
+      "strengths": "Données détaillées par département, credibilite Ordre des Médecins, historique long",
+      "weaknesses": "PDF statique (pas interactif), publication annuelle (pas temps reel), pas de cartographie interactive, pas de filtre personnalisable"
+    },
+    {
+      "name": "HRSA HPSA (US)",
+      "url": "https://data.hrsa.gov/tools/shortage-area",
+      "pricing": "Gratuit (service federal US)",
+      "trafficEstimate": "500K+ visites/mois",
+      "reviews": "Référence US pour la designation des zones en penurie médicale",
+      "strengths": "Modèle avancé, designation officielle qui déclenché des aides federales, données exhaustives",
+      "weaknesses": "US uniquement, non applicable en France, mais modèle inspirant pour le concept"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données FINESS et Ameli",
+      "status": "ok",
+      "detail": "FINESS est en open data. L'annuaire sante Ameli est public. Réutilisation libre sous licence Etalab.",
+      "source": "data.gouv.fr - FINESS / ameli.fr - Annuaire sante"
+    },
+    {
+      "topic": "Sensibilite politique des cartographies",
+      "status": "attention",
+      "detail": "Les elus locaux peuvent réagir négativement quand leur territoire est colore en rouge. Presenter l'outil comme une aide a l'action (attirer des médecins) et non comme une denonciation.",
+      "source": "Retours d'experience ARS sur la communication zonage"
+    },
+    {
+      "topic": "Données personnelles des médecins",
+      "status": "attention",
+      "detail": "Le RPPS contient des données professionnelles publiques (nom, spécialité, adresse cabinet). L'age est un proxy (année de these). Ne pas publiér de données individuelles identifiantes au-dela de ce qui est déjà public.",
+      "source": "RPPS - Conditions d'utilisation"
+    },
+    {
+      "topic": "Données démographiques INSEE",
+      "status": "ok",
+      "detail": "Données en open data, réutilisation libre.",
+      "source": "INSEE - Licence Ouverte"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (désert médical + département/commune)",
+      "cacEstimate": "1-3 EUR",
+      "conversionRate": "0.5-1% (gratuit vers collectivite payante)",
+      "ltv": "3588 EUR (299 EUR/mois x 12)",
+      "ltvCacRatio": "1196-3588x (B2G indirect)"
+    },
+    {
+      "channel": "Email direct communautés de communes",
+      "cacEstimate": "100-250 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "3588 EUR",
+      "ltvCacRatio": "14-36x"
+    },
+    {
+      "channel": "RP (étude Top 20 pires déserts médicaux)",
+      "cacEstimate": "0.50-2 EUR",
+      "conversionRate": "N/A (brand awareness)",
+      "ltv": "N/A",
+      "ltvCacRatio": "N/A - généré du trafic SEO et credibilite"
+    },
+    {
+      "channel": "Prospection ARS directe",
+      "cacEstimate": "500-1000 EUR (cycle long)",
+      "conversionRate": "20-30% post-POC",
+      "ltv": "9588 EUR (799 EUR/mois x 12)",
+      "ltvCacRatio": "10-19x"
+    },
+    {
+      "channel": "Widget gratuit pour mutuelles (lead gen)",
+      "cacEstimate": "200-500 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "18000 EUR (1500 EUR/mois x 12)",
+      "ltvCacRatio": "36-90x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 79,
+      "detail": "46.1K recherches/mois cumulees ('trouver médecin près de chez moi' 22 000/mois, 'désert medical' 14 800/mois). TAM: 718 millions EUR. Cibles: Communautés de communes en, ARS, Mutuelles et assureurs sante."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 5 APIs a integrer (API FINESS, Annuaire sante Ameli, API BAN géocodage). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "25 clients a 299 EUR pour demarrer. Objectif 10K MRR en 8-10 mois. Pricing 299-3000 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Rezone CPTS (Ameli), CartoSante, Atlas démographie médicale (CN. Leader: Rezone CPTS (Ameli) (20K-50K visites/mois). Faiblesse principale: Focus CPTS (pas vue globale déserts médicaux)."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Sensibilite politique des cartographies, Données personnelles des médecins."
+    },
+    "overall": {
+      "score": 75,
+      "detail": "Point fort: marche (88/100). Point faible: competition (45/100). Opportunite solide a executer rapidement."
+    }
+  }
+}

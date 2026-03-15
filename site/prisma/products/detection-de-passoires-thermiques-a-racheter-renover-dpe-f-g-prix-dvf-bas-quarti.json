@@ -1,0 +1,349 @@
+{
+  "productSlug": "detection-de-passoires-thermiques-a-racheter-renover-dpe-f-g-prix-dvf-bas-quarti",
+  "oneLiner": "Trouvez les passoires thermiques DPE F/G vendues sous le prix du marché dans dès quartiers surs : l'outil des investisseurs en rénovation énergétique.",
+  "problem": "Avec l'interdiction de location des DPE G (2025) et F (2028), des propriétaires vendent leurs passoires thermiques en urgence, souvent 15-30% sous le prix du marché. C'est une opportunité massive pour les investisseurs capables de renover. Mais identifiér ces biens nécessite de croiser manuellement les DPE ADEME, les transactions DVF, et les données de sécurité du quartier. Aucun outil ne fait ce croisement automatiquement.",
+  "solution": "Un moteur de recherche spécialisé qui identifié les passoires thermiques (DPE F/G) dans des zones attractives (bonne sécurité, écoles, transports). Pour chaque bien identifié, l'outil affiche: le prix de vente DVF, la decôté par rapport au marché, le DPE actuel, le cout estimé de rénovation pour atteindre D où C, et la plus-value potentielle post-rénovation. Alertes email quand un nouveau bien match les critères.",
+  "uniqueValue": "Le seul outil qui croise DPE + DVF + sécurité pour transformer la contrainte reglementaire (interdiction de louer les passoires) en opportunité d'investissement chiffree. La réglementation créé un marché captif: 5 millions de logements DPE F/G en France.",
+  "mvpScope": "Carte des passoires thermiques vendues dans les 6 derniers mois dans les 20 plus grandes villes. Filtres: DPE, prix max, decôté minimum, quartier (score sécurité basique). Fiche détaillée par bien avec estimation du cout de rénovation et de la plus-value. Alertes email pour les nouveaux biens.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider l'intérêt des investisseurs rénovation",
+      "description": "Publier 5 études de cas de passoires thermiques rachetées et renovees avec les chiffres reels (prix achat, cout travaux, nouveau DPE, plus-value). Poster sur les forums et mesurer l'engagement. Collecter des emails.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "5 études de cas publiées",
+        "Engagement mesuré (vues, commentaires, partages)",
+        "300+ inscrits early accèss",
+        "10 interviews investisseurs rénovation"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Carte des passoires thermiques avec filtres",
+      "description": "Croisement des bases DPE ADEME et DVF. Geocodage et matching des biens. Calcul de la decôté et du cout de rénovation. Interface carte avec filtres. Système d'alertes email.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Pipeline croisement DPE/DVF",
+        "Algorithme de decote",
+        "Estimation cout rénovation",
+        "Interface carte + filtres",
+        "Alertes email"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "100 premiers abonnes",
+      "description": "Activation des inscrits. Contenu SEO sur la rénovation énergétique et l'investissement. Partenariats avec des artisans RGE et des courtiers en travaux. Offre fondateur.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "100 abonnes payants",
+        "10 contenus SEO",
+        "3 partenariats artisans/courtiers travaux",
+        "Feedback utilisateurs intégré"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Marketplace de services rénovation",
+      "description": "Ajout d'un annuaire d'artisans RGE par zone. Simulateur d'aides (MaPrimeRenov, CEE). Mise en relation investisseur-artisan (lead gen). Partenariats avec des courtiers en travaux (Hemea, Archidvisor).",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Annuaire artisans RGE",
+        "Simulateur MaPrimeRenov",
+        "Mise en relation investisseur-artisan",
+        "Revenus lead gen"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR et diversification revenus",
+      "description": "Couverture nationale. Double monétisation: abonnements + lead gen artisans. Partenariats avec des banques (financement travaux). White-label pour les réseaux d'agences.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "10K MRR",
+        "Couverture nationale",
+        "Revenue lead gen > 2K/mois",
+        "3 partenariats bancaires"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les investisseurs en rénovation énergétique sont-ils un segment identifiable et accèssible?",
+      "how": "Rechercher les communautés dédiées (groupes Facebook rénovation énergétique investissement, chaines YouTube comme Investir dans l'ancien). Compter les membres actifs.",
+      "successCriteria": "Au moins 3 communautés actives de 5K+ membres. Volume de recherche Google investir passoire thermique > 1000/mois."
+    },
+    {
+      "check": "Le croisement DPE ADEME + DVF est techniquement faisable a grande echelle?",
+      "how": "Télécharger les deux bases pour une ville (Lyon). Tenter le matching par adresse (normalisation + géocodage BAN). Mesurer le taux de matching.",
+      "successCriteria": "Taux de matching DPE/DVF supérieur a 60% après normalisation d'adresse. Moins de 5% de faux positifs."
+    },
+    {
+      "check": "La decôté des passoires thermiques est-elle reelle et mesurable dans les données?",
+      "how": "Comparer les prix au m2 DVF des biens DPE F/G vs DPE C/D dans les mêmes quartiers pour 5 grandes villes.",
+      "successCriteria": "Decôté moyenne des DPE F/G supérieure a 10% par rapport aux DPE C/D dans le même quartier."
+    },
+    {
+      "check": "Le cout de rénovation est estimable avec une precision acceptable?",
+      "how": "Comparer les estimations de l'algorithme (bareme au m2 par saut de classe DPE) avec 10 devis reels d'artisans RGE collectes sur les forums.",
+      "successCriteria": "Ecart moyen inferieur a 20% entre l'estimation et les devis reels."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Investisseurs immobiliers spécialisés dans l'ancien a renover",
+      "where": "Groupes Facebook (Investir dans l'Ancien, Rénovation Énergétique et Investissement), chaines YouTube (Investir dans l'Ancien, Les Investisseurs Malins), forum Devenir-Rentier section rénovation",
+      "howToReach": "Publier des analyses chiffrees de deals reels (passoire thermique rachetée a prix bas, renovee, relouee avec nouveau DPE). Proposer l'outil gratuit 30 jours."
+    },
+    {
+      "who": "Marchands de biens spécialisés rénovation",
+      "where": "LinkedIn (recherche marchand de biens rénovation), groupes pro sur Telegram, salons de la rénovation (Interclima, Batimat)",
+      "howToReach": "Proposer un plan pro avec volume de deals. Un marchand de biens acheté 5-10 biens/an, le ROI de l'outil est enorme vs le gain potentiel."
+    },
+    {
+      "who": "Courtiers en travaux et entreprises de rénovation globale",
+      "where": "Annuaire France Renov, LinkedIn, partenariats Hemea/Archidvisor",
+      "howToReach": "Proposer un flux de leads qualifies (investisseurs qui ont identifié un bien a renover). Modèle: lead payant a 50-100 euros."
+    }
+  ],
+  "pricingStrategy": "Freemium: consultation de la carte sans details financiers. Plan Investisseur a 19,90 euros/mois: fiches détaillées (decote, cout rénovation, plus-value), alertes email, 20 fiches/mois. Plan Pro a 69 euros/mois: fiches illimitées, export CSV, API, historique complet. Revenue additionnel: lead gen artisans (50-100 euros/lead qualifie) et affiliation courtiers travaux.",
+  "pathTo10kMrr": "300 abonnes Investisseur x 19,90 euros = 5 970 euros + 30 abonnes Pro x 69 euros = 2 070 euros + lead gen artisans: 40 leads/mois x 50 euros = 2 000 euros = 10 040 euros MRR. La niche rénovation énergétique est en forte croissance grâce à la réglementation. Objectif 10K MRR en 8 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS (carte avec clusters de biens)",
+    "backend": "Next.js API Routes + Python scripts (pipeline croisement DPE/DVF, géocodage, calcul decote)",
+    "database": "PostgreSQL + PostGIS sur Supabase. Tables: biens (DPE + DVF croises), alertes utilisateurs, leads artisans",
+    "hosting": "Vercel + Supabase + GitHub Actions (pipeline data mensuel)",
+    "apis": [
+      "API ADEME DPE (ou bulk download)",
+      "API DVF data.gouv.fr",
+      "API BDNB (batiments)",
+      "API BAN géocodage",
+      "API Georisques (risques)",
+      "API France Renov (artisans RGE)",
+      "Stripe",
+      "Resend"
+    ],
+    "notes": "Le matching DPE/DVF se fait par adresse normalisee via BAN. Le cout de rénovation est calcule avec un bareme progressif: 200-400 euros/m2 pour passer de G a D, 100-200 euros/m2 de F a D, ajuste par région. La decôté est calculee par rapport au prix median DVF des DPE C/D du même code IRIS."
+  },
+  "risks": [
+    {
+      "risk": "Le matching DPE/DVF par adresse est imprecis (adresses différentes pour le même bien)",
+      "mitigation": "Utiliser le géocodage BAN pour normaliser les adresses, puis matcher par coordonnées GPS (rayon de 50m) + surface + nombre de pieces. Taux de matching ciblé: 60%+. Utiliser la BDNB qui fait déjà ce croisement partiellement."
+    },
+    {
+      "risk": "Le marché des passoires thermiques se tarit si la réglementation est assouplie",
+      "mitigation": "L'outil peut pivoter vers toute rénovation (pas seulement énergétique). La tendance vers la sobriete énergétique est structurelle, même sans contrainte légale. Diversifier vers le scoring général de rentabilité."
+    },
+    {
+      "risk": "Les estimations de cout de rénovation sont trop imprécises pour être utiles",
+      "mitigation": "Afficher une fourchette large avec niveau de confiance. Permettre a l'utilisateur d'ajuster. À terme, intégrér des devis reels anonymises pour affiner le modèle (partenariat artisans)."
+    }
+  ],
+  "inspirations": "Yanport (France) qui analyse le marché locatif mais ne croise pas avec le DPE. Les chasseurs immobiliers spécialisés rénovation (Mon Major d'Home) qui font ce travail manuellement pour 3-5% du prix d'achat. Aux US, Roofstock permet d'achetér des biens locatifs avec toute l'analyse intégrée. PriceHubble (Suisse) fait du scoring immobilier IA mais sans l'angle rénovation énergétique.",
+  "searchVolume": [
+    {
+      "keyword": "passoire thermique",
+      "monthlyVolume": "33100",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "investir passoire thermique",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "achetér passoire thermique",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "rénovation énergétique investissement",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "DPE F G interdiction location",
+      "monthlyVolume": "8100",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "cout rénovation DPE",
+      "monthlyVolume": "2900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "decôté passoire thermique prix",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "5,2 millions de passoires thermiques en France (17% du parc). Avec la réforme DPE 2026, 850 000 logements reclasses, restent ~4,35M. 40% des ventes concernent des DPE E/F/G = ~378K transactions/an. Si 10% des achetéurs payaient 19,90 EUR/mois = 90M EUR/an",
+    "sam": "50 000 investisseurs spécialisés rénovation énergétique (marchands de biens + investisseurs actifs ancien a renover) x 19,90 EUR/mois x 12 = 11,9M EUR/an",
+    "som": "1 500 abonnes première année (3% du SAM) x 19,90 EUR x 12 + lead gen artisans 24K EUR = 382K EUR/an",
+    "methodology": "TAM: 5,2M passoires thermiques (Effy/ADEME). Decôté moyenne 15% (Notaires de France 2025). Reforme DPE 2026: 850K logements sortis du statut (arrêté 13 aout 2025). SAM base sur communautés investisseurs ancien (Devenir-Rentier: 50K membres, groupes FB: 100K+). Lead gen artisans RGE: 50-100 EUR/lead."
+  },
+  "competitorDeep": [
+    {
+      "name": "Lybox",
+      "url": "https://www.lybox.fr",
+      "pricing": "À partir de 9 EUR/mois, Essentiel 24 EUR/mois. Essai 7 jours gratuit",
+      "trafficEstimate": "300K-600K visites/mois",
+      "reviews": "Très bons avis, calculs certifiés par cabinet fiscal indépendant",
+      "strengths": "Détection automatique de biens rentables, historique annonces, bon SEO, prix accèssible",
+      "weaknesses": "Pas de croisement DPE/DVF automatique, pas de cout de rénovation, pas de score de quartier sécurité"
+    },
+    {
+      "name": "Horiz.io",
+      "url": "https://horiz.io",
+      "pricing": "29 EUR/mois sans engagement, 15 EUR/mois avec engagement annuel",
+      "trafficEstimate": "200K-400K visites/mois",
+      "reviews": "Avis mixtes Trustpilot, référence du simulateur de rentabilité",
+      "strengths": "Simulateur complet, extension navigateur pour analyser les annonces, notoriété",
+      "weaknesses": "Pas de détection des passoires thermiques, pas d'estimation cout rénovation, pas de croisement avec sécurité"
+    },
+    {
+      "name": "Pappers Immobilier",
+      "url": "https://immobilier.pappers.fr",
+      "pricing": "Gratuit. API sur devis",
+      "trafficEstimate": "500K-1M visites/mois",
+      "reviews": "Excellent, référence open data immo",
+      "strengths": "DVF + DPE + permis de construire, gratuit, 28M transactions",
+      "weaknesses": "Pas de croisement automatique DPE/DVF, pas de calcul de decote, pas d'alertes, pas de cout rénovation"
+    },
+    {
+      "name": "Chasseurs immobiliers spécialisés (Mon Major d'Home, etc.)",
+      "url": "https://www.monmajordhome.com",
+      "pricing": "3-5% du prix d'achat (soit 3 000-15 000 EUR par bien)",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Bons avis pour le service personnalisé, mais très cher",
+      "strengths": "Expertise terrain, accompagnement complet, réseau artisans",
+      "weaknesses": "Très cher (3-5% du prix), pas scalable, couverture locale limitee, pas de tech"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données DPE ADEME",
+      "status": "ok",
+      "detail": "DPE publiés en open data sous Licence Ouverte v2. Réutilisation libre avec mention de source. Nouveau mode de calcul DPE en vigueur au 1er janvier 2026 (coefficient electricite abaisse de 2,3 a 1,9).",
+      "source": "https://data.ademe.fr - Arrete du 13 aout 2025"
+    },
+    {
+      "topic": "Données DVF (prix de vente)",
+      "status": "attention",
+      "detail": "Licence Ouverte v2 mais données personnelles: interdiction de re-identification et d'indexation moteurs de recherche. Ne pas afficher l'adresse exacte + prix pour une transaction unique. Utiliser des agregats où afficher uniquement les données sur la carte sans indexation.",
+      "source": "Article R112 A-3 du LPF"
+    },
+    {
+      "topic": "Croisement DPE/DVF par adresse",
+      "status": "attention",
+      "detail": "Le croisement de deux bases open data par adresse est légal mais attention a ne pas permettre l'identification d'un vendeur spécifique. Agrèger les données au niveau du batiment où de la copropriété, pas de la transaction individuelle.",
+      "source": "CNIL - Avis sur les données foncières"
+    },
+    {
+      "topic": "Qualification de l'interdiction de location",
+      "status": "ok",
+      "detail": "Depuis le 1er janvier 2025, les DPE G ne peuvent plus être loues. DPE F interdit au 1er janvier 2028. DPE E interdit au 1er janvier 2034. Ces informations sont publiques et leur diffusion est libre.",
+      "source": "Loi Climat et Resilience du 22 aout 2021"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (passoire thermique + investir/achetér)",
+      "cacEstimate": "12-20 EUR",
+      "conversionRate": "5% free signup, 5% free-to-paid. Volume: 33K recherches/mois sur passoire thermique",
+      "ltv": "239 EUR (19,90 EUR x 12 mois)",
+      "ltvCacRatio": "12:1 a 20:1"
+    },
+    {
+      "channel": "Google Ads (investir passoire thermique, rénovation DPE)",
+      "cacEstimate": "70-110 EUR",
+      "conversionRate": "2,5% clic-to-trial, 10% trial-to-paid. CPC: 3-4 EUR",
+      "ltv": "239 EUR",
+      "ltvCacRatio": "2:1 a 3,5:1"
+    },
+    {
+      "channel": "Partenariats artisans RGE / courtiers travaux",
+      "cacEstimate": "20-35 EUR (lead exchange)",
+      "conversionRate": "8% referral-to-signup, 15% free-to-paid",
+      "ltv": "239 EUR + 100 EUR lead gen artisans",
+      "ltvCacRatio": "10:1 a 17:1"
+    },
+    {
+      "channel": "YouTube / content marketing (études de cas rénovation)",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "3% clic-to-signup, 8% free-to-paid",
+      "ltv": "239 EUR",
+      "ltvCacRatio": "8:1 a 16:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 80,
+      "detail": "50.6K recherches/mois cumulees ('passoire thermique' 33 100/mois, 'DPE F G interdiction location' 8 100/mois). TAM: DPE. Cibles: Investisseurs immobiliers spécialisés dans, Marchands de biens spécialisés, Courtiers en travaux et."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 8 APIs a integrer (API ADEME DPE, API DVF, API BDNB). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 47,
+      "detail": "300 clients a 90 EUR pour demarrer. Objectif 10K MRR en 8 mois. SOM: 24K EUR/an. Pricing 69-100 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "4 concurrents identifies: Lybox, Horiz.io, Pappers Immobilier. Leader: Lybox (300K-600K visites/mois). Faiblesse principale: Pas de croisement DPE/DVF automatique."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Données DVF (prix de vente), Croisement DPE/DVF par adresse."
+    },
+    "overall": {
+      "score": 62,
+      "detail": "Point fort: demande (80/100). Point faible: competition (40/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

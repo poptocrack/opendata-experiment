@@ -1,0 +1,322 @@
+{
+  "productSlug": "simulateur-parcoursup-vos-chances-d-admission-par-formation-base-sur-l-historiqu",
+  "oneLiner": "Simulateur Parcoursup: estimez vos chances d'admission par formation basé sur l'historique des années precedentes.",
+  "problem": "800 000 lyceens utilisent Parcoursup chaque année dans le stress total: ils ne savent pas quelles formations sont accessibles avec leur profil. Les données d'admission sont publiques (taux d'accès, profil des admis) mais enterrees dans des CSV techniques. Chaque année c'est la loterie: 30% des voeux sont refuses. Les parents paient 500-2000 EUR pour des coachs en orientation.",
+  "solution": "Un simulateur ou le lyceen entre son profil (serie, moyenne, specialites, département) et obtient pour chaque formation Parcoursup: son pourcentage de chances d'admission (basé sur l'historique), le rang du dernier appele, le profil type des admis, et un code couleur (vert/orange/rouge). L'outil recommande aussi des formations similaires ou ses chances sont meilleures.",
+  "uniqueValue": "Les données Parcoursup sont publiques mais inexploitables pour un lyceen. Aucun outil ne transforme ces données en chances d'admission personnalisees. Les coachs en orientation facturent 500+ EUR pour faire ce travail manuellement.",
+  "mvpScope": "Simulateur pour les formations selectives (prépas, BTS, BUT, écoles). 3 critères: serie du bac, moyenne générale, specialites. Estimation basee sur les données d'admission N-1 de data.gouv.fr. Couverture: 15 000 formations.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline données Parcoursup",
+      "description": "Ingestion des données d'admission Parcoursup (data.gouv.fr): taux d'accès, profil des admis (serie, mention, boursiers), capacité, rang dernier appele.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pipeline données Parcoursup",
+        "15 000 formations indexees",
+        "Profils d'admission par formation",
+        "Statistiques historiques 3 ans"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Simulateur et interface",
+      "description": "Algorithme de matching profil/formation. Interface: formulaire profil, résultats avec % de chances, code couleur, recommandations. Pages par formation pour SEO.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Algorithme de matching",
+        "Interface simulateur",
+        "15K pages formation SEO",
+        "Recommandations de formations similaires"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement avant Parcoursup",
+      "description": "Lancer en décembre (les voeux ouvrent en janvier). SEO sur Parcoursup + formation. Viralité via TikTok et Instagram (cible lyceens). Partenariats avec les CDI de lycees.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Lancement décembre",
+        "50K visiteurs en janvier",
+        "500 abonnes",
+        "Viralité TikTok"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Premium et accompagnement",
+      "description": "Plan premium avec lettre de motivation assistee par IA. Coaching orientation en ligne. Données de debouches emploi croisees (ROME). Application mobile.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Lettre de motivation IA",
+        "Coaching en ligne",
+        "Debouches emploi",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les lyceens et parents cherchent a estimer leurs chances",
+      "how": "Volume de recherche Google sur chances Parcoursup, simulateur Parcoursup, admission + formation",
+      "successCriteria": "Plus de 200K recherches/mois en janvier-mars (pics Parcoursup)"
+    },
+    {
+      "check": "Les données permettent une estimation fiable",
+      "how": "Backtester sur les admissions de l'année N en utilisant les données N-1",
+      "successCriteria": "L'estimation est coherente (vert=admit, rouge=refuse) dans 70%+ des cas"
+    },
+    {
+      "check": "Les lyceens/parents paieraient pour un outil premium",
+      "how": "Sondage sur Instagram/TikTok éducation et groupes Facebook parents de terminale",
+      "successCriteria": "40%+ paieraient 5-10 EUR/mois pour un simulateur fiable (vs 500+ EUR pour un coach)"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Lyceens de terminale (800K/an) et leurs parents",
+      "where": "TikTok/Instagram éducation, groupes Facebook parents de terminale, Reddit r/france",
+      "howToReach": "Videos TikTok J'ai teste mes chances sur Parcoursup avec cet outil. Format court, viral, cible les 16-18 ans."
+    },
+    {
+      "who": "Conseillers d'orientation (professeurs principaux, PsyEN)",
+      "where": "Cafe Pedagogique, SNES, LinkedIn éducation, formations rectorat",
+      "howToReach": "Proposer un accès gratuit pour les CDI de lycees. Les conseillers recommandent l'outil aux élèves."
+    },
+    {
+      "who": "Coachs en orientation prives (Tonavenir, Studyrama, Groupe Reussir)",
+      "where": "LinkedIn, salons orientation (Studyrama, L'Étudiant), conferences éducation",
+      "howToReach": "Proposer un plan pro qui enrichit leur prestation de coaching. Pas un concurrent mais un outil."
+    }
+  ],
+  "pricingStrategy": "Freemium: 3 simulations gratuites (acquisition virale). Plan Lyceen a 4.90 EUR/mois (simulations illimitées, recommandations, historique). Plan Premium a 14.90 EUR/mois (lettre de motivation IA, coaching chat, debouches emploi). Plan CDI Lycee a 49 EUR/mois (accès pour tout l'établissement). Plan Coach a 99 EUR/mois (multi-clients, rapports, marque blanche). Saisonnier: 80% du CA en dec-mars.",
+  "pathTo10kMrr": "1500 lyceens x 4.90 EUR = 7 350 EUR + 100 premium x 14.90 EUR = 1 490 EUR + 20 CDI x 49 EUR = 980 EUR + 5 coachs x 99 EUR = 495 EUR = 10 315 EUR MRR en pic (janvier-mars). Avec 800K lyceens/an, 1 600 abonnes = 0.2% de penetration. Timeline: lancer avant décembre, pic en janvier.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts",
+    "backend": "Next.js API Routes + ISR pour les pages formations",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Données Parcoursup data.gouv.fr",
+      "API Éducation Nationale (annuaire formations)",
+      "API OpenAI (lettre de motivation)",
+      "Stripe"
+    ],
+    "notes": "Les données Parcoursup sont publiees annuellement (octobre). 15K pages formations en ISR pour le SEO. L'algorithme de matching est un scoring simple (pas de ML): correspondance serie + mention + spécialité avec le profil historique des admis. Pic de charge en janvier-mars."
+  },
+  "risks": [
+    {
+      "risk": "L'estimation est imprecise car Parcoursup utilise des algorithmes complexes et opaques",
+      "mitigation": "Etre transparent: c'est une estimation basee sur l'historique, pas une prédiction exacte. Afficher des fourchettes et des codes couleur, pas des pourcentages faux-précisément exacts."
+    },
+    {
+      "risk": "Forte saisonnalité: 80% du trafic en 3 mois (dec-mars)",
+      "mitigation": "Diversifier: simulateur orientation post-bac (toute l'année), debouches emploi par formation, comparateur de formations continues."
+    },
+    {
+      "risk": "Le Ministere de l'Éducation pourrait intégrer un simulateur dans Parcoursup",
+      "mitigation": "Le Ministere évité de donner des probabilites (politiquement sensible). Notre avantage est justement de dire ce que le Ministere ne dit pas."
+    }
+  ],
+  "inspirations": "Niche.com (US, college chances calculator). CollegeVine (US, simulateur d'admission, levé 20M USD). En France, L'Étudiant fait des classements mais pas de simulateur personalise. Parcoursup lui-meme ne donne aucune indication de chances.",
+  "searchVolume": [
+    {
+      "keyword": "simulateur parcoursup",
+      "monthlyVolume": "74000",
+      "difficulty": "high",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "chances admission parcoursup",
+      "monthlyVolume": "22200",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "parcoursup simulation moyenne",
+      "monthlyVolume": "14800",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "predicteur parcoursup",
+      "monthlyVolume": "6600",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "parcoursup taux admission formation",
+      "monthlyVolume": "9900",
+      "difficulty": "medium",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "800K lyceens de terminale par an + 400K parents impliques dans le processus Parcoursup. Volume de recherche massif: 200K+ recherches/mois en janvier-mars. Marché du coaching orientation: 500-2000 EUR/élève.",
+    "sam": "400K lyceens stresses par Parcoursup qui cherchent activement des outils d'aide a la décision. 30% des voeux sont refuses chaque année.",
+    "som": "20K utilisateurs payants en pic (janvier-mars), soit 2.5% du SAM. 200K utilisateurs gratuits.",
+    "methodology": "TAM = cohorte annuelle de terminale (800K) + parents. SAM = lyceens en recherche active d'aide (estimation 50%). SOM basé sur les volumes de recherche Google et la conversion freemium. Référence: ParcoursPredict et Thotis ont déjà valide la demande."
+  },
+  "competitorDeep": [
+    {
+      "name": "Simulateur Parcoursup officiel",
+      "url": "https://www.parcoursup.fr",
+      "pricing": "Gratuit (intégré a Parcoursup)",
+      "trafficEstimate": "Intégré a la plateforme (millions d'utilisateurs)",
+      "reviews": "Lance a la rentree 2025, simulateur de possibilites d'admission dans chaque fiche formation",
+      "strengths": "Officiel, intégré a Parcoursup, données les plus à jour, gratuit, plateforme d'entrainement lancee en 2025",
+      "weaknesses": "Ne donne pas de probabilites chiffrees (politiquement sensible), pas de recommandations alternatives, pas de lettre de motivation, UX institutionnelle"
+    },
+    {
+      "name": "ParcoursPredict",
+      "url": "https://parcourspredict.fr",
+      "pricing": "100% gratuit, basé sur l'IA",
+      "trafficEstimate": "Estimation 50K-100K visites/mois en pic",
+      "reviews": "Analyse directe des bulletins scolaires avec IA pour estimer les chances sur 25K+ formations",
+      "strengths": "100% gratuit, IA qui analyse les bulletins, couverture 25K formations, résultat en 15 secondes",
+      "weaknesses": "Gratuit = pas de modèle économique clair, précision incertaine de l'IA, pas de lettre de motivation, pas de coaching"
+    },
+    {
+      "name": "Thotis Media (Predicteur)",
+      "url": "https://thotismedia.com/prediction-parcoursup/",
+      "pricing": "Freemium (prédiction gratuite, premium payant)",
+      "trafficEstimate": "300K visites/mois",
+      "reviews": "Media éducation de référence pour les lyceens, predicteur basé sur l'IA",
+      "strengths": "Marque forte chez les lyceens, contenus video TikTok/YouTube, prédiction IA avec echange personnalise, test d'orientation gratuit",
+      "weaknesses": "Prédiction basee sur l'IA avec précision variable, média d'abord puis outil, pas de coaching personnalise pousse"
+    },
+    {
+      "name": "parcoursup.info",
+      "url": "https://www.parcoursup.info/simulateur",
+      "pricing": "Gratuit",
+      "trafficEstimate": "50K visites/mois en pic",
+      "reviews": "Simulateur de moyenne pour estimer ses chances en 2026",
+      "strengths": "Simple d'utilisation, gratuit, calcul de moyenne",
+      "weaknesses": "Basique (juste moyenne), pas d'historique des admis, pas de recommandations, pas de couverture complete"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données Parcoursup open data",
+      "status": "ok",
+      "detail": "Les données d'admission Parcoursup (taux d'accès, profil des admis, capacité) sont publiees annuellement sur data.gouv.fr sous licence ouverte.",
+      "source": "data.gouv.fr - Parcoursup"
+    },
+    {
+      "topic": "Communication de probabilites d'admission",
+      "status": "attention",
+      "detail": "Afficher des probabilites peut créer des attentes. Presenter comme une estimation indicative basee sur l'historique, pas une prédiction. Ajouter un disclaimer clair.",
+      "source": "Jurisprudence sur les obligations d'information"
+    },
+    {
+      "topic": "Données de mineurs",
+      "status": "attention",
+      "detail": "Les lyceens de terminale sont souvent mineurs (16-17 ans). La collecte de données personnelles (notes, profil) nécessité le consentement parental pour les moins de 15 ans (RGPD + loi française).",
+      "source": "RGPD Article 8 + Loi Informatique et Libertes modifiee"
+    },
+    {
+      "topic": "Utilisation d'IA pour la lettre de motivation",
+      "status": "attention",
+      "detail": "Les établissements Parcoursup commencent a détecter les lettres générées par IA. L'outil doit assister et personnaliser, pas générer integralement.",
+      "source": "Recommandations Parcoursup 2026"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (simulateur parcoursup, chances admission)",
+      "cacEstimate": "0.40 EUR",
+      "conversionRate": "5%",
+      "ltv": "14.70 EUR (3 mois lyceen)",
+      "ltvCacRatio": "36.8"
+    },
+    {
+      "channel": "TikTok/Instagram videos virales (J'ai teste mes chances)",
+      "cacEstimate": "0.20 EUR",
+      "conversionRate": "8%",
+      "ltv": "14.70 EUR",
+      "ltvCacRatio": "73.5"
+    },
+    {
+      "channel": "Partenariats CDI de lycees",
+      "cacEstimate": "0.10 EUR",
+      "conversionRate": "10%",
+      "ltv": "49 EUR (plan CDI)",
+      "ltvCacRatio": "490.0"
+    },
+    {
+      "channel": "Google Ads (parcoursup simulation)",
+      "cacEstimate": "3.00 EUR",
+      "conversionRate": "6%",
+      "ltv": "14.70 EUR",
+      "ltvCacRatio": "4.9"
+    },
+    {
+      "channel": "Bouche a oreille entre lyceens",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "12%",
+      "ltv": "14.70 EUR",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 87,
+      "detail": "127.5K recherches/mois cumulees ('simulateur parcoursup' 74 000/mois, 'chances admission parcoursup' 22 200/mois). TAM: 2000 EUR. Cibles: Lyceens de terminale, Conseillers d'orientation, Coachs en orientation prives."
+    },
+    "feasibility": {
+      "score": 73,
+      "detail": "MVP en 5 semaines. 4 APIs a integrer (Données Parcoursup, API Éducation Nationale, API OpenAI). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 43,
+      "detail": "100 clients a 90 EUR pour demarrer. Pricing 49-99 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Simulateur Parcoursup officiel, ParcoursPredict, Thotis Media (Predicteur). Leader: Simulateur Parcoursup off (Intégré a la plateforme (millions d'utilisateurs)). Faiblesse principale: Ne donne pas de probabilites chiffrees (politiquement sensible)."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Communication de probabilites d'admission, Données de mineurs."
+    },
+    "overall": {
+      "score": 63,
+      "detail": "Point fort: demande (87/100). Point faible: marché (43/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

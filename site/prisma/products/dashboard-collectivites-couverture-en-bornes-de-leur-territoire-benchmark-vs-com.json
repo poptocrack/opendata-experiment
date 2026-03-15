@@ -1,0 +1,300 @@
+{
+  "productSlug": "dashboard-collectivites-couverture-en-bornes-de-leur-territoire-benchmark-vs-com",
+  "oneLiner": "Dashboard pour collectivites : couverture en bornes EV, benchmark vs communes comparables, suivi des objectifs nationaux.",
+  "problem": "Les collectivites doivent deployer des bornes (objectif 400K en 2030) mais n'ont aucune visibilite sur leur couverture actuelle vs les besoins. Le maire de Valence ne sait pas si sa ville est mieux équipee que Montauban. Les EPCI doivent produire un schema directeur IRVE mais n'ont pas les outils pour diagnostiquer la situation. Les données IRVE sont brutes et inexploitables sans compétence data.",
+  "solution": "Un dashboard interactif montrant pour chaque collectivite : nombre de bornes (IRVE), ratio bornes/habitants et bornes/VE, comparaison avec collectivites similaires (benchmark), ecart vs objectifs nationaux, et zones du territoire non couvertes. Export PDF pour les deliberations et schemas directeurs IRVE.",
+  "uniqueValue": "Le benchmark entre collectivites comparables est la killer feature. Le maire veut savoir s'il fait mieux où moins bien que les autres. Les données IRVE brutes ne permettent pas cette comparaison. Le dashboard la rend instantanee.",
+  "mvpScope": "Dashboard pour les EPCI de plus de 50 000 habitants (250 EPCI). 4 indicateurs : nombre de bornes, ratio bornes/habitants, ratio bornes/VE, benchmark vs EPCI de même strate. Carte du territoire avec zones couvertes et blanches. Export PDF.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline data et indicateurs",
+      "description": "Ingestion IRVE consolide + immatriculations VE + populations INSEE. Calcul des indicateurs et benchmarks par strate d'EPCI.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pipeline IRVE + VE + populations",
+        "Calcul indicateurs par EPCI",
+        "Benchmark par strate",
+        "250 EPCI couverts"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Dashboard interactif",
+      "description": "Interface web avec carte, jauges de benchmark, classement, et export PDF pour les deliberations.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Dashboard interactif par EPCI",
+        "Carte couverture/zones blanches",
+        "Benchmark visuel (jauges)",
+        "Export PDF deliberation"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Validation et premiers clients",
+      "description": "Contacter 10 EPCI en cours de schema directeur IRVE. Diagnostic gratuit. Presentation au salon des maires.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "10 diagnostics gratuits",
+        "5 EPCI clients",
+        "Classement EPCI publié (buzz)"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Extension et fonctionnalités avancees",
+      "description": "Couverture nationale. Suivi temps reel (intégration API operateurs). Projections d'équipement. Generateur de schema directeur IRVE.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Couverture nationale",
+        "Suivi temps reel",
+        "Generateur schema directeur",
+        "25 EPCI clients"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les EPCI ont un budget pour des outils de suivi IRVE",
+      "how": "Contacter les services mobilite/transition de 10 EPCI. Verifier les budgets schema directeur IRVE.",
+      "successCriteria": "7/10 ont un budget identifié (souvent subventionne ADEME)"
+    },
+    {
+      "check": "Les données IRVE consolides sont suffisamment complètes",
+      "how": "Comparer le nombre de bornes IRVE consolide avec les chiffres AVERE pour 10 EPCI test",
+      "successCriteria": "Ecart < 15% entre les deux sources"
+    },
+    {
+      "check": "Le benchmark motive les collectivites a agir",
+      "how": "Presenter un benchmark a 5 EPCI où ils sont en retard et mesurer la reaction",
+      "successCriteria": "4/5 réagissent en voulant comprendre et rattraper"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "EPCI en cours d'elaboration de schema directeur IRVE (obligation reglementaire)",
+      "where": "AMORCE, ADEME, appels a projets IRVE",
+      "howToReach": "Identifier les EPCI beneficiant d'aides ADEME et proposer l'outil comme base de travail pour le schema directeur."
+    },
+    {
+      "who": "Syndicats départementaux d'énergie (SDE35, SDEY, SIEL42)",
+      "where": "FNCCR, conferences énergie, LinkedIn",
+      "howToReach": "Un seul contrat couvre tout le département. Les syndicats gèrent le déploiement IRVE pour plusieurs EPCI."
+    },
+    {
+      "who": "Régions avec objectifs ambitieux de déploiement (Occitanie, Nouvelle-Aquitaine)",
+      "where": "Services transports et mobilite des régions, LinkedIn",
+      "howToReach": "Dashboard régional couvrant tous les EPCI de la région d'un coup."
+    }
+  ],
+  "pricingStrategy": "Plan EPCI a 349 EUR/mois (1 territoire, dashboard, benchmark, export PDF). Plan Syndicat d'énergie a 799 EUR/mois (1 département, tous EPCI, alertes). Plan Région a 1 499 EUR/mois (toute la région, multi-départements, API). Pricing accèssible car finance sur budgets ADEME/transition ecologique.",
+  "pathTo10kMrr": "20 EPCI x 349 EUR = 6 980 EUR + 3 syndicats d'énergie x 799 EUR = 2 397 EUR + 1 région x 1 499 EUR = 1 499 EUR = 10 876 EUR MRR. 1 254 EPCI en France, 20 clients = 1,6% de pénétration. Timeline : 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS + Recharts",
+    "backend": "Next.js API Routes + Python pour pipeline data et calculs statistiques",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions (pipeline IRVE hebdomadaire)",
+    "apis": [
+      "IRVE consolide (data.gouv.fr)",
+      "Immatriculations VE (data.gouv.fr)",
+      "API INSEE populations",
+      "API BAN",
+      "Stripe"
+    ],
+    "notes": "Indicateurs precalcules par EPCI, MAJ hebdomadaire. Benchmark = percentile dans la distribution des EPCI de même strate. Export PDF via Puppeteer."
+  },
+  "risks": [
+    {
+      "risk": "Cycle de vente long avec les collectivites (3-6 mois)",
+      "mitigation": "Freemium (dashboard basique gratuit) pour créér l'habitude, puis upsell vers premium avec benchmark et export."
+    },
+    {
+      "risk": "L'ADEME où l'AVERE lancé son propre outil de suivi",
+      "mitigation": "Se différencier par l'UX et le benchmark (que les outils institutionnels ne proposent jamais). Partenariat de données."
+    },
+    {
+      "risk": "Les données IRVE ne couvrent pas les bornes privées (entreprises, copropriétés)",
+      "mitigation": "Commencer avec les bornes publiques (sujet principal des collectivites). Ajouter les bornes privées via données operateurs en phase de croissance."
+    }
+  ],
+  "inspirations": "Opendata.réseaux-énergies.fr (dashboard énergies renouvelables par territoire). AVERE barometre trimestriel (format rapport, pas dashboard). Aux US, DOE Alternative Fuels Station Locator. En UK, Zap-Map insights.",
+  "searchVolume": [
+    {
+      "keyword": "schema directeur IRVE collectivite",
+      "monthlyVolume": "600",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "déploiement bornes recharge commune",
+      "monthlyVolume": "1 200",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "benchmark bornes recharge territoire",
+      "monthlyVolume": "200",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "objectif 400 000 bornes 2030",
+      "monthlyVolume": "2 400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "IRVE EPCI obligation",
+      "monthlyVolume": "500",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "200 M EUR (budgets schemas directeurs IRVE et outils de suivi pour les 1 254 EPCI et 100 départements/régions de France)",
+    "sam": "30 M EUR (outils de suivi et benchmark pour les 756 EPCI de plus de 20K habitants et les syndicats d'énergie départementaux)",
+    "som": "800K EUR (18 mois, 20-30 EPCI + 3-5 syndicats d'énergie a 349-799 EUR/mois)",
+    "methodology": "TAM base sur les budgets PCAET et schema directeur mobilite des collectivites. SAM restreint aux EPCI de taille suffisante. SOM base sur 25 clients en 18 mois (1,6% de pénétration)."
+  },
+  "competitorDeep": [
+    {
+      "name": "AVERE France (Barometre)",
+      "url": "https://www.avere-france.org",
+      "pricing": "Gratuit (barometre trimestriel)",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "Référence institutionnelle",
+      "strengths": "Legitimite auprès des pouvoirs publics. Données de référence citees par les medias. Couverture nationale.",
+      "weaknesses": "Format PDF statique trimestriel. Pas de dashboard interactif. Pas de benchmark par collectivite. Pas d'outil de pilotage."
+    },
+    {
+      "name": "Manty",
+      "url": "https://www.manty.eu",
+      "pricing": "SaaS 300-1 000 EUR/mois selon modules",
+      "trafficEstimate": "20K visites/mois",
+      "reviews": "Leve 4M EUR, 100+ collectivites clientes",
+      "strengths": "SaaS data pour collectivites etabli. Multi-thematiques (RH, finances, urbanisme). Base installée significative.",
+      "weaknesses": "Pas spécialisé IRVE/mobilite electrique. Module transport générique. Pas de benchmark IRVE ni scoring de zones blanches."
+    },
+    {
+      "name": "Opendata.réseaux-énergies.fr",
+      "url": "https://opendata.reseaux-energies.fr",
+      "pricing": "Gratuit (données ouvertes)",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "N/A",
+      "strengths": "Dashboard énergies renouvelables par territoire, bien fait. Données de référence pour la transition énergétique.",
+      "weaknesses": "Pas spécialisé IRVE. Pas de benchmark entre collectivites. Pas d'outil de décision pour le déploiement."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Open data IRVE",
+      "status": "ok",
+      "detail": "Données IRVE consolidees en licence ouverte Etalab. Toutes les collectivites peuvent être couvertes.",
+      "source": "data.gouv.fr"
+    },
+    {
+      "topic": "Schema directeur IRVE obligatoire",
+      "status": "ok",
+      "detail": "Les EPCI doivent elaborer un schema directeur IRVE. Contexte reglementaire favorable à la vente de l'outil.",
+      "source": "Loi Climat et Resilience 2021"
+    },
+    {
+      "topic": "Subventions ADEME",
+      "status": "ok",
+      "detail": "L'ADEME finance les diagnostics et schemas directeurs IRVE. Budget financement potentiel pour les collectivites clientes.",
+      "source": "ADEME / France 2030"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Diagnostic gratuit EPCI (outbound)",
+      "cacEstimate": "300-600 EUR",
+      "conversionRate": "20-30%",
+      "ltv": "4 200 EUR (349 EUR/mois x 12 mois)",
+      "ltvCacRatio": "7-14x"
+    },
+    {
+      "channel": "Salons des maires / AMORCE",
+      "cacEstimate": "1 500-3 000 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "4 200 EUR",
+      "ltvCacRatio": "1,4-2,8x"
+    },
+    {
+      "channel": "Classement EPCI publié (SEO + viralité)",
+      "cacEstimate": "100-300 EUR",
+      "conversionRate": "2-5%",
+      "ltv": "4 200 EUR",
+      "ltvCacRatio": "14-42x"
+    },
+    {
+      "channel": "Contrat syndicat d'énergie (partenariat)",
+      "cacEstimate": "1 000-2 000 EUR",
+      "conversionRate": "15-25%",
+      "ltv": "9 600 EUR (799 EUR/mois x 12 mois)",
+      "ltvCacRatio": "5-10x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 54,
+      "detail": "1.3K recherches/mois cumulees ('schema directeur IRVE collectivite' 600/mois, 'IRVE EPCI obligation' 500/mois). TAM: 200 M EUR. Cibles: EPCI en cours d'elaboration, Syndicats départementaux d'énergie, Régions avec objectifs ambitieux."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 5 APIs a integrer (IRVE consolide, Immatriculations VE, API INSEE populations). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 92,
+      "detail": "20 clients a 349 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 800K EUR/an. Pricing 349-799 EUR."
+    },
+    "competition": {
+      "score": 65,
+      "detail": "3 concurrents identifies: AVERE France (Barometre), Manty, Opendata.réseaux-énergies.fr. Leader: AVERE France (Barometre) (100K visites/mois). Faiblesse principale: Format PDF statique trimestriel."
+    },
+    "legal": {
+      "score": 92,
+      "detail": "3 points verifies, tous OK. Donnees sous licence ouverte Etalab."
+    },
+    "overall": {
+      "score": 75,
+      "detail": "Point fort: marche (92/100). Point faible: demande (54/100). Opportunite solide a executer rapidement."
+    }
+  }
+}

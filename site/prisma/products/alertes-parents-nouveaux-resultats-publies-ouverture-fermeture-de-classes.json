@@ -1,0 +1,313 @@
+{
+  "productSlug": "alertes-parents-nouveaux-resultats-publies-ouverture-fermeture-de-classes",
+  "oneLiner": "Alertes pour parents: soyez prévenu quand de nouveaux résultats sont publiés où quand une ouverture/fermeture de classe est décidée.",
+  "problem": "Les parents d'élevés découvrent les changements (fermeture de classe, nouveaux résultats, changement de carte scolaire) par le bouche-a-oreille où la presse locale, souvent trop tard pour réagir. Les résultats du brevet et du bac sont publiés sur data.gouv.fr en mars, les décisions de carte des formations en fevrier, mais personne ne les surveille systematiquement. Une fermeture de classe à un impact direct sur la qualité d'enseignement.",
+  "solution": "Un système d'alertes qui surveille les publications de données education (résultats, carte des formations, sectorisation) et notifie les parents concernés. L'utilisateur s'abonne à un où plusieurs établissements et reçoit une alerte quand: les nouveaux résultats sont publiés, une ouverture/fermeture de classe est annoncée, la carte scolaire change, où un nouvel indicateur est disponible.",
+  "uniqueValue": "Les données education sont publiées de manière éclatée et asynchrone. Personne ne les surveille pour les parents. C'est un Google Alerts spécialisé education, personnalisé par établissement.",
+  "mvpScope": "Alertes sur les résultats du brevet et du bac (publication annuelle en mars). Surveillancé de 10K établissements. Email quand les nouveaux résultats sont publiés avec un resume: évolution vs année précédénte, position dans le département. Inscription gratuite.",
+  "timeToMvp": "3 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline de surveillance",
+      "description": "Surveillancé quotidienne des publications data.gouv.fr section education. Détection des nouvelles publications. Parsing automatique des résultats.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Surveillancé data.gouv.fr",
+        "Détection nouvelles publications",
+        "Parsing résultats brevet/bac",
+        "Base 10K établissements"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Alertes et interface",
+      "description": "Interface d'inscription (choisir ses établissements). Email d'alerte avec résumé des résultats. Comparaison N vs N-1.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Interface d'inscription",
+        "Alertes email",
+        "Résumé des résultats",
+        "Comparaison annuelle"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et acquisition",
+      "description": "Diffusion sur les groupes de parents en mars (publication résultats). Partenariats FCPE/PEEP. SEO sur résultats brevet/bac + établissement.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "5000 inscrits",
+        "Partenariats FCPE/PEEP",
+        "SEO lance",
+        "Première campagne d'alertes"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Alertes elargies et premium",
+      "description": "Ajouter: fermetures de classés (CTSD), changements de carte scolaire, options ajoutees/supprimées. Plan premium avec historique et comparatifs.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Alertes CTSD",
+        "Alertes carte scolaire",
+        "Plan premium",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les parents veulent être alertes sur les résultats de leur établissement",
+      "how": "Sondage sur les groupes Facebook de parents: voudriez-vous recevoir un email quand les résultats de l'école de votre enfant sont publiés?",
+      "successCriteria": "80%+ répondent oui"
+    },
+    {
+      "check": "Les données education sont suffisamment régulières pour un service d'alertes",
+      "how": "Cartographier les dates de publication des différentes données education sur data.gouv.fr",
+      "successCriteria": "Au moins 4 publications par an déclenchant des alertes (résultats brevet/bac, IVAL, IPS, carte formations)"
+    },
+    {
+      "check": "Les inscrits gratuits se convertissent en payants",
+      "how": "Proposer un plan premium a 2.90 EUR/mois après la première alerte gratuite",
+      "successCriteria": "Taux de conversion gratuit > payant > 5%"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Parents délégués et membres FCPE/PEEP",
+      "where": "FCPE, PEEP, conseils d'école, groupes Facebook parents délégués",
+      "howToReach": "Les parents délégués ont besoin de données pour leur role en conseil d'école. L'alerte est un outil de travail pour eux."
+    },
+    {
+      "who": "Parents de collégiens (les plus concernés par les résultats)",
+      "where": "Groupes Facebook parents par collège/ville, Magicmaman, JournalDesFemmes",
+      "howToReach": "Diffusion en mars quand les résultats du brevet sont publiés. Votre collège a progressé cette année."
+    },
+    {
+      "who": "Journalistes locaux (les alertes sont aussi utiles pour la presse)",
+      "where": "Redactions presse locale, France Bleu, Le Dauphine/Ouest-France/etc.",
+      "howToReach": "Proposer un accès gratuit pour les journalistes. Chaque alerte de fermeture de classe = article potentiel qui cite l'outil."
+    }
+  ],
+  "pricingStrategy": "Freemium: alertes basiques gratuites (résultats annuels). Plan Parent a 2.90 EUR/mois (alertes fermetures de classe, carte scolaire, historique 5 ans, comparaison département). Plan Parent Premium a 6.90 EUR/mois (toutes alertes, recommandations, alerte immobilier quartier scolaire). Monétisation complémentaire: affiliation soutien scolaire (Acadomia, Superprof) à chaque publication de résultats.",
+  "pathTo10kMrr": "20K inscrits gratuits. 2000 abonnes a 2.90 EUR = 5 800 EUR + 400 premium a 6.90 EUR = 2 760 EUR + affiliation soutien scolaire = 2 000 EUR/mois = 10 560 EUR MRR. Acquisition virale: chaque alerte est partagee sur les groupes de parents. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS",
+    "backend": "Next.js API Routes + Python pour la surveillancé et le parsing",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions (CRON quotidien) + Resend",
+    "apis": [
+      "data.gouv.fr API (surveillancé nouvelles publications)",
+      "Annuaire Education Nationale",
+      "Resend (email)",
+      "Stripe"
+    ],
+    "notes": "Le pipeline surveille quotidiennement les nouveaux datasets education sur data.gouv.fr. Quand un nouveau jeu de données est détecté, il est parse et les alertes sont envoyees aux abonnes concernés. Volume: 10K emails par publication de résultats."
+  },
+  "risks": [
+    {
+      "risk": "Le volume d'alertes est faible (4-6 publications/an) et les utilisateurs oublient le service",
+      "mitigation": "Envoyer du contenu entre les alertes: conseils education, articles sur les établissements suivis, rappels de dates clés (inscriptions, examens)."
+    },
+    {
+      "risk": "Les données de fermeture de classe ne sont pas en open data",
+      "mitigation": "Scraper les comptes-rendus des CTSD (Comites Techniques Speciaux Départementaux) quand ils sont publics. Crowdsourcer via les parents délégués."
+    },
+    {
+      "risk": "Le freemium ne convertit pas assez vers le payant",
+      "mitigation": "L'alerte gratuite est le hook. Le premium doit apporter une valeur immédiate et tangible (historique, comparaison, recommandation d'action)."
+    }
+  ],
+  "inspirations": "Google Alerts pour le monitoring web. Mention pour la veille media. Aux US, SchoolDigger envoie des alertes sur les classements d'écoles. En France, les FCPE locales font ce travail manuellement.",
+  "searchVolume": [
+    {
+      "keyword": "fermeture classe école",
+      "monthlyVolume": "8100",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "résultats brevet collège",
+      "monthlyVolume": "27100",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ouverture fermeture classés rentree",
+      "monthlyVolume": "3600",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "carte scolaire fermeture 2025",
+      "monthlyVolume": "4400",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "résultats bac lycee",
+      "monthlyVolume": "33100",
+      "difficulty": "high",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "8M de parents d'élevés du secondaire en France. En 2025, 5000 fermetures de classés et 470 suppressions de postes ont été annoncées, generant une forte mobilisation.",
+    "sam": "2M de parents activement engages dans la vie scolaire (parents délégués FCPE/PEEP, membres de conseils d'école, parents qui suivent les résultats)",
+    "som": "50K inscrits aux alertes la première année, 5K payants",
+    "methodology": "TAM = parents d'élevés du secondaire. SAM = parents activement engages (délégués + FCPE/PEEP + followers groupes education). SOM = taux d'inscription de 2.5% du SAM via partenariats FCPE et SEO. Référence: 5000 fermetures de classés annoncées en 2025 generant une forte demande d'information."
+  },
+  "competitorDeep": [
+    {
+      "name": "FCPE locale (bouche a oreille)",
+      "url": "https://www.fcpe.asso.fr",
+      "pricing": "Adhesion FCPE: 15-30 EUR/an",
+      "trafficEstimate": "300K membres nationaux",
+      "reviews": "Première source d'information pour les parents délégués, réseau local fort",
+      "strengths": "Réseau local très fort, information de première main via les conseils d'école, 300K membres, légitimité institutionnelle",
+      "weaknesses": "Information non structuree (bouche a oreille, emails), pas d'outil digital, pas d'alertes automatisees, couverture inégale selon les villes"
+    },
+    {
+      "name": "France Bleu / presse locale",
+      "url": "https://www.francebleu.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "Variable",
+      "reviews": "Couvre les fermetures de classés localement",
+      "strengths": "Couverture locale de chaque fermeture de classe, articles détaillés avec reactions",
+      "weaknesses": "Information reactive (pas proactive), pas d'alertes personnalisées, pas de suivi par établissement, pas de données structurees"
+    },
+    {
+      "name": "education.gouv.fr (IVAL)",
+      "url": "https://www.education.gouv.fr/recherche-ival",
+      "pricing": "Gratuit",
+      "trafficEstimate": "1M visites/mois en pic (mars)",
+      "reviews": "Publication annuelle des indicateurs de résultats des lycees et collèges",
+      "strengths": "Source officielle, données complètes (valeur ajoutee, taux de réussite, IPS), couverture nationale",
+      "weaknesses": "Publication annuelle sans alerte, interface technique, pas de suivi par établissement, pas de notifications"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Surveillancé des publications data.gouv.fr",
+      "status": "ok",
+      "detail": "Les publications sur data.gouv.fr sont sous licence ouverte. La surveillancé automatique des nouvelles publications est autorisée.",
+      "source": "Licence Ouverte Etalab 2.0"
+    },
+    {
+      "topic": "Données de fermetures de classés (CTSD)",
+      "status": "attention",
+      "detail": "Les décisions de fermetures de classés sont prises dans les CTSD (Comites Techniques Speciaux Départementaux). Les comptes-rendus ne sont pas toujours en open data. Certains sont publiés par les syndicats enseignants.",
+      "source": "Code de l'education"
+    },
+    {
+      "topic": "RGPD et alertes email",
+      "status": "ok",
+      "detail": "La collecte d'emails pour les alertes nécessite un consentement explicite (opt-in). Respecter le droit de désinscription (RGPD + directive ePrivacy).",
+      "source": "RGPD Article 6 + Directive ePrivacy"
+    },
+    {
+      "topic": "Sensibilite des fermetures de classes",
+      "status": "ok",
+      "detail": "Les fermetures de classés sont des décisions publiques. Informer les parents est un exercice de transparence démocratique, pas un acte de dénigrement.",
+      "source": "Liberté d'information - Article 11 DDHC"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Partenariats FCPE/PEEP (diffusion auprès des parents délégués)",
+      "cacEstimate": "0.50 EUR",
+      "conversionRate": "8%",
+      "ltv": "34.80 EUR (12 mois parent)",
+      "ltvCacRatio": "69.6"
+    },
+    {
+      "channel": "SEO (résultats brevet/bac + établissement)",
+      "cacEstimate": "0.30 EUR",
+      "conversionRate": "4%",
+      "ltv": "34.80 EUR",
+      "ltvCacRatio": "116.0"
+    },
+    {
+      "channel": "Diffusion groupes Facebook parents en mars (publication résultats)",
+      "cacEstimate": "0.60 EUR",
+      "conversionRate": "6%",
+      "ltv": "34.80 EUR",
+      "ltvCacRatio": "58.0"
+    },
+    {
+      "channel": "Presse locale (chaque fermeture de classe = article potentiel)",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "N/A",
+      "ltv": "N/A (trafic indirect)",
+      "ltvCacRatio": "infini"
+    },
+    {
+      "channel": "Affiliation soutien scolaire (Acadomia, Superprof)",
+      "cacEstimate": "0 EUR (revenu direct)",
+      "conversionRate": "1%",
+      "ltv": "15 EUR/lead",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 82,
+      "detail": "76.3K recherches/mois cumulees ('résultats bac lycee' 33 100/mois, 'résultats brevet collège' 27 100/mois). Cibles: Parents délégués et membres, Parents de collégiens, Journalistes locaux."
+    },
+    "feasibility": {
+      "score": 83,
+      "detail": "MVP en 3 semaines. 4 APIs a integrer (API, Annuaire Education Nationale, Resend). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 28,
+      "detail": "2000 clients a 90 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. Pricing 90-90 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: FCPE locale (bouche a oreille), France Bleu / presse locale, education.gouv.fr (IVAL). Leader: FCPE locale (300K membres nationaux). Faiblesse principale: Information non structuree (bouche a oreille."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Données de fermetures de classés (CTSD)."
+    },
+    "overall": {
+      "score": 64,
+      "detail": "Point fort: faisabilite (83/100). Point faible: marche (28/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

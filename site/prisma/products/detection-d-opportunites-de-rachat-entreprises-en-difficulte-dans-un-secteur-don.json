@@ -1,0 +1,327 @@
+{
+  "productSlug": "detection-d-opportunites-de-rachat-entreprises-en-difficulte-dans-un-secteur-don",
+  "oneLiner": "Identifiez les entreprises en difficulté dans votre secteur avant qu'elles ne soient sur le marché, pour negocier un rachat en position de force.",
+  "problem": "Les repreneurs d'entreprises découvrent les opportunités trop tard, quand l'entreprise est déjà en liquidation où vendue aux encheres. Les mandataires judiciaires et les plateformes de cession (Transentreprise, BPI) ne montrent que la partie emergee. Or les signaux faibles de difficulté (retard de comptes, baisse effectifs, procédures BODACC) sont detectables des mois avant la mise en vente officielle.",
+  "solution": "Un radar qui détecté automatiquement les entreprises en difficulté dans un secteur et une zone géographique donnes, en croisant signaux faibles (retards de dépôt de comptes, baisse d'effectifs URSSAF, inscriptions de privileges BODACC) et signaux forts (redressement judiciaire, plan de sauvegarde). Chaque opportunité est scoree et enrichie avec les données clés pour evaluer l'intérêt du rachat.",
+  "uniqueValue": "Détection proactive des mois avant la mise en vente officielle, la où les plateformes de cession ne montrent que les dossiers déjà sur le marché.",
+  "mvpScope": "Selection d'un secteur NAF + zone géographique. Dashboard listant les entreprises en difficulté détectées, triees par score d'opportunité. Fiche détaillée par entreprise avec tous les signaux détectés et données clés (CA estimé, effectifs, anciennete, type de difficulté).",
+  "timeToMvp": "8 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Moteur de détection des signaux de difficulté",
+      "description": "Ingestion BODACC (inscriptions de privileges, nantissements, procédures collectives), croisement avec SIRENE (anciennete, changements) et effectifs URSSAF (tendance). Definition des signaux faibles et forts avec ponderation.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline BODACC avec classification des types de procédures",
+        "Détection des baisses d'effectifs URSSAF sur 12 mois",
+        "Algorithme de scoring d'opportunité de rachat",
+        "Base de données des entreprises en difficulté par secteur"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Dashboard et fiches opportunités",
+      "description": "Interface de recherche par secteur NAF et zone géographique. Liste des entreprises détectées triees par pertinence. Fiche détaillée avec chronologie des signaux et données financières estimées.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Filtres par code NAF, département, taille, score minimum",
+        "Liste paginee avec preview (nom, CA estimé, effectifs, score)",
+        "Fiche complète avec timeline des signaux",
+        "Export PDF de la fiche pour partage avec associés/avocats"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Alertes et suivi de portefeuille",
+      "description": "Système d'alertes sur nouveaux signaux dans les secteurs surveilles. Suivi d'un portefeuille d'entreprises ciblées avec notifications de changement de statut.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Configuration des alertes par secteur/zone",
+        "Watchlist d'entreprises ciblées",
+        "Notifications email sur nouveaux signaux",
+        "Historique des changements de score"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les repreneurs d'entreprises cherchent activement ce type d'outil",
+      "how": "Contacter 20 repreneurs via les réseaux CRA (Cedants et Repreneurs d'Affaires), BPI France, et les clubs de repreneurs. Montrer un mock du dashboard.",
+      "successCriteria": "15/20 confirment que la détection précoce est leur principal problème, 10 veulent tester la beta"
+    },
+    {
+      "check": "Les signaux faibles sont reellement prédictifs",
+      "how": "Analyser retrospectivement 200 entreprises mises en liquidation en 2024 : combien avaient des signaux detectables 6-12 mois avant ?",
+      "successCriteria": "80% des liquidations avaient au moins 2 signaux faibles detectables 6+ mois avant"
+    },
+    {
+      "check": "Le nombre d'opportunités par secteur justifie un abonnement",
+      "how": "Calculer le nombre d'entreprises en difficulté détectées par secteur NAF et par département sur 12 mois.",
+      "successCriteria": "Minimum 20 opportunités/mois dans les secteurs majeurs (commerce, BTP, restauration, industrie)"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Repreneurs d'entreprises en serie (fonds de retournement, repreneurs individuels experimentes)",
+      "where": "CRA (Cedants et Repreneurs d'Affaires), clubs de repreneurs BPI France, salons Transentreprise",
+      "howToReach": "Presentation lors d'un événement CRA avec cas concrets anonymises. Offrir 3 mois gratuits aux 20 premiers repreneurs actifs."
+    },
+    {
+      "who": "Cabinets de conseil en retournement et mandataires judiciaires",
+      "where": "CNAJMJ (Conseil National des Administrateurs Judiciaires et Mandataires Judiciaires), conferences droit des entreprises en difficulté",
+      "howToReach": "Proposer l'outil comme complement à leur sourcing actuel. Les mandataires connaissent la valeur de la détection précoce."
+    },
+    {
+      "who": "Groupes d'entreprises cherchant des acquisitions strategiques (croissance externe)",
+      "where": "LinkedIn (directeurs M&A, directeurs du développement), cabinets de conseil en stratégie",
+      "howToReach": "Cibler les responsables croissance externe des ETI avec un email personnalisé montrant les opportunités dans leur secteur NAF."
+    }
+  ],
+  "pricingStrategy": "Explorer a 79 euros/mois : 1 secteur NAF, 1 région, alertes hebdomadaires, 5 fiches détaillées/mois. Investisseur a 199 euros/mois : 5 secteurs, France entière, alertes quotidiennes, fiches illimitées, export PDF, watchlist 50 entreprises. Pro a 499 euros/mois : secteurs illimités, API, alertes temps reel, watchlist illimitée, accompagnement personnalisé (1 call/mois).",
+  "pathTo10kMrr": "30 Explorer (2370) + 30 Investisseur (5970) + 5 Pro (2495) = ~10.8K MRR. Niche mais high-value : un repreneur qui trouve une bonne affaire grâce a l'outil rentabilise son abonnement x100. Acquisition : partenariats CRA et BPI France, SEO sur 'reprendre entreprise [secteur]', content marketing (études sectorielles sur les défaillances).",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS + MapLibre (visualisation géographique des opportunités)",
+    "backend": "Next.js API routes + workers batch pour le scoring quotidien",
+    "database": "PostgreSQL (Supabase) avec extensions PostGIS pour les requetes géographiques",
+    "hosting": "Vercel + Supabase + Railway (workers batch)",
+    "apis": [
+      "BODACC dataset data.gouv.fr",
+      "API Recherche Entreprises",
+      "API SIRENE INSEE",
+      "Effectifs URSSAF data.gouv.fr",
+      "API Entreprise (bilans, si accès)"
+    ],
+    "notes": "Le croisement BODACC + SIRENE + effectifs suffit pour le MVP. Les bilans déposés (INPI) ajoutent de la profondeur mais ne sont pas indispensables au lancement. PostGIS utile pour les requetes 'entreprises en difficulté dans un rayon de X km'."
+  },
+  "risks": [
+    {
+      "risk": "Ethique : profitér de la difficulté d'une entreprise peut être mal percu",
+      "mitigation": "Positionner l'outil comme facilitateur de reprise (sauver des emplois) et non comme outil predateur. Communiquer sur les reprises réussies. Exclure les données personnelles des dirigeants."
+    },
+    {
+      "risk": "Faux positifs : entreprises signalees en difficulté qui vont très bien",
+      "mitigation": "Système multi-signaux (minimum 2 signaux concordants pour apparaitre). Indicateur de confiance clair. Possibilite pour les entreprises de contestér leur présence."
+    },
+    {
+      "risk": "Marché de niche avec un nombre limite de repreneurs actifs en France",
+      "mitigation": "Elargir au-dela des repreneurs : ciblér aussi les concurrents qui veulent rachetér des parts de marché, et les fonds d'investissement PE. Pivoter vers le scoring credit si besoin."
+    },
+    {
+      "risk": "Données financières insuffisantes pour les petites entreprises",
+      "mitigation": "Compenser par les signaux BODACC et effectifs qui sont disponibles pour toutes les tailles. Afficher clairement le niveau de confiance du scoring."
+    }
+  ],
+  "inspirations": "Transentreprise (plateforme de cession BPI mais seulement les dossiers officiels), Fusacq (marketplace M&A mais pas de détection proactive), PitchBook/Crunchbase (M&A tracking mais pour le venture/PE tech), Altares score de défaillancé (prediction mais pas oriente reprise), DealRoom (M&A workflow mais pas de sourcing open data).",
+  "searchVolume": [
+    {
+      "keyword": "rachat entreprise en difficulté",
+      "monthlyVolume": "1600",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "reprise PME",
+      "monthlyVolume": "2900",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "reprendre une entreprise",
+      "monthlyVolume": "5400",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "entreprise a reprendre",
+      "monthlyVolume": "8100",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "entreprise en liquidation a reprendre",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "détection entreprise en difficulté",
+      "monthlyVolume": "320",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "reprise entreprise redressement judiciaire",
+      "monthlyVolume": "880",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "2.5 milliards EUR - marché de la transmission/reprise d'entreprise en France. 41% des dirigeants de PME veulent ceder dans les 5 ans (source CCI). 70 000 défaillances en 2025 (pic historique sur 35 ans). Bpifrance estimé 60 000 transmissions/an potentielles.",
+    "sam": "120 millions EUR - repreneurs actifs (fonds de retournement, repreneurs individuels, groupes en croissance externe) qui recherchent des ciblés en difficulté. Environ 5 000 repreneurs actifs x 2 000 EUR/an de budget outils.",
+    "som": "1.3 million EUR - 10 800 EUR MRR (65 clients payants) en 12-18 mois, niche high-value avec ticket moyen 166 EUR/mois.",
+    "methodology": "TAM base sur le volume de transactions M&A PME en France (étude CCI/BPI). SAM base sur le nombre de repreneurs actifs dans les réseaux CRA + fonds PE + M&A mid-cap. SOM base sur le mix pricing avec 30 Explorer + 30 Investisseur + 5 Pro."
+  },
+  "competitorDeep": [
+    {
+      "name": "Transentreprise (BPI France)",
+      "url": "https://reprise-entreprise.bpifrance.fr",
+      "pricing": "Gratuit. Publication des annoncés gratuite pendant 1 an.",
+      "trafficEstimate": "500K visites/mois",
+      "reviews": "Plateforme de référence mais ne montre que les dossiers officiellement mis en vente. Pas de détection proactive.",
+      "strengths": "Gratuit, soutien institutionnel BPI/CCI, 6000+ annonces, couverture nationale, réseau de partenaires mandataires",
+      "weaknesses": "Seulement les dossiers officiels en vente, pas de signaux faibles, pas de scoring, pas d'alertes proactives, UX datee"
+    },
+    {
+      "name": "Fusacq",
+      "url": "https://www.fusacq.com",
+      "pricing": "Publication gratuite. Mise en relation 30-55 EUR par annonce.",
+      "trafficEstimate": "200K visites/mois",
+      "reviews": "Marketplace M&A historique en France. Bonne couverture des cessions PME.",
+      "strengths": "Marketplace etablie depuis 20+ ans, cessions et acquisitions, news M&A, gratuit a publiér",
+      "weaknesses": "Pas de détection proactive d'entreprises en difficulté, pas de scoring, marketplace passive (attente d'annonces), pas d'alertes sectorielles"
+    },
+    {
+      "name": "Altares Score Defaillance",
+      "url": "https://www.altares.com",
+      "pricing": "500-2000 EUR/mois. Rapports unitaires 20-40 EUR.",
+      "trafficEstimate": "300K visites/mois",
+      "reviews": "Score de défaillancé reconnu par les banques et assureurs credit. Predictif mais pas oriente reprise.",
+      "strengths": "Score prédictif calibre sur 30+ ans de données, référence marché, couverture exhaustive",
+      "weaknesses": "Pas oriente reprise (angle risque credit, pas opportunité M&A), très cher, pas de filtrage sectoriel/géographique pour repreneurs"
+    },
+    {
+      "name": "PitchBook / Dealroom",
+      "url": "https://pitchbook.com",
+      "pricing": "20 000-50 000+ EUR/an",
+      "trafficEstimate": "2M visites/mois (global)",
+      "reviews": "Référence pour le M&A tech et venture capital. Pas adapte aux PME industrielles francaises.",
+      "strengths": "Base exhaustive transactions M&A mondiales, analytics puissantes, intégration CRM",
+      "weaknesses": "Focus tech/VC, pas de couverture PME industrielles francaises, prix prohibitif, pas de détection signaux faibles BODACC"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Ethique et image de marque",
+      "status": "attention",
+      "detail": "Exploiter la difficulté d'entreprises peut être perçu négativement. Positionner comme facilitateur de reprise (sauver des emplois). Communiquer sur les reprises réussies.",
+      "source": "Risque réputationnel, pas de contrainte legale specifique"
+    },
+    {
+      "topic": "RGPD données dirigeants d'entreprises en difficulté",
+      "status": "attention",
+      "detail": "Les procédures collectives sont publiques (BODACC) mais croiser avec des données d'enrichissement (telephone, email du dirigeant) pourrait poser problème. S'en tenir aux données légales publiques.",
+      "source": "CNIL, RGPD art. 6.1.f interet legitime"
+    },
+    {
+      "topic": "Secret des affaires",
+      "status": "ok",
+      "detail": "Les données utilisees (BODACC, SIRENE, effectifs URSSAF) sont publiques et reutilisables. Le scoring derive ne viole pas le secret des affaires.",
+      "source": "Loi n2018-670 du 30 juillet 2018 sur le secret des affaires"
+    },
+    {
+      "topic": "Droit de contestation par l'entreprise signalee",
+      "status": "attention",
+      "detail": "Une entreprise signalee a tort pourrait demander la rectification où la suppression. Prevoir un mecanisme de contestation et un indicateur de confiance.",
+      "source": "RGPD art. 16 droit de rectification, art. 22 decision automatisee"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (reprendre entreprise, rachat PME en difficulté)",
+      "cacEstimate": "150 EUR",
+      "conversionRate": "3%",
+      "ltv": "3600 EUR (Investisseur 199 EUR x 18 mois)",
+      "ltvCacRatio": "24.0"
+    },
+    {
+      "channel": "Partenariats CRA et clubs de repreneurs",
+      "cacEstimate": "100 EUR",
+      "conversionRate": "10%",
+      "ltv": "4800 EUR (Investisseur 199 EUR x 24 mois)",
+      "ltvCacRatio": "48.0"
+    },
+    {
+      "channel": "LinkedIn outreach (directeurs M&A, fonds retournement)",
+      "cacEstimate": "200 EUR",
+      "conversionRate": "5%",
+      "ltv": "5990 EUR (Pro 499 EUR x 12 mois)",
+      "ltvCacRatio": "30.0"
+    },
+    {
+      "channel": "Content marketing (études sectorielles défaillances)",
+      "cacEstimate": "120 EUR",
+      "conversionRate": "4%",
+      "ltv": "2400 EUR (Investisseur 199 EUR x 12 mois)",
+      "ltvCacRatio": "20.0"
+    },
+    {
+      "channel": "Google Ads (rachat entreprise difficulté)",
+      "cacEstimate": "350 EUR",
+      "conversionRate": "5%",
+      "ltv": "3600 EUR",
+      "ltvCacRatio": "10.3"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 69,
+      "detail": "21.1K recherches/mois cumulees ('entreprise a reprendre' 8 100/mois, 'reprendre une entreprise' 5 400/mois). TAM: 2.5 milliards EUR. Cibles: Repreneurs d'entreprises en serie, Cabinets de conseil en, Groupes d'entreprises cherchant des."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 8 semaines. 5 APIs a integrer (BODACC dataset, API Recherche Entreprises, API SIRENE INSEE). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 58,
+      "detail": "Pricing 79-499 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: Transentreprise (BPI France), Fusacq, Altares Score Defaillance. Leader: Transentreprise (500K visites/mois). Faiblesse principale: Seulement les dossiers officiels en vente."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Ethique et image de marque, RGPD données dirigeants d'entreprises en difficult."
+    },
+    "overall": {
+      "score": 57,
+      "detail": "Point fort: demande (69/100). Point faible: faisabilite (45/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

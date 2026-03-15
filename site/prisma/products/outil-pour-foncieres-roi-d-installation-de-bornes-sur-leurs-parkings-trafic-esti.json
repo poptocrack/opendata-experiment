@@ -1,0 +1,300 @@
+{
+  "productSlug": "outil-pour-foncieres-roi-d-installation-de-bornes-sur-leurs-parkings-trafic-esti",
+  "oneLiner": "Calculateur de ROI pour foncières et gestionnaires de parkings : combien rapportera l'installation de bornes EV sur chaque parking.",
+  "problem": "Les foncières commerciales (Unibail, Klepierre, Carmila) et gestionnaires de parkings (Indigo, Q-Park) ont des milliers de places. Installer des bornes EV est une opportunité (revenus + attractivité) mais un investissement de 30-100K EUR par station. Sans données precises sur le trafic VE potentiel et la concurrence, la décision est prise au doigt mouille.",
+  "solution": "Un outil de calcul de ROI par parking estimant : sessions de recharge quotidiennes (base sur trafic, VE immatricules rayon 10km, bornes concurrentes), chiffré d'affaires mensuel (sessions x kWh x prix), coût d'installation (puissance et nombre de bornes), et temps de retour sur investissement. Export business case PDF pour comite d'investissement.",
+  "uniqueValue": "Les opérateurs offrent des études gratuites mais biaisees (ils veulent installer). Cet outil est indépendant, base sur des données publiques objectives. Le format business case est fait pour les comites d'investissement des foncières (ROI, payback, NPV).",
+  "mvpScope": "Calculateur pour parkings en surface et souterrains en IDF + 20 grandes villes. Estimation trafic VE : fréquentation par type de lieu, VE rayon 10km, bornes concurrentes. 3 scenarios (pessimiste, moyen, optimiste). Export business case PDF.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Validation auprès des foncières",
+      "description": "Entretiens avec 5 directeurs asset management de foncières et 3 directeurs de gestionnaires de parking. Valider le format business case et l'appetit.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "8 entretiens",
+        "2 LOI",
+        "Format business case valide",
+        "Critères de décision identifiés"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Modèle de ROI et interface",
+      "description": "Pipeline IRVE + immatriculations VE + parking data. Modèle de ROI 3 scenarios. Interface web + export PDF business case.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Modèle de ROI calibre",
+        "Interface web",
+        "Export PDF business case",
+        "3 scenarios Monte Carlo"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Premiers clients",
+      "description": "Diagnostic gratuit sur 5 parkings par client. Conversion en abonnement portefeuille. Présentation SIMI.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "5 clients en POC",
+        "25 parkings analyses",
+        "3 contrats signes"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Suivi post-installation et scale",
+      "description": "Module suivi post-installation (ROI réel vs prévu). Intégration supervision bornes. Dashboard portefeuille multi-sites. White-label pour opérateurs.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Module suivi post-install",
+        "Dashboard portefeuille",
+        "White-label opérateurs",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les foncières ont un processus de décision structuré pour les bornes",
+      "how": "Entretiens avec 5 asset managers. Comprendre le circuit (comite d'investissement, seuils de ROI).",
+      "successCriteria": "4/5 confirment qu'un business case chiffré est nécessaire et les données actuelles insuffisantes"
+    },
+    {
+      "check": "Le modèle de ROI est calibrable avec les données disponibles",
+      "how": "Calibrer sur 10 stations existantes ou les données d'utilisation sont connues (ChargeMap ou opérateurs)",
+      "successCriteria": "Écart ROI prévu vs réel < 25% pour 7/10 stations"
+    },
+    {
+      "check": "Le prix est acceptable pour les foncières",
+      "how": "Proposer 3 prix (499, 999, 1 999 EUR/mois) a 5 foncières et mesurer les reactions",
+      "successCriteria": "3/5 acceptent 999 EUR/mois pour un portefeuille de 10+ parkings"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Foncières de centres commerciaux (Carmila, Klepierre, Apsys)",
+      "where": "SIMI, MIPIM, LinkedIn immobilier commercial",
+      "howToReach": "Diagnostic gratuit de 3 parkings. Les centres commerciaux sont sous pression pour proposer des bornes (attractivité clients VE)."
+    },
+    {
+      "who": "Gestionnaires de parkings (Indigo, Q-Park, Effia, Sags)",
+      "where": "Salons parkings (Intertraffic), LinkedIn, FNMS",
+      "howToReach": "Le ROI calculator aide a convaincre leurs clients (collectivités, foncières). Outil de vente pour les gestionnaires."
+    },
+    {
+      "who": "Opérateurs de bornes cherchant a convaincre des propriétaires fonciers",
+      "where": "Salons EV, LinkedIn, AVERE",
+      "howToReach": "White-label : l'opérateur utilisé l'outil pour montrer le ROI a ses prospects fonciers. Win-win."
+    }
+  ],
+  "pricingStrategy": "Plan Mono-site a 299 EUR/mois (1 parking, ROI calculator, suivi). Plan Portefeuille a 999 EUR/mois (jusqu'a 20 parkings, dashboard, benchmark). Plan Enterprise a 2 499 EUR/mois (illimité, API, accompagnement). Plan White-label Opérateur a 1 499 EUR/mois (branding opérateur). Business case unitaire a 499 EUR (one-shot).",
+  "pathTo10kMrr": "3 foncières x 999 EUR = 2 997 EUR + 2 gestionnaires parking x 999 EUR = 1 998 EUR + 2 opérateurs white-label x 1 499 EUR = 2 998 EUR + 5 one-shots/mois x 499 EUR = 2 495 EUR = 10 488 EUR MRR. Timeline : 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts pour graphiques financiers",
+    "backend": "Next.js API Routes + Python pour modèle de ROI et pipeline géospatial",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "IRVE consolide (data.gouv.fr)",
+      "Immatriculations VE (data.gouv.fr)",
+      "Parkings ouverts (data.gouv.fr)",
+      "API BAN",
+      "Stripe"
+    ],
+    "notes": "Modèle de ROI utilisé 3 scenarios Monte Carlo. Trafic estime par type de lieu (centre commercial, gare). VE immatricules = proxy demande locale. Export PDF via Puppeteer avec charts SVG."
+  },
+  "risks": [
+    {
+      "risk": "Le modèle de ROI est imprécis car les données de fréquentation des parkings ne sont pas publiques",
+      "mitigation": "Proxies (type de lieu, taille, zone de chalandise). Calibrer avec données reelles des premiers clients. Afficher des fourchettes."
+    },
+    {
+      "risk": "Les opérateurs offrent déjà des études gratuites (mais biaisees)",
+      "mitigation": "Se positionner comme tiers indépendant. Les foncières savent que les études opérateurs sont biaisees."
+    },
+    {
+      "risk": "Marché francais petit (< 20 foncières significatives)",
+      "mitigation": "Diversifier vers gestionnaires de parking (centaines), collectivités, et Europe. White-label opérateurs multiplie les clients."
+    }
+  ],
+  "inspirations": "CoStar (analytics immobilier commercial). ParkHub (analytics parking). ChargePoint ROI calculator (biaise car opérateur). Aux US, EnSite pour les utilities.",
+  "searchVolume": [
+    {
+      "keyword": "ROI borne recharge parking",
+      "monthlyVolume": "600",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "installer borne recharge centre commercial",
+      "monthlyVolume": "1 200",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "rentabilité borne recharge électrique",
+      "monthlyVolume": "3 600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "borne recharge parking privé",
+      "monthlyVolume": "2 400",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "business case borne recharge",
+      "monthlyVolume": "300",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "800 M EUR (marché de l'équipement des parkings commerciaux et publics en bornes EV en France, 500K+ parkings)",
+    "sam": "80 M EUR (outils de décision et business case pour les 20 foncières majeures et 200+ gestionnaires de parkings)",
+    "som": "900K EUR (18 mois, 3-5 foncières + 5-10 gestionnaires de parking a 299-999 EUR/mois + one-shots)",
+    "methodology": "TAM base sur le potentiel d'équipement des parkings commerciaux et publics. SAM restreint aux acteurs avec process de décision structuré. SOM base sur 15 clients en 18 mois."
+  },
+  "competitorDeep": [
+    {
+      "name": "ChargePoint ROI Calculator",
+      "url": "https://www.chargepoint.com",
+      "pricing": "Gratuit (outil marketing de l'opérateur)",
+      "trafficEstimate": "N/A (outil interne)",
+      "reviews": "N/A",
+      "strengths": "Calcul de ROI simple et rapide. Marque mondiale reconnue. Données d'utilisation reelles de leur réseau.",
+      "weaknesses": "Biaise : le calcul favorise systematiquement l'installation (c'est un outil de vente). Pas de benchmark indépendant. Pas de données concurrentielles."
+    },
+    {
+      "name": "Cabinets de conseil (Sia Partners, BearingPoint)",
+      "url": "N/A",
+      "pricing": "30-80K EUR par étude",
+      "trafficEstimate": "N/A",
+      "reviews": "N/A",
+      "strengths": "Expertise sectorielle approfondie. Crédibilité auprès des comites d'investissement. Prise en compte de facteurs qualitatifs.",
+      "weaknesses": "Coût disproportionne pour un seul parking. Délai 2-4 mois. Pas scalable pour un portefeuille de 50 parkings."
+    },
+    {
+      "name": "CoStar (US, référence)",
+      "url": "https://www.costar.com",
+      "pricing": "SaaS B2B sur devis (1 000-5 000 USD/mois)",
+      "trafficEstimate": "5M visites/mois (US)",
+      "reviews": "Référence mondiale analytics immobilier commercial",
+      "strengths": "Base de données immobilier commercial la plus complète. Analytics de foot traffic. Modèles de ROI sophistiques.",
+      "weaknesses": "Pas présent en France. Pas spécialisé IRVE/mobilite électrique. Données US uniquement."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Obligation d'équipement des parkings",
+      "status": "ok",
+      "detail": "La loi LOM et la RE2020 imposent le pre-équipement des parkings neufs en bornes de recharge. Contexte favorable.",
+      "source": "Loi LOM / RE2020"
+    },
+    {
+      "topic": "Données IRVE open data",
+      "status": "ok",
+      "detail": "Données IRVE consolidees et immatriculations VE en licence ouverte sur data.gouv.fr.",
+      "source": "data.gouv.fr"
+    },
+    {
+      "topic": "Données de parkings",
+      "status": "attention",
+      "detail": "Les données de fréquentation des parkings ne sont pas en open data. Nécessité des proxies (type de lieu, zone de chalandise) ou des partenariats.",
+      "source": "N/A"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Diagnostic gratuit 3 parkings (outbound foncières)",
+      "cacEstimate": "800-1 500 EUR",
+      "conversionRate": "20-30%",
+      "ltv": "12 000 EUR (999 EUR/mois x 12 mois)",
+      "ltvCacRatio": "8-15x"
+    },
+    {
+      "channel": "Salons immobilier commercial (SIMI, MIPIM)",
+      "cacEstimate": "3 000-5 000 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "12 000 EUR",
+      "ltvCacRatio": "2,4-4x"
+    },
+    {
+      "channel": "Business case one-shot (inbound SEO)",
+      "cacEstimate": "100-200 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "499 EUR (one-shot) + upsell potentiel",
+      "ltvCacRatio": "2,5-5x"
+    },
+    {
+      "channel": "White-label opérateurs",
+      "cacEstimate": "2 000-4 000 EUR",
+      "conversionRate": "10-20%",
+      "ltv": "18 000 EUR (1 499 EUR/mois x 12 mois)",
+      "ltvCacRatio": "4,5-9x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 58,
+      "detail": "906 recherches/mois cumulees ('ROI borne recharge parking' 600/mois, 'business case borne recharge' 300/mois). TAM: 800 M EUR. Cibles: Foncières de centres commerciaux, Gestionnaires de parkings, Opérateurs de bornes cherchant."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 5 APIs a intégrer (IRVE consolide, Immatriculations VE, Parkings ouverts). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 52,
+      "detail": "Objectif 10K MRR en 10-12 mois. SOM: 900K EUR/an. Pricing 299-999 EUR."
+    },
+    "competition": {
+      "score": 65,
+      "detail": "3 concurrents identifiés: ChargePoint ROI Calculator, Cabinets de conseil (Sia Partn, CoStar (US, référence). Leader: ChargePoint ROI Calculato (N/A (outil interne))."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "2 points OK, 1 point d'attention. Vigilance: Données de parkings."
+    },
+    "overall": {
+      "score": 62,
+      "detail": "Point fort: légal (78/100). Point faible: marché (52/100). Potentiel réel mais hypotheses cles a valider."
+    }
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "productSlug": "alertes-soyez-prevenu-quand-un-restaurant-pres-de-chez-vous-recoit-un-mauvais-co",
+  "oneLiner": "Recevez une alerte quand un restaurant près de chez vous echoue à un contrôle hygiène.",
+  "problem": "Les résultats des contrôles sanitaires sont publiés sur Alim'confiance mais personne ne les surveille en continu. Un restaurant peut recevoir un mauvais contrôle et continuer a servir des clients qui n'en savent rien. Les parents, les personnes immunodéprimées, et les consommateurs soucieux de leur sante n'ont aucun système d'alerte.",
+  "solution": "Un service d'alertes par email/push qui surveille les nouveaux résultats de contrôles sanitaires dans un rayon configurable autour de l'adresse de l'utilisateur. Notification immédiate en cas de contrôle négatif (a améliorer, à corriger de manière urgente). Résumé hebdomadaire de l'activité dans la zone. Possibilite de suivre des restaurants spécifiques.",
+  "uniqueValue": "Seul service en France qui transforme les données Alim'confiance passives en alertes actives et personnalisées. Comme une sentinelle hygiène pour votre quartier.",
+  "mvpScope": "Service d'alertes email avec : inscription par adresse où code postal, configuration du rayon (1-10km), alerte immédiate sur contrôle négatif, résumé hebdomadaire de la zone, suivi de restaurants favoris. Dashboard web simple pour gérer ses préférénces.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Moteur de détection et pipeline",
+      "description": "Scraper/poller les nouvelles données Alim'confiance, détecter les nouveaux contrôles négatifs, matcher avec les zones d'alerte des utilisateurs.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Job de polling quotidien des nouvelles données",
+        "Moteur de matching géo zone/contrôle",
+        "File d'attente de notifications",
+        "Stockage des zones d'alerte utilisateurs"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Système de notification et inscription",
+      "description": "Envoi d'emails d'alerte formattees, page d'inscription avec configuration de zone, gestion des préférénces.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Templates email d'alerte (immédiat + hebdo)",
+        "Page d'inscription avec carte interactive",
+        "Gestion des préférénces utilisateur",
+        "Integration Resend/Postmark pour l'envoi"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Monétisation et growth",
+      "description": "Ajout du tier premium, referral program, et optimisation SEO pour l'acquisition.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Paywall Stripe pour les fonctionnalités premium",
+        "Système de parrainage",
+        "Pages SEO par ville",
+        "Analytics de conversion"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les données Alim'confiance sont mises à jour assez frequemment",
+      "how": "Monitorer le dataset pendant 4 semaines pour mesurer la fréquence de publication de nouveaux contrôles.",
+      "successCriteria": "Au moins 500 nouveaux contrôles publiés par semaine au niveau national."
+    },
+    {
+      "check": "Les gens veulent être alertes proactivement",
+      "how": "Landing page 'Soyez prévenu' avec inscription email. Promotion sur les groupes Facebook locaux de 3 grandes villes.",
+      "successCriteria": "300+ inscriptions en 2 semaines sans budget pub."
+    },
+    {
+      "check": "Le contenu des alertes est suffisamment actionnable",
+      "how": "Envoyer 50 alertes beta à des testeurs et mesurer le taux d'ouverture et les retours qualitatifs.",
+      "successCriteria": "Taux d'ouverture > 40%, retours positifs > 70%."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Parents de jeunes enfants en milieu urbain",
+      "where": "Groupes Facebook parents (Parents de [ville]), forums Magicmaman, groupes WhatsApp de crèches/écoles",
+      "howToReach": "Poster dans les groupes avec un angle 'protégéz vos enfants'. Partenariat avec des associations de parents d'élevés."
+    },
+    {
+      "who": "Personnes avec allergies où sensibilites alimentaires",
+      "where": "Associations (AFPRAL, Association Francaise des Intolerants au Gluten), groupes Facebook allergies",
+      "howToReach": "Partenariat avec les associations pour relayer le service. Article de blog ciblé."
+    },
+    {
+      "who": "Journalistes locaux couvrant la sante publique",
+      "where": "Redactions locales (France 3 régions, La Depeche, Ouest-France), pigistes sante",
+      "howToReach": "Communique de presse local quand un contrôle négatif notable est détecté. Le service devient une source d'info."
+    }
+  ],
+  "pricingStrategy": "Gratuit : 1 zone d'alerte, alertes hebdomadaires uniquement. Premium a 3.99 EUR/mois : zones illimitées, alertes instantanees, suivi de restaurants favoris, historique complet, export. Famille a 6.99 EUR/mois : 5 comptes lies (famille/coloc).",
+  "pathTo10kMrr": "Acquisition : SEO local + viralité (les alertes sont partageables). M1-M3 : 5K inscrits gratuits, 150 premium = 600 EUR MRR. M3-M6 : 20K inscrits, 800 premium = 3 200 EUR MRR. M6-M12 : 50K inscrits (bouche a oreille + presse locale), 2 500 premium a 3.99 EUR = 9 975 EUR MRR. Le taux de conversion vise de 5% est realiste pour un service d'alerte a forte valeur perçue.",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS",
+    "backend": "Next.js API Routes + BullMQ (job queue)",
+    "database": "PostgreSQL avec PostGIS + Redis (queue)",
+    "hosting": "Vercel + Railway (DB + workers)",
+    "apis": [
+      "Alim'confiance data.gouv.fr",
+      "API Adresse data.gouv.fr",
+      "Resend (emails transactionnels)",
+      "Stripe (paiements)"
+    ],
+    "notes": "Cout principal : envoi d'emails. Resend offre 3 000 emails/mois gratuits, puis 20 USD/mois pour 50K. Budget total : ~40 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Trop peu de contrôles négatifs pour justifier un service d'alerte payant",
+      "mitigation": "Elargir le scope : alerter aussi sur les contrôles positifs (rassurance), les ouvertures/fermetures, et les rappels de produits (RappelConso)."
+    },
+    {
+      "risk": "Accusations de nuisance par les restaurateurs",
+      "mitigation": "Ne relayer que les données officielles. Proposer aux restaurateurs un droit de réponse et un outil pour communiquér leurs actions correctives."
+    },
+    {
+      "risk": "Fatigue d'alertes si trop de notifications",
+      "mitigation": "Configuration fine de la fréquence et du seuil d'alerte. Par defaut : seulement les contrôles 'a corriger de manière urgente'."
+    }
+  ],
+  "inspirations": "Citizen (alertes sécurité par quartier aux US) et Yuka Alertes prouvent que les gens paient pour la tranquillite d'esprit. En France, les alertes meteo de Meteo-France montrent l'adoption massive des systèmes d'alerte géolocalisés.",
+  "searchVolume": [
+    {
+      "keyword": "contrôle hygiène restaurant près de chez moi",
+      "monthlyVolume": "2400",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "restaurant ferme hygiène",
+      "monthlyVolume": "1900",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "alim confiance",
+      "monthlyVolume": "2900",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "résultat contrôle sanitaire restaurant",
+      "monthlyVolume": "4400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "hygiène restaurant avis",
+      "monthlyVolume": "1300",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "48 millions d'adultes en France qui mangent au restaurant. Marché des apps de transparence alimentaire : Yuka a 30M+ utilisateurs en Europe, modèle freemium. Si 5% des adultes s'intéressént aux alertes hygiène : 2.4M x 3.99 EUR x 12 = 115M EUR/an.",
+    "sam": "Consommateurs urbains connectes et sensibilisés (parents, allergiques, foodies) : estimation 5M de personnes. Si 2% s'abonnent Premium : 100K x 3.99 EUR x 12 = 4.8M EUR/an.",
+    "som": "50K inscrits gratuits an 1, 5% Premium = 2 500 x 3.99 EUR x 12 = 120K EUR/an.",
+    "methodology": "TAM base sur la population adulte francaise et le modèle Yuka (app transparence alimentaire B2C). SAM restreint aux urbains sensibilisés. SOM prudent : acquisition organique SEO local + viralité + presse locale. Le hausse des contrôles sanitaires en 2025 est un accelerateur."
+  },
+  "competitorDeep": [
+    {
+      "name": "Alim'confiance (site officiel + app Alim'Contrôle)",
+      "url": "https://alim-confiance.gouv.fr",
+      "pricing": "100% gratuit. App iOS disponible (Alim'Contrôle, lancée récemment sur App Store).",
+      "trafficEstimate": "50-100K visites/mois",
+      "reviews": "Service public utile mais peu connu. Pas de système d'alertes proactif.",
+      "strengths": "Source officielle, gratuit, données fiables, app mobile disponible",
+      "weaknesses": "AUCUNE alerte push/email, consultation manuelle uniquement, UX datee, pas de personnalisation géographique"
+    },
+    {
+      "name": "contrôlessanitaires.fr",
+      "url": "https://controlessanitaires.fr",
+      "pricing": "Gratuit. Réutilisation des données Alim'confiance avec interface simplifiee.",
+      "trafficEstimate": "10-30K visites/mois (estimation)",
+      "reviews": "Peu d'avis. Site basique de consultation.",
+      "strengths": "Interface plus simple que le site officiel, gratuit",
+      "weaknesses": "Pas d'alertes, pas de personnalisation, pas de monétisation visible, projet personnel"
+    },
+    {
+      "name": "Yuka (modèle analogue alimentaire)",
+      "url": "https://yuka.io",
+      "pricing": "Gratuit (scan produits). Premium a 14.99 EUR/an (alertes additifs, recherche avancee).",
+      "trafficEstimate": "5-10M utilisateurs actifs/mois",
+      "reviews": "4.8/5 stores. 30M+ utilisateurs. Référence transparence alimentaire France.",
+      "strengths": "Enorme base utilisateurs, marque de confiance, modèle freemium éprouvé, forte viralité",
+      "weaknesses": "Pas positionné sur les restaurants (produits en supermarché uniquement), pas de données hygiène/contrôles"
+    },
+    {
+      "name": "SignalConso (DGCCRF)",
+      "url": "https://signal.conso.gouv.fr",
+      "pricing": "Gratuit. Signalement de problèmes aux autorites (pas de consultation publique des résultats).",
+      "trafficEstimate": "200-500K visites/mois",
+      "reviews": "Outil utile pour signaler, mais pas pour consulter les résultats.",
+      "strengths": "Outil officiel DGCCRF, signalements transmis aux autorites",
+      "weaknesses": "Pas de consultation publique des contrôles, pas d'alertes, sens unique (signaler mais pas consulter)"
+    },
+    {
+      "name": "Citizen (US - modèle analogue sécurité)",
+      "url": "https://citizen.com",
+      "pricing": "Gratuit (alertes sécurité). Premium 19.99 USD/mois (protection avancee).",
+      "trafficEstimate": "5-10M utilisateurs actifs (US uniquement)",
+      "reviews": "4.7/5 stores US. Controverse sur la vie privée.",
+      "strengths": "Modèle d'alertes géolocalisés éprouvé a grande echelle, forte viralité, notifications push",
+      "weaknesses": "US uniquement, sécurité publique (pas alimentaire), controverses vie privée"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation données Alim'confiance",
+      "status": "ok",
+      "detail": "Données ouvertes publiées sur data.gouv.fr sous licence Etalab. Réutilisation commerciale explicitement autorisée. Hausse des contrôles sanitaires prevue en 2025.",
+      "source": "data.gouv.fr - Alim'confiance + agriculture.gouv.fr"
+    },
+    {
+      "topic": "Diffamation / atteinte à la réputation des restaurateurs",
+      "status": "attention",
+      "detail": "Relayer un contrôle négatif officiel n'est pas diffamatoire (vérité + intérêt public). Cependant, ne pas ajouter de commentaires subjectifs. Permettre aux restaurateurs de signaler une erreur où d'ajouter un contexte (ex: actions correctives prises).",
+      "source": "Loi du 29 juillet 1881 sur la presse - art. 29"
+    },
+    {
+      "topic": "RGPD - Geolocalisation des utilisateurs",
+      "status": "attention",
+      "detail": "La collecte de l'adresse où du code postal de l'utilisateur pour les alertes est une donnée personnelle. Consentement explicite requis. Politique de confidentialite claire sur l'utilisation de la localisation.",
+      "source": "CNIL - RGPD art. 6"
+    },
+    {
+      "topic": "Fréquence des alertes / harcelement",
+      "status": "ok",
+      "detail": "Pas de risque légal si l'utilisateur a choisi sa fréquence et peut se désabonner a tout moment (conformité LCEN). Prevoir un lien de désabonnement dans chaque email.",
+      "source": "LCEN art. L34-5"
+    },
+    {
+      "topic": "Monétisation sur données publiques",
+      "status": "ok",
+      "detail": "La monétisation d'un service a valeur ajoutee base sur des données publiques est parfaitement légale en France. De nombreux précédénts (Pappers, Société.com, etc.).",
+      "source": "Loi Lemaire 2016 - Republique Numerique"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO local (contrôle hygiène restaurant + ville)",
+      "cacEstimate": "1-5 EUR",
+      "conversionRate": "5-10% (inscription gratuite)",
+      "ltv": "47.88 EUR (3.99 EUR x 12 mois Premium)",
+      "ltvCacRatio": "10:1 a 48:1"
+    },
+    {
+      "channel": "Viralite / partage d'alertes sur réseaux sociaux",
+      "cacEstimate": "0-2 EUR",
+      "conversionRate": "2-5%",
+      "ltv": "47.88 EUR",
+      "ltvCacRatio": "24:1+ (quasi organique)"
+    },
+    {
+      "channel": "Relations presse locale",
+      "cacEstimate": "0-5 EUR",
+      "conversionRate": "3-8% (pic après article)",
+      "ltv": "47.88 EUR",
+      "ltvCacRatio": "10:1 a infini"
+    },
+    {
+      "channel": "Groupes Facebook parents / alimentation saine",
+      "cacEstimate": "2-8 EUR",
+      "conversionRate": "3-6%",
+      "ltv": "47.88 EUR",
+      "ltvCacRatio": "6:1 a 24:1"
+    },
+    {
+      "channel": "Partenariats associations (AFPRAL, allergies)",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "47.88 EUR",
+      "ltvCacRatio": "3:1 a 10:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 62,
+      "detail": "12.9K recherches/mois cumulees ('résultat contrôle sanitaire restaurant' 4 400/mois, 'alim confiance' 2 900/mois). TAM: Eur. Cibles: Parents de jeunes enfants, Personnes avec allergies où, Journalistes locaux couvrant la."
+    },
+    "feasibility": {
+      "score": 83,
+      "detail": "MVP en 4 semaines. 4 APIs a integrer (Alim'confiance, API Adresse, Resend). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 45,
+      "detail": "150 clients a 600 EUR pour demarrer. SOM: 120K EUR/an. Pricing 99-99 EUR."
+    },
+    "competition": {
+      "score": 20,
+      "detail": "5 concurrents identifies: Alim'confiance (site officiel, contrôlessanitaires.fr, Yuka (modèle analogue alimenta. Leader: Alim'confiance (50-100K visites/mois). Faiblesse principale: AUCUNE alerte push/email."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "3 points OK, 2 points d'attention. Vigilance: Diffamation / atteinte à la réputation des restaur, RGPD - Geolocalisation des utilisateurs."
+    },
+    "overall": {
+      "score": 57,
+      "detail": "Point fort: faisabilite (83/100). Point faible: competition (20/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

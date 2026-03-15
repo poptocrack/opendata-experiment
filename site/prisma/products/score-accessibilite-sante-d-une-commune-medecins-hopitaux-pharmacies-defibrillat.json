@@ -1,0 +1,335 @@
+{
+  "productSlug": "score-accessibilite-sante-d-une-commune-medecins-hopitaux-pharmacies-defibrillat",
+  "oneLiner": "Un score d'accessibilité santé sur 100 pour chaque commune: médecins, hôpitaux, pharmacies, défibrillateurs, temps d'accès aux urgences.",
+  "problem": "L'accessibilité aux soins est le critère n1 de qualité de vie pour les retraités et les familles rurales, mais il n'existe aucun score synthetique. Il faut consulter separement FINESS pour les hôpitaux, l'annuaire Ameli pour les médecins, GeoDAE pour les défibrillateurs, et Google Maps pour les temps de trajet. Impossible de comparer Laguiole et Rodez en 30 secondes.",
+  "solution": "Un score unique de 0 a 100 pour chaque commune de France, calculé à partir de: nombre de médecins generalistes dans un rayon de 15 minutes en voiture, distance au service d'urgences le plus proche, nombre de pharmacies, densité de défibrillateurs DAE, présence de spécialistes (dentiste, kine, infirmier). Le score est decompose en sous-scores et affiche sur une carte. API disponible pour intégration dans des apps immobilières.",
+  "uniqueValue": "Le score unique actionnable est la cle. Les données existent mais personne ne les synthetise en un chiffre comparable. C'est le Nutri-Score de l'accessibilité santé. Simple, visuel, memorable.",
+  "mvpScope": "Score calcule pour les 35 000 communes de France metropolitaine. 4 sous-scores: médecins generalistes, urgences, pharmacies, défibrillateurs. Page par commune avec score + carte + détail. API REST basique.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Tester l'attractivité du concept de score santé",
+      "description": "Publier un classement Top 50 des communes les mieux notees en accessibilité santé et Top 50 des pires sur Twitter/LinkedIn. Mesurer la viralité. Landing page pour l'API.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Classement viral publié",
+        "200+ inscrits API",
+        "50+ partages sur les réseaux"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Score calcule pour toutes les communes",
+      "description": "Ingestion FINESS, Ameli, GeoDAE, SDIS. Calcul des distances avec OSRM. Score composite. Site web avec page par commune. API REST.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline data complet",
+        "Scores pour 35K communes",
+        "Site web avec pages communes",
+        "API REST documentee"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients API et trafic SEO",
+      "description": "Demarchage de 20 startups immobilier pour l'API. SEO avec 35K pages. PR avec le classement des communes.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "5 clients API",
+        "35K pages indexees",
+        "10K visiteurs/mois",
+        "3 articles presse"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Score enrichi et partenariats",
+      "description": "Ajout sous-scores: spécialistes, maisons de santé, telemedicine. Partenariats avec les notaires et agents immobiliers. Widget intégrable.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "6 sous-scores",
+        "Widget intégrable",
+        "20 clients API/widget",
+        "30K visiteurs/mois"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR",
+      "description": "API en SaaS pour les portails immobiliers. Contrats avec mutuelles. Marque blanche pour les mairies.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "50 clients B2B",
+        "100K visiteurs/mois SEO"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le concept de score santé est-il compris et valorise?",
+      "how": "Montrer des exemples de scores a 30 personnes (mix urbains/ruraux) et demander si c'est utile et s'ils partageraient.",
+      "successCriteria": "80%+ trouvent le concept utile et 50%+ partageraient le score de leur commune."
+    },
+    {
+      "check": "Les APIs immobilières sont-elles prêtes à intégrer un score santé?",
+      "how": "Contacter 10 startups PropTech et demander si elles integreraient un score santé dans leurs fiches bien.",
+      "successCriteria": "5/10 expriment un intérêt et 2/10 veulent tester en beta."
+    },
+    {
+      "check": "Le calcul de distance est-il faisable pour 35K communes?",
+      "how": "Tester le calcul de distances via OSRM self-hosted pour 100 communes et mesurer le temps.",
+      "successCriteria": "Calcul pour 35K communes en moins de 24h, coût d'infra < 50 euros."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Startups PropTech et neobancassurance (Luko, Masteos, Bevouac)",
+      "where": "Station F, French Tech, LinkedIn PropTech",
+      "howToReach": "Proposer l'API gratuitement en beta avec 1000 appels/jour. Demonstrer la valeur ajoutee sur les fiches bien."
+    },
+    {
+      "who": "Notaires et agents immobiliers en zone rurale",
+      "where": "Chambre des notaires, réseaux IAD/Safti en zones rurales",
+      "howToReach": "Proposer un rapport PDF par commune a intégrer dans le dossier de vente."
+    },
+    {
+      "who": "Journalistes et blogueurs immobilier/santé",
+      "where": "Twitter/LinkedIn, redactions presse locale et nationale",
+      "howToReach": "Envoyer le classement des communes comme dossier de presse. Les classements generent toujours de la couverture média."
+    }
+  ],
+  "pricingStrategy": "API freemium: 100 appels/jour gratuits (tests et petits sites). Plan Startup a 49 euros/mois (5000 appels/jour). Plan Business a 199 euros/mois (50K appels/jour, SLA 99.9%). Plan Enterprise sur devis (illimité, support dédié). Widget intégrable: 29 euros/mois (petit site) a 149 euros/mois (portail). Le site public est gratuit et généré du trafic SEO pour la conversion B2B.",
+  "pathTo10kMrr": "15 startups x 49 euros = 735 euros + 10 business x 199 euros = 1 990 euros + 2 enterprise x 1 500 euros = 3 000 euros + 50 widgets x 29 euros = 1 450 euros + trafic SEO monetise en affiliation immobilière = 3 000 euros/mois = 10 175 euros MRR. Atteignable en 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS",
+    "backend": "Next.js API Routes + Python pour le pipeline data et le calcul des distances (OSRM)",
+    "database": "PostgreSQL + PostGIS sur Supabase, scores precalcules",
+    "hosting": "Vercel + Supabase + Hetzner (serveur OSRM self-hosted pour le routing) + GitHub Actions",
+    "apis": [
+      "API FINESS",
+      "Annuaire Ameli",
+      "GeoDAE défibrillateurs",
+      "OSRM self-hosted",
+      "API BAN",
+      "API INSEE",
+      "Stripe"
+    ],
+    "notes": "Le gros du calcul est fait une fois par mois (precalcul scores). L'API sert les scores precalcules, donc tres rapide. OSRM self-hosted sur un VPS Hetzner a 10 euros/mois pour les distances routieres."
+  },
+  "risks": [
+    {
+      "risk": "Le score est subjectif et les communes mal notees pourraient contester",
+      "mitigation": "Méthodologie transparente et documentee. Permettre aux communes d'enrichir leurs données (signaler un cabinet médical non repertorie). Afficher les sources."
+    },
+    {
+      "risk": "Les APIs immobilières existantes (DVF, MeilleursAgents) ajoutent leur propre score santé",
+      "mitigation": "Se positionner comme le standard (le Nutri-Score de la santé locale) et proposer l'API en marque blanche. Etre le fournisseur plutot que le concurrent."
+    },
+    {
+      "risk": "Le trafic B2C est lent a monétiser",
+      "mitigation": "Monetiser en B2B (API, widget) des le debut. Le B2C sert d'acquisition et de vitrine. Affiliation avec les courtiers immobiliers."
+    }
+  ],
+  "inspirations": "Walk Score (US) devenu le standard de la marchabilité intégré dans Zillow et Redfin. AirVisual (IQAir) pour la qualité de l'air. Nutri-Score pour sa simplicité de lecture. En France, le diagnostic accessibilité PMR est un précédent de score officiel.",
+  "searchVolume": [
+    {
+      "keyword": "accessibilité soins commune",
+      "monthlyVolume": "480",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "médecin a proximité",
+      "monthlyVolume": "22000",
+      "difficulty": "high",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "pharmacie commune",
+      "monthlyVolume": "8100",
+      "difficulty": "high",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "défibrillateur pres de chez moi",
+      "monthlyVolume": "2400",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "hôpital le plus proche",
+      "monthlyVolume": "14800",
+      "difficulty": "high",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR - Marché data santé + proptech + APIs immobilières en France (données de qualité de vie pour l'immobilier et l'assurance)",
+    "sam": "30 millions EUR - Sous-segment API et score santé pour les portails immo, mutuelles, notaires et collectivités",
+    "som": "1.2 millions EUR - 15 startups a 49 EUR/mois + 10 business a 199 EUR/mois + 2 enterprise a 1500 EUR/mois + 50 widgets a 29 EUR/mois + affiliation, atteignable a M12",
+    "methodology": "TAM = marché data santé + proptech France. SAM = segment API/score santé pour immobilier et assurance. SOM = pipeline B2B. Référence: Walk Score rachété par Redfin pour 90M USD, modèle API B2B eprouve."
+  },
+  "competitorDeep": [
+    {
+      "name": "Walk Score (US)",
+      "url": "https://www.walkscore.com",
+      "pricing": "API gratuite (basique) a 1000+ USD/mois (pro)",
+      "trafficEstimate": "5M+ visites/mois",
+      "reviews": "Score 0-100 de marchabilité devenu standard immobilier US, rachété par Redfin pour 90M USD",
+      "strengths": "Modèle de référence mondial, intégré dans Zillow/Redfin, score simple et memorable, API B2B massive",
+      "weaknesses": "US uniquement, pas de données françaises, pas de score santé spécifique"
+    },
+    {
+      "name": "Scope Santé (HAS)",
+      "url": "https://www.scopesante.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Qualité des soins par établissement, 30 indicateurs HAS",
+      "strengths": "Données officielles, indicateurs de qualité certifies HAS, couverture nationale des établissements",
+      "weaknesses": "Focus qualité des établissements (pas accessibilité par commune), pas de score synthetique par commune, pas d'API, interface datee"
+    },
+    {
+      "name": "Ameli Annuaire Santé",
+      "url": "https://annuairesante.ameli.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "5M+ visites/mois",
+      "reviews": "Annuaire officiel des professionnels de santé",
+      "strengths": "Données de référence, exhaustif, tarifs et conventions, couverture nationale",
+      "weaknesses": "Pas de score par commune, pas de comparaison, pas d'isochrone, interface de recherche basique"
+    },
+    {
+      "name": "GeoDAE (défibrillateurs)",
+      "url": "https://geodae.sante.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Base nationale des défibrillateurs automatiques externes",
+      "strengths": "Données officielles DAE, couverture croissante, API disponible",
+      "weaknesses": "Uniquement défibrillateurs, pas de score santé global, pas de croisement avec médecins/hôpitaux"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données FINESS et Ameli",
+      "status": "ok",
+      "detail": "Open data. Le FINESS est la base de référence des établissements de santé. L'annuaire Ameli est public.",
+      "source": "data.gouv.fr - FINESS / ameli.fr"
+    },
+    {
+      "topic": "Données GeoDAE (défibrillateurs)",
+      "status": "ok",
+      "detail": "Base en open data depuis le decret 2018-1186 sur les obligations de signalement des DAE.",
+      "source": "Decret 2018-1186 - Signalement DAE"
+    },
+    {
+      "topic": "OSRM self-hosted (calcul distances)",
+      "status": "ok",
+      "detail": "OSRM est open source (BSD-2). Les données OSM sont sous ODbL. Auto-hebergement libre.",
+      "source": "OSRM - BSD-2 License / OSM - ODbL"
+    },
+    {
+      "topic": "Score synthetique et contestation",
+      "status": "attention",
+      "detail": "Un score d'accessibilité santé bas pourrait etre conteste par les communes. Méthodologie documentee, données publiques, et possibilité pour les communes de signaler des erreurs.",
+      "source": "Transparence algorithmique - Loi pour une Republique numérique"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (35K pages communes)",
+      "cacEstimate": "0.50-2 EUR",
+      "conversionRate": "0.5-1% (B2B conversion)",
+      "ltv": "588 EUR (49 EUR/mois startup x 12)",
+      "ltvCacRatio": "294-1176x (indirect)"
+    },
+    {
+      "channel": "Classement viral (Top 50 communes)",
+      "cacEstimate": "0.10-0.50 EUR",
+      "conversionRate": "N/A (brand awareness)",
+      "ltv": "N/A",
+      "ltvCacRatio": "N/A - généré trafic et couverture presse"
+    },
+    {
+      "channel": "Prospection PropTech (API beta)",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "15-25%",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "6-12x"
+    },
+    {
+      "channel": "Partenariat notaires/agents ruraux",
+      "cacEstimate": "30-60 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "348 EUR (29 EUR/mois widget x 12)",
+      "ltvCacRatio": "6-12x"
+    },
+    {
+      "channel": "Affiliation immobilière",
+      "cacEstimate": "0 EUR (CPA)",
+      "conversionRate": "N/A",
+      "ltv": "30-80 EUR par lead immobilier",
+      "ltvCacRatio": "N/A - revenue complémentaire significatif"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 79,
+      "detail": "47.8K recherches/mois cumulees ('médecin a proximité' 22 000/mois, 'hôpital le plus proche' 14 800/mois). TAM: 500 millions EUR. Cibles: Startups PropTech et neobancassurance, Notaires et agents immobiliers, Journalistes et blogueurs immobilier/santé."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 7 APIs a integrer (API FINESS, Annuaire Ameli, GeoDAE défibrillateurs). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "10 clients a 49 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. Pricing 29-199 EUR."
+    },
+    "competition": {
+      "score": 35,
+      "detail": "4 concurrents identifies: Walk Score (US), Scope Santé (HAS), Ameli Annuaire Santé. Leader: Walk Score (US) (5M+ visites/mois). Faiblesse principale: US uniquement."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Score synthetique et contestation."
+    },
+    "overall": {
+      "score": 66,
+      "detail": "Point fort: demande (79/100). Point faible: compétition (35/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

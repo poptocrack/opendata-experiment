@@ -1,0 +1,294 @@
+{
+  "productSlug": "version-agents-immobiliers-generez-un-rapport-quartier-pdf-brande-a-envoyer-aux-",
+  "oneLiner": "Generez un rapport quartier PDF a vos couleurs en 30 secondes pour impressionner vos acheteurs et closer plus de mandats.",
+  "problem": "Les agents immobiliers n'ont aucun outil pour produire rapidement un document professionnel sur le quartier d'un bien. Ils perdent des mandats face à des concurrents mieux prepares, et leurs acheteurs manquent d'informations objectives pour se décider.",
+  "solution": "Un outil SaaS pour agents immobiliers qui généré un rapport PDF brande (logo, couleurs, coordonnees de l'agent) à partir d'une adresse. Le rapport inclut : prix au m2 du quartier, écoles, transports, commerces, risques, DPE moyen. L'agent l'envoie par email a ses prospects acheteurs ou le présenté lors des visites.",
+  "uniqueValue": "Le seul outil qui permet a un agent immobilier de produire un document de prospection basé sur des données publiques objectives, personnalise a sa marque, en moins d'une minute.",
+  "mvpScope": "Dashboard agent avec upload du logo et choix de couleurs. Champ adresse avec autocompletion. Génération d'un PDF avec 4 sections (prix m2, écoles, risques, DPE). Branding personnalise. Limite a 10 rapports/mois en plan gratuit.",
+  "timeToMvp": "5-6 semaines solo dev",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Générateur PDF et branding",
+      "description": "Moteur de génération PDF avec Puppeteer ou React-PDF. Système de templates avec variables de branding (logo, couleurs, coordonnees). Preview HTML avant génération.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Moteur de génération PDF",
+        "Template rapport quartier",
+        "Upload logo et customisation couleurs",
+        "Preview HTML temps réel"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Dashboard agent et authentification",
+      "description": "Dashboard avec historique des rapports generes, gestion du profil agent, paramètres de branding, et intégration des données quartier.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Dashboard agent",
+        "Authentification magic link",
+        "Historique des rapports",
+        "Profil agent personnalisable"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Monétisation et go-to-market",
+      "description": "Plans tarifaires, intégration Stripe, envoi direct par email depuis la plateforme, et lancement auprès des agents immobiliers.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Plans Stripe",
+        "Envoi email du rapport au prospect",
+        "Landing page agent immo",
+        "Demo video pour prospection"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les agents immobiliers veulent des supports de prospection bases sur des données",
+      "how": "Interviewer 15 agents immo (3 independants, 3 réseaux type Century21, 3 mandataires). Leur montrer un exemple de rapport et demander s'ils l'utiliseraient et combien ils paieraient.",
+      "successCriteria": ">10/15 agents disent qu'ils l'utiliseraient, willingness to pay >19 EUR/mois"
+    },
+    {
+      "check": "Le rapport aide réellement a closer des ventes",
+      "how": "Distribuer 50 rapports gratuits a 10 agents pendant 1 mois. Mesurer s'ils les utilisent et si ca impacte leurs ventes.",
+      "successCriteria": ">70% des agents utilisent le rapport au moins 3 fois, 2+ temoignages positifs"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Mandataires immobiliers independants (IAD, Safti, Optimhome)",
+      "where": "Groupes Facebook de mandataires, LinkedIn (mots-cles 'mandataire immobilier'), salons de recrutement IAD/Safti",
+      "howToReach": "Cold outreach LinkedIn avec un rapport d'exemple généré pour leur zone. Partenariat avec les réseaux de mandataires pour offrir l'outil en avantage réseau."
+    },
+    {
+      "who": "Agents immobiliers independants et petites agences (<5 personnes)",
+      "where": "FNAIM régionale, groupes Facebook 'Agents immobiliers', LinkedIn",
+      "howToReach": "Webinaire gratuit 'Closez plus de mandats avec les données quartier' avec demo de l'outil en live"
+    },
+    {
+      "who": "Chasseurs immobiliers",
+      "where": "Annuaire FNCI, LinkedIn, groupes Slack de chasseurs",
+      "howToReach": "Le rapport est encore plus utile pour les chasseurs qui doivent justifier leurs recommandations auprès de clients exigeants"
+    }
+  ],
+  "pricingStrategy": "Plan Decouverte gratuit : 3 rapports/mois, branding ScoreQuartier visible. Plan Agent a 29 EUR/mois : 30 rapports/mois, branding complet, envoi email. Plan Agence a 79 EUR/mois : rapports illimités, 5 utilisateurs, templates personnalises. Plan Réseau sur devis : marque blanche complete, API, support dédié.",
+  "pathTo10kMrr": "Il y a ~90 000 agents immobiliers en France. Cible initiale : mandataires independants (50 000+). M1-M3 : acquisition via LinkedIn et groupes FB, 30 agents en Decouverte, 10 convertis en Agent (290 EUR). M3-M6 : 80 agents (2 320 EUR) + 5 agences (395 EUR) = 2 715 EUR. M6-M12 : partenariat avec 1 réseau de mandataires (ex: IAD, 18 000 mandataires) pour intégration dans leur offre, 200 agents (5 800 EUR) + 20 agences (1 580 EUR) + 1 réseau (2 000 EUR/mois) = 9 380 EUR. M13 : 10K avec 2eme réseau partenaire.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS, React-PDF pour la preview",
+    "backend": "Next.js API Routes, Puppeteer pour la génération PDF (headless Chrome)",
+    "database": "PostgreSQL, S3 pour le stockage des PDFs et logos",
+    "hosting": "Vercel (frontend), AWS Lambda ou Railway (génération PDF car Puppeteer est gourmand en RAM)",
+    "apis": [
+      "API BAN",
+      "API DVF",
+      "API Georisques",
+      "API ADEME DPE",
+      "API Éducation Nationale",
+      "Stripe API",
+      "Resend API",
+      "AWS S3"
+    ],
+    "notes": "La génération PDF avec Puppeteer nécessité ~512MB de RAM. Utiliser une queue de jobs (BullMQ) pour gérer la charge. Générer le HTML d'abord, puis le convertir en PDF. Cacher les PDFs sur S3 avec un TTL de 30 jours."
+  },
+  "risks": [
+    {
+      "risk": "Les agents trouvent le rapport trop generique et pas assez personnalisable",
+      "mitigation": "Ajouter des champs editables ou l'agent peut ajouter ses propres commentaires et photos. Templates multiples (luxe, familial, investisseur)."
+    },
+    {
+      "risk": "Cycle de vente long avec les réseaux d'agences",
+      "mitigation": "Commencer par les mandataires independants (décision individuelle). Utiliser les temoignages pour remonter vers les réseaux."
+    },
+    {
+      "risk": "Puppeteer est lourd et coûteux a heberger pour la génération PDF",
+      "mitigation": "Alternatives : React-PDF (plus leger), Gotenberg (service PDF auto-heberge), ou API tierce (PDFShift) pour deleguer la génération"
+    }
+  ],
+  "inspirations": "Canva Pro pour agents immo (templates personnalisables, modèle SaaS). HomeJab (US, rapports et contenus marketing pour agents immo). CMA (Comparative Market Analysis) tools integres dans les MLS americains. BoxBrownie (marketing visuel pour agents, modèle a l'unité qui marché bien).",
+  "searchVolume": [
+    {
+      "keyword": "rapport quartier agent immobilier",
+      "monthlyVolume": "260",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "outil agent immobilier prospection",
+      "monthlyVolume": "720",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "support marketing agent immobilier",
+      "monthlyVolume": "480",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "générateur PDF immobilier",
+      "monthlyVolume": "320",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "données quartier agent immo",
+      "monthlyVolume": "170",
+      "difficulty": "low",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "350 millions EUR - Marché outils digitaux et marketing pour agents immobiliers en France (100K+ agents, ~3500 EUR/an/agent en outils numériques)",
+    "sam": "45 millions EUR - Sous-segment outils de prospection bases sur les données quartier pour les 30K agences + 50K mandataires independants",
+    "som": "1.8 millions EUR - 200 agents a 29 EUR/mois + 20 agences a 79 EUR/mois + 1 réseau a 2000 EUR/mois, atteignable a M12",
+    "methodology": "TAM basé sur le nombre d'agents (100K+, source revue-immo.com 2025) x budget digital moyen. SAM = segment outils data/rapport. SOM = pipeline commercial."
+  },
+  "competitorDeep": [
+    {
+      "name": "CityScan",
+      "url": "https://www.cityscan.fr",
+      "pricing": "Abonnement pro (50-200 EUR/mois estimé)",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Recentrage en 2022 sur l'estimation de prix et l'avis de valeur marché",
+      "strengths": "70 indicateurs, outil pro établi, intégration CRM agences, carte interactive",
+      "weaknesses": "Pas de génération PDF brande, focus estimation plutot que rapport quartier, prix élève pour mandataires independants"
+    },
+    {
+      "name": "Canva (templates immo)",
+      "url": "https://www.canva.com",
+      "pricing": "Gratuit a 12.99 EUR/mois (Pro)",
+      "trafficEstimate": "200M+ visites/mois (mondial)",
+      "reviews": "Templates de qualité mais pas de données automatiques",
+      "strengths": "Templates design de qualité, facile a utiliser, prix bas, marque connue",
+      "weaknesses": "Aucune intégration de données (tout est manuel), pas de DVF/DPE/risques, pas spécialisé immo France"
+    },
+    {
+      "name": "BoxBrownie",
+      "url": "https://www.boxbrownie.com",
+      "pricing": "A l'unité, 2-40 USD par service",
+      "trafficEstimate": "500K visites/mois",
+      "reviews": "Marketing visuel pour agents (photos, plans, virtual staging)",
+      "strengths": "Modèle a l'unité qui fonctionne, qualité visuelle, usage simple",
+      "weaknesses": "Focus uniquement visuel (photos, plans), pas de données quartier, pas de rapport informatif"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Marque blanche et branding agent",
+      "status": "ok",
+      "detail": "L'agent peut apposer son logo et ses couleurs sur un rapport basé sur des données publiques. Pas de restriction légale.",
+      "source": "Droit des marques"
+    },
+    {
+      "topic": "Usage commercial des données publiques",
+      "status": "ok",
+      "detail": "Les données DVF, DPE, Georisques sont sous licence ouverte, la reutilisation commerciale est explicitement autorisee.",
+      "source": "Licence Ouverte v2 - Etalab"
+    },
+    {
+      "topic": "Responsabilité de l'agent sur le contenu du rapport",
+      "status": "attention",
+      "detail": "L'agent qui envoie le rapport a ses clients peut etre percu comme garant de l'exactitude. Ajouter une mention 'données issues de sources publiques, a titre informatif' pour protéger l'agent.",
+      "source": "Loi Hoguet - Obligations de l'agent immobilier"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "LinkedIn outreach mandataires",
+      "cacEstimate": "20-40 EUR",
+      "conversionRate": "8-12%",
+      "ltv": "348 EUR (29 EUR/mois x 12 mois)",
+      "ltvCacRatio": "9-17x"
+    },
+    {
+      "channel": "Webinaire gratuit (lead magnet)",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "15-20%",
+      "ltv": "348 EUR",
+      "ltvCacRatio": "12-23x"
+    },
+    {
+      "channel": "Partenariat réseau mandataires (IAD, Safti)",
+      "cacEstimate": "5-10 EUR par agent (volume)",
+      "conversionRate": "3-5%",
+      "ltv": "348 EUR",
+      "ltvCacRatio": "35-70x"
+    },
+    {
+      "channel": "Salon RENT",
+      "cacEstimate": "200-400 EUR par lead",
+      "conversionRate": "20-30%",
+      "ltv": "948 EUR (79 EUR/mois agence x 12)",
+      "ltvCacRatio": "2.5-5x"
+    },
+    {
+      "channel": "Referral agents satisfaits",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "25-35%",
+      "ltv": "348 EUR",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 39,
+      "detail": "1.9K recherches/mois cumulees ('outil agent immobilier prospection' 720/mois, 'support marketing agent immobilier' 480/mois). TAM: 350 millions EUR. Cibles: Mandataires immobiliers independants, Agents immobiliers independants et, Chasseurs immobiliers."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 5-6 semaines solo dev. 8 APIs a integrer (API BAN, API DVF, API Georisques). Stack: Next.js + PostgreSQL,. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 95,
+      "detail": "Pricing 29-79 EUR."
+    },
+    "competition": {
+      "score": 50,
+      "detail": "3 concurrents identifies: CityScan, Canva (templates immo), BoxBrownie. Leader: CityScan (50K-100K visites/mois). Faiblesse principale: Pas de génération PDF brande."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "2 points OK, 1 point d'attention. Vigilance: Responsabilité de l'agent sur le contenu du rappor."
+    },
+    "overall": {
+      "score": 63,
+      "detail": "Point fort: marché (95/100). Point faible: demande (39/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

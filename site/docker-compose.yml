@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: research-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    networks:
+      - caddy_network
+
+networks:
+  caddy_network:
+    external: true

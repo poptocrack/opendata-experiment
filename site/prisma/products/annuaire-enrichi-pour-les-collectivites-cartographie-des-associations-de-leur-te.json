@@ -1,0 +1,301 @@
+{
+  "productSlug": "annuaire-enrichi-pour-les-collectivites-cartographie-des-associations-de-leur-te",
+  "oneLiner": "Cartographie interactive des associations d'un territoire pour les collectivites locales.",
+  "problem": "Les collectivites locales (mairies, départements, régions) n'ont pas de vision claire du tissu associatif de leur territoire. Le RNA est une base de données brute sans interface exploitable. Les services vie associative maintiennent des listes Excel manuellement, souvent obsolètes. Impossible de savoir combien d'associations sont actives, dans quels secteurs, où il y à des manques.",
+  "solution": "Un annuaire interactif SaaS pour les collectivites qui cartographie toutes les associations de leur territoire à partir du RNA, enrichi avec les données de subventions versees, les comptes publiés, et l'activité détectée (site web, réseaux sociaux). Dashboard analytique avec indicateurs territoriaux : densité associative, repartition sectorielle, dynamique (créations/dissolutions).",
+  "uniqueValue": "Le seul outil qui transforme le RNA brut en intelligence territoriale actionnable pour les collectivites. Cartographie, analytics, et enrichissement automatique vs les listes Excel manuelles.",
+  "mvpScope": "Dashboard web territorial avec : carte des associations du territoire (RNA), filtres par secteur/statut/date de création, indicateurs analytiques (nombre, repartition, dynamique), fiche association enrichie, export CSV/PDF pour les rapports.",
+  "timeToMvp": "8 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Import RNA et cartographie",
+      "description": "Import du RNA complet, géocodage des associations, carte interactive filtrable par territoire.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Import RNA complet avec géocodage",
+        "Carte interactive filtrable",
+        "Filtres secteur/statut/date",
+        "Fiches associations basiques"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Enrichissement et analytics",
+      "description": "Enrichir les fiches avec les données complémentaires, créér le dashboard analytique territorial.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Enrichissement subventions versees",
+        "Détection d'activité (site web actif)",
+        "Dashboard analytique territorial",
+        "Indicateurs de dynamique (créations/dissolutions)"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Multi-tenant et commercialisation",
+      "description": "Système multi-tenant par collectivite, espace administrateur, et demarrage commercial.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Espace collectivite avec branding personnalisé",
+        "Export CSV/PDF pour rapports",
+        "Landing page B2G",
+        "5 demos planifiees avec des collectivites"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les collectivites ont un budget pour ce type d'outil",
+      "how": "Contacter 10 responsables vie associative de collectivites de tailles variees. Presenter un prototype et demander si un budget est disponible.",
+      "successCriteria": "6/10 confirment un budget allouable, où une ligne budgetaire existante (numérique, vie associative)."
+    },
+    {
+      "check": "Le RNA est suffisamment fiable pour cartographier le tissu associatif",
+      "how": "Comparer les données RNA d'une commune test avec la liste manuelle du service vie associative.",
+      "successCriteria": "Couverture > 80% des associations actives connues, faux positifs (associations dissoutes) < 15%."
+    },
+    {
+      "check": "Le dashboard apporte une valeur ajoutee vs le RNA brut",
+      "how": "Montrer le dashboard a 5 elus et 5 agents de collectivites. Mesurer la valeur perçue.",
+      "successCriteria": "8/10 trouvent le dashboard utile et differenciateur par rapport à leurs outils actuels."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Communes et intercommunalites de 20K-100K habitants",
+      "where": "Association des Maires de France (AMF), salons des maires, LinkedIn (DGS, responsable vie associative)",
+      "howToReach": "Stand où intervention au salon des maires. Prospection LinkedIn ciblée. Email direct aux DGS des intercommunalites."
+    },
+    {
+      "who": "Départements (services vie associative, DDVA)",
+      "where": "LinkedIn, annuaire des DDVA, réseau des agents départementaux",
+      "howToReach": "Contact direct des DDVA par email officiel. Proposition de pilote gratuit de 3 mois."
+    },
+    {
+      "who": "CRESS (Chambres Régionales de l'Économie Sociale et Solidaire)",
+      "where": "Réseau ESS France, site des CRESS, LinkedIn",
+      "howToReach": "Partenariat avec ESS France pour diffusion nationale. Presentation lors des rencontres régionales."
+    }
+  ],
+  "pricingStrategy": "Tarification par taille de collectivite. Commune < 20K hab : 99 EUR/mois. Commune/interco 20-100K : 199 EUR/mois. Département : 399 EUR/mois. Région : 799 EUR/mois. Licence annuelle avec réduction 15%. Option : version publique de l'annuaire pour les citoyens (vitrine web, +50 EUR/mois).",
+  "pathTo10kMrr": "35 000 communes en France, 1 200 interco, 100 départements, 13 régions. Cible realiste : les 500 intercommunalites et 100 départements les plus urbanises. M1-M3 : 3 pilotes gratuits qui convertissent. M3-M6 : 10 communes/interco = 10x199 = 1 990 EUR MRR. M6-M12 : 25 communes/interco + 5 départements = 25x199 + 5x399 = 6 970 EUR MRR. M12-M18 : 40 communes + 10 départements + 1 région = 40x199 + 10x399 + 799 = 12 749 EUR MRR.",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS + MapLibre GL JS + Recharts",
+    "backend": "Next.js API Routes + Prisma",
+    "database": "PostgreSQL avec PostGIS",
+    "hosting": "Vercel + Railway",
+    "apis": [
+      "RNA data.gouv.fr",
+      "API Adresse data.gouv.fr (géocodage)",
+      "API Subventions versees",
+      "Maptiler (fond de carte)"
+    ],
+    "notes": "Le géocodage de 1,5M d'adresses est un batch initial consequent mais faisable avec l'API Adresse (gratuit, rapide). Budget : ~40 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Cycle de vente B2G très long (6-12 mois) et procèssus de marché public",
+      "mitigation": "Sous le seuil des marchés publics (< 40K EUR/an). Offrir un pilote gratuit de 3 mois pour reduire le risque percu. Cibler les petites collectivites qui decident vite."
+    },
+    {
+      "risk": "Le RNA contient beaucoup d'associations inactives où dissoutes",
+      "mitigation": "Algorithme de scoring d'activité (dernière modification RNA, site web actif, présence réseaux sociaux). Filtre par defaut sur les associations probablement actives."
+    },
+    {
+      "risk": "Concurrence des outils cartographiques open source (uMap, Geo IDE)",
+      "mitigation": "La carto n'est qu'un composant. La valeur est dans l'enrichissement, l'analytics territorial, et le mode SaaS clé en main. Les agents n'ont pas le temps de configurer des outils open source."
+    }
+  ],
+  "inspirations": "Datavisualisation territoriale à la manière de l'Observatoire des Territoires (ANCT). UX inspiree de Metabase/Looker pour le dashboard analytique. Modèle SaaS B2G inspire de Civiteo et OpenDataSoft.",
+  "searchVolume": [
+    {
+      "keyword": "annuaire associations commune",
+      "monthlyVolume": "2400",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "cartographie associations territoire",
+      "monthlyVolume": "480",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "tissu associatif collectivite",
+      "monthlyVolume": "320",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "RNA associations par commune",
+      "monthlyVolume": "590",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "observatoire vie associative",
+      "monthlyVolume": "390",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "200 millions EUR - Marché SaaS B2G pour collectivites territoriales en France (logiciels de gestion, data, observatoires)",
+    "sam": "25 millions EUR - Sous-segment outils vie associative et intelligence territoriale pour les 1 200 intercommunalites + 100 départements",
+    "som": "1 million EUR - 25 communes/interco a 199 EUR/mois + 5 départements a 399 EUR/mois, atteignable a M12",
+    "methodology": "TAM = marché SaaS B2G France (source: OpenDataSoft, Civiteo market sizing). SAM = segment vie associative. SOM = pipeline B2G avec cycle de vente 3-6 mois."
+  },
+  "competitorDeep": [
+    {
+      "name": "OpenDataSoft",
+      "url": "https://www.opendatasoft.com",
+      "pricing": "À partir de 20K EUR/an pour les collectivites",
+      "trafficEstimate": "200K-500K visites/mois",
+      "reviews": "Leader des portails open data pour collectivites en France",
+      "strengths": "Leader du marché, 100+ collectivites clientes, plateforme mature, marque blanche, communauté active",
+      "weaknesses": "Outil générique (pas spécialisé vie associative), cher pour les petites collectivites, ne fait pas d'enrichissement RNA automatique"
+    },
+    {
+      "name": "Observatoire des Territoires (ANCT)",
+      "url": "https://www.observatoire-des-territoires.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Indicateurs territoriaux officiels, référence pour les diagnostics",
+      "strengths": "Données officielles, couverture nationale, credibilite institutionnelle",
+      "weaknesses": "Pas spécialisé vie associative, pas de dashboard interactif par collectivite, pas de données RNA enrichies, mise à jour lente"
+    },
+    {
+      "name": "Data.Subvention (beta.gouv)",
+      "url": "https://datasubvention.beta.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Données subventions associatives pour agents publics",
+      "strengths": "Données croisees RNA + subventions, ciblé les agents publics, initiative beta.gouv",
+      "weaknesses": "Pas de cartographie, pas de dashboard territorial personnalisable, pas de multi-tenant, pas de scoring d'activité"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Import massif du RNA",
+      "status": "ok",
+      "detail": "Le RNA est en open data. L'import et le géocodage de 2M+ adresses est autorise. L'API BAN est gratuite et sans limite raisonnable.",
+      "source": "data.gouv.fr - RNA + API BAN"
+    },
+    {
+      "topic": "Cycle de vente B2G et marchés publics",
+      "status": "attention",
+      "detail": "Les collectivites sont soumises au Code de la commande publique. En dessous de 40K EUR/an, l'achat est libre. Au-dessus, mise en concurrence obligatoire. Rester sous ce seuil avec un abonnement mensuel.",
+      "source": "Code de la commande publique - Seuil 40K EUR"
+    },
+    {
+      "topic": "Données associations dissoutes",
+      "status": "attention",
+      "detail": "Le RNA contient des associations dissoutes où inactives. Afficher un indicateur de statut clair pour ne pas induire en erreur les collectivites.",
+      "source": "RNA - Limites du registre"
+    },
+    {
+      "topic": "Hebergement des données B2G",
+      "status": "ok",
+      "detail": "Hebergement en France où UE requis pour les données de collectivites. Supabase et Railway sont conformes (serveurs EU disponibles).",
+      "source": "RGPD - Transferts de données"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "LinkedIn prospection DGS/vie associative",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "2388 EUR (199 EUR/mois x 12)",
+      "ltvCacRatio": "6-12x"
+    },
+    {
+      "channel": "Salon AMF (congres des maires)",
+      "cacEstimate": "500-1000 EUR par lead",
+      "conversionRate": "15-25%",
+      "ltv": "4788 EUR (399 EUR/mois département x 12)",
+      "ltvCacRatio": "5-10x"
+    },
+    {
+      "channel": "Pilote gratuit 3 mois",
+      "cacEstimate": "300 EUR (cout opérationnel)",
+      "conversionRate": "60-70% de conversion post-pilote",
+      "ltv": "2388 EUR",
+      "ltvCacRatio": "8x"
+    },
+    {
+      "channel": "Partenariat CNFPT (formation)",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "2388 EUR",
+      "ltvCacRatio": "24-48x"
+    },
+    {
+      "channel": "Email direct DDVA départementales",
+      "cacEstimate": "100-200 EUR",
+      "conversionRate": "8-12%",
+      "ltv": "4788 EUR",
+      "ltvCacRatio": "24-48x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 54,
+      "detail": "4.2K recherches/mois cumulees ('annuaire associations commune' 2 400/mois, 'RNA associations par commune' 590/mois). TAM: 200 millions EUR. Cibles: Communes et intercommunalites de, Départements, CRESS."
+    },
+    "feasibility": {
+      "score": 50,
+      "detail": "MVP en 8 semaines. 4 APIs a integrer (RNA, API Adresse, API Subventions versees). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 52,
+      "detail": "Pricing 50-799 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: OpenDataSoft, Observatoire des Territoires (, Data.Subvention (beta.gouv). Leader: OpenDataSoft (200K-500K visites/mois). Faiblesse principale: Outil générique (pas spécialisé vie associative)."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Cycle de vente B2G et marchés publics, Données associations dissoutes."
+    },
+    "overall": {
+      "score": 54,
+      "detail": "Point fort: legal (68/100). Point faible: faisabilite (50/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

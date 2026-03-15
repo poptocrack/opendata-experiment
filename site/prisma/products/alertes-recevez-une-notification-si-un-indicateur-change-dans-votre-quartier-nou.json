@@ -1,0 +1,284 @@
+{
+  "productSlug": "alertes-recevez-une-notification-si-un-indicateur-change-dans-votre-quartier-nou",
+  "oneLiner": "Recevez une alerte email quand un indicateur clé change dans votre quartier : nouveau DPE, transaction immobilière, risque naturel, fermeture d'école.",
+  "problem": "Les propriétaires et residents n'ont aucun moyen de suivre l'évolution de leur quartier de facon proactive. Les changements importants (nouvelle zone inondable, chute des prix, fermeture d'école) sont découverts trop tard, souvent par hasard.",
+  "solution": "Un système d'alertes personnalisées où l'utilisateur enregistré une où plusieurs adresses et choisit les indicateurs a surveiller. Quand une donnée change (nouvelle transaction DVF, mise à jour Georisques, nouveau DPE dans le périmètre), il reçoit un email de synthese avec le changement et son impact.",
+  "uniqueValue": "Le seul service de veille quartier automatise pour les particuliers en France. Transforme des données publiques mises à jour periodiquement en intelligence actionnable.",
+  "mvpScope": "Inscription avec une adresse, choix de 2 alertes (nouvelles transactions DVF dans un rayon de 500m, nouveaux risques Georisques). Email hebdomadaire de synthese si changements détectés. Pas d'app mobile, pas de dashboard.",
+  "timeToMvp": "4-5 semaines solo dev",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Système de monitoring DVF",
+      "description": "CRON job qui telecharge les nouvelles transactions DVF chaque semaine, détecté les changements dans les périmètres surveilles, et stocke les deltas.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Import incrementiel DVF",
+        "Détection de changement par périmètre",
+        "Base de données des alertes"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Inscription et gestion des alertes",
+      "description": "Page d'inscription, selection d'adresse avec BAN, choix des indicateurs a surveiller, gestion des préférénces.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Formulaire d'inscription",
+        "Dashboard de gestion des alertes",
+        "Authentification simple (magic link)"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Emails de synthese et monétisation",
+      "description": "Templates d'emails avec les changements détectés, intégration Stripe pour le plan premium, et A/B test du contenu.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Templates email Resend/Postmark",
+        "Plan gratuit (1 adresse, 1 alerte) vs premium",
+        "Integration Stripe"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les propriétaires veulent être alertes sur leur quartier",
+      "how": "Landing page 'Surveillez votre quartier' avec formulaire d'inscription. Publicite Facebook ciblée sur les propriétaires de 30-55 ans.",
+      "successCriteria": "200+ inscrits en 3 semaines avec un budget pub de 100 EUR"
+    },
+    {
+      "check": "La fréquence de mise à jour des données est suffisante pour générér des alertes utiles",
+      "how": "Analyser la fréquence de mise à jour des datasets DVF (trimestriel), Georisques, DPE. Simuler les alertes sur 6 mois de données historiques.",
+      "successCriteria": ">60% des adresses surveillees générént au moins 1 alerte/mois"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Propriétaires récents (achat <2 ans) soucieux de la valeur de leur bien",
+      "where": "Forums immobiliers (section 'après l'achat'), groupes Facebook de copropriété, r/vosfinances",
+      "howToReach": "Posts sur 'comment suivre la valeur de votre bien' avec inscription gratuite a l'outil"
+    },
+    {
+      "who": "Investisseurs locatifs multi-biens qui veulent surveiller plusieurs quartiers",
+      "where": "Groupes Telegram investissement immo, formations en ligne immo",
+      "howToReach": "Partenariats avec des formateurs immo, angle 'pilotez votre patrimoine avec des données'"
+    }
+  ],
+  "pricingStrategy": "Gratuit : 1 adresse, alerte DVF uniquement, email mensuel. Premium a 4.90 EUR/mois : 5 adresses, toutes les alertes (DVF + risques + DPE + écoles), email hebdomadaire, historique. Pro a 19.90 EUR/mois : 20 adresses, API, rapports PDF.",
+  "pathTo10kMrr": "Acquisition organique via SEO + content marketing ('évolution prix quartier [ville]'). M3 : 500 inscrits gratuits, 50 premium (245 EUR). M6 : 2000 inscrits, 200 premium (980 EUR) + 20 pro (398 EUR) = 1 378 EUR. M12 : 8000 inscrits, 800 premium (3 920 EUR) + 100 pro (1 990 EUR) + cross-sell rapports complets (2 000 EUR) = 7 910 EUR. M15 : 10K MRR via partenariats agents immo et scale du SEO.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS",
+    "backend": "Next.js API Routes + CRON jobs (Vercel Cron où BullMQ)",
+    "database": "PostgreSQL avec PostGIS, Redis pour les queues de jobs",
+    "hosting": "Vercel + Railway (PostgreSQL) + Resend (emails transactionnels)",
+    "apis": [
+      "API BAN",
+      "API DVF",
+      "API Georisques",
+      "API ADEME DPE",
+      "Stripe API",
+      "Resend API"
+    ],
+    "notes": "Le challenge principal est la détection de changements incrementielle. Stocker un snapshot des données par périmètre et comparer à chaque import. DVF est mis à jour trimestriellement, donc combiner avec d'autres sources pour maintenir l'engagement."
+  },
+  "risks": [
+    {
+      "risk": "DVF est mis à jour seulement tous les 3 mois, pas assez frequent pour maintenir l'engagement",
+      "mitigation": "Combiner avec des sources plus frequentes (permis de construire, DPE individuels, actualites locales) pour garantir au moins 1 email/mois"
+    },
+    {
+      "risk": "Faible rétention si les alertes ne sont pas assez pertinentes",
+      "mitigation": "Ajouter du contenu contextuel (tendance du marché, comparaison avec la ville) même sans changement détecté"
+    },
+    {
+      "risk": "Cout d'envoi d'emails et de compute pour les CRON jobs",
+      "mitigation": "Batch procèssing, emails groupes hebdomadaires plutot que temps reel, Resend offre 3000 emails/mois gratuits"
+    }
+  ],
+  "inspirations": "Redfin Alerts (US, alertes sur les nouvelles propriétés en vente, très populaire). Google Alerts (modèle d'alerte générique applicable à un domaine spécifique). Visualping.io (monitoring de changements sur des pages web, modèle SaaS réussi).",
+  "searchVolume": [
+    {
+      "keyword": "évolution prix immobilier quartier",
+      "monthlyVolume": "2900",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "alerte prix immobilier",
+      "monthlyVolume": "590",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "suivi valeur bien immobilier",
+      "monthlyVolume": "480",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "tendance immobilier quartier",
+      "monthlyVolume": "1600",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "surveillancé quartier changement",
+      "monthlyVolume": "210",
+      "difficulty": "low",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "180 millions EUR - Marché des outils de suivi et données immobilières pour particuliers en France",
+    "sam": "30 millions EUR - Sous-segment monitoring de quartier pour les 17M de propriétaires francais (2% prêts a payer 4.90 EUR/mois)",
+    "som": "600K EUR - 800 premium a 4.90 EUR/mois + 100 pro a 19.90 EUR/mois + cross-sell rapports, atteignable a M12",
+    "methodology": "TAM = marché data immo France. SAM basee sur 17M de propriétaires occupants (INSEE 2024), 2% adressable. SOM = projections business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "Redfin Alerts (US)",
+      "url": "https://www.redfin.com",
+      "pricing": "Gratuit (integrated into Redfin platform)",
+      "trafficEstimate": "50M+ visites/mois (US)",
+      "reviews": "Référence mondiale pour les alertes immobilières",
+      "strengths": "Alertes en temps reel, intégration avec la plateforme d'achat, UX excellente, gratuit",
+      "weaknesses": "US uniquement, pas de données quartier (risques, écoles, DPE), pas présente en France"
+    },
+    {
+      "name": "MeilleursAgents (alertes prix)",
+      "url": "https://www.meilleursagents.com",
+      "pricing": "Gratuit",
+      "trafficEstimate": "1.3M visites/mois",
+      "reviews": "Estimation avec suivi des prix, mais pas d'alerte sur changements quartier",
+      "strengths": "Marque forte en France, données de prix fiables",
+      "weaknesses": "Alertes limitees aux prix, pas de suivi risques/écoles/DPE, pas de score quartier global"
+    },
+    {
+      "name": "Visualping",
+      "url": "https://visualping.io",
+      "pricing": "Freemium, à partir de 14 USD/mois",
+      "trafficEstimate": "1M+ visites/mois",
+      "reviews": "Monitoring générique de pages web, pas spécialisé immo",
+      "strengths": "Technologie de détection de changement mature, modèle SaaS éprouvé",
+      "weaknesses": "Pas spécialisé immobilier/quartier, nécessite de configurer manuellement chaque page a surveiller"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Envoi d'emails commerciaux",
+      "status": "attention",
+      "detail": "L'inscription volontaire avec consentement explicite (opt-in) est conforme RGPD. Prevoir un lien de désinscription dans chaque email. Respecter les regles anti-spam (loi LCEN).",
+      "source": "RGPD Art. 6 - Consentement / Loi LCEN"
+    },
+    {
+      "topic": "Fréquence de mise à jour DVF",
+      "status": "attention",
+      "detail": "Les DVF sont publiés trimestriellement avec un decalage de 6 mois. Les alertes doivent être transparentes sur la fraîcheur des données pour ne pas induire en erreur.",
+      "source": "DGFiP - Calendrier de publication DVF"
+    },
+    {
+      "topic": "Données Georisques",
+      "status": "ok",
+      "detail": "API publique, mises à jour régulières, réutilisation libre.",
+      "source": "georisques.gouv.fr"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (évolution prix quartier + ville)",
+      "cacEstimate": "3-7 EUR",
+      "conversionRate": "2-4% (free to premium)",
+      "ltv": "35 EUR (4.90 EUR x 7 mois rétention moyenne)",
+      "ltvCacRatio": "5-12x"
+    },
+    {
+      "channel": "Facebook Ads (propriétaires 30-55 ans)",
+      "cacEstimate": "8-15 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "35 EUR",
+      "ltvCacRatio": "2.5-4x"
+    },
+    {
+      "channel": "Cross-sell depuis rapport/comparateur",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "8-12%",
+      "ltv": "35 EUR",
+      "ltvCacRatio": "infini"
+    },
+    {
+      "channel": "Content marketing (blog articles)",
+      "cacEstimate": "2-5 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "35 EUR",
+      "ltvCacRatio": "7-17x"
+    },
+    {
+      "channel": "Partenariats syndics/copropriétés",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "100 EUR (pro plan, 19.90 EUR x 5 mois)",
+      "ltvCacRatio": "3-7x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources vérifiées via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 55,
+      "detail": "5.8K recherches/mois cumulees ('évolution prix immobilier quartier' 2 900/mois, 'tendance immobilier quartier' 1 600/mois). TAM: 180 millions EUR. Cibles: Propriétaires récents, Investisseurs locatifs multi-biens qui."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 4-5 semaines solo dev. 6 APIs a integrer (API BAN, API DVF, API Georisques). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 52,
+      "detail": "50 clients a 245 EUR pour demarrer. SOM: 600K EUR/an. Pricing 90-90 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "3 concurrents identifies: Redfin Alerts (US), MeilleursAgents (alertes prix), Visualping. Leader: Redfin Alerts (US) (50M+ visites/mois (US)). Faiblesse principale: US uniquement."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 2 points d'attention. Vigilance: Envoi d'emails commerciaux, Fréquence de mise à jour DVF."
+    },
+    "overall": {
+      "score": 55,
+      "detail": "Point fort: faisabilite (68/100). Point faible: competition (40/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

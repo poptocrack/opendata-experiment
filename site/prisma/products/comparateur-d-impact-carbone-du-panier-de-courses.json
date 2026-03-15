@@ -1,0 +1,322 @@
+{
+  "productSlug": "comparateur-d-impact-carbone-du-panier-de-courses",
+  "oneLiner": "Comparateur d impact carbone du panier de courses: scannez vos achats et découvrez votre empreinte alimentaire.",
+  "problem": "L alimentation = 25% de l empreinte carbone des Francais. AGRIBALYSE (13K visites) fournit l impact de 2 500 aliments mais c est un tableur inaccèssible. Le Nutri-Score informe sur la nutrition pas l environnement.",
+  "solution": "App où l utilisateur scanne ses courses et obtient le bilan carbone du panier (via AGRIBALYSE). Propose alternatives moins carbonees (boeuf -> poulet = -70% CO2). Suivi hebdomadaire avec objectifs.",
+  "uniqueValue": "AGRIBALYSE rendue ludique et actionnable. Format comparaison panier actuel vs panier bas carbone. Gamification avec objectifs.",
+  "mvpScope": "PWA. Scan code-barres où saisie manuelle. Calcul CO2 via matching Open Food Facts -> AGRIBALYSE. Alternatives. Bilan hebdomadaire vs moyenne francaise.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline AGRIBALYSE",
+      "description": "Import AGRIBALYSE. Matching Open Food Facts -> categorie AGRIBALYSE. Calcul CO2.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Import AGRIBALYSE",
+        "Matching OFF -> AGRIBALYSE",
+        "Calcul CO2",
+        "Base 2 500 aliments"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "PWA et gamification",
+      "description": "Scan/saisie. Bilan carbone. Alternatives. Suivi hebdo. Gamification.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "PWA",
+        "Scan + saisie",
+        "Bilan carbone",
+        "Alternatives",
+        "Badges"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement communauté",
+      "description": "Réseaux eco. Challenge Reduisez votre carbone de 20%. Influenceurs green.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "10K utilisateurs",
+        "Challenge viral",
+        "5 partenariats",
+        "500 premium"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "B2B et marques",
+      "description": "API pour apps courses (Jow, Marmiton). Partenariats enseignes (Carrefour). Labels marques.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "API B2B",
+        "2 partenariats enseignes",
+        "Labels",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les consommateurs veulent connaitre l impact carbone",
+      "how": "Sondage groupes Facebook zero dechet et Instagram green",
+      "successCriteria": "60%+ oui et 30%+ installeraient une app"
+    },
+    {
+      "check": "Le matching code-barres -> AGRIBALYSE fonctionne",
+      "how": "Tester sur 100 produits courants",
+      "successCriteria": "70%+ des produits matchables"
+    },
+    {
+      "check": "Les alternatives sont perçues utiles",
+      "how": "Montrer 10 comparaisons a 20 consommateurs",
+      "successCriteria": "15/20 utile, 10/20 changeraient 1 produit"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Consommateurs eco-responsables",
+      "where": "Facebook zero dechet (100K+ membres), Instagram green, Reddit r/zerodechet",
+      "howToReach": "Challenge: Calculez l empreinte de votre caddie. Comparez. Partagez."
+    },
+    {
+      "who": "Familles",
+      "where": "Groupes Facebook familles ecolo",
+      "howToReach": "Apprendre a vos enfants l impact de la nourriture en scannant ensemble."
+    },
+    {
+      "who": "Entreprises avec cantine",
+      "where": "LinkedIn RSE, salons DD",
+      "howToReach": "Version B2B pour cantines: mesurer l impact carbone des menus."
+    }
+  ],
+  "pricingStrategy": "Freemium: 10 scans/jour gratuits. Premium 2.90 EUR/mois (illimité, historique, objectifs, recettes bas carbone). Famille 4.90 EUR/mois (multi-profils). API B2B 0.01-0.05 EUR/appel. Partenariats marques.",
+  "pathTo10kMrr": "30K gratuits. 2000 premium x 2.90 EUR = 5 800 EUR + 500 famille x 4.90 EUR = 2 450 EUR + API B2B 1 000 EUR + marques 1 000 EUR = 10 250 EUR MRR. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 (PWA) + Tailwind CSS + QuaggaJS + Recharts",
+    "backend": "Next.js API Routes",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "AGRIBALYSE data.gouv.fr",
+      "API Open Food Facts",
+      "Stripe"
+    ],
+    "notes": "Matching OFF -> AGRIBALYSE via categories CIQUAL. Certains produits sans match exact: categorie la plus proche."
+  },
+  "risks": [
+    {
+      "risk": "Matching code-barres -> carbone imprecis",
+      "mitigation": "Afficher intervalle de confiance. Categorie générique si pas de match exact."
+    },
+    {
+      "risk": "Yuka ajoute l Eco-Score",
+      "mitigation": "Se spécialisér carbone. Proposer alternatives et gamification que Yuka ne fait pas."
+    },
+    {
+      "risk": "Fatigue du scan après 2 semaines",
+      "mitigation": "Gamification (streaks, badges). Notifications rappel. Mode liste sans scan."
+    }
+  ],
+  "inspirations": "Yuka pour le scan. Greenly pour le bilan carbone. Etiquettable (ADEME) pour recettes bas carbone. AGRIBALYSE = meilleure base ACV alimentaire au monde.",
+  "searchVolume": [
+    {
+      "keyword": "empreinte carbone alimentation",
+      "monthlyVolume": "6600",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "impact carbone courses",
+      "monthlyVolume": "1900",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "calculer empreinte carbone repas",
+      "monthlyVolume": "2400",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "eco score aliment",
+      "monthlyVolume": "3600",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "bilan carbone alimentation app",
+      "monthlyVolume": "880",
+      "difficulty": "low",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "67M de consommateurs francais. L'alimentation représente 22% des émissions de GES en France. Le marché du bien-manger et de la consommation responsable pese 12 Mds EUR.",
+    "sam": "8M de consommateurs eco-responsables actifs en France (membres groupes zero dechet, achetéurs bio reguliers, utilisateurs d'apps comme Yuka)",
+    "som": "100K utilisateurs la première année, 30K actifs mensuels",
+    "methodology": "TAM = population adulte francaise. SAM = consommateurs eco-responsables estimés a 12% de la population (sondage ADEME 2024). SOM = taux de pénétration de 1.25% du SAM via communautés green et SEO."
+  },
+  "competitorDeep": [
+    {
+      "name": "Impact CO2 (ADEME)",
+      "url": "https://impactco2.fr/outils/alimentation",
+      "pricing": "Gratuit (outil public ADEME)",
+      "trafficEstimate": "200K visites/mois",
+      "reviews": "Outil de référence pour comparer l'impact carbone de gestes du quotidien",
+      "strengths": "Soutien institutionnel ADEME, données AGRIBALYSE officielles, gratuit, fiable",
+      "weaknesses": "Pas de scan code-barres, pas de suivi personnel, pas de gamification, outil ponctuel pas d'app"
+    },
+    {
+      "name": "Etiquettable (ADEME/ECO2 Initiative)",
+      "url": "https://bonpourleclimat.eco2initiative.com",
+      "pricing": "Gratuit",
+      "trafficEstimate": "Faible",
+      "reviews": "60% des utilisateurs disent avoir change de comportement alimentaire",
+      "strengths": "Soutien ADEME, recettes bas carbone avec bilan, produits de saison, géolocalisation restos engages",
+      "weaknesses": "Base limitee (60 recettes), pas de scan code-barres, UX datee, pas de suivi panier, niche ecolo"
+    },
+    {
+      "name": "Greenly",
+      "url": "https://greenly.earth",
+      "pricing": "B2B: sur devis (PME a grandes entreprises). B2C: app gratuite liee au compte bancaire",
+      "trafficEstimate": "500K visites/mois (site corporate)",
+      "reviews": "Leader du bilan carbone entreprise en France",
+      "strengths": "Leader marché bilan carbone, reconnaissance bancaire automatique, leve de fonds important, credibilite B2B",
+      "weaknesses": "Focus B2B pas B2C alimentaire, l'app grand public est secondaire, pas de scan alimentaire, pas de détail par aliment"
+    },
+    {
+      "name": "Yuka (Eco-Score)",
+      "url": "https://yuka.io",
+      "pricing": "Freemium: 14.99 EUR/an premium",
+      "trafficEstimate": "80M utilisateurs monde",
+      "reviews": "A intégré l'Eco-Score mais reste très nutrition-centric",
+      "strengths": "Base massive 22M utilisateurs France, scan ultra-rapide, marque forte",
+      "weaknesses": "Eco-Score très basique (lettre A-E), pas de comparaison panier, pas de suivi carbone, pas de gamification carbone, pas d'alternatives"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation des données AGRIBALYSE",
+      "status": "ok",
+      "detail": "AGRIBALYSE version 3.2 est publié par l'ADEME sous licence ouverte. 2516 produits finis avec données ACV complètes. Réutilisation commerciale autorisée.",
+      "source": "doc.agribalyse.fr - Licence Ouverte"
+    },
+    {
+      "topic": "API Open Food Facts",
+      "status": "ok",
+      "detail": "Base de 4M+ produits sous licence ODbL. Utilisation commerciale autorisée avec attribution. API gratuite.",
+      "source": "openfoodfacts.org"
+    },
+    {
+      "topic": "Affichage environnemental reglementaire",
+      "status": "ok",
+      "detail": "La France préparé un affichage environnemental obligatoire sur les produits alimentaires (loi Climat et Resilience). Ce projet beneficierait de cette réglementation une fois en vigueur.",
+      "source": "Loi Climat et Resilience 2021, Article 2"
+    },
+    {
+      "topic": "Precision des calculs carbone",
+      "status": "attention",
+      "detail": "Le matching code-barres -> categorie AGRIBALYSE est approximatif. Afficher des intervalles de confiance et la méthodologie pour eviter des plaintes de greenwashing.",
+      "source": "Directive europeenne Green Claims 2024"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Communautés zero dechet Facebook/Reddit",
+      "cacEstimate": "0.80 EUR",
+      "conversionRate": "5%",
+      "ltv": "34.80 EUR (12 mois premium)",
+      "ltvCacRatio": "43.5"
+    },
+    {
+      "channel": "SEO (empreinte carbone alimentation)",
+      "cacEstimate": "0.60 EUR",
+      "conversionRate": "4%",
+      "ltv": "34.80 EUR",
+      "ltvCacRatio": "58.0"
+    },
+    {
+      "channel": "Challenge viral Reduisez votre carbone de 20%",
+      "cacEstimate": "0.30 EUR",
+      "conversionRate": "7%",
+      "ltv": "34.80 EUR",
+      "ltvCacRatio": "116.0"
+    },
+    {
+      "channel": "Partenariats influenceurs green/ecolo",
+      "cacEstimate": "2.50 EUR",
+      "conversionRate": "3%",
+      "ltv": "34.80 EUR",
+      "ltvCacRatio": "13.9"
+    },
+    {
+      "channel": "Partenariats enseignes bio (Biocoop, Naturalia)",
+      "cacEstimate": "1.00 EUR",
+      "conversionRate": "4%",
+      "ltv": "34.80 EUR",
+      "ltvCacRatio": "34.8"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "15.4K recherches/mois cumulees ('empreinte carbone alimentation' 6 600/mois, 'eco score aliment' 3 600/mois). TAM: 12 Mds EUR. Cibles: Consommateurs eco-responsables, Familles, Entreprises avec cantine."
+    },
+    "feasibility": {
+      "score": 73,
+      "detail": "MVP en 5 semaines. 3 APIs a integrer (AGRIBALYSE, API Open Food Facts, Stripe). Stack: Next.js + PostgreSQL."
+    },
+    "market": {
+      "score": 50,
+      "detail": "2000 clients a 90 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. Pricing 5-90 EUR."
+    },
+    "competition": {
+      "score": 30,
+      "detail": "4 concurrents identifies: Impact CO2 (ADEME), Etiquettable (ADEME/ECO2 Initi, Greenly. Leader: Impact CO2 (ADEME) (200K visites/mois). Faiblesse principale: Pas de scan code-barres."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Precision des calculs carbone."
+    },
+    "overall": {
+      "score": 60,
+      "detail": "Point fort: legal (78/100). Point faible: competition (30/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

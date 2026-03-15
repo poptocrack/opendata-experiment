@@ -1,0 +1,317 @@
+{
+  "productSlug": "score-pollution-sols-contamines-basol-icpe-qualite-de-l-air-a-proximite",
+  "oneLiner": "Decouvrez le score pollution de n'importe quelle adresse en France : sols contamines, sites industriels, qualité de l'air.",
+  "problem": "Les acheteurs immobiliers et les parents de jeunes enfants ignorent les risques environnementaux autour de leur logement. Les données existent (BASOL, BASIAS, ICPE, indices ATMO) mais sont dispersees sur des sites techniques inaccessibles au grand public.",
+  "solution": "Un score pollution synthetique (0-100) pour n'importe quelle adresse, basé sur la proximité de sols contamines (BASOL/BASIAS), de sites industriels classes (ICPE), et la qualité de l'air (indices ATMO). Le rapport détaillé chaque risque identifié avec sa distance et son niveau de gravité.",
+  "uniqueValue": "Premier score pollution synthetique français qui agrégé toutes les sources environnementales en un indicateur unique et comprehensible, là où les données brutes sont totalement opaques pour le grand public.",
+  "mvpScope": "Page web avec champ adresse, score pollution sur 100, et détail des 2 sources principales : sites BASOL/BASIAS dans un rayon de 1km (avec distance et type de pollution), et indice ATMO de la commune. Carte Leaflet avec les points de pollution. Pas d'ICPE dans le MVP.",
+  "timeToMvp": "4-5 semaines solo dev",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Import et geocodage BASOL/BASIAS",
+      "description": "Télécharger les bases BASOL (sols pollues) et BASIAS (anciens sites industriels) depuis data.gouv.fr, les geocoder et les importer dans PostGIS.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Import BASOL en base (6 800+ sites)",
+        "Import BASIAS en base (300 000+ sites)",
+        "Geocodage des adresses manquantes",
+        "API de recherche par rayon"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Calcul du score et intégration ATMO",
+      "description": "Algorithme de scoring qui pondere la distance et la gravité des sites pollues, intégré l'indice ATMO, et produit un score 0-100.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Algorithme de scoring documente",
+        "Intégration API ATMO",
+        "Score pollution 0-100 avec détail"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Frontend et carte interactive",
+      "description": "Interface utilisateur avec champ adresse, affichage du score, carte interactive avec les points de pollution, et détail cliquable pour chaque site.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Page score avec code couleur",
+        "Carte Leaflet interactive",
+        "Fiches détail par site pollue",
+        "SEO par commune"
+      ]
+    },
+    {
+      "phase": "4",
+      "title": "Monétisation et lancement",
+      "description": "Paywall pour le rapport détaillé, intégration Stripe, pages SEO pour les communes les plus polluees, et campagne RP/médias.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Paywall Stripe",
+        "500 pages communes pre-générées",
+        "Communique de presse",
+        "Posts LinkedIn viraux"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le sujet de la pollution locale intéressé les particuliers",
+      "how": "Analyser les recherches Google ('pollution quartier', 'sol pollue adresse', 'qualité air ville'). Poster un thread Twitter/LinkedIn avec des exemples de scores choquants pour tester la viralité.",
+      "successCriteria": ">5000 recherches/mois sur les mots-cles cibles, thread viral >50 000 impressions"
+    },
+    {
+      "check": "Les gens sont prêts a payer pour connaitre le score pollution d'une adresse",
+      "how": "Score gratuit + rapport détaillé payant. Mesurer le taux de conversion score gratuit -> rapport payant.",
+      "successCriteria": "Taux de conversion >3% du score gratuit vers le rapport payant"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Parents de jeunes enfants (0-10 ans) en zone urbaine",
+      "where": "Forums de parents (Magicmaman, Les Maternelles), groupes Facebook de parents par ville, r/ParentingFR",
+      "howToReach": "Angle 'Vos enfants jouent-ils sur un sol pollue ?' avec des exemples concrets de parcs sur d'anciens sites industriels"
+    },
+    {
+      "who": "Acheteurs immobiliers en phase de recherche active",
+      "where": "Forums immobiliers, r/vosfinances, groupes Facebook premier achat",
+      "howToReach": "Cross-sell avec le rapport d'adresse complet et le comparateur de quartiers"
+    },
+    {
+      "who": "Associations environnementales et collectifs citoyens",
+      "where": "Réseaux France Nature Environnement, associations locales anti-pollution, Twitter militant",
+      "howToReach": "Offrir l'accès gratuit aux associations en echange de visibilité et de partages"
+    }
+  ],
+  "pricingStrategy": "Score gratuit (note globale uniquement). Rapport détaillé a 3.90 EUR (détail de chaque site, distances, historique, recommandations). Pack déménagement (score pollution + rapport complet quartier) a 7.90 EUR. B2B : API pour diagnostiqueurs immobiliers et notaires a 199 EUR/mois.",
+  "pathTo10kMrr": "Le potentiel viral est énorme (les gens partagent les scores choquants). M1-M3 : lancement avec campagne RP sur la pollution des sols, 10 000 visiteurs, 300 rapports a 3.90 EUR = 1 170 EUR. M3-M6 : SEO sur '[ville] pollution sols' (35 000 communes a indexer), 1 000 rapports/mois = 3 900 EUR + 5 diagnostiqueurs B2B a 199 EUR = 995 EUR = 4 895 EUR. M6-M12 : 2 000 rapports/mois = 7 800 EUR + 15 B2B = 2 985 EUR = 10 785 EUR.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS, Leaflet pour les cartes",
+    "backend": "Next.js API Routes",
+    "database": "PostgreSQL avec PostGIS (requetes spatiales pour la proximité des sites pollues)",
+    "hosting": "Vercel + Railway (PostgreSQL/PostGIS)",
+    "apis": [
+      "API BAN (geocodage)",
+      "API ATMO (qualité de l'air)",
+      "Stripe API",
+      "Données BASOL/BASIAS (import batch depuis data.gouv.fr)",
+      "API Georisques (complement)"
+    ],
+    "notes": "BASOL et BASIAS sont des datasets statiques a importer en base. BASIAS contient 300 000+ sites, nécessité PostGIS pour les requetes spatiales performantes. L'indice ATMO est disponible par commune via l'API des AASQA. Prevoir un import mensuel pour les mises à jour."
+  },
+  "risks": [
+    {
+      "risk": "Les données BASOL/BASIAS sont incompletes ou obsoletes (certains sites datent de 1990)",
+      "mitigation": "Afficher la date de dernière mise à jour pour chaque site. Ajouter un bouton 'Signaler une erreur'. Croiser avec Georisques pour completer."
+    },
+    {
+      "risk": "Risque juridique si un propriétaire estimé que le score deprecie son bien",
+      "mitigation": "Toutes les données sont publiques et proviennent de sources officielles. Disclaimer clair 'a titre informatif'. Consulter un avocat avant le lancement."
+    },
+    {
+      "risk": "Fort potentiel viral mais aussi polemic (NIMBY, panique)",
+      "mitigation": "Ton factuel et pedagogique, pas alarmiste. Contextualiser les scores. Preparer une FAQ détaillée sur la méthodologie."
+    }
+  ],
+  "inspirations": "Kelrisque.fr (existe mais UX tres pauvre et pas de score synthetique). ERHIN (diagnostic immobilier, intégré des éléments environnementaux mais payant et pour les pros). Toxic Sites Map aux US (carte virale des sites toxiques). PurpleAir (qualité de l'air crowdsourcee, modèle communautaire).",
+  "searchVolume": [
+    {
+      "keyword": "pollution sol adresse",
+      "monthlyVolume": "1300",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "BASOL site pollue",
+      "monthlyVolume": "2400",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "qualité air ville",
+      "monthlyVolume": "3600",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "sol contamine immobilier",
+      "monthlyVolume": "880",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ICPE pres de chez moi",
+      "monthlyVolume": "590",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "800 millions EUR - Marché du diagnostic environnemental et risques en France (diagnostics obligatoires ERP + données environnementales immobilier)",
+    "sam": "40 millions EUR - Sous-segment score pollution/environnement pour particuliers et professionnels (acheteurs immo + parents + associations)",
+    "som": "1.5 millions EUR - 2000 rapports/mois a 3.90 EUR + 15 diagnostiqueurs B2B a 199 EUR/mois, atteignable a M12",
+    "methodology": "TAM basé sur le marché du diagnostic immobilier France (6M diagnostics/an). SAM = segment environnemental digital. SOM = business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "Georisques",
+      "url": "https://www.georisques.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "2M+ visites/mois",
+      "reviews": "Référence officielle, données BASOL/BASIAS/SIS integrees depuis la refonte",
+      "strengths": "Source officielle, gratuit, complet, cartographie parcellaire, obligations legales ERP",
+      "weaknesses": "Interface technique, pas de score synthetique, pas d'agrégation qualité de l'air, UX peu accessible pour le grand public"
+    },
+    {
+      "name": "France ERP",
+      "url": "https://www.france-erp.com",
+      "pricing": "À partir de 24.90 EUR par ERP",
+      "trafficEstimate": "200K-500K visites/mois",
+      "reviews": "Générateur d'État des Risques et Pollutions (ERP) pour transactions",
+      "strengths": "Modèle paye eprouve, obligation légale = marché captif, parcours simple",
+      "weaknesses": "ERP réglementaire uniquement, pas de score synthetique, pas de qualité de l'air, pas d'analyse pedagogique"
+    },
+    {
+      "name": "Kelrisque",
+      "url": "https://www.kelrisque.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Informations risques par adresse",
+      "strengths": "Concept proche, gratuit, couvre plusieurs risques",
+      "weaknesses": "UX tres pauvre, pas de score synthetique, faible notoriété, pas de rapport détaillé payant"
+    },
+    {
+      "name": "IQAir / PurpleAir",
+      "url": "https://www.iqair.com",
+      "pricing": "Gratuit (données) + capteurs payants",
+      "trafficEstimate": "10M+ visites/mois (mondial)",
+      "reviews": "Référence mondiale qualité de l'air en temps réel",
+      "strengths": "Données temps réel, réseau mondial de capteurs, marque forte",
+      "weaknesses": "Uniquement qualité de l'air (pas sols/ICPE), données France parfois limitees, pas de croisement avec données immobilières"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Publication de données BASOL/BASIAS",
+      "status": "ok",
+      "detail": "Données publiques sur data.gouv.fr et Georisques. La loi impose déjà leur consultation dans le cadre des ERP (État des Risques et Pollutions).",
+      "source": "Code de l'environnement - Art. L125-5"
+    },
+    {
+      "topic": "Impact sur la valeur immobilière",
+      "status": "attention",
+      "detail": "Un score pollution negatif peut deprecier un bien. Risque de plaintes de propriétaires. Se protéger par un disclaimer clair, l'utilisation exclusive de données publiques, et une méthodologie transparente.",
+      "source": "Code civil - Responsabilité"
+    },
+    {
+      "topic": "Alarmisme et trouble public",
+      "status": "attention",
+      "detail": "Éviter un ton alarmiste. Contextualiser les scores (un ancien site industriel remis en état =/= danger actuel). Les BASIAS ne presupposent pas d'une pollution actuelle.",
+      "source": "BRGM - Recommandations d'usage BASIAS"
+    },
+    {
+      "topic": "Données ATMO qualité de l'air",
+      "status": "ok",
+      "detail": "Les indices ATMO sont publics et diffuses par les AASQA. API gratuite pour reutilisation.",
+      "source": "Loi LAURE - Information sur la qualité de l'air"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pollution sol + ville/quartier)",
+      "cacEstimate": "1-3 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "6 EUR (1.5 rapports/client)",
+      "ltvCacRatio": "2-6x"
+    },
+    {
+      "channel": "Viralité réseaux sociaux (scores choquants)",
+      "cacEstimate": "0-0.50 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "6 EUR",
+      "ltvCacRatio": "12x+"
+    },
+    {
+      "channel": "RP et médias (campagne pollution)",
+      "cacEstimate": "0.10-0.50 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "6 EUR",
+      "ltvCacRatio": "12-60x"
+    },
+    {
+      "channel": "Cross-sell depuis rapport quartier",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "3.90 EUR",
+      "ltvCacRatio": "infini"
+    },
+    {
+      "channel": "B2B diagnostiqueurs/notaires",
+      "cacEstimate": "100-200 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "2388 EUR (199 EUR/mois x 12)",
+      "ltvCacRatio": "12-24x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 58,
+      "detail": "8.8K recherches/mois cumulees ('qualité air ville' 3 600/mois, 'BASOL site pollue' 2 400/mois). TAM: 800 millions EUR. Cibles: Parents de jeunes enfants, Acheteurs immobiliers en phase, Associations environnementales et collectifs."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 4-5 semaines solo dev. 5 APIs a integrer (API BAN, API ATMO, Stripe API). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Pricing 90-199 EUR."
+    },
+    "competition": {
+      "score": 35,
+      "detail": "4 concurrents identifies: Georisques, France ERP, Kelrisque. Leader: Georisques (2M+ visites/mois). Faiblesse principale: Interface technique."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Impact sur la valeur immobilière, Alarmisme et trouble public."
+    },
+    "overall": {
+      "score": 57,
+      "detail": "Point fort: faisabilité (68/100). Point faible: compétition (35/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

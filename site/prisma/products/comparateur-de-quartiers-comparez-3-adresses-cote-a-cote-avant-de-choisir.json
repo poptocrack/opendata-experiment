@@ -1,0 +1,289 @@
+{
+  "productSlug": "comparateur-de-quartiers-comparez-3-adresses-cote-a-cote-avant-de-choisir",
+  "oneLiner": "Comparez jusqu'a 3 adresses côte à côte sur tous les critères qui comptent : prix, sécurité, écoles, transports, risques.",
+  "problem": "Quand on hesite entre plusieurs biens immobiliers, on ouvre 15 onglets pour comparer manuellement les quartiers. Il n'existe aucun outil qui permet de mettre 3 adresses en colonnes et de comparer objectivement les indicateurs clés.",
+  "solution": "Un comparateur visuel où l'utilisateur saisit 2 où 3 adresses et obtient un tableau comparatif avec des scores normalises sur chaque critère : prix au m2, sécurité, écoles, transports, risques naturels, DPE moyen. Chaque critère est illustre par un code couleur (vert/orange/rouge) et un score sur 10.",
+  "uniqueValue": "Le seul outil qui permet une comparaison directe et visuelle de quartiers sur des données objectives, la où les utilisateurs font aujourd'hui ce travail manuellement en croisant des dizaines de sources.",
+  "mvpScope": "Page web avec 3 champs adresse, tableau comparatif avec 3 critères (prix m2 DVF, risques naturels Georisques, nombre d'écoles a proximite). Scores normalises sur 10 avec code couleur. Pas de PDF, pas de partage, pas de sauvegarde.",
+  "timeToMvp": "3-4 semaines solo dev (reutilise le backend du rapport d'adresse)",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Backend comparatif",
+      "description": "API qui accepte 2-3 adresses et retourne les données structurees pour chaque adresse. Réutilisation des connecteurs du rapport d'adresse (DVF, Georisques, BAN).",
+      "duration": "1 semaine",
+      "deliverables": [
+        "API /compare acceptant 2-3 adresses",
+        "Normalisation des scores sur 10",
+        "Cache par adresse"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Interface de comparaison",
+      "description": "UI avec 3 colonnes, codes couleur, graphiques radar pour la vue synthetique, et détail par critère en accordion.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Tableau comparatif responsive",
+        "Graphique radar synthetique",
+        "Vue détail par critère"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Partage et monétisation",
+      "description": "URL de partage unique pour chaque comparaison, export PDF, et paywall pour la comparaison complète (2 critères gratuits, tous les critères payants).",
+      "duration": "1-2 semaines",
+      "deliverables": [
+        "URLs de partage",
+        "Export PDF comparatif",
+        "Paywall Stripe"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les achetéurs comparent effectivement plusieurs quartiers",
+      "how": "Sondage rapide sur les groupes Facebook immo : 'Quand vous cherchez un bien, combien d'adresses comparez-vous ?' + interview de 10 primo-accedants.",
+      "successCriteria": ">70% comparent au moins 2 quartiers, >50% trouvent ca penible a faire manuellement"
+    },
+    {
+      "check": "Le format comparatif apporte une vraie valeur ajoutee vs le rapport unitaire",
+      "how": "A/B test : proposer le comparateur vs 3 rapports individuels. Mesurer le NPS et la willingness to pay.",
+      "successCriteria": "NPS du comparateur >40, préférénce comparateur >60%"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Couples primo-accedants qui hesitent entre plusieurs villes de banlieue",
+      "where": "Forums immobiliers (section 'choix du quartier'), groupes Facebook 'Acheter en Ile-de-France', r/paris",
+      "howToReach": "Repondre aux posts 'Saint-Maur où Vincennes ?' avec un lien vers la comparaison pre-générée"
+    },
+    {
+      "who": "Investisseurs qui arbitrent entre plusieurs villes pour du locatif",
+      "where": "Groupes Telegram et Discord d'investissement immo, chaîne YouTube 'Investir dans l'immobilier'",
+      "howToReach": "Contenus 'Lyon vs Bordeaux vs Nantes pour investir en 2026' avec le comparateur"
+    }
+  ],
+  "pricingStrategy": "Comparaison 2 critères gratuite (prix m2 + écoles). Comparaison complète (6+ critères) a 6.90 EUR. Pack achetéur : 5 comparaisons + 5 rapports complets a 24.90 EUR. Cross-sell systematique avec le rapport d'adresse complet.",
+  "pathTo10kMrr": "Funnel : comparaison gratuite (2 critères) -> upsell comparaison complète (6.90 EUR) -> cross-sell rapport complet (4.90 EUR). 400 comparaisons payantes/mois a 6.90 EUR = 2 760 EUR + cross-sell 200 rapports/mois = 980 EUR. Pack achetéur : 100/mois a 24.90 EUR = 2 490 EUR. Abonnement agents 50 x 29 EUR = 1 450 EUR. Total M6 : ~7 680 EUR. SEO sur 'comparer quartiers [ville]' pour atteindre 10K a M8.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS, Recharts où Chart.js pour les graphiques radar",
+    "backend": "Next.js API Routes, réutilisation des connecteurs du rapport d'adresse",
+    "database": "PostgreSQL avec PostGIS (même instance que le rapport d'adresse)",
+    "hosting": "Vercel + Railway",
+    "apis": [
+      "API BAN",
+      "API DVF",
+      "API Georisques",
+      "API ADEME DPE",
+      "API Education Nationale",
+      "Stripe"
+    ],
+    "notes": "Architecture en microservices par source de données pour pouvoir reutiliser entre le rapport et le comparateur. Cache Redis avec TTL de 7 jours par adresse."
+  },
+  "risks": [
+    {
+      "risk": "Le comparateur n'apporte pas assez de valeur par rapport a 3 rapports individuels",
+      "mitigation": "Ajouter des insights comparatifs ('+15% moins cher', 'meilleure école') qui ne sont possibles que dans le format comparatif"
+    },
+    {
+      "risk": "Complexite UX sur mobile avec 3 colonnes",
+      "mitigation": "Mode swipe sur mobile (une adresse à la fois avec navigation horizontale), mode tableau uniquement sur desktop"
+    }
+  ],
+  "inspirations": "Versus.com (comparateur de produits tech, format colonnes très efficace). Numbeo.com (comparaison de villes a l'international, populaire mais pas au niveau quartier). Properstar.fr (comparaison basique de villes, pas assez détaillé).",
+  "searchVolume": [
+    {
+      "keyword": "comparer quartiers",
+      "monthlyVolume": "880",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "comparateur villes France",
+      "monthlyVolume": "1900",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ou habiter ile de france",
+      "monthlyVolume": "2400",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "saint maur où vincennes",
+      "monthlyVolume": "390",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "meilleur quartier pour vivre",
+      "monthlyVolume": "3600",
+      "difficulty": "high",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "180 millions EUR - Segment données quartier et aide à la décision immobilière pour particuliers en France",
+    "sam": "45 millions EUR - Sous-segment comparaison de quartiers ciblé sur les 959K achetéurs/an qui hesitent entre plusieurs localisations",
+    "som": "1.2 millions EUR - 400 comparaisons payantes/mois a 6.90 EUR + 200 cross-sell rapports + 50 agents a 29 EUR/mois, atteignable a M10",
+    "methodology": "TAM = marché données quartier France. SAM = 25% des achetéurs en recherche active comparent activement (sondages forums immo). SOM base sur le business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "Chacun Son Lieu",
+      "url": "https://www.chacunsonlieu.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "20K-50K visites/mois",
+      "reviews": "Comparaison de villes et quartiers avec matching de préférénces",
+      "strengths": "Système de matching par préférénces, UX moderne, données multi-critères",
+      "weaknesses": "Pas de monétisation claire, comparaison au niveau commune mais pas adresse précise, pas de rapport PDF"
+    },
+    {
+      "name": "Cityzia",
+      "url": "https://www.cityzia.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Comparaison de villes et quartiers, interface claire",
+      "strengths": "Interface de comparaison intuitive, bonnes données démographiques",
+      "weaknesses": "Couverture inégale, pas de score synthetique, pas de données DVF ni DPE intégrées"
+    },
+    {
+      "name": "Bien dans ma ville",
+      "url": "https://www.bien-dans-ma-ville.fr",
+      "pricing": "Gratuit (publicite)",
+      "trafficEstimate": "100K-200K visites/mois",
+      "reviews": "Analyse fine pour 34 965 communes et 2000 quartiers",
+      "strengths": "Couverture complète, avis communautaires, SEO bien installe",
+      "weaknesses": "Format fiches individuelles, pas de comparaison cote-a-côté directe, UX datee"
+    },
+    {
+      "name": "Numbeo",
+      "url": "https://www.numbeo.com",
+      "pricing": "Gratuit (publicite)",
+      "trafficEstimate": "5M+ visites/mois (mondial)",
+      "reviews": "Référence mondiale pour la comparaison de villes",
+      "strengths": "Marque mondiale, données crowdsourcees très riches, couvre le cout de la vie, sécurité, sante",
+      "weaknesses": "Niveau ville uniquement (pas quartier/adresse), données France parfois incomplètes, pas de données officielles francaises (DVF, DPE)"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation données publiques",
+      "status": "ok",
+      "detail": "Toutes les sources (DVF, Georisques, DPE, Education Nationale) sont en open data sous licence Etalab. Comparaison factuelle de données publiques.",
+      "source": "Licence Ouverte v2 - data.gouv.fr"
+    },
+    {
+      "topic": "Comparaison et classement de communes",
+      "status": "attention",
+      "detail": "Publier un classement defavorable d'une commune pourrait générér des reactions d'elus. La transparence de la méthodologie et le fait que les données soient publiques protégént juridiquement.",
+      "source": "Jurisprudence liberté de la presse et données publiques"
+    },
+    {
+      "topic": "RGPD",
+      "status": "ok",
+      "detail": "Pas de données personnelles dans le comparateur. Les données DVF sont anonymisees (pas de nom d'achetéur).",
+      "source": "RGPD - Donnees anonymisées"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (comparer quartiers + villes)",
+      "cacEstimate": "3-8 EUR",
+      "conversionRate": "4-6%",
+      "ltv": "12 EUR (comparaison + cross-sell rapport)",
+      "ltvCacRatio": "2-4x"
+    },
+    {
+      "channel": "Posts forums immo (organique)",
+      "cacEstimate": "0 EUR",
+      "conversionRate": "6-10%",
+      "ltv": "12 EUR",
+      "ltvCacRatio": "infini"
+    },
+    {
+      "channel": "Cross-sell depuis rapport d'adresse",
+      "cacEstimate": "0 EUR (cout marginal)",
+      "conversionRate": "15-20%",
+      "ltv": "6.90 EUR",
+      "ltvCacRatio": "infini"
+    },
+    {
+      "channel": "Google Ads (comparaison villes)",
+      "cacEstimate": "45-75 EUR",
+      "conversionRate": "2.5%",
+      "ltv": "12 EUR",
+      "ltvCacRatio": "0.2x - non rentable, usage limité"
+    },
+    {
+      "channel": "Réseaux sociaux (contenu comparatif viral)",
+      "cacEstimate": "1-3 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "12 EUR",
+      "ltvCacRatio": "4-12x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 59,
+      "detail": "9.2K recherches/mois cumulees ('meilleur quartier pour vivre' 3 600/mois, 'ou habiter ile de france' 2 400/mois). TAM: 180 millions EUR. Cibles: Couples primo-accedants qui hesitent, Investisseurs qui arbitrent entre."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 3-4 semaines solo dev (reutilise le backend du rapport d'adresse). 6 APIs a integrer (API BAN, API DVF, API Georisques). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Pricing 90-90 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: Chacun Son Lieu, Cityzia, Bien dans ma ville. Leader: Chacun Son Lieu (20K-50K visites/mois). Faiblesse principale: Pas de monétisation claire."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "2 points OK, 1 point d'attention. Vigilance: Comparaison et classement de communes."
+    },
+    "overall": {
+      "score": 64,
+      "detail": "Point fort: faisabilite (78/100). Point faible: competition (55/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "id": "veille-business",
+  "rank": 3,
+  "title": "Veille business & scoring entreprises",
+  "slug": "veille-business",
+  "sector": "entreprises",
+  "tagline": "Exploiter SIRENE + BODACC + données financieres pour détecter les opportunités commerciales avant tout le monde",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "Très large — tout le B2B",
+  "monetization": "SaaS récurrent 29-199/mois",
+  "context": "Avec 1.9M de téléchargements/an, SIRENE est le dataset le plus utilise de data.gouv.fr. Ca prouve une demande massive. Mais la plupart des utilisateurs téléchargént le CSV brut et galèrent à l'exploiter. 3 APIs gratuites existent (Recherche Entreprises, Sirene INSEE, API Entreprise) pour construire un produit sans même téléchargér les données. Le croisement BODACC + financier + alertes temps réel sur un vertical spécifique (ex: restauration, BTP, e-commerce) peut créer un produit niche très défensible.",
+  "signals": [
+    {
+      "label": "Téléchargements SIRENE",
+      "value": "1.9M/an",
+      "detail": "Dataset le plus téléchargé de data.gouv.fr — énorme demande"
+    },
+    {
+      "label": "Visites SIRENE",
+      "value": "423K/an",
+      "detail": "Trafic massif et constant"
+    },
+    {
+      "label": "Visites BODACC",
+      "value": "57K/an",
+      "detail": "Annonces légales : créations, liquidations, cessions"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5b7ffc618b4c4169d30727e0",
+      "name": "Base SIRENE (SIREN/SIRET)",
+      "description": "Toutes les entreprises françaises : activité, adresse, effectif, date création.",
+      "visits": "423K/an",
+      "downloads": "1.9M/an",
+      "updateFrequency": "Quotidien"
+    },
+    {
+      "datasetId": "559395f1c751df0f51a453b9",
+      "name": "BODACC",
+      "description": "Creations, modifications, procédures collectives, cessions d'entreprises.",
+      "visits": "57K/an",
+      "downloads": "4.8K/an",
+      "updateFrequency": "Quotidien"
+    },
+    {
+      "datasetId": "6587efa36e80ab61d5792fdd",
+      "name": "Données financieres entreprises",
+      "description": "Bilans détaillés des entreprises en format Parquet.",
+      "visits": "~8K/an",
+      "downloads": "~1K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "66fddeda33e2036788436d8e",
+      "name": "Immatriculations INPI",
+      "description": "Flux temps réel des immatriculations, modifications et radiations.",
+      "visits": "2.6K/an",
+      "downloads": "456/an",
+      "updateFrequency": "Continu"
+    },
+    {
+      "datasetId": "62bc4b958cdb4ce3c2d86064",
+      "name": "SIRENE géolocalisé (BAN)",
+      "description": "Tous les établissements SIRET avec coordonnées GPS — pour cartographie et analyse spatiale.",
+      "visits": "17K/an",
+      "downloads": "5.2K/an",
+      "updateFrequency": "Mensuel",
+      "order": 4
+    },
+    {
+      "datasetId": "61d5e2d372a52d9f9411ff88",
+      "name": "SIRENE géolocalisé (INSEE)",
+      "description": "Geolocalisation officielle INSEE des établissements pour études statistiques.",
+      "visits": "26K/an",
+      "downloads": "25K/an",
+      "updateFrequency": "Annuel",
+      "order": 5
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Recherche d'Entreprises",
+      "description": "Recherche d'entreprises par nom, SIREN, activité, localisation. Gratuite.",
+      "baseUrl": "https://recherche-entreprises.api.gouv.fr"
+    },
+    {
+      "name": "API Sirene (INSEE)",
+      "description": "Accès complet au répertoire SIRENE : entreprises et établissements.",
+      "baseUrl": "https://api.insee.fr/entreprises/sirene/V3.11"
+    },
+    {
+      "name": "API Entreprise",
+      "description": "Données administratives enrichies : attestations, bilans, certifications.",
+      "baseUrl": "https://entreprise.api.gouv.fr"
+    }
+  ],
+  "productIdeas": [
+    "Alertes temps réel : entreprise de votre secteur en liquidation → prospectez ses clients orphelins",
+    "Scoring santé financiere croise (BODACC procédures + bilans + ancienneté SIRENE)",
+    "Détection d'opportunités de rachat (entreprises en difficulté dans un secteur donne)",
+    "Lead génération B2B : nouvelles immatriculations dans un secteur = prospects à contacter",
+    "Carte de chaleur concurrentielle : visualiser la densité d'entreprises d'un secteur par zone géographique"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Commerciaux B2B",
+      "priceRange": "29/mois"
+    },
+    {
+      "segment": "Cabinets comptables",
+      "priceRange": "79/mois"
+    },
+    {
+      "segment": "Fonds de reprise",
+      "priceRange": "199/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Société.com",
+      "weakness": "Généraliste, pas d'alertes verticalisées"
+    },
+    {
+      "name": "Pappers",
+      "weakness": "Bon produit mais cher, pas de scoring prédictif"
+    },
+    {
+      "name": "Infogreffe",
+      "weakness": "Interface datée, pas d'intelligence"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "SIRENE a 1.9M téléchargements/an prouve une demande massive d'exploitation des données entreprises",
+      "3 APIs gratuites (Recherche Entreprises, Sirene INSEE, API Entreprise) evitent tout coût de données",
+      "Mise à jour quotidienne de SIRENE et BODACC permet des alertes temps réel défensibles",
+      "Approche verticalisée (BTP, restauration, e-commerce) crée des niches défensibles vs les généralistes"
+    ],
+    "weaknesses": [
+      "Pappers a déjà un produit mature et une forte notoriété — difficile de les concurrencer frontalement",
+      "Les données financieres (bilans) ne couvrent que les entreprises qui publient leurs comptes (~25% des PME)",
+      "La qualité des données SIRENE est inégale — codes NAF parfois mal renseignés, adresses obsolètes",
+      "Le scoring prédictif nécessite un historique important et des modèles ML coûteux a développer et maintenir"
+    ],
+    "opportunities": [
+      "Les verticales sous-servies (artisans, professions libérales, associations) n'ont aucun outil de veille adapte",
+      "L'obligation de facturation electronique (2026-2027) va génèrer de nouvelles données exploitables",
+      "Les cabinets comptables cherchent à se transformer en cabinets de conseil — besoin d'outils d'intelligence",
+      "Le marché de la reprise d'entreprise explose (600K dirigeants partent à la retraite d'ici 2030)"
+    ],
+    "threats": [
+      "Pappers lève régulierement des fonds et pourrait ajouter des fonctionnalités de scoring/alertes verticalisées",
+      "Société.com (Moody's) et Infogreffe ont les moyens de modernisér leur offre",
+      "L'INSEE pourrait enrichir ses propres outils de requetage SIRENE et réduire le besoin d'intermédiaires",
+      "Les CRM B2B (HubSpot, Salesforce) intègrent de plus en plus de données entreprises en natif"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Romain",
+      "role": "Commercial terrain dans une société de logiciels pour restaurateurs, couvre la région PACA, 45 prospects/mois",
+      "age": "31 ans",
+      "context": "Doit identifier les restaurants qui ouvrent, changent de gérant où sont en difficulté dans sa zone. Son CRM contient 2000 fiches mais 30% sont obsolètes. Il prospecte a froid et perd du temps sur des cibles non pertinentes.",
+      "painPoints": [
+        "Découvre qu'un prospect a ferme 3 mois après — sa fiche CRM n'est pas à jour",
+        "Ne sait pas quels restaurants viennent d'ouvrir dans sa zone pour les prospecter en priorite",
+        "Aucune visibilité sur la santé financiere d'un prospect avant de passer 1h en rendez-vous"
+      ],
+      "currentSolution": "Verification manuelle sur Société.com (abonnement à 30 EUR/mois) + Google Maps pour repèrer les nouveaux",
+      "budget": "25-35 EUR/mois — son entreprise lui remboursé les outils de prospection",
+      "channels": [
+        "Groupe LinkedIn 'Commerciaux B2B France'",
+        "Salon EquipHotel Paris",
+        "Podcast 'Vendre' de Laurent Lagarde",
+        "Forum ActionCo.fr"
+      ]
+    },
+    {
+      "name": "Celine",
+      "role": "Expert-comptable associee dans un cabinet de 12 collaborateurs à Lille",
+      "age": "48 ans",
+      "context": "Gère 180 dossiers clients, principalement des TPE/PME. Veut développer une offre de conseil stratégique (au-dela de la comptabilite pure) pour fidéliser ses clients et augmenter ses honoraires. Cherche a détecter les signaux faibles (difficultés financieres d'un concurrent, opportunités de rachat).",
+      "painPoints": [
+        "Ses clients lui demandent des infos sur leurs concurrents mais elle n'a pas d'outil pour ca",
+        "A perdu un client racheté par un concurrent sans avoir vu les signaux d'alerte (BODACC procédure collective)",
+        "Passe 45min par client a preparer un benchmark sectoriel pour les revues annuelles de gestion"
+      ],
+      "currentSolution": "Pappers a 79 EUR/mois pour les recherches ponctuelles + Infogreffe pour les actes officiels",
+      "budget": "60-90 EUR/mois si l'outil remplace Pappers et apporte des alertes automatiques",
+      "channels": [
+        "Ordre des Experts-Comptables",
+        "Congrès ECF (Experts Comptables de France)",
+        "Groupe Facebook 'Experts-comptables et commissaires aux comptes'",
+        "Revue SIC (magazine de l'Ordre)"
+      ]
+    },
+    {
+      "name": "Franck",
+      "role": "Dirigeant d'un fonds de reprise de PME industrielles, 3-5 acquisitions par an",
+      "age": "56 ans",
+      "context": "Recherche activement des PME industrielles (5-50 salariés) en difficulté ou dont le dirigeant part à la retraite. Analyse 200+ dossiers par an pour en retenir 3-5. Chaque acquisition représente 500K-3M EUR.",
+      "painPoints": [
+        "Repere les cibles trop tard — les procédures collectives BODACC sont publiques mais il les découvre après les mandataires",
+        "N'a pas de scoring automatisé pour filtrer les 200 dossiers/an — analyse manuelle chronophage",
+        "Les données financieres des PME sont souvent incompletes ou publiées avec 18 mois de retard"
+      ],
+      "currentSolution": "Mandataires judiciaires + Pappers Pro a 199 EUR/mois + réseau personnel + BODACC consulté manuellement",
+      "budget": "150-250 EUR/mois — négligeable vs la valeur d'une acquisition reussie",
+      "channels": [
+        "CRA (Cedants et Repreneurs d'Affaires)",
+        "BPI France (réseau transmission)",
+        "Club des repreuneurs APCMA",
+        "Salon Transfair"
+      ]
+    }
+  ]
+}

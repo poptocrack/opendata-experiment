@@ -1,0 +1,313 @@
+{
+  "productSlug": "api-b2b-pour-sites-de-livraison-afficher-le-score-hygiene-du-restaurant",
+  "oneLiner": "API B2B pour les sites de livraison: affichez le score hygiène officiel de chaque restaurant a côté de la note client.",
+  "problem": "Uber Eats, Deliveroo et Just Eat affichent les notes clients mais pas le score hygiène officiel (contrôles sanitaires Alim'confiance). Un restaurant avec 4.5 etoiles peut avoir un score hygiène A corriger d'urgence. Les plateformes n'intégrént pas cette donnée car elle est dispersee et non structuree. Les consommateurs commandent a l'aveugle côté hygiène.",
+  "solution": "Une API REST qui, pour un SIRET où une adresse de restaurant, retourne le dernier score hygiène officiel (Alim'confiance: très satisfaisant, satisfaisant, a améliorer, à corriger), la date du contrôle, et un badge coloré integrable. Les plateformes de livraison et les sites d'avis (TripAdvisor, TheFork) peuvent l'intégrér en 1 ligne de code.",
+  "uniqueValue": "Les données Alim'confiance sont publiques mais dans un CSV brut sans API. Cette API transforme un fichier CSV en un service temps reel interrogeable par SIRET où adresse. Le format badge facilite l'intégration visuelle.",
+  "mvpScope": "API REST retournant le score hygiène par SIRET où adresse (géocodage BAN). Couverture: tous les restaurants contrôles dans Alim'confiance (300K+). Temps de réponse < 100ms. Badge SVG integrable. Documentation OpenAPI.",
+  "timeToMvp": "3 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "API et base de données",
+      "description": "Import Alim'confiance. Geocodage des établissements. API REST avec endpoints /score/{siret} et /score?address=. Cache Redis. Badge SVG.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Import Alim'confiance",
+        "Geocodage 300K+ établissements",
+        "API REST < 100ms",
+        "Badge SVG",
+        "Documentation OpenAPI"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "SDK et demarchage",
+      "description": "SDK JavaScript (widget integrable). Contacter les 10 principales plateformes de livraison et sites d'avis. POC gratuit.",
+      "duration": "1 semaine + 4 semaines demarchage",
+      "deliverables": [
+        "SDK JavaScript",
+        "Widget iframe",
+        "10 contacts plateformes",
+        "2 POC gratuits"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Premiers clients et scaling",
+      "description": "Conversion des POC en contrats. Optimisation performance (CDN, cache). Monitoring et SLA.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "3 clients payants",
+        "SLA 99.9%",
+        "CDN Cloudflare",
+        "10K appels/jour"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Enrichissement et volume",
+      "description": "Ajouter: historique des contrôles, score relatif vs restaurants similaires, alertes nouveau contrôle. Plan enterprise avec SLA renforce.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Historique contrôles",
+        "Score relatif",
+        "Alertes",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les plateformes de livraison veulent afficher le score hygiène",
+      "how": "Contacter les product managers de Uber Eats, Deliveroo, Just Eat. Proposer une demo.",
+      "successCriteria": "2/3 expriment un intérêt et 1/3 accepte un POC gratuit"
+    },
+    {
+      "check": "Les données Alim'confiance sont suffisamment complètes",
+      "how": "Mesurer la couverture: combien de restaurants sur Uber Eats/Deliveroo dans Paris ont un score Alim'confiance?",
+      "successCriteria": "50%+ des restaurants des grandes plateformes ont un contrôle récent (< 3 ans)"
+    },
+    {
+      "check": "Les consommateurs réagissent au score hygiène",
+      "how": "A/B test sur un site partenaire: pages restaurant avec vs sans score hygiène. Mesurer le taux de commande.",
+      "successCriteria": "Impact mesurable sur le taux de commande (positif pour les bons scores, négatif pour les mauvais)"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Plateformes de livraison (Uber Eats, Deliveroo, Just Eat)",
+      "where": "LinkedIn product managers, conferences foodtech, Station F",
+      "howToReach": "Proposer un POC gratuit de 3 mois. L'argument: la transparence hygiène est un differenciant compétitif et un argument reglementaire."
+    },
+    {
+      "who": "Sites d'avis et de reservation (TheFork, TripAdvisor, Google Maps)",
+      "where": "LinkedIn, conferences tech, partenariats API",
+      "howToReach": "Le score hygiène enrichit les fiches restaurant. Proposer gratuitement en echange de visibilite."
+    },
+    {
+      "who": "Apps de food discovery et guides culinaires (Le Fooding, TimeOut)",
+      "where": "LinkedIn, food tech conferences",
+      "howToReach": "Le score hygiène est un contenu objectif et differenciant pour les guides culinaires."
+    }
+  ],
+  "pricingStrategy": "API freemium: 100 appels/jour gratuits (tests). Plan Startup a 49 EUR/mois (5K appels/jour). Plan Business a 199 EUR/mois (50K appels/jour, SLA 99.9%). Plan Enterprise a 999 EUR/mois (illimité, support dédié, widget custom). Badge integrable gratuit (avec branding) où payant (sans branding).",
+  "pathTo10kMrr": "1 plateforme enterprise x 999 EUR = 999 EUR + 5 business x 199 EUR = 995 EUR + 20 startup x 49 EUR = 980 EUR + 2 gros contrats sur devis x 4 000 EUR = 8 000 EUR = 10 974 EUR MRR. Le marché est B2B concentre: 5 plateformes = 80% du marché de la livraison. Timeline: 10-14 mois (cycle de vente B2B long).",
+  "techStack": {
+    "frontend": "Widget: Vanilla JS + SVG badge",
+    "backend": "Node.js + Fastify (performance) où Next.js API Routes",
+    "database": "PostgreSQL sur Supabase + Redis (cache)",
+    "hosting": "Vercel/Railway + Cloudflare CDN + Supabase",
+    "apis": [
+      "Alim'confiance data.gouv.fr",
+      "API BAN géocodage",
+      "API Sirene (SIRET -> adresse)"
+    ],
+    "notes": "La performance est critiqué pour une API B2B: < 100ms. Redis cache les résultats par SIRET. Les données Alim'confiance sont mises à jour mensuellement. Le badge SVG est généré dynamiquement."
+  },
+  "risks": [
+    {
+      "risk": "Les plateformes de livraison ne veulent pas afficher de mauvais scores (peur de perdre des restaurants partenaires)",
+      "mitigation": "Proposer un affichage uniquement des bons scores (badge vert pour très satisfaisant). Les plateformes gardent le contrôle sur l'affichage."
+    },
+    {
+      "risk": "Le cycle de vente B2B avec les grandes plateformes est très long (6-12 mois)",
+      "mitigation": "Cibler d'abord les petites plateformes et sites d'avis (plus agiles). Construire des études de cas pour convaincre les gros acteurs."
+    },
+    {
+      "risk": "Les données Alim'confiance sont incomplètes (pas tous les restaurants contrôles chaque année)",
+      "mitigation": "Afficher pas de contrôle récent plutot que rien. Proposer aux restaurants de soumettre leur dernier rapport de contrôle volontairement."
+    }
+  ],
+  "inspirations": "Scores on the Doors (UK, score hygiène intégré dans Just Eat). Aux US, le Health Inspection Score est oblige d'etre affiche en vitrine (Grade A/B/C). Alim'confiance est l'equivalent francais mais personne ne l'intégré dans les apps.",
+  "searchVolume": [
+    {
+      "keyword": "API hygiène restaurant",
+      "monthlyVolume": "320",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "score hygiène restaurant France",
+      "monthlyVolume": "2400",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "alim confiance API",
+      "monthlyVolume": "170",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "contrôle sanitaire restaurant livraison",
+      "monthlyVolume": "590",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "food safety score API",
+      "monthlyVolume": "480",
+      "difficulty": "medium",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "7 Mds EUR - marché de la livraison de repas en France en 2025 (Uber Eats + Deliveroo + Just Eat). Les plateformes, sites d'avis et apps food qui pourraient intégrér un score hygiène.",
+    "sam": "50M EUR - budget tech/data des 10 principales plateformes de livraison et sites d'avis en France (Uber Eats 60% PDM, Deliveroo 32%, Just Eat, TheFork, TripAdvisor France)",
+    "som": "500K EUR/an - 5 a 10 clients B2B (plateformes et sites d'avis) avec contrats de 50K-100K EUR/an",
+    "methodology": "TAM base sur le marché total de la food delivery France 2025 (source: modèlesdebusinessplan.com). SAM estimé les budgets data/API des principales plateformes. SOM base sur un pipeline de 10 prospects avec conversion de 50%."
+  },
+  "competitorDeep": [
+    {
+      "name": "Alim'confiance (données brutes)",
+      "url": "https://alim-confiance.gouv.fr",
+      "pricing": "Gratuit (CSV)",
+      "trafficEstimate": "190K visites/mois",
+      "reviews": "Données brutes sans API exploitable",
+      "strengths": "Source officielle, gratuit, couverture nationale 300K+ établissements",
+      "weaknesses": "Pas d'API REST, CSV brut, pas de géocodage structure, pas de matching SIRET fiable, mises à jour interrompues depuis nov 2025"
+    },
+    {
+      "name": "Scores on the Doors (UK)",
+      "url": "https://www.scoresonthedoors.org.uk",
+      "pricing": "Gratuit pour les consommateurs, API payante pour les plateformes",
+      "trafficEstimate": "Inconnue",
+      "reviews": "Integre dans Just Eat UK, référence au Royaume-Uni",
+      "strengths": "Modèle de référence au UK, intégré par les plateformes, obligation légale d'affichage",
+      "weaknesses": "Uniquement au UK, pas applicable en France, cadre reglementaire différent"
+    },
+    {
+      "name": "Deliveroo France",
+      "url": "https://deliveroo.fr",
+      "pricing": "CA France: 339M EUR (2023, en baisse de 10%)",
+      "trafficEstimate": "15M visites/mois",
+      "reviews": "N'affiche pas le score hygiène, uniquement les avis clients",
+      "strengths": "Base installee massive, 32% du marché livraison France, 88% des restaurateurs indépendants utilisent les plateformes",
+      "weaknesses": "Pas d'affichage du score hygiène officiel, peur de froisser les restaurants partenaires"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Réutilisation commerciale des données Alim'confiance",
+      "status": "ok",
+      "detail": "Licence ouverte Etalab 2.0 permet la réutilisation commerciale sans restriction, y compris pour une API payante.",
+      "source": "data.gouv.fr - Licence Ouverte Etalab 2.0"
+    },
+    {
+      "topic": "Responsabilite en cas de données obsolètes",
+      "status": "attention",
+      "detail": "Si un restaurant a améliore son score depuis le dernier contrôle, afficher un ancien mauvais score pourrait générér des reclamations. Mentionner systematiquement la date du contrôle.",
+      "source": "Jurisprudence droit de la consommation"
+    },
+    {
+      "topic": "Interruption des mises à jour Alim'confiance",
+      "status": "attention",
+      "detail": "Le Ministere de l'Agriculture a stoppe les mises à jour depuis novembre 2025. Risque pour la pertinence du service.",
+      "source": "data.gouv.fr"
+    },
+    {
+      "topic": "Pas d'obligation légale d'affichage en France",
+      "status": "attention",
+      "detail": "Contrairement au UK (Scores on the Doors) où aux US (Grade A/B/C obligatoire en vitrine), la France n'impose pas l'affichage du score hygiène. L'adoption est volontaire.",
+      "source": "Code de la consommation francais"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Demarchage LinkedIn direct (product managers plateformes)",
+      "cacEstimate": "2000 EUR",
+      "conversionRate": "10%",
+      "ltv": "120000 EUR (contrat annuel enterprise)",
+      "ltvCacRatio": "60.0"
+    },
+    {
+      "channel": "Conferences foodtech et Station F",
+      "cacEstimate": "5000 EUR",
+      "conversionRate": "5%",
+      "ltv": "120000 EUR",
+      "ltvCacRatio": "24.0"
+    },
+    {
+      "channel": "POC gratuit 3 mois puis conversion",
+      "cacEstimate": "3000 EUR (cout du POC)",
+      "conversionRate": "33%",
+      "ltv": "120000 EUR",
+      "ltvCacRatio": "40.0"
+    },
+    {
+      "channel": "Content marketing (blog technique + études de cas UK)",
+      "cacEstimate": "1500 EUR",
+      "conversionRate": "3%",
+      "ltv": "60000 EUR (contrat business)",
+      "ltvCacRatio": "40.0"
+    },
+    {
+      "channel": "Partenariats API marketplace (RapidAPI)",
+      "cacEstimate": "500 EUR",
+      "conversionRate": "2%",
+      "ltv": "6000 EUR (plan startup)",
+      "ltvCacRatio": "12.0"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 53,
+      "detail": "4K recherches/mois cumulees ('score hygiène restaurant France' 2 400/mois, 'contrôle sanitaire restaurant livraison' 590/mois). TAM: 7 Mds EUR. Cibles: Plateformes de livraison, Sites d'avis et de, Apps de food discovery."
+    },
+    "feasibility": {
+      "score": 83,
+      "detail": "MVP en 3 semaines. 3 APIs a integrer (Alim'confiance, API BAN géocodage, API Sirene). Stack: Widget + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 50,
+      "detail": "5 clients a 999 EUR pour demarrer. Objectif 10K MRR en 10-14 mois. SOM: 500K EUR/an. Pricing 49-999 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: Alim'confiance (données brutes, Scores on the Doors (UK), Deliveroo France. Leader: Alim'confiance (190K visites/mois). Faiblesse principale: Pas d'API REST."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Responsabilite en cas de données obsolètes, Interruption des mises à jour Alim'confiance."
+    },
+    "overall": {
+      "score": 60,
+      "detail": "Point fort: faisabilite (83/100). Point faible: marche (50/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

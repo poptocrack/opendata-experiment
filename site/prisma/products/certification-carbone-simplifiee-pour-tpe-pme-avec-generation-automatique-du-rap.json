@@ -1,0 +1,364 @@
+{
+  "productSlug": "certification-carbone-simplifiee-pour-tpe-pme-avec-generation-automatique-du-rap",
+  "oneLiner": "Certification carbone simplifiee pour TPE/PME: bilan automatise + plan d action + rapport pret pour la certification.",
+  "problem": "Les TPE/PME veulent afficher un engagement carbone (exigence des donneurs d ordre, appels d offres, clients B2B) mais le procèssus est complexe et cher: bilan GES (5-15K EUR) + plan d action + audit de certification (3-5K EUR). Total: 10-20K EUR et 6 mois. Pour une PME de 20 salariés, c est disproportionne. Résultat: seules les grandes entreprises sont certifiées.",
+  "solution": "Un parcours clé en main en 3 etapes: (1) Bilan carbone automatise (pre-rempli par secteur via Base Carbone + SDES), (2) Plan d action généré automatiquement (leviers de réduction priorises par impact et cout), (3) Rapport de certification généré au format requis par les labels (ISO 14064, label bas-carbone). Le tout en 1 semaine au lieu de 6 mois.",
+  "uniqueValue": "Le parcours end-to-end est unique: bilan + plan d action + rapport de certification en un seul outil. Les outils existants font le bilan OU la certification, jamais les deux. Le plan d action automatique avec priorisation cout/impact est inedit.",
+  "mvpScope": "Bilan Scope 1+2 pre-rempli + plan d action avec 5 leviers priorises + rapport PDF au format Bilan GES simplifie (ADEME). Pour les PME de 10-250 salariés, secteur tertiaire. Pas de certification officielle au MVP (juste le rapport pret a soumettre).",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Bilan et plan d action automatise",
+      "description": "Bilan pre-rempli (cf produit bilan-ges-automatise). Plan d action: base de leviers par secteur avec estimation de réduction et cout. Priorisation automatique.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Bilan pre-rempli",
+        "Base de 50 leviers de réduction",
+        "Estimation réduction/cout par levier",
+        "Priorisation automatique"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Rapport de certification et interface",
+      "description": "Generation du rapport au format Bilan GES simplifie ADEME. Interface de parcours guide (etapes). Dashboard de suivi.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Rapport format ADEME",
+        "Parcours guide en 3 etapes",
+        "Dashboard suivi",
+        "Export PDF"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Premiers clients et partenariats",
+      "description": "Cibler les PME fournisseurs de grands groupes (qui exigent un bilan). Partenariats avec les verificateurs (Bureau Veritas, SGS). CCI.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "50 bilans realises",
+        "30 clients payants",
+        "1 partenariat verificateur",
+        "3 partenariats CCI"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Label et Scope 3",
+      "description": "Partenariat avec un label (B Corp, Engages RSE) pour certification simplifiee. Ajout Scope 3. Suivi annuel avec progression. Plan Enterprise.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Partenariat label",
+        "Scope 3",
+        "Suivi annuel",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les PME subissent une pression pour un bilan carbone",
+      "how": "Demander a 20 PME fournisseurs de grands groupes (Airbus, Michelin, Danone): vos clients exigent-ils un bilan carbone?",
+      "successCriteria": "12/20 confirment une pression (exigence où bonus dans les appels d offres)"
+    },
+    {
+      "check": "Le plan d action automatique est perçu comme utile",
+      "how": "Generer un plan d action pour 5 PME et le faire evaluer par les dirigeants",
+      "successCriteria": "4/5 trouvent les leviers pertinents et la priorisation utile"
+    },
+    {
+      "check": "Le prix de 299 EUR/mois est acceptable",
+      "how": "Comparer avec le cout d un cabinet (10-20K EUR) et tester le prix auprès de 15 PME",
+      "successCriteria": "10/15 trouvent le prix acceptable et preferable au cabinet"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "PME fournisseurs de grands groupes (qui exigent un bilan carbone)",
+      "where": "LinkedIn achats/RSE, clusters industriels, salons sous-traitance",
+      "howToReach": "Cibler les PME qui ont récemment perdu où risquent de perdre un contrat faute de bilan carbone. Argument: ne perdez plus de contrats."
+    },
+    {
+      "who": "PME en demarché B Corp où Engages RSE",
+      "where": "Réseau B Corp France, RSE France, LinkedIn RSE",
+      "howToReach": "Le bilan carbone est un prerequis pour B Corp. L outil simplifie cette etape."
+    },
+    {
+      "who": "CCI et incubateurs (qui accompagnent les PME dans la transition)",
+      "where": "CCI France, BPI France, incubateurs",
+      "howToReach": "Partenariat institutionnel: l outil est propose dans les programmes d accompagnement transition."
+    }
+  ],
+  "pricingStrategy": "Plan TPE a 149 EUR/mois (Scope 1+2, plan d action, rapport simplifie). Plan PME a 299 EUR/mois (Scope 1+2+3, leviers avances, rapport certification, suivi annuel). Plan Cabinet a 599 EUR/mois (multi-clients, white-label). Bilan unitaire a 1 490 EUR (one-shot). Certification additionnelle via partenaire verificateur: 1 500-3 000 EUR (revenue share).",
+  "pathTo10kMrr": "25 TPE x 149 EUR = 3 725 EUR + 15 PME x 299 EUR = 4 485 EUR + 3 cabinets x 599 EUR = 1 797 EUR = 10 007 EUR MRR. 200K PME de 10-250 salariés en France, 43 clients = infime pénétration. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts",
+    "backend": "Next.js API Routes + Python pour le modèle de pré-remplissage et le plan d action",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Base Carbone ADEME",
+      "API Sirene",
+      "Données SDES",
+      "Stripe"
+    ],
+    "notes": "Le plan d action est généré à partir d une base de leviers par secteur avec estimation de réduction (tCO2/an) et cout (EUR). La priorisation est un score impact/cout. Le rapport est au format Bilan GES simplifie ADEME."
+  },
+  "risks": [
+    {
+      "risk": "Le bilan simplifie n est pas accepte par les donneurs d ordre qui exigent un bilan certifie",
+      "mitigation": "Proposer un partenariat avec un verificateur (Bureau Veritas, SGS) pour la certification a cout reduit (workflow simplifie grâce a l outil)."
+    },
+    {
+      "risk": "Les TPE n ont pas de budget pour 149 EUR/mois",
+      "mitigation": "Proposer un paiement annuel avec remise (1 490 EUR/an = 124 EUR/mois). Les aides ADEME Diag Decarbon Action couvrent 50% du cout."
+    },
+    {
+      "risk": "La réglementation evolue et les formats de rapport changent",
+      "mitigation": "Suivre de pres les évolutions reglementaires (CSRD, taxonomie EU). Mettre à jour les templates de rapport en continu."
+    }
+  ],
+  "inspirations": "Greenly (bilan SaaS, leve 52M EUR). Sami (bilan + plan d action). Carbo (bilan pour PME). Sweep (enterprise). Notre differenciant: le parcours end-to-end bilan + plan + certification en 1 semaine.",
+  "searchVolume": [
+    {
+      "keyword": "bilan carbone obligatoire",
+      "monthlyVolume": "6600",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "bilan carbone PME",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "BEGES simplifie",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "certification bilan carbone",
+      "monthlyVolume": "720",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "Diag Decarbon Action",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "bilan GES entreprise",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "plan action carbone PME",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "label bas carbone entreprise",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "200 000 PME de 10-250 salariés en France (INSEE). Cout bilan+certification classique: 10-20K EUR. TAM = 200 000 x 15K EUR = 3 Mds EUR (potentiel theorique). En 2026, seuls 31% des entreprises soumises au BEGES sont conformes, signal d'un marché sous-penetre.",
+    "sam": "30 000 PME fournisseurs de grands groupes exigeant un bilan carbone + PME en demarché B Corp/RSE + PME visant les marchés publics avec critères carbone. SAM = 30 000 x 250 EUR/mois = 90M EUR/an. La directive Omnibus (dec 2025) a rélevé les seuils CSRD a 1000 sal / 450M EUR CA, mais les donneurs d'ordre maintiennent leurs exigences sur la supply chain.",
+    "som": "Objectif an 1: 43 clients x 233 EUR ARPU = 120K EUR ARR. Pénétration: 0.14% du SAM. Realiste car Carbo (90 EUR/mois pour 100 sal) montre qu'un prix accèssible convertit les PME.",
+    "methodology": "TAM base sur les PME 10-250 sal (INSEE). SAM estimé a 15% des PME sous pression carbone (donneurs d'ordre, B Corp, marchés publics critères carbone). Méthode Bilan Carbone v9 (jan 2025) avec 3 niveaux de maturite facilite l'entree. Validation croisee avec les 6000 EUR post-subvention Diag Decarbon'Action comme prix de référence marché."
+  },
+  "competitorDeep": [
+    {
+      "name": "Greenly",
+      "url": "https://greenly.earth",
+      "pricing": "4 000-12 000 EUR/an pour PME (source: greenly.earth/blog, 2026). Bilan + plan d'action + reporting CSRD. Prix variable selon complexite scope 3 et accompagnement strategique.",
+      "trafficEstimate": "300K visites/mois",
+      "reviews": "Leader bilan carbone SaaS FR. 52M EUR leves. 2 000+ clients. Leader Verdantix Smart Innovators 2025.",
+      "strengths": "Parcours complet (bilan + plan + reporting CSRD), intégrations bancaires automatiques, forte credibilite B Corp, contenu SEO dominant.",
+      "weaknesses": "Prix élevé pour TPE (minimum 4K EUR/an), pas de certification end-to-end intégrée, focus reporting CSRD grandes entreprises plutot que certification label PME."
+    },
+    {
+      "name": "Sami",
+      "url": "https://www.sami.eco",
+      "pricing": "5 000-15 000 EUR/an. Bilan + plan d'action + accompagnement humain. Eligible Diag Decarbon'Action (6 000 EUR après subvention).",
+      "trafficEstimate": "80K visites/mois",
+      "reviews": "Plateforme climat d'entreprise. Bilan carbone + plan d'action intégré. Forte pedagogie.",
+      "strengths": "Plan d'action intégré au bilan, accompagnement humain, bonne pedagogie, guide logiciel bilan carbone comme levier SEO.",
+      "weaknesses": "Prix similaire Greenly, accompagnement humain = limite de scalabilite, pas de certification intégrée, modèle dependant des consultants."
+    },
+    {
+      "name": "Carbo (HelloCarbo)",
+      "url": "https://www.hellocarbo.com",
+      "pricing": "À partir de 90 EUR/mois. Plan Premium 100 sal = 3 600 EUR/an. Bilan + plan de réduction. Tarif plus accèssible que Greenly/Sami.",
+      "trafficEstimate": "150K visites/mois",
+      "reviews": "Bilan carbone PME avec plan de réduction. Interface simple. Fort SEO (guides très bien références).",
+      "strengths": "Prix le plus accèssible du marché, interface simple, excellent contenu SEO (guides BEGES, bilan carbone obligatoire), plan de réduction inclus.",
+      "weaknesses": "Pas de certification intégrée, pas de rapport pret a soumettre au format ADEME, plan d'action moins détaillé que Sami."
+    },
+    {
+      "name": "Sweep",
+      "url": "https://www.sweep.net",
+      "pricing": "20 000-50 000 EUR/an pour ETI/enterprise. Starter package disponible pour PME en croissance. Tarification sur devis.",
+      "trafficEstimate": "200K visites/mois",
+      "reviews": "Leader IDC MarketScape 2025 pour plateformes sustainability. Leader Verdantix Smart Innovators 2025. Focus grandes organisations complexes.",
+      "strengths": "Plateforme ESG complète (carbone + CSRD + supply chain), IA intégrée, reconnaissance analyste (IDC, Verdantix), scope international.",
+      "weaknesses": "Prix prohibitif pour TPE/PME (20K+ EUR/an), complexite surdimensionnee pour une PME de 20 sal, focus enterprise et non PME."
+    },
+    {
+      "name": "Bureau Veritas / SGS (certification)",
+      "url": "https://www.bureauveritas.fr",
+      "pricing": "3 000-5 000 EUR pour la vérification/certification du bilan GES (ISO 14064).",
+      "trafficEstimate": "N/A (service B2B direct)",
+      "reviews": "Organismes de certification de référence. Vérification ISO 14064. Incontournables pour la certification officielle.",
+      "strengths": "Legitimite mondiale, certification reconnue ISO 14064, independance, requisition des grands donneurs d'ordre.",
+      "weaknesses": "3-5K EUR en plus du cout du bilan, procèssus lent (4-8 semaines), pas d'outil SaaS, nécessite un bilan déjà fait et structure."
+    },
+    {
+      "name": "Cabinets conseil RSE (Goodwill, Ecoact, Atos)",
+      "url": "https://goodwill-management.com",
+      "pricing": "10 000-20 000 EUR pour bilan BEGES complet + plan d'action + accompagnement certification. Diag Decarbon'Action via BPI: 6 000 EUR après subvention.",
+      "trafficEstimate": "15K visites/mois",
+      "reviews": "Expertise humaine complète. Accompagnement strategique sur mesure. Credibilite auprès des grands comptes.",
+      "strengths": "Expertise humaine complète, personnalisation, légitimité auprès des grands comptes, accompagnement sur mesure.",
+      "weaknesses": "10-20K EUR, délai 3-6 mois, pas scalable, rapport statique, dependance au consultant."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Directive Omnibus (dec 2025) - Revision CSRD",
+      "status": "attention",
+      "detail": "La directive Omnibus adoptee en dec 2025 rélevé les seuils CSRD: seules les entreprises > 1000 sal ET > 450M EUR CA sont soumises. 80% des entreprises initialement visees sont exclues, y compris les PME cotees. Cela reduit la pression reglementaire directe mais les donneurs d'ordre maintiennent leurs exigences supply chain.",
+      "source": "Directive Omnibus UE, dec 2025. Greenly blog CSRD 2026."
+    },
+    {
+      "topic": "BEGES reglementaire vs simplifie",
+      "status": "attention",
+      "detail": "Le BEGES est obligatoire pour les > 500 sal (250 DOM). Amende 50 000 EUR (100 000 EUR en recidive). En 2026, seuls 31% des entreprises concernées sont conformes. Le bilan simplifie (Scope 1+2) ne vaut pas BEGES reglementaire complet (Scope 3 requis). Être transparent.",
+      "source": "Art. L229-25 Code environnement. empreinte-carbone.org BEGES 2026."
+    },
+    {
+      "topic": "Méthode Bilan Carbone v9 (3 niveaux)",
+      "status": "ok",
+      "detail": "La version 9 de la méthode BC (jan 2025) introduit 3 niveaux (initial, standard, avance). Le niveau initial est accèssible aux TPE/PME sans expertise carbone. Opportunité majeure pour un outil simplifie.",
+      "source": "ABC (Association pour la transition Bas Carbone), méthode BC v9"
+    },
+    {
+      "topic": "Standard volontaire VSME",
+      "status": "ok",
+      "detail": "Le standard VSME (Voluntary SME Standard) devient la référence pour les PME/ETI non soumises à la CSRD post-Omnibus. Opportunité de proposer un rapport conforme VSME comme alternative legéré.",
+      "source": "EFRAG VSME Standard, 2025"
+    },
+    {
+      "topic": "Aide Diag Decarbon'Action",
+      "status": "ok",
+      "detail": "Le Diag Decarbon'Action BPI/ADEME subventionne 40% du cout pour les < 500 salariés. Prix post-subvention: 6 000 EUR. Excellente porte d'entree commerciale. Prerequis: première realisation de bilan.",
+      "source": "BPI France, ADEME"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (bilan carbone obligatoire, BEGES simplifie, Diag Decarbon Action)",
+      "cacEstimate": "25-50 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "1788 EUR (12 mois x 149 EUR TPE)",
+      "ltvCacRatio": "36-72x"
+    },
+    {
+      "channel": "Partenariats CCI et incubateurs (programmes transition ecologique)",
+      "cacEstimate": "10-30 EUR",
+      "conversionRate": "8-15%",
+      "ltv": "3588 EUR (12 mois x 299 EUR PME)",
+      "ltvCacRatio": "120-359x"
+    },
+    {
+      "channel": "LinkedIn Ads (PME fournisseurs grands groupes, ciblé: achetéurs/RSE)",
+      "cacEstimate": "120-200 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "3588 EUR",
+      "ltvCacRatio": "18-30x"
+    },
+    {
+      "channel": "Referral B Corp France + réseau Engages RSE",
+      "cacEstimate": "15-40 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "1788 EUR",
+      "ltvCacRatio": "45-119x"
+    },
+    {
+      "channel": "Prospection directe PME (argument: conformité BEGES + accès marchés publics)",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "3588 EUR",
+      "ltvCacRatio": "9-18x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "13K recherches/mois cumulees ('bilan carbone obligatoire' 6 600/mois, 'bilan carbone PME' 1 900/mois). TAM: 20K EUR. Cibles: PME fournisseurs de grands, PME en demarché B, CCI et incubateurs."
+    },
+    "feasibility": {
+      "score": 63,
+      "detail": "MVP en 6 semaines. 4 APIs a integrer (Base Carbone ADEME, API Sirene, Données SDES). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "43 clients a 149 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 120K EUR/an. Pricing 0-599 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "6 concurrents identifies: Greenly, Sami, Carbo (HelloCarbo). Leader: Greenly (300K visites/mois). Faiblesse principale: Prix élevé pour TPE (minimum 4K EUR/an)."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "3 points OK, 2 points d'attention. Vigilance: Directive Omnibus (dec 2025) - Revision CSRD, BEGES reglementaire vs simplifie."
+    },
+    "overall": {
+      "score": 68,
+      "detail": "Point fort: marche (88/100). Point faible: competition (45/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

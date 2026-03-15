@@ -1,0 +1,312 @@
+{
+  "productSlug": "outil-de-transparence-croiser-rna-subventions-versees-pour-montrer-ou-va-l-argen",
+  "oneLiner": "Plateforme citoyenne croisant RNA et subventions versees pour montrer ou va l'argent public associatif.",
+  "problem": "Chaque année, des milliards d'euros de subventions publiques sont verses aux associations en France, mais il est quasi impossible pour un citoyen, un journaliste ou un elu de suivre cette manne. Les données existent (subventions versees sur data.gouv.fr, RNA) mais sont dispersées, brutes, et inexploitables sans compétences data. L'opacité alimente la défiance.",
+  "solution": "Une plateforme web qui croise les données RNA et les subventions versees pour permettre a quiconque de rechercher : combien une association a recu de subventions, de quels financeurs, pour quels projets. Visualisations par territoire, par secteur, par financeur. Classements et tendances. Interface journalistique avec export de données.",
+  "uniqueValue": "La première plateforme grand public de transparence des subventions associatives en France. Croisement automatisé de données qui prendrait des semaines manuellement. Interface accessible aux non-techniciens.",
+  "mvpScope": "Site web avec : recherche d'association par nom/RNA, fiche avec toutes les subventions recues, recherche par financeur (quelle collectivité a verse combien a qui), visualisations par territoire et secteur, classement des associations les plus subventionnées, export CSV.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Croisement des données",
+      "description": "Importer RNA + subventions versees, matcher les enregistrements par SIRET/RNA, nettoyer les données et créer les agregations.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Import RNA + subventions versees",
+        "Matching par SIRET/RNA",
+        "Nettoyage et déduplication",
+        "Agregations par association/financeur/territoire"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Interface de consultation",
+      "description": "Développer le site avec recherche, fiches associations, fiches financeurs, et visualisations.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Recherche full-text associations",
+        "Fiche association avec timeline subventions",
+        "Fiche financeur avec repartition",
+        "Carte des subventions par territoire",
+        "Classements et top listes"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Lancement média",
+      "description": "RP et média outreach, partenariats avec des médias d'investigation, SEO sur les requêtes de transparence.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Communique de presse",
+        "3 data stories prêtes a publier",
+        "Partenariat média en discussion",
+        "SEO sur 'subventions associations [ville]'"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les données de subventions versees sont suffisamment complètes",
+      "how": "Analyser le dataset subventions versees sur data.gouv.fr : couverture temporelle, nombre de financeurs représentées, qualité du matching RNA.",
+      "successCriteria": "Au moins 3 ans de données, 50%+ des collectivités représentées, taux de matching RNA > 70%."
+    },
+    {
+      "check": "Il y a une demande citoyenne/mediatique pour cette transparence",
+      "how": "Publier 3 mini data stories sur Twitter/LinkedIn à partir des données et mesurer l'engagement.",
+      "successCriteria": "1 data story > 10K impressions, 2+ repris par des journalistes ou comptes influents."
+    },
+    {
+      "check": "Un modèle économique est viable autour de la transparence",
+      "how": "Tester la willingness-to-pay des journalistes d'investigation, des cabinets de conseil en affaires publiques, et des collectivités.",
+      "successCriteria": "3+ segments identifient une valeur payante (API, alertes, rapports)."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Journalistes d'investigation et data journalistes",
+      "where": "Redactions (Mediapart, Le Monde Données, Contexte, La Gazette des Communes), conferences (Dataharvest, GIJN France)",
+      "howToReach": "Envoyer des data stories prêtes a publier. Proposer l'outil en amont d'enquêtes. Présenter a Dataharvest."
+    },
+    {
+      "who": "Elus et groupes d'opposition dans les collectivités",
+      "where": "LinkedIn, Twitter politique, groupes Facebook elus locaux",
+      "howToReach": "Communique de presse ciblant les elus. L'outil est un atout pour le contrôle démocratique."
+    },
+    {
+      "who": "Citoyens engages et associations de contribuables",
+      "where": "Contribuables Associes, Fondation iFRAP, groupes Facebook citoyens, forums politique locale",
+      "howToReach": "Partenariat avec les associations de contribuables pour relayer l'outil. Posts dans les groupes citoyens."
+    }
+  ],
+  "pricingStrategy": "Site gratuit pour les citoyens (financé par la publicité et les dons). Pro journaliste a 29 EUR/mois : alertes nouvelles subventions, export illimité, API basique, données historiques complètes. Pro collectivité a 99 EUR/mois : benchmark territorial, rapports personnalises, alertes sur leur territoire. API data a 199 EUR/mois : acces programmatique complet pour les cabinets de conseil et éditeurs.",
+  "pathTo10kMrr": "Modèle hybride : audience gratuite pour le SEO et la crédibilité, monétisation B2B. M1-M3 : 10K visiteurs/mois (SEO + presse), 10 Pro journaliste = 290 EUR MRR. M3-M6 : 50K visiteurs, 30 journalistes + 10 collectivités = 30x29 + 10x99 = 1 860 EUR MRR. M6-M12 : 150K visiteurs, 80 journalistes + 30 collectivités + 10 API = 80x29 + 30x99 + 10x199 = 7 280 EUR MRR. M12-M18 : croissance organique + partenariats média = 10K+ MRR.",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS + D3.js (visualisations) + MapLibre",
+    "backend": "Next.js API Routes + Prisma",
+    "database": "PostgreSQL + Typesense (recherche full-text)",
+    "hosting": "Vercel + Railway",
+    "apis": [
+      "RNA data.gouv.fr",
+      "Subventions versees data.gouv.fr",
+      "API Adresse data.gouv.fr",
+      "Stripe (abonnements)",
+      "Resend (alertes)"
+    ],
+    "notes": "Le SEO est crucial pour ce projet. Générer des pages statiques par commune/département pour capter le trafic 'subventions associations [ville]'. Budget : ~30 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Pression politique ou juridique pour retirer certaines données",
+      "mitigation": "Toutes les données sont publiques et issues de data.gouv.fr. S'appuyer sur le cadre légal de l'open data (loi Valter, loi pour une Republique numérique). Consulter un avocat spécialisé."
+    },
+    {
+      "risk": "Les données de subventions sont incompletes ou de mauvaise qualité",
+      "mitigation": "Afficher clairement les limites de couverture. Inciter les collectivités a publier leurs données. Completer avec le scraping des delibérations."
+    },
+    {
+      "risk": "Difficulté a monétiser un service de transparence (les gens veulent du gratuit)",
+      "mitigation": "Le site reste gratuit. La monétisation vient des professionnels (journalistes, collectivités, cabinets) qui ont besoin d'alertes, d'API, et de rapports. Complément par les dons (type Wikipedia)."
+    }
+  ],
+  "inspirations": "NosDonnees.fr et Regards Citoyens pour la transparence démocratique en France. OpenCorporates pour la transparence des entreprises. En US, USASpending.gov et OpenSecrets.org. ProPublica Nonprofit Explorer pour la transparence des nonprofits americains.",
+  "searchVolume": [
+    {
+      "keyword": "subventions associations ville",
+      "monthlyVolume": "1900",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ou vont les subventions",
+      "monthlyVolume": "720",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "transparence subventions publiques",
+      "monthlyVolume": "590",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "association subventionnée par commune",
+      "monthlyVolume": "480",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "argent public associations",
+      "monthlyVolume": "390",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "50 millions EUR - Marché données publiques et transparence en France (médias, cabinets conseil, collectivités, citoyens)",
+    "sam": "8 millions EUR - Sous-segment transparence des subventions associatives (journalistes, elus, collectivités, cabinets affaires publiques)",
+    "som": "500K EUR - 80 journalistes a 29 EUR/mois + 30 collectivités a 99 EUR/mois + 10 API a 199 EUR/mois, atteignable a M12",
+    "methodology": "TAM = marché open data et transparence France. SAM = segment subventions associatives. SOM = business plan. Référence: seulement 10% des collectivités publient leurs données en open data (loi numérique 2016)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Data.Subvention (beta.gouv)",
+      "url": "https://datasubvention.beta.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Raffinerie de données subventions pour agents publics",
+      "strengths": "Données officielles croisees, beta.gouv (légitimité), 1.5M associations couvertes",
+      "weaknesses": "Réservé aux agents publics, pas d'interface citoyenne, pas de visualisations, pas de data stories"
+    },
+    {
+      "name": "Éclaireur Public (Data For Good)",
+      "url": "https://dataforgood.fr/projects/eclaireurpublic",
+      "pricing": "Gratuit (projet associatif)",
+      "trafficEstimate": "5K-15K visites/mois",
+      "reviews": "Plateforme citoyenne pour la transparence des dépenses publiques locales, portee par Transparency International + Anticor",
+      "strengths": "Soutien Transparency International et Anticor, angle citoyen fort, open source",
+      "weaknesses": "Focus dépenses publiques globales (pas spécialisé associations), ressources limitees (bénévoles), couverture incomplete"
+    },
+    {
+      "name": "Regards Citoyens",
+      "url": "https://www.regardscitoyens.org",
+      "pricing": "Gratuit (association)",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Référence transparence démocratique en France (NosDonnees, NosDeputes)",
+      "strengths": "Marque forte dans le milieu civic tech, expertise open data, communauté active",
+      "weaknesses": "Focus parlement/législatif, pas de plateforme dédiée aux subventions associatives"
+    },
+    {
+      "name": "ProPublica Nonprofit Explorer (US)",
+      "url": "https://projects.propublica.org/nonprofits/",
+      "pricing": "Gratuit",
+      "trafficEstimate": "2M+ visites/mois",
+      "reviews": "Référence US pour la transparence des nonprofits, declaractions IRS consultables",
+      "strengths": "Exhaustif (1.5M nonprofits US), données IRS complètes, interface journalistique, data stories",
+      "weaknesses": "US uniquement, modèle base sur les déclarations IRS (pas transposable directement en France)"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Publication de données de subventions",
+      "status": "ok",
+      "detail": "Les subventions publiques >23K EUR doivent etre publiees (décret 2017-779). Les données sur data.gouv.fr sont en open data. Réutilisation commerciale autorisee.",
+      "source": "Decret 2017-779 - Publication des subventions"
+    },
+    {
+      "topic": "Pression politique ou juridique",
+      "status": "attention",
+      "detail": "Les elus et associations mal présentés pourraient contester. Protection : toutes les données sont publiques et issues de sources officielles. Droit de la presse applicable (liberté d'information).",
+      "source": "Loi du 29 juillet 1881 - Liberte de la presse"
+    },
+    {
+      "topic": "RGPD et données des responsables associatifs",
+      "status": "attention",
+      "detail": "Les noms des dirigeants d'associations sont dans le RNA (public). Ne pas croiser avec d'autres données personnelles. Respecter le droit d'opposition.",
+      "source": "RGPD Art. 21 - Droit d'opposition"
+    },
+    {
+      "topic": "Qualité des données et risque de desinformation",
+      "status": "attention",
+      "detail": "Les données de subventions sur data.gouv.fr sont incompletes (couverture ~50% des collectivités). Afficher clairement les limites de couverture pour ne pas créer de faux recits.",
+      "source": "Loi pour une Republique numerique 2016"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (subventions associations + ville)",
+      "cacEstimate": "1-3 EUR",
+      "conversionRate": "1-2% (free to pro)",
+      "ltv": "174 EUR (29 EUR/mois journaliste x 6)",
+      "ltvCacRatio": "58-174x"
+    },
+    {
+      "channel": "RP et médias (data stories virales)",
+      "cacEstimate": "0.10-0.50 EUR",
+      "conversionRate": "0.5-1%",
+      "ltv": "174 EUR",
+      "ltvCacRatio": "348-1740x"
+    },
+    {
+      "channel": "Partenariat Dataharvest / GIJN",
+      "cacEstimate": "10-30 EUR",
+      "conversionRate": "15-25%",
+      "ltv": "174 EUR",
+      "ltvCacRatio": "6-17x"
+    },
+    {
+      "channel": "LinkedIn prospection collectivités",
+      "cacEstimate": "100-200 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "1188 EUR (99 EUR/mois x 12)",
+      "ltvCacRatio": "6-12x"
+    },
+    {
+      "channel": "Dons/crowdfunding (modèle Wikipedia)",
+      "cacEstimate": "N/A",
+      "conversionRate": "1-2% des visiteurs",
+      "ltv": "10-20 EUR/don moyen",
+      "ltvCacRatio": "N/A - revenue complémentaire"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 54,
+      "detail": "4.1K recherches/mois cumulees ('subventions associations ville' 1 900/mois, 'ou vont les subventions' 720/mois). TAM: 50 millions EUR. Cibles: Journalistes d'investigation et data, Elus et groupes d'opposition, Citoyens engages et associations."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 5 APIs a intégrer (RNA, Subventions versees, API Adresse). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 93,
+      "detail": "SOM: 500K EUR/an. Pricing 29-199 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifiés: Data.Subvention (beta.gouv), Éclaireur Public (Data For Goo, Regards Citoyens. Leader: Data.Subvention (10K-30K visites/mois). Faiblesse principale: Réservé aux agents publics."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Pression politique ou juridique, RGPD et données des responsables associatifs."
+    },
+    "overall": {
+      "score": 64,
+      "detail": "Point fort: marché (93/100). Point faible: competition (45/100). Potentiel réel mais hypotheses cles a valider."
+    }
+  }
+}

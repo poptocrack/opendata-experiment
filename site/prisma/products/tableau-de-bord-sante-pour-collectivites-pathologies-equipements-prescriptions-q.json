@@ -1,0 +1,334 @@
+{
+  "productSlug": "tableau-de-bord-sante-pour-collectivites-pathologies-equipements-prescriptions-q",
+  "oneLiner": "Un dashboard santé territorial pour collectivités, croisant pathologies prevalentes, équipements disponibles, prescriptions et qualité de l'eau.",
+  "problem": "Les collectivités doivent elaborer des Contrats Locaux de Santé (CLS) et des diagnostics territoriaux de santé. Elles passent des mois a compiler des données eparpillees: pathologies (SNDS/ARS), équipements (FINESS), qualité de l'eau (ARS), prescriptions (Assurance Maladie). Ce travail est souvent sous-traité a des cabinets de conseil a 15-30K euros le diagnostic. Et il est obsolété des sa publication.",
+  "solution": "Un dashboard en ligne, mis à jour automatiquement, qui agrégé pour un territoire donne: les pathologies les plus prevalentes (diabete, ALD, santé mentale), les équipements de santé disponibles et manquants, les volumes de prescriptions (indicateurs de sur/sous-consommation), la qualité de l'eau potable, et des comparaisons avec des territoires similaires. Export PDF pour les documents officiels (CLS, PRS).",
+  "uniqueValue": "Remplace un diagnostic santé a 20K euros réalisé par un cabinet de conseil en un dashboard a 349 euros/mois mis à jour en continu. Les données sont les memes (sources publiques) mais le traitement est automatise. Le benchmark avec des territoires comparables est une fonctionnalité inédite.",
+  "mvpScope": "Dashboard pour un département pilote (ex: Creuse) avec 4 indicateurs: densité médicale, pathologies ALD prevalentes, qualité de l'eau, équipements FINESS. Comparaison avec la moyenne nationale. Export PDF basique.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Confirmer le budget et le besoin des collectivités",
+      "description": "Contacter 10 ARS et 10 communautés de communes ayant un CLS en cours d'elaboration. Proposer une demo du concept. Vérifier les budgets disponibles.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "20 entretiens collectivités/ARS",
+        "3 lettres d'intention",
+        "Grille tarifaire validee"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Dashboard pilote sur 1 département",
+      "description": "Ingestion des données FINESS, pathologies ARS, qualité eau, INSEE. Dashboard interactif avec 4 indicateurs. Export PDF. Deploiement sur la Creuse comme territoire pilote.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Pipeline data 4 sources",
+        "Dashboard interactif",
+        "Export PDF",
+        "Territoire pilote opérationnel"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "10 premiers territoires clients",
+      "description": "Demarchage des collectivités en cours d'elaboration de CLS. Offre early adopter a prix réduit. Presentation au congres des maires.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "10 territoires clients",
+        "Couverture 3 départements",
+        "Presentation congres des maires"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Extension nationale et indicateurs avancés",
+      "description": "Couverture nationale. Ajout d'indicateurs: prescriptions, santé mentale, offre de prévision, indicateurs sociaux. Alertes automatiques sur les anomalies.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Couverture nationale",
+        "10 indicateurs",
+        "Alertes automatiques",
+        "25 clients"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR via collectivités et ARS",
+      "description": "Partenariat avec les ARS pour déploiement systematique. API pour les observatoires régionaux de santé. Offre formation.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "3 contrats ARS régionaux",
+        "API ORS",
+        "30+ collectivités clientes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les collectivités depensent-elles réellement 15-30K euros pour des diagnostics santé territoriaux?",
+      "how": "Consulter les marchés publics sur BOAMP pour diagnostic territorial santé et vérifier les montants attribues.",
+      "successCriteria": "Au moins 20 marchés/an a plus de 10K euros pour des diagnostics santé territoriaux."
+    },
+    {
+      "check": "Les données publiques couvrent-elles suffisamment le besoin d'un CLS?",
+      "how": "Comparer le contenu de 3 CLS existants (disponibles en ligne) avec les données accessibles sur data.gouv.fr.",
+      "successCriteria": "80%+ des indicateurs d'un CLS standard sont constructibles à partir des données ouvertes."
+    },
+    {
+      "check": "Les élus et agents territoriaux sont-ils capables d'utiliser un dashboard?",
+      "how": "Faire tester un prototype par 5 agents de collectivités et mesurer le taux de completion de taches simples.",
+      "successCriteria": "4/5 reussissent a extraire les informations cles sans assistance."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Communautes de communes en cours d'elaboration de Contrat Local de Santé",
+      "where": "Liste des CLS sur le site du Ministere de la Santé, ARS régionales",
+      "howToReach": "Identifier les collectivités ayant publié un appel d'offres pour un diagnostic santé territorial. Les contacter directement avec une alternative 10x moins chere."
+    },
+    {
+      "who": "ARS - services Democratie sanitaire et Accès aux soins",
+      "where": "LinkedIn, annuaire ARS, conferences de santé publique",
+      "howToReach": "Proposer un POC gratuit sur un territoire prioritaire. Les ARS pilotent les CLS et peuvent recommander l'outil aux collectivités."
+    },
+    {
+      "who": "Observatoires Regionaux de Santé (ORS)",
+      "where": "Fédération nationale des ORS (FNORS), conferences epidemiologie",
+      "howToReach": "Proposer un partenariat technique: l'ORS apporte son expertise méthodologique, l'outil apporte l'automatisation."
+    }
+  ],
+  "pricingStrategy": "Plan Communauté de Communes a 349 euros/mois (1 territoire, 10 indicateurs, export PDF, comparatifs). Plan Département a 699 euros/mois (tout le département, indicateurs avancés, alertes). Plan ARS/Région a 1 499 euros/mois (région entière, API, multi-utilisateurs, support prioritaire). Positioning: 10x moins cher qu'un diagnostic cabinet de conseil, et mis à jour en continu.",
+  "pathTo10kMrr": "20 communautés de communes x 349 euros = 6 980 euros + 3 départements x 699 euros = 2 097 euros + 1 ARS x 1 499 euros = 1 499 euros = 10 576 euros MRR. Atteignable en 10-12 mois. Il y a 500+ CLS actifs en France, marché addressable important.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts pour les graphiques + Maplibre pour les cartes",
+    "backend": "Next.js API Routes + Python scripts pour le pipeline data et les calculs statistiques",
+    "database": "PostgreSQL sur Supabase avec vues materialisees pour les indicateurs precalcules",
+    "hosting": "Vercel + Supabase + GitHub Actions (pipeline data trimestriel)",
+    "apis": [
+      "API FINESS",
+      "Données pathologies ARS/SNDS data.gouv.fr",
+      "API qualité eau potable",
+      "API INSEE",
+      "API BAN",
+      "Stripe"
+    ],
+    "notes": "Les données pathologies sont annuelles (SNDS), qualité eau trimestrielle, FINESS mensuelle. Les indicateurs sont precalcules et mis en cache. Export PDF via Puppeteer (headless Chrome)."
+  },
+  "risks": [
+    {
+      "risk": "Les données de pathologies (SNDS) sont anonymisees et agrégées a un niveau trop grossier",
+      "mitigation": "Utiliser les données ALD par département disponibles sur data.gouv.fr (niveau commune dans certains cas). Completer avec les données de l'Assurance Maladie par canton."
+    },
+    {
+      "risk": "Les collectivités ont des cycles d'achat longs (6-12 mois) et des procédures de marché public",
+      "mitigation": "Rester sous le seuil des marchés publics (40K euros). Proposer des abonnements mensuels sans engagement. Cibler les budgets innovation/numérique qui sont plus flexibles."
+    },
+    {
+      "risk": "Un acteur institutionnel (FNORS, ARS) développé un outil gratuit",
+      "mitigation": "Se differencier par l'UX, la mise à jour automatique et le benchmark entre territoires. Proposer un partenariat plutot qu'une compétition."
+    }
+  ],
+  "inspirations": "Score Santé (FNORS) qui fournit des indicateurs de santé par région mais sous forme de tableaux statiques. Geodes (Santé Publique France) pour la surveillance epidemiologique. Statiss pour les statistiques sanitaires et sociales. Aux US, County Health Rankings donne un score santé par comte.",
+  "searchVolume": [
+    {
+      "keyword": "contrat local santé",
+      "monthlyVolume": "2400",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "diagnostic territorial santé",
+      "monthlyVolume": "720",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "indicateurs santé territoire",
+      "monthlyVolume": "480",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "pathologies par commune",
+      "monthlyVolume": "320",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "qualité eau potable commune",
+      "monthlyVolume": "6600",
+      "difficulty": "medium",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "300 millions EUR - Marché des diagnostics territoriaux et outils de pilotage santé pour collectivités et ARS (500+ CLS actifs x 20-30K EUR/diagnostic + budgets numériques ARS)",
+    "sam": "30 millions EUR - Sous-segment dashboards et outils SaaS de diagnostic santé territorial (remplacement des diagnostics cabinets de conseil)",
+    "som": "1.3 millions EUR - 20 intercos a 349 EUR/mois + 3 départements a 699 EUR/mois + 1 ARS a 1499 EUR/mois, atteignable a M12",
+    "methodology": "TAM basé sur 500+ CLS actifs x 20K EUR/diagnostic moyen (source: BOAMP) + budgets innovation ARS. SAM = segment automatisable par SaaS. SOM = pipeline B2G. Référence: diagnostic cabinet coute 15-30K EUR et est obsolété des sa publication."
+  },
+  "competitorDeep": [
+    {
+      "name": "Score Santé (FNORS)",
+      "url": "https://www.scoresante.org",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "20K-50K visites/mois",
+      "reviews": "Indicateurs de santé par région, référence pour les ORS",
+      "strengths": "Données de référence, crédibilité FNORS/ORS, couverture nationale, historique long",
+      "weaknesses": "Tableaux statiques (pas de dashboard interactif), mise à jour lente, pas de benchmark entre territoires, pas d'export automatise"
+    },
+    {
+      "name": "Geodes (Santé Publique France)",
+      "url": "https://geodes.santepubliquefrance.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Surveillance epidemiologique, données de mortalité et morbidité",
+      "strengths": "Données epidemio de référence, cartographie interactive, API, crédibilité Santé Publique France",
+      "weaknesses": "Focus surveillance epidemio (pas CLS), interface technique, pas de dashboard personnalisable par collectivité, pas de qualité de l'eau"
+    },
+    {
+      "name": "AtlaSante (ARS)",
+      "url": "https://www.atlasante.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Cartes et outils de l'ARS, qualité de l'eau et santé",
+      "strengths": "Données ARS officielles, qualité de l'eau integree, cartes thematiques",
+      "weaknesses": "Interface datee, pas de dashboard territorial personnalise, pas de benchmark, pas d'alertes, pas d'export PDF automatise"
+    },
+    {
+      "name": "Cabinets conseil (KPMG, Deloitte, cabinets locaux)",
+      "url": "N/A",
+      "pricing": "15 000-30 000 EUR par diagnostic territorial",
+      "trafficEstimate": "N/A",
+      "reviews": "Diagnostics sur-mesure pour les CLS, expertise méthodologique",
+      "strengths": "Expertise sectorielle, méthodologie reconnue, relation de confiance avec les collectivités",
+      "weaknesses": "Tres cher (15-30K EUR), livrable statique (PDF obsolété des sa livraison), pas de mise à jour continue, délai 3-6 mois"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données de pathologies (SNDS/ALD)",
+      "status": "attention",
+      "detail": "Les données SNDS sont soumises a des règles d'accès strictes. Utiliser les données ALD publiees par l'Assurance Maladie sur data.gouv.fr (niveau département/canton). Ne pas chercher a desagreger en dessous du seuil de secret statistique.",
+      "source": "CNIL - Accès aux données SNDS / Art. L1461-1 CSP"
+    },
+    {
+      "topic": "Qualité de l'eau potable",
+      "status": "ok",
+      "detail": "Les résultats du contrôle sanitaire de l'eau sont publics (API Hub'eau, orobnat.santé.gouv.fr). Reutilisation libre.",
+      "source": "Hub'eau API - Licence Ouverte"
+    },
+    {
+      "topic": "Données FINESS",
+      "status": "ok",
+      "detail": "Open data, reutilisation libre.",
+      "source": "data.gouv.fr - FINESS"
+    },
+    {
+      "topic": "Cycle vente B2G et marchés publics",
+      "status": "attention",
+      "detail": "Les collectivités sont soumises au Code de la commande publique. Abonnement mensuel sous 40K EUR/an pour éviter les marchés publics formels.",
+      "source": "Code de la commande publique - Seuil 40K EUR"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Email direct collectivités avec CLS en cours",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "4188 EUR (349 EUR/mois x 12)",
+      "ltvCacRatio": "10-21x"
+    },
+    {
+      "channel": "Prospection ARS (POC gratuit)",
+      "cacEstimate": "500-1000 EUR (cycle long)",
+      "conversionRate": "25-35% post-POC",
+      "ltv": "17988 EUR (1499 EUR/mois x 12)",
+      "ltvCacRatio": "18-36x"
+    },
+    {
+      "channel": "Partenariat FNORS/ORS",
+      "cacEstimate": "100-200 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "8388 EUR (699 EUR/mois département x 12)",
+      "ltvCacRatio": "42-84x"
+    },
+    {
+      "channel": "Congres des maires / salon AMF",
+      "cacEstimate": "500-1000 EUR par lead",
+      "conversionRate": "15-25%",
+      "ltv": "4188 EUR",
+      "ltvCacRatio": "4-8x"
+    },
+    {
+      "channel": "BOAMP (réponse aux appels d'offres diagnostic)",
+      "cacEstimate": "500-1500 EUR (préparation dossier)",
+      "conversionRate": "10-20%",
+      "ltv": "20000-30000 EUR (contrat one-shot + abonnement)",
+      "ltvCacRatio": "13-60x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "10.5K recherches/mois cumulees ('qualité eau potable commune' 6 600/mois, 'contrat local santé' 2 400/mois). TAM: 300 millions EUR. Cibles: Communautes de communes en, ARS - services Democratie, Observatoires Regionaux de Santé."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 6 APIs a integrer (API FINESS, Données pathologies ARS/SNDS, API qualité eau potable). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 95,
+      "detail": "Objectif 10K MRR en 10-12 mois. Pricing 349-699 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Score Santé (FNORS), Geodes (Santé Publique France), AtlaSante (ARS). Leader: Score Santé (FNORS) (20K-50K visites/mois). Faiblesse principale: Tableaux statiques (pas de dashboard interactif)."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Données de pathologies (SNDS/ALD), Cycle vente B2G et marchés publics."
+    },
+    "overall": {
+      "score": 69,
+      "detail": "Point fort: marché (95/100). Point faible: compétition (45/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

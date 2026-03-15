@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Opportunity {
+  id           String   @id
+  rank         Int
+  title        String
+  slug         String   @unique
+  sector       String   @default("autre")
+  tagline      String
+  status       String   @default("exploration") // exploration | validation | ready
+  difficulty   String // facile | moyenne | complexe
+  marketSize   String
+  monetization String
+  context      String
+
+  signals         Signal[]
+  datasets        Dataset[]
+  apis            Api[]
+  productIdeas    ProductIdea[]
+  targetCustomers TargetCustomer[]
+  competitors     Competitor[]
+
+  // Etude de marche
+  swot     String? // JSON: {strengths[], weaknesses[], opportunities[], threats[]}
+  personas String? // JSON: [{name, role, age, context, painPoints[], currentSolution, budget, channels[]}]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Signal {
+  id            Int         @id @default(autoincrement())
+  label         String
+  value         String
+  detail        String?
+  order         Int         @default(0)
+  opportunityId String
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+}
+
+model Dataset {
+  id              Int         @id @default(autoincrement())
+  datasetId       String // data.gouv.fr ID
+  name            String
+  description     String
+  visits          String
+  downloads       String
+  updateFrequency String
+  order           Int         @default(0)
+  opportunityId   String
+  opportunity     Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+}
+
+model Api {
+  id            Int         @id @default(autoincrement())
+  name          String
+  description   String
+  baseUrl       String
+  order         Int         @default(0)
+  opportunityId String
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+}
+
+model ProductIdea {
+  id            Int         @id @default(autoincrement())
+  text          String
+  slug          String      @unique
+  order         Int         @default(0)
+  opportunityId String
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  detail        ProductDetail?
+}
+
+model ProductDetail {
+  id            Int         @id @default(autoincrement())
+  productIdeaId Int         @unique
+  productIdea   ProductIdea @relation(fields: [productIdeaId], references: [id], onDelete: Cascade)
+
+  // Vision & pitch
+  oneLiner       String // Phrase d'accroche du produit
+  problem        String // Le probleme concret que ca resout
+  solution       String // Comment le produit y repond
+  uniqueValue    String // Pourquoi CE produit et pas un autre
+
+  // Execution
+  mvpScope       String // Ce que contient le MVP (et ce qu'il ne contient PAS)
+  timeToMvp      String // Temps estime pour le MVP
+  milestones     String // JSON: [{phase, title, description, duration, deliverables}]
+
+  // Validation terrain
+  validationChecks String // JSON: [{check, how, successCriteria}]
+
+  // Go to market
+  earlyAdopters    String // JSON: [{who, where, howToReach}]
+  pricingStrategy  String // Comment fixer le prix, quel modele
+  pathTo10kMrr     String // Chemin concret vers 10K MRR
+
+  // Tech
+  techStack        String // JSON: {frontend, backend, database, hosting, apis, notes}
+
+  // Extras
+  risks            String // JSON: [{risk, mitigation}]
+  inspirations     String? // Produits similaires dans d'autres pays/secteurs
+
+  // Market validation (enrichissement)
+  searchVolume     String? // JSON: [{keyword, monthlyVolume, difficulty, intent}]
+  tamSamSom        String? // JSON: {tam, sam, som, methodology}
+  competitorDeep   String? // JSON: [{name, url, pricing, trafficEstimate, reviews, strengths, weaknesses}]
+  legalConstraints String? // JSON: [{topic, status, detail, source}]
+  cacEstimate      String? // JSON: [{channel, cacEstimate, conversionRate, ltv, ltvCacRatio}]
+
+  // Scoring
+  viabilityScore   String? // JSON: {demand, feasibility, market, competition, legal, overall}
+
+  // Niveau de confiance par section
+  confidenceLevels String? // JSON: {datasets, metrics, competitors, searchVolume, tamSamSom, legal, cac, overall}
+}
+
+model TargetCustomer {
+  id            Int         @id @default(autoincrement())
+  segment       String
+  priceRange    String
+  order         Int         @default(0)
+  opportunityId String
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+}
+
+model Competitor {
+  id            Int         @id @default(autoincrement())
+  name          String
+  weakness      String
+  order         Int         @default(0)
+  opportunityId String
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+}

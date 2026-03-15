@@ -1,0 +1,173 @@
+{
+  "id": "renovation-energetique",
+  "rank": 2,
+  "title": "Rénovation énergétique intelligente",
+  "slug": "renovation",
+  "sector": "énergie",
+  "tagline": "Transformer les données DPE + aides publiques en parcours de rénovation personnalisé pour chaque logement",
+  "status": "exploration",
+  "difficulty": "facile",
+  "marketSize": "En explosion — pousse par la réglementation",
+  "monetization": "Lead gen artisans + SaaS 49-99/mois",
+  "context": "Depuis 2025, les logements classés DPE G ne peuvent plus être loues. En 2028, ce sera le tour des DPE F. Cela concerne des millions de logements. Les proprietaires sont perdus face à la complexité des travaux, des aides (MaPrimeRenov, CEE, aides locales) et du choix d'artisans. L'API DPE de l'ADEME + l'API BDNB permettent d'identifier chaque passoire thermique de France et de proposer un parcours de rénovation chiffré. Un outil qui simplifié ce parcours à un marché énorme et captif.",
+  "signals": [
+    {
+      "label": "Visites DPE",
+      "value": "~28K/an",
+      "detail": "Croissance réguliere, besoin structurel"
+    },
+    {
+      "label": "Loi Climat",
+      "value": "DPE G interdit 2025",
+      "detail": "DPE F interdit en 2028 — les proprietaires DOIVENT agir"
+    },
+    {
+      "label": "MaPrimeRenov",
+      "value": "5Mds budget",
+      "detail": "Budget massif de l'État pour la rénovation"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "67f7e557cb268460ce66c8d4",
+      "name": "DPE Logements existants",
+      "description": "Classe énergétique de chaque logement, recommandations de travaux, consommation.",
+      "visits": "~28K/an",
+      "downloads": "~4K/an",
+      "updateFrequency": "Hebdomadaire"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API DPE logements (ADEME)",
+      "description": "Recherche de DPE par adresse, commune, classé énergétique. Données détaillées de chaque diagnostic.",
+      "baseUrl": "https://data.ademe.fr/data-fair/api/v1/datasets/dpe-france"
+    },
+    {
+      "name": "API BDNB Expert",
+      "description": "Simulations de DPE manquants, données bâtiment enrichies pour cibler les passoires thermiques.",
+      "baseUrl": "https://api.bdnb.io/v1/bdnb"
+    },
+    {
+      "name": "API France Chaleur Urbaine",
+      "description": "Detecter si un bâtiment est raccordable à un réseau de chaleur — alternative au gaz/fioul.",
+      "baseUrl": "https://france-chaleur-urbaine.beta.gouv.fr/api"
+    }
+  ],
+  "productIdeas": [
+    "Simulateur personnalisé : votre logement DPE F → plan de travaux optimal + aides disponibles + ROI sur 10 ans",
+    "Marketplace artisans qualifies RGE par zone géographique",
+    "Alertes proprietaires : DPE qui expire, nouvelle aide disponible",
+    "Outil pour syndics : cartographie DPE de la copropriété + plan pluriannuel",
+    "Prospection automatisée pour artisans : liste des passoires thermiques DPE F/G dans leur zone"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Artisans RGE",
+      "priceRange": "49/mois (lead gen)"
+    },
+    {
+      "segment": "Proprietaires",
+      "priceRange": "Freemium"
+    },
+    {
+      "segment": "Syndics de copropriété",
+      "priceRange": "99/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "OSCAR (ADEME)",
+      "weakness": "Outil officiel basique, pas de parcours personnalisé"
+    },
+    {
+      "name": "Helio",
+      "weakness": "Focus devis, pas d'intelligence données"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Reglementation contraignante (interdiction location DPE G en 2025, DPE F en 2028) qui force les proprietaires à agir",
+      "API DPE ADEME en temps réel permet d'identifier chaque passoire thermique de France par adresse",
+      "Modele lead-gen artisans à marge élevée — les artisans RGE paient déjà 30-80 EUR/lead qualifie",
+      "Données BDNB permettent de simulér les DPE manquants et de pre-calculer les travaux nécessaires"
+    ],
+    "weaknesses": [
+      "Complexité du calcul des aides (MaPrimeRenov, CEE, aides locales) qui changent régulierement",
+      "Dépendance à la politique gouvernementale — les budgets MaPrimeRenov sont révisés chaque année",
+      "Les artisans RGE sont déjà sur-sollicités par les plateformes existantes (Hellio, Effy) — fatigue du lead-gen",
+      "Le DPE lui-même est contesté (fiabilité des diagnostics, réforme en cours) ce qui fragilise la base de données"
+    ],
+    "opportunities": [
+      "Le DPE collectif obligatoire en copropriété 2025-2028 ouvre un marché syndics/copropriétés massif",
+      "L'audit énergétique obligatoire avant vente des DPE F/G crée un flux continu de proprietaires motives",
+      "Les banques commencent a conditionner les prets à la performance énergétique — partenariats possibles",
+      "Extension vers le tertiaire (décret tertiaire) qui oblige les bureaux a réduire leur consommation de 40% d'ici 2030"
+    ],
+    "threats": [
+      "Hellio et Effy lèvent des dizaines de millions et pourraient intégrer l'intelligence données",
+      "Le gouvernement pourrait créer un outil officiel type 'MaPrimeRenov simulateur' plus complet",
+      "Baisse du budget MaPrimeRenov pourrait freiner les travaux et réduire la demande",
+      "Les énergéticiens (EDF, Engie) développent leurs propres parcours rénovation avec des budgets marketing massifs"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Marc",
+      "role": "Artisan plombier-chauffagiste RGE à Rennes, patron de 4 salariés",
+      "age": "46 ans",
+      "context": "A obtenu sa certification RGE il y à 3 ans pour profiter du boom rénovation. Fait 60% de son CA sur les pompes a chaleur et l'isolation. Cherche à remplir son planning 3 mois à l'avancé mais depend des leads de bouche-a-oreille et de quelques plateformes.",
+      "painPoints": [
+        "Paie 50-80 EUR par lead sur Hellio/Effy mais 70% des prospects ne sont pas qualifies ou n'ont pas le budget",
+        "Ne sait pas identifier les passoires thermiques DPE F/G dans sa zone pour les prospecter directement",
+        "Passe 1h par devis à calculer les aides MaPrimeRenov et CEE pour chaque profil de client"
+      ],
+      "currentSolution": "Achete des leads Hellio + bouche-a-oreille + simulateur MaPrimeRenov officiel pour les calculs d'aides",
+      "budget": "40-60 EUR/mois si les leads sont plus qualifies que ce qu'il acheté actuellement",
+      "channels": [
+        "CAPEB (syndicat artisans)",
+        "Groupe Facebook 'Artisans RGE - échanges et conseils'",
+        "Salon Interclima Paris",
+        "Forum Forumconstruire.com"
+      ]
+    },
+    {
+      "name": "Nathalie",
+      "role": "Proprietaire bailleur de 3 appartements en location à Toulouse, dont 2 classés DPE F",
+      "age": "55 ans",
+      "context": "Enseignante à la retraite qui complète ses revenus avec 3 locations. Deux de ses appartements sont classés DPE F et ne pourront plus être loues a partir de 2028. Completement perdue face aux travaux nécessaires, aux aides disponibles et au choix d'artisans fiables.",
+      "painPoints": [
+        "Ne comprend pas quel ordre de travaux choisir (isolation, chauffage, fenêtrès) pour passer de F a D",
+        "A reçu 3 devis entre 15K et 45K EUR pour des travaux similaires — ne sait pas lequel est juste",
+        "N'arrive pas à calculer les aides auxquelles elle a droit (revenus intermédiaires, copropriété)"
+      ],
+      "currentSolution": "A consulté le site MaPrimeRenov 4 fois sans comprendre, a demande à son diagnostiqueur DPE qui n'a pas su la conseillér",
+      "budget": "Budget travaux de 20-30K EUR, prête à payer 50-100 EUR pour un plan de rénovation clair et chiffré",
+      "channels": [
+        "Groupe Facebook 'Proprietaires bailleurs - conseils et entraide'",
+        "UNPI (Union Nationale des Proprietaires Immobiliers)",
+        "Forum LesArnaques.com section rénovation",
+        "Conseiller France Renov' local"
+      ]
+    },
+    {
+      "name": "Antoine",
+      "role": "Gestionnaire de copropriété chez un syndic à Paris, gère 35 immeubles (1800 lots)",
+      "age": "33 ans",
+      "context": "Doit preparer les plans pluriannuels de travaux (PPT) obligatoires pour ses copropriétés. Le DPE collectif devient obligatoire progrèssivement. Il doit présenter des projections chiffrées aux conseils syndicaux sans avoir d'outil dédié.",
+      "painPoints": [
+        "Doit produire 35 PPT d'ici 2025 sans outil de simulation des coûts et des gains énergétiques",
+        "Les copropriétaires lui demandent le DPE collectif et les aides disponibles — il n'a pas les réponses",
+        "Passe 2 jours par copropriété à compiler les DPE individuels pour estimer la performance du bâtiment"
+      ],
+      "currentSolution": "Fichier Excel avec les DPE individuels copies à la main + devis demandes à 2-3 bureaux d'études thermiques",
+      "budget": "80-120 EUR/mois — facture au syndic, pas de problème de budget si l'outil fait gagner du temps",
+      "channels": [
+        "UNIS (syndicat des syndics)",
+        "Salon de la copropriété Paris",
+        "Groupe LinkedIn 'Syndics de copropriété'",
+        "Revue Le Particulier Immobilier"
+      ]
+    }
+  ]
+}

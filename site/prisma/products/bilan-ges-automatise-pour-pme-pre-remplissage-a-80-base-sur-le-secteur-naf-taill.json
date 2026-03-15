@@ -1,0 +1,324 @@
+{
+  "productSlug": "bilan-ges-automatise-pour-pme-pre-remplissage-a-80-base-sur-le-secteur-naf-taill",
+  "oneLiner": "Bilan GES automatise pour PME: pre-rempli a 80% base sur le secteur NAF, la taille et les données publiques.",
+  "problem": "La CSRD impose un bilan carbone a 50 000 entreprises en France d ici 2026. Un bilan GES classique coute 5-20K EUR et prend 3 mois avec un cabinet. Les PME n ont ni le budget ni les compétences. La Base Carbone ADEME (13K visites) contient les facteurs d émission mais c est un tableur technique inaccèssible.",
+  "solution": "Un outil SaaS qui généré un bilan GES pre-rempli a 80% en croisant: le code NAF de l entreprise (ratios d émission sectoriels), sa taille (effectif, CA), et les données publiques (mix énergétique régional, facteurs d émission Base Carbone ADEME). L utilisateur affine les 20% restants (deplacements, achats spécifiques) et obtient un bilan conforme en 2h au lieu de 3 mois.",
+  "uniqueValue": "Le pré-remplissage a 80% est la clé. Les outils existants (Greenly, Sweep) sont vides au départ et demandent des semaines de collecte de données. Ici, le bilan est déjà rempli avec des estimations sectorielles fiables (Base Carbone + INSEE). Le travail de l utilisateur est de corriger, pas de construire.",
+  "mvpScope": "Bilan GES Scope 1 et 2 pour les PME de 50-500 salariés, secteurs tertiaire et industrie legéré. Pre-remplissage base sur: code NAF (émission/salarié sectorielle), effectif, région (mix electrique). Affinage: vehicules, chauffage, consommation electrique reelle. Export rapport PDF conforme.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline Base Carbone et ratios sectoriels",
+      "description": "Import Base Carbone ADEME. Calcul des ratios d émission par code NAF et par salarié (données SDES/INSEE). Modèle de pré-remplissage.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Import Base Carbone ADEME",
+        "Ratios émission par NAF",
+        "Modèle pré-remplissage",
+        "Couverture 100 codes NAF"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface et rapport",
+      "description": "Formulaire: SIRET -> pré-remplissage automatique. Affinage par poste. Calcul du bilan. Generation rapport PDF conforme. Dashboard.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Formulaire SIRET -> pré-remplissage",
+        "Affinage par poste",
+        "Calcul bilan GES",
+        "Rapport PDF conforme",
+        "Dashboard"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et premiers clients",
+      "description": "Cibler les PME CSRD via LinkedIn et CCI. Webinaires CSRD: ce qui change pour votre PME. Offre early adopter.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "50 premiers bilans",
+        "30 clients payants",
+        "3 webinaires",
+        "5 partenariats CCI/cabinets comptables"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Scope 3 et certification",
+      "description": "Ajouter le Scope 3 (achats, transport, deplacements) avec pré-remplissage sectoriel. Partenariat avec un verificateur pour la certification. Plan Enterprise.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Scope 3 pre-rempli",
+        "Partenariat verificateur",
+        "Plan Enterprise",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les PME sont conscientes de l obligation CSRD",
+      "how": "Sondage LinkedIn auprès de 100 dirigeants de PME 50-500 salariés",
+      "successCriteria": "50%+ sont au courant et 30%+ n ont pas encore commence leur bilan"
+    },
+    {
+      "check": "Le pré-remplissage sectoriel est fiable",
+      "how": "Generer un bilan pre-rempli pour 10 PME et comparer avec leur bilan reel (quand disponible)",
+      "successCriteria": "Ecart < 30% entre le pre-rempli et le reel sur le Scope 1+2"
+    },
+    {
+      "check": "Le prix est attractif vs un cabinet",
+      "how": "Proposer a 20 PME: bilan automatise a 199 EUR/mois vs cabinet a 10K EUR. Mesurer la préférénce.",
+      "successCriteria": "70%+ préférént l outil automatise (prix 10x inferieur)"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "PME de 250-500 salariés soumises à la CSRD en 2026",
+      "where": "LinkedIn dirigeants PME, CPME, MEDEF, CCI",
+      "howToReach": "Webinaire CSRD 2026: votre PME est-elle prête? avec demo de l outil. Cibler les DAF et responsables RSE."
+    },
+    {
+      "who": "Cabinets d expertise comptable (qui accompagnent les PME)",
+      "where": "Ordre des experts-comptables, ECF, salons Compta Online",
+      "howToReach": "Plan cabinet: l outil simplifie leur mission bilan carbone. White-label possible."
+    },
+    {
+      "who": "Consultants RSE indépendants",
+      "where": "LinkedIn RSE, salons DD, réseaux B Corp",
+      "howToReach": "L outil accelere leur travail 5x. Plan consultant avec volume."
+    }
+  ],
+  "pricingStrategy": "Plan PME a 199 EUR/mois (Scope 1+2, pré-remplissage, rapport PDF, dashboard). Plan PME+ a 399 EUR/mois (Scope 1+2+3, plan d action, suivi annuel). Plan Cabinet a 799 EUR/mois (multi-clients, white-label). Plan Enterprise sur devis. Bilan unitaire a 1 990 EUR (one-shot sans abonnement). Positionnement: 10x moins cher qu un cabinet.",
+  "pathTo10kMrr": "30 PME x 199 EUR = 5 970 EUR + 5 PME+ x 399 EUR = 1 995 EUR + 2 cabinets x 799 EUR = 1 598 EUR + 2 one-shots/mois amortis = 665 EUR = 10 228 EUR MRR. 50 000 entreprises concernées par la CSRD, 37 clients = 0.07% de pénétration. Timeline: 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts",
+    "backend": "Next.js API Routes + Python pour le modèle de pré-remplissage",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Base Carbone ADEME data.gouv.fr",
+      "API Sirene (identification entreprise par SIRET)",
+      "Données mix énergétique régional RTE",
+      "Ratios sectoriels INSEE/SDES",
+      "Stripe"
+    ],
+    "notes": "Le pré-remplissage utilise les ratios émissions/salarié par code NAF publiés par le SDES. Le mix electrique régional vient de RTE. Le rapport PDF est généré via Puppeteer avec graphiques Recharts."
+  },
+  "risks": [
+    {
+      "risk": "Le pré-remplissage est trop imprecis pour être utile (ecart > 50%)",
+      "mitigation": "Le pré-remplissage est un point de départ, pas le bilan final. Guider l utilisateur poste par poste pour affiner. Être transparent sur les hypotheses."
+    },
+    {
+      "risk": "Les grands acteurs (Greenly, Sweep, Carbo) dominent le marché",
+      "mitigation": "Cibler les PME que les grands acteurs ne servent pas (trop petites pour Sweep, pas assez tech pour Greenly). Le pré-remplissage est notre differenciant."
+    },
+    {
+      "risk": "La réglementation CSRD est repoussee où simplifiee",
+      "mitigation": "Meme sans obligation, les donneurs d ordre (grands groupes) exigent le bilan carbone de leurs fournisseurs PME. Le marché existe même sans CSRD."
+    }
+  ],
+  "inspirations": "Greenly (leve 52M EUR, bilan carbone SaaS). Sweep (leve 100M EUR, enterprise). Carbo (bilan carbone pour PME). Base Carbone ADEME (référence officielle). Notre differenciant: le pré-remplissage a 80%.",
+  "searchVolume": [
+    {
+      "keyword": "bilan carbone PME",
+      "monthlyVolume": "2900",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "bilan carbone entreprise",
+      "monthlyVolume": "6600",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "BEGES obligatoire",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "logiciel bilan carbone",
+      "monthlyVolume": "1600",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "CSRD PME 2026",
+      "monthlyVolume": "880",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "50 000 entreprises initialement concernées par la CSRD (seuil rélevé a 1 000 salariés et 450M EUR CA par loi Omnibus dec 2025). Marché bilan carbone France estimé a 500M-1Md EUR/an (logiciels + cabinets). Greenly seul fait 10M EUR ARR.",
+    "sam": "200 000 PME de 50-500 salariés non encore équipees. Cout moyen cabinet: 5-15K EUR. SAM logiciel SaaS: 200 000 x 200 EUR/mois = 480M EUR/an (theorique). Realiste avec 5% d'adoption SaaS: 24M EUR/an.",
+    "som": "Objectif an 1: 37 clients x 275 EUR ARPU = 122K EUR ARR. Pénétration: 0.02% du SAM.",
+    "methodology": "TAM base sur les entreprises concernées CSRD (source: loi Omnibus dec 2025, economie.gouv.fr). SAM reduit aux PME 50-500 sal. Greenly ARR source: levée de fonds Series B (ChannelNews). SOM base sur mix tarifaire."
+  },
+  "competitorDeep": [
+    {
+      "name": "Greenly",
+      "url": "https://greenly.earth",
+      "pricing": "5 000-15 000 EUR/an pour PME. À partir de 4 000 EUR/an pour les plus petites. Plans enterprise sur devis.",
+      "trafficEstimate": "300K visites/mois",
+      "reviews": "Leader SaaS bilan carbone FR. 2 000 clients (BNP, AXA, L'Oreal). Certifie B Corp, CDP, ISO 27001, SOC 2. 10M EUR ARR en 2023.",
+      "strengths": "52M EUR leves (Series B Fidelity), 2 000 clients, intégrations bancaires et comptables, équipe 200+, présence US (25% CA), certifications multiples.",
+      "weaknesses": "Prix élevé pour les TPE (4-15K EUR/an), interface complexe, pas de pré-remplissage sectoriel automatique, focus grands comptes."
+    },
+    {
+      "name": "Carbo",
+      "url": "https://www.hellocarbo.com",
+      "pricing": "À partir de 2 000 EUR/an pour PME. Plans de 2 000 a 10 000 EUR/an.",
+      "trafficEstimate": "150K visites/mois",
+      "reviews": "Bilan carbone pour PME et ETI. Interface simple. Bon contenu SEO.",
+      "strengths": "Interface simple et pédagogique, bon positionnément PME, contenu SEO fort (blog référence), prix plus accèssible que Greenly.",
+      "weaknesses": "Moins de fonctionnalités avancees que Greenly, pas de pré-remplissage automatise, équipe plus petite."
+    },
+    {
+      "name": "Sami",
+      "url": "https://www.sami.eco",
+      "pricing": "5 000-15 000 EUR/an. Positionnement mid-market.",
+      "trafficEstimate": "80K visites/mois",
+      "reviews": "Bilan carbone + plan d'action. Positionnement PME/ETI engagees.",
+      "strengths": "Accompagnement humain + outil, plan d'action intégré, bonne réputation auprès des PME engagees RSE.",
+      "weaknesses": "Prix similaire a Greenly, pas de pré-remplissage automatise, scalabilite limitee par l'accompagnement humain."
+    },
+    {
+      "name": "Sweep",
+      "url": "https://www.sweep.net",
+      "pricing": "Sur devis. Enterprise uniquement. Estime 20-50K EUR/an.",
+      "trafficEstimate": "60K visites/mois",
+      "reviews": "Plateforme enterprise de gestion carbone. 100M EUR leves. Focus CSRD et reporting.",
+      "strengths": "100M EUR leves, plateforme enterprise complète (track, disclose, act), intégrations ERP, conformité CSRD/GHG Protocol.",
+      "weaknesses": "Trop cher et complexe pour les PME, pas de pré-remplissage, focus grands groupes."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "CSRD et obligations de reporting",
+      "status": "attention",
+      "detail": "La loi Omnibus (dec 2025) a rélevé les seuils CSRD a 1 000 salariés et 450M EUR CA. Les PME < 1 000 sal ne sont plus obligees mais le standard VSME volontaire devient la référence. Le marché reste porte par les exigences des donneurs d'ordre.",
+      "source": "Directive CSRD, loi Omnibus dec 2025, standard VSME"
+    },
+    {
+      "topic": "Conformite du bilan généré",
+      "status": "attention",
+      "detail": "Un bilan pre-rempli par estimations sectorielles n'est pas un BEGES reglementaire officiel. Necessaire de communiquér clairement les limites et de proposer un parcours vers la certification.",
+      "source": "Méthode Bilan Carbone v9 (jan 2025), 3 niveaux de maturite"
+    },
+    {
+      "topic": "Utilisation des données Base Carbone ADEME",
+      "status": "ok",
+      "detail": "La Base Carbone ADEME est en open data. Les facteurs d'émission sont reutilisables commercialement.",
+      "source": "ADEME, licence ouverte"
+    },
+    {
+      "topic": "Aide Diag Decarbon'Action",
+      "status": "ok",
+      "detail": "Le Diag Decarbon'Action (BPI/ADEME) subventionne 40% du cout pour les entreprises < 500 salariés n'ayant jamais fait de BEGES. Opportunité commerciale.",
+      "source": "BPI France, ADEME"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (bilan carbone PME, logiciel bilan carbone, CSRD PME)",
+      "cacEstimate": "30-60 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "2388 EUR (12 mois x 199 EUR plan PME)",
+      "ltvCacRatio": "40-80x"
+    },
+    {
+      "channel": "Webinaires CSRD (ce qui change pour votre PME)",
+      "cacEstimate": "40-80 EUR",
+      "conversionRate": "4-7%",
+      "ltv": "2388 EUR",
+      "ltvCacRatio": "30-60x"
+    },
+    {
+      "channel": "Partenariats CCI et cabinets comptables",
+      "cacEstimate": "15-35 EUR",
+      "conversionRate": "6-10%",
+      "ltv": "4788 EUR (12 mois x 399 EUR PME+)",
+      "ltvCacRatio": "137-319x"
+    },
+    {
+      "channel": "LinkedIn Ads (DAF et responsables RSE PME)",
+      "cacEstimate": "120-200 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "2388 EUR",
+      "ltvCacRatio": "12-20x"
+    },
+    {
+      "channel": "Referral Diag Decarbon'Action (subvention BPI)",
+      "cacEstimate": "20-40 EUR",
+      "conversionRate": "8-15%",
+      "ltv": "2388 EUR",
+      "ltvCacRatio": "60-119x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources vérifiées via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "13.9K recherches/mois cumulees ('bilan carbone entreprise' 6 600/mois, 'bilan carbone PME' 2 900/mois). TAM: 50 000 entreprises. Cibles: PME de 250-500 salariés, Cabinets d expertise comptable, Consultants RSE indépendants."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 5 APIs a integrer (Base Carbone ADEME, API Sirene, Données mix énergétique région). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "37 clients a 199 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 122K EUR/an. Pricing 199-990 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: Greenly, Carbo, Sami. Leader: Greenly (300K visites/mois). Faiblesse principale: Prix élevé pour les TPE (4-15K EUR/an)."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: CSRD et obligations de reporting, Conformite du bilan généré."
+    },
+    "overall": {
+      "score": 68,
+      "detail": "Point fort: marche (88/100). Point faible: competition (55/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

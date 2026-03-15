@@ -1,0 +1,336 @@
+{
+  "productSlug": "comparateur-de-communes-sante-qualite-eau-proximite-soins-pathologies-pour-les-r",
+  "oneLiner": "Un comparateur sante de communes pour les futurs residents: qualité de l'eau, proximite des soins, pathologies locales, pollution.",
+  "problem": "2.5 millions de Francais demenagent chaque année. Les familles avec enfants et les retraites accordent une grande importance à la sante locale mais n'ont aucun moyen de comparer objectivement: y a-t-il un médecin a moins de 10 minutes? L'eau est-elle de bonne qualité? Le taux de cancers est-il anormalement élevé? Ils découvrent la realite après l'achat immobilier.",
+  "solution": "Un outil de comparaison de 2 a 4 communes sur des critères sante: nombre de médecins (généralistes, specialistes, dentistes), distance hopital le plus proche, qualité de l'eau (nitrates, pesticides, plomb), pathologies prevalentes du territoire, pollution de l'air, nombre de pharmacies et defibrillateurs. Chaque commune reçoit un score sante global et des sous-scores. Ideal pour trancher entre Annecy et Chambery, où entre 2 villages du Luberon.",
+  "uniqueValue": "Aucun comparateur immobilier n'intégré la dimension sante au-dela du prix. Les données existent mais sont sur 5 sites différents. Ce comparateur unifie tout en un clic et donne un avantage informationnel au futur achetéur.",
+  "mvpScope": "Comparaison de 2 communes sur 5 critères: densité médicale, distance hopital, qualité eau potable, pharmacies, pollution air. Score sante sur 100. Toutes les communes de France metropolitaine (35 000).",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider l'intérêt des futurs achetéurs immobiliers",
+      "description": "Créér 5 comparaisons de communes populaires (Annecy vs Chambery, Bordeaux vs Toulouse, etc.) et les publiér sur Reddit r/france, forums PAP.fr, groupes Facebook demenagement. Mesurer l'engagement.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "5 comparaisons publiées",
+        "500+ vues",
+        "Landing page",
+        "100+ inscrits"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Comparateur fonctionnel sur toutes les communes",
+      "description": "Ingestion FINESS, qualité eau ARS, données pollution Atmo. Calcul des scores par commune. Interface de comparaison cote-a-cote. Couverture France metropolitaine.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline data 5 sources",
+        "Scores pour 35K communes",
+        "Interface comparateur",
+        "SEO: 1 page par commune"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "SEO et premiers clients",
+      "description": "Publier les 35K pages communes pour le SEO. Ecrire 20 articles comparatifs. Lancer le plan premium. Partenariats avec 2 blogs immobilier.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "35K pages indexées",
+        "20 articles SEO",
+        "50 premiers abonnes",
+        "2 partenariats"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Widget B2B et critères avances",
+      "description": "Widget integrable pour les sites d'annoncés immobilières. Ajout critères: defibrillateurs, maisons de sante, telesante. Application mobile.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Widget B2B lance",
+        "3 critères supplémentaires",
+        "150 abonnes B2C",
+        "5 clients B2B"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR",
+      "description": "Monétisation via widget B2B (sites immobiliers), affiliation avec courtiers, et abonnements premium. SEO mature avec 50K visiteurs/mois.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "50K visiteurs/mois",
+        "10 clients B2B widget",
+        "300 abonnes premium"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "La sante est-elle un critère de choix de commune pour les achetéurs?",
+      "how": "Sondage en ligne auprès de 200 personnes ayant demenage dans les 2 derniers ans. Question: quels critères avez-vous evalues?",
+      "successCriteria": "40%+ citent la proximite des soins dans leur top 5 critères."
+    },
+    {
+      "check": "Les comparaisons générént-elles de l'engagement?",
+      "how": "Publier 5 comparatifs sur Reddit et forums et mesurer les partages et commentaires.",
+      "successCriteria": "50+ commentaires et 200+ upvotes cumules sur les 5 posts."
+    },
+    {
+      "check": "Le willingness-to-pay existe-t-il pour un outil de comparaison?",
+      "how": "A/B test sur la landing page avec prix a 4.90 et 9.90 euros/mois.",
+      "successCriteria": "Taux de clic sur le bouton d'achat > 5% du trafic qualifie."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Familles avec jeunes enfants en recherche immobilière",
+      "where": "Forums PAP.fr, groupes Facebook parents-demenagement, Mumsnet francais, r/ParentsEnFrance",
+      "howToReach": "Publier des comparatifs Meilleures villes pour les familles côté sante et les partager dans ces communautés."
+    },
+    {
+      "who": "Retraites planifiant un demenagement en province",
+      "where": "Forums senior (Notre Temps, Senioractu), groupes Facebook retraites en province",
+      "howToReach": "Contenu ciblé: Ou prendre sa retraite avec les meilleurs soins de sante? Rankings des villes les plus saines pour les seniors."
+    },
+    {
+      "who": "Agents immobiliers voulant se différencier",
+      "where": "LinkedIn, salons immobiliers (RENT), réseaux d'agents (IAD, Safti)",
+      "howToReach": "Proposer un widget gratuit en beta, puis un plan pro avec personnalisation à la marque."
+    }
+  ],
+  "pricingStrategy": "Freemium: 2 comparaisons gratuites/mois (acquisition SEO). Plan Particulier a 6.90 euros/mois (comparaisons illimitées, alertes, critères avances). Plan Agent Immobilier a 29 euros/mois (widget integrable, rapports PDF pour clients). Plan Portail Immobilier a 299 euros/mois (API, volume, marque blanche). Prix bas pour maximiser le volume B2C et générér du trafic pour le B2B.",
+  "pathTo10kMrr": "800 particuliers x 6.90 euros = 5 520 euros + 100 agents immobiliers x 29 euros = 2 900 euros + 6 portails x 299 euros = 1 794 euros = 10 214 euros MRR. Le SEO est le moteur principal: 35K pages de communes, chacune ciblant médecin + commune + sante. Atteignable en 8-10 mois avec un bon SEO.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts pour les radars de comparaison",
+    "backend": "Next.js API Routes + ISR pour les pages communes",
+    "database": "PostgreSQL sur Supabase, scores precalcules par commune",
+    "hosting": "Vercel + Supabase + GitHub Actions (pipeline mensuel)",
+    "apis": [
+      "API FINESS",
+      "API qualité eau ARS",
+      "API Atmo France (pollution)",
+      "API BAN géocodage",
+      "API INSEE",
+      "Stripe"
+    ],
+    "notes": "35K pages générées statiquement en ISR pour le SEO. Le comparateur est une simple juxtaposition de fiches precalculees. Leger côté serveur."
+  },
+  "risks": [
+    {
+      "risk": "Le trafic SEO met 6-12 mois a decoller",
+      "mitigation": "Compléter avec du contenu editorial (Top 10, comparatifs de villes populaires) qui généré du trafic social rapidement. Investir 500 euros/mois en Google Ads sur les requetes a forte intention."
+    },
+    {
+      "risk": "Les données de qualité de l'eau et pollution ne sont pas disponibles pour toutes les communes",
+      "mitigation": "Utiliser la maille du syndicat des eaux (qui couvre les petites communes) et les stations de mesuré Atmo les plus proches. Afficher clairement quand une donnée est estimée vs mesuree."
+    },
+    {
+      "risk": "SeLoger où MeilleursAgents ajoute un score sante",
+      "mitigation": "La specialisation sante est notre moat. Eux se concentrent sur les prix. Pivoter vers le B2B (API/widget) si le B2C est menace."
+    }
+  ],
+  "inspirations": "Numbeo.com qui compare le cout de la vie entre villes. Teleport.org qui compare les villes sur des critères de qualité de vie. Ville-ideale.fr qui collecte des avis mais pas de données objectives. Aux US, BestPlaces.net compare les villes sur la sante, l'education, le climat.",
+  "searchVolume": [
+    {
+      "keyword": "qualité eau commune",
+      "monthlyVolume": "6600",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "médecin commune",
+      "monthlyVolume": "4400",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "comparer communes qualité de vie",
+      "monthlyVolume": "1300",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ou vivre en France sante",
+      "monthlyVolume": "880",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "meilleure ville retraite sante",
+      "monthlyVolume": "1600",
+      "difficulty": "medium",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "180 millions EUR - Marché données de qualité de vie et aide à la décision pour demenagement/achat immobilier en France",
+    "sam": "25 millions EUR - Sous-segment comparaison de communes sur critères sante pour les 2.5M de menages qui demenagent/an",
+    "som": "1.2 millions EUR - 800 particuliers a 6.90 EUR/mois + 100 agents a 29 EUR/mois + 6 portails a 299 EUR/mois, atteignable a M10",
+    "methodology": "TAM = marché qualité de vie et aide à la décision immobilière. SAM = segment sante parmi les demenageurs (2.5M/an, INSEE). SOM = business plan SEO-driven."
+  },
+  "competitorDeep": [
+    {
+      "name": "Numbeo",
+      "url": "https://www.numbeo.com",
+      "pricing": "Gratuit (publicite)",
+      "trafficEstimate": "5M+ visites/mois (mondial)",
+      "reviews": "Référence mondiale comparaison cout de la vie entre villes",
+      "strengths": "Marque mondiale, données crowdsourcees riches, couvre cout de la vie + sécurité + sante + pollution",
+      "weaknesses": "Données France incomplètes, niveau ville seulement, données crowdsourcees (pas officielles), pas de qualité de l'eau ni de données FINESS"
+    },
+    {
+      "name": "Ville-Ideale",
+      "url": "https://www.ville-ideale.fr",
+      "pricing": "Gratuit (publicite)",
+      "trafficEstimate": "500K-1M visites/mois",
+      "reviews": "Avis et notes communautaires sur les villes de France",
+      "strengths": "Communauté active, avis subjectifs riches, SEO fort sur les noms de villes",
+      "weaknesses": "Avis subjectifs (pas de données objectives), pas de données sante/eau/médecins, pas de comparaison structuree"
+    },
+    {
+      "name": "Orobnat (Ministere Sante)",
+      "url": "https://orobnat.sante.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "100K-300K visites/mois",
+      "reviews": "Résultats officiels du contrôle sanitaire de l'eau potable par commune",
+      "strengths": "Données officielles de référence, couverture nationale, mise à jour régulière",
+      "weaknesses": "Uniquement eau potable, pas de score synthetique, interface technique, pas de comparaison entre communes"
+    },
+    {
+      "name": "BestPlaces (US)",
+      "url": "https://www.bestplaces.net",
+      "pricing": "Gratuit (publicite + rapports payants)",
+      "trafficEstimate": "2M+ visites/mois",
+      "reviews": "Référence US pour comparer les villes sur sante, education, climat, cout de la vie",
+      "strengths": "Score sante par ville, comparaison côte à côte, SEO massif, données officielles US",
+      "weaknesses": "US uniquement, modèle non transpose en France, mais référence conceptuelle"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données qualité eau",
+      "status": "ok",
+      "detail": "Les résultats du contrôle sanitaire sont publics via l'API Hub'eau et orobnat.sante.gouv.fr. Réutilisation libre.",
+      "source": "Hub'eau API / Code de la sante publique Art. L1321-9"
+    },
+    {
+      "topic": "Données FINESS et Ameli",
+      "status": "ok",
+      "detail": "Open data, réutilisation libre.",
+      "source": "data.gouv.fr - FINESS / ameli.fr"
+    },
+    {
+      "topic": "Classement defavorable de communes",
+      "status": "attention",
+      "detail": "Publier un score sante bas pour une commune pourrait générér des reactions d'elus et de residents. Méthodologie transparente et données publiques = protection juridique.",
+      "source": "Liberté d'information - Donnees publiques"
+    },
+    {
+      "topic": "Données de pathologies",
+      "status": "attention",
+      "detail": "Utiliser uniquement les données ALD publiées en open data au niveau département/canton. Ne pas descendre en dessous du seuil de secret statistique.",
+      "source": "CNIL - Secret statistique"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (qualité eau + commune / médecin + ville)",
+      "cacEstimate": "1-3 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "42 EUR (6.90 EUR/mois x 6 mois)",
+      "ltvCacRatio": "14-42x"
+    },
+    {
+      "channel": "Contenu editorial (Top 10 villes saines)",
+      "cacEstimate": "0.50-2 EUR",
+      "conversionRate": "1-3%",
+      "ltv": "42 EUR",
+      "ltvCacRatio": "21-84x"
+    },
+    {
+      "channel": "Forums seniors (Notre Temps, Senioractu)",
+      "cacEstimate": "0-3 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "42 EUR",
+      "ltvCacRatio": "14x+"
+    },
+    {
+      "channel": "Widget B2B agents immo",
+      "cacEstimate": "80-150 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "348 EUR (29 EUR/mois x 12)",
+      "ltvCacRatio": "2.3-4.3x"
+    },
+    {
+      "channel": "Affiliation courtiers immobiliers",
+      "cacEstimate": "0 EUR (CPA)",
+      "conversionRate": "N/A",
+      "ltv": "20-50 EUR/lead immobilier",
+      "ltvCacRatio": "N/A - revenue complémentaire"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "14.8K recherches/mois cumulees ('qualité eau commune' 6 600/mois, 'médecin commune' 4 400/mois). TAM: 180 millions EUR. Cibles: Familles avec jeunes enfants, Retraites planifiant un demenagement, Agents immobiliers voulant se."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 6 APIs a integrer (API FINESS, API qualité eau ARS, API Atmo France). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Objectif 10K MRR en 8-10 mois. Pricing 29-299 EUR."
+    },
+    "competition": {
+      "score": 35,
+      "detail": "4 concurrents identifies: Numbeo, Ville-Ideale, Orobnat (Ministere Sante). Leader: Numbeo (5M+ visites/mois (mondial)). Faiblesse principale: Données France incomplètes."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Classement defavorable de communes, Données de pathologies."
+    },
+    "overall": {
+      "score": 62,
+      "detail": "Point fort: faisabilite (78/100). Point faible: competition (35/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

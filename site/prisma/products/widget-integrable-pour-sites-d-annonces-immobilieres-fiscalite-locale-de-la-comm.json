@@ -1,0 +1,335 @@
+{
+  "productSlug": "widget-integrable-pour-sites-d-annonces-immobilieres-fiscalite-locale-de-la-comm",
+  "oneLiner": "Widget embeddable qui affiche la fiscalité locale et les équipements de la commune directement sur les annonces immobilières.",
+  "problem": "Les acheteurs immobiliers decouvrent la taxe foncière APRES l'achat. Sur SeLoger, LeBonCoin ou PAP, l'annonce montre le prix, la surface et les photos, mais rien sur la fiscalité locale (taxe foncière, taxe d'habitation RS) ni les équipements de la commune. Ce manque d'info entraîné des surprises (2 000 EUR/an de taxe foncière non anticipee) et des regrets post-achat.",
+  "solution": "Un widget JavaScript intégrable en 2 lignes de code sur n'importe quel site d'annonces immobilières. Il affiche automatiquement : taxe foncière estimée pour le bien (taux communal x surface), équipements a proximité (écoles, commerces, transports via BPE), prix au m2 median (DVF), et un score qualité de vie de la commune.",
+  "uniqueValue": "Intégration en 2 lignes de code sur n'importe quel site immo. Aucun widget n'enrichit les annonces avec la fiscalité locale. Les portails immo montrent le prix du bien, nous montrons le coût réel de la vie dans la commune.",
+  "mvpScope": "Widget iframe responsive : input = code postal ou code INSEE. Affiche : taux de taxe foncière + estimation pour un bien type, top 5 équipements a proximité (BPE), prix median au m2 (DVF), score qualité de vie (composite). Intégration JavaScript en 2 lignes. Theme personnalisable (couleurs).",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "API de données communales",
+      "description": "Creer une API REST legere qui retourne les indicateurs communaux (fiscalité, BPE, DVF, score) pour un code INSEE donne. Optimiser pour la performance (< 100ms).",
+      "duration": "2 semaines",
+      "deliverables": [
+        "API REST /commune/{code_insee}",
+        "Cache Redis pour performance",
+        "Documentation API",
+        "36K communes couvertes"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Widget JavaScript embeddable",
+      "description": "Composant JavaScript leger (< 50kb) intégrable en 2 lignes de code. Design responsive, theme personnalisable, compatible tous navigateurs. SDK pour les portails immo.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Widget JS embeddable",
+        "Snippet d'intégration",
+        "Themes personnalisables",
+        "Page de demo interactive"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Demarchage portails immobiliers",
+      "description": "Contacter les portails immo, agences en ligne et mandataires. Proposer une intégration gratuite pendant 3 mois. Mesurer l'engagement utilisateur sur le widget.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Kit commercial portails",
+        "Integrations pilotes",
+        "Analytics d'engagement",
+        "Temoignages pilotes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les portails immo veulent enrichir leurs annonces avec ces données",
+      "how": "Contacter 10 portails immo (SeLoger, LeBonCoin, PAP, Bien'ici, mandataires) avec une demo du widget",
+      "successCriteria": "3 portails acceptent un test d'intégration gratuit de 3 mois"
+    },
+    {
+      "check": "Les acheteurs interagissent avec le widget sur les annonces",
+      "how": "Intégration beta sur 2-3 sites immo partenaires, tracking des clics et du temps passe sur le widget",
+      "successCriteria": "15% des visiteurs de l'annonce interagissent avec le widget, temps moyen > 10 secondes"
+    },
+    {
+      "check": "Le widget amélioré les metriques du portail (temps sur page, conversion)",
+      "how": "A/B test sur un portail partenaire : annonces avec widget vs sans widget",
+      "successCriteria": "Temps sur page +20%, taux de contact vendeur +5% avec le widget"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Portails immobiliers mid-market cherchant a se differencier de SeLoger/LeBonCoin",
+      "where": "Bien'ici, Logic-Immo, PAP, Figaro Immobilier",
+      "howToReach": "Email au product manager avec demo personnalisee sur leur site, ROI argue (temps sur page, conversion)"
+    },
+    {
+      "who": "Réseaux de mandataires immobiliers (IAD, Safti, CapiFrance) avec sites agents individuels",
+      "where": "Conventions nationales des réseaux, LinkedIn responsables innovation",
+      "howToReach": "Partenariat au niveau du réseau : intégration dans le template de site de tous les mandataires"
+    },
+    {
+      "who": "Startups proptech et neoagences immobilières",
+      "where": "France PropTech, salon RENT, MIPIM Innovation Forum",
+      "howToReach": "Présence au salon RENT, sponsoring France PropTech, demo lors des pitchs proptech"
+    }
+  ],
+  "pricingStrategy": "B2B pur, facturation a l'affichage ou abonnement. Plan Startup : 99 EUR/mois (10K affichages/mois, 1 theme). Plan Agence : 199 EUR/mois (50K affichages, themes custom, analytics). Plan Portail : 499-1 999 EUR/mois (affichages illimités, API, support dédié, SLA). Modèle alternatif : CPM (coût pour 1000 affichages) a 2-5 EUR.",
+  "pathTo10kMrr": "5 portails/agences a 499 EUR (2 495 EUR) + 20 agences a 199 EUR (3 980 EUR) + 2 gros portails a 1 500 EUR (3 000 EUR) = 9 475 EUR MRR. Alternative via CPM : 2M affichages/mois a 5 EUR CPM = 10 000 EUR MRR. L'intégration au niveau du réseau de mandataires (IAD = 17 000 agents) est le scenario le plus rapide. Timeline : 8-12 mois.",
+  "techStack": {
+    "frontend": "Vanilla JS + Web Components (widget leger < 50kb)",
+    "backend": "Node.js + Express (API) ou Next.js API routes",
+    "database": "PostgreSQL (Supabase) + Redis (cache)",
+    "hosting": "Vercel (API) + Cloudflare CDN (widget JS) + Supabase",
+    "apis": [
+      "data.gouv.fr (impôts locaux, BPE, DVF)",
+      "API Geo gouv.fr (geocodage code postal vers code INSEE)"
+    ],
+    "notes": "Le widget doit etre ultra-leger pour ne pas impacter la performance des sites immo. Utiliser un iframe sandboxe ou un Web Component pour l'isolation CSS. CDN Cloudflare pour la latence. Analytics via un pixel de tracking leger."
+  },
+  "risks": [
+    {
+      "risk": "Les gros portails (SeLoger, LeBonCoin) refusent l'intégration ou developpent en interne",
+      "mitigation": "Cibler d'abord les portails mid-market et les mandataires. Si un gros portail copie, pivoter vers l'API B2B pure."
+    },
+    {
+      "risk": "L'estimation de taxe foncière est imprecise et généré des reclamations",
+      "mitigation": "Afficher des fourchettes avec disclaimer. Utiliser la formulation 'estimation indicative' et non 'simulation exacte'."
+    },
+    {
+      "risk": "Le widget ralentit les pages du portail et est retire",
+      "mitigation": "Chargement asynchrone, taille < 50kb, rendering differe (lazy loading). SLA de performance garanti < 200ms."
+    }
+  ],
+  "inspirations": "Disqus (widget de commentaires embeddable, modèle B2B), Trustpilot (widget avis intégrable), MeilleursAgents (estimation prix en widget sur sites partenaires, 12 000 agences partenaires, groupe Axel Springer). Le modèle widget B2B est prouve : Disqus a atteint 50M$ ARR avec un widget embeddable gratuit monetise par la data.",
+  "searchVolume": [
+    {
+      "keyword": "taxe foncière par commune",
+      "monthlyVolume": "6600",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "taux taxe foncière commune",
+      "monthlyVolume": "4400",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "impôts locaux par ville",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "fiscalité locale commune",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "classement taxe foncière ville",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "taxe foncière avant achat immobilier",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "augmentation taxe foncière 2025",
+      "monthlyVolume": "5400",
+      "difficulty": "élevée",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "Marché de la data immobilière en France: estimé a 500M-1Md EUR/an. 1.1M transactions immobilières/an (DVF). 30 000 agences immobilières. MeilleursAgents: 12 000 agences partenaires (groupe Axel Springer). Marché des widgets data pour portails immo: estimé a 50M EUR/an.",
+    "sam": "200 portails immobiliers + 5 000 agences en ligne + 30 000 mandataires (IAD 17K, Safti, CapiFrance). SAM widget fiscalité: 2 000 sites avec volume suffisant x 200 EUR/mois = 4.8M EUR/an.",
+    "som": "Objectif an 1: 27 clients x 370 EUR ARPU = 120K EUR ARR. Penetration: 2.5% du SAM. Scenario accéléré via partenariat réseau mandataires (IAD = 17 000 agents, intégration template unique).",
+    "methodology": "TAM basé sur le marché immobilier (DVF, 1.1M transactions/an). SAM réduit aux sites ayant un volume suffisant pour monétiser un widget. Données fiscales disponibles pour 34 875 communes (DGFiP, data.économie.gouv.fr, historique 4 ans 2021-2024). Référence: MeilleursAgents (12K agences partenaires) valide le modèle widget immobilier."
+  },
+  "competitorDeep": [
+    {
+      "name": "MeilleursAgents (widget prix)",
+      "url": "https://www.meilleursagents.com",
+      "pricing": "Gratuit pour les agences partenaires (modèle lead génération). Widget prix au m2 intégrable sur sites partenaires. 12 000 agences partenaires. Groupe Axel Springer.",
+      "trafficEstimate": "5M visites/mois",
+      "reviews": "N1 de l'estimation immobilière en France. Carte interactive des prix. Widget prix embeddable pour agences. Leads qualifies (projets concrets d'achat/vente).",
+      "strengths": "Marque forte, widget prix deploye chez 12 000 agences, 5M visites/mois, data DVF + modèle statistique, lead génération puissant, suivi évolution prix par email.",
+      "weaknesses": "Widget prix uniquement (pas de fiscalité locale, pas d'équipements, pas de score qualité de vie), modèle lead gen (pas SaaS), pas de données fiscales, pas de coût réel de la vie."
+    },
+    {
+      "name": "DGFiP - Outil officiel fiscalité locale",
+      "url": "https://data.economie.gouv.fr/explore/dataset/fiscalite-locale-des-particuliers-geo/",
+      "pricing": "Gratuit (service public). Carte interactive des taux d'imposition par commune. Comparaison entre communes et avec moyennes departementales/régionales.",
+      "trafficEstimate": "100K visites/mois (page spécifique)",
+      "reviews": "Outil officiel DGFiP. Taux TFB, TFNB, TEOM, THRS, THLV par commune. Historique 4 ans (2021-2024). Comparaison inter-communes possible.",
+      "strengths": "Source officielle et exhaustive, gratuit, données completes tous impôts locaux, historique 4 ans, comparaison inter-communes et avec moyennes régionales.",
+      "weaknesses": "Interface technique data.économie.gouv.fr, pas de widget intégrable pour sites tiers, pas d'estimation par bien individuel, pas d'API développeur simple, pas de score composite."
+    },
+    {
+      "name": "JDN Villes (Journal du Net)",
+      "url": "https://www.journaldunet.com/business/budget-ville/classement/villes/impots-locaux",
+      "pricing": "Gratuit (média). Classements villes par impôts locaux, taxe foncière, taxe d'habitation. Monetise par la publicité.",
+      "trafficEstimate": "2M visites/mois (JDN global)",
+      "reviews": "Classements des villes par montant d'impôts locaux par habitant (2024, source DGFiP). Classement taxe foncière et taxe d'habitation par ville.",
+      "strengths": "Forte visibilité SEO, contenu gratuit, classements attractifs pour les particuliers, source DGFiP fiable.",
+      "weaknesses": "Contenu editorial statique (pas d'API ni de widget), pas d'estimation par bien, pas d'intégration pour sites tiers, monétisation pub uniquement."
+    },
+    {
+      "name": "PriceHubble",
+      "url": "https://www.pricehubble.com",
+      "pricing": "SaaS B2B enterprise sur devis. Estimé 500-5 000 EUR/mois selon volume. Évaluation immobilière par IA.",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "PropTech suisse. Évaluation immobilière par IA pour les professionnels (banques, assurances, agences). Présence multi-pays.",
+      "strengths": "IA avancee évaluation immobilière, données multi-pays, clients institutionnels (banques, assurances), API robuste.",
+      "weaknesses": "Prix élève (enterprise), pas de widget embeddable leger, pas spécialisé fiscalité locale, surdimensionne pour un simple widget."
+    },
+    {
+      "name": "impôts.gouv.fr (statistiques collectivités locales)",
+      "url": "https://www.impots.gouv.fr/statistiques-collectivites-locales",
+      "pricing": "Gratuit (service public). Statistiques détaillées de fiscalité locale par collectivité.",
+      "trafficEstimate": "500K visites/mois (impôts.gouv.fr global)",
+      "reviews": "Source primaire des données fiscales locales. Taux votés par les collectivités, bases d'imposition, produits fiscaux.",
+      "strengths": "Source primaire officielle, données exhaustives et à jour, gratuit.",
+      "weaknesses": "Interface complexe (format statistique brut), pas de widget, pas d'estimation par bien, pas d'intégration possible, pas de visualisation accessible."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données fiscales communales (DGFiP)",
+      "status": "ok",
+      "detail": "Les taux de taxe foncière par commune sont des données publiques publiees par la DGFiP sur data.économie.gouv.fr. Historique 4 ans (2021-2024) disponible. Taux TFB, TFNB, TEOM, THRS. Reutilisation commerciale autorisee sous licence ouverte Etalab.",
+      "source": "DGFiP, data.économie.gouv.fr, licence Etalab 2.0"
+    },
+    {
+      "topic": "Estimation de taxe foncière par bien",
+      "status": "attention",
+      "detail": "L'estimation de la TF pour un bien spécifique nécessité la VLC (valeur locative cadastrale) qui n'est pas publique. Seuls les taux communaux sont publics. L'estimation taux x surface est une approximation. Obligation d'afficher comme 'estimation indicative' avec disclaimer clair.",
+      "source": "CGI Art. 1380 et suivants, base cadastrale non publique"
+    },
+    {
+      "topic": "Données DVF (prix immobilier)",
+      "status": "ok",
+      "detail": "Les DVF (Demandes de Valeurs Foncieres) sont en open data depuis avril 2019 (decret n2018-1350). Reutilisation commerciale autorisee. 1.1M transactions/an.",
+      "source": "Decret n2018-1350, data.gouv.fr DVF"
+    },
+    {
+      "topic": "Données BPE (équipements)",
+      "status": "ok",
+      "detail": "La Base Permanente des Équipements (BPE) de l'INSEE est en open data sur data.gouv.fr. Reutilisation libre sous licence Etalab. Couvre écoles, commerces, santé, transports pour toutes les communes.",
+      "source": "INSEE, BPE, licence Etalab 2.0"
+    },
+    {
+      "topic": "RGPD et tracking widget",
+      "status": "attention",
+      "detail": "Le widget intégré sur des sites tiers doit respecter le RGPD pour le tracking des interactions utilisateur. Pas de cookies tiers sans consentement. Utiliser un pixel de tracking first-party ou analytics anonymisees. Le consentement est géré par le site hote (bandeau cookies).",
+      "source": "RGPD, CNIL recommandations cookies 2023, ePrivacy"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Demarchage direct portails immo (email PM avec demo personnalisee sur leur site)",
+      "cacEstimate": "200-500 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "5988 EUR (12 mois x 499 EUR Portail)",
+      "ltvCacRatio": "12-30x"
+    },
+    {
+      "channel": "Salon RENT PropTech (stand + demo live)",
+      "cacEstimate": "500-1000 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "18000 EUR (12 mois x 1500 EUR gros portail)",
+      "ltvCacRatio": "18-36x"
+    },
+    {
+      "channel": "Intégration gratuite 3 mois (freemium B2B, conversion post-trial)",
+      "cacEstimate": "50-150 EUR",
+      "conversionRate": "20-30%",
+      "ltv": "5988 EUR",
+      "ltvCacRatio": "40-120x"
+    },
+    {
+      "channel": "Conventions réseaux mandataires (IAD 17K agents, Safti, CapiFrance)",
+      "cacEstimate": "300-600 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "23988 EUR (12 mois x 1999 EUR Portail)",
+      "ltvCacRatio": "40-80x"
+    },
+    {
+      "channel": "Partenariat France PropTech + présence MIPIM Innovation",
+      "cacEstimate": "100-300 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "2388 EUR (12 mois x 199 EUR agence)",
+      "ltvCacRatio": "8-24x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 69,
+      "detail": "22.9K recherches/mois cumulees ('taxe foncière par commune' 6 600/mois, 'augmentation taxe foncière 2025' 5 400/mois). TAM: EUR. Cibles: Portails immobiliers mid-market cherchant, Réseaux de mandataires immobiliers, Startups proptech et neoagences."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 5 semaines. 2 APIs a integrer (, API Geo gouv.fr). Stack: Vanilla + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "Objectif 10K MRR en 8-12 mois. SOM: 120K EUR/an. Pricing 5-999 EUR."
+    },
+    "competition": {
+      "score": 10,
+      "detail": "5 concurrents identifies: MeilleursAgents (widget prix), DGFiP - Outil officiel fiscali, JDN Villes (Journal du Net). Leader: MeilleursAgents (5M visites/mois). Faiblesse principale: Widget prix uniquement (pas de fiscalité locale."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "3 points OK, 2 points d'attention. Vigilance: Estimation de taxe foncière par bien, RGPD et tracking widget."
+    },
+    "overall": {
+      "score": 67,
+      "detail": "Point fort: marché (88/100). Point faible: compétition (10/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

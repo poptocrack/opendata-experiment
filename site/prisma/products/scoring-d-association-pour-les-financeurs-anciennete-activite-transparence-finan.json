@@ -1,0 +1,311 @@
+{
+  "productSlug": "scoring-d-association-pour-les-financeurs-anciennete-activite-transparence-finan",
+  "oneLiner": "Score de fiabilité des associations pour les financeurs : ancienneté, activité, transparence financière.",
+  "problem": "Les financeurs (collectivités, fondations, entreprises mecenat) doivent évaluer la fiabilité des associations avant de leur attribuer des fonds. Ce processus est manuel, chronophage (vérification RNA, comptes publiés, antecedents), et subjectif. Les petites associations fiables sont penalisees par le manque de visibilité, tandis que des associations peu serieuses captent des fonds grâce à un bon dossier.",
+  "solution": "Un score de fiabilité automatise pour les associations, calcule à partir de données publiques : anciennété RNA, régularité des déclarations, comptes publiés et conformes, site web actif, présence en ligne, historique de subventions recues et correctement reportees. Score sur 100 avec détail des critères. API pour intégration dans les workflows des financeurs.",
+  "uniqueValue": "Premier score objectif et automatise de fiabilité associative en France. Base 100% sur des données publiques verifiables, pas sur du déclaratif. API intégrable dans les outils de gestion de subventions existants.",
+  "mvpScope": "Plateforme web avec : recherche d'association par nom/RNA, fiche scoring avec note globale et détail par critère (ancienneté, déclarations, comptes, activité en ligne), comparaison de plusieurs associations, API REST pour les financeurs. 7 critères de scoring ponderes.",
+  "timeToMvp": "7 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Collecte de données et algorithme de scoring",
+      "description": "Agrger RNA, Journal Officiel, comptes publiés, subventions versees. Definir et implementer l'algorithme de scoring multi-critères.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline d'agrgation de 4 sources de données",
+        "Algorithme de scoring 7 critères",
+        "Back-test sur 1000 associations connues",
+        "Documentation de la méthodologie"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Plateforme web et API",
+      "description": "Interface de recherche et consultation des scores, API REST documentee, comparateur multi-associations.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Recherche d'association par nom/RNA/SIRET",
+        "Fiche scoring avec radar chart",
+        "Comparateur cote-a-cote",
+        "API REST avec documentation Swagger"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Commercialisation B2B",
+      "description": "Landing page B2B, prospection financeurs, intégration pilote avec un outil de gestion de subventions.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Landing page B2B avec demo interactive",
+        "10 emails de prospection",
+        "1 intégration pilote",
+        "Pricing page avec self-serve"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le scoring est pertinent et discriminant",
+      "how": "Calculer le score de 100 associations de profils varies (petites/grandes, actives/dormantes). Vérifier avec des experts (DLA, DDVA) que le scoring correspond a leur jugement.",
+      "successCriteria": "Correlation > 0.7 entre le score automatise et le jugement expert sur un echantillon de 50 associations."
+    },
+    {
+      "check": "Les financeurs sont prêts a payer pour un score automatise",
+      "how": "Presenter le concept a 10 responsables subventions de collectivités et fondations. Montrer un prototype avec des scores réels.",
+      "successCriteria": "7/10 trouvent le score utile, 4/10 sont prêts a payer pour l'API ou la plateforme."
+    },
+    {
+      "check": "Les données publiques sont suffisantes pour un scoring fiable",
+      "how": "Évaluer la couverture des 7 critères pour un echantillon de 500 associations de tailles variees.",
+      "successCriteria": "Au moins 5 critères sur 7 renseignes pour 80%+ des associations de l'echantillon."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Services subventions des grandes collectivités (metropoles, départements)",
+      "where": "LinkedIn, AITF (Association des Ingenieurs Territoriaux), CNFPT",
+      "howToReach": "Prospection LinkedIn ciblee sur les responsables subventions. Proposition de test gratuit sur leur territoire."
+    },
+    {
+      "who": "Fondations d'entreprise avec processus de sélection structure",
+      "where": "Admical, Centre Français des Fonds et Fondations, LinkedIn",
+      "howToReach": "Presentation lors des événements Admical. Partenariat avec 2-3 fondations pilotes."
+    },
+    {
+      "who": "Editeurs de logiciels de gestion de subventions (MGDIS, Entr'ouvert)",
+      "where": "Salons professionnels (salon des maires, Forum de l'Emploi Public), LinkedIn",
+      "howToReach": "Proposer l'API en marque blanche. Partenariat technique avec 1-2 editeurs pour intégration native."
+    }
+  ],
+  "pricingStrategy": "Consultation web : gratuit (3 recherches/jour). API Basic a 149 EUR/mois : 1 000 requetes/mois, scoring complet. API Pro a 399 EUR/mois : 10 000 requetes/mois, comparateur, export, webhooks. API Enterprise : sur devis (volume, SLA, marque blanche). Marque blanche pour editeurs : licence annuelle 5 000-15 000 EUR.",
+  "pathTo10kMrr": "Cibles : 200 grandes collectivités + 500 fondations + 10 editeurs de logiciels. M1-M3 : 5 Basic = 745 EUR MRR. M3-M6 : 15 Basic + 5 Pro = 15x149 + 5x399 = 4 230 EUR MRR. M6-M12 : 25 Basic + 10 Pro + 1 marque blanche = 25x149 + 10x399 + 1 250 = 8 965 EUR MRR. M12-M15 : +5 Basic + 3 Pro + 1 marque blanche = 10 K+ MRR.",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS + Chart.js (radar chart)",
+    "backend": "Next.js API Routes + Prisma + BullMQ (calcul de scores batch)",
+    "database": "PostgreSQL + Redis (cache API)",
+    "hosting": "Vercel + Railway",
+    "apis": [
+      "RNA data.gouv.fr",
+      "Journal Officiel Associations",
+      "Comptes Associations (data.gouv.fr)",
+      "Subventions versees (data.gouv.fr)",
+      "API Entreprise"
+    ],
+    "notes": "Le calcul de score peut etre pre-calcule en batch pour les 1,5M associations. Recalcul incremental quotidien. Budget : ~40 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Contestation du scoring par les associations mal notees",
+      "mitigation": "Transparence totale sur la méthodologie. Droit de réponse pour les associations. Possibilité de signaler une erreur. Le scoring est base uniquement sur des données publiques."
+    },
+    {
+      "risk": "Biais du scoring defavorable aux petites/jeunes associations",
+      "mitigation": "Ponderer les critères pour ne pas penaliser l'ancienneté. Score contextualise par taille et secteur. Catégorie 'association emergente' avec critères adaptes."
+    },
+    {
+      "risk": "Les données publiques sont insuffisantes pour discriminer",
+      "mitigation": "Completer avec du scraping web (site actif, dernière activité réseaux sociaux). Permettre aux associations de completer leur profil volontairement (données declaratives balisees)."
+    }
+  ],
+  "inspirations": "Score de credit Banque de France pour les entreprises. Scoring ESG des entreprises cotees (Sustainalytics, MSCI). GuideStar/Charity Navigator aux US pour l'évaluation des nonprofits. En France, rien d'équivalent n'existe pour les associations.",
+  "searchVolume": [
+    {
+      "keyword": "évaluation association fiabilité",
+      "monthlyVolume": "260",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "scoring association",
+      "monthlyVolume": "170",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "vérifier association",
+      "monthlyVolume": "1600",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "comptes associations publics",
+      "monthlyVolume": "590",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "transparence association subventions",
+      "monthlyVolume": "480",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "150 millions EUR - Marché outils d'évaluation et due diligence pour financeurs d'associations en France (collectivités + fondations + mecenat)",
+    "sam": "15 millions EUR - Sous-segment scoring automatise et API pour les 5000 financeurs potentiels (200 grandes collectivités + 500 fondations + editeurs logiciels)",
+    "som": "1.2 millions EUR - 25 Basic a 149 EUR/mois + 10 Pro a 399 EUR/mois + 1 marque blanche a 1250 EUR/mois, atteignable a M12",
+    "methodology": "TAM = budget évaluation/instruction subventions x coût opportunity. SAM = segment automatisable. SOM = pipeline B2B. Référence: aucun équivalent existe en France (Charity Navigator US = modèle prouve)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Charity Navigator (US)",
+      "url": "https://www.charitynavigator.org",
+      "pricing": "Gratuit pour consultation, API sur devis",
+      "trafficEstimate": "5M+ visites/mois",
+      "reviews": "Référence US pour l'évaluation des nonprofits, note 1-4 etoiles",
+      "strengths": "Marque forte, 200K+ nonprofits notes, méthodologie eprouvee, impact réel sur les dons",
+      "weaknesses": "US uniquement, pas de données françaises, modèle non transposable directement (contexte réglementaire different)"
+    },
+    {
+      "name": "GuideStar (Candid) (US)",
+      "url": "https://www.guidestar.org",
+      "pricing": "Gratuit (basique) a 3500 USD/an (Pro)",
+      "trafficEstimate": "3M+ visites/mois",
+      "reviews": "Base de données la plus complété des nonprofits US",
+      "strengths": "Données exhaustives, intégration IRS, transparence des finances, API B2B",
+      "weaknesses": "US uniquement, pas d'équivalent en France, modèle basé sur les déclarations IRS (pas de RNA)"
+    },
+    {
+      "name": "Score AFDCC (France, entreprises)",
+      "url": "https://www.infogreffe.fr",
+      "pricing": "3-10 EUR par score via Infogreffe",
+      "trafficEstimate": "2M+ visites/mois (Infogreffe)",
+      "reviews": "Score de risque de défaillance entreprise sur 20 points",
+      "strengths": "Méthodologie eprouvee, intégration Infogreffe, référence pour le credit management",
+      "weaknesses": "Exclut explicitement les associations de son périmètre, pas adapte au secteur associatif"
+    },
+    {
+      "name": "Data.Subvention (beta.gouv)",
+      "url": "https://datasubvention.beta.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Données subventions croisees pour agents publics",
+      "strengths": "Données croisees RNA + subventions, perspective de l'administration",
+      "weaknesses": "Pas de scoring, pas de note de fiabilité, outil de consultation pas d'évaluation, pas d'API B2B"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Publication d'un score de fiabilité",
+      "status": "attention",
+      "detail": "Publier un score negatif sur une association pourrait générer des contestations. Transparence totale sur la méthodologie, droit de réponse, basé sur des données publiques uniquement. La notation d'agences (type S&P) est légale, le précédent existe.",
+      "source": "Liberté d'expression - Jurisprudence notation financière"
+    },
+    {
+      "topic": "Données financières des associations",
+      "status": "ok",
+      "detail": "Les comptes des associations recevant >153K EUR de subventions publiques sont publiés au JO. Les comptes des fondations reconnues d'utilité publique aussi.",
+      "source": "Loi ESS 2014 - Art. 9"
+    },
+    {
+      "topic": "Scraping web pour détection d'activité",
+      "status": "attention",
+      "detail": "La vérification de l'existence d'un site web ou de réseaux sociaux doit etre faite de manière non intrusive (simple vérification HTTP, pas de scraping de contenu).",
+      "source": "RGPD - Intérêt legitime"
+    },
+    {
+      "topic": "Biais algorithmique",
+      "status": "attention",
+      "detail": "Le scoring ne doit pas discriminer les petites/jeunes associations de manière disproportionnee. Documentation et audit régulier de l'algorithme.",
+      "source": "Loi pour une Republique numérique - Transparence des algorithmes"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "LinkedIn prospection responsables subventions",
+      "cacEstimate": "150-300 EUR",
+      "conversionRate": "8-12%",
+      "ltv": "1788 EUR (149 EUR/mois x 12)",
+      "ltvCacRatio": "6-12x"
+    },
+    {
+      "channel": "Partenariat Admical (réseau mecenat)",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "4788 EUR (399 EUR/mois Pro x 12)",
+      "ltvCacRatio": "48-96x"
+    },
+    {
+      "channel": "Partenariat editeurs logiciels subventions (MGDIS)",
+      "cacEstimate": "1000-2000 EUR (negociation)",
+      "conversionRate": "50-70%",
+      "ltv": "15000 EUR (marque blanche annuelle)",
+      "ltvCacRatio": "8-15x"
+    },
+    {
+      "channel": "Demo personnalisee collectivité",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "20-30%",
+      "ltv": "4788 EUR",
+      "ltvCacRatio": "12-24x"
+    },
+    {
+      "channel": "Publication méthodologie (thought leadership)",
+      "cacEstimate": "5-15 EUR (inbound)",
+      "conversionRate": "2-4%",
+      "ltv": "1788 EUR",
+      "ltvCacRatio": "119-358x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 53,
+      "detail": "3.1K recherches/mois cumulees ('vérifier association' 1 600/mois, 'comptes associations publics' 590/mois). TAM: 150 millions EUR. Cibles: Services subventions des grandes, Fondations d'entreprise avec processus, Editeurs de logiciels de."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 7 semaines. 5 APIs a integrer (RNA, Journal Officiel Associations, Comptes Associations). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 58,
+      "detail": "Pricing 0-399 EUR."
+    },
+    "competition": {
+      "score": 35,
+      "detail": "4 concurrents identifies: Charity Navigator (US), GuideStar (Candid) (US), Score AFDCC (France, entrepris. Leader: Charity Navigator (US) (5M+ visites/mois). Faiblesse principale: US uniquement."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Publication d'un score de fiabilité, Scraping web pour détection d'activité."
+    },
+    "overall": {
+      "score": 50,
+      "detail": "Point fort: marché (58/100). Point faible: compétition (35/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

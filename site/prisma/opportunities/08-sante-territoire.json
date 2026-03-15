@@ -1,0 +1,205 @@
+{
+  "id": "sante-territoire",
+  "rank": 8,
+  "title": "Carte santé du territoire",
+  "slug": "sante-territoire",
+  "sector": "santé",
+  "tagline": "Croiser FINESS + Annuaire santé + Open Medic + pathologies pour cartographier les déserts medicaux et les opportunités d'installation",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "Professionnels de santé, collectivités, ARS",
+  "monetization": "SaaS 49-199/mois",
+  "context": "FINESS (75K visites, 128K téléchargements) répertorie tous les établissements sanitaires et sociaux. Open Medic donne les dépenses de médicaments par territoire. Les pathologies sont mappees par département. Croise ensemble, on peut identifier les déserts medicaux, les zones de sur/sous-prescription, et recommander aux professionnels de santé où s'installer. Les collectivités paieraient pour un tableau de bord santé de leur territoire.",
+  "signals": [
+    {
+      "label": "FINESS",
+      "value": "75K visites + 128K DL",
+      "detail": "Fichier des établissements sanitaires et sociaux"
+    },
+    {
+      "label": "Open Medic",
+      "value": "21K visites/an",
+      "detail": "Dépenses de médicaments par territoire"
+    },
+    {
+      "label": "Pathologies",
+      "value": "9.6K visites/an",
+      "detail": "Effectifs de patients par pathologie et territoire"
+    },
+    {
+      "label": "Qualité eau",
+      "value": "57K visites/an",
+      "detail": "Contrôles sanitaires eau par commune — indicateur santé environnementale"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "53699569a3a729239d2046eb",
+      "name": "FINESS — Établissements sanitaires",
+      "description": "Hopitaux, cliniques, EHPAD, labos, pharmacies : nom, adresse, spécialités, capacité.",
+      "visits": "75K/an",
+      "downloads": "128K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "566e964188ee3875beaf0bf5",
+      "name": "Open Medic — Dépenses médicaments",
+      "description": "Dépenses de médicaments remboursées par l'Assurance Maladie, par territoire.",
+      "visits": "21K/an",
+      "downloads": "13K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "62b31f7b128643f46ea1f848",
+      "name": "Pathologies par territoire",
+      "description": "Effectifs de patients par pathologie, sexe, âge, département et région.",
+      "visits": "9.6K/an",
+      "downloads": "3.4K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "5cf8d9ed8b4c4110294c841d",
+      "name": "Qualité eau par commune",
+      "description": "Résultats du contrôle sanitaire de l'eau distribuee, commune par commune.",
+      "visits": "57K/an",
+      "downloads": "20K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "61556e1e9d6adb2df86eb0fc",
+      "name": "Geo'DAE — Défibrillateurs",
+      "description": "Base nationale des défibrillateurs géolocalisées — couverture de sécurité cardiaque.",
+      "visits": "~25K/an",
+      "downloads": "~35K/an",
+      "updateFrequency": "Continu",
+      "order": 4
+    },
+    {
+      "datasetId": "68e51e04c4258097a201a3cc",
+      "name": "Annuaire santé Ameli",
+      "description": "Tous les professionnels de santé : médecins, infirmiers, kines, dentistes avec coordonnées.",
+      "visits": "4.4K/an",
+      "downloads": "2.2K/an",
+      "updateFrequency": "Regulier",
+      "order": 5
+    }
+  ],
+  "apis": [],
+  "productIdeas": [
+    "Carte des déserts medicaux : zones sans médecin/specialiste dans un rayon de X km",
+    "Outil d'aide à l'installation pour médecins : où s'installer pour maximiser patientele + aides à l'installation",
+    "Tableau de bord santé pour collectivités : pathologies, équipements, prescriptions, qualité eau",
+    "Alertes pour ARS : détection de zones en tension (départ à la retraite d'un médecin, EHPAD surchargé)",
+    "Comparateur de communes santé : qualité eau + proximite soins + pathologies — pour les retraités qui choisissent où vivre",
+    "Score accèssibilité santé d'une commune : médecins + hôpitaux + pharmacies + défibrillateurs + délais d'intervention"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Médecins en recherche d'installation",
+      "priceRange": "49/mois"
+    },
+    {
+      "segment": "Collectivités / ARS",
+      "priceRange": "199/mois"
+    },
+    {
+      "segment": "Retraités / familles (choix de vie)",
+      "priceRange": "9.99/rapport"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Rezone (CNAM)",
+      "weakness": "Outil officiel basique, pas de croisement multi-sources"
+    },
+    {
+      "name": "Ameli.fr",
+      "weakness": "Annuaire simple sans intelligence territoriale"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "FINESS a 75K visites + 128K téléchargements couvre exhaustivement tous les établissements sanitaires et sociaux de France",
+      "Le croisement Open Medic + pathologies + FINESS est unique — aucun acteur privé ne le propose aujourd'hui",
+      "Les données de qualité de l'eau (57K visites) ajoutent une dimension santé environnementale inédite",
+      "Le sujet déserts medicaux est médiatiquement fort — potentiel RP et SEO élevé pour l'acquisition organique"
+    ],
+    "weaknesses": [
+      "Les données de pathologies et Open Medic sont à la maille départementale — pas assez fines pour un score communal précis",
+      "L'annuaire santé Ameli est nouveau et peut contenir des erreurs (doublons, médecins retraités non radies)",
+      "Les professionnels de santé sont peu numériques — adoption potentiellement lente",
+      "Les données de délai d'attente et de disponibilité des médecins n'existent pas en open data"
+    ],
+    "opportunities": [
+      "La loi Rist (2023) facilite l'installation des médecins en zone sous-dense — besoin d'outils d'aide à la décision",
+      "Les ARS ont des budgets dédiés à la lutte contre les déserts medicaux — marché B2G en croissance",
+      "Les telemédecins (Qare, Doctolib) cherchent a identifier les zones où la téléconsultation est le plus nécessaire",
+      "L'obligation des CPTS (Communautes Professionnelles Territoriales de Santé) crée un nouveau segment d'achetéurs"
+    ],
+    "threats": [
+      "Doctolib à des données de disponibilité en temps réel qui pourraient nourrir un outil similaire",
+      "L'ARS et la DREES développent leurs propres outils de cartographie santé (Scan Santé, Data DREES)",
+      "Le CNOM (Conseil de l'Ordre des Médecins) publie son propre atlas de démographie médicale",
+      "Les données de santé sont sensibles — risque RGPD si on croise trop finement pathologies et territoire"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Claire",
+      "role": "Médecin généraliste de 32 ans, en fin d'internat, cherche où s'installer en liberal",
+      "age": "32 ans",
+      "context": "A termine son internat à Bordeaux et veut s'installer en liberal. Hesite entre 4 zones : rester à Bordeaux (sature), aller en zone rurale (aides mais isolement), Dax (compromis), ou Pau (famille). Veut maximiser sa patientele et ses aides à l'installation.",
+      "painPoints": [
+        "Les aides à l'installation (ARS, CPAM) sont opaques — ne sait pas à quoi elle a droit selon la zone",
+        "Le site Rezone de la CNAM est basique et ne prend pas en compte les départs à la retraite imminents",
+        "Ne peut pas estimer combien de patients elle aurait dans chaque zone — aucune simulation disponible"
+      ],
+      "currentSolution": "Site Rezone (CNAM) + appel au Conseil de l'Ordre local + discussions avec des confreres installes",
+      "budget": "40-60 EUR pour un rapport complet par zone + 30 EUR/mois pendant la phase de recherche",
+      "channels": [
+        "Conseil de l'Ordre des Médecins",
+        "Forum RemplacementS.com",
+        "Groupe Facebook 'Jeunes médecins généralistes'",
+        "ISNAR-IMG (syndicat internes médecine générale)"
+      ]
+    },
+    {
+      "name": "Sylvie",
+      "role": "Directrice de l'ARS (Agence Régionale de Santé) Bourgogne-Franche-Comte, 200 agents",
+      "age": "54 ans",
+      "context": "Pilote la politique de santé d'une région a forte problematique de déserts medicaux. Doit produire le PRS (Projet Régional de Santé) et allouer les aides à l'installation. Son équipé d'analystes utilise des outils internes obsolètes.",
+      "painPoints": [
+        "Les tableaux de bord internes sont construits en SAS/Excel et ne sont pas à jour — délai de 12 mois sur les données",
+        "Ne peut pas croiser facilement démographie médicale + pathologies + équipements pour identifier les zones prioritaires",
+        "Les élus locaux la sollicitent en permanence pour des données santé de leur territoire qu'elle met 3 semaines a produire"
+      ],
+      "currentSolution": "Outils internes SAS + extraction manuelle FINESS + rapports DREES annuels + atlas Ordre des Médecins",
+      "budget": "150-250 EUR/mois — budget innovation numérique ARS, procèssus d'achat public simplifié sous 25K EUR",
+      "channels": [
+        "Conference nationale des ARS",
+        "Ministere de la Santé (tutelle)",
+        "ANAP (Agence Nationale d'Appui à la Performance)",
+        "Revue Santé Publique"
+      ]
+    },
+    {
+      "name": "Gilles",
+      "role": "Maire d'une commune rurale de 3500 habitants en Ardeche, médecin généraliste de la commune parti à la retraite il y à 8 mois",
+      "age": "61 ans",
+      "context": "Son unique médecin est parti à la retraite. Les habitants doivent faire 25km pour consultér. Il cherche désespérément à attirer un nouveau médecin mais ne sait pas comment rendre sa commune attractive ni quelles aides proposer.",
+      "painPoints": [
+        "Ne peut pas argumenter factuellement auprès des médecins candidats sur la patientele potentielle de sa commune",
+        "Ignore les aides disponibles (ARS, CPAM, département) pour financer la maison de santé qu'il veut créer",
+        "Les élus des communes voisines font la même chose — competition sans données objectives"
+      ],
+      "currentSolution": "Bouche-a-oreille + annonce sur le site de l'Ordre + contact direct avec l'ARS qui répond sous 3 mois",
+      "budget": "80-120 EUR/mois — budget de la commune, présente comme investissement pour la maison de santé",
+      "channels": [
+        "Association des Maires de France (AMF)",
+        "Salon des Maires",
+        "Groupe Facebook 'Maires ruraux de France'",
+        "Association des Maires Ruraux de France (AMRF)"
+      ]
+    }
+  ]
+}

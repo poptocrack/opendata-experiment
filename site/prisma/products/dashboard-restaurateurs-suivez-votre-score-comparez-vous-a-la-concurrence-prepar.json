@@ -1,0 +1,325 @@
+{
+  "productSlug": "dashboard-restaurateurs-suivez-votre-score-comparez-vous-a-la-concurrence-prepar",
+  "oneLiner": "Dashboard pour restaurateurs : suivez votre score hygiène, comparez-vous aux concurrents, préparez vos contrôles.",
+  "problem": "Les restaurateurs subissent les contrôles sanitaires sans outils pour s'y préparer. Ils ne connaissent pas leur positionnément par rapport aux concurrents. Après un mauvais contrôle, ils n'ont pas de plan d'action structure. Les formations HACCP sont obligatoires mais les outils de suivi au quotidien sont inexistants où archaiques (classeurs papier).",
+  "solution": "Un dashboard SaaS pour restaurateurs qui centralise : leur score hygiène officiel et son évolution, un benchmark anonymise par rapport aux restaurants du même quartier/type, des checklists de préparation aux contrôles, un plan d'action automatise après un contrôle négatif, et un calendrier de rélevés de temperature/nettoyage numérisé.",
+  "uniqueValue": "Seul outil qui combine les données officielles Alim'confiance (positionnément concurrentiel) avec des outils pratiques de conformité au quotidien. Transforme le contrôle sanitaire d'une menace en un avantage concurrentiel.",
+  "mvpScope": "Dashboard web avec : visualisation du score officiel et historique, benchmark quartier (anonymise), checklist de préparation au contrôle (basee sur le guide DGAL), alertes de rappel pour les rélevés obligatoires, export PDF pour le classeur sanitaire.",
+  "timeToMvp": "7 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Score et benchmark",
+      "description": "Ingestion Alim'confiance, matching par SIRET, calcul du benchmark par zone géographique et type d'établissement.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Import Alim'confiance avec matching SIRET",
+        "Algorithme de benchmark par zone/type",
+        "Dashboard score + historique + benchmark",
+        "Onboarding restaurateur par SIRET"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Outils de conformité",
+      "description": "Checklists de préparation au contrôle, calendrier de rélevés, plan d'action post-contrôle.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Checklists interactives basees sur les grilles DGAL",
+        "Calendrier de rélevés temperatures/nettoyage",
+        "Plan d'action auto-généré après contrôle négatif",
+        "Export PDF du classeur sanitaire"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Monétisation et acquisition",
+      "description": "Integration Stripe, campagne d'acquisition via les CCI et syndicats professionnels.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Paywall Stripe avec essai gratuit 14j",
+        "Partenariats CCI/UMIH en cours",
+        "Landing page B2B optimisee",
+        "Sequence email d'onboarding"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les restaurateurs sont prêts a payer pour un outil de conformité",
+      "how": "Interviewer 20 restaurateurs (via CCI, UMIH, où en porte-a-porte). Montrer un prototype Figma et demander un engagement de pre-commande.",
+      "successCriteria": "10+ restaurateurs expriment un intérêt fort, 5+ acceptent de pre-payer où s'engagent sur un essai."
+    },
+    {
+      "check": "Le benchmark concurrentiel est un differenciateur reel",
+      "how": "Montrer un exemple de benchmark anonymise a 10 restaurateurs et mesurer la reaction.",
+      "successCriteria": "8/10 trouvent le benchmark utile et differenciateur par rapport aux outils existants."
+    },
+    {
+      "check": "Les checklists DGAL sont transposables en numérique",
+      "how": "Analyser les grilles de contrôle officielles de la DGAL et les transformer en checklists interactives.",
+      "successCriteria": "Couverture de 90%+ des points de contrôle dans les checklists numériques."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Restaurateurs indépendants en zone urbaine, 1-3 établissements",
+      "where": "CCI locales, UMIH départementales, groupes Facebook restaurateurs (Restaurateurs de France, CHR Emploi)",
+      "howToReach": "Partenariat CCI pour présentation lors de leurs ateliers. Post dans les groupes Facebook. Demarchage en porte-a-porte dans un quartier test."
+    },
+    {
+      "who": "Chaines de restauration rapide (5-50 établissements)",
+      "where": "Salons professionnels (Sirha, Sandwich & Snack Show), LinkedIn",
+      "howToReach": "Pitch direct aux responsables qualité via LinkedIn. Stand où intervention lors des salons pro."
+    },
+    {
+      "who": "Consultants en hygiène alimentaire et organismes de formation HACCP",
+      "where": "Annuaires des organismes de formation agréés, LinkedIn",
+      "howToReach": "Proposer un compte partenaire gratuit. Ils recommandént l'outil à leurs clients après la formation."
+    }
+  ],
+  "pricingStrategy": "Solo a 29 EUR/mois : 1 établissement, score + benchmark + checklists. Multi a 19 EUR/mois/établissement (min 3) : chaines et groupes. Consultant a 99 EUR/mois : compte multi-client pour les consultants hygiène (jusqu'a 20 clients).",
+  "pathTo10kMrr": "Il y a 200 000+ restaurants en France. Cible realiste : les 50 000 en zone urbaine sensibilisés a l'hygiène. M1-M3 : 20 clients Solo via CCI/demarchage = 580 EUR MRR. M3-M6 : 80 Solo + 5 Multi (3 etab) + 3 Consultants = 80x29 + 5x57 + 3x99 = 2 917 EUR MRR. M6-M12 : 200 Solo + 15 Multi (moy 5 etab) + 10 Consultants = 200x29 + 15x95 + 10x99 = 8 215 EUR MRR. M12-M15 : croissance organique via referrals consultants. Total M15 : ~10K MRR.",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS + Recharts (graphiques)",
+    "backend": "Next.js API Routes + Prisma",
+    "database": "PostgreSQL",
+    "hosting": "Vercel + Supabase",
+    "apis": [
+      "Alim'confiance data.gouv.fr",
+      "API Entreprise (SIRET)",
+      "Stripe (paiements)",
+      "Resend (emails)"
+    ],
+    "notes": "Le matching SIRET est crucial pour l'onboarding. L'API Entreprise permet de vérifier le SIRET et pre-remplir les infos. Budget : ~50 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Les restaurateurs ne sont pas numérisés et n'utiliseront pas un outil web",
+      "mitigation": "UX ultra-simple, onboarding en 2 min via SIRET. Version mobile-first. Support par telephone les 3 premiers mois."
+    },
+    {
+      "risk": "Concurrence des logiciels de gestion existants (Lightspeed, Zelty) qui ajouteraient cette fonctionnalité",
+      "mitigation": "Avancer vite, etablir la marque, et proposer des intégrations avec les POS existants. La specialisation est un avantage."
+    },
+    {
+      "risk": "Le benchmark concurrentiel pose des problèmes RGPD",
+      "mitigation": "Toutes les données sont publiques (Alim'confiance). Le benchmark est anonymise. Faire valider par un DPO."
+    }
+  ],
+  "inspirations": "Lightspeed et Zelty pour la gestion restaurant, mais aucun ne couvre la conformité sanitaire. FoodDocs (Estonie) fait du HACCP numérique mais n'a pas les données officielles francaises. Le benchmark est inspire de Glassdoor (transparence salariale appliquee a l'hygiène).",
+  "searchVolume": [
+    {
+      "keyword": "logiciel HACCP restaurant",
+      "monthlyVolume": "2400",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "préparation contrôle sanitaire restaurant",
+      "monthlyVolume": "1600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "norme hygiène restaurant",
+      "monthlyVolume": "3600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "checklist hygiène restaurant",
+      "monthlyVolume": "1900",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "logiciel gestion restaurant",
+      "monthlyVolume": "4400",
+      "difficulty": "haute",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "179 000 restaurants en France (INSEE 2025). Marché CA restauration : 120 milliards EUR. Secteur logiciels restaurant estimé a 500M-800M EUR/an (POS, gestion, HACCP combines). Segment conformité/HACCP : ~100-150M EUR/an.",
+    "sam": "50 000 restaurants indépendants en zone urbaine sensibilisés a l'hygiène et au digital. Marché : 50K x 29 EUR/mois x 12 = 17.4M EUR/an.",
+    "som": "200 clients Solo + 15 Multi + 10 Consultants an 1 = 8 215 EUR MRR = ~100K EUR/an. Taux de pénétration : 0.1% du marché.",
+    "methodology": "TAM base sur les 179K restaurants INSEE et le marché logiciels HACCP (Traqfood 50K+ utilisateurs, ePackPro 20K+ clients). SAM restreint aux indépendants urbains. SOM base sur acquisition CCI/UMIH et porte-a-porte. Hausse contrôles sanitaires 2025 = accelerateur."
+  },
+  "competitorDeep": [
+    {
+      "name": "Traqfood (Merieux NutriSciences)",
+      "url": "https://www.traqfood.com",
+      "pricing": "À partir de 19.99 EUR/mois, essai gratuit 30 jours. 50 000+ utilisateurs. Filiale de Merieux NutriSciences (leader mondial sécurité alimentaire).",
+      "trafficEstimate": "30-60K visites/mois",
+      "reviews": "Bons avis, app intuitive. Support client gratuit 7j/7. Objets connectes (sondes temperature).",
+      "strengths": "Leader HACCP France, 50K+ utilisateurs, adosse a Merieux, prix compétitif, objets connectes",
+      "weaknesses": "Pas de benchmark concurrentiel, pas de données Alim'confiance, pas de positionnément vis-a-vis des contrôles officiels"
+    },
+    {
+      "name": "ePackPro (ePack Hygiène)",
+      "url": "https://epackpro.com",
+      "pricing": "Sur devis, estimation 47 EUR+/mois selon modules. 20 000+ clients. 12 ans d'experience. Accompagnement sur site (demo, formation).",
+      "trafficEstimate": "20-40K visites/mois",
+      "reviews": "Bons avis, gain de temps 30 min/jour. Expert accompagnement sur place.",
+      "strengths": "20K+ clients, accompagnement personnalisé sur site, 12 ans d'experience, modules complets",
+      "weaknesses": "Prix élevé pour les petits restaurants, pas de benchmark ni données officielles, interface vieillissante"
+    },
+    {
+      "name": "Octopus HACCP",
+      "url": "https://octopus-haccp.com",
+      "pricing": "À partir de 47 EUR HT/mois selon modules. App mobile. Focus temperature et tracabilite.",
+      "trafficEstimate": "10-20K visites/mois",
+      "reviews": "Bons avis sur la simplicite. Positionnement mobile-first.",
+      "strengths": "App mobile intuitive, prix transparent, bonne couverture HACCP",
+      "weaknesses": "Pas de benchmark, pas de données officielles, pas de préparation spécifique aux contrôles DGAL"
+    },
+    {
+      "name": "Komia",
+      "url": "https://www.komia.io",
+      "pricing": "Tarif sur demande. 600+ établissements. Combine planning, HACCP et stocks.",
+      "trafficEstimate": "5-15K visites/mois",
+      "reviews": "Apprecie pour la centralisation planning + HACCP + stocks.",
+      "strengths": "Solution tout-en-un (planning + HACCP + stocks), moderne, bon UX",
+      "weaknesses": "Petit acteur (600 clients), pas de données officielles, pas de benchmark concurrentiel"
+    },
+    {
+      "name": "FoodDocs (Estonie, international)",
+      "url": "https://www.fooddocs.com",
+      "pricing": "À partir de 79 EUR/mois. IA pour générér automatiquement les documents HACCP.",
+      "trafficEstimate": "50-100K visites/mois (mondial)",
+      "reviews": "4.8/5 G2. Innovation IA pour HACCP. Levee de fonds Series A.",
+      "strengths": "IA generative pour HACCP, automatisation poussee, international, growth rapide",
+      "weaknesses": "Pas de données francaises (Alim'confiance), pas localisé France, pas de benchmark"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Affichage des scores hygiène (Alim'confiance)",
+      "status": "ok",
+      "detail": "Les scores sont publics et leur réutilisation est autorisée. Les restaurateurs avec un bon score sont encourages a l'afficher (autocollant officiel existe deja). Pas de problème légal pour un dashboard qui montre le score du restaurateur a lui-meme.",
+      "source": "agriculture.gouv.fr - Alim'confiance"
+    },
+    {
+      "topic": "Benchmark anonymise - RGPD",
+      "status": "ok",
+      "detail": "Le benchmark utilise des données publiques anonymisees (pas de nom, juste des statistiques par zone). Conforme RGPD car pas de données personnelles.",
+      "source": "CNIL - RGPD art. 4 (anonymisation)"
+    },
+    {
+      "topic": "Conformite des checklists aux normes DGAL",
+      "status": "attention",
+      "detail": "Les checklists de préparation au contrôle doivent être alignees sur les grilles officielles de la DGAL (Direction Generale de l'Alimentation). Ajouter un disclaimer : l'outil aide à la préparation mais ne garantit pas le résultat du contrôle.",
+      "source": "agriculture.gouv.fr - Grilles d'inspection DGAL"
+    },
+    {
+      "topic": "Responsabilite en cas de contrôle négatif malgre utilisation de l'outil",
+      "status": "attention",
+      "detail": "L'outil ne peut pas garantir un contrôle positif. Inclure une clause de non-responsabilite dans les CGU. Positionner comme outil d'aide, pas de certification.",
+      "source": "Code civil art. 1231-1"
+    },
+    {
+      "topic": "Formation HACCP obligatoire",
+      "status": "ok",
+      "detail": "L'outil ne remplace pas la formation HACCP obligatoire (14h minimum). Il la complète avec un suivi au quotidien. Mentionner clairement cette distinction.",
+      "source": "Reglement CE 852/2004 - Paquet Hygiène"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Partenariats CCI / UMIH",
+      "cacEstimate": "30-60 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "348 EUR (29 EUR x 12 mois Solo)",
+      "ltvCacRatio": "6:1 a 12:1"
+    },
+    {
+      "channel": "Demarchage porte-a-porte quartier test",
+      "cacEstimate": "40-80 EUR",
+      "conversionRate": "8-15%",
+      "ltv": "348 EUR",
+      "ltvCacRatio": "4:1 a 9:1"
+    },
+    {
+      "channel": "Groupes Facebook restaurateurs",
+      "cacEstimate": "10-25 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "348 EUR",
+      "ltvCacRatio": "14:1 a 35:1"
+    },
+    {
+      "channel": "Partenariats consultants hygiène / formateurs HACCP",
+      "cacEstimate": "0-15 EUR (revenue share)",
+      "conversionRate": "15-25% (recommandation post-formation)",
+      "ltv": "1 188 EUR (99 EUR x 12 mois Consultant)",
+      "ltvCacRatio": "79:1+ (quasi gratuit)"
+    },
+    {
+      "channel": "Google Ads (logiciel HACCP restaurant)",
+      "cacEstimate": "80-150 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "348 EUR",
+      "ltvCacRatio": "2:1 a 4:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 63,
+      "detail": "13.9K recherches/mois cumulees ('logiciel gestion restaurant' 4 400/mois, 'norme hygiène restaurant' 3 600/mois). TAM: 120 milliards EUR. Cibles: Restaurateurs indépendants en zone, Chaines de restauration rapide, Consultants en hygiène alimentaire."
+    },
+    "feasibility": {
+      "score": 50,
+      "detail": "MVP en 7 semaines. 4 APIs a integrer (Alim'confiance, API Entreprise, Stripe). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 85,
+      "detail": "20 clients a 580 EUR pour demarrer. SOM: 100K EUR/an. Pricing 19-99 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "5 concurrents identifies: Traqfood (Merieux NutriScience, ePackPro (ePack Hygiène), Octopus HACCP. Leader: Traqfood (30-60K visites/mois). Faiblesse principale: Pas de benchmark concurrentiel."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "3 points OK, 2 points d'attention. Vigilance: Conformite des checklists aux normes DGAL, Responsabilite en cas de contrôle négatif malgre u."
+    },
+    "overall": {
+      "score": 63,
+      "detail": "Point fort: marche (85/100). Point faible: competition (45/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

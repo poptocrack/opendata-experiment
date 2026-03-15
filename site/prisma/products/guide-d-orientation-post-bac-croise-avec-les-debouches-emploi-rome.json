@@ -1,0 +1,323 @@
+{
+  "productSlug": "guide-d-orientation-post-bac-croise-avec-les-debouches-emploi-rome",
+  "oneLiner": "Guide d'orientation post-bac croisant les formations Parcoursup avec les débouchés emploi réels: métiers, salaires, taux d'insertion.",
+  "problem": "Un lyceen choisit sa formation post-bac sans connaître les débouchés réels. Le marketing des écoles promet 95% d'insertion mais la réalité est souvent différente. Les données existent séparément: Parcoursup pour les formations, InserJeunes pour l'insertion professionnelle, ROME pour les métiers, mais personne ne les croise. Le lyceen découvre le marché de l'emploi APRES 3-5 ans d'études.",
+  "solution": "Un outil qui croise les formations Parcoursup avec les données d'insertion professionnelle (InserJeunes) et le référentiel ROME (métiers France Travail): pour chaque formation, l'outil montre les métiers accessibles, le taux d'insertion a 6 mois, le salaire médian des diplômés, les offres d'emploi actuelles, et la tension du marché. Le lyceen peut aussi partir d'un métier et découvrir les formations qui y menent.",
+  "uniqueValue": "Aucun outil ne fait le pont entre formation et emploi avec des données publiques objectives. Les classements de formations (L'Étudiant, QS) ne parlent pas d'insertion. InserJeunes est un tableau Excel. Le croisement formation x métier x salaire x offres est inedit.",
+  "mvpScope": "Croisement formations BTS/BUT/Licence (les plus demandees) avec les données InserJeunes (insertion) et ROME (métiers). Pour chaque formation: taux d'insertion a 6 mois, salaire médian, top 5 métiers exerces, nombre d'offres sur France Travail. 5 000 formations couvertes.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline croise éducation x emploi",
+      "description": "Ingestion Parcoursup, InserJeunes, ROME, offres France Travail. Croisement formation -> code ROME -> métiers -> offres. Normalisation.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline 4 sources",
+        "Croisement formation -> ROME",
+        "5 000 formations couvertes",
+        "Données insertion + salaires"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface et SEO",
+      "description": "Fiche par formation (insertion, salaire, métiers). Fiche par métier (formations qui y menent). Recherche et filtres. 5K pages SEO.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "5K fiches formation",
+        "2K fiches métier",
+        "Recherche/filtres",
+        "Pages SEO"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et acquisition",
+      "description": "Lancement avant la période Parcoursup (décembre). Contenu viral: Les formations qui menent a l'emploi vs celles qui menent au chomage. Partenariats CDI et CIO.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "50K visiteurs/mois",
+        "200 abonnes premium",
+        "Contenu viral",
+        "5 partenariats CDI/CIO"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Premium et alternance",
+      "description": "Croisement avec les offres d'alternance. Simulateur de carrière (formation -> progression salariale sur 10 ans). Coaching IA. App mobile.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Alternance intégrée",
+        "Simulateur carrière",
+        "Coaching IA",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les lyceens et parents veulent des données d'insertion par formation",
+      "how": "Sondage sur les groupes Facebook de parents de terminale et les forums lyceen",
+      "successCriteria": "70%+ disent que les débouchés emploi sont un critère top 3 dans le choix de formation"
+    },
+    {
+      "check": "Le croisement formation -> ROME est faisable et pertinent",
+      "how": "Tester le croisement sur 50 formations BTS et vérifier la pertinence des métiers ROME associes",
+      "successCriteria": "Pour 40/50 formations, les métiers ROME associes sont pertinents et les données d'insertion disponibles"
+    },
+    {
+      "check": "Le contenu génère du trafic SEO",
+      "how": "Analyser la concurrence SEO sur débouchés + formation et métier apres + formation",
+      "successCriteria": "Opportunités longue traine significatives (moins concurrentielles que les classements generaux)"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Lyceens en terminale et leurs parents (800K/an)",
+      "where": "TikTok/Instagram éducation, groupes Facebook parents, Reddit r/france",
+      "howToReach": "Contenu choc: BTS Comptabilite: 92% d'insertion vs Licence Psycho: 34%. Les vrais chiffres de vos formations."
+    },
+    {
+      "who": "Conseillers d'orientation (CIO, PsyEN)",
+      "where": "CIO, rectorats, Cafe Pedagogique, SNES",
+      "howToReach": "Outil gratuit pour les professionnels de l'orientation. Remplace les brochures Onisep obsolètes."
+    },
+    {
+      "who": "DRH et responsables alternance en entreprise",
+      "where": "LinkedIn, salons alternance, MEDEF",
+      "howToReach": "Les entreprises cherchent les formations qui produisent les meilleurs candidats. L'outil aide a cibler les partenariats école-entreprise."
+    }
+  ],
+  "pricingStrategy": "Freemium: fiches basiques gratuites. Plan Lyceen a 4.90 EUR/mois (insertion détaillée, salaires, offres d'emploi, coaching IA). Plan Pro (CIO/CDI) a 29 EUR/mois (acces complet, rapports, multi-élevés). Affiliation: formations privées (écoles de commerce, écoles d'ingénieur) qui paient pour etre mises en avant. Partenariat France Travail pour les offres d'emploi.",
+  "pathTo10kMrr": "1500 lyceens x 4.90 EUR = 7 350 EUR + 30 CIO/CDI x 29 EUR = 870 EUR + affiliation écoles = 2 000 EUR/mois = 10 220 EUR MRR. Timeline: 8-10 mois si lance avant décembre.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts",
+    "backend": "Next.js API Routes + ISR pour les fiches",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Données Parcoursup data.gouv.fr",
+      "InserJeunes data.gouv.fr",
+      "Référentiel ROME data.gouv.fr",
+      "API France Travail (offres)",
+      "Stripe"
+    ],
+    "notes": "Le croisement formation -> ROME est le coeur technique. InserJeunes fournit les taux d'insertion par formation. ROME fournit les métiers et les compétences. 7K pages en ISR pour le SEO."
+  },
+  "risks": [
+    {
+      "risk": "Le croisement formation -> ROME est imparfait (pas de table de correspondance officielle)",
+      "mitigation": "Utiliser le mapping InserJeunes qui fait déjà le lien formation -> métier. Completer avec du matching textuel (NLP) et de la validation manuelle."
+    },
+    {
+      "risk": "Les écoles privées font pression car l'outil révèle des taux d'insertion faibles",
+      "mitigation": "Utiliser uniquement des données publiques officielles (InserJeunes est une publication du Ministère). Pas attaquable."
+    },
+    {
+      "risk": "Saisonnalite forte (dec-mars pour Parcoursup)",
+      "mitigation": "Le guide d'orientation est utile toute l'année (reconversion, formation continue, alternance). Diversifier les cibles au-delà des lyceens."
+    }
+  ],
+  "inspirations": "Onisep (institution, pas data-driven). InserJeunes (données brutes, pas d'UX). CollegeVine et Niche.com (US, mais pas de croisement emploi). Aux UK, Discover Uni croise formation et emploi. LinkedIn éducation insights fait du matching formation-emploi.",
+  "searchVolume": [
+    {
+      "keyword": "orientation post bac",
+      "monthlyVolume": "33100",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "que faire apres le bac",
+      "monthlyVolume": "27100",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "débouchés formation",
+      "monthlyVolume": "14800",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "métier apres BTS",
+      "monthlyVolume": "9900",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "taux insertion formation",
+      "monthlyVolume": "3600",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "800K lyceens de terminale/an + 500K étudiants en réorientation + 1M actifs en reconversion. ONISEP génère des millions de visiteurs/mois. Le marché de l'orientation en France pese 500M EUR/an (coaching, salons, guides).",
+    "sam": "500K lyceens et étudiants qui cherchent activement des informations sur les débouchés emploi de leur formation (source: volumes de recherche Google sur débouchés + formation).",
+    "som": "100K visiteurs/mois la première année via SEO (5K fiches formation + 2K fiches métier). 3K abonnes payants.",
+    "methodology": "TAM = cohorte terminale + étudiants en réorientation + reconversion. SAM = recherche active d'information débouchés (volumes Google). SOM = trafic SEO génère par 7K pages longue traine. Référence: ONISEP est le leader mais ne croise pas formation/emploi."
+  },
+  "competitorDeep": [
+    {
+      "name": "ONISEP",
+      "url": "https://www.onisep.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "6M visiteurs/mois, audience 18-24 ans (54.49% femmes)",
+      "reviews": "Institution de référence pour l'orientation en France",
+      "strengths": "Service public de référence, guide Apres le bac gratuit, plateforme Avenir(s) lancee en 2023, MonProjetSup pour Parcoursup, couverture complète des formations",
+      "weaknesses": "Pas data-driven (brochures statiques), pas de croisement formation/emploi, pas de salaires, pas d'offres d'emploi, UX institutionnelle, pas de personnalisation"
+    },
+    {
+      "name": "L'Étudiant",
+      "url": "https://www.letudiant.fr",
+      "pricing": "Gratuit (pub + salons payants + affiliation)",
+      "trafficEstimate": "4.3M visiteurs/mois",
+      "reviews": "Média de référence pour les étudiants, classements et guides",
+      "strengths": "Marque forte, classements de référence (écoles, lycees), salons physiques, SEO dominant, contenu editorial riche",
+      "weaknesses": "Pas de croisement formation/emploi, pas de données InserJeunes, classements bases sur la réputation pas les débouchés, model publicitaire biaise"
+    },
+    {
+      "name": "Studyrama",
+      "url": "https://www.studyrama.com",
+      "pricing": "Gratuit (pub + salons + leads écoles)",
+      "trafficEstimate": "3M visiteurs/mois",
+      "reviews": "Guide d'orientation et salons étudiants",
+      "strengths": "Salons d'orientation très fréquentés, fiches métiers détaillées, partenariats écoles",
+      "weaknesses": "Modèle économique base sur les leads pour les écoles privées (biais), pas de données d'insertion objectives, pas de croisement avec le marché de l'emploi"
+    },
+    {
+      "name": "Thotis Média",
+      "url": "https://thotismedia.com/orientation/",
+      "pricing": "Freemium",
+      "trafficEstimate": "300K visiteurs/mois",
+      "reviews": "Média éducation nouvelle génération pour les lyceens, fort sur TikTok/YouTube",
+      "strengths": "Marque forte chez les 16-25 ans, contenus video modernes, predicteur Parcoursup, test d'orientation gratuit, ton accessible",
+      "weaknesses": "Pas de croisement formation/emploi, pas de données InserJeunes, média-first pas outil-first"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données InserJeunes open data",
+      "status": "ok",
+      "detail": "InserJeunes publie les taux d'insertion professionnelle par formation sur data.gouv.fr sous licence ouverte. Données du Ministère de l'Éducation et du Travail.",
+      "source": "data.gouv.fr - InserJeunes"
+    },
+    {
+      "topic": "Référentiel ROME",
+      "status": "ok",
+      "detail": "Le référentiel ROME (Répertoire Opérationnel des Métiers et des Emplois) est publie par France Travail en open data. Réutilisation libre.",
+      "source": "data.gouv.fr - ROME"
+    },
+    {
+      "topic": "API France Travail (offres d'emploi)",
+      "status": "ok",
+      "detail": "L'API France Travail permet d'acceder aux offres d'emploi. Utilisation gratuite avec inscription. Conditions d'utilisation a respecter.",
+      "source": "francetravail.io"
+    },
+    {
+      "topic": "Affiliation écoles privées et biais",
+      "status": "attention",
+      "detail": "Si l'outil monetise via l'affiliation d'écoles privées, il doit clairement distinguer le contenu editorial du contenu sponsorise pour éviter les pratiques commerciales trompeuses.",
+      "source": "Code de la consommation - Article L121-1"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO longue traine (débouchés + formation, métier apres + BTS)",
+      "cacEstimate": "0.35 EUR",
+      "conversionRate": "4%",
+      "ltv": "58.80 EUR (12 mois lyceen ou 12 mois x 4.90)",
+      "ltvCacRatio": "168.0"
+    },
+    {
+      "channel": "Contenu viral (Les formations qui menent a l'emploi vs au chomage)",
+      "cacEstimate": "0.15 EUR",
+      "conversionRate": "6%",
+      "ltv": "58.80 EUR",
+      "ltvCacRatio": "392.0"
+    },
+    {
+      "channel": "Partenariats CIO/CDI de lycees",
+      "cacEstimate": "0.20 EUR",
+      "conversionRate": "8%",
+      "ltv": "29 EUR (plan pro)",
+      "ltvCacRatio": "145.0"
+    },
+    {
+      "channel": "TikTok/Instagram éducation (format comparaison formations)",
+      "cacEstimate": "0.50 EUR",
+      "conversionRate": "5%",
+      "ltv": "58.80 EUR",
+      "ltvCacRatio": "117.6"
+    },
+    {
+      "channel": "Affiliation écoles et formations privées",
+      "cacEstimate": "0 EUR (revenu direct)",
+      "conversionRate": "0.5%",
+      "ltv": "100 EUR/lead école",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 83,
+      "detail": "88.5K recherches/mois cumulees ('orientation post bac' 33 100/mois, 'que faire apres le bac' 27 100/mois). TAM: 500M EUR. Cibles: Lyceens en terminale et, Conseillers d'orientation, DRH et responsables alternance."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 5 APIs a intégrer (Données Parcoursup, InserJeunes, Référentiel ROME). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 50,
+      "detail": "Objectif 10K MRR en 8-10 mois. Pricing 29-90 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifiés: ONISEP, L'Étudiant, Studyrama. Leader: ONISEP (6M visiteurs/mois, audience 18-24 ans (54.49% femmes)). Faiblesse principale: Pas data-driven (brochures statiques)."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Affiliation écoles privées et biais."
+    },
+    "overall": {
+      "score": 65,
+      "detail": "Point fort: demande (83/100). Point faible: competition (45/100). Potentiel réel mais hypotheses cles a valider."
+    }
+  }
+}

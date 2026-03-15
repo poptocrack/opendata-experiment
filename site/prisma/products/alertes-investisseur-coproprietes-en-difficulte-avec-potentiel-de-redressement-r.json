@@ -1,0 +1,322 @@
+{
+  "productSlug": "alertes-investisseur-coproprietes-en-difficulte-avec-potentiel-de-redressement-r",
+  "oneLiner": "Alertes pour investisseurs : détectéz les copropriétés en difficulté avec potentiel de redressement, achetéz bas et realisez une plus-value.",
+  "problem": "Les investisseurs immobiliers avises cherchent des copropriétés en difficulté où les prix sont déprimés de 20-40% pour les redresser (changement de syndic, travaux, recouvrement d'impayes) et réaliser une plus-value. Mais trouver ces opportunités est un travail de detective : il faut croiser registres, ventes DVF basses, DPE mauvais et programmes ANAH. Aucun outil n'automatise cette recherche.",
+  "solution": "Un système d'alertes qui identifié automatiquement les copropriétés en difficulté avec potentiel de redressement. L'algorithme croise : prix DVF sous la médiane du quartier de plus de 20%, DPE collectif F où G (travaux subventionnes à venir via MaPrimeRenov copro), taux d'impayes élevé mais non critique, localisation dans un quartier en revalorisation. L'investisseur reçoit une alerte avec scoring de l'opportunité, subventions mobilisables et ROI estimé.",
+  "uniqueValue": "Deal flow automatise pour une niche d'investissement très rentable mais chronophage a prospecter manuellement. Aucun outil ne croise DVF + registre copro + DPE + ANAH pour identifiér ces opportunités.",
+  "mvpScope": "Alertes IDF et 10 plus grandes villes. Critères : prix DVF -20% vs médiane quartier + DPE E/F/G + impayes > 15%. Email hebdomadaire avec les 5 meilleures opportunités. Fiche par copro avec score d'opportunité.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Validation auprès des investisseurs",
+      "description": "Poster sur Devenir-Rentier.fr et groupes Facebook investissement immobilier 3 analyses de copros en difficulté avec potentiel. Mesurer l'intérêt et créér une liste d'attente.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "3 analyses d'opportunités publiées",
+        "100+ inscrits liste d'attente",
+        "10 interviews investisseurs",
+        "Validation pricing"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Pipeline data croise et scoring",
+      "description": "Ingestion DVF + registre copro + DPE. Algorithme de scoring d'opportunité. Détection automatique des copros matchant les critères.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline croise DVF + registre + DPE",
+        "Algorithme scoring d'opportunité",
+        "Détection automatique des copros ciblés",
+        "Fiches copro détaillées avec ROI estime"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Alertes et lancement",
+      "description": "Système d'alertes email hebdomadaires. Dashboard avec carte et historique. Lancement auprès de la liste d'attente et partenariats podcasts immo.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Alertes email hebdomadaires",
+        "Dashboard utilisateur",
+        "50 abonnes payants",
+        "2 partenariats podcasts immo"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Extension et premium",
+      "description": "Couverture nationale. Filtres avances (budget, zone, type de difficulté). Plan premium avec mise en relation syndics/avocats.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Couverture nationale",
+        "Filtres avances",
+        "Plan premium avec accompagnement",
+        "300 abonnes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "L'investissement en copropriété en difficulté est une stratégie pratiquée",
+      "how": "Rechercher sur Devenir-Rentier.fr et YouTube les témoignages d'investisseurs ayant racheté dans des copros dégradées",
+      "successCriteria": "Au moins 50 discussions/videos sur le sujet avec engagement significatif"
+    },
+    {
+      "check": "Les données permettent d'identifiér les opportunités",
+      "how": "Croiser DVF (ventes < médiane -20%) avec le registre copro (impayes > 15%) sur Paris. Compter les résultats.",
+      "successCriteria": "Au moins 50 opportunités identifiées sur Paris pour les 12 derniers mois"
+    },
+    {
+      "check": "Les investisseurs sont prêts a payer pour ce deal flow",
+      "how": "Proposer un abonnement a 49 EUR/mois sur la landing page avec 3 premières analyses en preview",
+      "successCriteria": "20+ pre-inscriptions payantes en 2 semaines"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Investisseurs immobiliers experimentes (5+ biens, stratégie value-add)",
+      "where": "Forum Devenir-Rentier.fr, groupes Facebook Investissement Locatif Expert, chaines YouTube (Yann Darwin, Investir et Réussir)",
+      "howToReach": "Études de cas détaillées avec chiffres reels. Les investisseurs experimentes valorisent l'info actionnable et paient sans hésiter."
+    },
+    {
+      "who": "Marchands de biens spécialisés en copropriété",
+      "where": "SNPI, LinkedIn marchands de biens, salons professionnels",
+      "howToReach": "Plan pro avec alertes prioritaires (avant les autres abonnes). Le temps est de l'argent pour un marchand de biens."
+    },
+    {
+      "who": "SCI et petits fonds d'investissement immobilier",
+      "where": "Clubs d'investisseurs (CGPI, CIF), LinkedIn, BPI France",
+      "howToReach": "Offre entreprise avec API et alertes sur-mesure. Volume d'opportunités plus important."
+    }
+  ],
+  "pricingStrategy": "Plan Investisseur a 49 EUR/mois (5 alertes/semaine, fiches détaillées, scoring). Plan Pro a 129 EUR/mois (alertes illimitées, filtres avances, priorité 24h). Plan Marchand de Biens a 299 EUR/mois (API, alertes temps reel, accompagnement). Commission optionnelle : 500 EUR par deal via partenaires.",
+  "pathTo10kMrr": "120 investisseurs x 49 EUR = 5 880 EUR + 20 pros x 129 EUR = 2 580 EUR + 6 marchands de biens x 299 EUR = 1 794 EUR = 10 254 EUR MRR. Le marché des investisseurs immo actifs est de 200K+ personnes, 120 abonnes = pénétration minime. Timeline : 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS",
+    "backend": "Next.js API Routes + Python pour pipeline data et scoring",
+    "database": "PostgreSQL sur Supabase avec PostGIS",
+    "hosting": "Vercel + Supabase + GitHub Actions + Resend (alertes)",
+    "apis": [
+      "DVF / DVF+ (data.gouv.fr)",
+      "Registre national copropriétés (data.gouv.fr)",
+      "API DPE ADEME",
+      "API BAN géocodage",
+      "Stripe"
+    ],
+    "notes": "Pipeline quotidien pour détecter les nouvelles ventes DVF. Le scoring combine prix relatif, état DPE, taux d'impayes et dynamique du quartier. Alertes envoyees le lundi matin."
+  },
+  "risks": [
+    {
+      "risk": "Les meilleures opportunités sont déjà connues des réseaux locaux (agents, notaires)",
+      "mitigation": "L'outil complète le réseau par un croisement systematique de données couvrant toute la France, pas juste une ville."
+    },
+    {
+      "risk": "Le redressement d'une copro est long et risque (3-5 ans)",
+      "mitigation": "Bien cadrer les attentes. Fournir un scoring de risque en plus du scoring d'opportunité."
+    },
+    {
+      "risk": "Problème ethique : profitér de copropriétés en difficulté",
+      "mitigation": "Positionner comme win-win : l'investisseur qui redresse améliore la vie de tous. Exclure les copros en plan de sauvegarde."
+    }
+  ],
+  "inspirations": "Lybox pour la détection d'opportunités immo (mais pas l'angle copro). DealMachine (US) pour le deal flow automatise. Privy (US) pour les alertes off-market. En France, Masteos et Bevouac font du clé-en-main mais pas du deal flow copro en difficulté.",
+  "searchVolume": [
+    {
+      "keyword": "copropriété en difficulté investissement",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "achetér copropriété dégradée",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "investir copropriété",
+      "monthlyVolume": "1300",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "copropriété impayes opportunité",
+      "monthlyVolume": "260",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "redressement copropriété",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "MaPrimeRenov copropriété",
+      "monthlyVolume": "5400",
+      "difficulty": "haute",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "115 000 copropriétés en difficulté + 180 000 fragiles. Si 5% des lots sont vendus/an = ~150K transactions dans des copros fragiles. Investisseurs spécialisés: 20K x 49 EUR/mois x 12 = 11,8M EUR/an",
+    "sam": "5 000 investisseurs value-add actifs (marchands de biens + investisseurs experimentes copro) x 49 EUR x 12 = 2,9M EUR/an + 500 marchands de biens x 299 EUR x 12 = 1,8M EUR/an",
+    "som": "120 investisseurs + 20 pros + 6 marchands de biens année 1 = 122K EUR/an",
+    "methodology": "TAM: 115K copros en difficulté (ANAH), 180K fragiles (Senat). Plan Initiative Copropriétés: 2Mds EUR. SAM: niche investisseurs value-add copro (communautés Devenir-Rentier, Yann Darwin: 50K+ followers, groupes FB LMNP/SCI: 100K+ membres). Les 4/5 des copros les plus fragiles ont moins de 12 logements (ANAH)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Lybox",
+      "url": "https://www.lybox.fr",
+      "pricing": "À partir de 9 EUR/mois, Essentiel 24 EUR/mois",
+      "trafficEstimate": "300K-600K visites/mois",
+      "reviews": "Très bon outil de détection d'opportunités immobilières, calculs certifiés",
+      "strengths": "Détection automatique de biens rentables, alertes sur annonces, prix compétitif",
+      "weaknesses": "Pas d'angle copropriété en difficulté, pas de croisement registre copro, pas de scoring d'impayes"
+    },
+    {
+      "name": "Masteos",
+      "url": "https://www.masteos.com",
+      "pricing": "Commission sur le projet (5-8% du prix d'achat). Investissement clé-en-main",
+      "trafficEstimate": "200K-400K visites/mois",
+      "reviews": "Avis mixtes. En restructuration après des difficultés financières en 2023-2024",
+      "strengths": "Cle-en-main complet (recherche + travaux + gestion), marque connue, levée de fonds",
+      "weaknesses": "Très cher (5-8%), pas spécialisé copro en difficulté, modèle fragile (restructuration), pas de deal flow self-service"
+    },
+    {
+      "name": "Bevouac",
+      "url": "https://www.bevouac.com",
+      "pricing": "Commission clé-en-main (similar Masteos)",
+      "trafficEstimate": "100K-200K visites/mois",
+      "reviews": "Meilleurs avis que Masteos, approche plus sélective",
+      "strengths": "Qualité des projets, accompagnement, data-driven",
+      "weaknesses": "Pas spécialisé copro en difficulté, prix élevé, pas de deal flow copro"
+    },
+    {
+      "name": "Le Comptoir de la Copropriété",
+      "url": "https://www.le-comptoir-de-la-copropriete.fr",
+      "pricing": "Gratuit (statistiques)",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Base de 619K+ copropriétés, statistiques utiles",
+      "strengths": "Données complètes sur les copropriétés, statistiques ANAH",
+      "weaknesses": "Pas d'identification d'opportunités, pas d'alertes, pas de scoring, pas de croisement DVF"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Croisement DVF + Registre copro + DPE",
+      "status": "attention",
+      "detail": "Le croisement de 3 bases open data est légal mais attention a ne pas permettre l'identification de vendeurs en difficulté (RGPD). Afficher des scores et fourchettes, pas des details de transaction individuelle. Les données d'impayes du registre sont déclaratives.",
+      "source": "RGPD Article 5 - Licences Ouvertes v2 respectives"
+    },
+    {
+      "topic": "Ethique: profitér des copropriétés en difficulté",
+      "status": "attention",
+      "detail": "Risque réputationnel si le service est perçu comme exploitant la misere des copropriétaires. Positionner comme win-win: l'investisseur qui redresse améliore la copropriété pour tous. Exclure les copros en plan de sauvegarde (protégées légalement). Mentionner les aides MaPrimeRenov copro.",
+      "source": "Articles L615-1 et suivants du Code de la construction (plan de sauvegarde)"
+    },
+    {
+      "topic": "Données registre copropriétés (impayes)",
+      "status": "attention",
+      "detail": "Les taux d'impayes dans le RNIC sont déclaratifs et partiellement renseignés. Couverture ~2/3 des copropriétés. Ne pas présenter un taux d'impayes comme un fait avéré mais comme une déclaration au registre.",
+      "source": "Loi ALUR - RNIC data.gouv.fr"
+    },
+    {
+      "topic": "Conseil en investissement",
+      "status": "attention",
+      "detail": "Le scoring d'opportunité et le ROI estimé peuvent être assimilés à du conseil en investissement. Disclaimers obligatoires: les estimations sont indicatives, ne constituent pas un conseil, l'investisseur doit faire ses propres vérifications.",
+      "source": "AMF - Code monetaire et financier"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Content marketing (études de cas redressement copro)",
+      "cacEstimate": "25-45 EUR",
+      "conversionRate": "4% clic-to-signup, 10% free-to-paid. Les études de cas chiffrees convertissent bien",
+      "ltv": "588 EUR (49 EUR x 12 mois plan Investisseur)",
+      "ltvCacRatio": "13:1 a 24:1"
+    },
+    {
+      "channel": "SEO (copropriété en difficulté investissement, achetér copro dégradée)",
+      "cacEstimate": "20-35 EUR",
+      "conversionRate": "5% free signup, 8% free-to-paid. Faible volume mais forte intention",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "17:1 a 29:1"
+    },
+    {
+      "channel": "Podcasts et YouTube immobilier (Yann Darwin, Investir et Réussir)",
+      "cacEstimate": "30-60 EUR (sponsoring + affiliation)",
+      "conversionRate": "3% clic-to-signup, 12% free-to-paid (audience qualifiee)",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "10:1 a 20:1"
+    },
+    {
+      "channel": "LinkedIn outbound (marchands de biens, SCI)",
+      "cacEstimate": "80-150 EUR",
+      "conversionRate": "8% réponse, 20% demo, 25% conversion",
+      "ltv": "3 588 EUR (299 EUR x 12 mois plan Marchand de Biens)",
+      "ltvCacRatio": "24:1 a 45:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources vérifiées via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 66,
+      "detail": "8.7K recherches/mois cumulees ('MaPrimeRenov copropriété' 5 400/mois, 'investir copropriété' 1 300/mois). TAM: 150K transactions. Cibles: Investisseurs immobiliers experimentes, Marchands de biens spécialisés, SCI et petits fonds."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 5 APIs a integrer (DVF / DVF+, Registre national copropriétés, API DPE ADEME). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 67,
+      "detail": "120 clients a 49 EUR pour demarrer. Objectif 10K MRR en 8-10 mois. SOM: 122K EUR/an. Pricing 49-500 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: Lybox, Masteos, Bevouac. Leader: Lybox (300K-600K visites/mois). Faiblesse principale: Pas d'angle copropriété en difficulté."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "0 point OK, 4 points d'attention. Vigilance: Croisement DVF + Registre copro + DPE, Ethique: profitér des copropriétés en difficulté."
+    },
+    "overall": {
+      "score": 64,
+      "detail": "Point fort: faisabilite (68/100). Point faible: legal (55/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

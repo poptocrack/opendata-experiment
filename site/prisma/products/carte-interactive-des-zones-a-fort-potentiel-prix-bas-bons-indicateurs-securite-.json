@@ -1,0 +1,338 @@
+{
+  "productSlug": "carte-interactive-des-zones-a-fort-potentiel-prix-bas-bons-indicateurs-securite-",
+  "oneLiner": "Une carte interactive qui révélé les zones immobilières a fort potentiel en France : prix encore bas, bonne sécurité, bonnes écoles, et projets de construction en cours.",
+  "problem": "Les investisseurs immobiliers cherchent les quartiers avant qu'ils deviennent chers : ceux où les prix sont encore bas mais où les indicateurs de qualité de vie (sécurité, écoles) sont déjà bons et où des projets de construction signalent une dynamique positive. Aujourd'hui, cette recherche demande des heures de croisement manuel de sources et une connaissance locale que seuls les locaux possedent.",
+  "solution": "Une carte de France interactive colorisee par potentiel d'investissement. Chaque zone IRIS (quartier statistique de 2000 habitants) reçoit un score de potentiel base sur: prix DVF bas relativement à la ville, indicateurs sécurité au-dessus de la moyenne, proximite écoles bien notees, permis de construire récents (signal de dynamisme). L'utilisateur peut zoomer, filtrer par critère, et cliquer sur une zone pour voir les details.",
+  "uniqueValue": "La première carte qui combine le filtre prix bas + qualité de vie, spécifiquement pour l'investissement immobilier. Google Maps montre les POI, MeilleursAgents montre les prix, mais personne ne montre les zones a potentiel en croisant tout. C'est le Waze de l'investissement immobilier.",
+  "mvpScope": "Carte Maplibre avec les zones IRIS des 30 plus grandes villes, colorisees par score de potentiel (rouge = sature/cher, vert = fort potentiel). Clic sur une zone: prix median DVF, score sécurité, nombre d'écoles, nombre de PC récents. Filtres: prix max au m2, score sécurité minimum. Pas de compte au MVP.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le concept avec des cartes statiques",
+      "description": "Generer 5 cartes statiques (images) pour 5 grandes villes montrant les zones a potentiel. Les poster sur les forums immobilier et mesurer l'engagement. Sondage: utiliseriez-vous un outil interactif?",
+      "duration": "2 semaines",
+      "deliverables": [
+        "5 cartes statiques générées",
+        "Posts sur 3 forums/communautés",
+        "Engagement mesuré (500+ vues, 50+ commentaires)",
+        "200+ inscrits newsletter"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Carte interactive sur 30 villes",
+      "description": "Precalcul des scores par zone IRIS. Interface carte Maplibre avec tuiles vectorielles colorisees. Panel lateral avec details au clic. Filtres par critère. 3 consultations gratuites puis paywall.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Données precalculees 30 villes",
+        "Carte interactive responsive",
+        "Panel details par zone",
+        "Filtres fonctionnels",
+        "Paywall"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Acquisition des premiers 100 clients",
+      "description": "SEO avec des pages par ville (zones a fort potentiel + ville). Newsletter mensuelle top 10 zones a potentiel en France. Partenariats blogueurs immobilier. Ads Facebook ciblées investisseurs.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "100 abonnes payants",
+        "30 pages SEO par ville",
+        "Newsletter lancée",
+        "3 partenariats blogueurs"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Alertes, comparaison, et API",
+      "description": "Alertes quand une zone change de statut (nouveau PC, baisse de prix significative). Comparaison côte à côte de 2-3 zones. Historique du score sur 3 ans. API B2B pour les plateformes immobilières.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Alertes email",
+        "Comparateur de zones",
+        "Historique temporel",
+        "API B2B"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Couverture nationale et 10K MRR",
+      "description": "Extension a toutes les communes de France. Prediction d'évolution des prix par zone (ML simple). White-label pour les réseaux d'agences. Ads Google sur les requetes où investir en immobilier.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Couverture nationale",
+        "10K MRR",
+        "Modèle prédictif basique",
+        "5 contrats white-label"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les investisseurs recherchent-ils des zones plutot que des biens spécifiques?",
+      "how": "Analyser les volumes de recherche Google: où investir en immobilier, meilleure ville investissement locatif, quartier a potentiel + ville. Sondage forum: cherchez-vous d'abord la zone où le bien?",
+      "successCriteria": "Volume de recherche > 5K/mois pour les requetes où investir immobilier. 60%+ des investisseurs sondés disent chercher la zone en premier."
+    },
+    {
+      "check": "Les données IRIS sont-elles assez granulaires pour être utiles?",
+      "how": "Verifier que les données DVF, sécurité et écoles sont disponibles à la maille IRIS pour les 30 plus grandes villes. Tester si les scores varient significativement entre zones IRIS voisines.",
+      "successCriteria": "Ecart-type des scores entre zones IRIS d'une même ville > 15 points (sur 100). Données disponibles pour 90%+ des zones IRIS des 30 villes."
+    },
+    {
+      "check": "La visualisation carte est le bon format de delivrable?",
+      "how": "Montrer un prototype carte a 10 investisseurs vs un classement tableau. Demander lequel ils trouvent plus utile et pourquoi.",
+      "successCriteria": "7/10 préférént la carte pour l'exploration et la découverte de zones inconnues."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Investisseurs a distance qui cherchent dans des villes qu'ils ne connaissent pas",
+      "where": "Groupes Facebook Investir a Distance, communauté des expatries investisseurs (groupes Expat Immo), forums où les Parisiens cherchent a investir en province",
+      "howToReach": "Publier des analyses Top 5 quartiers a potentiel a Bordeaux/Lyon/Nantes avec capture de la carte. Cibler les discussions où quelqu'un demande où investir a [ville]."
+    },
+    {
+      "who": "Investisseurs debutants qui ne savent pas par où commencer",
+      "where": "Chaines YouTube debutant immobilier, formations en ligne (Yann Darwin, Julien Calamote), groupes Facebook investissement immobilier debutant",
+      "howToReach": "Proposer l'outil comme complement aux formations. Créér du contenu educatif comment trouver un quartier a potentiel. Affiliation avec les formateurs."
+    },
+    {
+      "who": "Agents immobiliers qui veulent prospecter de nouvelles zones",
+      "where": "LinkedIn, événements RENT (salon proptech), groupes professionnels agents immobiliers",
+      "howToReach": "Proposer un plan pro gratuit 3 mois. Pitch: identifiéz les zones où prospecter avant vos concurrents."
+    }
+  ],
+  "pricingStrategy": "Freemium: carte visible avec les scores globaux mais sans details ni filtres avances. Plan Explorer a 9,90 euros/mois: details par zone, filtres avances, 50 consultations détaillées/mois. Plan Investisseur a 24,90 euros/mois: consultations illimitées, alertes, comparateur, export. Plan Pro a 79 euros/mois: API, données brutes CSV, multi-utilisateurs. Prix d'appel bas (9,90 euros) pour maximiser la conversion sur un produit visuel et viral.",
+  "pathTo10kMrr": "500 abonnes Explorer x 9,90 euros = 4 950 euros + 150 abonnes Investisseur x 24,90 euros = 3 735 euros + 20 abonnes Pro x 79 euros = 1 580 euros = 10 265 euros MRR. La carte est inherentemente virale (partage de scréénshots sur les réseaux). SEO fort sur où investir + ville. Objectif 10K MRR en 10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS + tuiles vectorielles PMTiles (hebergement statique)",
+    "backend": "Next.js API Routes. Python scripts pour le precalcul des scores IRIS et la génération des tuiles vectorielles (Tippecanoe).",
+    "database": "PostgreSQL + PostGIS sur Supabase. Table des scores par zone IRIS precalcules. DuckDB pour les analyses batch.",
+    "hosting": "Vercel + Supabase + Cloudflare R2 (stockage des tuiles PMTiles) + GitHub Actions",
+    "apis": [
+      "API DVF data.gouv.fr",
+      "API BAN géocodage",
+      "Contours IRIS (data.gouv.fr)",
+      "API Education Nationale",
+      "API Georisques",
+      "Données sécurité (data.gouv.fr)",
+      "API Sitadel (permis)",
+      "Stripe"
+    ],
+    "notes": "Les scores sont precalcules mensuellement par zone IRIS et stockes en base + tuiles vectorielles PMTiles pour un rendu carte ultra-rapide. Pas de calcul à la volee côté serveur pour la carte. Les details au clic sont servis par l'API Supabase."
+  },
+  "risks": [
+    {
+      "risk": "Performance de la carte avec des milliers de zones IRIS a afficher",
+      "mitigation": "Utiliser les tuiles vectorielles PMTiles (fichier statique sur R2) au lieu de requetes serveur. Les tuiles sont générées offline avec Tippecanoe. Le rendu est 100% côté client via Maplibre GL JS. Technique prouvee par OpenStreetMap."
+    },
+    {
+      "risk": "Le score de potentiel est trop simpliste et ne tient pas compte des facteurs locaux",
+      "mitigation": "Permettre la personnalisation des poids. Ajouter progressivement des facteurs (transports, commerces, projets urbains). Collecter les retours utilisateurs pour améliorer le modèle. Afficher la méthodologie de facon transparente."
+    },
+    {
+      "risk": "Le produit est facile a copier par MeilleursAgents où SeLoger",
+      "mitigation": "Construire la communauté et la marque rapidement. Se spécialisér sur l'angle investissement (pas habitation). Pivoter vers le B2B/API si competition B2C trop forte. La combinaison de sources est la barriere a l'entree."
+    }
+  ],
+  "inspirations": "Opportunity Zone map du gouvernement US qui montre les zones d'investissement a avantage fiscal. HoodMaps (crowdsource) pour l'UX de carte colorisee par quartier. Properstar (Suisse) pour la recherche immobilière sur carte internationale. En France, Geoportail fait les cartes officielles mais sans l'angle investissement.",
+  "searchVolume": [
+    {
+      "keyword": "ou investir en immobilier",
+      "monthlyVolume": "9900",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "meilleure ville investissement locatif",
+      "monthlyVolume": "6600",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "quartier a potentiel immobilier",
+      "monthlyVolume": "1600",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ou investir en immobilier 2026",
+      "monthlyVolume": "4400",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "carte prix immobilier",
+      "monthlyVolume": "5400",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "zone a fort potentiel immobilier",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "945K transactions immo/an. 60% des investisseurs cherchent d'abord la zone (estimation). 567K personnes x 9,90 EUR/mois x 12 = 67,3M EUR/an",
+    "sam": "150 000 investisseurs actifs en phase de recherche de zone (hors achetéurs residence principale) x 9,90 EUR/mois x 12 = 17,8M EUR/an",
+    "som": "2 000 abonnes année 1 (1,3% du SAM) x prix moyen 15 EUR/mois x 12 = 360K EUR/an",
+    "methodology": "TAM: volume recherche Google où investir immobilier > 9 900/mois. SAM: investisseurs qui cherchent hors leur ville (investissement a distance, expatries). SOM: conversion SEO sur 30 pages ville + viralité carte (partage scréénshots)."
+  },
+  "competitorDeep": [
+    {
+      "name": "MeilleursAgents",
+      "url": "https://www.meilleursagents.com/prix-immobilier/",
+      "pricing": "Gratuit pour les particuliers. Offres pro agents immobiliers",
+      "trafficEstimate": "1,2M visiteurs uniques/mois",
+      "reviews": "Référence du marché pour les prix immobiliers en France",
+      "strengths": "Carte des prix détaillée adresse par adresse, forte marque, +25-30% trafic sur villes avec nouvelle carte",
+      "weaknesses": "Pas d'angle investissement, pas de scoring de potentiel, pas de croisement sécurité/écoles/permis, pas de filtres investisseur"
+    },
+    {
+      "name": "Lybox (analyse par ville)",
+      "url": "https://www.lybox.fr/analyse-ville-rentable",
+      "pricing": "À partir de 9 EUR/mois, Essentiel 24 EUR/mois",
+      "trafficEstimate": "300K-600K visites/mois",
+      "reviews": "Très bon outil d'analyse par ville avec rentabilité estimée",
+      "strengths": "Analyse de rentabilité par ville, données détaillées, bon SEO",
+      "weaknesses": "Pas de carte interactive multicritères, pas de scoring de quartier, granularite ville pas quartier IRIS"
+    },
+    {
+      "name": "Pappers Immobilier",
+      "url": "https://immobilier.pappers.fr/prix-immobilier",
+      "pricing": "Gratuit",
+      "trafficEstimate": "500K-1M visites/mois",
+      "reviews": "Très positif, référence DVF gratuit",
+      "strengths": "Carte des prix DVF gratuite, DPE intégré, 28M transactions",
+      "weaknesses": "Pas de scoring multicritère, pas de sécurité/écoles/permis, interface générique"
+    },
+    {
+      "name": "Geoportail / Geoportail de l'urbanisme",
+      "url": "https://www.geoportail.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "2M+ visites/mois",
+      "reviews": "Complet mais très technique, difficile d'utilisation",
+      "strengths": "Toutes les couches cartographiques officielles, gratuit, données fiables",
+      "weaknesses": "Interface très technique, pas d'angle investissement, pas de scoring, pas de croisement de données"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données DVF pour les prix",
+      "status": "attention",
+      "detail": "Licence Ouverte v2 mais interdiction de re-identification et d'indexation par moteurs de recherche. Utiliser des médianes par zone IRIS, pas des transactions individuelles. Eviter l'affichage prix + adresse exacte.",
+      "source": "https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncières"
+    },
+    {
+      "topic": "Données sécurité / delinquance",
+      "status": "attention",
+      "detail": "Les données de sécurité par commune sont publiées par le ministere de l'Interieur. Utiliser des scores relatifs (au-dessus/en-dessous de la moyenne) plutot que des chiffres bruts pour eviter toute stigmatisation de quartiers. Pas de données infra-communales publiques fiables.",
+      "source": "data.gouv.fr - Base des infractions enregistrées par la police et la gendarmerie"
+    },
+    {
+      "topic": "Contours IRIS",
+      "status": "ok",
+      "detail": "Les contours IRIS sont publiés par l'INSEE en open data sous Licence Ouverte. Réutilisation libre.",
+      "source": "https://www.data.gouv.fr - INSEE contours IRIS"
+    },
+    {
+      "topic": "Données écoles et résultats",
+      "status": "ok",
+      "detail": "L'annuaire des établissements et les résultats au bac/brevet sont publiés en open data par l'Education Nationale. Réutilisation libre.",
+      "source": "data.gouv.fr - Annuaire de l'education"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (ou investir immobilier + ville)",
+      "cacEstimate": "8-15 EUR",
+      "conversionRate": "5% free signup sur pages ville, 4% free-to-paid. Volume: 9 900 recherches/mois",
+      "ltv": "119 EUR (9,90 EUR x 12 mois plan Explorer)",
+      "ltvCacRatio": "8:1 a 15:1"
+    },
+    {
+      "channel": "Viralite carte (partage réseaux sociaux)",
+      "cacEstimate": "3-8 EUR",
+      "conversionRate": "2% clic-to-signup via partage, 5% free-to-paid",
+      "ltv": "119 EUR",
+      "ltvCacRatio": "15:1 a 40:1"
+    },
+    {
+      "channel": "Google Ads (ou investir immobilier, ville investissement locatif)",
+      "cacEstimate": "60-90 EUR",
+      "conversionRate": "3% clic-to-trial, 8% trial-to-paid. CPC: 3-5 EUR",
+      "ltv": "119 EUR",
+      "ltvCacRatio": "1,3:1 a 2:1"
+    },
+    {
+      "channel": "Affiliation formateurs immobilier",
+      "cacEstimate": "20-35 EUR (20% commission)",
+      "conversionRate": "4% clic-to-signup, 8% free-to-paid",
+      "ltv": "299 EUR (24,90 EUR x 12 mois plan Investisseur)",
+      "ltvCacRatio": "8:1 a 15:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 70,
+      "detail": "28.8K recherches/mois cumulees ('ou investir en immobilier' 9 900/mois, 'meilleure ville investissement locatif' 6 600/mois). TAM: 945K transactions. Cibles: Investisseurs a distance qui, Investisseurs debutants qui ne, Agents immobiliers qui veulent."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 8 APIs a integrer (API DVF, API BAN géocodage, Contours IRIS). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 40,
+      "detail": "500 clients a 90 EUR pour demarrer. Objectif 10K MRR en 10 mois. SOM: 360K EUR/an. Pricing 79-90 EUR."
+    },
+    "competition": {
+      "score": 20,
+      "detail": "4 concurrents identifies: MeilleursAgents, Lybox (analyse par ville), Pappers Immobilier. Leader: MeilleursAgents (1,2M visiteurs uniques/mois). Faiblesse principale: Pas d'angle investissement."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Données DVF pour les prix, Données sécurité / delinquance."
+    },
+    "overall": {
+      "score": 54,
+      "detail": "Point fort: demande (70/100). Point faible: competition (20/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

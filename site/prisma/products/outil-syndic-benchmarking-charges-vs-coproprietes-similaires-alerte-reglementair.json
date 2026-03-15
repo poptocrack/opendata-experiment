@@ -1,0 +1,335 @@
+{
+  "productSlug": "outil-syndic-benchmarking-charges-vs-coproprietes-similaires-alerte-reglementair",
+  "oneLiner": "Outil de benchmarking pour syndics : comparez vos charges aux copropriétés similaires et recevez des alertes réglementaires.",
+  "problem": "9,7 millions de logements en copropriété en France. Les conseils syndicaux n'ont aucune référence pour évaluer si leurs charges sont normales. Le syndic dit que c'est normal, mais personne ne peut vérifier. Cette opacité profite aux syndics performant mal. Et les échéances réglementaires (DPE collectif obligatoire, plan pluriannuel de travaux 2025) sont oubliees faute d'outil de suivi.",
+  "solution": "Un outil de benchmarking qui compare les charges d'une copropriété avec des copros similaires (même nombre de lots, même ville, même ancienneté, même type de chauffage) via le Registre national. Identifié les postes sur-factures (entretien, assurance, syndic) et génère un rapport pour l'AG. Inclut les alertes réglementaires (DPE collectif, plan pluriannuel, audit énergétique).",
+  "uniqueValue": "Le Glassdoor des charges de copropriété. Le registre contient des dizaines de milliers de budgets mais personne ne les compare entre eux. Cet outil transforme l'open data en levier de négociation pour les copropriétaires.",
+  "mvpScope": "Benchmark des charges globales (total charges/lot) pour les copropriétés de plus de 10 lots dans les 30 plus grandes villes. Comparaison par tranche de taille et de ville. Rapport PDF téléchargeable. Alertes DPE/audit énergétique.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline benchmark et calculs statistiques",
+      "description": "Ingestion registre copropriétés. Calcul des médianes de charges par segment (taille x ville x ancienneté). API de comparaison avec positionnement percentile.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pipeline import registre copropriétés",
+        "Calcul médianes et quartiles par segment",
+        "API de benchmark",
+        "Base des échéances réglementaires"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface web et rapports",
+      "description": "Interface de saisie des charges, positionnement visuel (jauge), rapport PDF pour les AG, alertes réglementaires.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Saisie adresse + charges",
+        "Jauge de positionnement vs copros similaires",
+        "Rapport PDF téléchargeable pour AG",
+        "Alertes réglementaires email"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et acquisition",
+      "description": "Diffusion via ARC, UFC-Que Choisir, groupes Facebook copropriété. SEO sur 'charges copropriété normales'. Contenu educatif.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "1 000 utilisateurs",
+        "50 abonnes payants",
+        "Partenariat ARC",
+        "20 pages SEO"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Benchmark par poste et offre syndics",
+      "description": "Benchmarker poste par poste (entretien, assurance, syndic, chauffage). Offre pour les syndics professionnels. API pour courtiers en syndic.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Benchmark par poste de charges",
+        "Offre syndics pro",
+        "API pour Baticopro/Syneval",
+        "200 abonnes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les copropriétaires se posent la question des charges relatives",
+      "how": "Volume de recherche Google Trends sur 'charges copropriété normales', 'benchmark charges copro', 'comparer charges copropriété'",
+      "successCriteria": "Plus de 5K recherches/mois sur les termes lies"
+    },
+    {
+      "check": "Les données du registre permettent un benchmark significatif",
+      "how": "Analyser la distribution des charges par lot dans le registre pour 5 grandes villes. Vérifier la taille des échantillons.",
+      "successCriteria": "Au moins 100 copropriétés par segment (taille x ville) pour un benchmark statistiquement significatif"
+    },
+    {
+      "check": "Le rapport de benchmark declenche une action en AG",
+      "how": "Fournir un rapport gratuit a 10 conseils syndicaux et suivre si cela mene a une action (changement de syndic, renegociation)",
+      "successCriteria": "5/10 veulent utiliser le rapport en AG"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Membres de conseils syndicaux actifs",
+      "where": "ARC (Association des Responsables de Copropriété), forums UFC-Que Choisir copropriété, groupes Facebook syndic bénévole",
+      "howToReach": "Proposer un benchmark gratuit en echange d'un avis. Les membres de CS sont militants et partagent les bons outils."
+    },
+    {
+      "who": "Syndics bénévoles (150 000 en France)",
+      "where": "Groupes Facebook syndic bénévole, forums spécialisés, UNIS",
+      "howToReach": "Outil gratuit pour les bénévoles (freemium). Posts educatifs sur les obligations réglementaires 2025."
+    },
+    {
+      "who": "Courtiers en syndic (Baticopro, Syneval, MeilleurSyndic)",
+      "where": "LinkedIn, salons copropriété",
+      "howToReach": "API de benchmark a intégrer dans leur processus d'appel d'offres syndic. Le benchmark justifie le changement de syndic."
+    }
+  ],
+  "pricingStrategy": "Freemium : 1 benchmark gratuit (charges globales). Plan Copropriétaire a 7,90 EUR/mois (benchmark par poste, alertes réglementaires, historique). Plan Conseil Syndical a 19,90 EUR/mois (rapport AG, benchmark détaillé, recommandations). Plan Syndic Pro a 99 EUR/mois (benchmark de tout le portefeuille). API courtiers : 0,50 EUR/requête.",
+  "pathTo10kMrr": "400 copropriétaires x 7,90 EUR = 3 160 EUR + 150 conseils syndicaux x 19,90 EUR = 2 985 EUR + 30 syndics x 99 EUR = 2 970 EUR + API courtiers 1 500 EUR/mois = 10 615 EUR MRR. Avec 740 000 copropriétés en France, toucher 550 personnes est un marché énorme a peine effleure. Timeline : 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts pour les graphiques de comparaison",
+    "backend": "Next.js API Routes + Python pour les calculs statistiques",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Registre national copropriétés (data.gouv.fr)",
+      "API DPE ADEME",
+      "Stripe"
+    ],
+    "notes": "Les médianes et quartiles sont précalculés par segment et stockes en base. Le benchmark est un positionnement dans la distribution. Calcul léger, pas besoin de gros serveur."
+  },
+  "risks": [
+    {
+      "risk": "Les données de charges dans le registre sont déclaratives et potentiellement inexactes",
+      "mitigation": "Filtrer les outliers statistiques. Proposer aux utilisateurs de corriger/confirmer les données de leur copro. Effet réseau : plus le produit est utilisé, plus les données s'affinent."
+    },
+    {
+      "risk": "Les syndics professionnels voient l'outil comme une menace",
+      "mitigation": "Proposer une offre dédiée aux syndics (s'auto-évaluer, identifier les copros compétitives). Etre un outil d'amélioration, pas de dénonciation."
+    },
+    {
+      "risk": "Nombre insuffisant de copros dans le registre pour un benchmark granulaire",
+      "mitigation": "Commencer avec des segments larges (petite/moyenne/grande copro x grande ville). Affiner au fur et a mesure que le registre se remplit (obligation légale)."
+    }
+  ],
+  "inspirations": "Glassdoor pour les salaires. Lesfurets.com pour la comparaison d'assurances. Baticopro pour la mise en concurrence des syndics. Aux US, HOAdata.com analyse les finances des HOA. En UK, Leasehold Advisory Service compare les charges de service.",
+  "searchVolume": [
+    {
+      "keyword": "charges copropriété normales",
+      "monthlyVolume": "3600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "comparer charges copropriété",
+      "monthlyVolume": "1900",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "charges copropriété trop élevées",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "benchmark charges copro",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "DPE collectif obligatoire 2025",
+      "monthlyVolume": "4400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "plan pluriannuel travaux copropriété",
+      "monthlyVolume": "2900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "changer de syndic",
+      "monthlyVolume": "6600",
+      "difficulty": "haute",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "9,7M logements en copropriété / 740K copropriétés. 30K syndics professionnels + 150K bénévoles. Copropriétaires: 5M ménages x 7,90 EUR/mois = 474M EUR/an. Syndics: 30K x 99 EUR/mois = 35,6M EUR/an",
+    "sam": "740K copropriétés actives. 500K membres de conseils syndicaux (cible directe) x 7,90 EUR x 12 = 47,4M EUR/an + 10K syndics indépendants x 99 EUR x 12 = 11,9M EUR/an + courtiers syndic API: 2M EUR/an",
+    "som": "400 copropriétaires + 150 conseils syndicaux + 30 syndics année 1 = 72K EUR/an",
+    "methodology": "TAM: 9,7M logements en copropriété (INSEE). 740K copropriétés (estimation RNIC 619K + non immatriculees). 30K syndics professionnels (FNAIM/UNIS). 150K syndics bénévoles. SAM base sur conseils syndicaux actifs (1 CS par copro, 3-5 membres). Courtiers syndic: MeilleureCopro, Syneval, Baticopro, SyndiCompare = marché existant d'API."
+  },
+  "competitorDeep": [
+    {
+      "name": "MeilleureCopro",
+      "url": "https://www.meilleurecopro.com",
+      "pricing": "Comparaison gratuite en 2 min. Si mandat CS: 50% des economies sur 2 ans. Si mandat syndic: commission courtage",
+      "trafficEstimate": "100K-200K visites/mois",
+      "reviews": "Trustpilot: 2,9/5 (2 avis). Avis-vérifiés: mixtes. ARC critique le modèle commercial",
+      "strengths": "N1 du comparateur syndic + charges, base de 200K+ copropriétés, plans d'optimisation personnalises, réduction jusqu'a -60%",
+      "weaknesses": "Modèle commission (conflits d'intérêt), avis mixtes sur la qualité des prestataires envoyes, pas d'outil self-service"
+    },
+    {
+      "name": "Matera",
+      "url": "https://matera.eu/fr",
+      "pricing": "170 EUR/lot/an (petit copro). 3 formules: Plateforme, Syndic Coopératif, Syndic Local. À partir de 10 EUR/mois",
+      "trafficEstimate": "300K-500K visites/mois",
+      "reviews": "Note 4,1/5 (en baisse depuis 4,4). Economies 30-40% vs syndic traditionnel. Critique: manque de réactivité",
+      "strengths": "Marque forte, plateforme digitale complète, 3 formules adaptees, economies significatives",
+      "weaknesses": "Pas de benchmark des charges vs copros similaires, focus sur le changement de syndic pas l'analyse, turnover équipes"
+    },
+    {
+      "name": "Manda (comparateur charges)",
+      "url": "https://www.manda.fr/comparateur-charges-copropriete",
+      "pricing": "Comparaison gratuite. Service de gestion locative payant",
+      "trafficEstimate": "50K-100K visites/mois (site global)",
+      "reviews": "Outil basique mais gratuit, leads vers la gestion locative",
+      "strengths": "Comparateur gratuit, simple d'utilisation",
+      "weaknesses": "Outil marketing pour vendre la gestion locative, pas de benchmark détaillé, pas de rapport AG"
+    },
+    {
+      "name": "SyndiCompare",
+      "url": "https://www.syndicompare.com",
+      "pricing": "Gratuit (comparateur). Revenus via mise en relation syndic",
+      "trafficEstimate": "20K-50K visites/mois",
+      "reviews": "Base de 558K+ immeubles, algorithme d'analyse en temps réel",
+      "strengths": "Base de 558K immeubles, 23M unites résidentielles analysees, indicateurs qualité syndic",
+      "weaknesses": "Focus sur le changement de syndic, pas sur le benchmark de charges par poste, pas de rapport AG"
+    },
+    {
+      "name": "Syneval",
+      "url": "https://www.syneval.fr",
+      "pricing": "Courtage syndic. Commission sur economies réalisées",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "N1 courtier en syndic, 600+ copropriétés conseillees, comparatif 180 points",
+      "strengths": "Expertise courtage syndic, comparatif détaillé 180 points, couverture nationale",
+      "weaknesses": "Service humain pas scalable, pas d'outil self-service, pas de benchmark open data automatisé"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données du registre copropriétés pour le benchmark",
+      "status": "ok",
+      "detail": "Le registre RNIC est en open data. Les budgets previsionnels par copropriété sont publics et déclaratifs. Réutilisation libre pour calcul de médianes et comparaisons. 619K+ copropriétés immatriculees.",
+      "source": "https://www.data.gouv.fr/datasets/registre-national-dimmatriculation-des-coproprietes"
+    },
+    {
+      "topic": "Qualité des données déclaratives",
+      "status": "attention",
+      "detail": "Les données de charges sont renseignees par les syndics de facon déclarative, sans contrôle a posteriori. Les outliers statistiques doivent etre filtres. Mentionner que les données sont indicatives et basees sur les déclarations au registre.",
+      "source": "Loi ALUR - Article 53"
+    },
+    {
+      "topic": "DPE collectif obligatoire",
+      "status": "ok",
+      "detail": "Le DPE collectif est obligatoire pour les copropriétés de plus de 200 lots depuis 2024, et sera etendu progressivement. L'audit énergétique est obligatoire pour les copros en monopropriete classees F/G. Ces échéances sont des informations publiques librement diffusables.",
+      "source": "Loi Climat et Resilience - Decret DPE collectif"
+    },
+    {
+      "topic": "Plan pluriannuel de travaux (PPT)",
+      "status": "ok",
+      "detail": "Le PPT est obligatoire pour les copropriétés de plus de 200 lots depuis 2023, 51-200 lots depuis 2024, et moins de 51 lots depuis 2025. Information réglementaire librement diffusable.",
+      "source": "Loi Climat et Resilience - Article 171"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (charges copropriété normales, comparer charges copro)",
+      "cacEstimate": "10-20 EUR",
+      "conversionRate": "6% free benchmark, 5% free-to-paid. Volume: 3 600 recherches/mois",
+      "ltv": "95 EUR (7,90 EUR x 12 mois copropriétaire)",
+      "ltvCacRatio": "5:1 a 9:1"
+    },
+    {
+      "channel": "Partenariats ARC / UFC-Que Choisir",
+      "cacEstimate": "5-15 EUR (referral organique)",
+      "conversionRate": "10% clic-to-benchmark, 8% free-to-paid. Les membres CS sont militants et partagent",
+      "ltv": "239 EUR (19,90 EUR x 12 mois plan Conseil Syndical)",
+      "ltvCacRatio": "16:1 a 48:1"
+    },
+    {
+      "channel": "Google Ads (changer de syndic, charges copro élevées)",
+      "cacEstimate": "40-70 EUR",
+      "conversionRate": "3% clic-to-benchmark, 5% free-to-paid. CPC: 2-4 EUR",
+      "ltv": "95 EUR",
+      "ltvCacRatio": "1,4:1 a 2,4:1"
+    },
+    {
+      "channel": "API courtiers syndic (Baticopro, Syneval, SyndiCompare)",
+      "cacEstimate": "500-1000 EUR (intégration technique + commercial)",
+      "conversionRate": "20% conversion apres POC gratuit",
+      "ltv": "6 000+ EUR/an (0,50 EUR x 12 000+ requêtes/an)",
+      "ltvCacRatio": "6:1 a 12:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 69,
+      "detail": "22.3K recherches/mois cumulees ('changer de syndic' 6 600/mois, 'DPE collectif obligatoire 2025' 4 400/mois). TAM: 9,7M logements. Cibles: Membres de conseils syndicaux, Syndics bénévoles, Courtiers en syndic."
+    },
+    "feasibility": {
+      "score": 83,
+      "detail": "MVP en 4 semaines. 3 APIs a intégrer (Registre national copropriétés, API DPE ADEME, Stripe). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 85,
+      "detail": "Objectif 10K MRR en 8-10 mois. SOM: 72K EUR/an. Pricing 50-99 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "5 concurrents identifiés: MeilleureCopro, Matera, Manda (comparateur charges). Leader: MeilleureCopro (100K-200K visites/mois). Faiblesse principale: Modèle commission (conflits d'intérêt)."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Qualité des données déclaratives."
+    },
+    "overall": {
+      "score": 74,
+      "detail": "Point fort: marché (85/100). Point faible: competition (45/100). Potentiel réel mais hypotheses cles a valider."
+    }
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "productSlug": "due-diligence-automatisee-rapport-complet-avant-achat-croisant-toutes-les-source",
+  "oneLiner": "Un rapport complet avant achat immobilier en 30 secondes : prix DVF, DPE, risques naturels, pollution, urbanisme, sécurité, écoles — tout en un PDF.",
+  "problem": "Avant d'achetér un bien immobilier, un achetéur serieux doit consulter 8 a 12 sources différentes : DVF pour les prix, ADEME pour le DPE, Georisques pour les risques naturels, BASOL/BASIAS pour la pollution des sols, le PLU pour les regles d'urbanisme, les statistiques de sécurité, l'annuaire des écoles, le cadastre. Ce travail prend 4 a 8 heures et la plupart des achetéurs ne le font pas où le font mal. Les notaires ne couvrent pas tous ces aspects.",
+  "solution": "Un service qui généré un rapport de due diligence complet pour n'importe quelle adresse en France. L'utilisateur saisit une adresse, et en 30 secondes reçoit un rapport PDF professionnel couvrant: historique des prix (DVF), état énergétique (DPE), risques naturels et technologiques (Georisques), pollution des sols (BASOL/BASIAS), regles d'urbanisme, sécurité du quartier, écoles et services, transports. Chaque section inclut un score de risque et des recommandations.",
+  "uniqueValue": "Le rapport le plus complet du marché, 100% base sur les données officielles. Les diagnostiqueurs immobiliers font le DPE et l'amiante mais pas l'analyse du quartier. Les agents immobiliers ne fournissent pas d'analyse objective. Le notaire fait le juridique mais pas l'analyse de marché. Ce produit comble le gap entre toutes ces professions.",
+  "mvpScope": "Rapport PDF généré pour une adresse, couvrant 5 sections: prix DVF (historique 5 ans + tendance), DPE du batiment, risques naturels Georisques, pollution sols BASOL, score sécurité basique. Design professionnel mais simple. Paiement a l'unite (pas d'abonnement au MVP).",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Tester la demande avec un rapport manuel",
+      "description": "Proposer sur LeBonCoin/PAP un service de rapport avant achat a 29 euros, fait manuellement. Objectif: 10 ventes en 2 semaines. Mesurer la satisfaction et identifiér les sections les plus valorisees.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "10 rapports vendus manuellement",
+        "Feedback sur les sections valorisees",
+        "Template de rapport valide",
+        "Prix valide"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Generation automatique du rapport PDF",
+      "description": "Pipeline d'interrogation de toutes les APIs (DVF, DPE, Georisques, BASOL, BAN). Generateur de PDF avec React-PDF. Interface web: saisie adresse, paiement Stripe, téléchargement rapport. 5 sections couvertes.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Pipeline multi-API",
+        "Generateur PDF automatique",
+        "Interface web + paiement",
+        "5 sections de rapport"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "200 rapports vendus",
+      "description": "SEO sur les requetes avant achat immobilier, vérification immobilière. Ads Google sur les requetes achetér appartement + ville. Partenariats avec des courtiers immobiliers qui offrent le rapport à leurs clients.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "200 rapports vendus",
+        "10 articles SEO",
+        "5 partenariats courtiers",
+        "Taux de satisfaction > 4/5"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Abonnement pro et sections additionnelles",
+      "description": "Ajouter les sections urbanisme (PLU via GPU), écoles, transports, commerces. Lancer un abonnement pro pour les professionnels (agents, notaires, chasseurs). API pour intégration dans les CRM immobiliers.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "8 sections de rapport",
+        "Plan abonnement Pro",
+        "API B2B",
+        "50 abonnes Pro"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR et marque de référence",
+      "description": "Devenir la référence du rapport avant achat en France. Partenariats avec les plateformes d'annonces. White-label pour les réseaux de notaires. Programme affiliation courtiers.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "Partenariat plateforme annonces",
+        "White-label notaires",
+        "1000+ rapports/mois"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les achetéurs immobiliers sont-ils prêts a payer pour un rapport pre-achat?",
+      "how": "Vendre manuellement 10 rapports a 29 euros via des annoncés sur LeBonCoin (services), groupes Facebook primo-accedants, et Reddit r/immobilier.",
+      "successCriteria": "10 ventes en 2 semaines sans publicite payante. Satisfaction client > 4/5."
+    },
+    {
+      "check": "Toutes les APIs nécessaires sont accèssibles et fiables?",
+      "how": "Tester chaque API (DVF, DPE ADEME, Georisques, BASOL, BAN) sur 20 adresses différentes. Mesurer le temps de réponse et la complétude des données.",
+      "successCriteria": "Toutes les APIs répondent en moins de 5 secondes. 90%+ des adresses retournent des résultats exploitables sur au moins 4/5 sections."
+    },
+    {
+      "check": "Le format PDF est le bon delivrable (vs dashboard web)?",
+      "how": "Demander aux 10 premiers clients: préféréz-vous un PDF telechargeable où un dashboard en ligne? Le partagez-vous avec votre notaire/banquier?",
+      "successCriteria": "70%+ préférént le PDF pour le partage avec notaire/banquier. Si non, pivoter vers un lien partageable."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Primo-accedants en phase finale de recherche (ont identifié 1-3 biens, hesitent)",
+      "where": "Groupes Facebook primo-accedants (Premier Achat Immobilier, 30K+ membres), forums PAP.fr, subreddit r/vosfinances threads immobilier",
+      "howToReach": "Repondre aux posts je vais visiter un bien, que dois-je vérifier? avec un lien vers le service. Publier un guide gratuit checklist avant achat pour capturer les emails."
+    },
+    {
+      "who": "Chasseurs immobiliers qui veulent offrir un service premium à leurs clients",
+      "where": "LinkedIn (recherche chasseur immobilier), annuaire des chasseurs FFCI, groupes pro",
+      "howToReach": "Proposer un tarif volume (20 rapports/mois a prix reduit). Le rapport valorise leur service de chasse. Demo personnalisée."
+    },
+    {
+      "who": "Notaires qui veulent moderniser leur service client",
+      "where": "Congres des Notaires, LinkedIn, chambres départementales des notaires, revue Notaires de France",
+      "howToReach": "Proposer un white-label avec leur marque. Le rapport complète leurs vérifications juridiques avec l'analyse de marché et les risques environnementaux."
+    }
+  ],
+  "pricingStrategy": "A l'unite + abonnement: Rapport unique a 29 euros (particuliers). Pack 5 rapports a 99 euros (achetéurs actifs qui comparent). Plan Pro a 149 euros/mois: 30 rapports/mois, marque personnalisable, API (chasseurs, agents). Plan Notaire a 299 euros/mois: rapports illimités, white-label complet, intégration Genapi. Le prix de 29 euros est inferieur au cout d'un diagnostic immobilier (150-300 euros) et représente 0,01% d'un achat a 250K euros.",
+  "pathTo10kMrr": "Mix unitaire + abonnements: 100 rapports unitaires/mois x 29 euros = 2 900 euros + 20 packs 5 rapports/mois x 99 euros = 1 980 euros + 25 abonnes Pro x 149 euros = 3 725 euros + 5 abonnes Notaire x 299 euros = 1 495 euros = 10 100 euros MRR. Funnel: SEO avant achat immobilier (8K recherches/mois) + partenariats courtiers (leads). Objectif 10K MRR en 10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + React-PDF (génération PDF côté serveur)",
+    "backend": "Next.js API Routes pour l'orchestration. Appels paralleles a toutes les APIs. Queue de génération PDF (Inngest où QStash pour le serverless).",
+    "database": "PostgreSQL sur Supabase. Tables: rapports générés, utilisateurs, transactions Stripe",
+    "hosting": "Vercel + Supabase + Inngest (job queue) + R2/S3 (stockage PDF)",
+    "apis": [
+      "API DVF data.gouv.fr",
+      "API ADEME DPE",
+      "API Georisques (PPRN, PPRT, seismes, inondations)",
+      "API BASOL/BASIAS (sites pollues)",
+      "API BAN géocodage",
+      "API BDNB",
+      "GPU/Geoportail urbanisme (PLU)",
+      "Stripe",
+      "Resend"
+    ],
+    "notes": "Le rapport est généré en serverless: un job reçoit l'adresse, appelle toutes les APIs en parallele (Promise.allSettled), calcule les scores, généré le PDF et le stocke sur R2. L'utilisateur reçoit un email avec le lien de téléchargement en 30-60 secondes."
+  },
+  "risks": [
+    {
+      "risk": "Le temps de génération dépassé 60 secondes si une API est lente où en erreur",
+      "mitigation": "Timeout de 10 secondes par API avec graceful degradation: si Georisques ne repond pas, la section affiche données non disponibles au lieu de bloquer tout le rapport. Mise en cache des résultats API par zone (1 jour)."
+    },
+    {
+      "risk": "Responsabilite juridique si le rapport omet un risque reel (ex: zone inondable non détectée)",
+      "mitigation": "Disclaimer clair: le rapport est une aide à la décision basee sur les données publiques, il ne remplace pas les diagnostics obligatoires. Recommander systematiquement les vérifications professionnelles complémentaires. Assurance RC Pro."
+    },
+    {
+      "risk": "Le modèle de paiement a l'unite rend les revenus imprévisibles",
+      "mitigation": "Pousser rapidement les plans abonnement Pro et Notaire qui representent du MRR récurrent. Le modèle a l'unite sert d'acquisition (les utilisateurs qui achevent 2+ rapports sont proposes en abonnement)."
+    }
+  ],
+  "inspirations": "HouseCanary (US) qui généré des rapports immobiliers automatises pour les investisseurs institutionnels (valorise 1Md dollars). HomeAdvisor/Angi (US) pour le modèle de mise en relation avec des pros. En France, les ERP (État des Risques et Pollutions) obligatoires sont un rapport similaire mais limite aux risques naturels — ce produit etend le concept a toute la due diligence.",
+  "searchVolume": [
+    {
+      "keyword": "diagnostic immobilier avant achat",
+      "monthlyVolume": "5000-10000",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "rapport avant achat immobilier",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "due diligence immobilier",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "que vérifier avant achat immobilier",
+      "monthlyVolume": "5000-8000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ERP état des risques",
+      "monthlyVolume": "8000-15000",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "prix diagnostic immobilier",
+      "monthlyVolume": "10000-20000",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "950 millions EUR — 950 000 transactions immobilières/an en France (2025, source Notaires de France) x cout moyen diagnostic obligatoire 150-300 EUR + services complémentaires pre-achat",
+    "sam": "95 millions EUR — ~10% des achetéurs disposent a payer un rapport complémentaire au-dela des diagnostics obligatoires (~95 000 transactions/an x 100 EUR de marge unitaire). Plus le segment B2B: 5 000 chasseurs immobiliers + 15 000 notaires potentiellement interessantes par un abonnement",
+    "som": "1,2 million EUR — 100 rapports/mois x 29 EUR + 20 packs/mois x 99 EUR + 25 abonnes Pro x 149 EUR/mois + 5 abonnes Notaire x 299 EUR/mois = ~10K MRR = 120K EUR ARR, atteignable en 10-12 mois. Objectif 18 mois: 1,2M EUR ARR",
+    "methodology": "TAM base sur 950K transactions immobilières annuelles (données Notaires de France sept 2025, +11% sur un an). Le marché des diagnostics immobiliers obligatoires pese environ 2 milliards EUR/an en France. Le SAM ciblé le segment premium d'achetéurs recherchant une analyse complémentaire. SOM base sur le funnel SEO + partenariats courtiers du business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "Diagnostiqueurs traditionnels (marché fragmente)",
+      "url": "https://www.exacompare.fr/diagnostic-avant-achat.html",
+      "pricing": "150-300 EUR pour un pack diagnostic obligatoire (DPE + amiante + plomb + termites + ERP). Prix par diagnostic individuel: DPE 100-150 EUR, amiante 80-130 EUR.",
+      "trafficEstimate": "Marché très fragmente, des milliers de diagnostiqueurs indépendants. ExaCompare et AlloDiagnostic sont les principaux comparateurs.",
+      "reviews": "Qualité variable selon le diagnostiqueur. Les clients se plaignent souvent du manque de transparence des rapports et des délais.",
+      "strengths": "Obligation légale = marché captif. Presence terrain. Confiance des notaires. Rapport signe par un professionnel certifie.",
+      "weaknesses": "Ne couvrent que les diagnostics obligatoires (DPE, amiante, plomb, termites). Aucune analyse de quartier, prix de marché, où environnement. Rapports PDF peu lisibles. Pas de vision consolidee."
+    },
+    {
+      "name": "Diagnostical (marketplace)",
+      "url": "https://www.diagnostical.com",
+      "pricing": "Commission de 25% sur les commandes. Diagnostic express livre en moins de 4h. Prix final variable selon le diagnostiqueur.",
+      "trafficEstimate": "Startup en croissance, trafic estimé faible (<50K visites/mois). Positionnee sur la marketplace de diagnostics.",
+      "reviews": "Concept innovant de marketplace. Avis limites disponibles.",
+      "strengths": "Rapidite (4h). Modèle marketplace innovant. Digitalisation du parcours client.",
+      "weaknesses": "Limite aux diagnostics obligatoires. Pas de rapport pre-achat consolide. Commission élevée pour les diagnostiqueurs."
+    },
+    {
+      "name": "CheckMyHouse (inspection pre-achat)",
+      "url": "https://checkmy-house.fr",
+      "pricing": "À partir de 490 EUR pour une inspection pre-achat complète par un expert en batiment. Prix variable selon la surface et la localisation.",
+      "trafficEstimate": "Niche, trafic estimé <30K visites/mois. Cible les achetéurs prudents.",
+      "reviews": "Bons retours clients sur la qualité de l'expertise. Service perçu comme premium.",
+      "strengths": "Expertise humaine approfondie. Rapport détaillé avec estimation des couts de travaux. Positionne haut de gamme.",
+      "weaknesses": "Prix élevé (490 EUR+). Délai (visite physique nécessaire). Pas de données open data intégrées (prix marché, risques, DPE du parc). Non scalable."
+    },
+    {
+      "name": "MeilleursAgents (estimation prix)",
+      "url": "https://www.meilleursagents.com",
+      "pricing": "Estimation gratuite pour les particuliers. Pas de rapport pre-achat complet.",
+      "trafficEstimate": "5-8M visites/mois. Leader incontesté de l'estimation immobilière en ligne.",
+      "reviews": "Excellente réputation grand public.",
+      "strengths": "Données de prix très fiables. Audience massive. Marque reconnue.",
+      "weaknesses": "Ne fait que l'estimation de prix. Aucun rapport consolide couvrant risques, DPE, environnement. Pas de service de due diligence."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "DVF - Données de Valeurs Foncieres",
+      "status": "attention",
+      "detail": "Licence Ouverte v2 mais données personnelles. Interdiction de re-identification des personnes et d'indexation par moteurs de recherche. Les prix de transactions individuelles peuvent être affiches tant qu'ils ne sont pas associés à des noms de personnes.",
+      "source": "Decret n°2018-1350 — CNIL recommandations réutilisation DVF"
+    },
+    {
+      "topic": "Georisques / BASOL / BASIAS",
+      "status": "ok",
+      "detail": "APIs publiques du BRGM, données en Licence Ouverte. Aucune restriction de réutilisation commerciale pour les données de risques naturels et de pollution des sols.",
+      "source": "https://www.georisques.gouv.fr — API publique"
+    },
+    {
+      "topic": "DPE ADEME",
+      "status": "ok",
+      "detail": "Base DPE en open data, Licence Ouverte. Les DPE individuels sont des documents publics. Réutilisation commerciale autorisée.",
+      "source": "https://data.ademe.fr"
+    },
+    {
+      "topic": "Responsabilite du rapport",
+      "status": "attention",
+      "detail": "Le rapport ne constitue pas un diagnostic immobilier au sens reglementaire. Disclaimer obligatoire precisant qu'il s'agit d'une aide à la décision basee sur les données publiques et ne remplace pas les diagnostics obligatoires. RC Pro recommandée. Risque de mise en cause si un risque reel est omis (ex: zone inondable non détectée par defaut d'API).",
+      "source": "Code de la construction et de l'habitation — Articles L271-4 et suivants"
+    },
+    {
+      "topic": "RGPD - Croisement de données",
+      "status": "attention",
+      "detail": "Le rapport croise de multiples sources sur une adresse précise, ce qui pourrait permettre indirectement d'identifiér les occupants. Pas de blocage mais nécessite une analyse d'impact (AIPD) et des mesurés de minimisation des données personnelles dans le rapport.",
+      "source": "CNIL — Guide ouverture et réutilisation de données (2023)"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (requetes avant achat immobilier)",
+      "cacEstimate": "20-40 EUR",
+      "conversionRate": "4-6%",
+      "ltv": "29-99 EUR (achat unique où pack)",
+      "ltvCacRatio": "1.5:1 a 5:1"
+    },
+    {
+      "channel": "Google Ads (diagnostic immobilier, que vérifier avant achat)",
+      "cacEstimate": "40-80 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "29-99 EUR",
+      "ltvCacRatio": "0.7:1 a 2.5:1 (non rentable en unitaire, rentable avec upsell Pro)"
+    },
+    {
+      "channel": "Partenariats courtiers immobiliers",
+      "cacEstimate": "10-20 EUR (via commission reversee)",
+      "conversionRate": "15-25%",
+      "ltv": "29 EUR par rapport + potentiel abonnement Pro 149 EUR/mois",
+      "ltvCacRatio": "3:1 a 15:1"
+    },
+    {
+      "channel": "Partenariats notaires (B2B white-label)",
+      "cacEstimate": "500-1000 EUR (cycle de vente long)",
+      "conversionRate": "5-10%",
+      "ltv": "3 588 EUR (299 EUR x 12 mois)",
+      "ltvCacRatio": "3.5:1 a 7:1"
+    },
+    {
+      "channel": "Bouche-a-oreille / referral achetéurs",
+      "cacEstimate": "5-10 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "29-99 EUR",
+      "ltvCacRatio": "3:1 a 20:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 70,
+      "detail": "29.5K recherches/mois cumulees ('prix diagnostic immobilier' 10 000/mois, 'ERP état des risques' 8 000/mois). TAM: 950 millions EUR. Cibles: Primo-accedants en phase finale, Chasseurs immobiliers qui veulent, Notaires qui veulent moderniser."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 9 APIs a integrer (API DVF, API ADEME DPE, API Georisques). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 95,
+      "detail": "25 clients a 29 EUR pour demarrer. Objectif 10K MRR en 10 mois. SOM: 120K EUR/an. Pricing 29-300 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "4 concurrents identifies: Diagnostiqueurs traditionnels, Diagnostical (marketplace), CheckMyHouse (inspection pre-a. Leader: Diagnostiqueurs tradition (Marché très fragmente, des milliers de diagnostiqueurs indépendants. ExaCompare et AlloDiagnostic sont les principaux comparateurs.). Faiblesse principale: Ne couvrent que les diagnostics obligatoires (DPE."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "2 points OK, 3 points d'attention. Vigilance: DVF - Données de Valeurs Foncieres, Responsabilite du rapport."
+    },
+    "overall": {
+      "score": 67,
+      "detail": "Point fort: marche (95/100). Point faible: competition (40/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

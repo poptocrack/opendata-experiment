@@ -1,0 +1,323 @@
+{
+  "productSlug": "extension-navigateur-qui-affiche-le-score-hygiene-sur-google-maps-thefork-uber-e",
+  "oneLiner": "Extension Chrome/Firefox qui affiche le score hygiène officiel directement sur Google Maps, TheFork et Uber Eats.",
+  "problem": "Quand un consommateur cherche un restaurant sur Google Maps, TheFork ou Uber Eats, il voit les avis clients mais jamais le score hygiène officiel. Aller vérifier sur Alim'confiance brise le parcours utilisateur. Le consommateur choisit donc sans cette information cruciale.",
+  "solution": "Une extension navigateur qui détecte automatiquement les pages de restaurants sur Google Maps, TheFork, Uber Eats et TripAdvisor, et injecte un badge avec le score hygiène Alim'confiance directement dans l'interface. Le matching se fait par nom + adresse. Clic sur le badge pour voir le détail du contrôle.",
+  "uniqueValue": "Zero friction : le score hygiène apparaît là où l'utilisateur est déjà, sans changer ses habitudes. Pas besoin de télécharger une app ou visiter un site. Compatible avec les 4 principales plateformes de restaurants.",
+  "mvpScope": "Extension Chrome avec injection du badge hygiène sur Google Maps et TheFork. Matching par nom+adresse via API interne. Badge couleur avec tooltip détaillé. Page popup avec les derniers restaurants consultes.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "API de matching et backend",
+      "description": "API qui recoit un nom de restaurant + adresse et retourne le score Alim'confiance. Algorithme de fuzzy matching pour gérer les variantes de noms.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "API de matching nom+adresse vers score",
+        "Algorithme de fuzzy matching",
+        "Cache Redis pour les requêtes fréquentés",
+        "Base Alim'confiance indexée"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Extension Chrome",
+      "description": "Développer l'extension avec content scripts pour Google Maps et TheFork. Injection du badge, popup de détail, page d'options.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Content script Google Maps",
+        "Content script TheFork",
+        "Badge visuel injectable",
+        "Popup de détail et page d'options"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Publication et growth",
+      "description": "Publier sur Chrome Web Store, soumettre a Product Hunt, campagne d'acquisition organique.",
+      "duration": "0.5 semaine",
+      "deliverables": [
+        "Publication Chrome Web Store",
+        "Landing page avec démo video",
+        "Post Product Hunt",
+        "Posts dans les communautés food"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le matching nom+adresse est suffisamment fiable",
+      "how": "Tester l'algorithme de matching sur 500 restaurants de Google Maps vs la base Alim'confiance.",
+      "successCriteria": "Taux de matching correct > 85%, faux positifs < 2%."
+    },
+    {
+      "check": "Les utilisateurs installent et gardent l'extension",
+      "how": "Publier une beta sur Chrome Web Store, promouvoir dans 5 groupes Facebook food.",
+      "successCriteria": "500+ installations en 2 semaines, retention J7 > 60%."
+    },
+    {
+      "check": "Google/TheFork ne bloquent pas l'injection",
+      "how": "Tester la stabilité de l'injection apres les mises à jour de Google Maps et TheFork pendant 4 semaines.",
+      "successCriteria": "Aucune casse majeure nécessitant plus de 2h de fix en 4 semaines."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Power users Google Maps qui laissent beaucoup d'avis (Local Guides)",
+      "where": "Communauté Google Local Guides France (forum officiel, groupes Facebook Local Guides Paris/Lyon/Marseille)",
+      "howToReach": "Poster dans les groupes Local Guides, pitcher comme un outil complémentaire a leur activité d'avis."
+    },
+    {
+      "who": "Utilisateurs de Yuka qui sont déjà sensibilisés a la transparence alimentaire",
+      "where": "Communauté Yuka sur les réseaux sociaux, groupes Facebook alimentation saine",
+      "howToReach": "Angle marketing : 'Yuka pour les restaurants'. Posts dans les groupes alimentation saine."
+    },
+    {
+      "who": "Tech-savvy foodies qui utilisent déjà des extensions",
+      "where": "Reddit r/france, Hacker News FR, Twitter tech francais",
+      "howToReach": "Post Show HN / Show Reddit avec démo GIF animee. Thread Twitter avec screenshots."
+    }
+  ],
+  "pricingStrategy": "Gratuit avec pub discrète (lien affilie vers les plateformes de reservation). Premium a 1.99 EUR/mois : sans pub, alertes sur restaurants favoris, historique des consultations, support des 4 plateformes (gratuit = Google Maps + TheFork seulement).",
+  "pathTo10kMrr": "Les extensions a succès (Honey, Grammarly) montrent un potentiel de millions d'utilisateurs. Objectif modeste : 50K installations. Conversion premium 4% = 2 000 abonnes x 1.99 EUR = 3 980 EUR MRR. Affiliation : 1 EUR/clic qualifié vers TheFork, 5 000 clics/mois = 5 000 EUR MRR. Sponsoring badge par restaurants premium : 500 x 5 EUR/mois = 2 500 EUR MRR. Total : ~11 480 EUR MRR a 50K installations.",
+  "techStack": {
+    "frontend": "Extension Chrome (Manifest V3) en TypeScript + Preact pour les popups",
+    "backend": "Cloudflare Workers (API de matching, ultra-rapide)",
+    "database": "Cloudflare D1 (SQLite edge) + KV (cache)",
+    "hosting": "Cloudflare (tout-en-un : Workers + D1 + KV + CDN)",
+    "apis": [
+      "Alim'confiance data.gouv.fr",
+      "API Adresse data.gouv.fr (geocoding/matching)"
+    ],
+    "notes": "Stack Cloudflare pour la latence minimale (l'extension doit répondre en < 200ms). Coût Cloudflare Workers : gratuit jusqu'a 100K requêtes/jour, puis ~5 USD/million. Budget : ~10 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Google Maps change son DOM et casse l'injection régulièrement",
+      "mitigation": "Utiliser des sélecteurs résilients (data attributes, ARIA rôles). Monitoring automatique avec alertes. Community feedback rapide via Discord."
+    },
+    {
+      "risk": "Chrome Web Store rejette l'extension pour non-respect des policies",
+      "mitigation": "Respecter scrupuleusement Manifest V3 et les guidelines. Permissions minimales. Description claire de ce que fait l'extension."
+    },
+    {
+      "risk": "Faible taux de matching degrade l'experience",
+      "mitigation": "Afficher un message clair quand pas de donnée trouvee. Permettre aux utilisateurs de soumettre un matching manuel. Améliorer l'algo en continu."
+    }
+  ],
+  "inspirations": "Honey (coupons injectes sur les sites e-commerce, rachete 4Md USD par PayPal) et Wappalyzer (détection de technologies sur les sites) pour le modèle d'extension qui enrichit l'experience existante. Keepa (historique de prix Amazon) pour l'injection d'infos sur une plateforme tierce.",
+  "searchVolume": [
+    {
+      "keyword": "hygiène restaurant Google Maps",
+      "monthlyVolume": "1300",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "note hygiène restaurant",
+      "monthlyVolume": "2400",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "alim confiance restaurant",
+      "monthlyVolume": "2900",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "extension chrome restaurant",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "score hygiène Uber Eats",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "25 millions d'utilisateurs Chrome actifs en France (estimation basee sur 65% parts de marché navigateur x 38M internautes quotidiens). Marché extensions Chrome populaires : Honey rachete 4Md USD par PayPal (100M+ utilisateurs). Grammarly 30M+ utilisateurs, freemium.",
+    "sam": "5 millions de Francais qui utilisent régulièrement Google Maps / TheFork pour choisir un restaurant et qui sont sensibilisés a la qualité alimentaire (croisement utilisateurs Yuka + restaurant). Revenus : affiliation + premium.",
+    "som": "50K installations an 1, 4% premium = 2 000 x 1.99 EUR x 12 = 47 760 EUR + affiliation TheFork 3 000 clics/mois x 1 EUR = 36K EUR = ~84K EUR/an.",
+    "methodology": "TAM base sur les parts de marché Chrome en France. SAM croise utilisateurs frequents de plateformes restaurant + sensibilisés transparence alimentaire (profil Yuka). SOM prudent base sur Product Hunt + SEO + communautés food. MunchDB (UK) valide le concept avec une extension similaire pour Just Eat/Deliveroo."
+  },
+  "competitorDeep": [
+    {
+      "name": "MunchDB (UK)",
+      "url": "https://munchdb.com",
+      "pricing": "100% gratuit. Extension Chrome qui affiche les scores FSA (Food Standards Agency) sur Just Eat, Deliveroo et Hungry House au Royaume-Uni.",
+      "trafficEstimate": "10-30K installations Chrome (estimation)",
+      "reviews": "Bons retours de la communauté tech (Lobsters, GitHub). Projet open source.",
+      "strengths": "Exactement le même concept applique au marché UK, open source, preuve de concept validee",
+      "weaknesses": "UK uniquement (scores FSA, pas Alim'confiance), projet personnel/side project, pas de monétisation, pas maintenu activement"
+    },
+    {
+      "name": "Just Eat Food Hygiène (extension Chrome)",
+      "url": "https://github.com/philaturner/just-eat-food-hygiene",
+      "pricing": "Gratuit, open source. Extension Chrome pour afficher les scores hygiène sur Just Eat UK.",
+      "trafficEstimate": "1-5K installations (estimation)",
+      "reviews": "Projet GitHub individuel. Peu d'activité récente.",
+      "strengths": "Preuve de concept technique, open source",
+      "weaknesses": "UK uniquement, projet amateur, pas maintenu, très peu d'utilisateurs"
+    },
+    {
+      "name": "Honey (modèle analogue e-commerce, rachete par PayPal)",
+      "url": "https://www.joinhoney.com",
+      "pricing": "Gratuit pour les utilisateurs. Monétisation par affiliation (commission sur les coupons utilisés).",
+      "trafficEstimate": "100M+ installations mondiales",
+      "reviews": "Extension Chrome la plus populaire au monde. Rachete 4 milliards USD par PayPal en 2020.",
+      "strengths": "Modèle d'extension enrichissant l'experience existante a énorme échelle, preuve que le modèle fonctionne",
+      "weaknesses": "E-commerce uniquement, pas lie a l'alimentaire (inspiration modèle uniquement)"
+    },
+    {
+      "name": "Keepa (Amazon Price Tracker)",
+      "url": "https://keepa.com",
+      "pricing": "Gratuit (basique). Premium 19 EUR/mois (historique complet, alertes).",
+      "trafficEstimate": "2-5M installations Chrome",
+      "reviews": "4.7/5 Chrome Web Store. Référence pour le suivi de prix Amazon.",
+      "strengths": "Modèle éprouvé d'injection de données sur une plateforme tierce, monétisation freemium, forte retention",
+      "weaknesses": "Amazon uniquement, prix (pas hygiène), pas lie a la restauration (inspiration modèle)"
+    },
+    {
+      "name": "Alim'confiance app mobile (Alim'Contrôle)",
+      "url": "https://apps.apple.com/fr/app/alimcontrole/id6742196378",
+      "pricing": "Gratuit. App officielle iOS récente.",
+      "trafficEstimate": "Faible (app récente, peu de téléchargements)",
+      "reviews": "Peu d'avis. App récente.",
+      "strengths": "App officielle, données fiables",
+      "weaknesses": "App mobile (pas extension), nécessité de quitter Google Maps/TheFork pour consulter, UX basique, pas d'intégration dans le parcours utilisateur"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Injection de contenu sur Google Maps / TheFork",
+      "status": "attention",
+      "detail": "Les extensions Chrome qui modifient le DOM de sites tiers sont autorisees par le Chrome Web Store tant qu'elles respectent Manifest V3. Cependant, Google pourrait bloquer les extensions qui modifient Google Maps si elles violent les ToS. Risque faible car de nombreuses extensions le font (Honey, Keepa).",
+      "source": "Chrome Web Store Developer Program Policies"
+    },
+    {
+      "topic": "Réutilisation données Alim'confiance",
+      "status": "ok",
+      "detail": "Données ouvertes sous licence Etalab. Réutilisation commerciale autorisee. Le dataset est mis à jour régulièrement sur data.gouv.fr.",
+      "source": "data.gouv.fr - Alim'confiance"
+    },
+    {
+      "topic": "Responsabilite erreur de matching restaurant",
+      "status": "attention",
+      "detail": "Le fuzzy matching nom+adresse peut produire des faux positifs (mauvais score attribue au mauvais restaurant). Afficher un taux de confiance du matching et un lien pour signaler une erreur. Disclaimer obligatoire.",
+      "source": "Code civil art. 1240"
+    },
+    {
+      "topic": "Manifest V3 Chrome - Conformité technique",
+      "status": "ok",
+      "detail": "L'extension doit respecter Manifest V3 (nouvelle norme Chrome). Les permissions doivent etre minimales (activeTab, pas de all_urls). La description doit etre transparente sur le fonctionnement.",
+      "source": "developer.chrome.com/docs/extensions/mv3"
+    },
+    {
+      "topic": "RGPD - Données de navigation",
+      "status": "attention",
+      "detail": "L'extension voit les URLs visitées par l'utilisateur (Google Maps, TheFork). Minimiser la collecte : ne transmettre que les noms/adresses de restaurants, pas l'historique complet. Politique de confidentialite claire dans l'extension.",
+      "source": "CNIL - RGPD art. 5 (minimisation)"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Product Hunt launch",
+      "cacEstimate": "0-2 EUR",
+      "conversionRate": "5-10% (installation gratuite)",
+      "ltv": "23.88 EUR (1.99 EUR x 12 mois Premium)",
+      "ltvCacRatio": "12:1+ (quasi organique)"
+    },
+    {
+      "channel": "Reddit r/france + Hacker News",
+      "cacEstimate": "0-3 EUR",
+      "conversionRate": "3-8%",
+      "ltv": "23.88 EUR + affiliation",
+      "ltvCacRatio": "8:1+ (organique)"
+    },
+    {
+      "channel": "Communautés Google Local Guides France",
+      "cacEstimate": "2-8 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "23.88 EUR",
+      "ltvCacRatio": "3:1 a 12:1"
+    },
+    {
+      "channel": "SEO (score hygiène restaurant, alim confiance)",
+      "cacEstimate": "3-10 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "23.88 EUR + affiliation 12 EUR/an",
+      "ltvCacRatio": "3.5:1 a 12:1"
+    },
+    {
+      "channel": "Affiliation TheFork (revenus passifs)",
+      "cacEstimate": "0 EUR (monétisation existante)",
+      "conversionRate": "N/A",
+      "ltv": "1 EUR/clic qualifié, 3 000-5 000 clics/mois",
+      "ltvCacRatio": "infini (revenu pur)"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 57,
+      "detail": "7.8K recherches/mois cumulees ('alim confiance restaurant' 2 900/mois, 'note hygiène restaurant' 2 400/mois). Cibles: Power users Google Maps, Utilisateurs de Yuka qui, Tech-savvy foodies qui utilisent."
+    },
+    "feasibility": {
+      "score": 88,
+      "detail": "MVP en 4 semaines. 2 APIs a intégrer (Alim'confiance, API Adresse). Stack: Extension + Cloudflare. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 45,
+      "detail": "000 clients a 99 EUR pour démarrer. SOM: 36K EUR/an."
+    },
+    "competition": {
+      "score": 35,
+      "detail": "5 concurrents identifiés: MunchDB (UK), Just Eat Food Hygiène (extensi, Honey (modèle analogue e-comme. Leader: MunchDB (UK) (10-30K installations Chrome (estimation)). Faiblesse principale: UK uniquement (scores FSA."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "2 points OK, 3 points d'attention. Vigilance: Injection de contenu sur Google Maps / TheFork, Responsabilite erreur de matching restaurant."
+    },
+    "overall": {
+      "score": 58,
+      "detail": "Point fort: faisabilité (88/100). Point faible: competition (35/100). Idee intéressante, risques significatifs a mitiger."
+    }
+  }
+}

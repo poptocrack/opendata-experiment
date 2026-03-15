@@ -1,0 +1,282 @@
+{
+  "id": "immobilier-intelligence",
+  "rank": 1,
+  "title": "Intelligence immobilière croisée",
+  "slug": "immobilier",
+  "sector": "immobilier",
+  "tagline": "Croiser DVF + DPE + Permis de construire + Criminalité + Risques naturels pour créer le score de quartier le plus complet de France",
+  "status": "exploration",
+  "difficulty": "complexe",
+  "marketSize": "Très large — agents, investisseurs, promoteurs, achetéurs",
+  "monetization": "SaaS premium 49-299/mois",
+  "context": "Le marché immobilier français génère 800K+ transactions/an. Les données existent en silo mais personne ne les croise intelligemment. La criminalité par commune (108K visites, 102K téléchargements !) prouve que les gens veulent comprendre un quartier avant d'achetér. L'API BDNB du CSTB offre même des simulations de DPE manquants et de valeurs foncières. L'API Georisques ajoute les risques naturels (inondation, séisme, Seveso). Combine avec les permis de construire (signal avancé de valorisation), c'est un outil de due diligence immobilière qui n'existe nulle part aujourd'hui.",
+  "signals": [
+    {
+      "label": "Visites DVF",
+      "value": "573K/an",
+      "detail": "Dataset le plus consulté de data.gouv.fr dans l'immobilier"
+    },
+    {
+      "label": "Téléchargements DVF",
+      "value": "128K/an",
+      "detail": "Forte demande de données brutes"
+    },
+    {
+      "label": "Criminalité par commune",
+      "value": "108K visites + 102K DL",
+      "detail": "Signal massif — les gens veulent savoir où c'est sûr"
+    },
+    {
+      "label": "Permis de construire",
+      "value": "24K visites/an",
+      "detail": "Dataset national Sitadel, mis à jour mensuellement"
+    },
+    {
+      "label": "Logements vacants",
+      "value": "21K visites/an",
+      "detail": "Indicateur clé pour détecter les zones en déclin ou en tension"
+    },
+    {
+      "label": "Zonage TLV",
+      "value": "13K visites/an",
+      "detail": "Zones tendues — la où la demande locative dépasse l'offre"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5c4ae55a634f4117716d5656",
+      "name": "Demandes de valeurs foncières (DVF)",
+      "description": "Toutes les transactions immobilières : prix, surface, localisation. 62-83 MB/an.",
+      "visits": "573K/an",
+      "downloads": "128K/an",
+      "updateFrequency": "Semestriel"
+    },
+    {
+      "datasetId": "5cc1b94a634f4165e96436c1",
+      "name": "DVF géolocalisées",
+      "description": "Mêmes données avec coordonnées GPS pour chaque transaction.",
+      "visits": "93K/an",
+      "downloads": "23K/an",
+      "updateFrequency": "Semestriel"
+    },
+    {
+      "datasetId": "67f7e557cb268460ce66c8d4",
+      "name": "DPE Logements existants",
+      "description": "Diagnostics énergétiques : classe A-G, consommation, émissions. API temps réel ADEME.",
+      "visits": "~28K/an",
+      "downloads": "~4K/an",
+      "updateFrequency": "Hebdomadaire"
+    },
+    {
+      "datasetId": "689c42fa521ccf80ce954f83",
+      "name": "Permis de construire (Sitadel)",
+      "description": "Tous les permis déposés et accordés en France. 13 fichiers CSV.",
+      "visits": "24K/an",
+      "downloads": "11K/an",
+      "updateFrequency": "Mensuel"
+    },
+    {
+      "datasetId": "621df2954fa5a3b5a023e23c",
+      "name": "Délinquance par commune",
+      "description": "Crimes et délits enregistrés par la police et gendarmerie, par commune. 16 fichiers.",
+      "visits": "108K/an",
+      "downloads": "102K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "61816c6e23197bb34835228e",
+      "name": "Logements vacants par commune",
+      "description": "Taux de vacance du parc privé par commune — indicateur de dynamisme immobilier.",
+      "visits": "21K/an",
+      "downloads": "6K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "59b0020ec751df07d5f13bcf",
+      "name": "Cadastre",
+      "description": "Parcelles cadastrales avec géolocalisation. 133 datasets liés.",
+      "visits": "41K/an",
+      "downloads": "6K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "666028129ef292c03b9fc8f5",
+      "name": "Sites et sols pollués (ex-BASOL)",
+      "description": "Pollutions suspectées ou avérées — crucial pour évaluer un terrain avant achat.",
+      "visits": "6.5K/an",
+      "downloads": "15K/an",
+      "updateFrequency": "Regulier",
+      "order": 7
+    },
+    {
+      "datasetId": "657c88da2947e13be0597058",
+      "name": "Zonage TLV (Taxe Logements Vacants)",
+      "description": "Liste des communes en zone tendue — indicateur de tension locative.",
+      "visits": "13K/an",
+      "downloads": "3.4K/an",
+      "updateFrequency": "Annuel",
+      "order": 8
+    },
+    {
+      "datasetId": "689c42dc21932fa1640d99c3",
+      "name": "RPLS — Parc de logements sociaux",
+      "description": "Répertoire détaillé des logements locatifs des bailleurs sociaux : adresse, surface, loyer, DPE.",
+      "visits": "nouveau",
+      "downloads": "nouveau",
+      "updateFrequency": "Annuel",
+      "order": 9
+    }
+  ],
+  "apis": [
+    {
+      "name": "API BDNB Expert",
+      "description": "Base nationale des bâtiments — DPE simulés, valeurs foncières, indicateurs de performance. 10M requêtes/mois.",
+      "baseUrl": "https://api.bdnb.io/v1/bdnb"
+    },
+    {
+      "name": "API Georisques",
+      "description": "Risques naturels et technologiques par localisation : inondation, séisme, Seveso, mouvements de terrain.",
+      "baseUrl": "https://georisques.gouv.fr/api/v1/"
+    },
+    {
+      "name": "API Adresse (BAN)",
+      "description": "Géocodage et recherche d'adresses. Gratuit et illimité.",
+      "baseUrl": "https://data.geopf.fr/geocodage/"
+    },
+    {
+      "name": "API DPE logements (ADEME)",
+      "description": "Accès temps réel aux diagnostics énergétiques de tous les logements français.",
+      "baseUrl": "https://data.ademe.fr/data-fair/api/v1/datasets/dpe-france"
+    }
+  ],
+  "productIdeas": [
+    "Score de quartier multicritère : prix DVF + sécurité + DPE + risques naturels + écoles + dynamisme (vacance, permis)",
+    "Alertes investissement : permis de construire déposé = signal de valorisation du quartier",
+    "Score de rentabilité locative par adresse (prix achat DVF vs loyers estimés vs coût rénovation DPE)",
+    "Détection de passoires thermiques à rachetér/rénover (DPE F/G + prix DVF bas + quartier sûr)",
+    "Due diligence automatisée : rapport complet avant achat croisant toutes les sources",
+    "Carte interactive des zones à fort potentiel (prix bas + bons indicateurs sécurité/écoles + permis en cours)",
+    "Scoring zone tendue : croiser zonage TLV + logements vacants + DVF pour identifier les meilleures zones d'investissement locatif"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Agents immobiliers",
+      "priceRange": "49/mois"
+    },
+    {
+      "segment": "Investisseurs locatifs",
+      "priceRange": "99/mois"
+    },
+    {
+      "segment": "Promoteurs immobiliers",
+      "priceRange": "299/mois"
+    },
+    {
+      "segment": "Acheteurs particuliers",
+      "priceRange": "9.99/rapport"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "MeilleursAgents",
+      "weakness": "Ne croise pas DPE + criminalité + permis de construire"
+    },
+    {
+      "name": "Yanport",
+      "weakness": "Focus agences, pas de score de quartier"
+    },
+    {
+      "name": "DVF app (Etalab)",
+      "weakness": "Visualisation brute sans analyse ni croisement"
+    },
+    {
+      "name": "Kelquartier",
+      "weakness": "Données datées, pas de croisement DVF/DPE"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Croisement unique de 10+ sources publiques (DVF, DPE, criminalité, Georisques, permis) qu'aucun concurrent ne réunit",
+      "APIs gratuites et illimitées (BDNB, Georisques, BAN) permettant un MVP sans coût d'acquisition de données",
+      "Données DVF à 573K visites/an prouvent une demande massive et récurrente déjà existante",
+      "Effet réseau défensible : chaque croisement supplémentaire augmente la valeur du score de manière non-linéaire"
+    ],
+    "weaknesses": [
+      "Complexité technique d'harmonisation entre sources hétérogènes (mailles communales, IRIS, parcelles cadastrales)",
+      "Données DVF publiées avec 6 mois de retard — pas de temps réel pour les professionnels exigeants",
+      "Dépendance à la pérennité de plusieurs APIs publiques gèrees par des entités différentes (ADEME, CSTB, IGN)",
+      "Marché immobilier cyclique — en phase baissière, les investisseurs réduisent leurs abonnements"
+    ],
+    "opportunities": [
+      "Obligation DPE collectif en copropriété d'ici 2025-2028 crée une vague de demande pour les données énergétiques croisées",
+      "Loi Climat impose des restrictions de location sur les passoires thermiques — les investisseurs ont besoin d'outils de screening",
+      "Les notaires et courtiers n'ont aucun outil de due diligence automatisé — canal B2B premium inexploité",
+      "Extension européenne possible via EPC (Energy Performance Certificates) dans d'autres pays EU"
+    ],
+    "threats": [
+      "MeilleursAgents (SeLoger group) pourrait intégrer des croisements similaires avec leur base de données proprietaire",
+      "Etalab pourrait enrichir l'app DVF officielle et réduire le besoin d'un outil tiers",
+      "Risque réglementaire sur la granularité des données de criminalité (débat CNIL sur la stigmatisation de quartiers)",
+      "Les plateformes immobilières (SeLoger, LeBonCoin) ont les moyens de développer ces fonctionnalités en interne"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Sophie",
+      "role": "Agent immobilier indépendante à Bordeaux, 8 ans d'expérience, spécialisée en investissement locatif",
+      "age": "38 ans",
+      "context": "Gère un portefeuille de 15-20 mandats simultanés. Ses clients investisseurs lui demandent de plus en plus des analyses chiffrées pour justifier un prix. Elle passe 2h par bien à compiler manuellement DVF + DPE + infos quartier.",
+      "painPoints": [
+        "Perd 2h par mandat à chercher les prix DVF, le DPE de l'immeuble et les infos sécurité du quartier",
+        "Ne peut pas quantifier objectivement la qualité d'un quartier face à un achetéur sceptique",
+        "A perdu une vente parce qu'un achetéur a découvert après coup un site BASOL pollué à 200m"
+      ],
+      "currentSolution": "Onglets ouverts sur DVF Etalab + Kelquartier + Georisques + Google Maps — copie-colle dans un PowerPoint maison",
+      "budget": "40-60 EUR/mois pour un outil qui lui fait gagner du temps et crédibilise ses présentations",
+      "channels": [
+        "Groupe Facebook 'Agents immobiliers indépendants'",
+        "Salon RENT (salon proptech Paris)",
+        "Fédération FNAIM",
+        "Podcast 'Mon Quotidien d'Agent Immo'"
+      ]
+    },
+    {
+      "name": "Julien",
+      "role": "Investisseur locatif semi-professionnel, possède 6 appartements entre Lyon et Saint-Etienne",
+      "age": "44 ans",
+      "context": "Cadre en entreprise le jour, investisseur le soir et weekend. Cherche activement des passoires thermiques DPE F/G dans des quartiers en mutation pour les rénover et les louer. Analyse 20-30 biens par mois avant d'en retenir 1-2.",
+      "painPoints": [
+        "Passe ses soirées à croiser manuellement DVF, DPE et permis de construire pour détecter les quartiers en hausse",
+        "A acheté un bien sans vérifier le risque argile — fissures apparues 18 mois après, 15K EUR de réparation",
+        "N'arrive pas a estimer fiablement la rentabilité nette (prix d'achat + coût rénovation DPE + loyer estimé)"
+      ],
+      "currentSolution": "Tableau Excel personnel avec 12 colonnes, données copiées à la main depuis 5 sites différents",
+      "budget": "80-120 EUR/mois — le coût est marginal par rapport à un mauvais investissement à 150K EUR",
+      "channels": [
+        "Forum Devenir-rentier.fr",
+        "Groupe Facebook 'Investissement immobilier locatif'",
+        "Chaîne YouTube de Yann Darwin",
+        "Meetup investisseurs Lyon"
+      ]
+    },
+    {
+      "name": "Caroline",
+      "role": "Directrice du développement chez un promoteur immobilier régional (30 opérations/an, 15 employés)",
+      "age": "51 ans",
+      "context": "Cherche des fonciers pour de nouvelles opérations de promotion. Doit évaluer rapidement si un terrain est viable : risques, réglementation, prix du quartier, dynamique démographique. Présente 5-10 études de faisabilité par mois au comité d'investissement.",
+      "painPoints": [
+        "Chaque étude de faisabilité foncière nécessite 3-4 jours de recherche multi-sources",
+        "A lancé une opération sans détecter un PPRI (Plan Prévention Risques Inondation) — surcoût de 200K EUR",
+        "Le comité d'investissement demande des benchmarks de prix DVF du quartier qu'elle compile manuellement"
+      ],
+      "currentSolution": "Bureau d'études externe à 3-5K EUR par étude + recherches internes sur Georisques et DVF Etalab",
+      "budget": "200-350 EUR/mois — remplace partiellement le recours au bureau d'études externe",
+      "channels": [
+        "Fédération des Promoteurs Immobiliers (FPI)",
+        "Salon MIPIM Cannes",
+        "Club des Développeurs Immobiliers",
+        "LinkedIn groupe 'Promotion Immobilière France'"
+      ]
+    }
+  ]
+}

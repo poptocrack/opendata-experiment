@@ -1,0 +1,345 @@
+{
+  "productSlug": "score-d-attractivite-employeur-par-zone-concurrence-entre-recruteurs-bassin-de-t",
+  "oneLiner": "Mesurez votre attractivité employeur vs vos concurrents locaux grâce à un score croisant offres, salaires, turnover et bassin de talents de votre zone.",
+  "problem": "Les entreprises ne savent pas si elles sont attractives sur leur bassin d'emploi. Elles publient des offres sans connaitre la concurrence recruteur locale : combien d'autres entreprises cherchent les memes profils, a quels salaires, avec quels avantages. Résultat : des offres mal calibrees (salaire trop bas, avantages insuffisants) et des postes qui restent vacants pendant des mois.",
+  "solution": "Un dashboard par zone géographique qui calcule un score d'attractivité employeur en croisant : nombre de recruteurs concurrents pour les memes profils ROME, salaires proposes dans la zone vs mediane nationale, ratio offres/demandeurs, taux de turnover sectoriel (effectifs URSSAF), et durée moyenne de publication des offres. L'entreprise voit son positionnement relatif et reçoit des recommandations concretes.",
+  "uniqueValue": "Premier benchmark d'attractivité employeur par zone géographique basé sur des données publiques objectives, pas sur des enquêtes declaratives biaisees.",
+  "mvpScope": "Saisie du SIRET de l'entreprise. Détection automatique de la zone d'emploi, du secteur NAF et des métiers recrutes (via offres France Travail). Dashboard avec : score d'attractivité 0-100, nombre de concurrents recruteurs dans la zone, salaire median propose vs le votre, durée moyenne des offres similaires. Recommandations basiques.",
+  "timeToMvp": "8 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Collecte des indicateurs par zone d'emploi",
+      "description": "Calcul des metriques par zone d'emploi x code ROME : nombre d'offres actives, nombre d'entreprises recrutant, salaires proposes (min/max/median), durée moyenne des offres, effectifs et évolution URSSAF.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline quotidien API Offres France Travail par zone x ROME",
+        "Calcul des metriques aggregees par zone",
+        "Import effectifs URSSAF et calcul turnover",
+        "Base de référence : metriques pour les 304 zones d'emploi"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Algorithme de scoring et benchmark",
+      "description": "Modèle de scoring multi-facteurs normalise de 0 a 100. Benchmark par rapport aux zones similaires (meme région, meme taille). Identification des facteurs cles influencant le score.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Algorithme de scoring d'attractivité v1",
+        "Benchmark inter-zones pour meme métier",
+        "Decomposition du score par facteur",
+        "Recommandations automatiques basees sur les faiblesses"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Dashboard entreprise",
+      "description": "Interface ou l'entreprise saisit son SIRET et voit son score d'attractivité, sa position relative, le détail des facteurs, et des recommandations. Comparaison avec les zones voisines.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Page d'analyse par SIRET",
+        "Dashboard avec score global et facteurs",
+        "Comparaison avec zones voisines",
+        "Liste des concurrents recruteurs anonymises"
+      ]
+    },
+    {
+      "phase": "4",
+      "title": "Suivi et rapports periodiques",
+      "description": "Évolution du score dans le temps. Rapport mensuel automatique. Alertes sur les changements significatifs (nouveau concurrent, hausse des salaires dans la zone).",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Historique du score sur 12 mois",
+        "Rapport mensuel PDF automatique",
+        "Alertes email sur changements significatifs"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les RH veulent un benchmark local objectif",
+      "how": "Générer le score d'attractivité pour 20 entreprises et envoyer le rapport aux DRH/responsables recrutement. Entretien pour recueillir leur feedback.",
+      "successCriteria": "15/20 trouvent le score pertinent, 10 veulent un suivi mensuel, 5 identifient une action concrété basee sur le rapport"
+    },
+    {
+      "check": "Les données permettent une granularité locale suffisante",
+      "how": "Calculer le score pour 50 zones d'emploi variees (urbaines, rurales, differents secteurs). Vérifier que les metriques sont significatives.",
+      "successCriteria": "Score calculable (metriques suffisantes) pour > 80% des zones d'emploi sur les 30 métiers les plus courants"
+    },
+    {
+      "check": "Le scoring reflété la réalité percue par les recruteurs",
+      "how": "Comparer le score avec les difficultés de recrutement declarees par 20 RH. Un score bas devrait correspondre a des difficultés elevees.",
+      "successCriteria": "Correlation > 0.6 entre score d'attractivité et facilité de recrutement percue"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "DRH et responsables recrutement d'ETI multi-sites (industrie, retail, santé)",
+      "where": "ANDRH, salons RH (Solutions RH, HR Tech), LinkedIn groupes DRH",
+      "howToReach": "Rapport gratuit d'attractivité pour chacun de leurs sites. Mise en evidence des écarts entre sites et recommandations spécifiques."
+    },
+    {
+      "who": "Cabinets de recrutement régionaux cherchant a se positionner comme experts de leur territoire",
+      "where": "Syntec Conseil, PRISME (ETT), LinkedIn recruteurs régionaux",
+      "howToReach": "Offrir l'outil en marque blanche pour qu'ils integrent le score dans leurs propositions commerciales aux entreprises clientes."
+    },
+    {
+      "who": "Collectivités territoriales travaillant sur l'attractivité de leur territoire",
+      "where": "Régions, metropoles, communautés d'agglomeration - services développement économique",
+      "howToReach": "Proposer un benchmark territorial complet gratuit, utilisable dans leur communication d'attractivité. Les collectivités ont des budgets dédiés."
+    }
+  ],
+  "pricingStrategy": "Gratuit : 1 analyse one-shot par SIRET (score global sans détail). Recruteur a 59 euros/mois : analyses illimitées, détail des facteurs, recommandations, historique 6 mois. Multi-sites a 199 euros/mois : jusqu'a 20 sites, comparaison inter-sites, rapport mensuel, alertes. Territoire a 399 euros/mois : zone géographique complete, tous secteurs, export données, marque blanche, benchmark inter-zones.",
+  "pathTo10kMrr": "80 Recruteur (4720) + 20 Multi-sites (3980) + 5 Territoire (1995) = ~10.7K MRR. Le gratuit one-shot sert de hook (partage du score sur LinkedIn = viralité). Acquisition : SEO 'attractivité employeur [ville]', partenariats ATS et SIRH, content (classement mensuel des zones les plus attractives par secteur).",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS + Recharts (graphiques de score) + MapLibre (carte des zones)",
+    "backend": "Next.js API routes + workers de calcul quotidien des metriques par zone",
+    "database": "PostgreSQL (Supabase) avec tables de metriques par zone x ROME x période",
+    "hosting": "Vercel + Supabase + Railway (workers)",
+    "apis": [
+      "API Offres d'emploi France Travail",
+      "API Marché du travail France Travail",
+      "API Recherche Entreprises (info SIRET)",
+      "Effectifs URSSAF data.gouv.fr",
+      "BMO France Travail data.gouv.fr",
+      "Zones d'emploi INSEE (geometries)"
+    ],
+    "notes": "L'API Marché du travail France Travail fournit des statistiques aggregees par zone et métier, ce qui évité de tout recalculer depuis les offres individuelles. Les données BMO (enquété annuelle) ajoutent une dimension qualitative sur les difficultés de recrutement par zone. Les geometries des zones d'emploi sont disponibles en open data sur data.gouv.fr."
+  },
+  "risks": [
+    {
+      "risk": "Le concept d'attractivité employeur est subjectif et multi-factoriel",
+      "mitigation": "Etre transparent sur les facteurs pris en compte et leur ponderation. Permettre a l'utilisateur de personnaliser les poids. Positionner le score comme un indicateur objectif parmi d'autres, pas comme une vérité absolue."
+    },
+    {
+      "risk": "Les grandes entreprises ont déjà des outils RH internes ou des cabinets de conseil",
+      "mitigation": "Cibler les ETI et PME (50-2000 salariés) qui n'ont pas les moyens de s'offrir un cabinet de conseil RH. Prix accessible vs un projet de conseil a 50K+."
+    },
+    {
+      "risk": "Les offres France Travail ne couvrent pas tous les secteurs (tech, cadres)",
+      "mitigation": "Completer avec les données APEC pour les cadres a terme. En attendant, etre transparent sur la couverture sectorielle. Le scoring reste pertinent pour les métiers bien couverts (industrie, BTP, commerce, santé)."
+    },
+    {
+      "risk": "Difficulté a lier une entreprise spécifique a ses offres publiees",
+      "mitigation": "Utiliser le matching SIRET dans les offres France Travail quand disponible. En complement, comparer l'entreprise a la mediane de sa zone/secteur sans identifier ses offres spécifiques."
+    }
+  ],
+  "inspirations": "Glassdoor (attractivité employeur mais basé sur des avis subjectifs), Great Place to Work (certification mais enquété declarative coûteuse), LinkedIn Talent Insights (analytics mais cher et biais LinkedIn), Indeed Analytics (tendances globales mais pas de scoring local), HappyIndex/ChooseMyCompany (classements mais pas géographiques).",
+  "searchVolume": [
+    {
+      "keyword": "attractivité employeur",
+      "monthlyVolume": "1900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "marque employeur",
+      "monthlyVolume": "8100",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "benchmark marque employeur",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "score marque employeur",
+      "monthlyVolume": "320",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "attractivité entreprise recrutement",
+      "monthlyVolume": "480",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "concurrence recruteurs zone",
+      "monthlyVolume": "170",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "indicateurs RH marque employeur",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "audit marque employeur",
+      "monthlyVolume": "720",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "2 milliards EUR - marché de la marque employeur et des solutions d'attractivité RH en France. Inclut les cabinets conseil marque employeur, outils SIRH, plateformes d'avis employeur, certifications (Great Place to Work). Randstad Employer Brand Research touche 6 000+ entreprises/an.",
+    "sam": "200 millions EUR - ETI et PME multi-sites (50-5000 salariés) avec budget RH/marque employeur mais sans moyens pour un cabinet a 50K+. Environ 15 000 entreprises cibles en France.",
+    "som": "1.3 million EUR - 10 700 EUR MRR (105 clients payants) en 12-18 mois. Scoring gratuit one-shot viral (partage LinkedIn) + conversion payante.",
+    "methodology": "TAM basé sur dépenses marque employeur France (Xerfi, ANDRH). SAM restreint aux ETI/PME avec budget analytics RH < 500 EUR/mois. SOM basé sur mix 80 Recruteur + 20 Multi-sites + 5 Territoire."
+  },
+  "competitorDeep": [
+    {
+      "name": "Randstad Employer Brand Research",
+      "url": "https://www.randstad.fr/employer-brand-research-attractivite-entreprise/",
+      "pricing": "Gratuit (rapport annuel public). Études personnalisees sur devis.",
+      "trafficEstimate": "300K visites/mois (randstad.fr)",
+      "reviews": "Étude de référence sur l'attractivité employeur en France. Critères 2025 : salaire, environnement de travail, equilibre vie pro/perso.",
+      "strengths": "Étude la plus connue en France, méthodologie solide (enquété 6000+ repondants), marque Randstad, gratuit le rapport annuel",
+      "weaknesses": "Pas d'outil self-service, pas de scoring par zone géographique, pas de données temps réel, uniquement les grands employeurs (top 150)"
+    },
+    {
+      "name": "Glassdoor",
+      "url": "https://www.glassdoor.fr",
+      "pricing": "Gratuit (consultation). Glassdoor for Employers à partir de 300 EUR/mois.",
+      "trafficEstimate": "2M visites/mois (France)",
+      "reviews": "Plateforme d'avis salariés de référence. Notes sur 5 etoiles par entreprise.",
+      "strengths": "Base massive d'avis salariés, marque connue, impact SEO fort, données salaires, comparaison concurrents",
+      "weaknesses": "Avis declaratifs biaises (surrepresentation mecontents), pas de dimension géographique (zone d'emploi), pas de données offres/tension objectives"
+    },
+    {
+      "name": "Great Place to Work",
+      "url": "https://www.greatplacetowork.fr",
+      "pricing": "Certification à partir de 5 000 EUR/an + enquête.",
+      "trafficEstimate": "500K visites/mois (France)",
+      "reviews": "Certification de référence pour l'attractivité employeur. Classement annuel mediatise.",
+      "strengths": "Certification reconnue, classement mediatique, enquété salariés methodique, benchmark sectoriel",
+      "weaknesses": "Cher (5K+/an), enquété declarative, pas de données objectives (offres, tension), pas de dimension géographique, processus long (3-6 mois)"
+    },
+    {
+      "name": "ChooseMyCompany / HappyIndex",
+      "url": "https://choosemycompany.com",
+      "pricing": "Certification à partir de 2 000 EUR/an.",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "Alternative française a Great Place to Work. Score machine learning basé sur investissements pub recrutement.",
+      "strengths": "Score algorithmique (machine learning), classement top 30, methodo transparente, prix plus accessible que GPTW",
+      "weaknesses": "Pas de dimension géographique, focus grandes entreprises, pas de données offres/tension publiques, notoriété inferieure a GPTW"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation API Offres France Travail pour benchmark",
+      "status": "ok",
+      "detail": "Les données aggregees (salaires medians, nombre d'offres par zone) sont utilisables commercialement. Ne pas republier les offres individuelles.",
+      "source": "CGU API France Travail"
+    },
+    {
+      "topic": "Scoring automatise d'entreprises",
+      "status": "attention",
+      "detail": "Le scoring d'attractivité pourrait etre considéré comme un traitement automatise impactant la reputation d'une entreprise. Prevoir un droit de contestation et expliquer la méthodologie.",
+      "source": "RGPD art. 22, Code civil art. 1240"
+    },
+    {
+      "topic": "Benchmark concurrents recruteurs anonymises",
+      "status": "ok",
+      "detail": "Afficher le nombre de concurrents recruteurs dans une zone sans les nommer individuellement. Les statistiques aggregees sont libres.",
+      "source": "Droit de la concurrence, données publiques"
+    },
+    {
+      "topic": "Données BMO et effectifs URSSAF",
+      "status": "ok",
+      "detail": "Open data, reutilisation commerciale autorisee.",
+      "source": "Licence Ouverte Etalab v2.0"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (marque employeur, attractivité employeur)",
+      "cacEstimate": "90 EUR",
+      "conversionRate": "3%",
+      "ltv": "710 EUR (Recruteur 59 EUR x 12 mois)",
+      "ltvCacRatio": "7.9"
+    },
+    {
+      "channel": "LinkedIn organique (partage scores viraux)",
+      "cacEstimate": "25 EUR",
+      "conversionRate": "2%",
+      "ltv": "710 EUR",
+      "ltvCacRatio": "28.4"
+    },
+    {
+      "channel": "Outreach DRH ETI (email personnalise avec rapport gratuit)",
+      "cacEstimate": "200 EUR",
+      "conversionRate": "8%",
+      "ltv": "3580 EUR (Multi-sites 199 EUR x 18 mois)",
+      "ltvCacRatio": "17.9"
+    },
+    {
+      "channel": "Partenariats ANDRH et salons RH",
+      "cacEstimate": "150 EUR",
+      "conversionRate": "10%",
+      "ltv": "2400 EUR (Multi-sites 199 EUR x 12 mois)",
+      "ltvCacRatio": "16.0"
+    },
+    {
+      "channel": "Content (classement mensuel zones attractives)",
+      "cacEstimate": "40 EUR",
+      "conversionRate": "3%",
+      "ltv": "710 EUR",
+      "ltvCacRatio": "17.8"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "12.7K recherches/mois cumulees ('marque employeur' 8 100/mois, 'attractivité employeur' 1 900/mois). TAM: 2 milliards EUR. Cibles: DRH et responsables recrutement, Cabinets de recrutement régionaux, Collectivités territoriales travaillant sur."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 8 semaines. 6 APIs a integrer (API Offres d'emploi France Tra, API Marché du travail France T, API Recherche Entreprises). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Pricing 59-399 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: Randstad Employer Brand Resear, Glassdoor, Great Place to Work. Leader: Randstad Employer Brand R (300K visites/mois (randstad.fr)). Faiblesse principale: Pas d'outil self-service."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Scoring automatise d'entreprises."
+    },
+    "overall": {
+      "score": 58,
+      "detail": "Point fort: legal (78/100). Point faible: faisabilité (45/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

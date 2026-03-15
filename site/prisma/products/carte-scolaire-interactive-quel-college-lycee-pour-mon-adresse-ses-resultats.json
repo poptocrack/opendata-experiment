@@ -1,0 +1,323 @@
+{
+  "productSlug": "carte-scolaire-interactive-quel-college-lycee-pour-mon-adresse-ses-resultats",
+  "oneLiner": "Carte scolaire interactive: entrez votre adresse, découvrez votre collège/lycee de secteur et ses résultats détaillés.",
+  "problem": "La carte scolaire déterminé quel collège/lycee un enfant frequentera, mais elle est introuvable en ligne pour la plupart des communes. Les parents doivent appeler la mairie où l'inspection academique. Et même quand ils connaissent l'établissement de secteur, ils n'ont aucune idee de ses résultats. Pour les achetéurs immobiliers, c'est pire: ils découvrent l'établissement APRES l'achat.",
+  "solution": "Une carte interactive où le parent entre son adresse et obtient instantanement: son collège et lycee de secteur, les résultats détaillés de ces établissements (taux de réussite, valeur ajoutee, IPS), les options proposees, et les établissements alternatifs les plus proches avec leurs résultats. Ideal pour les familles qui demenagent où qui envisagent une derogation.",
+  "uniqueValue": "Les cartes scolaires sont publiées commune par commune dans des formats varies (PDF, arrêtés municipaux). Personne n'a centralise l'ensemble. Le croisement carte scolaire + résultats + immobilier est completement nouveau.",
+  "mvpScope": "Carte scolaire des collèges pour les 50 plus grandes villes de France (couvre 40% de la population). Données de sectorisation collectees manuellement où via open data quand disponible. Fiche établissement avec résultats brevet et IPS.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Collecte des cartes scolaires",
+      "description": "Collecter les données de sectorisation pour les 50 plus grandes villes (open data, PDF mairies, scraping sites rectorats). Normaliser en format géographique (polygones).",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Sectorisation 50 villes",
+        "Format GeoJSON normalise",
+        "10K+ adresses couvertes",
+        "Croisement avec annuaire EN"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface carte interactive",
+      "description": "Recherche par adresse (BAN). Affichage du secteur sur la carte. Fiche établissement avec résultats. Établissements alternatifs proches.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Recherche par adresse",
+        "Carte avec secteurs colores",
+        "Fiches établissements",
+        "Alternatives proches"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et SEO",
+      "description": "Pages par ville + quartier pour le SEO. Diffusion groupes parents. Partenariat avec 3 blogs education/immobilier.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "SEO lance",
+        "20K visiteurs/mois",
+        "100 abonnes premium",
+        "3 partenariats"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Extension et widget immobilier",
+      "description": "Etendre a 200 villes. Widget pour les sites d'annoncés immobilières. Lycees en plus des collèges. Alertes rentre scolaire.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "200 villes couvertes",
+        "Widget immobilier",
+        "Lycees ajoutes",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les parents cherchent activement leur carte scolaire en ligne",
+      "how": "Volume de recherche Google sur carte scolaire + ville, collège de secteur + adresse",
+      "successCriteria": "Plus de 50K recherches/mois (pics en mars-juin)"
+    },
+    {
+      "check": "Les données de sectorisation sont accèssibles",
+      "how": "Tester la collecte sur 10 grandes villes: combien publiént leur carte scolaire en open data?",
+      "successCriteria": "Au moins 30% en open data, le reste en PDF collectables. Pas de blocage juridique."
+    },
+    {
+      "check": "Le croisement carte scolaire + résultats intéressé les parents",
+      "how": "Montrer le prototype a 20 parents et mesurer l'utilite perçue",
+      "successCriteria": "18/20 trouvent l'outil utile et 10/20 l'auraient utilise avant leur demenagement"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Parents en recherche immobilière avec enfants en age scolaire",
+      "where": "Forums PAP, groupes Facebook immobilier + famille, r/ParentsEnFrance",
+      "howToReach": "Contenu: Acheter un appartement c'est aussi choisir un collège. Les meilleurs quartiers scolaires de [ville]."
+    },
+    {
+      "who": "Agents immobiliers en zone urbaine (ou la carte scolaire est un argument)",
+      "where": "LinkedIn, FNAIM, réseaux mandataires",
+      "howToReach": "Widget integrable sur les annonces: cet appartement depend du collège X (résultats Y). Differenciation forte."
+    },
+    {
+      "who": "Parents d'élevés de CM2 (passage au collège)",
+      "where": "Groupes Facebook parents d'école, FCPE, PEEP, conseils d'école",
+      "howToReach": "Campagne en mars-avril (periode d'inscription collège). Guide Tout savoir sur le collège de votre enfant."
+    }
+  ],
+  "pricingStrategy": "Freemium: recherche basique gratuite (établissement de secteur + taux réussite). Plan Parent a 3.90 EUR/mois (valeur ajoutee, IPS, options, alternatives, alertes). Plan Immobilier a 24.90 EUR/mois (widget integrable, rapports quartier). Affiliation: courtiers immobilier, cours de soutien. La monétisation principale est le SEO + affiliation.",
+  "pathTo10kMrr": "1000 parents x 3.90 EUR = 3 900 EUR + 50 agents immobiliers x 24.90 EUR = 1 245 EUR + affiliation immobilier/soutien scolaire = 5 000 EUR/mois = 10 145 EUR MRR. Le SEO généré du trafic massif: 1 page par quartier x 50 villes = 2000+ pages. Timeline: 8-10 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS",
+    "backend": "Next.js API Routes + Python pour la gestion des données géographiques",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Annuaire Education Nationale API",
+      "Résultats brevet/bac data.gouv.fr",
+      "IPS data.gouv.fr",
+      "API BAN géocodage",
+      "Stripe"
+    ],
+    "notes": "La collecte des cartes scolaires est le bottleneck. Certaines villes publiént en open data (Paris, Lyon), d'autres en PDF. À terme, collaborer avec les mairies pour la mise à jour. PostGIS pour le point-in-polygon (adresse -> secteur)."
+  },
+  "risks": [
+    {
+      "risk": "La collecte des cartes scolaires est longue et les données changent chaque année",
+      "mitigation": "Commencer par les villes en open data. Crowdsourcer les mises à jour via les parents utilisateurs. Automatiser le scraping des sites de mairie."
+    },
+    {
+      "risk": "Les cartes scolaires sont politiquement sensibles (gentrification, segregation)",
+      "mitigation": "Presenter les données de manière factuelle sans jugement. Ne pas classer les établissements en bon/mauvais. Mettre en avant la valeur ajoutee."
+    },
+    {
+      "risk": "Le Ministere de l'Education lancé un outil officiel",
+      "mitigation": "Le Ministere publié les données mais pas l'outil. L'intégration avec l'immobilier et la valeur ajoutee est notre moat."
+    }
+  ],
+  "inspirations": "GreatSchools.org (US, rating d'écoles intégré dans Zillow). Niche.com (US, classement écoles par quartier). En France, la ville de Paris à un outil basique. En UK, Good Schools Guide et Locrating.com sont des références.",
+  "searchVolume": [
+    {
+      "keyword": "carte scolaire",
+      "monthlyVolume": "40500",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "collège de secteur adresse",
+      "monthlyVolume": "14800",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "carte scolaire collège",
+      "monthlyVolume": "22200",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "quel collège pour mon adresse",
+      "monthlyVolume": "9900",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "sectorisation collège ville",
+      "monthlyVolume": "6600",
+      "difficulty": "low",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "12M d'élevés du secondaire en France, 8M de parents. Volume de recherche carte scolaire: 90K+ recherches/mois (pics mars-juin). En 2025, les données couvrent 95 départements sur 101.",
+    "sam": "2M de parents en phase de recherche active (entree en 6e: 800K/an + demenagement + derogation). Marché immobilier familial: la carte scolaire influence 30% des décisions d'achat.",
+    "som": "100K visiteurs uniques/mois la première année via SEO. 2K abonnes payants + 50 agents immobiliers.",
+    "methodology": "TAM = parents d'élevés du secondaire. SAM = parents en phase de choix (entree collège, demenagement). SOM base sur le SEO (2K+ pages par ville/quartier). Données open data: carte scolaire collèges publics couvre 95 départements (source: data.education.gouv.fr)."
+  },
+  "competitorDeep": [
+    {
+      "name": "data.education.gouv.fr (carte scolaire officielle)",
+      "url": "https://data.education.gouv.fr/explore/dataset/fr-en-carte-scolaire-colleges-publics",
+      "pricing": "Gratuit",
+      "trafficEstimate": "Faible (interface technique data.gouv)",
+      "reviews": "Dataset officiel couvrant 95 départements, recherche par adresse possible",
+      "strengths": "Source officielle, couverture 95 départements, mise à jour annuelle, recherche par adresse",
+      "weaknesses": "Interface technique non-intuitive, pas de résultats croises, pas de comparateur, pas de carte visuelle, pas de fiche établissement"
+    },
+    {
+      "name": "cartescolaire.netlify.app (Paris)",
+      "url": "https://cartescolaire.netlify.app",
+      "pricing": "Gratuit",
+      "trafficEstimate": "10K visites/mois (estimation)",
+      "reviews": "Carte interactive des collèges et lycees de Paris uniquement (2025-2026)",
+      "strengths": "Interface moderne, carte interactive, couverture Paris complète, recherche par adresse",
+      "weaknesses": "Uniquement Paris, pas de résultats scolaires croises, pas d'alternatives, pas de monétisation, projet personnel"
+    },
+    {
+      "name": "Sites départementaux (ex: Hauts-de-Seine, Haute-Garonne)",
+      "url": "https://www.hauts-de-seine.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "Variable par département",
+      "reviews": "Chaque département publié sa propre carte scolaire en ligne",
+      "strengths": "Source officielle locale, données à jour pour chaque département",
+      "weaknesses": "Fragmente (un site par département), pas de comparateur, pas de résultats scolaires, pas d'alternatives, pas de vue nationale"
+    },
+    {
+      "name": "classement-collèges.fr (article carte scolaire)",
+      "url": "https://classement-colleges.fr/articles/carte-scolaire/",
+      "pricing": "Gratuit",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "Article informatif sur la carte scolaire avec liens vers les sources départementales",
+      "strengths": "Bon SEO, contenu informatif, liens vers les cartes départementales",
+      "weaknesses": "Pas d'outil interactif de recherche par adresse, juste un article, pas de croisement avec les résultats"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données de carte scolaire open data",
+      "status": "ok",
+      "detail": "Le jeu de données Carte scolaire des collèges publics est publié sur data.gouv.fr par le Ministere de l'Education. Licence ouverte. Couvre 95 départements sur 101.",
+      "source": "data.gouv.fr - Carte scolaire colleges publics"
+    },
+    {
+      "topic": "Données de résultats et IPS",
+      "status": "ok",
+      "detail": "Les résultats brevet/bac et l'IPS par établissement sont en open data. Réutilisation libre sous licence Etalab.",
+      "source": "education.gouv.fr - DEPP"
+    },
+    {
+      "topic": "RGPD et recherche par adresse",
+      "status": "attention",
+      "detail": "La recherche par adresse ne stocke pas de données personnelles si elle n'est pas associée à un compte utilisateur. Avec un compte, le consentement explicite est requis.",
+      "source": "RGPD Article 6"
+    },
+    {
+      "topic": "Sensibilite politique (segregation scolaire)",
+      "status": "attention",
+      "detail": "La carte scolaire est un sujet politiquement sensible. Ne pas encourager le contournement de la carte scolaire. Presenter les derogations de manière factuelle.",
+      "source": "Code de l'education - Article L213-1"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (carte scolaire + ville, collège de secteur + adresse)",
+      "cacEstimate": "0.25 EUR",
+      "conversionRate": "4%",
+      "ltv": "46.80 EUR (12 mois parent)",
+      "ltvCacRatio": "187.2"
+    },
+    {
+      "channel": "Groupes Facebook parents par ville",
+      "cacEstimate": "0.80 EUR",
+      "conversionRate": "5%",
+      "ltv": "46.80 EUR",
+      "ltvCacRatio": "58.5"
+    },
+    {
+      "channel": "Partenariats agents immobiliers (B2B)",
+      "cacEstimate": "100 EUR",
+      "conversionRate": "15%",
+      "ltv": "298.80 EUR (24.90 EUR x 12 mois)",
+      "ltvCacRatio": "3.0"
+    },
+    {
+      "channel": "SEO immobilier (achetér quartier + collège)",
+      "cacEstimate": "0.50 EUR",
+      "conversionRate": "3%",
+      "ltv": "46.80 EUR",
+      "ltvCacRatio": "93.6"
+    },
+    {
+      "channel": "Affiliation courtiers immobiliers",
+      "cacEstimate": "0 EUR (revenu direct)",
+      "conversionRate": "0.5%",
+      "ltv": "50 EUR/lead",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec métriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 84,
+      "detail": "94K recherches/mois cumulees ('carte scolaire' 40 500/mois, 'carte scolaire collège' 22 200/mois). Cibles: Parents en recherche immobilière, Agents immobiliers en zone, Parents d'élevés de CM2."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 5 APIs a integrer (Annuaire Education Nationale A, Résultats brevet/bac, IPS). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 50,
+      "detail": "Objectif 10K MRR en 8-10 mois. Pricing 90-90 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: data.education.gouv.fr (carte, cartescolaire.netlify.app (Par, Sites départementaux (ex: Haut. Leader: data.education.gouv.fr (Faible (interface technique data.gouv)). Faiblesse principale: Interface technique non-intuitive."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: RGPD et recherche par adresse, Sensibilite politique (segregation scolaire)."
+    },
+    "overall": {
+      "score": 62,
+      "detail": "Point fort: demande (84/100). Point faible: competition (45/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

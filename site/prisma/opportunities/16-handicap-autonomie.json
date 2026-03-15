@@ -1,0 +1,233 @@
+{
+  "id": "handicap-autonomie",
+  "rank": 16,
+  "title": "Navigation handicap & autonomie",
+  "slug": "handicap-autonomie",
+  "sector": "handicap",
+  "tagline": "Croiser FINESS + ES-Handicap + Accèslibre + AAH + Annuaire santé pour aider les personnes handicapées et leurs aidants à trouver les bonnes structures, les bons droits et les bons professionnels",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "1.2M bénéficiaires AAH + 500K personnes en établissement + 11M aidants + 104 MDPH",
+  "monetization": "Freemium B2C + SaaS B2B collectivités/MDPH 99-499/mois",
+  "context": "En France, 12 millions de personnes sont en situation de handicap. 1.2 million touchent l'AAH. Plus de 500 000 adultes et enfants sont accompagnés dans des établissements médico-sociaux (MAS, FAM, ESAT, IME, SESSAD...). Les familles et aidants sont perdus face à la complexité du système : trouver une place en établissement peut prendre des années, comprendre ses droits MDPH est un parcours du combattant, trouver un professionnel de santé forme au handicap (psychiatre, psychologue, orthophoniste spécialisé autisme) est quasi impossible. Les données existent (FINESS pour les établissements, ES-Handicap pour les profils accueillis, Accèslibre pour l'accèssibilité physique, AAH pour la répartition des bénéficiaires, RPPS pour les professionnels de santé) mais personne ne les croise pour créer un outil utile. Le sujet de l'autisme adulte est particulièrement sous-équipé : diagnostic tardif fréquent, peu de structures adaptées, errance diagnostique de 5 à 10 ans en moyenne.",
+  "signals": [
+    {
+      "label": "FINESS",
+      "value": "75K visites + 128K DL",
+      "detail": "Tous les établissements sanitaires et médico-sociaux de France"
+    },
+    {
+      "label": "AAH datasets",
+      "value": "20+ datasets CAF",
+      "detail": "Répartition détaillée des allocataires par département, âge, sexe, taux d'incapacité"
+    },
+    {
+      "label": "Accèslibre",
+      "value": "~7K visites + API",
+      "detail": "Accèssibilite des ERP — mis à jour quotidiennement"
+    },
+    {
+      "label": "ES-Handicap",
+      "value": "1.7K visites",
+      "detail": "Enquête détaillée sur les structures, le personnel et les personnes accompagnées"
+    },
+    {
+      "label": "Annuaire RPPS",
+      "value": "Nouveau dataset",
+      "detail": "Tous les professionnels de santé avec spécialité et coordonnées"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "53699569a3a729239d2046eb",
+      "name": "FINESS — Établissements sanitaires et médico-sociaux",
+      "description": "Tous les établissements : hôpitaux, MAS, FAM, ESAT, IME, SESSAD, CMP avec adresse, capacité, spécialité.",
+      "visits": "75K/an",
+      "downloads": "128K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "6226330c44bec80dc83e0c48",
+      "name": "ES-Handicap — Enquête établissements handicap",
+      "description": "Données détaillées sur l'activité, le personnel et les publics accompagnés dans les structures handicap.",
+      "visits": "1.7K/an",
+      "downloads": "559/an",
+      "updateFrequency": "Quadriennal"
+    },
+    {
+      "datasetId": "691e5bd0d4acb5031ea376a2",
+      "name": "Adultes handicapés accompagnés (2022)",
+      "description": "Base floutée des adultes accompagnés par type de structure : profil, pathologie, parcours.",
+      "visits": "610/an",
+      "downloads": "77/an",
+      "updateFrequency": "Ponctuel"
+    },
+    {
+      "datasetId": "60a528e8b656ce01b4c0c0a6",
+      "name": "Accèslibre — Accèssibilite des ERP",
+      "description": "Niveau d'accèssibilité de chaque établissement recevant du public par type de handicap.",
+      "visits": "~7K/an",
+      "downloads": "~800/an",
+      "updateFrequency": "Quotidien"
+    },
+    {
+      "datasetId": "66d1e59b79919854e970938e",
+      "name": "AAH — Allocataires par département",
+      "description": "Répartition des bénéficiaires de l'AAH par âge, sexe, taux d'incapacité, complément.",
+      "visits": "~1K/an",
+      "downloads": "~110/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "69025e6c73d1f9b79ca3c365",
+      "name": "RPPS — Professionnels de santé",
+      "description": "Annuaire de tous les professionnels de santé avec spécialité, coordonnées, mode d'exercice.",
+      "visits": "nouveau",
+      "downloads": "nouveau",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "6733ed2f899f2c9144c40a89",
+      "name": "DataDrees Badiane",
+      "description": "Données sur l'autonomie, le handicap et le grand âge — indicateurs départementaux.",
+      "visits": "1.2K/an",
+      "downloads": "499/an",
+      "updateFrequency": "Regulier"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Accès libre",
+      "description": "Interroger l'accèssibilité des ERP par adresse, commune ou type d'établissement. Gratuite.",
+      "baseUrl": "https://acceslibre.beta.gouv.fr/api/"
+    },
+    {
+      "name": "API FHIR Annuaire Santé",
+      "description": "Recherche de professionnels de santé par spécialité, localisation, mode d'exercice.",
+      "baseUrl": "https://gateway.api.esante.gouv.fr/fhir"
+    },
+    {
+      "name": "API Adresse (BAN)",
+      "description": "Géocodage des adresses pour cartographie.",
+      "baseUrl": "https://data.geopf.fr/geocodage/"
+    }
+  ],
+  "productIdeas": [
+    "Annuaire intelligent des structures handicap : recherche par type de handicap (autisme, psychique, moteur) + âge + département + places disponibles",
+    "Carte des professionnels spécialisés autisme/handicap : filtrer les psy, orthophonistes, médecins formés au handicap par zone",
+    "Simulateur de droits MDPH : estiméz vos droits (AAH, PCH, RQTH, carte mobilité) en fonction de votre situation",
+    "Score d'accèssibilité par commune pour personnes handicapées : ERP accèssibles + transports adaptés + structures médico-sociales",
+    "Outil de pilotage pour MDPH/ARS : cartographie des besoins vs offre disponible par territoire, détection de zones sous-dotées",
+    "Guide du diagnostic autisme adulte : où se faire diagnostiquer, délais d'attente estimés, parcours type par région"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Personnes handicapées et aidants",
+      "priceRange": "Freemium"
+    },
+    {
+      "segment": "MDPH / ARS (pilotage)",
+      "priceRange": "499/mois"
+    },
+    {
+      "segment": "Collectivités (politique handicap)",
+      "priceRange": "199/mois"
+    },
+    {
+      "segment": "Établissements médico-sociaux",
+      "priceRange": "99/mois"
+    },
+    {
+      "segment": "Associations handicap (UNAPEI, APF...)",
+      "priceRange": "49/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Geva (CNSA)",
+      "weakness": "Outil interne MDPH, pas accèssible au public"
+    },
+    {
+      "name": "Annuaire FINESS",
+      "weakness": "Données brutes, pas de recherche par type de handicap ni de places disponibles"
+    },
+    {
+      "name": "Mon Parcours Handicap",
+      "weakness": "Site informatif du gouvernement, pas d'outil personnalisé ni de cartographie"
+    },
+    {
+      "name": "Accèslibre",
+      "weakness": "Focus accèssibilité physique, pas de données sur les structures médico-sociales"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "12 millions de personnes handicapees en France + 11 millions d'aidants = un marche massif et emotionnellement engage",
+      "Le croisement FINESS + ES-Handicap + Acceslibre + RPPS est unique — aucun acteur prive ne le fait",
+      "Le sujet handicap beneficie d'un fort soutien institutionnel (CNSA, MDPH, ARS) — facilite les partenariats B2G",
+      "Les donnees Acceslibre sont mises a jour quotidiennement et l'API est bien documentee"
+    ],
+    "weaknesses": [
+      "Les personnes handicapees et aidants ont souvent un budget tres contraint — difficulte a monetiser en B2C",
+      "Les donnees ES-Handicap ne sont publiees que tous les 4 ans — pas de temps reel sur les places disponibles",
+      "Le secteur medico-social est administrativement complexe (104 MDPH, 18 ARS, milliers de structures) — fragmentation extreme",
+      "Les structures medico-sociales sont peu numerisees — integration et partenariat terrain difficiles"
+    ],
+    "opportunities": [
+      "La reforme MDPH (Maison France Services, CNR handicap) pousse vers plus de transparence — besoin d'outils",
+      "Le diagnostic autisme adulte est un sujet en explosion mediatique — niche a tres fort engagement communautaire",
+      "Les MDPH cherchent a reduire les delais de traitement (8-12 mois) — un outil de pilotage les aiderait",
+      "La Silver Economy (autonomie des seniors) cree des synergies avec le handicap — elargissement du marche"
+    ],
+    "threats": [
+      "La CNSA (Caisse Nationale de Solidarite pour l'Autonomie) pourrait developper un portail national unifie",
+      "Mon Parcours Handicap (gouvernement) pourrait s'enrichir de fonctionnalites de recherche et personnalisation",
+      "Les associations (UNAPEI, APF, Autisme France) pourraient developper leurs propres outils avec des subventions",
+      "Le sujet du handicap est politiquement sensible — risque de polemique si l'outil met en lumiere des carences"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Virginie",
+      "role": "Mere d'un enfant autiste de 7 ans, en recherche d'un IME (Institut Medico-Educatif) adapte en Ile-de-France",
+      "age": "38 ans",
+      "context": "Son fils a ete diagnostique autiste a 4 ans. Il est actuellement en ULIS ecole mais la notification MDPH recommande un IME a partir de septembre prochain. Elle cherche desesperement une place depuis 8 mois — toutes les structures sont pleines. Doit elargir sa recherche a 50km.",
+      "painPoints": [
+        "A appele 23 IME un par un — aucun ne peut lui dire s'il y aura une place en septembre, ni combien de temps attendre",
+        "Le site FINESS ne permet pas de filtrer par type de handicap (autisme) ni par age — recherche impossible",
+        "N'a aucune visibilite sur les methodes utilisees par chaque IME (ABA, TEACCH, PECS) — information cruciale"
+      ],
+      "currentSolution": "Liste MDPH des etablissements + appels telephoniques un par un + groupe Facebook 'Parents autisme IDF'",
+      "budget": "Gratuit (freemium) — prete a payer 5-10 EUR/mois pour un systeme d'alerte de places disponibles",
+      "channels": ["Groupe Facebook 'Autisme - parents en galere'", "Association Autisme France", "Forum Doctissimo handicap", "CRAIF (Centre Ressources Autisme Ile-de-France)"]
+    },
+    {
+      "name": "Julien",
+      "role": "Adulte de 34 ans, suspecte d'etre autiste Asperger, en errance diagnostique depuis 3 ans",
+      "age": "34 ans",
+      "context": "Developpeur web, vit seul a Nantes. Apres des annees de depression et de difficultes sociales, un psychiatre lui a suggere un diagnostic d'autisme. Il essaie de se faire diagnostiquer au CRA (Centre Ressources Autisme) depuis 3 ans — delai d'attente de 24-36 mois.",
+      "painPoints": [
+        "Le CRA de Nantes a un delai d'attente de 30 mois — il est au 18eme mois sans nouvelle",
+        "Ne sait pas s'il existe des alternatives au CRA (diagnostiqueurs en liberal formes a l'autisme adulte)",
+        "Veut estimer ses droits MDPH (RQTH, AAH) mais le site officiel est incomprehensible"
+      ],
+      "currentSolution": "Attente au CRA + forum Reddit r/autism + groupes Discord autisme adulte + psychologue non specialisee",
+      "budget": "Gratuit pour l'annuaire + 5-10 EUR pour un simulateur de droits MDPH personnalise",
+      "channels": ["Reddit r/autism r/aspergers", "Discord 'Autisme adulte francophone'", "Groupe Facebook 'Autisme Asperger adulte'", "Association CLE Autistes"]
+    },
+    {
+      "name": "Florence",
+      "role": "Directrice d'une MDPH (Maison Departementale des Personnes Handicapees) dans un departement de 500K habitants",
+      "age": "49 ans",
+      "context": "Gere une equipe de 65 agents qui traitent 15K demandes/an (AAH, PCH, RQTH, orientation). Delai moyen de traitement : 5.5 mois (objectif national : 4 mois). N'a aucune visibilite sur l'offre medico-sociale disponible pour orienter correctement les usagers.",
+      "painPoints": [
+        "Oriente des personnes vers des structures qui n'ont pas de place — le taux de refus des notifications est de 40%",
+        "N'a aucune cartographie croisant les besoins des usagers (par handicap, age) et l'offre disponible (par type de structure)",
+        "Les elus departementaux lui demandent des indicateurs de pilotage qu'elle met 3 semaines a produire manuellement"
+      ],
+      "currentSolution": "Logiciel metier SI-MDPH + extraction manuelle FINESS + tableaux Excel de suivi + appels aux structures au cas par cas",
+      "budget": "300-500 EUR/mois — budget MDPH, processus d'achat simplifie via CNSA",
+      "channels": ["CNSA (tutelle)", "ANDMDPH (Association Nationale des MDPH)", "Conference nationale du handicap", "Revue Actualites Sociales Hebdomadaires (ASH)"]
+    }
+  ]
+}

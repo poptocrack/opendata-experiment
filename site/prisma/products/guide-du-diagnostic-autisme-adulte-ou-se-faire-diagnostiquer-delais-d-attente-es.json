@@ -1,0 +1,372 @@
+{
+  "productSlug": "guide-du-diagnostic-autisme-adulte-ou-se-faire-diagnostiquer-delais-d-attente-es",
+  "oneLiner": "Guide du diagnostic autisme adulte : ou se faire diagnostiquer, délais d'attente estimes, parcours type par région",
+  "problem": "En France, environ 700 000 personnes sont autistes mais seulement 10% des adultes sont diagnostiqués. Le diagnostic autisme adulte est un parcours du combattant : les 26 CRA (Centres Ressources Autisme) sont satures avec des délais de 1 a 5 ans, les psychiatres en ville ne sont souvent pas formes au diagnostic TSA adulte, les bilans en libéral coutent 500 a 2 000 euros sans remboursement, et les informations sont dispersées entre les sites des CRA (chacun le sien), les groupes Facebook, et le bouche a oreille. Les adultes en quete de diagnostic passent des mois a chercher ou aller, combien ca coute, quels délais attendre, quels documents préparer. Cette errance diagnostiqué cause une souffrance psychologique immense : depression, burn-out, isolement. Les groupes Facebook 'Autisme adulte' (25K+ membres) sont submerges chaque jour des mêmes questions : 'Ou se faire diagnostiquer ?', 'Quel est le délai au CRA de [ma région] ?', 'Combien coute un bilan en libéral ?'.",
+  "solution": "Une plateforme dédiée au parcours de diagnostic autisme adulte en France, région par région. Pour chaque région : les CRA (coordonnées, délais d'attente estimes et mis à jour par la communauté), les praticiens en libéral qui font des bilans diagnostiqués (psychiatres, neuropsychologues), les coûts estimes, les étapes du parcours type, les documents a préparer. Le tout enrichi par les témoignages de personnes diagnostiquées qui partagent leur parcours réel (délai, coût, satisfaction). Système de mise à jour collaborative des délais d'attente. Guide interactif 'par ou commencer' en fonction de la situation (ressources, localisation, urgence).",
+  "uniqueValue": "Première plateforme centralisant toutes les informations pratiques du parcours diagnostic autisme adulte en France : CRA + libéral + délais + coûts + témoignages. Aucun site ne reunit ces informations de manière structured et à jour. Le crowdsourcing des délais d'attente est une donnée introuvable ailleurs.",
+  "mvpScope": "Pages par région avec informations CRA (coordonnées, processus, délais crowdsources). Annuaire des praticiens libéral faisant des bilans TSA adulte. Guide interactif 'par ou commencer'. Formulaire de témoignage (parcours, délai, coût, satisfaction). FAQ détaillée sur le diagnostic adulte.",
+  "timeToMvp": "6-8 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Recherche et contenu initial",
+      "description": "Compiler les informations de chaque CRA (26 centres). Identifier les praticiens en libéral reconnus pour le diagnostic adulte (via groupes Facebook, CRA, associations). Rédiger le guide du parcours type. Croiser avec les données RPPS et FINESS pour les CRA.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Fiche détaillée de chaque CRA (coordonnées, processus, documents requis)",
+        "Liste de 50+ praticiens en libéral identifiés par la communauté",
+        "Guide du parcours diagnostic (étapes, documents, coûts)",
+        "FAQ de 30+ questions les plus fréquentés"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Développement de la plateforme",
+      "description": "Développer le site avec les pages par région, l'annuaire de praticiens, le guide interactif, et le système de témoignages. Design sobre, respectueux, accessible.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pages par région avec carte interactive",
+        "Annuaire de praticiens avec filtres (ville, coût, délai)",
+        "Guide interactif 'par ou commencer'",
+        "Système de témoignages modérés",
+        "Design accessible RGAA AA"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement communautaire",
+      "description": "Lancer dans les communautés autisme. Collecter les premiers témoignages et mises à jour de délais. Partenariats avec les associations. SEO.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Lancement dans 10+ groupes Facebook autisme",
+        "50+ témoignages collectes",
+        "Partenariats avec 3 associations (CRA, Autisme France, Asperansa)",
+        "SEO optimise sur les requêtes cles"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Monétisation et services premium",
+      "description": "Services premium pour accompagner le parcours : checklist personnalisee, aide a la préparation du dossier CRA, annuaire premium de praticiens. Partenariats avec praticiens pour la prise de rendez-vous.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pack 'Préparer mon diagnostic' (19 euros) : checklist, modèles, guide personnalise",
+        "Profil premium praticien (40 euros/mois)",
+        "Newsletter mensuelle 'Actualites diagnostic autisme'",
+        "Partenariat prise de RDV avec 10 praticiens"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "La demande est massive et le besoin non couvert",
+      "how": "Analyser les 5 plus grands groupes Facebook autisme adulte : compter le nombre de posts par semaine demandant 'ou se faire diagnostiquer'. Poster un sondage : 'Trouvez-vous facilement les informations sur le diagnostic adulte ?'",
+      "successCriteria": "10+ posts/semaine dans chaque groupe sur le sujet. 90%+ des repondants disent avoir eu du mal a trouver les informations. 500+ réponses au sondage."
+    },
+    {
+      "check": "Les délais crowdsources sont suffisamment fiables",
+      "how": "Collecter les délais déclarés par 30 personnes pour 5 CRA différents. Comparer avec les délais officiels communiques par les CRA (quand disponibles).",
+      "successCriteria": "Cohérence des délais déclarés (écart-type < 6 mois entre les témoignages pour un même CRA). Correlation avec les délais officiels quand disponibles."
+    },
+    {
+      "check": "Les personnes sont prêtes à payer pour un accompagnement au diagnostic",
+      "how": "Landing page avec le pack 'Préparer mon diagnostic' a 19 euros. Mesurer les clics d'intention d'achat avant de développer le produit.",
+      "successCriteria": "5%+ de taux de clic sur le bouton d'achat parmi les visiteurs du guide."
+    },
+    {
+      "check": "Le contenu a un potentiel viral dans la communauté autiste",
+      "how": "Publier 3 articles pilotes ('Guide du diagnostic au CRA Île-de-France', 'Combien coute un bilan autisme en libéral', 'Mon parcours diagnostic a 35 ans') dans les groupes Facebook.",
+      "successCriteria": "1 000+ reactions/partages cumules. 5 000+ visites sur le site en une semaine. Taux de partage > 10%."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Adultes en questionnement autistique, généralement 25-45 ans, souvent femmes (le diagnostic feminin est encore plus sous-diagnostiqué), ayant decouvert le TSA via les réseaux sociaux et cherchant a confirmer",
+      "where": "Groupes Facebook : 'Autisme adulte - Echanges et soutien' (25K+), 'Asperger au feminin' (15K+), 'TSA au quotidien' (15K+), 'Autisme et diagnostic tardif' (10K+), 'HPI/TSA/TDAH adultes' (20K+). Reddit : r/autism (francophone), r/aspergirls. Instagram : @autisme_au_feminin, @tsa_adulte, @neurotypique_non. TikTok : #autismeadulte (millions de vues). Discord : serveurs autisme francophone.",
+      "howToReach": "Témoignage personnel authentique dans les groupes (pas de marketing). Partenariat avec des comptes Instagram influents dans la communauté autiste. Article invite sur les blogs communautaires (The Autist, AspieConseil). Le contenu doit etre ecrit PAR des personnes autistes, pas seulement POUR elles."
+    },
+    {
+      "who": "Parents d'enfants autistes qui soupconnent etre eux-mêmes autistes (effet miroir très frequent) ou qui cherchent un diagnostic pour leur enfant adolescent/jeune adulte",
+      "where": "Groupes Facebook : 'Parents d'enfants autistes' (30K+), 'Autisme et scolarite' (12K+). Associations : Autisme France, Sesame Autisme, Autistes sans frontieres.",
+      "howToReach": "Articles croises 'autisme parental' dans les groupes parents. Partenariat avec les associations de parents. Témoignages de parents diagnostiqués apres leur enfant."
+    },
+    {
+      "who": "Professionnels de sante en contact avec des adultes autistes non diagnostiqués (médecins généralistes, psychiatres, psychologues) qui cherchent ou orienter leurs patients",
+      "where": "Groupes Facebook : 'Psychiatres et autisme', 'Psychologues et TSA'. Formation DU Autisme (universités). CRA (formations pour professionnels). LinkedIn : groupes professionnels sante mentale.",
+      "howToReach": "Flyers dans les cabinets de psychiatrie et psychologie. Email aux médecins généralistes via les URPS. Outil gratuit a recommander a leurs patients en attente de diagnostic."
+    }
+  ],
+  "pricingStrategy": "Freemium avec forte valeur gratuite. Guide complet gratuit (toutes les informations par région, CRA, praticiens, témoignages). Pack 'Préparer mon diagnostic' a 19 euros : checklist personnalisee selon la région, modèles de lettres pour le médecin traitant, guide de préparation au bilan (quoi observer, quoi noter), liste des documents a reunir. Profil premium praticien a 40 euros/mois : fiche enrichie, mise en avant, statistiques. Newsletter premium a 5 euros/mois : veille actualites diagnostic, nouveaux praticiens, évolution des délais. À terme : mise en relation avec des 'mentors' diagnostiqués (personnes autistes accompagnant les personnes en parcours) a 50 euros/session.",
+  "pathTo10kMrr": "300 packs 'Préparer mon diagnostic'/mois a 19 euros = 5 700 euros + 50 praticiens premium a 40 euros/mois = 2 000 euros + 500 abonnements newsletter a 5 euros/mois = 2 500 euros. Total : 10 200 euros/mois. Atteignable en 10-14 mois. Base : 50K+ personnes en parcours diagnostic en France a tout moment (estimation basee sur les 700K autistes, 10% diagnostiqués adultes, délai moyen 2-3 ans). Même 1% de conversion = 500 clients. La communauté autiste en ligne est très active, le bouche a oreille est puissant, et le sujet est émotionnellement viral.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS, Leaflet pour les cartes",
+    "backend": "Next.js API Routes",
+    "database": "PostgreSQL (Supabase) pour témoignages, praticiens, délais crowdsources",
+    "hosting": "Vercel + Supabase",
+    "apis": [
+      "RPPS (data.gouv.fr) pour la base praticiens",
+      "FINESS (data.gouv.fr) pour les CRA et structures de diagnostic",
+      "API Adresse (adresse.data.gouv.fr)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "L'accessibilite numérique est CRITIQUE pour ce produit : beaucoup de personnes autistes ont des sensibilités sensorielles (éviter les animations, les couleurs vives, les pop-ups). Design sobre, clair, prédictible. Mode sombre obligatoire. Pas de lecture automatique de videos. Police lisible (éviter les polices fantaisistes). Navigation clavier complète. Le site doit etre un modèle d'accessibilite cognitive en plus du RGAA."
+  },
+  "risks": [
+    {
+      "risk": "Information inexacte sur les délais d'attente conduisant a des décisions erronees (ex: ne pas s'inscrire a un CRA en pensant que le délai est trop long)",
+      "mitigation": "Toujours indiquer la source ('base sur X témoignages') et la date de mise à jour. Mentionner clairement que les délais sont indicatifs. Encourager a s'inscrire sur liste d'attente même si le délai semble long. Mettre à jour régulièrement avec de nouveaux témoignages."
+    },
+    {
+      "risk": "Autodiagnostic : des personnes se persuadent d'etre autistes sur la base du contenu et renoncent a un diagnostic professionnel",
+      "mitigation": "Insister sur l'importance du diagnostic professionnel. Ne jamais proposer de 'test en ligne' diagnostiqué. Orienter systematiquement vers les professionnels. Le site est un guide vers le diagnostic, pas un substitut."
+    },
+    {
+      "risk": "Backlash de la communauté autiste si le site est percu comme 'exploitant' la souffrance ou fait par des non-autistes sans légitimité",
+      "mitigation": "Impliquer des personnes autistes dans la conception et la rédaction des le jour 1. Idealement, le fondateur ou un co-fondateur est autiste. Adopter la devise 'Rien sur nous sans nous'. Rémunérer les contributeurs autistes."
+    },
+    {
+      "risk": "Les CRA voient l'outil comme une menace (publication de leurs délais d'attente = pression politique)",
+      "mitigation": "Proposer aux CRA un partenariat : ils valident leurs informations, on leur donne de la visibilité. Présenter l'outil comme un complément, pas une critique. Les CRA souffrent aussi de la mésinformation et souhaitent que les personnes arrivent mieux preparees."
+    },
+    {
+      "risk": "Données sensibles : les témoignages contiennent des informations de sante très personnelles",
+      "mitigation": "Anonymisation par defaut. Consentement explicite avant publication. Modération de chaque témoignage. Droit de retrait a tout moment. Pas de stockage de données identifiantes si pas nécessaire. AIPD a réaliser."
+    }
+  ],
+  "inspirations": "NHS Choices (UK) pour les parcours de soins structures par pathologie. PatientLikeMe (communauté de patients partageant leur parcours). ZocDoc (recherche de praticien par spécialité). En France : Carenity.com (communauté patients). Le site CRA Île-de-France (meilleur site CRA actuel, mais loin d'etre suffisant). A l'international : Embrace Autism (site canadien de ressources diagnostic adulte, excellente référence de contenu).",
+  "searchVolume": [
+    {
+      "keyword": "diagnostic autisme adulte",
+      "monthlyVolume": "8 100",
+      "difficulty": "moyenne",
+      "intent": "recherche d'information parcours"
+    },
+    {
+      "keyword": "CRA délai attente",
+      "monthlyVolume": "1 900",
+      "difficulty": "faible",
+      "intent": "information pratique"
+    },
+    {
+      "keyword": "ou se faire diagnostiquer autisme",
+      "monthlyVolume": "3 600",
+      "difficulty": "faible",
+      "intent": "recherche de lieu"
+    },
+    {
+      "keyword": "bilan autisme adulte prix",
+      "monthlyVolume": "2 400",
+      "difficulty": "faible",
+      "intent": "information coût"
+    },
+    {
+      "keyword": "test autisme adulte",
+      "monthlyVolume": "22 000",
+      "difficulty": "élevée",
+      "intent": "autodiagnostic (a capter puis orienter)"
+    },
+    {
+      "keyword": "psychiatre autisme adulte",
+      "monthlyVolume": "1 600",
+      "difficulty": "faible",
+      "intent": "recherche de praticien"
+    },
+    {
+      "keyword": "autisme femme adulte",
+      "monthlyVolume": "4 400",
+      "difficulty": "moyenne",
+      "intent": "information"
+    },
+    {
+      "keyword": "Asperger diagnostic tardif",
+      "monthlyVolume": "1 300",
+      "difficulty": "faible",
+      "intent": "recherche d'information"
+    },
+    {
+      "keyword": "CRA autisme",
+      "monthlyVolume": "5 400",
+      "difficulty": "moyenne",
+      "intent": "recherche de structuré"
+    },
+    {
+      "keyword": "combien coute diagnostic autisme",
+      "monthlyVolume": "1 900",
+      "difficulty": "faible",
+      "intent": "information coût"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "700 000 personnes autistes en France dont 90% d'adultes non diagnostiqués = 630 000. Plus les personnes en questionnement (estimation : 200K-500K). Plus les 11M aidants (certains se découvrent autistes). Marché potentiel : 50M euros/an (diagnostic + accompagnement + suivi).",
+    "sam": "50 000 adultes en parcours diagnostic actif a tout moment (estimation basee sur les files d'attente CRA et les bilans en libéral). 5 000 praticiens faisant des bilans diagnostiqués. Marché adressable : 10M euros/an.",
+    "som": "5 000 utilisateurs payants/an (packs + newsletter) + 50 praticiens premium. Objectif : 130K euros ARR en 14 mois.",
+    "methodology": "TAM base sur la prévalence du TSA (1% de la population, étude CDC/HAS), taux de diagnostic adulte en France (estimations associations autisme, rapports HAS 2018). SAM base sur les files d'attente CRA (source rapports CRA annuels) et estimations bilans en libéral. SOM base sur le trafic captable via SEO et communautés, avec un taux de conversion de 2% vers les offres payantes."
+  },
+  "competitorDeep": [
+    {
+      "name": "Sites des CRA (26 sites régionaux)",
+      "url": "Varies (ex: https://www.craif.org pour Ile-de-France)",
+      "pricing": "Gratuit",
+      "trafficEstimate": "5 000-20 000 visites/mois pour le CRAIF, moins pour les autres",
+      "reviews": "Informations de qualité mais dispersées sur 26 sites différents. Pas de vision nationale. Pas de délais d'attente publies. Navigation souvent complexe.",
+      "strengths": "Légitimité institutionnelle. Informations validees. Connaissance fine du terrain régional.",
+      "weaknesses": "26 sites différents sans uniformité. Pas de délais d'attente. Pas de praticiens en libéral. Pas de témoignages. Pas de guide pratique unifie. Mise à jour inégale."
+    },
+    {
+      "name": "Autisme France",
+      "url": "https://www.autisme-france.fr",
+      "pricing": "Gratuit (association)",
+      "trafficEstimate": "50 000 visites/mois",
+      "reviews": "Référence associative, excellent pour le plaidoyer et les droits, mais pas d'outil pratique de recherche de diagnostic.",
+      "strengths": "Légitimité associative forte. Bon contenu informatif. Réseau de 120 associations membres.",
+      "weaknesses": "Pas d'annuaire de praticiens pour le diagnostic. Pas de délais d'attente. Pas d'outil interactif. Contenu parfois militant plus que pratique."
+    },
+    {
+      "name": "Groupes Facebook autisme adulte",
+      "url": "Facebook.com (multiples groupes)",
+      "pricing": "Gratuit",
+      "trafficEstimate": "N/A (25K-30K membres par groupe, posts quotidiens)",
+      "reviews": "Source d'information numero 1 pour les adultes en parcours diagnostic. Entraide precieuse mais informations non structurées, contradictoires, impossibles a rechercher.",
+      "strengths": "Communauté active et bienveillante. Témoignages réels. Recommandations de praticiens. Soutien émotionnel.",
+      "weaknesses": "Informations non structurées (noyees dans le flux). Impossible de rechercher par région ou praticien. Informations parfois obsolètes ou inexactes. Pas de vérification."
+    },
+    {
+      "name": "Mon Parcours Handicap",
+      "url": "https://www.monparcourshandicap.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "200 000 visites/mois",
+      "reviews": "Page sur le diagnostic autisme mais très générique, pas de données pratiques (pas de délais, pas de praticiens, pas de coûts).",
+      "strengths": "Plateforme officielle. Contenu valide. Bonne UX.",
+      "weaknesses": "Information générique, pas actionnable. Pas de praticiens. Pas de délais. Pas de coûts. Pas de témoignages."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données de sante dans les témoignages",
+      "status": "attention",
+      "detail": "Les témoignages de parcours diagnostic contiennent des données de sante au sens du RGPD art. 9. Consentement explicite obligatoire. AIPD a réaliser. Anonymisation par defaut. Hébergement HDS si données identifiantes stockees.",
+      "source": "RGPD art. 9, CNIL guide donnees de sante"
+    },
+    {
+      "topic": "Exercice illegal de la médecine",
+      "status": "attention",
+      "detail": "Le site ne doit en aucun cas proposer de diagnostic ou de pre-diagnostic. Pas de 'test autisme' diagnostiqué. Uniquement de l'orientation vers les professionnels competents. Mentions claires : 'ce site est un guide d'information, pas un outil de diagnostic'.",
+      "source": "Code de la sante publique art. L4161-1 (exercice illegal de la medecine)"
+    },
+    {
+      "topic": "Réutilisation des données RPPS/FINESS pour les CRA",
+      "status": "ok",
+      "detail": "Les CRA sont dans le fichier FINESS. Les praticiens sont dans le RPPS. Données open data réutilisables.",
+      "source": "data.gouv.fr, licence ouverte 2.0"
+    },
+    {
+      "topic": "Publication de délais d'attente non officiels",
+      "status": "ok",
+      "detail": "Les délais crowdsources sont des témoignages d'experience, pas des données officielles. Pas de contrainte légale a les publier tant qu'ils sont présentés comme indicatifs et sources par la communauté.",
+      "source": "Liberte d'expression, droit a l'information"
+    },
+    {
+      "topic": "Accessibilite numérique",
+      "status": "attention",
+      "detail": "Au-delà du RGAA obligatoire, l'accessibilite COGNITIVE est cruciale pour ce public. Beaucoup de personnes autistes ont des besoins spécifiques : pas de surcharge sensorielle, navigation prédictible, langage clair. Non-respect = echec du produit avant même la question légale.",
+      "source": "RGAA 4.1, WCAG 2.2 (criteres cognitifs), bonnes pratiques UX autisme"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages 'diagnostic autisme adulte [région]', 'CRA [ville] délai')",
+      "cacEstimate": "1 euro",
+      "conversionRate": "6% (visiteur -> exploration complète du guide)",
+      "ltv": "3 euros (taux conversion 2% vers pack a 19 euros + newsletter)",
+      "ltvCacRatio": "3.0"
+    },
+    {
+      "channel": "Groupes Facebook autisme (organique, témoignage authentique)",
+      "cacEstimate": "0 euros",
+      "conversionRate": "12% (vue du post -> visité site)",
+      "ltv": "3 euros",
+      "ltvCacRatio": "Infini"
+    },
+    {
+      "channel": "Instagram/TikTok autisme (contenu video témoignage)",
+      "cacEstimate": "0 euros (organique)",
+      "conversionRate": "3% (vue -> visité site)",
+      "ltv": "3 euros",
+      "ltvCacRatio": "Infini"
+    },
+    {
+      "channel": "Partenariats CRA et associations (référencement du guide)",
+      "cacEstimate": "0 euros",
+      "conversionRate": "20% (recommandation -> visité site)",
+      "ltv": "3 euros",
+      "ltvCacRatio": "Infini"
+    },
+    {
+      "channel": "Google Ads sur 'test autisme adulte' (22K/mois, rediriger vers le guide)",
+      "cacEstimate": "5 euros",
+      "conversionRate": "4% (clic -> exploration guide)",
+      "ltv": "3 euros",
+      "ltvCacRatio": "0.6 (a optimiser, mais valeur de notoriété)"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 80,
+      "detail": "48 recherches/mois cumulees ('test autisme adulte' 22/mois, 'diagnostic autisme adulte' 8/mois). TAM: 700 000 personnes. Cibles: Adultes en questionnement autistique,, Parents d'enfants autistes qui, Professionnels de sante en."
+    },
+    "feasibility": {
+      "score": 50,
+      "detail": "MVP en 6-8 semaines. 4 APIs a intégrer (RPPS pour la base praticiens, FINESS pour les CRA et structu, API Adresse). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 23,
+      "detail": "500 clients a 19 EUR pour démarrer. Objectif 10K MRR en 10-14 mois. SOM: 130K eur/an. Pricing 5-50 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifiés: Sites des CRA (26 sites région, Autisme France, Groupes Facebook autisme adult. Leader: Sites des CRA (5 000-20 000 visites/mois pour le CRAIF, moins pour les autres). Faiblesse principale: 26 sites différents sans uniformité."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "2 points OK, 3 points d'attention. Vigilance: Données de sante dans les témoignages, Exercice illegal de la médecine."
+    },
+    "overall": {
+      "score": 50,
+      "detail": "Point fort: demande (80/100). Point faible: marché (23/100). Idee intéressante, risques significatifs a mitiger."
+    }
+  }
+}

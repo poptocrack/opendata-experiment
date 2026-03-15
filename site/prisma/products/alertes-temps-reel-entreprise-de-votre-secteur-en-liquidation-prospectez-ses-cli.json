@@ -1,0 +1,329 @@
+{
+  "productSlug": "alertes-temps-reel-entreprise-de-votre-secteur-en-liquidation-prospectez-ses-cli",
+  "oneLiner": "Recevez une alerte dès qu'un concurrent entre en liquidation et récupéréz ses clients orphelins avant tout le monde.",
+  "problem": "Quand une entreprise de votre secteur ferme, ses clients cherchent un nouveau fournisseur dans l'urgence. Mais vous l'apprenez trop tard, souvent par le bouche-a-oreille, alors que vos concurrents plus rapides ont déjà récupéré ces clients. Les annoncés BODACC existent mais sont illisibles et non filtrees par secteur.",
+  "solution": "Un service d'alertes en temps reel qui surveille le BODACC (liquidations, redressements, cessations) filtre par code NAF/secteur et zone géographique, et envoie instantanement une notification avec le profil de l'entreprise défaillante, sa taille estimée (effectifs URSSAF), et une liste de pistes pour identifiér ses clients (secteur, zone de chalandise, partenaires connus).",
+  "uniqueValue": "Seul outil qui croise BODACC + SIRENE + effectifs pour transformer une annonce légale brute en opportunité commerciale actionnable avec scoring de priorité.",
+  "mvpScope": "Webapp simple : inscription avec choix de codes NAF et départements a surveiller. Scraping quotidien du BODACC, enrichissement via API SIRENE (taille, adresse, date création). Envoi d'email d'alerte avec fiche entreprise défaillante. Dashboard listant les alertes récentes.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Pipeline de données BODACC + SIRENE",
+      "description": "Mettre en place l'ingestion quotidienne des annoncés BODACC (liquidations judiciaires, plans de cession), le parsing des annonces, et l'enrichissement automatique via l'API Recherche Entreprises (code NAF, effectifs, adresse, date création).",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Script d'ingestion BODACC quotidien",
+        "Enrichissement SIRENE automatique",
+        "Base de données des événements entreprises",
+        "Tests sur 3 mois d'historique BODACC"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Système d'alertes et webapp",
+      "description": "Interface d'inscription, configuration des filtres (codes NAF, départements, taille d'entreprise min), moteur de matching alertes/utilisateurs, envoi d'emails avec fiche entreprise formatee.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Page d'inscription et onboarding",
+        "Configuration des filtres de surveillance",
+        "Template email d'alerte",
+        "Dashboard des alertes récentes"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Scoring et enrichissement avance",
+      "description": "Ajout d'un score de priorité (taille entreprise x proximite géographique x fraîcheur), enrichissement avec données financières disponibles, suggestions de canaux pour identifiér les clients orphelins.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Algorithme de scoring de priorité",
+        "Fiches enrichies avec CA estimé et effectifs",
+        "Suggestions d'actions commerciales",
+        "Export CSV des alertes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les commerciaux B2B veulent vraiment ce type d'alertes",
+      "how": "Poster sur LinkedIn un exemple d'alerte fictive et proposer un accès beta gratuit. Contacter 20 directeurs commerciaux de PME en leur montrant un mock d'email d'alerte.",
+      "successCriteria": "50 inscriptions beta en 2 semaines, 10 entretiens qualitatifs confirment l'intérêt"
+    },
+    {
+      "check": "Le BODACC fournit assez de données exploitables",
+      "how": "Analyser 6 mois d'annoncés BODACC pour 5 secteurs NAF différents. Compter le nombre de liquidations par secteur/mois.",
+      "successCriteria": "Minimum 100 liquidations/mois dans les secteurs ciblés (BTP, commerce, restauration, services aux entreprises)"
+    },
+    {
+      "check": "Les utilisateurs ouvrent et agissent sur les alertes",
+      "how": "Tracker le taux d'ouverture des emails et les clics sur les fiches entreprises pendant la beta.",
+      "successCriteria": "Taux d'ouverture > 40%, taux de clic > 15%"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Directeurs commerciaux de PME/ETI B2B (50-500 salariés) dans le BTP, services aux entreprises, industrie",
+      "where": "LinkedIn (groupes directeurs commerciaux), salons professionnels (Salon des Entrepreneurs), forums BPI France",
+      "howToReach": "Posts LinkedIn montrant des cas reels anonymises de liquidations avec estimation du CA libere. Message direct aux DC qui postent sur la prospection B2B."
+    },
+    {
+      "who": "Courtiers en assurance et cabinets comptables cherchant a récupérér des portefeuilles clients",
+      "where": "Fédérations professionnelles (CSCA pour les courtiers), groupes Facebook de comptables indépendants",
+      "howToReach": "Partenariat avec un cabinet comptable pilote, étude de cas montrant combien de clients ils auraient pu récupérér sur les 12 derniers mois."
+    },
+    {
+      "who": "Franchises et réseaux d'agences cherchant a reprendre des zones géographiques libérées",
+      "where": "Salons de la franchise, annuaires de franchiseurs (Franchise Magazine, L'Observatoire de la Franchise)",
+      "howToReach": "Email aux responsables développement réseau avec une analyse gratuite de leur secteur sur 6 mois."
+    }
+  ],
+  "pricingStrategy": "Freemium : 1 code NAF + 1 département gratuit (max 5 alertes/mois). Pro a 49 euros/mois : 5 codes NAF, tous départements, alertes illimitées, scoring priorité, export CSV. Business a 149 euros/mois : alertes en temps reel (pas seulement quotidiennes), API, multi-utilisateurs, CRM intégration.",
+  "pathTo10kMrr": "200 abonnes Pro (200 x 49 = 9800 euros) + quelques Business. Acquisition : SEO sur 'entreprise en liquidation [secteur]', LinkedIn organique (1 post/semaine avec stats sectorielles), partenariats avec 5 cabinets comptables qui recommandént l'outil à leurs clients. Objectif : 50 inscrits beta mois 1, conversion 30% en Pro mois 3, croissance 20%/mois via referral.",
+  "techStack": {
+    "frontend": "Next.js avec TailwindCSS - dashboard simple et responsive",
+    "backend": "Next.js API routes + cron jobs (Vercel Cron où Railway)",
+    "database": "PostgreSQL (Supabase) pour stocker entreprises, alertes, utilisateurs",
+    "hosting": "Vercel (frontend) + Supabase (DB + auth) + Resend (emails transactionnels)",
+    "apis": [
+      "BODACC (data.gouv.fr dataset)",
+      "API Recherche Entreprises (data.gouv.fr)",
+      "API SIRENE INSEE",
+      "Resend pour emails"
+    ],
+    "notes": "Le BODACC est disponible en dataset sur data.gouv.fr avec mise à jour quotidienne. L'API Recherche Entreprises permet l'enrichissement en temps reel. Pas besoin de clé API pour BODACC, clé gratuite pour SIRENE INSEE."
+  },
+  "risks": [
+    {
+      "risk": "Volume insuffisant de liquidations dans certains secteurs de niche",
+      "mitigation": "Elargir aux redressements judiciaires, plans de sauvegarde, et cessations d'activité (pas seulement liquidations). Proposer aussi les radiations SIRENE."
+    },
+    {
+      "risk": "Difficulté a identifiér les clients de l'entreprise défaillante",
+      "mitigation": "Ne pas promettre la liste des clients mais fournir des pistes actionnables : zone de chalandise, secteur client probable, suggestion de scraper les avis Google/Pages Jaunes de l'entreprise fermee."
+    },
+    {
+      "risk": "Concurrence d'outils existants (Société.com, Pappers alertes)",
+      "mitigation": "Se différencier par l'angle 'opportunité commerciale' et non 'information légale'. Le scoring de priorité et les suggestions d'actions sont la vraie valeur ajoutee."
+    },
+    {
+      "risk": "Délai entre la publication BODACC et la perte effective des clients",
+      "mitigation": "Enrichir avec des signaux faibles en amont : retards de publication de comptes, radiation progressive, pour alerter avant la liquidation officielle."
+    }
+  ],
+  "inspirations": "Pappers (alertes entreprises mais sans angle commercial), Société.com (information légale brute), ZoomInfo/Apollo (intent data aux US mais pas base sur les défaillances), Altares/Ellisphere (scoring B2B entreprise mais prix élevé et pas oriente prospection clients orphelins).",
+  "searchVolume": [
+    {
+      "keyword": "entreprise en liquidation",
+      "monthlyVolume": "5000-10000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "BODACC liquidation judiciaire",
+      "monthlyVolume": "3000-5000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "veille entreprise concurrents",
+      "monthlyVolume": "2000-4000",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "alertes BODACC",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "liste entreprises en difficulté",
+      "monthlyVolume": "3000-5000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "prospection B2B leads",
+      "monthlyVolume": "5000-10000",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "2,5 milliards EUR — marché de l'information légale et financière entreprises en France. 7,2 millions d'entreprises actives (SIRENE Q2 2025), dont ~4,4 millions de TPE-PME. 70 000 défaillances/an (2025, source Altares) generant un besoin de veille pour des centaines de milliers d'entreprises",
+    "sam": "120 millions EUR — PME/ETI B2B qui font de la prospection active et seraient intéressées par des alertes de défaillances dans leur secteur. Estime a 200 000 entreprises B2B x 600 EUR/an de budget veille commerciale",
+    "som": "600 000 EUR — 200 abonnes Pro x 49 EUR x 12 mois + 30 abonnes Business x 149 EUR x 12 mois = ~170K EUR ARR en année 1. Objectif 600K EUR ARR en année 2 avec 500 abonnes Pro + 80 Business",
+    "methodology": "TAM base sur le marché francais de l'information légale (Altares, Ellisphere, Infogreffe, Société.com). 70 000 défaillances d'entreprises en 2025 (source Altares/Banque de France), dont 47 000 liquidations judiciaires. 7,2 millions d'entreprises actives en France (source INSEE Q2 2025). SAM ciblé les PME B2B avec budget prospection. SOM base sur les objectifs de conversion du business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "Pappers",
+      "url": "https://www.pappers.fr",
+      "pricing": "Accès gratuit aux données légales de base (Kbis, statuts, bilans). API: 100 requetes gratuites/mois, puis abonnements mensuels où annuels (tarifs non publics, estimés entre 50 et 500 EUR/mois selon le volume). Alertes email sur événements entreprises (changement siege, etc.).",
+      "trafficEstimate": "Forte croissance, estimé a 3-5M visites/mois. Devenu la référence gratuite face a Société.com et Infogreffe.",
+      "reviews": "Très bien note par les utilisateurs pour la gratuite et la complétude. Considere comme le disrupteur du marché de l'information légale en France.",
+      "strengths": "Gratuit pour l'accès de base. API bien documentée. Alertes sur événements entreprises. Croissance rapide. Bonne UX.",
+      "weaknesses": "Pas d'angle prospection commerciale : les alertes sont factuelles (événement legal) sans scoring d'opportunité ni suggestion d'action commerciale. Pas de filtrage par secteur NAF + zone géographique pour la prospection. Pas de données effectifs/CA dans les alertes gratuites."
+    },
+    {
+      "name": "Société.com",
+      "url": "https://www.societe.com",
+      "pricing": "Modèle freemium depuis septembre 2024. Accès gratuit a 135,5 millions de documents. Services premium (analyses de solvabilite, rapports détaillés) payants — tarifs non affiches publiquement.",
+      "trafficEstimate": "~5-8M visites/mois. Historiquement leader du marché avant l'emergence de Pappers.",
+      "reviews": "Marque très connue mais perçue comme vieillissante. Critiquee pour les frais caches et l'UX datee.",
+      "strengths": "Notoriété massive. Base de données exhaustive. Rapports de solvabilite. Marque de confiance pour les professionnels.",
+      "weaknesses": "Pas d'alertes de prospection commerciale. UX datee. Modèle de monétisation en transition. Pas d'angle opportunité commerciale sur les défaillances."
+    },
+    {
+      "name": "Infogreffe",
+      "url": "https://www.infogreffe.fr",
+      "pricing": "Kbis: 4,62 EUR. Extraits et documents payants a l'unite. Pas d'abonnement de veille.",
+      "trafficEstimate": "~2-3M visites/mois. Site officiel des greffes des tribunaux de commerce.",
+      "reviews": "Fiable car source officielle. Mais perçu comme cher et peu ergonomique.",
+      "strengths": "Source officielle et certifiée. Documents a valeur juridique. Exhaustivite.",
+      "weaknesses": "Cher pour un usage regulier. Pas d'alertes automatisees. Pas d'API grand public. Interface très administrative. Pas d'angle commercial."
+    },
+    {
+      "name": "FailliteTracker",
+      "url": "https://www.faillitetracker.com",
+      "pricing": "Gratuit — outil de visualisation des défaillances base sur les données BODACC en open data. Pas de modèle de monétisation apparent.",
+      "trafficEstimate": "Très faible (<10K visites/mois). Projet de réutilisation open data référence sur data.gouv.fr.",
+      "reviews": "Pas d'avis disponibles. Projet personnel/hobby.",
+      "strengths": "Gratuit. Analyses par secteur, taille, région sur 3 ans. Bonne visualisation des tendances de défaillances.",
+      "weaknesses": "Pas de système d'alertes. Pas d'enrichissement SIRENE. Pas de scoring d'opportunité. Pas de modèle economique. Projet non maintenu activement."
+    },
+    {
+      "name": "BODACC officiel (alertes)",
+      "url": "https://www.bodacc.fr",
+      "pricing": "Gratuit — service d'alertes email officiel avec compte gratuit. Filtrage basique par critères.",
+      "trafficEstimate": "Site gouvernemental, trafic modere (~500K visites/mois).",
+      "reviews": "Service fiable mais basique. Les alertes sont brutes et non enrichies.",
+      "strengths": "Gratuit et officiel. Source primaire des données. API disponible. Données Open Licence v2.",
+      "weaknesses": "Alertes brutes sans enrichissement. Pas de scoring de priorité. Pas de données effectifs, CA, secteur. Interface très administrative. Pas d'angle commercial."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "BODACC - Données de défaillances",
+      "status": "ok",
+      "detail": "Données BODACC en Open Licence v2.0 depuis avril 2017. Réutilisation commerciale explicitement autorisée. Obligation de mentionner la source (DILA), l'URL de téléchargement, le nom du fichier et sa date. API BODACC disponible gratuitement.",
+      "source": "https://www.data.gouv.fr/datasets/bodacc — DILA Open Licence v2"
+    },
+    {
+      "topic": "API SIRENE / Recherche Entreprises",
+      "status": "ok",
+      "detail": "API SIRENE INSEE et API Recherche Entreprises data.gouv.fr en accès libre. Licence Ouverte. Cle gratuite pour SIRENE INSEE. Pas de restriction de réutilisation commerciale.",
+      "source": "https://api.insee.fr/catalogue/ — API SIRENE"
+    },
+    {
+      "topic": "RGPD - Données entreprises",
+      "status": "attention",
+      "detail": "Les données BODACC contiennent potentiellement des données personnelles (noms de dirigeants). La DILA précise que la mise a disposition ne dispense pas le réutilisateur du respect de la loi Informatique et Libertés. En pratique, les noms de dirigeants sont publics et la réutilisation est courante (Pappers, Société.com le font). Faible risque juridique.",
+      "source": "DILA — Conditions de réutilisation BODACC"
+    },
+    {
+      "topic": "Demarchage commercial suite a liquidation",
+      "status": "attention",
+      "detail": "Pas d'interdiction légale de contacter les clients potentiels d'une entreprise en liquidation. Toutefois, le demarchage doit respecter les regles du RGPD (base légale = intérêt légitime pour le B2B). Attention a ne pas utiliser des listes de clients qui seraient couvertes par le secret des affaires du liquidateur.",
+      "source": "RGPD Art. 6(1)(f) — Interet legitime pour prospection B2B"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "LinkedIn organique (posts stats sectorielles)",
+      "cacEstimate": "15-30 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "588 EUR (49 EUR x 12 mois)",
+      "ltvCacRatio": "20:1 a 39:1"
+    },
+    {
+      "channel": "SEO (entreprise en liquidation + secteur)",
+      "cacEstimate": "25-50 EUR",
+      "conversionRate": "4-6%",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "12:1 a 24:1"
+    },
+    {
+      "channel": "Partenariats cabinets comptables",
+      "cacEstimate": "30-60 EUR (via referral fee)",
+      "conversionRate": "15-25%",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "10:1 a 20:1"
+    },
+    {
+      "channel": "Google Ads (veille entreprise, prospection B2B)",
+      "cacEstimate": "80-150 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "4:1 a 7:1"
+    },
+    {
+      "channel": "Salons professionnels (Salon des Entrepreneurs)",
+      "cacEstimate": "100-200 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "1 788 EUR (149 EUR x 12 mois, plan Business)",
+      "ltvCacRatio": "9:1 a 18:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources vérifiées via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "19K recherches/mois cumulees ('entreprise en liquidation' 5 000/mois, 'prospection B2B leads' 5 000/mois). TAM: 2,5 milliards EUR. Cibles: Directeurs commerciaux de PME/ETI, Courtiers en assurance et, Franchises et réseaux d'agences."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 4 APIs a integrer (BODACC, API Recherche Entreprises, API SIRENE INSEE). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 60,
+      "detail": "200 clients a 9800 EUR pour demarrer. SOM: 170K EUR/an. Pricing 49-149 EUR."
+    },
+    "competition": {
+      "score": 20,
+      "detail": "5 concurrents identifies: Pappers, Société.com, Infogreffe. Leader: Pappers (Forte croissance, estimé a 3-5M visites/mois. Devenu la référence gratuite face a Société.com et Infogreffe.)."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: RGPD - Données entreprises, Demarchage commercial suite a liquidation."
+    },
+    "overall": {
+      "score": 55,
+      "detail": "Point fort: demande (68/100). Point faible: competition (20/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

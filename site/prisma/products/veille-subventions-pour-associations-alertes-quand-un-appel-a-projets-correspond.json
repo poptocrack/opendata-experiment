@@ -1,0 +1,311 @@
+{
+  "productSlug": "veille-subventions-pour-associations-alertes-quand-un-appel-a-projets-correspond",
+  "oneLiner": "Alertes automatiques quand un appel a projets ou une subvention correspond au profil de votre association.",
+  "problem": "Les 1,5 million d'associations françaises passent un temps considerable a chercher des financements. Les appels a projets sont disperses sur des dizaines de sites (collectivités, prefectures, fondations, Europe). Les bénévoles n'ont ni le temps ni les compétences pour faire une veille exhaustive. Beaucoup passent a côté d'opportunités par manque d'information.",
+  "solution": "Un service de veille automatise qui agrage les appels a projets et subventions de toutes les sources (collectivités, État, fondations, Europe), matche avec le profil de l'association (secteur, territoire, taille, objet social RNA), et envoie des alertes personnalisees par email avec les opportunités pertinentes et leurs deadlines.",
+  "uniqueValue": "Le matching intelligent entre le profil RNA de l'association et les opportunités de financement. Pas besoin de configurer manuellement : l'objet social et le territoire sont pre-remplis depuis le RNA (442K visites/mois). Couverture multi-sources unique en France.",
+  "mvpScope": "Plateforme web avec : inscription par numéro RNA (pre-remplissage automatique), agrgation de 5 sources principales d'appels a projets, algorithme de matching profil/opportunité, alertes email hebdomadaires, fiche détaillée par opportunité avec lien vers la source.",
+  "timeToMvp": "8 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Agrgation des sources",
+      "description": "Scraper/connecter les 5 sources principales : subventions.fr, appels a projets des 13 régions, fondations majeures (Fondation de France, Caisse des Depots), fonds europeens.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Scrapers pour 5 sources d'appels a projets",
+        "Base de données normalisee des opportunités",
+        "Pipeline de mise à jour quotidienne",
+        "Categorisation automatique par secteur/territoire"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Profil association et matching",
+      "description": "Intégration API RNA pour pre-remplissage, algorithme de matching profil/opportunités, scoring de pertinence.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Inscription par numéro RNA avec pre-remplissage",
+        "Algorithme de matching secteur+territoire+taille",
+        "Score de pertinence par opportunité",
+        "Interface de gestion du profil association"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Alertes et monétisation",
+      "description": "Système d'alertes email, dashboard des opportunités, intégration Stripe pour le premium.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Email hebdomadaire avec top opportunités matchees",
+        "Dashboard web des opportunités",
+        "Paywall Stripe",
+        "Landing page avec temoignages beta"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les associations cherchent activement des financements en ligne",
+      "how": "Sondage auprès de 50 associations via les réseaux tété de réseau (Mouvement Associatif, France Active). Analyse des 442K visites mensuelles du RNA.",
+      "successCriteria": "80%+ des associations sondees cherchent des financements, 60%+ trouvent la veille trop chronophage."
+    },
+    {
+      "check": "Les sources d'appels a projets sont scrapables de manière fiable",
+      "how": "Developper des scrapers prototypes pour les 3 principales sources et tester la stabilité sur 2 semaines.",
+      "successCriteria": "90%+ des appels a projets captures, moins de 5% de doublons, stabilité > 95%."
+    },
+    {
+      "check": "Le matching profil/opportunité est pertinent",
+      "how": "Tester le matching sur 20 associations beta et leur demander de noter la pertinence des suggestions.",
+      "successCriteria": "Note de pertinence moyenne > 3.5/5, au moins 1 opportunité réellement applicable par mois."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Associations culturelles et sportives de taille moyenne (10-100 adherents)",
+      "where": "Maisons des associations, forums associatifs departementaux, réseaux CRIB (Centres de Ressources et d'Information des Benevoles)",
+      "howToReach": "Presentations dans les maisons des associations. Partenariat avec les CRIB pour recommander l'outil. Flyers lors des forums associatifs."
+    },
+    {
+      "who": "Directeurs/delegues généraux d'associations employeuses",
+      "where": "LinkedIn (titre 'directeur association' ou 'délégué général'), réseau Admical, France Active",
+      "howToReach": "Prospection LinkedIn ciblee. Webinaires gratuits sur 'Comment ne plus rater de subventions'. Partenariat France Active."
+    },
+    {
+      "who": "Benevoles en charge de la recherche de financements",
+      "where": "Groupes Facebook (Benevoles de France, Vie Associative), forums associatifs en ligne",
+      "howToReach": "Posts dans les groupes avec temoignage d'une association beta. Guide gratuit 'Les 50 sources de financement' en lead magnet."
+    }
+  ],
+  "pricingStrategy": "Gratuit : 1 alerte/mois, 3 sources. Essentiel a 19 EUR/mois : alertes hebdomadaires, toutes les sources, filtres avancés. Pro a 49 EUR/mois : alertes quotidiennes, aide a la redaction de dossier (templates), suivi des deadlines, multi-utilisateurs (3 comptes).",
+  "pathTo10kMrr": "1,5M d'associations en France, dont 300K actives avec budget > 10K EUR. Cible : 50K associations actives en recherche de financement. M1-M3 : 100 inscrits gratuits, 20 Essentiel = 380 EUR MRR. M3-M6 : 500 inscrits, 80 Essentiel + 10 Pro = 2 010 EUR MRR. M6-M12 : 2 000 inscrits, 300 Essentiel + 50 Pro = 8 200 EUR MRR. M12-M15 : bouche a oreille + partenariats tetes de réseau = 400 Essentiel + 80 Pro = 11 520 EUR MRR.",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS",
+    "backend": "Node.js + Puppeteer/Playwright (scrapers) + BullMQ (jobs)",
+    "database": "PostgreSQL + Typesense (recherche full-text)",
+    "hosting": "Vercel + Railway (DB + workers de scraping)",
+    "apis": [
+      "RNA data.gouv.fr",
+      "API Subventions (si disponible)",
+      "Resend (emails)",
+      "Stripe (paiements)",
+      "OpenAI (catégorisation automatique des appels)"
+    ],
+    "notes": "Le scraping est le point critique : prevoir de la maintenance. Budget OpenAI pour la catégorisation : ~20 USD/mois. Budget total : ~60 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Les sites sources changent et cassent les scrapers",
+      "mitigation": "Monitoring automatique des scrapers avec alertes. Diversifier les sources pour ne pas dependre d'une seule. Ajouter des sources via API quand disponibles."
+    },
+    {
+      "risk": "Le marché associatif a un faible pouvoir d'achat",
+      "mitigation": "Pricing bas (19 EUR = le prix d'un repas). Offre gratuite genereuse pour l'acquisition. Proposer un plan annuel avec réduction. Cibler aussi les DLA et accompagnateurs qui ont un budget."
+    },
+    {
+      "risk": "Concurrence des plateformes institutionnelles (subventions.fr, LeFosse)",
+      "mitigation": "Se differencier par le matching intelligent et les alertes proactives. Les plateformes institutionnelles listent mais ne matchent pas. L'UX moderne est un avantage."
+    }
+  ],
+  "inspirations": "Wellfound (ex-AngelList) pour les alertes d'opportunités matchees au profil. Malt pour le matching offre/demande dans l'univers freelance. En France, HelloAsso domine les paiements associatifs mais ne fait pas de veille subventions.",
+  "searchVolume": [
+    {
+      "keyword": "subventions associations",
+      "monthlyVolume": "12100",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "appel a projets associations 2026",
+      "monthlyVolume": "6600",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "financement association",
+      "monthlyVolume": "8100",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "aide financière association",
+      "monthlyVolume": "4400",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "FDVA appel a projet",
+      "monthlyVolume": "2900",
+      "difficulty": "medium",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR - Marché outils numériques et services pour les 2M+ associations en France (logiciels, formations, accompagnement)",
+    "sam": "30 millions EUR - Sous-segment veille et recherche de financements pour les 300K associations actives avec budget >10K EUR",
+    "som": "1.2 millions EUR - 300 Essentiel a 19 EUR/mois + 50 Pro a 49 EUR/mois, atteignable a M12",
+    "methodology": "TAM basé sur 2M+ associations (RNA 2025), budget numérique moyen. SAM = associations actives en recherche de financement (76% eprouvent des difficultés numériques - Solidatech 2025). SOM = penetration cible."
+  },
+  "competitorDeep": [
+    {
+      "name": "Le Compte Asso",
+      "url": "https://lecompteasso.associations.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "200K-500K visites/mois",
+      "reviews": "Plateforme officielle de demande de subventions, lancee 2018",
+      "strengths": "Officiel, gratuit, répertoire des subventions eligibles, demande en ligne centralisee",
+      "weaknesses": "UX institutionnelle lourde, pas de matching intelligent, pas d'alertes proactives, pas de sources non-etatiques (fondations, Europe)"
+    },
+    {
+      "name": "HelloAsso",
+      "url": "https://www.helloasso.com",
+      "pricing": "Gratuit (contributions volontaires)",
+      "trafficEstimate": "3M+ visites/mois",
+      "reviews": "400K associations utilisatrices, référence paiement associatif",
+      "strengths": "Marque forte, 400K associations, gratuit, outils de collecte (dons, adhesions, billetterie), API",
+      "weaknesses": "Pas de veille subventions, pas de matching profil/opportunités, focus paiement et non financement public"
+    },
+    {
+      "name": "appelaprojets.org",
+      "url": "https://www.appelaprojets.org",
+      "pricing": "Gratuit",
+      "trafficEstimate": "30K-80K visites/mois",
+      "reviews": "Agregateur d'appels a projets multi-sources",
+      "strengths": "Bonne couverture des appels a projets, interface simple, gratuit",
+      "weaknesses": "Pas de matching par profil RNA, pas d'alertes personnalisees, pas de CRM de suivi, pas de monétisation (durabilité?)"
+    },
+    {
+      "name": "Data.Subvention (beta.gouv)",
+      "url": "https://datasubvention.beta.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Raffinerie de la donnée publique sur les subventions associatives",
+      "strengths": "Données completes sur 1.5M associations, initiative beta.gouv, croisement multi-sources",
+      "weaknesses": "Outil pour agents publics (pas pour les associations directement), pas d'alertes, interface de consultation, pas de matching"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Scraping de sites publics",
+      "status": "attention",
+      "detail": "Le scraping de sites de collectivités/fondations pour agréger les appels a projets doit respecter les CGU de chaque site. Privilegier les flux RSS et APIs quand disponibles. Le scraping est légal si les données sont publiques et que le serveur n'est pas surcharge.",
+      "source": "Jurisprudence Ryanair c/ PR Aviation (CJUE 2015)"
+    },
+    {
+      "topic": "Données RNA",
+      "status": "ok",
+      "detail": "API RNA publique, utilisation libre pour le pre-remplissage des profils associations.",
+      "source": "data.gouv.fr - API RNA"
+    },
+    {
+      "topic": "Emails d'alertes",
+      "status": "ok",
+      "detail": "Consentement explicite lors de l'inscription (opt-in). Conforme RGPD et LCEN.",
+      "source": "RGPD Art. 6 / Loi LCEN"
+    },
+    {
+      "topic": "Utilisation d'OpenAI pour la catégorisation",
+      "status": "attention",
+      "detail": "Les données d'appels a projets passees par l'API OpenAI peuvent etre utilisees pour l'entrainement (sauf opt-out). Utiliser l'API avec le data processing addendum signe.",
+      "source": "OpenAI Terms of Service - API Data Usage Policy"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (subventions association + type/région)",
+      "cacEstimate": "3-8 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "114 EUR (19 EUR/mois x 6 mois retention)",
+      "ltvCacRatio": "14-38x"
+    },
+    {
+      "channel": "Presentations maisons des associations",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "10-20%",
+      "ltv": "114 EUR",
+      "ltvCacRatio": "8-23x"
+    },
+    {
+      "channel": "Partenariat CRIB / France Active",
+      "cacEstimate": "2-5 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "114 EUR",
+      "ltvCacRatio": "23-57x"
+    },
+    {
+      "channel": "LinkedIn outreach DG associations",
+      "cacEstimate": "20-40 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "294 EUR (49 EUR/mois Pro x 6)",
+      "ltvCacRatio": "7-15x"
+    },
+    {
+      "channel": "Lead magnet (guide 50 sources financement)",
+      "cacEstimate": "1-3 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "114 EUR",
+      "ltvCacRatio": "38-114x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données sources vérifiées via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 78,
+      "detail": "34.1K recherches/mois cumulees ('subventions associations' 12 100/mois, 'financement association' 8 100/mois). TAM: 500 millions EUR. Cibles: Associations culturelles et sportives, Directeurs/delegues généraux d'associations employeuses, Benevoles en charge de."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 8 semaines. 5 APIs a integrer (RNA, API Subventions, Resend). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Pricing 19-49 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Le Compte Asso, HelloAsso, appelaprojets.org. Leader: Le Compte Asso (200K-500K visites/mois). Faiblesse principale: UX institutionnelle lourde."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Scraping de sites publics, Utilisation d'OpenAI pour la catégorisation."
+    },
+    "overall": {
+      "score": 58,
+      "detail": "Point fort: demande (78/100). Point faible: compétition (45/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

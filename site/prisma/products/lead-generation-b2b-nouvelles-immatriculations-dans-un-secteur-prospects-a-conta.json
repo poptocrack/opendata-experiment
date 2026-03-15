@@ -1,0 +1,332 @@
+{
+  "productSlug": "lead-generation-b2b-nouvelles-immatriculations-dans-un-secteur-prospects-a-conta",
+  "oneLiner": "Recevez chaque jour la liste des entreprises fraichement créées dans votre secteur, prêt-a-prospecter avec coordonnées et contexte.",
+  "problem": "Les entreprises nouvellement créées ont des besoins immediats (comptabilite, assurance, banque, site web, logiciel métier, fournitures) et n'ont pas encore de fournisseurs attitres. Mais identifier ces prospects dans le flux quotidien des 2500+ créations d'entreprises en France est impossible manuellement. Les bases de données B2B classiques (LinkedIn Sales Navigator, Société.com) ne permettent pas de filtrer efficacement par date de création + secteur + zone.",
+  "solution": "Un flux quotidien de leads qualifiés : les nouvelles immatriculations SIRENE filtrees par code NAF, zone géographique et forme juridique, enrichies avec les coordonnées du dirigeant, l'adresse, et des informations contextuelles (capital social, activité exacte). Export direct vers votre CRM ou envoi par email.",
+  "uniqueValue": "Leads frais du jour (pas de base recyclée), filtrables avec précision (NAF a 5 chiffres, commune), et a une fraction du prix des outils B2B classiques.",
+  "mvpScope": "Interface web pour configurer ses filtres (codes NAF, départements, forme juridique). Email quotidien avec la liste des nouvelles immatriculations correspondantes. Fiche prospect avec nom entreprise, dirigeant, adresse, capital, activité déclarée. Export CSV.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Pipeline d'ingestion SIRENE quotidien",
+      "description": "Mise en place du suivi quotidien des nouvelles immatriculations via le fichier de mise à jour quotidienne SIRENE (stock + flux). Parsing, filtrage par date de création, stockage en base.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Script d'ingestion du flux quotidien SIRENE",
+        "Parsing et normalisation des données (NAF, adresse, dirigeant)",
+        "Base PostgreSQL des nouvelles immatriculations",
+        "Statistiques : nombre de créations/jour par secteur NAF"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Système de filtres et matching",
+      "description": "Interface de configuration des critères de prospection. Moteur de matching qui croise les nouvelles immatriculations avec les filtres de chaque utilisateur. Génération des listes de leads quotidiennes.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Interface de configuration des filtres",
+        "Moteur de matching performant",
+        "Génération automatique des listes quotidiennes",
+        "Preview des leads avant envoi"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Distribution et enrichissement",
+      "description": "Envoi des emails quotidiens avec les leads du jour. Export CSV/Excel compatible CRM. Enrichissement optionnel via API Recherche Entreprises (téléphone, email quand disponible).",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Template email quotidien avec les leads",
+        "Export CSV/Excel avec colonnes CRM standard",
+        "Enrichissement coordonnées via API",
+        "Dashboard historique des leads recus"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les commerciaux veulent des leads 'nouvelles entreprises'",
+      "how": "Poster sur LinkedIn un exemple de liste quotidienne pour un secteur (ex: 'les 15 restaurants ouverts aujourd'hui en Île-de-France'). Proposer un test gratuit de 7 jours.",
+      "successCriteria": "100 inscriptions en test gratuit en 2 semaines, taux d'ouverture email > 50%"
+    },
+    {
+      "check": "Le volume de créations par secteur est suffisant",
+      "how": "Analyser le flux SIRENE sur 30 jours pour les 10 secteurs NAF les plus demandes. Calculer le nombre moyen de créations/jour.",
+      "successCriteria": "Minimum 10 créations/jour dans les secteurs cibles principaux (commerce, BTP, restauration, conseil)"
+    },
+    {
+      "check": "Les leads sont contactables et receptifs",
+      "how": "Envoyer les leads a 5 commerciaux beta-testeurs pendant 30 jours. Tracker leur taux de contact et de conversion.",
+      "successCriteria": "Taux de contact > 30% (téléphone/email trouvable), taux de RDV > 5% des contacts"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Cabinets comptables et experts-comptables cherchant de nouveaux clients parmi les créateurs d'entreprises",
+      "where": "Ordre des Experts-Comptables, salons de la création d'entreprise, groupes Facebook d'experts-comptables",
+      "howToReach": "Offrir 1 mois gratuit avec filtre sur les SAS/SARL créées dans leur département. Le ROI est immédiat : un seul client gagne (500+ euros/mois de mission comptable) rentabilise l'abonnement annuel."
+    },
+    {
+      "who": "Courtiers en assurance pro et banquiers d'affaires ciblant les créateurs",
+      "where": "Réseaux de courtiers (CSCA), agences bancaires pro, salons Salon SME",
+      "howToReach": "Démo personnalisee avec les créations de leur zone de chalandise sur la dernière semaine. Mettre en avant le timing : contacter le créateur dans les 48h de son immatriculation."
+    },
+    {
+      "who": "Éditeurs SaaS et agences web ciblant les TPE/PME nouvellement créées",
+      "where": "Communautés SaaS francaises (SaaStr Paris, La French Tech), agences web locales",
+      "howToReach": "Intégration CRM directe (HubSpot, Pipedrive) pour alimentation automatique du pipeline. Article de blog : 'Comment j'ai signe 20 clients en contactant les nouvelles entreprises de mon secteur'."
+    }
+  ],
+  "pricingStrategy": "Starter a 29 euros/mois : 1 code NAF, 3 départements, email quotidien, 50 leads/mois max. Pro a 69 euros/mois : 5 codes NAF, départements illimités, leads illimités, export CSV, enrichissement coordonnées. Business a 149 euros/mois : codes NAF illimités, API, intégration CRM (HubSpot, Pipedrive, Salesforce), webhooks, multi-utilisateurs.",
+  "pathTo10kMrr": "80 Starter (2320) + 80 Pro (5520) + 15 Business (2235) = ~10K MRR. C'est un outil a faible churn car la valeur est immédiate et récurrente. Acquisition : SEO sur 'nouvelles entreprises créées [ville/secteur]', Google Ads sur 'prospection B2B nouvelles entreprises', partenariats avec 10 cabinets comptables (programme referral 20%).",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS - interface simple de configuration et consultation",
+    "backend": "Next.js API routes + cron job quotidien (6h du matin)",
+    "database": "PostgreSQL (Supabase) - table immatriculations avec index sur date_creation, code_naf, département",
+    "hosting": "Vercel + Supabase + Resend (emails quotidiens)",
+    "apis": [
+      "Fichier flux quotidien SIRENE (data.gouv.fr)",
+      "API Recherche Entreprises (enrichissement)",
+      "API SIRENE INSEE (détails complémentaires)",
+      "Resend pour l'envoi d'emails"
+    ],
+    "notes": "Le fichier de stock SIRENE est mis à jour mensuellement mais le flux quotidien (mises à jour incrementales) est disponible et contient les nouvelles immatriculations. L'API Recherche Entreprises est gratuite et sans limite raisonnable. Attention : les coordonnées email/téléphone ne sont pas toujours dans SIRENE, enrichissement partiel."
+  },
+  "risks": [
+    {
+      "risk": "RGPD : les données de dirigeants sont des données personnelles",
+      "mitigation": "Ne diffuser que les données publiques du SIRENE (nom du représentant légal est public). Proposer un opt-out aux dirigeants. Consulter un DPO pour valider le traitement. Base légale : intérêt légitime pour la prospection B2B."
+    },
+    {
+      "risk": "Concurrence de Société.com, Pappers, et LinkedIn Sales Navigator",
+      "mitigation": "Se différencier par la fraîcheur (leads du jour, pas d'une base statique), le prix (10x moins cher que Sales Navigator), et la specialisation sur les nouvelles créations. Ces outils ne permettent pas un filtrage aussi précis par date de création."
+    },
+    {
+      "risk": "Beaucoup de micro-entrepreneurs sans potentiel commercial réel",
+      "mitigation": "Permettre de filtrer par forme juridique (exclure les micro-entreprises si souhaite) et par capital social minimum. Scorer la 'qualité' du lead (capital, forme juridique, secteur)."
+    },
+    {
+      "risk": "Coordonnées incompletes réduisant la valeur des leads",
+      "mitigation": "Enrichir avec les Pages Jaunes, Google Maps, LinkedIn via scraping ethique. Etre transparent sur le taux de coordonnées disponibles par secteur. Proposer un service d'enrichissement manuel a la carte."
+    }
+  ],
+  "inspirations": "Société.com alertes (alerte sur une entreprise spécifique mais pas de flux par secteur), Pappers (données entreprises mais pas de workflow de prospection), LinkedIn Sales Navigator (prospection B2B mais 80 euros/mois et pas orienté nouvelles créations), Captain Data (scraping et enrichissement B2B), Phantombuster (automatisation prospection).",
+  "searchVolume": [
+    {
+      "keyword": "nouvelles entreprises créées",
+      "monthlyVolume": "3600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "prospection B2B",
+      "monthlyVolume": "6600",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "leads B2B france",
+      "monthlyVolume": "1900",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "fichier entreprises nouvellement créées",
+      "monthlyVolume": "880",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "liste nouvelles immatriculations",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "génération de leads B2B",
+      "monthlyVolume": "2900",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "prospection nouvelles entreprises",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "outil prospection B2B france",
+      "monthlyVolume": "1600",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "1.7 milliard EUR - marché de la prospection et génération de leads B2B en France. 1 165 800 créations d'entreprises en 2025 (record historique, +5% vs 2024, source INSEE). Marché des cabinets de recrutement seul pese 1.7 Md EUR.",
+    "sam": "250 millions EUR - entreprises B2B ciblant les nouvelles créations (cabinets comptables, courtiers assurance, banques pro, éditeurs SaaS, agences web). Environ 50 000 commerciaux B2B actifs en France ciblant les TPE/PME.",
+    "som": "1.2 million EUR - 10 000 EUR MRR (175 clients payants) en 12-18 mois. Volume massif de nouvelles créations (100 000+/mois en 2025) garantit la valeur récurrente.",
+    "methodology": "TAM base sur le marché global lead gen B2B France (sources Xerfi, Salesdorado). SAM restreint aux commerciaux ciblant les nouvelles créations dans les 10 secteurs cles. SOM base sur 80 Starter + 80 Pro + 15 Business."
+  },
+  "competitorDeep": [
+    {
+      "name": "Kaspr",
+      "url": "https://www.kaspr.io",
+      "pricing": "Gratuit (credits limites). Payant à partir de 45 EUR/utilisateur/mois.",
+      "trafficEstimate": "800K visites/mois",
+      "reviews": "Efficace pour les numeros de téléphone mobiles sur le marché francais. Extension Chrome LinkedIn populaire. Sanctionne par la CNIL pour non-conformité RGPD.",
+      "strengths": "Base 200M+ profils LinkedIn, extraction Chrome rapide, enrichissement téléphone, prix accessible",
+      "weaknesses": "Sanctionne CNIL, ne differencie pas téléphone pro/perso, pas de filtre par date de création d'entreprise, base LinkedIn pas SIRENE"
+    },
+    {
+      "name": "Apollo.io",
+      "url": "https://www.apollo.io",
+      "pricing": "Gratuit (limites). Payant à partir de 49 USD/utilisateur/mois.",
+      "trafficEstimate": "5M visites/mois (global)",
+      "reviews": "Plateforme all-in-one prospection B2B internationale. Base de 275M contacts.",
+      "strengths": "Base massive, sequences email intégrées, scoring IA, CRM intégré, prix compétitif",
+      "weaknesses": "Focus international (données France moins precises), pas de filtre SIRENE ni date de création, données parfois obsolètes sur le marché francais"
+    },
+    {
+      "name": "Pharow",
+      "url": "https://www.pharow.com",
+      "pricing": "Sur devis. Estime a 100-300 EUR/mois.",
+      "trafficEstimate": "150K visites/mois",
+      "reviews": "Focusse sur le marché francais avec données SIRENE/INSEE enrichies LinkedIn. 850+ clients actifs.",
+      "strengths": "Données légales francaises (SIRENE, INSEE), enrichissement LinkedIn, signaux business, filtre sectoriel précis, compliance RGPD",
+      "weaknesses": "Prix plus élevé que Kaspr/Apollo, pas de flux quotidien automatisé de nouvelles créations, interface moins intuitive pour les débutants"
+    },
+    {
+      "name": "Les Data Listes (TARGET)",
+      "url": "https://www.lesdatalistes.fr",
+      "pricing": "Sur devis. Alertes nouveaux entrants en option.",
+      "trafficEstimate": "50K visites/mois",
+      "reviews": "Plateforme de ciblage marketing avec alertes sur les nouvelles immatriculations.",
+      "strengths": "Alertes nouveaux entrants (nouvelles créations), ciblage multi-critères, base SIRENE",
+      "weaknesses": "Interface datee, pas de workflow prospection intégré, pas d'enrichissement email/téléphone"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "RGPD données dirigeants",
+      "status": "attention",
+      "detail": "Les données SIRENE (nom du représentant légal) sont publiques. Mais l'enrichissement avec email/téléphone personnel nécessité une base légale solide. Base recommandée : intérêt légitime pour la prospection B2B (art. 6.1.f RGPD). Opt-out obligatoire.",
+      "source": "CNIL, Guidelines prospection B2B, sanction Kaspr 2022"
+    },
+    {
+      "topic": "Filtrage micro-entrepreneurs",
+      "status": "ok",
+      "detail": "Pas de contrainte légale a filtrer par forme juridique. Les micro-entrepreneurs sont des entreprises comme les autres dans SIRENE.",
+      "source": "Code de commerce, SIRENE"
+    },
+    {
+      "topic": "Prospection commerciale B2B",
+      "status": "ok",
+      "detail": "La prospection B2B par email est autorisee sans consentement préalable si le message est en rapport avec l'activité professionnelle du destinataire (art. L.34-5 CPCE). Mention de désabonnement obligatoire.",
+      "source": "CNIL, art. L.34-5 Code des postes et communications electroniques"
+    },
+    {
+      "topic": "Réutilisation commerciale SIRENE",
+      "status": "ok",
+      "detail": "Le fichier SIRENE est sous licence ouverte Etalab, réutilisation commerciale autorisee.",
+      "source": "Licence Ouverte Etalab v2.0, data.gouv.fr"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (nouvelles entreprises créées, prospection B2B)",
+      "cacEstimate": "60 EUR",
+      "conversionRate": "5%",
+      "ltv": "830 EUR (Pro 69 EUR x 12 mois)",
+      "ltvCacRatio": "13.8"
+    },
+    {
+      "channel": "Google Ads (fichier nouvelles immatriculations, leads B2B)",
+      "cacEstimate": "180 EUR",
+      "conversionRate": "7%",
+      "ltv": "830 EUR",
+      "ltvCacRatio": "4.6"
+    },
+    {
+      "channel": "Partenariats cabinets comptables (referral 20%)",
+      "cacEstimate": "40 EUR",
+      "conversionRate": "20%",
+      "ltv": "1040 EUR (Pro 69 EUR x 15 mois)",
+      "ltvCacRatio": "26.0"
+    },
+    {
+      "channel": "LinkedIn organique (posts viraux listes nouvelles créations)",
+      "cacEstimate": "25 EUR",
+      "conversionRate": "3%",
+      "ltv": "700 EUR (Starter 29 EUR x 24 mois)",
+      "ltvCacRatio": "28.0"
+    },
+    {
+      "channel": "Intégration CRM (HubSpot, Pipedrive marketplace)",
+      "cacEstimate": "70 EUR",
+      "conversionRate": "10%",
+      "ltv": "1790 EUR (Business 149 EUR x 12 mois)",
+      "ltvCacRatio": "25.6"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources verifiees via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "18.8K recherches/mois cumulees ('prospection B2B' 6 600/mois, 'nouvelles entreprises créées' 3 600/mois). TAM: EUR. Cibles: Cabinets comptables et experts-comptables, Courtiers en assurance pro, Éditeurs SaaS et agences."
+    },
+    "feasibility": {
+      "score": 73,
+      "detail": "MVP en 5 semaines. 4 APIs a intégrer (Fichier flux quotidien SIRENE, API Recherche Entreprises, API SIRENE INSEE). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 95,
+      "detail": "Pricing 29-149 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifiés: Kaspr, Apollo.io, Pharow. Leader: Kaspr (800K visites/mois). Faiblesse principale: Sanctionne CNIL."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: RGPD données dirigeants."
+    },
+    "overall": {
+      "score": 74,
+      "detail": "Point fort: marché (95/100). Point faible: competition (45/100). Potentiel réel mais hypotheses cles a valider."
+    }
+  }
+}

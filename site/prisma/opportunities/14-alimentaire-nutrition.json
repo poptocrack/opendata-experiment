@@ -1,0 +1,173 @@
+{
+  "id": "alimentaire-nutrition",
+  "rank": 14,
+  "title": "Intelligence alimentaire & nutrition",
+  "slug": "alimentaire-nutrition",
+  "sector": "alimentaire",
+  "tagline": "Croiser Open Food Facts + Alim'confiance + AGRIBALYSE pour créer le guide alimentaire le plus complet (qualité, hygiene, impact environnemental)",
+  "status": "exploration",
+  "difficulty": "facile",
+  "marketSize": "Grand public soucieux de sa santé et de l'environnement",
+  "monetization": "App freemium + API B2B",
+  "context": "Open Food Facts a 18K visites/an (3M+ produits references). Alim'confiance a 190K visites/an (contrôles sanitaires restaurants). AGRIBALYSE donne l'impact environnemental des aliments. Croiser ces 3 sources crée un guide alimentaire unique : scan un produit → qualité nutritionnelle + impact carbone, cherche un restaurant → score hygiene officiel. Le modèle Yuka prouve que les consommateurs sont prêts à utiliser ce type d'app massivement.",
+  "signals": [
+    {
+      "label": "Alim'confiance",
+      "value": "190K visites/an",
+      "detail": "Contrôles sanitaires restaurants — pic viral 100K en avril 2025"
+    },
+    {
+      "label": "Open Food Facts",
+      "value": "18K visites/an",
+      "detail": "3M+ produits avec ingredients, nutrition, labels"
+    },
+    {
+      "label": "BANCO commerces",
+      "value": "15K visites + 13K DL",
+      "detail": "Base nationale des commerces ouverts"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5593aab9c751df35d8a453ba",
+      "name": "Alim'confiance — Contrôles sanitaires",
+      "description": "Résultats des contrôles officiels sanitaires : restaurants, cantines, commerces alimentaires.",
+      "visits": "190K/an",
+      "downloads": "22K/an",
+      "updateFrequency": "Hebdomadaire"
+    },
+    {
+      "datasetId": "53699e2aa3a729239d205dea",
+      "name": "Open Food Facts",
+      "description": "3M+ produits alimentaires : ingredients, nutrition, labels, origines.",
+      "visits": "18K/an",
+      "downloads": "4.3K/an",
+      "updateFrequency": "Continu"
+    },
+    {
+      "datasetId": "602fc5ce64681183160d1a06",
+      "name": "BANCO — Base nationale des commerces",
+      "description": "Tous les commerces de France avec horaires d'ouverture.",
+      "visits": "15K/an",
+      "downloads": "13K/an",
+      "updateFrequency": "Regulier"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API AGRIBALYSE (ADEME)",
+      "description": "Impact environnemental des produits agricoles et alimentaires.",
+      "baseUrl": "https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-synthese"
+    },
+    {
+      "name": "API Impact CO2 (ADEME)",
+      "description": "Données carbone pour tous types de produits et activités.",
+      "baseUrl": "https://impactco2.fr/api/v1"
+    }
+  ],
+  "productIdeas": [
+    "App tout-en-un : scan un produit (nutrition + impact carbone) OU cherche un restaurant (score hygiene)",
+    "API B2B pour sites de livraison : afficher le score hygiene du restaurant",
+    "Classement des restaurants les plus propres par ville/quartier",
+    "Alertes : nouveau contrôle sanitaire négatif pres de chez vous",
+    "Comparateur d'impact carbone du panier de courses"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Consommateurs (app)",
+      "priceRange": "Freemium + 2.99/mois premium"
+    },
+    {
+      "segment": "Plateformés livraison (API)",
+      "priceRange": "API payante"
+    },
+    {
+      "segment": "Restaurateurs",
+      "priceRange": "19/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Yuka",
+      "weakness": "Pas de données hygiene restaurant ni impact carbone"
+    },
+    {
+      "name": "Open Food Facts (app)",
+      "weakness": "Uniquement produits, pas de restaurants"
+    },
+    {
+      "name": "Alim'confiance (site officiel)",
+      "weakness": "Interface datée, pas d'app, pas de croisement nutrition"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Le croisement unique hygiene officielle (Alim'confiance) + nutrition (Open Food Facts) + impact carbone (AGRIBALYSE) n'existe nulle part",
+      "Yuka a prouve le modele (50M+ utilisateurs) — le marche est valide, l'habitude du scan est acquise",
+      "Les 3 sources de donnees sont gratuites, temps reel et bien documentees via API",
+      "Forte viralite potentielle — les consommateurs partagent naturellement les scores alimentaires sur les reseaux sociaux"
+    ],
+    "weaknesses": [
+      "Yuka est extremement installe — 50M de telechargements, tres difficile a deloger sur le scan de produits",
+      "Open Food Facts est communautaire — couverture et qualite des donnees inegales selon les produits",
+      "Le croisement produits (scan) + restaurants (hygiene) dans une meme app est complexe UX — deux usages differents",
+      "Le modele freemium B2C necessite des millions d'utilisateurs pour etre rentable — cout d'acquisition eleve"
+    ],
+    "opportunities": [
+      "L'affichage environnemental obligatoire (Ecoscore) arrive en France — les consommateurs voudront le verifier",
+      "Les plateformes de livraison (Uber Eats, Deliveroo) n'affichent pas le score hygiene — partenariat API possible",
+      "Les cantines scolaires passent au bio/local — les parents veulent verifier la qualite et l'hygiene",
+      "Le marche de la nutrition personnalisee (intolerances, regimes) croit de 15%/an — segment premium a adresser"
+    ],
+    "threats": [
+      "Yuka pourrait ajouter les donnees Alim'confiance et AGRIBALYSE — ils ont les ressources et l'audience",
+      "Google Maps integre de plus en plus d'infos restaurants — pourrait ajouter le score hygiene",
+      "Les industriels alimentaires font du lobbying contre les apps de scoring (nutri-score, Yuka)",
+      "Open Food Facts pourrait enrichir sa propre app avec AGRIBALYSE et Alim'confiance en tant qu'association"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Marie",
+      "role": "Mere de 3 enfants dont un allergique aux arachides, responsable des courses du foyer",
+      "age": "39 ans",
+      "context": "Fait ses courses en hypermarche 2 fois par semaine. Utilise Yuka pour scanner les produits mais voudrait aussi verifier l'impact carbone de ses achats et la proprete des restaurants ou elle commande sur Uber Eats.",
+      "painPoints": [
+        "Utilise Yuka pour la nutrition mais doit ouvrir un autre site pour l'impact carbone — jongle entre 3 apps",
+        "A commande dans un restaurant qui avait un controle sanitaire defavorable — l'a su apres coup",
+        "Ne sait pas quels produits ont le meilleur rapport qualite nutritionnelle / impact environnemental"
+      ],
+      "currentSolution": "Yuka pour les produits + Alim'confiance (rarement) + pas de verification impact carbone",
+      "budget": "Gratuit (app financee par pub) — prete a payer 2.99/mois pour une version sans pub avec alertes",
+      "channels": ["Groupe Facebook 'Manger sain en famille'", "Instagram #mangersain #bioconsommation", "Blog La Ruche qui dit Oui", "Application Jow (recettes)"]
+    },
+    {
+      "name": "Lucas",
+      "role": "Etudiant en ecole d'ingenieur a Grenoble, vegetarien convaincu, sensible a l'empreinte carbone",
+      "age": "22 ans",
+      "context": "Mange a la cantine CROUS et au restaurant 5 fois par semaine. Fait ses courses au Lidl et en magasin bio. Veut aligner ses choix alimentaires avec ses convictions ecologiques mais manque d'outils pour quantifier.",
+      "painPoints": [
+        "Voudrait connaitre l'empreinte carbone de ses repas mais aucune app ne le fait simplement",
+        "Ne sait pas si la cantine CROUS a de bons resultats d'hygiene — a eu des doutes apres un incident",
+        "Compare les laits vegetaux sur l'impact environnemental mais les donnees sont contradictoires en ligne"
+      ],
+      "currentSolution": "Yuka pour scanner + articles en ligne pour l'impact carbone + aucune verification d'hygiene",
+      "budget": "Gratuit uniquement — refuse de payer pour une app mais accepte la pub non intrusive",
+      "channels": ["TikTok #ecologie #alimentdurable", "Reddit r/vegetarian r/france", "Discord serveur ecologie etudiants", "Appli Too Good To Go"]
+    },
+    {
+      "name": "Damien",
+      "role": "Directeur de la restauration chez un groupe de restauration rapide (15 points de vente en franchise) a Paris",
+      "age": "44 ans",
+      "context": "Gere la qualite et la conformite de 15 restaurants. Veut afficher proactivement le score hygiene pour se differencier des concurrents. Cherche aussi a ameliorer le Nutri-score de ses menus pour attirer les clients soucieux de leur sante.",
+      "painPoints": [
+        "Ses restaurants ont de bons scores hygiene mais personne ne le sait — pas de moyen de le communiquer",
+        "Voudrait integrer le score hygiene officiel dans ses fiches Google et Uber Eats mais c'est impossible",
+        "Doit reformuler ses recettes pour ameliorer le Nutri-score mais n'a pas d'outil pour simuler l'impact"
+      ],
+      "currentSolution": "Audits internes qualite + affichage papier du resultat Alim'confiance en vitrine (presque personne ne le voit)",
+      "budget": "15-25 EUR/mois par point de vente pour un badge digital + widget embeddable + alertes",
+      "channels": ["Franchise Expo Paris", "Syndicat SNARR (restauration rapide)", "Salon Sandwich & Snack Show", "Groupe LinkedIn 'Restauration rapide France'"]
+    }
+  ]
+}

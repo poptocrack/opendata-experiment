@@ -1,0 +1,163 @@
+{
+  "id": "hygiene-alimentaire",
+  "rank": 6,
+  "title": "Transparence hygiene alimentaire",
+  "slug": "hygiene-alimentaire",
+  "sector": "restauration",
+  "tagline": "Exploiter Alim'confiance + SIRENE pour noter et classér les restaurants, cantines et commerces alimentaires sur l'hygiene",
+  "status": "exploration",
+  "difficulty": "facile",
+  "marketSize": "Grand public + restaurateurs",
+  "monetization": "Freemium + lead gen restaurateurs + pub",
+  "context": "Alim'confiance a génère 190K visites/an avec un pic viral à 100K en avril 2025. Les gens VEULENT savoir si un restaurant est propre avant d'y manger. Mais le site officiel est basique et peu connu. Un produit qui rend ces données accèssibles (app mobile, widget Google Maps, extension navigateur) avec des alertes sur les nouveaux contrôles à un potentiel viral énorme. Croise avec SIRENE pour identifier le restaurant + avis Google, c'est un TripAdvisor de l'hygiene.",
+  "signals": [
+    {
+      "label": "Visites Alim'confiance",
+      "value": "190K/an",
+      "detail": "Pic viral à 100K en avril 2025 — forte viralité potentielle"
+    },
+    {
+      "label": "Téléchargements",
+      "value": "22K/an",
+      "detail": "Données mises à jour hebdomadairement"
+    },
+    {
+      "label": "Mise à jour",
+      "value": "Hebdomadaire",
+      "detail": "Flux continu de nouveaux contrôles sanitaires"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5593aab9c751df35d8a453ba",
+      "name": "Alim'confiance — Contrôles sanitaires",
+      "description": "Résultats des contrôles officiels sanitaires : restaurants, cantines, abattoirs, commerces alimentaires.",
+      "visits": "190K/an",
+      "downloads": "22K/an",
+      "updateFrequency": "Hebdomadaire"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Recherche d'Entreprises",
+      "description": "Croiser avec SIRENE pour identifier le restaurant et enrichir les infos.",
+      "baseUrl": "https://recherche-entreprises.api.gouv.fr"
+    }
+  ],
+  "productIdeas": [
+    "App mobile / site : cherchez un restaurant, voyez son score hygiene avant de réservér",
+    "Widget embeddable pour sites de reservation (TheFork, Google Maps)",
+    "Alertes : soyez prévenu quand un restaurant pres de chez vous reçoit un mauvais contrôle",
+    "Dashboard restaurateurs : suivez votre score, comparez-vous à la concurrence, preparez vos contrôles",
+    "Extension navigateur qui affiche le score hygiene sur Google Maps / TheFork / Uber Eats"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Consommateurs (app)",
+      "priceRange": "Gratuit (pub)"
+    },
+    {
+      "segment": "Restaurateurs (dashboard)",
+      "priceRange": "19/mois"
+    },
+    {
+      "segment": "Plateformés reservation (widget)",
+      "priceRange": "API payante"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Alim'confiance (site officiel)",
+      "weakness": "Interface datée, pas d'app, pas d'alertes"
+    },
+    {
+      "name": "Yelp/TripAdvisor",
+      "weakness": "Pas de données officielles d'hygiene"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "190K visites/an avec un pic viral de 100K en avril 2025 prouve un potentiel de viralité grand public énorme",
+      "Données officielles de contrôle sanitaire — crédibilité et confiance inégalables vs avis subjectifs",
+      "Mise à jour hebdomadaire du dataset crée un flux continu de contenu frais pour le SEO et les alertes",
+      "Modele facile a lancér — un seul dataset principal (Alim'confiance) + SIRENE pour enrichir"
+    ],
+    "weaknesses": [
+      "Seuls 15% des restaurants sont contrôles chaque année — couverture incomplète du parc",
+      "Les résultats sont binaires (satisfaisant/non satisfaisant) — granularité faible pour un vrai scoring",
+      "Risque de conflit avec la filière restauration qui voit l'outil comme une menace de reputation",
+      "Le modèle publicitaire grand public nécessite des millions d'utilisateurs pour être rentable"
+    ],
+    "opportunities": [
+      "Extension aux cantines scolaires — les parents veulent savoir si la cantine de leur enfant est bien notee",
+      "Les plateformes de livraison (Uber Eats, Deliveroo) pourraient intégrer le score hygiene comme argument de confiance",
+      "L'affichage du score hygiene à l'entrée des restaurants (modèle UK 'Scores on the Doors') est en discussion en France",
+      "Les assureurs restauration pourraient utiliser le score pour moduler leurs primes"
+    ],
+    "threats": [
+      "Le ministere de l'Agriculture pourrait modernisér le site Alim'confiance et réduire le besoin d'un tiers",
+      "TripAdvisor ou Google pourraient intégrer les données hygiene directement dans leurs fiches restaurant",
+      "Pression juridique des restaurateurs mal notes (droit à l'oubli, diffamation)",
+      "Les syndicats de restaurateurs (GNI, UMIH) pourraient faire du lobbying contre l'outil"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Lea",
+      "role": "Jeune active foodie à Lyon, mange au restaurant 3-4 fois par semaine, très active sur Instagram food",
+      "age": "27 ans",
+      "context": "Découvre de nouveaux restaurants chaque semaine via Instagram et Google Maps. A eu une intoxication alimentaire dans un restaurant branche il y a 6 mois — depuis, elle vérifié systematiquement l'hygiene avant d'y aller.",
+      "painPoints": [
+        "Le site Alim'confiance est presque inutilisable sur mobile — elle abandonne une fois sur deux",
+        "Ne retrouve pas le restaurant sur Alim'confiance car le nom commercial ne correspond pas à la raison sociale",
+        "Voudrait être alertee si un de ses restaurants favoris reçoit un mauvais contrôle"
+      ],
+      "currentSolution": "Cherche le nom du restaurant sur Alim'confiance + Google 'hygiene [nom restaurant]' avant de réservér",
+      "budget": "Gratuit (app financee par pub) — prête à payer 1.99/mois pour les alertes",
+      "channels": [
+        "Instagram food Lyon",
+        "Groupe Facebook 'Lyon Food Club'",
+        "Google Maps reviews",
+        "App TheFork"
+      ]
+    },
+    {
+      "name": "Christophe",
+      "role": "Gerant de 3 restaurants à Lyon (brasserie, pizzeria, restaurant japonais), 12 employés au total",
+      "age": "42 ans",
+      "context": "A ete contrôle 2 fois l'an dernier. Un de ses restaurants a eu une mise en demeure pour un problème de temperature en chambre froide. Il veut éviter que ca se reproduise et comprendre comment il se situe vs ses concurrents.",
+      "painPoints": [
+        "Ne sait pas quand le prochain contrôle sanitaire aura lieu — strèss permanent",
+        "N'a aucune visibilité sur les résultats de contrôle de ses concurrents pour se benchmarker",
+        "Son équipé ne retient pas les procédures HACCP — a besoin d'un outil de suivi simple"
+      ],
+      "currentSolution": "Checklist papier HACCP + formation annuelle obligatoire + priere pour que le contrôle se passe bien",
+      "budget": "15-25 EUR/mois pour un dashboard de suivi + alertes + benchmark",
+      "channels": [
+        "UMIH (Union des Métiers de l'Hôtellerie)",
+        "Groupe Facebook 'Restaurateurs de France'",
+        "Salon Sirha Lyon",
+        "Chambre des Métiers et de l'Artisanat locale"
+      ]
+    },
+    {
+      "name": "Fatima",
+      "role": "Responsable qualité chez un groupe de restauration collective (Sodexo), supervise 25 sites (cantines scolaires et d'entreprise)",
+      "age": "35 ans",
+      "context": "Doit garantir la conformité sanitaire de 25 cuisines centrales. Fait des audits internes mais veut aussi surveiller les contrôles officiels de ses sites et de ceux de ses concurrents lors d'appels d'offres.",
+      "painPoints": [
+        "Découvre les résultats de contrôle officiel de ses sites par hasard ou par le client, pas en temps réel",
+        "Pour les appels d'offres, ne peut pas facilement vérifier l'historique hygiene des sites du concurrent sortant",
+        "Consolider les résultats de 25 sites dans un seul tableau de bord prend une demi-journee par mois"
+      ],
+      "currentSolution": "Verification manuelle sur Alim'confiance site par site + fichier Excel de suivi des audits internes",
+      "budget": "80-150 EUR/mois pour un dashboard multi-sites avec alertes temps réel",
+      "channels": [
+        "SNRC (Syndicat National de la Restauration Collective)",
+        "Salon Restau'co",
+        "Groupe LinkedIn 'Qualité en restauration collective'",
+        "Revue Restauration Collective"
+      ]
+    }
+  ]
+}

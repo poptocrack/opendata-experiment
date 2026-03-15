@@ -1,0 +1,335 @@
+{
+  "productSlug": "score-de-rentabilite-locative-par-adresse-prix-achat-dvf-vs-loyers-estimes-vs-co",
+  "oneLiner": "Calculez la rentabilité locative nette de n'importe quelle adresse en France en 10 secondes : prix d'achat réel DVF, loyer estimé, coût de rénovation DPE inclus.",
+  "problem": "Calculer la rentabilité locative d'un bien est un exercice penible : il faut estimer le prix d'achat (DVF), le loyer potentiel (pas de source fiable gratuite), le coût de rénovation éventuel (selon le DPE), les charges, la taxe foncière. Les investisseurs font ca sur Excel avec des données approximatives. Les simulateurs existants (Rendement Locatif, Horiz.io) coutent 20-50 euros/mois et ne croisent pas les sources open data.",
+  "solution": "Un outil qui calcule automatiquement la rentabilité locative brute et nette pour n'importe quelle adresse. Il croise le prix d'achat median DVF du secteur, les loyers estimes (basé sur les observatoires locaux des loyers + encadrement), le DPE du bâtiment (via BDNB/ADEME) et le coût de mise aux normes estimé si passoire thermique. Résultat: un score de rentabilité avec tous les chiffres détaillés.",
+  "uniqueValue": "Le seul outil qui intégré le coût de rénovation DPE dans le calcul de rentabilité. Avec l'interdiction de louer les DPE G (2025) et F (2028), cette donnée est critique et aucun concurrent ne l'intégré automatiquement. De plus, les prix sont bases sur les transactions reelles DVF, pas des estimations.",
+  "mvpScope": "Recherche par adresse ou code postal. Affichage de la rentabilité brute et nette estimée avec decomposition: prix achat DVF, loyer estimé, charges estimees, coût rénovation DPE si applicable. Couverture: 30 plus grandes villes. Pas de compte utilisateur au MVP.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Confirmer le pain point et le pricing",
+      "description": "Creer un simulateur Excel telechargeable avec les données de 3 villes, le distribuer sur les forums. Tracker les telechargements et collecter les emails. Interviewer 10 utilisateurs du Excel.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Simulateur Excel distribue",
+        "100+ telechargements",
+        "10 interviews utilisateurs",
+        "Email list de 200+"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Outil web fonctionnel sur 30 villes",
+      "description": "Pipeline d'ingestion DVF + DPE ADEME + observatoires des loyers. Algorithme d'estimation de loyer par adresse. Calcul du coût de rénovation selon le DPE. Interface web avec recherche et résultats détaillés.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline data DVF + DPE",
+        "Algorithme estimation loyer",
+        "Estimation coût rénovation",
+        "Interface web"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients payants et SEO",
+      "description": "Lancement auprès de la liste email. Publication d'études de rentabilité par ville (SEO). Intégration d'un paywall après 3 recherches. Offre fondateur.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "80 clients payants",
+        "15 articles SEO (rentabilité locative + ville)",
+        "Paywall fonctionnel",
+        "Feedback loop installe"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Simulation avancee et plans pro",
+      "description": "Ajouter un simulateur avancé (credit, fiscalité LMNP/LMP, amortissement). Plan pro avec API pour les CGPI et courtiers. Widget intégrable pour les sites d'annonces.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Simulateur fiscal complet",
+        "API B2B",
+        "Widget intégrable",
+        "30 clients Pro"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Couverture nationale et 10K MRR",
+      "description": "Extension nationale. Partenariats courtiers en credit (apport de leads). Comparateur de villes/quartiers. Programme affiliation. Ads sur mots cles investissement locatif.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "10K MRR",
+        "Couverture nationale",
+        "5 partenariats courtiers",
+        "Programme affiliation"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les investisseurs calculent-ils la rentabilité avant chaque achat et combien de temps y passent-ils?",
+      "how": "Sondage sur les forums immobilier + groupes Facebook: Combien de temps passez-vous a calculer la rentabilité d'un bien? Quelles sources utilisez-vous?",
+      "successCriteria": "80%+ calculent la rentabilité, 60%+ y passent plus de 30 minutes, 50%+ n'utilisent pas de DPE dans leur calcul."
+    },
+    {
+      "check": "L'estimation de loyer basee sur les observatoires est-elle fiable?",
+      "how": "Comparer les loyers estimes par l'algorithme avec les loyers réels de 50 annonces sur LeBonCoin/PAP dans 5 villes differentes.",
+      "successCriteria": "Écart moyen inferieur a 10% entre le loyer estimé et le loyer réel constate."
+    },
+    {
+      "check": "Les concurrents existants laissent-ils de la place?",
+      "how": "Tester Rendement Locatif, Horiz.io, Lybox. Identifier leurs lacunes. Vérifier s'ils integrent le DPE et le coût de rénovation.",
+      "successCriteria": "Aucun concurrent n'intégré automatiquement le coût de rénovation DPE dans le calcul. Tous nécessitent une saisie manuelle des loyers."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Investisseurs immobiliers en phase de recherche active (cherchent un bien a acheter dans les 3 mois)",
+      "where": "Groupes Facebook (Investissement Locatif Rentable, Club des Investisseurs Immobiliers), forum Devenir-Rentier.fr, chaine YouTube Investir et Reussir",
+      "howToReach": "Publier des analyses de rentabilité gratuite pour des biens réels en vente. Commenter les discussions ou les gens demandent est-ce que c'est rentable avec le lien vers l'outil."
+    },
+    {
+      "who": "Conseillers en gestion de patrimoine independants (CGPI)",
+      "where": "LinkedIn (recherche CGPI), salon Patrimonia, groupes professionnels ANACOFI, CNCGP",
+      "howToReach": "Proposer un plan gratuit 3 mois. Pitch: qualifiez vos recommandations immobilières avec des données objectives. Demo personnalisee."
+    },
+    {
+      "who": "Courtiers en credit immobilier (Cafpi, Meilleurtaux, independants)",
+      "where": "LinkedIn, événements réseau courtiers, partenariats avec les franchises",
+      "howToReach": "Proposer un widget intégrable gratuit sur leur site. En echange, ils qualifient les projets de leurs clients avec l'outil et deviennent ambassadeurs."
+    }
+  ],
+  "pricingStrategy": "Freemium: 3 calculs gratuits par mois (acquisition SEO). Plan Investisseur a 12,90 euros/mois: calculs illimités, simulation credit et fiscalité, export PDF, sauvegarde des recherches. Plan Pro a 39 euros/mois: API, widget intégrable, multi-utilisateurs, export CSV. Le prix de 12,90 euros est 40% moins cher que Rendement Locatif (19,90 euros) avec l'avantage du DPE intégré.",
+  "pathTo10kMrr": "600 abonnes Investisseur x 12,90 euros = 7 740 euros + 60 abonnes Pro x 39 euros = 2 340 euros = 10 080 euros MRR. Funnel: SEO sur rentabilité locative + ville (3 600 recherches/mois pour rentabilité locative seul). 25K visiteurs/mois x 4% free signup x 5% conversion payante = 50 nouveaux payants/mois. Objectif 10K MRR en 12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts (graphiques de rentabilité)",
+    "backend": "Next.js API Routes + Python pour le pipeline data et l'algorithme d'estimation",
+    "database": "PostgreSQL sur Supabase avec données DVF et DPE precalculees par section cadastrale",
+    "hosting": "Vercel + Supabase + GitHub Actions (CRON mensuel)",
+    "apis": [
+      "API DVF data.gouv.fr",
+      "API ADEME DPE (ou BDNB)",
+      "API BAN geocodage",
+      "Observatoires Locaux des Loyers (scraping ou API ANIL)",
+      "Stripe",
+      "Resend (emails)"
+    ],
+    "notes": "L'algorithme d'estimation de loyer combine les données des Observatoires Locaux des Loyers, l'encadrement des loyers (Paris, Lyon, etc.), et un modèle de regression simple (surface, DPE, etage, quartier). Le coût de rénovation est estimé via un bareme au m2 selon le saut de classe DPE nécessaire."
+  },
+  "risks": [
+    {
+      "risk": "L'estimation de loyer est imprecise et disqualifie l'outil",
+      "mitigation": "Afficher une fourchette (min-max) plutot qu'un chiffre unique. Permettre a l'utilisateur d'ajuster manuellement. Enrichir le modèle progressivement avec les retours utilisateurs et le scraping d'annonces."
+    },
+    {
+      "risk": "Concurrence frontale de Rendement Locatif et Horiz.io qui ont déjà une base d'utilisateurs",
+      "mitigation": "Se differencier sur l'intégration DPE/rénovation (unique) et le prix (40% moins cher). Cibler le SEO sur des requetes longue traine (rentabilité locative + ville spécifique). Pivoter vers le B2B (CGPI, courtiers) si le B2C est trop concurrentiel."
+    },
+    {
+      "risk": "Les données DVF et DPE ne couvrent pas assez finement les petites villes",
+      "mitigation": "Commencer par les 30 grandes villes ou la couverture est excellente. Pour les zones rurales, indiquer clairement le niveau de confiance du calcul et permettre la saisie manuelle."
+    }
+  ],
+  "inspirations": "Rendement Locatif (France, concurrent direct mais sans DPE intégré, 19,90 euros/mois). Horiz.io (France, simulateur plus complet mais plus cher, 39 euros/mois). Mashvisor (US) qui fait le meme calcul pour le marché americain avec les données Zillow/Redfin. DealCheck (US) pour l'interface simple et rapide d'analyse de deal.",
+  "searchVolume": [
+    {
+      "keyword": "rentabilité locative",
+      "monthlyVolume": "14800",
+      "difficulty": "haute",
+      "intent": "informational"
+    },
+    {
+      "keyword": "simulateur rentabilité locative",
+      "monthlyVolume": "6600",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "calcul rendement locatif",
+      "monthlyVolume": "8100",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "investissement locatif rentable",
+      "monthlyVolume": "5400",
+      "difficulty": "haute",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "rentabilité locative par ville",
+      "monthlyVolume": "2900",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "coût rénovation DPE passoire thermique",
+      "monthlyVolume": "1600",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "945 000 transactions immo/an en France. ~40% sont des investisseurs locatifs (estimations). 378K investisseurs x 12,90 EUR/mois x 12 = 58,5M EUR/an",
+    "sam": "200 000 investisseurs locatifs actifs qui calculent la rentabilité avant achat x 12,90 EUR/mois x 12 = 30,9M EUR/an",
+    "som": "3 000 abonnes la première année sur les 30 grandes villes (1,5% penetration SAM) = 464K EUR/an",
+    "methodology": "TAM: 40% des 945K transactions/an sont locatives (source: Notaires de France 2025, rendement moyen 5,2% brut). SAM: investisseurs qui utilisent un outil de calcul (base Horiz.io + Lybox userbase estimée). SOM: conversion SEO rentabilité locative + ville (14 800 recherches/mois)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Horiz.io (ex Rendement Locatif)",
+      "url": "https://horiz.io",
+      "pricing": "29 EUR/mois sans engagement, 15 EUR/mois avec engagement annuel. Offre Pro a 24,90 EUR/mois",
+      "trafficEstimate": "200K-400K visites/mois",
+      "reviews": "Trustpilot: note moyenne. Cree en 2016, référence du marché mais critique sur la fiabilité des estimations",
+      "strengths": "Notoriété, simulateur complet avec fiscalité, base d'utilisateurs etablie, extension navigateur",
+      "weaknesses": "Ne croise pas le DPE dans le calcul de rentabilité, pas d'estimation du coût de rénovation, saisie manuelle des loyers"
+    },
+    {
+      "name": "Lybox",
+      "url": "https://www.lybox.fr",
+      "pricing": "À partir de 9 EUR/mois (Essentiel: 24 EUR/mois, Pro: 16,58 EUR/mois). Essai gratuit 7 jours",
+      "trafficEstimate": "300K-600K visites/mois (fort SEO sur rentabilité locative)",
+      "reviews": "Tres bons avis, loue pour la clarte et le rapport qualité-prix. Calculs certifies par cabinet fiscal",
+      "strengths": "Excellent SEO, prix competitif, historique annonces, détection de biens rentables automatique, analyse par ville",
+      "weaknesses": "Pas d'intégration DPE dans le calcul de rentabilité, pas de coût de rénovation estimé, focus annonces plus que data open"
+    },
+    {
+      "name": "Pappers Immobilier",
+      "url": "https://immobilier.pappers.fr",
+      "pricing": "Gratuit (site web). API payante sur devis",
+      "trafficEstimate": "500K-1M visites/mois",
+      "reviews": "Tres positif, référence open data immobilier",
+      "strengths": "Gratuit, 28M transactions DVF, DPE intégré, forte marque",
+      "weaknesses": "Pas de simulateur de rentabilité, pas d'estimation de loyer, pas de scoring"
+    },
+    {
+      "name": "PriceHubble",
+      "url": "https://www.pricehubble.com/fr",
+      "pricing": "B2B uniquement: 15 000-100 000 EUR/an selon configuration",
+      "trafficEstimate": "50K-100K visites/mois (B2B)",
+      "reviews": "Bien note par les pros. Note Finary community: précision variable selon les zones",
+      "strengths": "IA avancee, API B2B, présence europeenne (CH, FR, DE, UK), clients banques et agents",
+      "weaknesses": "Pas accessible aux particuliers, tres cher, pas d'angle investisseur locatif, pas de DPE/rénovation"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données DVF (prix d'achat)",
+      "status": "attention",
+      "detail": "DVF sous Licence Ouverte v2 mais contient des données personnelles. Interdiction de re-identification et interdiction d'indexation par moteurs de recherche. Utiliser des medianes par secteur, pas des transactions individuelles identifiables.",
+      "source": "https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres - Article R112 A-3 du LPF"
+    },
+    {
+      "topic": "Données DPE ADEME",
+      "status": "ok",
+      "detail": "DPE publiés en open data sous Licence Ouverte v2 par l'ADEME. Reutilisation libre avec mention de source. Données accessibles via API ou bulk download.",
+      "source": "https://data.ademe.fr/datasets/dpe03existant"
+    },
+    {
+      "topic": "Estimation de loyer",
+      "status": "attention",
+      "detail": "Les observatoires locaux des loyers publient des données agregees. Le scraping d'annonces (LeBonCoin, PAP) est juridiquement risque (conditions d'utilisation). Privilegier les sources officielles (ANIL, observatoires agrees).",
+      "source": "Loi ELAN, Observatoires Locaux des Loyers"
+    },
+    {
+      "topic": "Conseil en investissement",
+      "status": "attention",
+      "detail": "Attention au statut de conseiller en investissement financier (CIF). Un simulateur est un outil, pas un conseil. Ajouter des disclaimers clairs que les calculs sont indicatifs et ne constituent pas un conseil en investissement.",
+      "source": "AMF - Code monetaire et financier"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (rentabilité locative + ville)",
+      "cacEstimate": "10-20 EUR",
+      "conversionRate": "4% free signup sur 25K visiteurs/mois, 5% free-to-paid",
+      "ltv": "155 EUR (12,90 EUR x 12 mois)",
+      "ltvCacRatio": "8:1 a 15:1"
+    },
+    {
+      "channel": "Google Ads (simulateur rentabilité locative)",
+      "cacEstimate": "60-100 EUR",
+      "conversionRate": "3% clic-to-trial, 8% trial-to-paid. CPC estimé: 3-5 EUR",
+      "ltv": "155 EUR",
+      "ltvCacRatio": "1,5:1 a 2,5:1"
+    },
+    {
+      "channel": "Affiliation formateurs immobilier (Yann Darwin, etc.)",
+      "cacEstimate": "25-40 EUR (20% commission)",
+      "conversionRate": "5% clic-to-signup, 10% free-to-paid",
+      "ltv": "155 EUR",
+      "ltvCacRatio": "4:1 a 6:1"
+    },
+    {
+      "channel": "LinkedIn outbound (CGPI, courtiers)",
+      "cacEstimate": "50-80 EUR",
+      "conversionRate": "8% réponse, 25% demo, 30% conversion",
+      "ltv": "468 EUR (39 EUR x 12 mois plan Pro)",
+      "ltvCacRatio": "6:1 a 9:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 78,
+      "detail": "39.4K recherches/mois cumulees ('rentabilité locative' 14 800/mois, 'calcul rendement locatif' 8 100/mois). TAM: 945 000 transactions. Cibles: Investisseurs immobiliers en phase, Conseillers en gestion de, Courtiers en credit immobilier."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 6 APIs a integrer (API DVF, API ADEME DPE, API BAN geocodage). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 40,
+      "detail": "600 clients a 90 EUR pour demarrer. Objectif 10K MRR en 12 mois. SOM: 464K EUR/an. Pricing 39-90 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "4 concurrents identifies: Horiz.io (ex Rendement Locatif, Lybox, Pappers Immobilier. Leader: Horiz.io (200K-400K visites/mois). Faiblesse principale: Ne croise pas le DPE dans le calcul de rentabilité."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Données DVF (prix d'achat), Estimation de loyer."
+    },
+    "overall": {
+      "score": 60,
+      "detail": "Point fort: demande (78/100). Point faible: compétition (40/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

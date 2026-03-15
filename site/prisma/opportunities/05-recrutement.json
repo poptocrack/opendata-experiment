@@ -1,0 +1,229 @@
+{
+  "id": "recrutement-intelligence",
+  "rank": 5,
+  "title": "Intelligence recrutement & bassin d'emploi",
+  "slug": "recrutement",
+  "sector": "emploi",
+  "tagline": "Croiser ROME + SIRENE + démographie pour aider les entreprises a recruter la ou les talents existent",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "RH, cabinets de recrutement, collectivités",
+  "monetization": "SaaS 79-299/mois",
+  "context": "Le ROME a 96K visites/an est le référentiel officiel des métiers en France. Il contient les passerelles entre métiers et les compétences requises. Croise avec SIRENE (où sont les entreprises d'un secteur) et la démographie INSEE (où sont les diplomes/actifs), on peut construire une carte de l'offre et de la demande d'emploi par territoire. Les entreprises qui délocalisént ou ouvrent de nouveaux sites paieraient cher pour cette intelligence.",
+  "signals": [
+    {
+      "label": "Visites ROME",
+      "value": "96K/an",
+      "detail": "Referentiel métiers/compétences de France Travail — très utilise"
+    },
+    {
+      "label": "Téléchargements ROME",
+      "value": "20K/an",
+      "detail": "Besoin d'exploiter les données métiers programmatiquement"
+    },
+    {
+      "label": "SIRENE",
+      "value": "1.9M DL/an",
+      "detail": "Localisation de toutes les entreprises et leurs effectifs"
+    },
+    {
+      "label": "BMO France Travail",
+      "value": "11K visites/an",
+      "detail": "L'enquête de reference sur les difficultés de recrutement par territoire"
+    },
+    {
+      "label": "APIs France Travail",
+      "value": "3 APIs temps réel",
+      "detail": "Offres d'emploi, marché du travail, ROME 4.0 — accès gratuit"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "58da857388ee384902e505f5",
+      "name": "ROME (Répertoire Métiers et Emplois)",
+      "description": "Referentiel de France Travail : métiers, compétences, passerelles entre métiers.",
+      "visits": "96K/an",
+      "downloads": "20K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "5b7ffc618b4c4169d30727e0",
+      "name": "Base SIRENE",
+      "description": "Toutes les entreprises avec code NAF, effectifs, localisation.",
+      "visits": "423K/an",
+      "downloads": "1.9M/an",
+      "updateFrequency": "Quotidien"
+    },
+    {
+      "datasetId": "685d96290b33ade4e2634262",
+      "name": "Recensement population (INSEE)",
+      "description": "Demographie, CSP, niveaux de diplome par commune.",
+      "visits": "~2K/an",
+      "downloads": "~300/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "5eaa8ff4f3b39e025ceb753a",
+      "name": "Effectifs salariés par zone d'emploi (URSSAF)",
+      "description": "Effectifs salariés et masse salariale trimestriels du secteur privé.",
+      "visits": "2.8K/an",
+      "downloads": "366/an",
+      "updateFrequency": "Trimestriel"
+    },
+    {
+      "datasetId": "561fa564c751df4f2acdbb48",
+      "name": "BMO — Besoins en Main d'Oeuvre",
+      "description": "Enquête France Travail : intentions d'embauche et difficultés de recrutement par métier et bassin.",
+      "visits": "11K/an",
+      "downloads": "3.2K/an",
+      "updateFrequency": "Annuel",
+      "order": 4
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Recherche d'Entreprises",
+      "description": "Trouver les entreprises par secteur, taille et localisation.",
+      "baseUrl": "https://recherche-entreprises.api.gouv.fr"
+    },
+    {
+      "name": "API Offres d'emploi (France Travail)",
+      "description": "Offres d'emploi en temps réel collectées par France Travail et ses partenaires.",
+      "baseUrl": "https://francetravail.io/produits-partages/catalogue/offres-emploi",
+      "order": 1
+    },
+    {
+      "name": "API Marché du travail (France Travail)",
+      "description": "Tensions sur les métiers, dynamique de l'emploi par territoire.",
+      "baseUrl": "https://francetravail.io/produits-partages/catalogue/marche-travail",
+      "order": 2
+    },
+    {
+      "name": "API ROME 4.0 (France Travail)",
+      "description": "Referentiel métiers et compétences, version 4.0 avec passerelles.",
+      "baseUrl": "https://francetravail.io/opportunites-innovation/contribuer-rome",
+      "order": 3
+    }
+  ],
+  "productIdeas": [
+    "Carte des tensions : où sont les talents pour un métier donne vs où sont les entreprises qui recrutent",
+    "Score d'attractivité employéur par zone : concurrence entre recruteurs × bassin de talents disponible",
+    "Recommandation d'implantation : où ouvrir un bureau/usine en fonction du bassin d'emploi",
+    "Passerelles de compétences : trouver des profils atypiques via les équivalences ROME",
+    "Dashboard tension métiers en temps réel : croiser offres d'emploi API + BMO + SIRENE par territoire",
+    "Matching entreprise/territoire : recommander où recruter en fonction des offres concurrentes et du bassin"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "DRH grandes entreprises",
+      "priceRange": "299/mois"
+    },
+    {
+      "segment": "Cabinets de recrutement",
+      "priceRange": "149/mois"
+    },
+    {
+      "segment": "Agences d'interim",
+      "priceRange": "199/mois"
+    },
+    {
+      "segment": "Collectivités (attractivité)",
+      "priceRange": "79/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "LinkedIn Talent Insights",
+      "weakness": "Cher (10K+/an), biais vers cols blancs, pas de données publiques françaises"
+    },
+    {
+      "name": "France Travail (site)",
+      "weakness": "Données brutes, pas d'outil d'aide à la décision"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "ROME 4.0 avec passerelles entre métiers est unique au monde — permet du matching de compétences impossible ailleurs",
+      "3 APIs France Travail gratuites (offres, marché du travail, ROME) offrent des données temps réel sans coût",
+      "Croisement SIRENE + BMO + démographie permet un scoring territorial que LinkedIn ne peut pas faire",
+      "Les données publiques françaises sur l'emploi sont parmi les plus completes d'Europe"
+    ],
+    "weaknesses": [
+      "Les grands comptes ont déjà LinkedIn Talent Insights — difficile de les convaincre de changer",
+      "Les données BMO sont déclaratives (intentions d'embauche) et pas toujours fiables",
+      "Le ROME couvre mal les métiers émergents (tech, IA, data) — référentiel parfois en retard",
+      "Les entreprises de moins de 10 salariés ne sont pas couvertes par les stats d'effectifs URSSAF"
+    ],
+    "opportunities": [
+      "Les agences d'interim cherchent à se digitaliser et manquent d'outils d'intelligence territoriale",
+      "La réforme France Travail (ex-Pole Emploi) ouvre de nouvelles APIs et données",
+      "Les collectivités investissent dans l'attractivité économique — marché B2G en croissance",
+      "La penurie de main d'oeuvre dans le BTP, la santé et l'industrie rend l'outil indispensable pour ces secteurs"
+    ],
+    "threats": [
+      "LinkedIn pourrait intégrer des données publiques françaises dans Talent Insights",
+      "France Travail développé ses propres outils d'analyse (DARES, stats.emploi) en accès libre",
+      "Indeed et Glassdoor enrichissent leurs données de marché du travail gratuitement",
+      "Les ATS (Applicant Tracking Systems) comme Workday ou Lever ajoutent du market intelligence en natif"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Sandrine",
+      "role": "DRH d'une ETI industrielle (450 salariés, 3 usines) basee a Clermont-Ferrand",
+      "age": "47 ans",
+      "context": "Doit recruter 60 personnes/an (techniciens de maintenance, opérateurs, ingenieurs procèss). Les candidats qualifies sont rares dans le Massif Central. Envisage d'ouvrir un 4eme site mais ne sait pas ou trouver les compétences.",
+      "painPoints": [
+        "Publie des offres sur France Travail et Indeed mais reçoit 80% de candidatures non qualifiees",
+        "Ne sait pas dans quels bassins d'emploi sont concentrès les techniciens de maintenance industrielle",
+        "Son directeur général lui demande une étude d'implantation pour le nouveau site — elle n'a aucun outil"
+      ],
+      "currentSolution": "Job boards classiques (Indeed, France Travail) + un cabinet de recrutement externe à 15-20% du salaire annuel",
+      "budget": "200-350 EUR/mois — economise le coût d'un cabinet de recrutement (8-15K EUR par recrutement)",
+      "channels": [
+        "ANDRH (Association Nationale DRH)",
+        "Salon Solutions RH Paris",
+        "Groupe LinkedIn 'DRH France'",
+        "Revue Personnel (magazine ANDRH)"
+      ]
+    },
+    {
+      "name": "Thomas",
+      "role": "Directeur d'agence d'interim (Randstad) à Strasbourg, 8 consultants sous sa responsabilité",
+      "age": "36 ans",
+      "context": "Son agence est spécialisée BTP et industrie. Doit anticiper les besoins des entreprises clientes et constituer un vivier de candidats AVANT que les commandes arrivent. Perd des missions parce qu'il n'a pas les profils disponibles.",
+      "painPoints": [
+        "Recoit une commande urgente de 15 soudeurs et n'a que 3 disponibles — perd la mission",
+        "Ne sait pas quelles entreprises vont recruter dans les 3 prochains mois dans sa zone",
+        "Ses consultants passent 40% de leur temps a sourcer des candidats dans les mauvais bassins d'emploi"
+      ],
+      "currentSolution": "CRM interne Randstad + veille manuelle des appels d'offres BTP + réseau personnel",
+      "budget": "150-250 EUR/mois par agence — si les données permettent d'anticiper les besoins clients",
+      "channels": [
+        "Prism'emploi (syndicat interim)",
+        "Salon Interim Expo",
+        "Groupe LinkedIn 'Directeurs d'agence interim'",
+        "Comités de bassin d'emploi locaux"
+      ]
+    },
+    {
+      "name": "Aurelie",
+      "role": "Chargee de développement économique à la communauté de communes du Pays Basque (18 communes)",
+      "age": "39 ans",
+      "context": "Doit attirer des entreprises sur son territoire et mettre en avant les atouts du bassin d'emploi. Prepare des dossiers de candidature pour des implantations industrielles et des zones d'activité.",
+      "painPoints": [
+        "Ne peut pas quantifier objectivement les compétences disponibles sur son territoire quand un industriel demande",
+        "Les études de bassin d'emploi commandees à l'INSEE coûtent 10-15K EUR et arrivent 6 mois trop tard",
+        "N'a aucun benchmark pour comparer l'attractivité emploi de son territoire vs les territoires concurrents"
+      ],
+      "currentSolution": "Etudes INSEE ponctuelles + données France Travail en PDF + tableur Excel compile à la main",
+      "budget": "60-100 EUR/mois — budget développement économique de la communauté de communes",
+      "channels": [
+        "CNER (fédération des agences de développement)",
+        "Salon du SIMI (immobilier d'entreprise)",
+        "Association des petites villes de France",
+        "Réseau Entreprendre local"
+      ]
+    }
+  ]
+}

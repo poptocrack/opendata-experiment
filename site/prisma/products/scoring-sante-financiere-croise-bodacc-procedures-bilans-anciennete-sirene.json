@@ -1,0 +1,344 @@
+{
+  "productSlug": "scoring-sante-financiere-croise-bodacc-procedures-bilans-anciennete-sirene",
+  "oneLiner": "Un score de santé financière fiable pour n'importe quelle entreprise française, en croisant BODACC, bilans déposés et anciennété SIRENE.",
+  "problem": "Avant de signer un contrat, accorder un credit fournisseur ou investir, vous devez évaluer la solidité financière de votre partenaire. Les solutions existantes (Altares, Ellisphere, CreditSafe) coutent 500-2000 euros/mois et restent des boîtes noires. Les données publiques existent (BODACC, comptes déposés INPI, SIRENE) mais sont eclatees et inexploitables sans traitement.",
+  "solution": "Un SaaS qui calcule un score de santé financière transparent en croisant : historique BODACC (procédures collectives, privilegies, nantissements), bilans déposés aux greffes (ratios financiers), anciennété et stabilité SIRENE (changements d'adresse, de dirigeant, d'activité), et effectifs URSSAF. Score de 0 a 100 avec explication détaillée de chaque facteur.",
+  "uniqueValue": "Score transparent et explicable (pas de boîte noire), 10x moins cher que les acteurs traditionnels, et accessible via API pour intégration dans vos outils existants.",
+  "mvpScope": "Recherche d'une entreprise par SIREN/nom. Affichage d'une fiche avec score global et détail des 4 piliers (BODACC, bilans, ancienneté, effectifs). Historique du score sur 12 mois. API simple pour intégration.",
+  "timeToMvp": "8 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Collecte et normalisation des données",
+      "description": "Ingestion des datasets BODACC (procédures), SIRENE (identité entreprise), effectifs URSSAF. Parsing et stockage normalise dans une base unifiee par SIREN.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline d'ingestion BODACC historique (5 ans)",
+        "Import SIRENE complet avec mise à jour incrementale",
+        "Import effectifs URSSAF par établissement",
+        "Schema de base unifie par SIREN"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Algorithme de scoring",
+      "description": "Conception et implementation de l'algorithme de scoring multi-facteurs. Ponderation des signaux negatifs (procédures BODACC) et positifs (ancienneté, croissance effectifs). Calibration sur des cas connus de défaillances.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Algorithme de scoring v1 documente",
+        "Back-testing sur 1000 entreprises defaillantes connues",
+        "Grille d'interprétation des scores",
+        "Tests unitaires sur cas limites"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Interface web et API",
+      "description": "Webapp de recherche et consultation des fiches scoring. Visualisation du score et de ses composantes. API REST documentee pour intégration.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Page de recherche par SIREN/nom/SIRET",
+        "Fiche scoring détaillée avec graphiques",
+        "API REST avec authentification par cle",
+        "Documentation API interactive (Swagger)"
+      ]
+    },
+    {
+      "phase": "4",
+      "title": "Monitoring et alertes",
+      "description": "Système de surveillance continue des entreprises suivies. Alerte quand un score se degrade significativement (nouvelle procédure BODACC, baisse effectifs).",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Watchlist d'entreprises a surveiller",
+        "Alertes email en cas de degradation",
+        "Historique du score sur 12 mois"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le scoring est assez fiable pour des décisions business",
+      "how": "Back-tester l'algorithme sur 500 entreprises ayant fait faillite en 2024 et 500 entreprises saines. Mesurer la capacité predictive du score 6-12 mois avant la défaillance.",
+      "successCriteria": "AUC > 0.75 sur le back-test, le score détecté 70% des défaillances avec un taux de faux positifs < 20%"
+    },
+    {
+      "check": "Les PME sont prêtes à payer pour un scoring abordable",
+      "how": "Landing page avec pricing, campagne Google Ads sur 'vérification solvabilité entreprise' et 'scoring financier entreprise'. 15 entretiens avec des DAF et credit managers de PME.",
+      "successCriteria": "Taux de conversion landing page > 3%, 10/15 interviewes confirment qu'ils paieraient 29-99 euros/mois"
+    },
+    {
+      "check": "Les données publiques sont suffisamment completes",
+      "how": "Analyser la couverture des données : % d'entreprises avec bilans déposés, % avec historique BODACC, couverture effectifs URSSAF.",
+      "successCriteria": "Couverture > 80% des entreprises de plus de 10 salariés sur au moins 2 des 4 piliers"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Credit managers et DAF de PME/ETI (50-500 salariés) qui gerent le risque fournisseur",
+      "where": "Association Française des Credit Managers (AFDCC), LinkedIn groupes finance d'entreprise, webinaires gestion du poste client",
+      "howToReach": "Offrir 50 recherches gratuites pour tester la pertinence du score. Post LinkedIn comparant le score gratuit vs un rapport Altares a 30 euros."
+    },
+    {
+      "who": "Courtiers en affacturage et assurance-credit qui doivent évaluer rapidement des prospects",
+      "where": "Salons professionnels (Credit Management), annuaires de courtiers en affacturage",
+      "howToReach": "Proposer une intégration API gratuite pendant 3 mois pour tester dans leur workflow quotidien."
+    },
+    {
+      "who": "Startups et freelances qui veulent vérifier la solvabilité d'un client avant un gros devis",
+      "where": "Communautes freelances (Malt, Crème de la Crème), Slack/Discord de startups (La French Tech)",
+      "howToReach": "Offre freemium genereuse (10 recherches/mois gratuites) et posts dans les communautés freelances."
+    }
+  ],
+  "pricingStrategy": "Freemium : 10 recherches/mois gratuites avec score global uniquement. Starter a 29 euros/mois : 100 recherches, détail des 4 piliers, export PDF. Pro a 99 euros/mois : recherches illimitées, API (1000 appels/mois), alertes de surveillance (50 entreprises), historique 24 mois. Enterprise a 299 euros/mois : API illimitée, surveillance illimitée, webhook, support prioritaire.",
+  "pathTo10kMrr": "Mix de 150 Starter (4350) + 50 Pro (4950) + 5 Enterprise (1495) = ~10.8K MRR. Acquisition : SEO sur 'solvabilité entreprise gratuit', 'vérification financière fournisseur'. Google Ads sur les requetes transactionnelles. Partenariats avec 3-5 logiciels de facturation/ERP pour intégration native. Objectif : 200 utilisateurs gratuits/mois, conversion 15% en payant.",
+  "techStack": {
+    "frontend": "Next.js + TailwindCSS + Recharts pour les visualisations de score",
+    "backend": "Next.js API routes + workers de calcul de score (Bull/BullMQ pour les jobs async)",
+    "database": "PostgreSQL (Supabase) - table entreprises avec index SIREN, tables historiques par source",
+    "hosting": "Vercel (frontend/API) + Railway ou Fly.io (workers de calcul) + Supabase (DB)",
+    "apis": [
+      "BODACC dataset data.gouv.fr",
+      "API Recherche Entreprises",
+      "API SIRENE INSEE",
+      "Effectifs URSSAF data.gouv.fr",
+      "INPI comptes déposés (API ou dataset)"
+    ],
+    "notes": "Le dataset SIRENE complet fait 5Go+ : utiliser l'API Recherche Entreprises pour les requetes individuelles et le dataset pour les calculs batch. Les effectifs URSSAF sont disponibles en open data par établissement."
+  },
+  "risks": [
+    {
+      "risk": "Qualité insuffisante des bilans déposés (beaucoup de PME ne publient pas leurs comptes)",
+      "mitigation": "Compenser par les autres piliers (BODACC, effectifs, ancienneté). Indiquer clairement le niveau de confiance du score en fonction des données disponibles."
+    },
+    {
+      "risk": "Concurrence écrasante des acteurs établis (Altares, Ellisphere, CreditSafe)",
+      "mitigation": "Ne pas essayer de les remplacer mais de democratiser l'accès : cibler les PME et freelances qui ne peuvent pas payer 500+/mois. Miser sur la transparence du score comme differentiant."
+    },
+    {
+      "risk": "Responsabilité juridique si une décision basee sur le score cause un prejudice",
+      "mitigation": "Disclaimer clair que le score est indicatif et ne constitue pas un conseil financier. Assurance RC Pro. Ne jamais utiliser le mot 'notation' (réservé aux agences agrees)."
+    },
+    {
+      "risk": "Complexité de maintenance des pipelines de données multi-sources",
+      "mitigation": "Commencer avec BODACC + SIRENE uniquement (2 sources). Ajouter les autres sources incrementalement. Monitoring automatique des pipelines avec alertes."
+    }
+  ],
+  "inspirations": "CreditSafe (scoring credit mais cher et boîte noire), Pappers (données entreprises gratuites mais sans scoring), Altares/Ellisphere (scoring B2B traditionnel a 500+/mois), Stripe Radar (scoring fraude transparent comme modèle d'UX), Open Corporates (données entreprises open source a l'international).",
+  "searchVolume": [
+    {
+      "keyword": "solvabilité entreprise",
+      "monthlyVolume": "6600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "vérification solvabilité entreprise",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "scoring financier entreprise",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "score défaillance entreprise",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "risque fournisseur évaluation",
+      "monthlyVolume": "590",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "pappers score",
+      "monthlyVolume": "1300",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "altares tarif",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "creditsafe prix",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "1.2 milliard EUR - marché global de l'information commerciale et du scoring credit en France (Altares, Ellisphere, Creditsafe, Coface, Infolegale). 70 000 défaillances/an en 2025 créent une demande croissante de scoring.",
+    "sam": "180 millions EUR - PME et ETI (50-5000 salariés) qui ont besoin de scoring mais ne peuvent pas payer 500+/mois. Environ 150 000 entreprises concernees a 100 EUR/mois moyen.",
+    "som": "1.3 million EUR - 10 800 EUR MRR (205 clients payants) atteignable en 12-18 mois en ciblant les credit managers de PME et les freelances via SEO et partenariats ERP.",
+    "methodology": "TAM basé sur le CA cumule des acteurs du marché (Altares 150M, Ellisphere 95M, Creditsafe France ~50M, Coface info ~100M, autres). SAM restreint aux PME/ETI avec un budget scoring < 200 EUR/mois. SOM basé sur le plan d'acquisition a 18 mois avec SEO + Google Ads + partenariats."
+  },
+  "competitorDeep": [
+    {
+      "name": "Pappers",
+      "url": "https://www.pappers.fr/scoring",
+      "pricing": "Gratuit pour données de base. Scoring disponible en accès premium (tarif non public, sur devis)",
+      "trafficEstimate": "3-4M visites/mois",
+      "reviews": "Tres bien note pour la gratuite et l'exhaustivité des données legales. Score basé sur 6 ratios financiers ponderes par secteur.",
+      "strengths": "Gratuit, large base de données, marque forte, UX moderne, scoring récemment lance",
+      "weaknesses": "Scoring limite aux bilans déposés (pas de signaux BODACC, pas d'effectifs URSSAF), pas d'API scoring, pas d'alertes de surveillance"
+    },
+    {
+      "name": "Ellisphere",
+      "url": "https://www.ellisphere.com",
+      "pricing": "500-2000 EUR/mois selon le volume. Rapports unitaires 20-50 EUR.",
+      "trafficEstimate": "150K visites/mois",
+      "reviews": "Acteur historique du duopole avec Altares. Score proprietary non transparent.",
+      "strengths": "Base de données exhaustive depuis 40+ ans, score de défaillance reconnu, couverture internationale, compliance integree",
+      "weaknesses": "Pricing tres élève, boîte noire, interface vieillissante, pas de freemium, cycles de vente longs"
+    },
+    {
+      "name": "Creditsafe",
+      "url": "https://www.creditsafe.com/fr",
+      "pricing": "À partir de 290 EUR HT/an pour l'offre basique. Plans pro 500-1490 EUR HT/an.",
+      "trafficEstimate": "200K visites/mois (France)",
+      "reviews": "Positionne comme le low-cost de l'information commerciale. Score credit international.",
+      "strengths": "Prix plus abordable que Altares/Ellisphere, couverture internationale (360M+ entreprises), intégration CRM disponible",
+      "weaknesses": "Score parfois juge peu fiable par les credit managers (trop generique), support client critique, données moins profondes sur la France que les acteurs locaux"
+    },
+    {
+      "name": "Altares (Dun & Bradstreet)",
+      "url": "https://www.altares.com",
+      "pricing": "Rapports de solvabilité unitaires 20-40 EUR. Abonnements 500-2000+ EUR/mois.",
+      "trafficEstimate": "300K visites/mois",
+      "reviews": "Référence du marché en France. Score de défaillance Altares utilise par les grandes entreprises et banques.",
+      "strengths": "Marque référence auprès des DAF et credit managers, base D&B mondiale, score de défaillance prédictif calibre sur 30+ ans, données enrichies (paiement fournisseurs, liens capitalistiques)",
+      "weaknesses": "Tres cher, boîte noire, interfaces peu modernes, pas de self-service, cible grands comptes exclusivement"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Utilisation du terme notation/rating",
+      "status": "attention",
+      "detail": "Le terme 'notation' est réservé aux agences de notation agreees (reglement EU 1060/2009). Utiliser 'score indicatif' ou 'évaluation' pour éviter la requalification.",
+      "source": "Reglement EU 1060/2009 sur les agences de notation"
+    },
+    {
+      "topic": "RGPD et données des dirigeants",
+      "status": "ok",
+      "detail": "Les données BODACC et SIRENE sont des données publiques. Le nom du representant légal est public. Base légale : intérêt legitime (art. 6.1.f RGPD) pour le scoring B2B.",
+      "source": "CNIL - Guide données professionnelles"
+    },
+    {
+      "topic": "Responsabilité civile en cas de score errone",
+      "status": "attention",
+      "detail": "Un score faux pourrait causer un prejudice (refus de credit, rupture de contrat). Nécessité un disclaimer clair que le score est indicatif et ne constitue pas un conseil financier. RC Pro obligatoire.",
+      "source": "Code civil art. 1240, jurisprudence information commerciale"
+    },
+    {
+      "topic": "Reutilisation des données BODACC et SIRENE",
+      "status": "ok",
+      "detail": "Données sous licence ouverte Etalab. Reutilisation commerciale autorisee avec mention de la source.",
+      "source": "Licence Ouverte Etalab v2.0"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (solvabilité entreprise, scoring financier)",
+      "cacEstimate": "80 EUR",
+      "conversionRate": "4%",
+      "ltv": "700 EUR (Starter 29 EUR x 24 mois)",
+      "ltvCacRatio": "8.8"
+    },
+    {
+      "channel": "Google Ads (vérification solvabilité, risque fournisseur)",
+      "cacEstimate": "250 EUR",
+      "conversionRate": "6%",
+      "ltv": "1200 EUR (Pro 99 EUR x 12 mois)",
+      "ltvCacRatio": "4.8"
+    },
+    {
+      "channel": "Partenariats ERP/facturation (Pennylane, Sellsy)",
+      "cacEstimate": "50 EUR",
+      "conversionRate": "12%",
+      "ltv": "1400 EUR (Pro 99 EUR x 14 mois)",
+      "ltvCacRatio": "28.0"
+    },
+    {
+      "channel": "LinkedIn organique (posts comparatifs scoring)",
+      "cacEstimate": "30 EUR",
+      "conversionRate": "2%",
+      "ltv": "700 EUR",
+      "ltvCacRatio": "23.3"
+    },
+    {
+      "channel": "Referral programme (credit managers AFDCC)",
+      "cacEstimate": "60 EUR",
+      "conversionRate": "15%",
+      "ltv": "1800 EUR (Pro 99 EUR x 18 mois)",
+      "ltvCacRatio": "30.0"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "13.4K recherches/mois cumulees ('solvabilité entreprise' 6 600/mois, 'vérification solvabilité entreprise' 2 400/mois). TAM: EUR. Cibles: Credit managers et DAF, Courtiers en affacturage et, Startups et freelances qui."
+    },
+    "feasibility": {
+      "score": 45,
+      "detail": "MVP en 8 semaines. 5 APIs a integrer (BODACC dataset, API Recherche Entreprises, API SIRENE INSEE). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 70,
+      "detail": "Pricing 29-299 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "4 concurrents identifies: Pappers, Ellisphere, Creditsafe. Leader: Pappers (3-4M visites/mois). Faiblesse principale: Scoring limite aux bilans déposés (pas de signaux BODACC."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Utilisation du terme notation/rating, Responsabilité civile en cas de score errone."
+    },
+    "overall": {
+      "score": 58,
+      "detail": "Point fort: marché (70/100). Point faible: compétition (40/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "productSlug": "comparateur-de-colleges-lycees-resultats-taux-de-reussite-profil-socio-du-quarti",
+  "oneLiner": "Comparateur objectif de collèges et lycees: résultats, taux de réussite, profil socio du quartier, options et langues proposees.",
+  "problem": "12 millions d'élevés en France, et les parents n'ont aucun outil objectif pour comparer les établissements. Le palmares du Figaro/Le Parisien sort une fois par an et ne montre que le taux de réussite brut (qui reflete le profil social, pas la qualité de l'enseignement). La valeur ajoutee (combien l'établissement fait progressér les élevés) est publiée par la DEPP mais enterree dans des tableaux Excel. L'adresse déterminé l'affectation, mais les parents peuvent demander des derogations s'ils savent où chercher.",
+  "solution": "Un comparateur qui montre pour chaque collège/lycee: le taux de réussite brut ET la valeur ajoutee (progression des élevés), le profil socio-démographique du quartier (IPS), les options et langues proposees, le nombre d'élevés par classe, les résultats détaillés par matiere, et la carte des établissements du secteur. Comparaison côte à côte de 2 a 4 établissements.",
+  "uniqueValue": "La valeur ajoutee (indicateur DEPP) est la mesuré la plus pertinente mais invisible des parents. Un collège avec 70% de réussite au brevet dans un quartier defavorise peut avoir une meilleure valeur ajoutee qu'un collège a 95% dans le 7e arrondissement. Cet outil rend cette information accèssible.",
+  "mvpScope": "Comparateur de lycees sur toute la France. 4 indicateurs: taux de réussite au bac, valeur ajoutee DEPP, IPS (indice de position sociale), options proposees. Page par établissement pour le SEO. Comparaison de 2 lycees côte à côte.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline data education",
+      "description": "Ingestion résultats bac/brevet (data.gouv.fr), indicateurs de valeur ajoutee DEPP, IPS par établissement, annuaire Education Nationale.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pipeline 4 sources education",
+        "Données pour 10K+ établissements",
+        "Calcul indicateurs",
+        "Pages établissements"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Interface comparateur",
+      "description": "Page par établissement avec fiche détaillée. Comparateur côte à côte. Carte des établissements par commune. SEO avec 10K+ pages.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "10K pages établissements",
+        "Comparateur côte à côte",
+        "Carte interactive",
+        "SEO opérationnel"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et viralité",
+      "description": "Publier classements alternatifs (meilleure valeur ajoutee, meilleurs lycees de banlieue). Diffuser sur les groupes Facebook de parents. Partenariats blogs education.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Classements alternatifs publiés",
+        "50K visiteurs/mois",
+        "100 abonnes premium",
+        "5 partenariats blogs"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Collèges et features avances",
+      "description": "Ajouter les collèges (brevet). Avis des parents. Alertes rentre scolaire (nouveaux résultats). Widget pour les sites de mairies.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Collèges intégrés",
+        "Avis parents",
+        "Alertes",
+        "Widget mairies",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les parents cherchent activement a comparer les établissements",
+      "how": "Volume de recherche Google sur classement lycee, meilleur collège, comparaison lycee + ville",
+      "successCriteria": "Plus de 100K recherches/mois sur les termes lies (pics en juin-septembre)"
+    },
+    {
+      "check": "La valeur ajoutee est un concept compris et valorise par les parents",
+      "how": "Montrer l'indicateur a 20 parents et mesurer la comprehension et l'intérêt",
+      "successCriteria": "15/20 comprennent le concept et 12/20 disent que ca change leur perception"
+    },
+    {
+      "check": "Le SEO education est rentable",
+      "how": "Analyser la concurrence SEO sur classement lycee + ville (L'Etudiant, Le Figaro)",
+      "successCriteria": "Des opportunités de longue traine existent sur les villes moyennes et les collèges (moins concurrentiels que les lycees)"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Parents d'élevés de 3e (choix du lycee)",
+      "where": "Groupes Facebook parents par ville, forums Magicmaman/JournalDesFemmes, r/ParentsEnFrance",
+      "howToReach": "Contenu: Les 10 lycees avec la meilleure valeur ajoutee de votre département. Diffusion juin-septembre."
+    },
+    {
+      "who": "Parents en recherche immobilière (la carte scolaire influence le choix du quartier)",
+      "where": "Forums PAP, groupes Facebook immobilier + enfants, r/france",
+      "howToReach": "Contenu: Acheter dans le bon quartier pour le meilleur collège. Croisement avec les données immobilières."
+    },
+    {
+      "who": "Enseignants et directeurs d'établissement",
+      "where": "Cafe Pedagogique, SNUipp, SNES, groupes Facebook enseignants",
+      "howToReach": "L'outil est aussi utile pour les enseignants qui veulent muter dans un bon établissement. Accès gratuit pour les enseignants."
+    }
+  ],
+  "pricingStrategy": "Freemium: fiches basiques gratuites (taux réussite, IPS). Plan Parent a 4.90 EUR/mois (valeur ajoutee, comparateur, alertes, options détaillées). Plan Premium a 9.90 EUR/mois (historique 5 ans, avis parents, recommandations derogation). Monétisation par affiliation: cours de soutien (Acadomia, Superprof), immobilier (quartier de l'école). Widget mairies: 99 EUR/mois.",
+  "pathTo10kMrr": "SEO = 100K visiteurs/mois en pic (juin-sept). Conversion 2% = 2000 inscrits. 1000 abonnes x 4.90 EUR = 4 900 EUR + 200 premium x 9.90 EUR = 1 980 EUR + affiliation 2 500 EUR/mois + 10 widgets mairies x 99 EUR = 990 EUR = 10 370 EUR MRR. Timeline: 6-8 mois (si lancé avant la rentree).",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre + Recharts",
+    "backend": "Next.js API Routes + ISR pour les pages établissements",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions",
+    "apis": [
+      "Résultats bac/brevet data.gouv.fr",
+      "Indicateurs de valeur ajoutee DEPP",
+      "IPS par établissement data.gouv.fr",
+      "Annuaire Education Nationale API",
+      "API BAN",
+      "Stripe"
+    ],
+    "notes": "10K+ pages générées en ISR pour le SEO. Les données sont annuelles (publiées en mars pour les IVAL). Pic de trafic juin-septembre. Cache agressif hors saison."
+  },
+  "risks": [
+    {
+      "risk": "Le SEO education est très concurrentiel (L'Etudiant, Le Figaro, Le Parisien)",
+      "mitigation": "Cibler la longue traine: collèges (pas couverts par les palmares), villes moyennes, comparaisons spécifiques. La valeur ajoutee est un angle unique."
+    },
+    {
+      "risk": "La saisonnalite est forte (pic juin-sept, creux oct-mai)",
+      "mitigation": "Diversifier le contenu: Parcoursup (janvier-mars), orientation post-bac, immobilier quartier scolaire. Garder les abonnes annuels."
+    },
+    {
+      "risk": "L'Education Nationale lancé un outil officiel similaire",
+      "mitigation": "Les IVAL existent déjà mais sont un tableau Excel. L'EN ne fera jamais un comparateur user-friendly. Se positionnér comme la couche UX au-dessus des données publiques."
+    }
+  ],
+  "inspirations": "Niche.com (US, compare écoles/villes, valorise 1Md$). GreatSchools.org (US, ratings d'écoles intégrés dans Zillow). L'Etudiant palmares (mais annuel, pas interactif). En UK, Ofsted ratings et Good Schools Guide.",
+  "searchVolume": [
+    {
+      "keyword": "classement collège",
+      "monthlyVolume": "33100",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "meilleur lycee ville",
+      "monthlyVolume": "22200",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "classement lycee 2025",
+      "monthlyVolume": "49500",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "comparaison collège résultats",
+      "monthlyVolume": "1900",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "valeur ajoutee lycee",
+      "monthlyVolume": "2400",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "12M d'élevés en France, 8M de parents concernés par le choix de l'établissement (collège et lycee). Volume de recherche massif: 100K+ recherches/mois sur les classements (pics juin-septembre).",
+    "sam": "3M de parents en phase de choix actif (entree en 6e, entree en 2nde, demenagement). Marché du soutien scolaire: 2 Mds EUR/an en France.",
+    "som": "200K visiteurs uniques/mois la première année via SEO (10K+ pages établissements). 5K abonnes payants.",
+    "methodology": "TAM = parents d'élevés du secondaire en France (INSEE). SAM = parents en phase de choix actif (changement d'établissement, entree collège/lycee, demenagement). SOM base sur le trafic SEO généré par 10K pages longue traine. Référence: L'Etudiant généré 4.3M visiteurs/mois."
+  },
+  "competitorDeep": [
+    {
+      "name": "L'Etudiant (classements)",
+      "url": "https://www.letudiant.fr/classements/classement-des-meilleurs-colleges.html",
+      "pricing": "Gratuit (pub + affiliation soutien scolaire + salons payants)",
+      "trafficEstimate": "4.3M visiteurs/mois",
+      "reviews": "Référence historique des classements education en France",
+      "strengths": "Marque très forte, SEO dominant, 4 critères (réussite, note ecrit, valeur ajoutee, mixite sociale), base de 10K+ établissements",
+      "weaknesses": "Pas de comparateur côte à côte, pas de carte interactive, publication annuelle pas temps reel, pas de données IPS détaillées, UX datee"
+    },
+    {
+      "name": "classement-collèges.fr",
+      "url": "https://classement-colleges.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "100K visites/mois (estimation)",
+      "reviews": "Site base sur les données officielles Education Nationale, référence par data.gouv.fr",
+      "strengths": "Données officielles, classement par ville, couverture nationale, pages par ville",
+      "weaknesses": "Pas de valeur ajoutee comme critère principal, pas de comparateur, design basique, pas de monétisation visible"
+    },
+    {
+      "name": "Franceinfo (indicateurs education)",
+      "url": "https://www.franceinfo.fr/bac/classement-des-lycees",
+      "pricing": "Gratuit",
+      "trafficEstimate": "Élevée (marque media)",
+      "reviews": "Publie les données brutes sans ponderation, laisse les parents faire leur propre classement",
+      "strengths": "Marque media forte, données complètes, pas de biais de classement",
+      "weaknesses": "Pas de comparateur, pas d'aide à la décision, données brutes difficiles a exploiter, pas d'alertes"
+    },
+    {
+      "name": "Le Figaro Etudiant",
+      "url": "https://etudiant.lefigaro.fr/les-classements/",
+      "pricing": "Freemium (certains contenus paywalled)",
+      "trafficEstimate": "2M visiteurs/mois",
+      "reviews": "Palmares annuels lycees et écoles",
+      "strengths": "Marque premium, classements détaillés, bon SEO",
+      "weaknesses": "Paywall sur certains contenus, pas de comparateur interactif, pas de données IPS, approche editoriale pas data-driven"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données de résultats bac/brevet open data",
+      "status": "ok",
+      "detail": "Les résultats par établissement sont publiés sur data.gouv.fr sous licence ouverte. Les indicateurs IVAL sont publiés par la DEPP chaque année.",
+      "source": "education.gouv.fr - DEPP IVAL"
+    },
+    {
+      "topic": "Indice de Position Sociale (IPS)",
+      "status": "ok",
+      "detail": "L'IPS par établissement est publié en open data depuis 2022 suite à une décision du tribunal administratif de Paris. Réutilisation autorisée.",
+      "source": "data.gouv.fr - IPS par établissement"
+    },
+    {
+      "topic": "RGPD et données scolaires",
+      "status": "ok",
+      "detail": "Les données utilisees sont des statistiques agrègees par établissement (pas de données individuelles d'élevés). Pas de risque RGPD sur les données d'entree.",
+      "source": "RGPD Article 4 - données anonymisées"
+    },
+    {
+      "topic": "Sensibilite politique des classements scolaires",
+      "status": "attention",
+      "detail": "Les classements scolaires sont politiquement sensibles (segregation, gentrification). Presenter les données de manière factuelle et mettre en avant la valeur ajoutee (progression des élevés) plutot que les taux bruts.",
+      "source": "Debat public education nationale"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO longue traine (classement collège/lycee + ville)",
+      "cacEstimate": "0.30 EUR",
+      "conversionRate": "3%",
+      "ltv": "58.80 EUR (12 mois parent)",
+      "ltvCacRatio": "196.0"
+    },
+    {
+      "channel": "Groupes Facebook parents par ville",
+      "cacEstimate": "1.00 EUR",
+      "conversionRate": "4%",
+      "ltv": "58.80 EUR",
+      "ltvCacRatio": "58.8"
+    },
+    {
+      "channel": "Contenu viral (classements alternatifs par valeur ajoutee)",
+      "cacEstimate": "0.20 EUR",
+      "conversionRate": "5%",
+      "ltv": "58.80 EUR",
+      "ltvCacRatio": "294.0"
+    },
+    {
+      "channel": "Affiliation soutien scolaire (Acadomia, Superprof)",
+      "cacEstimate": "0 EUR (revenu direct)",
+      "conversionRate": "1%",
+      "ltv": "15 EUR/lead",
+      "ltvCacRatio": "infini"
+    },
+    {
+      "channel": "Partenariats blogs education/immobilier",
+      "cacEstimate": "0.50 EUR",
+      "conversionRate": "3%",
+      "ltv": "58.80 EUR",
+      "ltvCacRatio": "117.6"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 85,
+      "detail": "109.1K recherches/mois cumulees ('classement lycee 2025' 49 500/mois, 'classement collège' 33 100/mois). Cibles: Parents d'élevés de 3e, Parents en recherche immobilière, Enseignants et directeurs d'établissement."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 4 semaines. 6 APIs a integrer (Résultats bac/brevet, Indicateurs de valeur ajoutee , IPS par établissement). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 28,
+      "detail": "1000 clients a 90 EUR pour demarrer. Objectif 10K MRR en 6-8 mois. Pricing 90-99 EUR."
+    },
+    "competition": {
+      "score": 35,
+      "detail": "4 concurrents identifies: L'Etudiant (classements), classement-collèges.fr, Franceinfo (indicateurs educat. Leader: L'Etudiant (classements) (4.3M visiteurs/mois). Faiblesse principale: Pas de comparateur côte à côte."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Sensibilite politique des classements scolaires."
+    },
+    "overall": {
+      "score": 61,
+      "detail": "Point fort: demande (85/100). Point faible: marche (28/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

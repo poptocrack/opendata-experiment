@@ -1,0 +1,342 @@
+{
+  "productSlug": "simulateur-de-droits-mdph-estimez-vos-droits-aah-pch-rqth-carte-mobilite-en-fonc",
+  "oneLiner": "Simulateur de droits MDPH : estimez vos droits (AAH, PCH, RQTH, carte mobilité) en fonction de votre situation",
+  "problem": "Le système de droits liés au handicap en France est d'une complexité extreme : AAH (Allocation Adultes Handicapes), PCH (Prestation de Compensation du Handicap), AEEH (Allocation d'Éducation de l'Enfant Handicape), RQTH (Reconnaissance de Travailleur Handicape), carte mobilité inclusion (stationnement, priorité, invalidité), orientation ESAT/MAS/FAM/SAVS... Les 1.2M bénéficiaires de l'AAH et les 5M+ personnes potentiellement eligibles ne savent souvent pas a quoi elles ont droit. Les dossiers MDPH sont longs (4-12 mois de délai), complexes, et le taux de refus est élève (30-40% en première demande). Les 104 MDPH sont submergees de demandes. Il n'existe aucun simulateur complet : la CAF simule l'AAH seule, Mon Parcours Handicap explique les droits mais ne simule rien. Les personnes handicapees et leurs aidants perdent des mois a comprendre le système.",
+  "solution": "Un simulateur en ligne qui, à partir d'un questionnaire structure (type de handicap, taux d'incapacité estimé, age, situation familiale, ressources, besoins de compensation), estimé les droits possibles : AAH (montant), PCH (aides humaines, techniques, amenagement), AEEH (et complements), RQTH, carte mobilité inclusion, orientations possibles (ESAT, MAS, FAM, SAVS, SAMSAH). Le simulateur explique chaque droit en langage clair, donne les conditions d'éligibilité, et généré une checklist des pièces a fournir pour le dossier MDPH. Option premium : aide a la constitution du dossier MDPH avec modèles de certificats medicaux et lettres types.",
+  "uniqueValue": "Premier simulateur complet de droits MDPH couvrant l'ensemble des prestations (AAH, PCH, AEEH, RQTH, CMI, orientations). Aucun outil existant ne croise l'ensemble des droits en fonction de la situation individuelle.",
+  "mvpScope": "Questionnaire web en 15-20 questions couvrant la situation de la personne. Algorithme de simulation pour AAH, PCH, RQTH, CMI. Pages de résultats avec explication de chaque droit, conditions, montants estimes. Checklist des pièces a fournir pour chaque demande MDPH. Pas de connexion aux systèmes MDPH (simulation indicative).",
+  "timeToMvp": "8-10 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Modelisation des règles de droits",
+      "description": "Analyser la réglementation MDPH et modeliser les règles d'éligibilité pour chaque prestation (AAH, PCH, AEEH, RQTH, CMI). Definir l'arbre de décision et le questionnaire.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Documentation des règles d'éligibilité pour chaque prestation",
+        "Arbre de décision couvrant AAH, PCH, RQTH, CMI, AEEH",
+        "Questionnaire valide avec 2 associations (UNAPEI, APF)",
+        "Bareme de calcul AAH et PCH"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Développement du simulateur",
+      "description": "Developper le formulaire interactif et le moteur de simulation. Interface claire, langage accessible, progression pas a pas.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Formulaire interactif multi-étapes",
+        "Moteur de calcul des droits",
+        "Page de résultats avec estimations et explications",
+        "Checklist des pièces a fournir par prestation"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Test utilisateur et lancement",
+      "description": "Tester avec des usagers réels (familles, aidants, personnes handicapees). Corriger les cas limites. Lancer auprès des communautés cibles.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Tests avec 20 usagers réels",
+        "Corrections des cas limites identifies",
+        "SEO sur les requetes cles",
+        "Lancement dans les groupes Facebook et partenariats asso"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Monétisation : aide au dossier MDPH",
+      "description": "Service premium d'aide a la constitution du dossier MDPH : modèles de certificats medicaux, lettres types, revision du dossier par un expert, suivi de la demande.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pack dossier MDPH (29 euros) : modèles + checklist personnalisee",
+        "Service revision dossier (99 euros) : vérification par un expert",
+        "Modèles de lettres de recours en cas de refus",
+        "Dashboard suivi des étapes du dossier"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les règles de droits sont modelisables algorithmiquement",
+      "how": "Etudier la réglementation (Code de l'action sociale, decrets AAH/PCH) et tenter de formaliser les règles pour 3 cas types. Valider avec un juriste spécialisé handicap.",
+      "successCriteria": "Réussite a modeliser les règles pour AAH, PCH et RQTH avec 90%+ de précision sur 20 cas tests."
+    },
+    {
+      "check": "Les usagers ont ce besoin et ne trouvent pas de solution",
+      "how": "Poster dans les groupes Facebook handicap : 'Savez-vous a quels droits MDPH vous avez droit ? Comment avez-vous fait pour les connaitre ?'. Interviewer 15 personnes.",
+      "successCriteria": "80%+ des repondants disent ne pas connaitre tous leurs droits. 70%+ auraient utilise un simulateur s'il existait. 60%+ ont eu un dossier refuse ou incomplet."
+    },
+    {
+      "check": "Les personnes sont prêtes à payer pour l'aide au dossier",
+      "how": "Landing page avec offre premium (aide au dossier MDPH a 29 euros). Mesurer les clics sur le bouton d'achat.",
+      "successCriteria": "3%+ de taux de conversion sur la page de simulation (visiteur ayant complété la simulation -> clic sur l'offre premium)."
+    },
+    {
+      "check": "Le simulateur est fiable par rapport aux décisions reelles MDPH",
+      "how": "Comparer les résultats du simulateur avec les décisions reelles de 30 personnes volontaires ayant déjà reçu une notification MDPH.",
+      "successCriteria": "85%+ de concordance entre la simulation et la décision réelle MDPH sur les droits principaux (AAH oui/non, PCH oui/non)."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Personnes en première demande MDPH, souvent perdues face à la complexité du système : adultes récemment diagnostiques autistes, parents d'enfants handicapes, personnes devenues handicapees suite a un accident",
+      "where": "Groupes Facebook : 'Droits MDPH - Entraide' (15K+), 'AAH et droits des personnes handicapees' (20K+), 'Parents d'enfants handicapes - démarches et droits' (12K+), 'Autisme adulte' (25K+). Forums : Doctissimo section handicap, forum-oveo.com. Reddit : r/france (posts reguliers sur l'AAH).",
+      "howToReach": "Publier le simulateur comme outil gratuit dans les groupes. Repondre aux questions frequentes avec un lien vers le simulateur. Partenariat avec les admins de groupes."
+    },
+    {
+      "who": "Travailleurs sociaux et assistantes sociales qui accompagnent les personnes dans leurs démarches MDPH",
+      "where": "ANAS (Association Nationale des Assistants de Service Social). Groupes Facebook 'Travailleurs sociaux - echanges de pratiques'. CCAS (Centres Communaux d'Action Sociale). Hôpitaux (services sociaux).",
+      "howToReach": "Emailing aux CCAS et services sociaux hospitaliers. Presentation lors des journees de formation des travailleurs sociaux. Outil gratuit pour les professionnels."
+    },
+    {
+      "who": "Associations de personnes handicapees qui orientent leurs adherents",
+      "where": "APF France handicap (500 delegations locales), UNAPEI (550 associations locales), UNAFAM (handicap psychique), Autisme France, Trisomie 21 France, Fédération française des DYS.",
+      "howToReach": "Contacter les responsables 'droits et accompagnement' de chaque fédération. Proposer l'outil en marque blanche pour leur site. Co-construire le contenu avec leurs juristes."
+    }
+  ],
+  "pricingStrategy": "Freemium. Simulation gratuite et illimitée pour tous. Pack Dossier MDPH a 29 euros : checklist personnalisee, modèles de certificats medicaux adaptes, lettres types, guide de constitution du dossier. Service Revision Dossier a 99 euros : relecture par un expert (travailleur social ou juriste spécialisé), suggestions d'amélioration, modèle de projet de vie. Pack Recours a 49 euros : modèles de recours gracieux et contentieux, guide de procédure, modèle de saisine du tribunal. Abonnement pro pour les associations/CCAS : 30 euros/mois (accès illimité pour leurs bénéficiaires).",
+  "pathTo10kMrr": "Mix de revenus : 200 packs dossier/mois a 29 euros = 5 800 euros + 50 revisions dossier/mois a 99 euros = 4 950 euros + 20 abonnements pro a 30 euros/mois = 600 euros. Total : 11 350 euros/mois. Atteignable en 10-14 mois. Base : 5M personnes potentiellement eligibles, 400K nouvelles demandes MDPH/an, taux de refus 30-40% = 120K+ personnes en besoin d'aide chaque année. Un taux de conversion de 0.3% de ce flux = 360 clients/mois.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS, Framer Motion pour les transitions du formulaire",
+    "backend": "Next.js API Routes, Node.js",
+    "database": "PostgreSQL (Supabase) pour stocker les simulations anonymisees et les comptes",
+    "hosting": "Vercel + Supabase",
+    "apis": [
+      "API data.gouv.fr pour les données AAH par département",
+      "API CAF (référence pour les baremes AAH)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Le moteur de simulation est purement algorithmique (règles codees en dur, pas de ML). Les baremes AAH et PCH sont mis à jour annuellement par decret. Prevoir une veille réglementaire et une mise à jour du moteur a chaque modification. Aucune donnée de santé individuelle n'est stockee si l'utilisateur ne créé pas de compte."
+  },
+  "risks": [
+    {
+      "risk": "Erreur de simulation conduisant une personne a ne pas faire de demande (faux negatif) ou a esperer un droit non accorde (faux positif)",
+      "mitigation": "Mentions claires : 'simulation indicative, seule la MDPH peut décider'. Recommander systematiquement de déposer un dossier en cas de doute. Valider l'algorithme avec un juriste spécialisé et 50 cas tests."
+    },
+    {
+      "risk": "Complexité de la réglementation : les règles varient selon les MDPH (pratiques locales vs textes nationaux)",
+      "mitigation": "Se baser uniquement sur les textes nationaux (AAH, PCH = règles nationales). Indiquer que les pratiques peuvent varier localement. Enrichir progressivement avec les retours utilisateurs par département."
+    },
+    {
+      "risk": "Resistance des MDPH qui pourraient voir l'outil comme un concurrent ou une source de dossiers non fondes",
+      "mitigation": "Positionner l'outil comme un complement qui amélioré la qualité des dossiers (moins de refus = moins de travail pour les MDPH). Proposer des partenariats avec les MDPH volontaires."
+    },
+    {
+      "risk": "Exercice illegal du conseil juridique si l'aide au dossier est trop poussee",
+      "mitigation": "L'outil fournit de l'information et des modèles, pas du conseil juridique personnalise. Le service de revision est assure par des travailleurs sociaux (pas des avocats). Consulter un avocat pour valider les CGU."
+    },
+    {
+      "risk": "Sensibilité emotionnelle : les personnes en situation de handicap sont souvent en detresse face aux démarches administratives",
+      "mitigation": "Ton bienveillant et rassurant dans tout le parcours. Liens vers des lignes d'ecoute (0 800 360 360 - ligne handicap). Pas de culpabilisation si les conditions ne sont pas remplies. Messages positifs et encourageants."
+    }
+  ],
+  "inspirations": "Mes-aides.gouv.fr (simulateur multi-aides sociales, référence en termes d'UX). 1jeune1solution.gouv.fr (questionnaire d'orientation). TurboTax aux USA (aide a la déclaration fiscale complexe, step by step). En UK : Turn2us benefits calculator (simulateur d'aides sociales britanniques, excellente UX). Mes-droits.fr (simulateur de droits sociaux generiques).",
+  "searchVolume": [
+    {
+      "keyword": "simulateur AAH",
+      "monthlyVolume": "6 600",
+      "difficulty": "moyenne",
+      "intent": "simulation de droits"
+    },
+    {
+      "keyword": "droits MDPH",
+      "monthlyVolume": "4 400",
+      "difficulty": "moyenne",
+      "intent": "information"
+    },
+    {
+      "keyword": "AAH conditions",
+      "monthlyVolume": "8 100",
+      "difficulty": "élevée",
+      "intent": "information éligibilité"
+    },
+    {
+      "keyword": "PCH éligibilité",
+      "monthlyVolume": "2 900",
+      "difficulty": "faible",
+      "intent": "simulation de droits"
+    },
+    {
+      "keyword": "montant AAH 2024",
+      "monthlyVolume": "12 000",
+      "difficulty": "élevée",
+      "intent": "information"
+    },
+    {
+      "keyword": "dossier MDPH",
+      "monthlyVolume": "18 000",
+      "difficulty": "élevée",
+      "intent": "aide a la démarche"
+    },
+    {
+      "keyword": "RQTH avantages",
+      "monthlyVolume": "5 400",
+      "difficulty": "moyenne",
+      "intent": "information"
+    },
+    {
+      "keyword": "carte mobilité inclusion",
+      "monthlyVolume": "3 600",
+      "difficulty": "moyenne",
+      "intent": "information"
+    },
+    {
+      "keyword": "recours MDPH refus",
+      "monthlyVolume": "2 400",
+      "difficulty": "faible",
+      "intent": "aide juridique"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "5M personnes potentiellement eligibles a au moins une prestation MDPH + 400K nouvelles demandes/an + 11M aidants. Marché potentiel : 100M euros/an (aide au dossier, simulateurs, formations).",
+    "sam": "400K nouvelles demandes MDPH/an dont 120K refusees. 1.2M bénéficiaires AAH avec renouvellement periodique. Marché adressable : 20M euros/an.",
+    "som": "3 000 clients payants/an (packs dossier + revisions) en année 1-2. 100 abonnements pro associations/CCAS. Objectif : 150K euros ARR en 14 mois.",
+    "methodology": "TAM basé sur les rapports CNSA et DREES (nombre de demandes MDPH, taux de refus). SAM basé sur le flux annuel de nouvelles demandes et renouvellements. SOM basé sur la capacité de conversion via SEO et communautés (0.3% du flux annuel)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Mon Parcours Handicap",
+      "url": "https://www.monparcourshandicap.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "200 000 visites/mois",
+      "reviews": "Bonne qualité d'information mais pas de simulateur. Les utilisateurs doivent lire de longues pages pour comprendre leurs droits sans savoir lesquels s'appliquent a leur situation.",
+      "strengths": "Plateforme officielle, contenu valide par les institutions, bonne UX editoriale",
+      "weaknesses": "Pas de simulateur personnalise. Information generique, pas adaptee a la situation individuelle. Pas d'aide a la constitution du dossier."
+    },
+    {
+      "name": "CAF.fr - Simulateur AAH",
+      "url": "https://www.caf.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "N/A (intégré au site CAF)",
+      "reviews": "Simule uniquement le montant de l'AAH en fonction des ressources. Ne couvre pas les autres droits MDPH. Ne dit pas si la personne est eligible.",
+      "strengths": "Officiel, fiable pour le calcul du montant AAH",
+      "weaknesses": "Ne simule que l'AAH. Ne couvre pas PCH, RQTH, CMI, AEEH. Ne traité pas l'éligibilité, uniquement le montant si la personne a déjà l'AAH."
+    },
+    {
+      "name": "Mes-aides.gouv.fr",
+      "url": "https://www.mesdroitssociaux.gouv.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "500 000 visites/mois",
+      "reviews": "Excellent simulateur multi-aides mais ne couvre que marginalement le handicap (AAH oui/non, sans les autres droits MDPH).",
+      "strengths": "Multi-aides (RSA, APL, prime d'activité...). Bonne UX. Open source.",
+      "weaknesses": "Ne couvre pas les specificites MDPH (PCH, AEEH, CMI, orientations). L'AAH est traitée de manière superficielle. Pas d'aide au dossier."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Simulation indicative vs conseil juridique",
+      "status": "attention",
+      "detail": "Le simulateur fournit une estimation indicative, pas un avis juridique. Les mentions legales doivent clairement indiquer que seule la MDPH est competente pour accorder les droits. Le service de revision de dossier ne doit pas s'apparenter a de l'exercice illegal du droit.",
+      "source": "Loi du 31 décembre 1971 (exercice de la profession d'avocat), Code de l'action sociale"
+    },
+    {
+      "topic": "RGPD et données de santé",
+      "status": "attention",
+      "detail": "Le questionnaire collecte des données de santé (type de handicap, taux d'incapacité). Consentement explicite obligatoire. Analyse d'impact (AIPD) requise. Minimisation des données : ne pas stocker si pas nécessaire. Droit a l'effacement.",
+      "source": "RGPD art. 9, CNIL guide données de santé"
+    },
+    {
+      "topic": "Utilisation des baremes officiels",
+      "status": "ok",
+      "detail": "Les baremes AAH, PCH et les conditions d'éligibilité sont publics (decrets, Code de l'action sociale). Leur reproduction et utilisation dans un simulateur sont libres.",
+      "source": "Code de l'action sociale et des familles, decrets AAH/PCH"
+    },
+    {
+      "topic": "Accessibilité numérique (RGAA)",
+      "status": "attention",
+      "detail": "Un outil destiné aux personnes handicapees DOIT etre accessible (RGAA niveau AA minimum). Non-respect = risque reputationnel majeur et potentiellement légal.",
+      "source": "RGAA 4.1, Directive europeenne accessibilité web"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages 'simulateur AAH', 'droits MDPH', 'dossier MDPH')",
+      "cacEstimate": "2 euros",
+      "conversionRate": "5% (visiteur -> simulation complete)",
+      "ltv": "15 euros (taux de conversion 3% simulation -> pack dossier a 29 euros + 1% -> revision a 99 euros)",
+      "ltvCacRatio": "7.5"
+    },
+    {
+      "channel": "Groupes Facebook handicap (organique)",
+      "cacEstimate": "0 euros",
+      "conversionRate": "10% (vue post -> visite site)",
+      "ltv": "15 euros",
+      "ltvCacRatio": "Infini"
+    },
+    {
+      "channel": "Partenariats associations (APF, UNAPEI, UNAFAM)",
+      "cacEstimate": "0 euros (intégration dans leur offre d'accompagnement)",
+      "conversionRate": "15% (recommandation asso -> simulation complete)",
+      "ltv": "30 euros/an (abonnement pro asso)",
+      "ltvCacRatio": "Infini"
+    },
+    {
+      "channel": "Google Ads sur requetes haute intention ('simulateur AAH', 'aide dossier MDPH')",
+      "cacEstimate": "8 euros",
+      "conversionRate": "8% (clic -> simulation complete)",
+      "ltv": "15 euros",
+      "ltvCacRatio": "1.9"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 81,
+      "detail": "60 recherches/mois cumulees ('dossier MDPH' 18/mois, 'montant AAH 2024' 12/mois). TAM: 5M personnes. Cibles: Personnes en première demande, Travailleurs sociaux et assistantes, Associations de personnes handicapees."
+    },
+    "feasibility": {
+      "score": 35,
+      "detail": "MVP en 8-10 semaines. 3 APIs a integrer (API  pour les données AAH par , API CAF, Stripe pour les paiements). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 47,
+      "detail": "20 clients a 29 EUR pour demarrer. Objectif 10K MRR en 10-14 mois. SOM: 150K eur/an. Pricing 29-99 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: Mon Parcours Handicap, CAF.fr - Simulateur AAH, Mes-aides.gouv.fr. Leader: Mon Parcours Handicap (200 000 visites/mois). Faiblesse principale: Pas de simulateur personnalise."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Simulation indicative vs conseil juridique, RGPD et données de santé."
+    },
+    "overall": {
+      "score": 54,
+      "detail": "Point fort: demande (81/100). Point faible: faisabilité (35/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

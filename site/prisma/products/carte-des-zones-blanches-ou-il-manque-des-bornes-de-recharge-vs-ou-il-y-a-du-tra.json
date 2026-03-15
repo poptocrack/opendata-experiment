@@ -1,0 +1,302 @@
+{
+  "productSlug": "carte-des-zones-blanches-ou-il-manque-des-bornes-de-recharge-vs-ou-il-y-a-du-tra",
+  "oneLiner": "Carte des zones blanches en bornes de recharge EV, croisant couverture existante IRVE avec trafic routier et demande estimée.",
+  "problem": "La France compte 130 000 points de recharge publics mais l'objectif 2030 est 400 000. Les operateurs (TotalÉnergies, Ionity, Driveco) investissent des milliards sans outil fiable pour identifiér OU installer. Les 411 datasets IRVE sur data.gouv.fr montrent les bornes existantes mais personne ne les croise avec le trafic routier et les zones sans couverture. Résultat : des bornes inutilisees sur certaines aires et des files d'attente sur d'autres.",
+  "solution": "Une carte interactive croisant les bornes existantes (IRVE), le trafic routier (CEREMA), les aires de repos, les parkings publics, et les ventes de VE par département pour identifiér les zones blanches a fort potentiel. Chaque zone reçoit un score de priorité d'implantation. Filtres par puissance (AC/DC), par contexte (autoroute/urbain), et par région.",
+  "uniqueValue": "Les données IRVE sont publiques mais brutes (CSV avec lat/long). Personne ne les croise avec le trafic et la demande. Cette carte donne aux operateurs un avantage compétitif : installer en premier dans les zones les plus rentables.",
+  "mvpScope": "Carte des zones blanches sur les autoroutes et nationales de France metropolitaine. Croisement IRVE (bornes existantes) + comptages routiers CEREMA (trafic). Score de priorité par zone de 10km. Filtre par puissance requise (AC 22kW, DC 50kW, DC 150kW+).",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline géospatial IRVE + trafic",
+      "description": "Ingestion IRVE consolide + comptages routiers CEREMA. Calcul des zones de couverture (buffer autour de chaque borne). Identification des zones blanches par soustraction.",
+      "duration": "2.5 semaines",
+      "deliverables": [
+        "Import IRVE consolide (130K+ bornes)",
+        "Import comptages routiers CEREMA",
+        "Calcul zones de couverture PostGIS",
+        "Scoring de priorité par zone blanche"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Carte interactive et filtres",
+      "description": "Interface web avec carte interactive, zones blanches colorees par priorité, filtres par puissance et contexte, fiches zone avec recommandations.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Carte interactive Maplibre/Deck.gl",
+        "Heatmap des zones blanches",
+        "Filtres puissance et contexte",
+        "Fiches zones blanches détaillées"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Validation et premiers clients",
+      "description": "Contacter 5 operateurs IRVE avec un rapport gratuit de leurs zones blanches. Iterer sur le feedback. Formaliser les offres.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "5 rapports gratuits pour operateurs",
+        "2 POC operateurs",
+        "Feedback intégré",
+        "Grille tarifaire validee"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Enrichissement et diversification",
+      "description": "Ajouter zones urbaines (parkings, centres commerciaux), ventes VE par département, projets immobiliers. Offres collectivites et foncières.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Couverture urbaine",
+        "3 sources supplémentaires",
+        "Offre collectivites",
+        "5 clients payants"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les operateurs de bornes utilisent des méthodes artisanales pour choisir les emplacements",
+      "how": "Entretiens avec 5 operateurs IRVE. Question : comment decidez-vous où installer vos prochaines bornes ?",
+      "successCriteria": "3/5 confirment utiliser des méthodes artisanales (Excel, terrain) et un outil data-driven les intéressérait"
+    },
+    {
+      "check": "Les données IRVE et trafic sont croisables techniquement",
+      "how": "Télécharger IRVE consolide et comptages routiers CEREMA. Tester le croisement géospatial sur 3 départements.",
+      "successCriteria": "Le croisement fonctionne et révélé au moins 20 zones blanches significatives par département"
+    },
+    {
+      "check": "Les operateurs ont un budget pour ce type d'outil",
+      "how": "Verifier les budgets déploiement des principaux operateurs (rapports annuels, articles presse)",
+      "successCriteria": "Les operateurs investissent 10M+ EUR/an en déploiement, 1-5% pour les études de localisation"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Operateurs de bornes de recharge (Driveco, Power Dot, Allego, Last Mile Solutions)",
+      "where": "Salons EV (Equip Auto, Electric Road), LinkedIn, Power Summit",
+      "howToReach": "Rapport gratuit montrant les 10 meilleures zones blanches de leur région d'operation. Demo du dashboard."
+    },
+    {
+      "who": "Collectivites avec schema directeur de déploiement IRVE",
+      "where": "AVERE France, AMORCE, congres des intercommunalites",
+      "howToReach": "L'outil comme base de travail pour le schema directeur IRVE obligatoire."
+    },
+    {
+      "who": "Foncieres et gestionnaires de parkings (Indigo, Vinci Park, Unibail)",
+      "where": "SIMI, salons logistique/immobilier, LinkedIn real estate",
+      "howToReach": "Scoring ROI pour chaque parking de leur portefeuille : lequel équiper en priorité ?"
+    }
+  ],
+  "pricingStrategy": "Plan Operateur Standard a 999 EUR/mois (1 région, carte + scoring, MAJ mensuelles). Plan Operateur National a 2 499 EUR/mois (toute la France, API, filtres avances, alertes). Plan Collectivite a 499 EUR/mois (territoire + schema directeur IRVE). Plan Fonciere a 799 EUR/mois (scoring parking, ROI).",
+  "pathTo10kMrr": "4 operateurs national x 2 499 EUR = 9 996 EUR MRR. Alternative : 4 standard x 999 EUR + 2 national x 2 499 EUR = 8 994 EUR + 2 collectivites x 499 EUR = 9 992 EUR. Avec 30+ operateurs actifs en France, 4 clients = 13% de pénétration. Timeline : 10-12 mois (cycle de vente B2B long).",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS + Deck.gl pour visualisation de flux",
+    "backend": "Next.js API Routes + Python pour le pipeline géospatial",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + Hetzner (calculs géospatiaux lourds) + GitHub Actions",
+    "apis": [
+      "Données IRVE consolides (data.gouv.fr)",
+      "Comptages routiers CEREMA",
+      "API BAN",
+      "API parkings ouverts",
+      "Immatriculations VE (data.gouv.fr)",
+      "Stripe"
+    ],
+    "notes": "Le croisement géospatial (bornes vs trafic vs zones de couverture) est le coeur technique. PostGIS avec buffers et intersections. Calcul batch mensuel. Carte rendue côté client avec Maplibre/Deck.gl."
+  },
+  "risks": [
+    {
+      "risk": "Les grands operateurs (TotalÉnergies, Engie) ont leurs propres équipes data internes",
+      "mitigation": "Cibler les operateurs moyens (20-50 salariés) sans data team. Les grands operateurs peuvent être clients API en complement."
+    },
+    {
+      "risk": "Les données IRVE ne sont pas à jour (bornes declarees mais pas installees, où inversement)",
+      "mitigation": "Croiser avec les données des apps de recharge (ChargeMap, Chargeprice) via scraping où API. Signaler les incoherences."
+    },
+    {
+      "risk": "Le marché evolue très vite et les zones blanches se comblent rapidement",
+      "mitigation": "C'est la valeur : les MAJ mensuelles permettent de suivre l'évolution. La course a l'installation dure au moins jusqu'en 2030."
+    }
+  ],
+  "inspirations": "ChargeMap (carte des bornes existantes mais pas de zones blanches). AVERE (barometre trimestriel). Aux US, NREL AFDC (outil federal de localisation). En UK, Zap-Map (cartographie mais pas de scoring).",
+  "searchVolume": [
+    {
+      "keyword": "borne recharge zone blanche",
+      "monthlyVolume": "1 200",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "IRVE déploiement France",
+      "monthlyVolume": "2 400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "carte borne recharge electrique",
+      "monthlyVolume": "18 000",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ou installer borne recharge",
+      "monthlyVolume": "5 400",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "borne recharge autoroute manquante",
+      "monthlyVolume": "800",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "2,5 Mds EUR (marché du déploiement IRVE en France, objectif 400K bornes a 2030 avec investissement moyen 50K EUR/station)",
+    "sam": "150 M EUR (outils de planification et études de localisation pour les 30+ operateurs, foncières et 1 254 EPCI concernés)",
+    "som": "1,5 M EUR (18 mois, ciblant les operateurs mid-market et EPCI en schema directeur, 50-100 clients a 1-2,5K EUR/mois)",
+    "methodology": "TAM base sur objectif gouvernemental 400K bornes France 2030. SAM estimé a 5-6% du TAM pour la part études/planification. SOM base sur 50-100 clients accèssibles en 18 mois a prix moyen 1,2K EUR/mois."
+  },
+  "competitorDeep": [
+    {
+      "name": "Chargemap",
+      "url": "https://chargemap.com",
+      "pricing": "Gratuit pour les conducteurs, B2B sur devis pour operateurs",
+      "trafficEstimate": "2M+ visites/mois",
+      "reviews": "4.5/5 App Store (300K+ avis)",
+      "strengths": "Base de données communautaire massive (500K+ bornes en Europe), marque forte auprès des conducteurs VE, app mobile très bien notee",
+      "weaknesses": "Focalisee sur les conducteurs, pas sur les operateurs. Pas de croisement avec le trafic routier ni de scoring de zones blanches. Pas d'outil de décision d'implantation."
+    },
+    {
+      "name": "Gireve",
+      "url": "https://www.gireve.com",
+      "pricing": "B2B sur devis, plateforme d'interoperabilite",
+      "trafficEstimate": "50K visites/mois",
+      "reviews": "N/A (B2B pur)",
+      "strengths": "Plateforme officielle d'interoperabilite. 695K bornes connectees en Europe. Données de référence pour le secteur. Partenaire institutionnel (ADEME, État)",
+      "weaknesses": "Plateforme technique d'interoperabilite, pas d'outil d'aide à la décision pour le déploiement. Pas d'analyse de zones blanches ni de scoring."
+    },
+    {
+      "name": "AVERE France",
+      "url": "https://www.avere-france.org",
+      "pricing": "Barometre trimestriel gratuit, études sur devis",
+      "trafficEstimate": "100K visites/mois",
+      "reviews": "N/A (association professionnelle)",
+      "strengths": "Référence institutionnelle. Barometre trimestriel très cite par les medias. Legitimite auprès des pouvoirs publics",
+      "weaknesses": "Format rapport statique (PDF trimestriel), pas d'outil interactif. Pas de scoring ni de recommandation d'implantation."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données IRVE en open data",
+      "status": "ok",
+      "detail": "Les données IRVE sont publiées en open data sur data.gouv.fr sous licence ouverte Etalab. Réutilisation commerciale autorisée.",
+      "source": "data.gouv.fr - IRVE consolide"
+    },
+    {
+      "topic": "Données de trafic CEREMA",
+      "status": "ok",
+      "detail": "Les comptages routiers CEREMA sont en open data. Réutilisation commerciale possible sous licence ouverte.",
+      "source": "data.gouv.fr - Comptages routiers"
+    },
+    {
+      "topic": "Objectif 400K bornes 2030",
+      "status": "ok",
+      "detail": "L'objectif gouvernemental de 400K points de recharge publics d'ici 2030 est inscrit dans France 2030 avec 300M EUR d'aide. Contexte reglementaire favorable.",
+      "source": "Ministere de la Transition ecologique"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "LinkedIn Ads ciblé operateurs IRVE",
+      "cacEstimate": "800-1 200 EUR",
+      "conversionRate": "2-3%",
+      "ltv": "18 000 EUR (plan national 2 499 EUR/mois x 12 mois rétention moyenne)",
+      "ltvCacRatio": "15-22x"
+    },
+    {
+      "channel": "Salons professionnels (Electric Road, Power Summit)",
+      "cacEstimate": "2 000-3 500 EUR",
+      "conversionRate": "5-10% des leads qualifies",
+      "ltv": "18 000 EUR",
+      "ltvCacRatio": "5-9x"
+    },
+    {
+      "channel": "Rapport gratuit zones blanches (outbound)",
+      "cacEstimate": "500-800 EUR",
+      "conversionRate": "15-20% des rapports envoyes",
+      "ltv": "18 000 EUR",
+      "ltvCacRatio": "22-36x"
+    },
+    {
+      "channel": "Partenariat AVERE / AMORCE",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "6 000 EUR (plan collectivite 499 EUR/mois x 12 mois)",
+      "ltvCacRatio": "15-30x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 77,
+      "detail": "826 recherches/mois cumulees ('borne recharge autoroute manquante' 800/mois, 'carte borne recharge electrique' 18/mois). TAM: 2,5 Mds EUR. Cibles: Operateurs de bornes de, Collectivites avec schema directeur, Foncieres et gestionnaires de."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 6 APIs a integrer (Données IRVE consolides, Comptages routiers CEREMA, API BAN). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "4 clients a 499 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 1,5 M EUR/an. Pricing 499-999 EUR."
+    },
+    "competition": {
+      "score": 65,
+      "detail": "3 concurrents identifies: Chargemap, Gireve, AVERE France. Leader: Chargemap (2M+ visites/mois). Faiblesse principale: Focalisee sur les conducteurs."
+    },
+    "legal": {
+      "score": 92,
+      "detail": "3 points verifies, tous OK. Donnees sous licence ouverte Etalab."
+    },
+    "overall": {
+      "score": 77,
+      "detail": "Point fort: legal (92/100). Point faible: competition (65/100). Opportunite solide a executer rapidement."
+    }
+  }
+}

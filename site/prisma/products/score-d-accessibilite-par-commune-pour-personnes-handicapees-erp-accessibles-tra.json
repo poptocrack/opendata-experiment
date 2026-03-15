@@ -1,0 +1,323 @@
+{
+  "productSlug": "score-d-accessibilite-par-commune-pour-personnes-handicapees-erp-accessibles-tra",
+  "oneLiner": "Score d'accessibilité par commune pour personnes handicapees : ERP accessibles + transports adaptes + structures medico-sociales",
+  "problem": "Les 12 millions de personnes handicapees en France et leurs familles n'ont aucun outil pour comparer l'accessibilité des communes avant un déménagement, un projet de vie autonome, ou simplement pour savoir quels services sont accessibles pres de chez eux. Les données existent en silos : Acceslibre recense l'accessibilité des ERP (commerces, services publics), FINESS localise les structures medico-sociales, les données de transport adaptees sont eparpillees par région. Aucun outil ne croise ces sources pour donner une vision globale. Consequence : des personnes handicapees qui demenagent et decouvrent que leur nouvelle ville n'a ni transport adapte, ni médecin accessible, ni structure d'accompagnement adaptee.",
+  "solution": "Un score d'accessibilité par commune (et par quartier dans les grandes villes) qui croise : le taux d'ERP accessibles (Acceslibre), la densité de structures medico-sociales (FINESS), la couverture en transports adaptes, la présence de professionnels de santé, les équipements publics accessibles. Le score est decompose en sous-scores : mobilité, santé, commerces/services, loisirs, accompagnement medico-social. Chaque commune a une fiche détaillée avec carte, liste des lieux accessibles, et comparaison avec les communes voisines. Classement national et départemental des communes les plus accessibles.",
+  "uniqueValue": "Premier score composite d'accessibilité handicap par commune en France, croisant données open data (Acceslibre, FINESS, transports) en un indicateur actionnable. Aucun équivalent n'existe.",
+  "mvpScope": "Score d'accessibilité pour les 100 plus grandes villes françaises. Sous-scores : ERP accessibles (Acceslibre), structures medico-sociales (FINESS), professionnels de santé (RPPS). Fiches communes avec carte et détails. Comparateur de communes. Classement des villes les plus accessibles.",
+  "timeToMvp": "10-12 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Collecte et normalisation des données",
+      "description": "Integrer les données Acceslibre (API), FINESS, RPPS. Geocoder et agréger par commune (code INSEE). Definir la méthodologie du score.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline d'import Acceslibre API (ERP accessibles par commune)",
+        "Pipeline d'import FINESS (structures medico-sociales par commune)",
+        "Pipeline d'import RPPS (professionnels de santé par commune)",
+        "Méthodologie de scoring documentee et validee"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Calcul des scores et interface web",
+      "description": "Calculer les scores pour les 100 plus grandes villes. Developper les fiches communes et le classement. Carte interactive.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Algorithme de scoring composite (5 sous-scores)",
+        "Fiches communes avec carte et détails",
+        "Classement national et départemental",
+        "Comparateur de 3 communes côté a cote"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Enrichissement et lancement",
+      "description": "Ajouter les données de transport adapte. Enrichir avec les données communales (PMR, voirie). Lancement presse et communautés.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Intégration données transports adaptes (Navitia/GTFS)",
+        "SEO optimise par ville (ex: 'accessibilité handicap Lyon')",
+        "Communique de presse et outreach médias spécialisés",
+        "Lancement dans les communautés handicap"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Monétisation B2B/B2G",
+      "description": "Proposer aux collectivités un dashboard de leur score avec recommandations d'amélioration. Proposer aux acteurs immobiliers un widget intégrable.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Dashboard collectivités (diagnostic + plan d'action)",
+        "API pour intégration immobilière",
+        "Widget embeddable pour sites d'annonces",
+        "Premiers contrats pilotes collectivités"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les données Acceslibre sont assez riches pour calculer un score fiable",
+      "how": "Interroger l'API Acceslibre pour 10 villes de tailles differentes. Analyser le nombre d'ERP références et la qualité des données d'accessibilité.",
+      "successCriteria": "500+ ERP références dans les villes de 50K+ habitants. Données d'accessibilité renseignées pour 60%+ des ERP."
+    },
+    {
+      "check": "Le score a une valeur perceptible pour les personnes handicapees",
+      "how": "Presenter le concept et un prototype de fiche commune a 15 personnes handicapees et aidants. Demander si c'est utile et si le score correspond a leur perception.",
+      "successCriteria": "80%+ trouvent l'outil utile. 70%+ disent que le score correspond a leur experience de la ville. 60%+ l'auraient utilise avant un déménagement."
+    },
+    {
+      "check": "Les collectivités sont intéressées par un diagnostic d'accessibilité",
+      "how": "Contacter 10 mairies (responsables handicap/accessibilité) et présenter le concept de dashboard.",
+      "successCriteria": "5+ mairies intéressées par un diagnostic. 2+ prêtes à tester un pilote."
+    },
+    {
+      "check": "Le sujet généré de l'intérêt mediatique",
+      "how": "Publier un classement des 20 villes les plus accessibles de France. Envoyer aux médias spécialisés (Faire Face, Yanous, Handicap.fr) et generalistes.",
+      "successCriteria": "3+ reprises mediatiques. 5 000+ visites la première semaine."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Personnes handicapees moteur en fauteuil roulant, pour qui l'accessibilité physique est le critère numéro 1 du choix de vie",
+      "where": "APF France handicap (85 000 adherents, 500 delegations). Groupes Facebook : 'Handicap moteur - vie quotidienne' (10K+), 'Fauteuil roulant et accessibilité' (8K+). Forums : Handimobility.org. Instagram : comptes accessibilité (@accessibilite_partout, @roule_ma_poule).",
+      "howToReach": "Partenariat avec APF France handicap pour relayer le classement. Publication du top 20 villes accessibles dans les communautés. Challenge sur les réseaux : 'Quelle note obtient votre ville ?'"
+    },
+    {
+      "who": "Familles avec un enfant handicape qui choisissent ou vivre en fonction des services disponibles (IME, SESSAD, professionnels spécialisés)",
+      "where": "Groupes Facebook : 'Parents d'enfants handicapes' (30K+), 'Scolarisation et handicap' (15K+). UNAPEI réseau local. APF sections familles.",
+      "howToReach": "Publier des comparatifs de villes pour les familles. Partenariat avec UNAPEI pour relayer auprès des familles en recherche."
+    },
+    {
+      "who": "Élus et responsables accessibilité des collectivités qui doivent rendre des comptes sur l'accessibilité de leur territoire (Ad'AP, loi 2005)",
+      "where": "Association des maires de France. Congres des maires. Salon Autonomic. LinkedIn groupes 'accessibilité collectivités'. DGS et DGA des villes moyennes.",
+      "howToReach": "Envoyer le diagnostic gratuit de leur commune. Proposer une présentation en commission accessibilité. Présence au Congres des maires (stand ou conference)."
+    }
+  ],
+  "pricingStrategy": "Freemium B2C + B2G. Consultation des scores et fiches communes gratuite pour tous. Dashboard collectivités Premium a 300 euros/mois : diagnostic détaillé, benchmark vs communes comparables, plan d'action, suivi des progres, export pour rapports Ad'AP. API pour acteurs immobiliers a 200 euros/mois : score d'accessibilité par adresse intégrable dans les annonces. Label 'Ville accessible' pour les communes atteignant un score minimum : 500 euros/an (valeur communication).",
+  "pathTo10kMrr": "20 collectivités a 300 euros/mois = 6 000 euros + 10 API immobilier a 200 euros/mois = 2 000 euros + 10 labels 'Ville accessible' a 500 euros/an (42 euros/mois) = 420 euros + sponsoring classement annuel = 2 000 euros/mois. Total : 10 420 euros/mois. Atteignable en 14-18 mois. Il y a 35 000 communes en France dont 1 000+ de plus de 10 000 habitants avec un referent accessibilité. La loi de 2005 oblige les communes a etre accessibles = besoin de suivi.",
+  "techStack": {
+    "frontend": "Next.js 14, Tailwind CSS, Leaflet pour la cartographie, Chart.js pour les visualisations de scores",
+    "backend": "Next.js API Routes, Node.js",
+    "database": "PostgreSQL avec PostGIS",
+    "hosting": "Vercel + Supabase",
+    "apis": [
+      "API Acceslibre (accessibilité des ERP)",
+      "API FINESS (data.gouv.fr)",
+      "RPPS (data.gouv.fr)",
+      "API Adresse (adresse.data.gouv.fr)",
+      "API Navitia/GTFS (transports en commun)",
+      "API INSEE (données communales)"
+    ],
+    "notes": "Acceslibre est une API publique maintenue par la DINUM avec une bonne couverture (250K+ ERP). Le score doit etre transparent : méthodologie publiée et critiquable. Les données de transport sont les plus difficiles a obtenir de manière uniforme (pas de standard national). Commencer sans les transports puis les ajouter progressivement."
+  },
+  "risks": [
+    {
+      "risk": "Couverture inegale d'Acceslibre : certaines villes bien documentees, d'autres peu. Le score reflété la couverture plus que l'accessibilité réelle.",
+      "mitigation": "Afficher un 'indice de confiance' basé sur le nombre d'ERP documentes. Ne pas classer les communes avec moins de X% d'ERP renseignes. Encourager les contributions pour améliorer la couverture."
+    },
+    {
+      "risk": "Reaction negative des communes mal classees (risque politique et juridique)",
+      "mitigation": "Presenter le score comme un outil d'amélioration, pas de sanction. Proposer systematiquement un plan d'action. Méthodologie transparente et critiquable. Droit de réponse pour les mairies."
+    },
+    {
+      "risk": "Difficulté a monétiser auprès des collectivités (cycles de vente longs, budgets contraints)",
+      "mitigation": "Proposer un diagnostic gratuit initial. Cibler les villes moyennes (10K-100K habitants) qui ont un budget mais pas d'équipé dédiée. S'appuyer sur l'obligation légale d'accessibilité (Ad'AP)."
+    },
+    {
+      "risk": "Le score est trop simpliste et ne reflété pas la réalité vecue par les personnes handicapees",
+      "mitigation": "Co-construire la méthodologie avec des personnes handicapees et des associations. Permettre aux utilisateurs de noter et commenter le score de leur commune. Iterer sur la méthodologie."
+    }
+  ],
+  "inspirations": "Walk Score (score de marchabilité des quartiers aux USA, modèle de scoring par adresse). Ville Ideale (scoring de communes en France mais sans accessibilité). Jaccede.com (carte collaborative de lieux accessibles, pionnier en France mais pas de scoring par commune). En UK : AccessAble (ex DisabledGo, guide d'accessibilité détaillé). Numbeo (scoring qualité de vie par ville).",
+  "searchVolume": [
+    {
+      "keyword": "ville accessible handicap",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "recherche de lieu de vie"
+    },
+    {
+      "keyword": "accessibilité handicap ville",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "information"
+    },
+    {
+      "keyword": "ou vivre handicap moteur",
+      "monthlyVolume": "390",
+      "difficulty": "faible",
+      "intent": "recherche de lieu de vie"
+    },
+    {
+      "keyword": "accessibilité ERP",
+      "monthlyVolume": "2 900",
+      "difficulty": "moyenne",
+      "intent": "réglementaire"
+    },
+    {
+      "keyword": "commune accessible PMR",
+      "monthlyVolume": "480",
+      "difficulty": "faible",
+      "intent": "recherche de lieu de vie"
+    },
+    {
+      "keyword": "transport handicap ville",
+      "monthlyVolume": "590",
+      "difficulty": "faible",
+      "intent": "information pratique"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "12M personnes handicapees + 11M aidants + 35 000 communes + acteurs immobiliers. Marché potentiel total : 40M euros/an.",
+    "sam": "1 000 communes de 10K+ habitants avec referent accessibilité + 50 acteurs immobiliers nationaux. Marché adressable : 5M euros/an.",
+    "som": "20 collectivités + 10 API immobilier + 10 labels en année 1-2. Objectif : 130K euros ARR en 18 mois.",
+    "methodology": "TAM basé sur le nombre de personnes handicapees (INSEE) et de communes. SAM basé sur les communes ayant un budget accessibilité et les acteurs immobiliers nationaux. SOM basé sur un taux de conversion de 2% des collectivités ciblees et 5% des acteurs immobiliers contactes."
+  },
+  "competitorDeep": [
+    {
+      "name": "Acceslibre",
+      "url": "https://acceslibre.beta.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "30 000 visites/mois",
+      "reviews": "Outil precieux mais brut : liste les ERP accessibles sans vue d'ensemble. Pas de score par commune. Couverture encore inegale.",
+      "strengths": "Données officielles de qualité. API ouverte. Soutien DINUM. 250K+ ERP références. Crowdsourcing actif.",
+      "weaknesses": "Pas de score agrégat. Pas de comparaison entre communes. Interface orientee ERP individuel, pas vision territoriale. Pas de données transport ou medico-social."
+    },
+    {
+      "name": "Jaccede.com",
+      "url": "https://www.jaccede.com",
+      "pricing": "Gratuit",
+      "trafficEstimate": "15 000 visites/mois",
+      "reviews": "Pionnier de l'accessibilité collaborative en France mais base de données limitee, surtout dans les grandes villes. Pas de scoring.",
+      "strengths": "Communauté engagee. Notoriété dans le milieu handicap. Application mobile. 15 ans d'existence.",
+      "weaknesses": "Base de données limitee (surtout Paris et grandes villes). Pas de scoring. Pas de vue par commune. Modèle économique fragile (associatif)."
+    },
+    {
+      "name": "Ville Ideale",
+      "url": "https://www.ville-ideale.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "200 000 visites/mois",
+      "reviews": "Tres populaire pour comparer les communes mais aucun critère d'accessibilité handicap. Avis subjectifs des habitants.",
+      "strengths": "Forte notoriété. Bonne couverture géographique. UX simple et efficace.",
+      "weaknesses": "Zero critère accessibilité handicap. Avis uniquement subjectifs. Pas de données open data. Modèle publicitaire."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Reutilisation des données Acceslibre",
+      "status": "ok",
+      "detail": "Acceslibre est un service public numérique avec API ouverte. Données sous licence ouverte Etalab, reutilisation libre y compris commerciale.",
+      "source": "acceslibre.beta.gouv.fr, licence ouverte 2.0"
+    },
+    {
+      "topic": "Publication de classements de communes",
+      "status": "attention",
+      "detail": "La publication d'un classement peut etre percu comme diffamatoire par les communes mal classees. La méthodologie doit etre transparente, objective et reproductible. Droit de réponse a prevoir.",
+      "source": "Loi du 29 juillet 1881 sur la liberté de la presse, jurisprudence classements"
+    },
+    {
+      "topic": "Obligation d'accessibilité de l'outil lui-meme",
+      "status": "attention",
+      "detail": "Un outil destiné aux personnes handicapees se doit d'etre exemplaire en matière d'accessibilité numérique (RGAA niveau AA). Non-respect = incoherence reputationnelle grave.",
+      "source": "RGAA 4.1, loi du 11 février 2005"
+    },
+    {
+      "topic": "Reutilisation données FINESS et RPPS",
+      "status": "ok",
+      "detail": "Données open data sous licence ouverte, reutilisation libre.",
+      "source": "data.gouv.fr, licence ouverte 2.0"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages 'accessibilité [ville]', classements)",
+      "cacEstimate": "3 euros",
+      "conversionRate": "2% (visiteur -> consultation complété d'une fiche commune)",
+      "ltv": "0 euros (utilisateur gratuit, valeur PR et volume)",
+      "ltvCacRatio": "N/A - trafic gratuit pour créer la notoriété"
+    },
+    {
+      "channel": "Relations presse (classement annuel des villes accessibles)",
+      "cacEstimate": "500 euros (temps de redaction + diffusion)",
+      "conversionRate": "N/A (notoriété)",
+      "ltv": "50 000 euros (valeur mediatique estimée)",
+      "ltvCacRatio": "100"
+    },
+    {
+      "channel": "Demarchage collectivités (email + telephone + demos)",
+      "cacEstimate": "1 500 euros (cycle de vente 2-3 mois)",
+      "conversionRate": "5% (contact -> contrat)",
+      "ltv": "3 600 euros (300 euros/mois x 12 mois)",
+      "ltvCacRatio": "2.4"
+    },
+    {
+      "channel": "Partenariats associations handicap (APF, UNAPEI)",
+      "cacEstimate": "0 euros",
+      "conversionRate": "N/A (trafic + légitimité)",
+      "ltv": "N/A",
+      "ltvCacRatio": "Infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 55,
+      "detail": "3.1K recherches/mois cumulees ('ville accessible handicap' 880/mois, 'accessibilité handicap ville' 720/mois). TAM: 12M personnes. Cibles: Personnes handicapees moteur en, Familles avec un enfant, Élus et responsables accessibilité."
+    },
+    "feasibility": {
+      "score": 15,
+      "detail": "MVP en 10-12 semaines. 6 APIs a integrer (API Acceslibre, API FINESS, RPPS). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "Objectif 10K MRR en 14-18 mois. SOM: 130K eur/an. Pricing 200-500 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: Acceslibre, Jaccede.com, Ville Ideale. Leader: Acceslibre (30 000 visites/mois). Faiblesse principale: Pas de score agrégat."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Publication de classements de communes, Obligation d'accessibilité de l'outil lui-meme."
+    },
+    "overall": {
+      "score": 55,
+      "detail": "Point fort: marché (88/100). Point faible: faisabilité (15/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}

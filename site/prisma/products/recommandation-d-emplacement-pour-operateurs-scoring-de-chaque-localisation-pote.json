@@ -1,0 +1,301 @@
+{
+  "productSlug": "recommandation-d-emplacement-pour-operateurs-scoring-de-chaque-localisation-pote",
+  "oneLiner": "Scoring de chaque emplacement potentiel pour opérateurs de bornes EV : trafic, concurrence, ROI estimé en un clic.",
+  "problem": "Un opérateur de bornes investit 50-150K EUR par station rapide. Choisir le mauvais emplacement = bornes sous-utilisees pendant des années. Les décisions sont basees sur l'intuition et des études ad hoc. Aucun outil standardise ne permet de comparer objectivement 50 emplacements potentiels et choisir les 5 meilleurs.",
+  "solution": "Un moteur de scoring qui attribué une note de 0 a 100 a chaque emplacement potentiel en croisant : trafic routier journalier (CEREMA), VE immatricules dans un rayon de 20km, bornes concurrentes dans un rayon de 5km, proximité commerces/restaurants (temps d'attente = consommation), accessibilité route, projection croissance VE. L'opérateur uploade ses emplacements candidats et obtient un classement avec ROI estimé.",
+  "uniqueValue": "Outil de décision d'investissement, pas juste une carte. Le ROI estimé (sessions/jour x prix/kWh x marge) transforme une décision subjective en business case chiffre. Aucun outil ne combine toutes ces données publiques en scoring actionnable.",
+  "mvpScope": "Scoring sur axes routiers (autoroutes + nationales). 5 critères : trafic, bornes concurrentes, VE immatricules, commerces proches, taille parking. Scoring unitaire (adresse) ou batch (CSV upload 50 adresses). Détail du score et ROI estimé.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Co-construction avec opérateurs",
+      "description": "Workshops avec 3 opérateurs pour comprendre leurs critères de décision, process interne, et format de livrable ideal. Co-construire le scoring.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "3 workshops opérateurs",
+        "Scoring co-construit",
+        "Format livrable valide",
+        "1 LOI"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Scoring opérationnel axes routiers",
+      "description": "Pipeline croisant IRVE, comptages routiers, immatriculations VE, POI commerces (OSM). Algorithme de scoring. Interface batch (CSV upload). Rapport par emplacement.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Pipeline 5 sources geospatiales",
+        "Algorithme scoring 0-100",
+        "Interface batch CSV",
+        "Rapport PDF par emplacement avec ROI"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Lancement et premiers clients",
+      "description": "Deploiement auprès des 3 opérateurs du workshop. Scoring gratuit de 20 emplacements. Conversion en contrat.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "3 opérateurs payants",
+        "60 emplacements scores",
+        "Feedback pour V2"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Extension urbain et API",
+      "description": "Ajouter scoring urbain (centres commerciaux, parkings relais, coproprietes). API pour intégration CRM opérateurs. Plans d'urbanisme et zones d'activité.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Scoring urbain",
+        "API RESTful",
+        "8 clients opérateurs",
+        "Intégration CRM pilote"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les opérateurs evaluent formellement les emplacements avant d'investir",
+      "how": "Entretiens avec les directeurs déploiement de 5 opérateurs. Comprendre leur process de décision.",
+      "successCriteria": "4/5 confirment un processus formel (meme artisanal) et un budget études > 50K EUR/an"
+    },
+    {
+      "check": "Le scoring est correle avec l'utilisation réelle des bornes",
+      "how": "Scorer 50 stations existantes et comparer avec les données d'utilisation (ChargeMap stats ou opérateurs)",
+      "successCriteria": "Correlation > 0.6 entre le score et le nombre de sessions/jour"
+    },
+    {
+      "check": "Le modèle de ROI est credible pour les opérateurs",
+      "how": "Presenter des estimations de ROI a 3 opérateurs et comparer avec leurs chiffres réels",
+      "successCriteria": "Écart ROI estimé vs réel < 30% pour 2/3 des stations testees"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Opérateurs de bornes mid-market en expansion (50-500 bornes : Power Dot, Allego, Last Mile, Bump)",
+      "where": "Salons Electric Road, Power Summit, LinkedIn",
+      "howToReach": "Ils grandissent vite sans data team mature. Proposer un outil cle en main avec scoring gratuit de 20 de leurs emplacements."
+    },
+    {
+      "who": "Energeticiens lancant des offres IRVE (Engie, EDF, TotalEnergies)",
+      "where": "Services mobilité électrique des grands groupes, LinkedIn, conferences énergie",
+      "howToReach": "POC gratuit sur un territoire. Les grands groupes testent des outils en pilote."
+    },
+    {
+      "who": "Sociétés d'autoroute (Vinci, Eiffage, Sanef)",
+      "where": "ASFA (association des sociétés d'autoroute), contacts directs",
+      "howToReach": "Les concessions ont l'obligation de déployer des bornes. Scoring de toutes leurs aires de service."
+    }
+  ],
+  "pricingStrategy": "Plan Startup Opérateur a 1 499 EUR/mois (50 scorings/mois, 1 région, rapport détaillé). Plan Pro Opérateur a 2 999 EUR/mois (200 scorings/mois, national, API, ROI estimé). Plan Enterprise sur devis (illimité, multi-pays, accompagnement). Pricing élève car le coût d'une mauvaise implantation est 100K+ EUR.",
+  "pathTo10kMrr": "3 opérateurs Pro x 2 999 EUR = 8 997 EUR + 1 Startup x 1 499 EUR = 1 499 EUR = 10 496 EUR MRR avec 4 clients. Les opérateurs levent des dizaines de millions, 3K EUR/mois est negligeable vs le coût d'une mauvaise implantation. Timeline : 8-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS + Deck.gl",
+    "backend": "Next.js API Routes + Python (scikit-learn scoring, GeoPandas geospatial)",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + Hetzner VPS (calculs lourds) + GitHub Actions",
+    "apis": [
+      "IRVE consolide (data.gouv.fr)",
+      "Comptages CEREMA",
+      "Immatriculations VE (data.gouv.fr)",
+      "OpenStreetMap (POI commerces)",
+      "API BAN",
+      "Stripe"
+    ],
+    "notes": "Scoring = regression entrainee sur stations existantes (utilisation ChargeMap). ROI = sessions_estimees x prix_moyen x taux_utilisation. Calculs geospatiaux lourds (buffers, intersections) sur VPS dédié."
+  },
+  "risks": [
+    {
+      "risk": "Les opérateurs ont des contraintes foncières (bail, propriétaire) qui priment sur le scoring",
+      "mitigation": "Le scoring sert a prioriser les opportunités foncières existantes. Format batch : l'opérateur uploade ses 50 opportunités et les classe."
+    },
+    {
+      "risk": "Les données de trafic CEREMA sont trop macro pour un scoring précis",
+      "mitigation": "Completer avec OSM (type de route, nombre de voies) et POI (zones commerciales = proxy trafic). Afficher un intervalle de confiance."
+    },
+    {
+      "risk": "Le marché est petit (30-50 opérateurs en France) et cyclique",
+      "mitigation": "Etendre a l'Europe (Benelux, Espagne, Italie ont des données ouvertes similaires). Diversifier vers collectivités et foncières."
+    }
+  ],
+  "inspirations": "Placer (ex-SafeGraph) pour le foot traffic analytics. GeoIQ pour le scoring de localisation retail. NREL AFDC Station Locator (US). En France, aucun outil spécialisé scoring IRVE n'existe.",
+  "searchVolume": [
+    {
+      "keyword": "scoring emplacement borne recharge",
+      "monthlyVolume": "400",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ou installer borne recharge électrique",
+      "monthlyVolume": "5 400",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "étude implantation IRVE",
+      "monthlyVolume": "900",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "rentabilité borne recharge électrique",
+      "monthlyVolume": "3 600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "opérateur borne recharge déploiement",
+      "monthlyVolume": "1 800",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 M EUR (études de faisabilité et outils de planification pour le déploiement des 270K bornes manquantes d'ici 2030, a raison de 1-2% du coût d'installation)",
+    "sam": "50 M EUR (scoring et outils de décision pour les 30+ opérateurs mid-market et grands groupes en France)",
+    "som": "1,2 M EUR (18 mois, 4-8 opérateurs clients a 1,5-3K EUR/mois)",
+    "methodology": "TAM basé sur le marché des études de localisation (1-2% du budget déploiement total IRVE). SAM restreint aux opérateurs necessitant un outil de scoring. SOM basé sur penetration de 15-25% des opérateurs mid-market."
+  },
+  "competitorDeep": [
+    {
+      "name": "Chargemap Business",
+      "url": "https://business.chargemap.com",
+      "pricing": "Sur devis, solutions B2B pour opérateurs",
+      "trafficEstimate": "50K visites/mois (section business)",
+      "reviews": "N/A B2B",
+      "strengths": "Données d'utilisation reelles des bornes (sessions, fréquentation). Marque reconnue. Partenariats avec opérateurs existants.",
+      "weaknesses": "Pas de scoring prédictif. Pas de croisement trafic routier. Données limitees aux bornes existantes, pas aux emplacements potentiels."
+    },
+    {
+      "name": "Cabinets de conseil ad hoc (Sia Partners, Wavestone)",
+      "url": "N/A",
+      "pricing": "20-80K EUR par étude d'implantation",
+      "trafficEstimate": "N/A",
+      "reviews": "N/A",
+      "strengths": "Expertise approfondie, crédibilité auprès des grands groupes, prise en compte de facteurs qualitatifs",
+      "weaknesses": "Coût tres élève, délai 2-6 mois, pas d'outil scalable, résultats statiques et non actualises"
+    },
+    {
+      "name": "NREL AFDC (US, référence)",
+      "url": "https://afdc.energy.gov",
+      "pricing": "Gratuit (outil federal americain)",
+      "trafficEstimate": "500K visites/mois",
+      "reviews": "Référence US",
+      "strengths": "Outil complet de localisation et d'analyse du déploiement aux US. Référence pour le secteur.",
+      "weaknesses": "Non applicable a la France. Pas de scoring personnalise par opérateur. Outil institutionnel, pas commercial."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données IRVE open data",
+      "status": "ok",
+      "detail": "Données IRVE consolidees disponibles en licence ouverte sur data.gouv.fr. Reutilisation commerciale autorisee.",
+      "source": "data.gouv.fr"
+    },
+    {
+      "topic": "Données de trafic routier",
+      "status": "ok",
+      "detail": "Comptages routiers CEREMA publiés en open data. Utilisables pour scoring commercial.",
+      "source": "CEREMA / data.gouv.fr"
+    },
+    {
+      "topic": "Données d'immatriculation VE",
+      "status": "ok",
+      "detail": "Immatriculations VE par département disponibles en open data, permettant d'estimer la demande locale.",
+      "source": "data.gouv.fr"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Scoring gratuit 20 emplacements (outbound)",
+      "cacEstimate": "600-1 000 EUR",
+      "conversionRate": "20-30% des POC",
+      "ltv": "36 000 EUR (plan Pro 2 999 EUR/mois x 12 mois)",
+      "ltvCacRatio": "36-60x"
+    },
+    {
+      "channel": "LinkedIn Ads cible directeurs déploiement",
+      "cacEstimate": "1 500-2 500 EUR",
+      "conversionRate": "1-2%",
+      "ltv": "36 000 EUR",
+      "ltvCacRatio": "14-24x"
+    },
+    {
+      "channel": "Salons EV (Electric Road, AVERE)",
+      "cacEstimate": "3 000-5 000 EUR",
+      "conversionRate": "8-12% des leads",
+      "ltv": "36 000 EUR",
+      "ltvCacRatio": "7-12x"
+    },
+    {
+      "channel": "Partenariat sociétés d'autoroute",
+      "cacEstimate": "1 000-2 000 EUR",
+      "conversionRate": "10-20%",
+      "ltv": "50 000 EUR+ (contrats enterprise)",
+      "ltvCacRatio": "25-50x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets vérifiés via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "1.3K recherches/mois cumulees ('étude implantation IRVE' 900/mois, 'scoring emplacement borne recharge' 400/mois). TAM: 500 M EUR. Cibles: Opérateurs de bornes mid-market, Energeticiens lancant des offres, Sociétés d'autoroute."
+    },
+    "feasibility": {
+      "score": 58,
+      "detail": "MVP en 6 semaines. 6 APIs a integrer (IRVE consolide, Comptages CEREMA, Immatriculations VE). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 85,
+      "detail": "4 clients a 999 EUR pour demarrer. Objectif 10K MRR en 8-12 mois. SOM: 1,2 M EUR/an. Pricing 499-999 EUR."
+    },
+    "competition": {
+      "score": 65,
+      "detail": "3 concurrents identifies: Chargemap Business, Cabinets de conseil ad hoc (Si, NREL AFDC (US, référence). Leader: Chargemap Business (50K visites/mois (section business)). Faiblesse principale: Pas de scoring prédictif."
+    },
+    "legal": {
+      "score": 92,
+      "detail": "3 points vérifiés, tous OK. Données sous licence ouverte sur."
+    },
+    "overall": {
+      "score": 71,
+      "detail": "Point fort: legal (92/100). Point faible: faisabilité (58/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

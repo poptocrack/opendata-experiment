@@ -1,0 +1,170 @@
+{
+  "id": "mobilite-electrique",
+  "rank": 10,
+  "title": "Intelligence mobilité électrique",
+  "slug": "mobilite-electrique",
+  "sector": "transport",
+  "tagline": "Exploiter la base IRVE (411 datasets, bornes de recharge) + trafic + cadastre pour optimiser le déploiement des bornes",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "Opérateurs de bornes, collectivités, foncières",
+  "monetization": "SaaS 199-499/mois",
+  "context": "411 datasets sur les bornes de recharge électrique et ~30K visites/an sur la base IRVE nationale. Le marché du vehicule électrique explose. Les opérateurs de bornes (Izivia, Allego, TotalÉnergies) et les collectivités cherchent où installer de nouvelles bornes. Croise avec le cadastre (parkings disponibles), le trafic routier, et la démographie, on peut prédire les meilleurs emplacements. Les foncières (centrès commerciaux, bureaux) veulent aussi savoir où installer des bornes pour attirer des clients.",
+  "signals": [
+    {
+      "label": "Datasets IRVE",
+      "value": "411 datasets",
+      "detail": "Enorme volume de données sur les bornes de recharge"
+    },
+    {
+      "label": "Visites IRVE nationale",
+      "value": "~30K/an",
+      "detail": "Demande croissanté avec l'essor des VE"
+    },
+    {
+      "label": "Croissance VE",
+      "value": "+25%/an",
+      "detail": "Part de marché des VE en forte croissance en France"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5448d3e0c751df01f85d0572",
+      "name": "Base nationale IRVE",
+      "description": "Toutes les bornes de recharge : localisation, puissance, opérateur, disponibilité.",
+      "visits": "~30K/an",
+      "downloads": "~20K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "5ea1add4a5a7dac3af82310a",
+      "name": "Base nationale des lieux de stationnement",
+      "description": "Tous les parkings de France avec accèssibilité — pour identifier les emplacements de bornes.",
+      "visits": "~5K/an",
+      "downloads": "~2K/an",
+      "updateFrequency": "Regulier"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Adresse (BAN)",
+      "description": "Géocodage des emplacements potentiels.",
+      "baseUrl": "https://data.geopf.fr/geocodage/"
+    }
+  ],
+  "productIdeas": [
+    "Carte des zones blanches : où il manque des bornes de recharge vs où il y a du trafic VE",
+    "Recommandation d'emplacement pour opérateurs : scoring de chaque localisation potentielle",
+    "Dashboard collectivités : couverture en bornes de leur territoire + benchmark vs communes similaires",
+    "Outil pour foncières : ROI d'installation de bornes sur leurs parkings (trafic estimé, revenus)"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Opérateurs de bornes",
+      "priceRange": "499/mois"
+    },
+    {
+      "segment": "Collectivités",
+      "priceRange": "199/mois"
+    },
+    {
+      "segment": "Foncieres / centrès commerciaux",
+      "priceRange": "299/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Chargemap",
+      "weakness": "App utilisateur, pas d'outil B2B d'aide au déploiement"
+    },
+    {
+      "name": "Gireve",
+      "weakness": "Interopérabilite technique, pas d'intelligence géographique"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "411 datasets IRVE représentent la base de données bornes la plus exhaustive de France — avantage informationnel clair",
+      "Le marché VE croit de +25%/an — la demande de bornes suit mécaniquement",
+      "Le croisement IRVE + cadastre + trafic pour recommander des emplacements est un différénciateur technique fort",
+      "Les tickets moyens B2B sont élevés (199-499 EUR/mois) — quelques dizaines de clients suffisent pour la rentabilité"
+    ],
+    "weaknesses": [
+      "Les données IRVE sont souvent incompletes ou obsolètes — bornes en panne non signalees, puissances incorrectes",
+      "Les données de trafic routier ne sont pas homogenes sur tout le territoire — zones blanches en rural",
+      "Le marché B2B des opérateurs de bornes est concentre (5-6 gros acteurs) — risque de dépendance client",
+      "La recommandation d'emplacement nécessite aussi des données privées (loyers, disponibilité foncière) non open data"
+    ],
+    "opportunities": [
+      "L'objectif gouvernemental de 400K bornes en 2030 (vs 120K aujourd'hui) crée une croissance garantie du marché",
+      "Les foncières et centrès commerciaux n'ont aucun outil pour évaluer le ROI d'installation de bornes sur leurs parkings",
+      "Les collectivités doivent planifier leur schema directeur de mobilité électrique — obligation PCAET",
+      "Le déploiement des bornes rapides (150kW+) sur autoroute ouvre un nouveau segment de localisation premium"
+    ],
+    "threats": [
+      "TotalÉnergies, Engie et EDF développent leurs propres outils d'intelligence de déploiement en interne",
+      "Chargemap pourrait pivoter vers le B2B avec leurs données communautaires de disponibilité en temps réel",
+      "L'AFIREV (association filière IRVE) pourrait développer un outil sectoriel pour ses membres",
+      "La standardisation européenne (AFIR) va imposer des ratios bornes/VE qui réduisent le besoin d'optimisation"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Alexandre",
+      "role": "Directeur du développement chez un opérateur de bornes (Allego France), 15 personnes, deploie 200 bornes/an",
+      "age": "37 ans",
+      "context": "Doit identifier les meilleurs emplacements pour deployer 200 nouvelles bornes par an en France. Chaque borne représente un investissement de 30-80K EUR. Un mauvais emplacement = 10 ans de pertes. Il analyse actuellement les emplacements manuellement avec Google Maps et des données internes.",
+      "painPoints": [
+        "Passe 2 jours par emplacement potentiel à croiser manuellement trafic, concurrence et foncier disponible",
+        "A installe 15 bornes sur des emplacements peu fréquentés — taux d'utilisation sous 5% vs 15% vise",
+        "N'a pas de vue consolidée de la concurrence (Tesla Superchargers, Ionity, TotalÉnergies) à proximité de ses cibles"
+      ],
+      "currentSolution": "Google Maps + fichier IRVE téléchargé en CSV + comptages routiers régionaux + prospection terrain",
+      "budget": "350-500 EUR/mois — le coût est négligeable vs un mauvais investissement de 50K EUR par borne",
+      "channels": [
+        "AFIREV (association filière IRVE)",
+        "Salon Power2Drive Europe",
+        "Groupe LinkedIn 'Mobilité électrique France'",
+        "Conference AVERE-France"
+      ]
+    },
+    {
+      "name": "Isabelle",
+      "role": "Directrice RSE et services chez une foncière commerciale (Klepierre), gère 40 centrès commerciaux en France",
+      "age": "49 ans",
+      "context": "Ses 40 centrès commerciaux ont des parkings avec un potentiel de 200+ bornes au total. Les enseignes locataires demandent des bornes pour attirer les clients VE. Elle doit arbitrer ou investir en priorite et sous quel modèle (investissement propre ou opérateur tiers).",
+      "painPoints": [
+        "N'a aucun outil pour estimer le nombre de VE fréquentant chaque centre commercial",
+        "Ne peut pas comparer le taux d'équipement en bornes de ses centrès vs ceux de ses concurrents (Unibail, Carmila)",
+        "Le calcul du ROI d'installation (revenus de recharge vs investissement) depend de données qu'elle n'a pas"
+      ],
+      "currentSolution": "Etude de marché ponctuelle commandee à un cabinet (20-40K EUR) + benchmark interne entre ses centrès",
+      "budget": "250-400 EUR/mois pour un dashboard couvrant ses 40 centrès — remplace des études ponctuelles",
+      "channels": [
+        "Conseil National des Centrès Commerciaux (CNCC)",
+        "Salon MAPIC Cannes",
+        "Fédération des Sociétés Immobilières (FSIF)",
+        "Groupe LinkedIn 'Immobilier commercial France'"
+      ]
+    },
+    {
+      "name": "Yann",
+      "role": "Charge de mission mobilité durable à Rennes Metropole (450K habitants, 43 communes)",
+      "age": "34 ans",
+      "context": "Doit piloter le schema directeur de mobilité électrique de la metropole. Objectif : tripler le nombre de bornes publiques en 3 ans (de 150 à 450). Doit arbitrer les emplacements entre communes, anticiper la demande et dialoguer avec les opérateurs privés.",
+      "painPoints": [
+        "Les 43 maires veulent chacun des bornes dans leur commune — il doit arbitrer avec des critères objectifs",
+        "N'a aucune projection de la demande VE par quartier pour dimensionner le déploiement",
+        "Doit produire un schema directeur en 6 mois sans outil de simulation ni de benchmark metropolitain"
+      ],
+      "currentSolution": "Données IRVE en CSV + comptage VE aux immatriculations (prefecture) + benchmark d'autres metropoles par telephone",
+      "budget": "150-250 EUR/mois — budget transition écologique de la metropole",
+      "channels": [
+        "GART (Groupement des Autorites Responsables de Transport)",
+        "Salon EVER Monaco",
+        "France Mobilités (programme gouvernemental)",
+        "Réseau des collectivités AVERE-France"
+      ]
+    }
+  ]
+}

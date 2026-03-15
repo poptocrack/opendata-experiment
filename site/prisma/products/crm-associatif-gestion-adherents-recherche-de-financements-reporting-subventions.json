@@ -1,0 +1,312 @@
+{
+  "productSlug": "crm-associatif-gestion-adherents-recherche-de-financements-reporting-subventions",
+  "oneLiner": "CRM tout-en-un pour associations : adhérents, financements, reporting subventions.",
+  "problem": "Les associations gèrent leurs adhérents sur Excel, leurs subventions dans des dossiers papier, et leur reporting sur Word. Aucun outil n'est adapte à leurs besoins spécifiques : suivi des cotisations, renouvellements, assemblee générale, reporting aux financeurs, bilan d'activité. Les CRM génériques (HubSpot, Salesforce) sont trop complexes et trop chers.",
+  "solution": "Un CRM concu spécifiquement pour les associations francaises : gestion des adhérents et cotisations, suivi des demandes de subventions (pipeline), reporting automatise pour les financeurs (bilan d'activité, compte de résultat simplifie), et intégration avec HelloAsso pour les paiements. Pre-remplissage depuis le RNA.",
+  "uniqueValue": "Le seul CRM qui combine gestion des adhérents, pipeline de financements, ET reporting subventions dans un outil adapte au contexte associatif francais. Integration RNA + HelloAsso + templates CERFA/reporting officiels.",
+  "mvpScope": "App web avec : import/gestion des adhérents (nom, cotisation, statut), pipeline de subventions (demande, instruction, versement), templates de reporting (bilan d'activité, CERFA subvention), tableau de bord associatif, export PDF/Excel.",
+  "timeToMvp": "10 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Gestion des adhérents",
+      "description": "Module adhérents avec import CSV/Excel, fiche adhérent, suivi des cotisations, relances automatiques, tableau de bord.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Import CSV/Excel des adhérents",
+        "Fiche adhérent avec historique cotisations",
+        "Relances automatiques par email",
+        "Tableau de bord adhérents/cotisations"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Pipeline subventions et reporting",
+      "description": "Kanban des demandes de subventions, suivi des deadlines, templates de reporting CERFA et bilan d'activité.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline kanban des demandes de subventions",
+        "Calendrier des deadlines",
+        "Templates CERFA subvention pre-remplis",
+        "Bilan d'activité automatise",
+        "Export PDF/Excel"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Integrations et lancement",
+      "description": "Integration HelloAsso, inscription par RNA, déploiement, et acquisition des premiers clients.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Integration HelloAsso (import adhérents/paiements)",
+        "Inscription par numéro RNA (pré-remplissage)",
+        "Landing page et onboarding",
+        "10 associations beta testeurs"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les associations utilisent effectivement Excel et en souffrent",
+      "how": "Sondage auprès de 50 associations via les maisons des associations. Questions sur les outils actuels et les irritants.",
+      "successCriteria": "70%+ utilisent Excel/Google Sheets, 60%+ expriment une frustration claire."
+    },
+    {
+      "check": "Le reporting subventions est un pain point suffisant pour payer",
+      "how": "Interviewer 15 tresoriers/presidents d'associations employeuses sur leur procèssus de reporting.",
+      "successCriteria": "10+ confirment passer plus de 10h/an sur le reporting, 8+ seraient prêts a payer pour l'automatiser."
+    },
+    {
+      "check": "L'intégration HelloAsso est techniquement faisable",
+      "how": "Tester l'API HelloAsso (si disponible) où le webhook pour importer les adhérents et paiements.",
+      "successCriteria": "Import fonctionnel des adhérents et cotisations depuis HelloAsso en < 1 semaine de dev."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Associations sportives avec 50-500 adhérents",
+      "where": "Comites départementaux sportifs (CDOS), groupes Facebook clubs sportifs, forums sportifs locaux",
+      "howToReach": "Partenariat CDOS pour diffusion. Presentation lors des AG de clubs. Article dans les newsletters federales."
+    },
+    {
+      "who": "Associations culturelles et de quartier",
+      "where": "Maisons des associations, mairies (service vie associative), groupes Facebook vie de quartier",
+      "howToReach": "Presentations dans les maisons des associations. Partenariat avec les services vie associative des mairies."
+    },
+    {
+      "who": "Associations employeuses (1-10 salariés) avec obligations de reporting",
+      "where": "DLA (Dispositifs Locaux d'Accompagnement), France Active, CRESS (Chambres Régionales ESS)",
+      "howToReach": "Partenariat DLA : l'outil est recommandé lors des accompagnements. Presence aux rencontres CRESS."
+    }
+  ],
+  "pricingStrategy": "Gratuit : jusqu'a 50 adhérents, 1 utilisateur, fonctionnalités de base. Standard a 15 EUR/mois : jusqu'a 500 adhérents, 3 utilisateurs, pipeline subventions, templates reporting. Pro a 39 EUR/mois : adhérents illimités, utilisateurs illimités, intégrations HelloAsso, support prioritaire, bilan d'activité automatise.",
+  "pathTo10kMrr": "Marché : 300K associations actives avec > 50 adhérents. M1-M3 : 50 gratuits, 15 Standard = 225 EUR MRR. M3-M6 : 200 gratuits, 60 Standard + 10 Pro = 1 290 EUR MRR. M6-M12 : 800 gratuits, 200 Standard + 50 Pro = 4 950 EUR MRR. M12-M18 : bouche a oreille + partenariats tetes de réseau, 500 Standard + 150 Pro = 13 350 EUR MRR. Timeline : ~14-16 mois pour 10K MRR. Le churn attendu est faible (les associations changent rarement d'outil).",
+  "techStack": {
+    "frontend": "Next.js + Tailwind CSS + DnD Kit (kanban)",
+    "backend": "Next.js API Routes + Prisma",
+    "database": "PostgreSQL",
+    "hosting": "Vercel + Supabase",
+    "apis": [
+      "RNA data.gouv.fr",
+      "HelloAsso API",
+      "Stripe (paiements)",
+      "Resend (emails/relances)",
+      "PDFKit (génération PDF)"
+    ],
+    "notes": "HelloAsso est LE service de paiement associatif en France (300K associations). L'intégration est strategique. Budget : ~30 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "HelloAsso developpe ces fonctionnalités en interne",
+      "mitigation": "Se positionnér comme complémentaire (CRM) et non concurrent (paiement). Proposer l'intégration comme valeur ajoutee pour HelloAsso. Diversifier les intégrations (GoCardless, Mollie)."
+    },
+    {
+      "risk": "Le marché associatif à un faible pouvoir d'achat et resiste au SaaS payant",
+      "mitigation": "Tier gratuit généréux pour l'adoption. Prix bas (15 EUR/mois = le prix d'un repas). ROI clair : temps economise sur le reporting > cout de l'outil."
+    },
+    {
+      "risk": "Complexite du produit trop grande pour un solo dev",
+      "mitigation": "MVP strict : adhérents + pipeline subventions seulement. Le reporting et les intégrations viennent en phase 2. Prioriser par la valeur perçue."
+    }
+  ],
+  "inspirations": "AssoConnect (leader actuel mais cher et complex), HelloAsso (paiement mais pas CRM), Notion (utilise par certaines assos comme CRM bricolage). Se positionnér entre AssoConnect (trop cher) et Excel (trop limite).",
+  "searchVolume": [
+    {
+      "keyword": "logiciel association",
+      "monthlyVolume": "6600",
+      "difficulty": "high",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "CRM association",
+      "monthlyVolume": "2400",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "gestion adhérents association",
+      "monthlyVolume": "3600",
+      "difficulty": "medium",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "logiciel gestion association gratuit",
+      "monthlyVolume": "4400",
+      "difficulty": "high",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "reporting subventions association",
+      "monthlyVolume": "390",
+      "difficulty": "low",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR - Marché outils numériques pour les 2M+ associations en France",
+    "sam": "80 millions EUR - Sous-segment CRM et gestion pour les 300K associations actives avec >50 adhérents (budget logiciel moyen 20 EUR/mois)",
+    "som": "750K EUR - 200 Standard a 15 EUR/mois + 50 Pro a 39 EUR/mois, atteignable a M12",
+    "methodology": "TAM = 2M associations x 250 EUR/an budget numérique moyen. SAM = associations structurees (>50 adhérents, source RNA 2025). SOM = pénétration an 1."
+  },
+  "competitorDeep": [
+    {
+      "name": "AssoConnect",
+      "url": "https://www.assoconnect.com",
+      "pricing": "19 EUR/mois (Jeune pousse) a 149 EUR/mois (Sequoia), sur devis pour grands comptes",
+      "trafficEstimate": "200K-400K visites/mois",
+      "reviews": "40K+ associations clientes en 2026, CRM le plus complet du marché associatif",
+      "strengths": "Solution tout-en-un (CRM, comptabilite, site web, dons), 40K clients, forte notoriété, importation CSV, champs personnalisés, gestion RGPD",
+      "weaknesses": "Prix élevé pour les petites associations (19 EUR/mois minimum), interface parfois complexe, pas de matching subventions, pas d'intégration RNA native"
+    },
+    {
+      "name": "Yapla",
+      "url": "https://www.yapla.com",
+      "pricing": "Gratuit (limite) puis à partir de 24 EUR/mois",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Plateforme tout-en-un, partenariats bancaires (LCL, Credit Agricole)",
+      "strengths": "Interface intuitive, offre gratuite, partenariats bancaires pour distribution, bonne couverture fonctionnelle",
+      "weaknesses": "Origine canadienne (moins adapte au contexte francais CERFA/RNA), pas de pipeline subventions, pas de templates reporting CERFA"
+    },
+    {
+      "name": "Ohme",
+      "url": "https://www.ohme.fr",
+      "pricing": "Variable selon budget annuel de l'association",
+      "trafficEstimate": "20K-50K visites/mois",
+      "reviews": "CRM pur, connecte a Mailchimp, HelloAsso, Weezevent",
+      "strengths": "Focus CRM pur, intégrations multiples (Mailchimp, HelloAsso, Weezevent), base de contacts centralisee",
+      "weaknesses": "Pas de gestion comptable, pas de pipeline subventions, pas de templates CERFA, prix opaque"
+    },
+    {
+      "name": "HelloAsso",
+      "url": "https://www.helloasso.com",
+      "pricing": "Gratuit (contributions volontaires des payeurs)",
+      "trafficEstimate": "3M+ visites/mois",
+      "reviews": "400K associations, référence paiement associatif en France",
+      "strengths": "Gratuit, 400K associations, forte adoption, collecte dons/adhésions/billetterie, API",
+      "weaknesses": "Pas de CRM, pas de gestion comptable poussee, pas de pipeline subventions, pas de reporting CERFA"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "RGPD et données adhérents",
+      "status": "attention",
+      "detail": "Le CRM stocke des données personnelles (noms, emails, cotisations). Conformite RGPD obligatoire : registre de traitement, DPO si >250 adhérents, droit de suppression, chiffrement des données.",
+      "source": "RGPD - Obligations responsable de traitement"
+    },
+    {
+      "topic": "Comptabilite associative",
+      "status": "attention",
+      "detail": "Les templates de reporting financier doivent respecter le plan comptable associatif (reglement ANC 2018-06). Ne pas se substituer à un expert-comptable.",
+      "source": "Reglement ANC 2018-06"
+    },
+    {
+      "topic": "Integration HelloAsso",
+      "status": "ok",
+      "detail": "HelloAsso propose une API publique documentée. Integration technique autorisée.",
+      "source": "HelloAsso - Developer API Documentation"
+    },
+    {
+      "topic": "Templates CERFA",
+      "status": "ok",
+      "detail": "Les formulaires CERFA sont des documents publics. Le pré-remplissage automatique est un service a valeur ajoutee autorise.",
+      "source": "Service-public.fr - Formulaires CERFA"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (logiciel association + type)",
+      "cacEstimate": "5-12 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "108 EUR (15 EUR/mois x 7.2 mois rétention)",
+      "ltvCacRatio": "9-22x"
+    },
+    {
+      "channel": "Partenariat CDOS (comites sportifs)",
+      "cacEstimate": "3-8 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "108 EUR",
+      "ltvCacRatio": "14-36x"
+    },
+    {
+      "channel": "Maisons des associations (présentations)",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "8-15%",
+      "ltv": "108 EUR",
+      "ltvCacRatio": "7-22x"
+    },
+    {
+      "channel": "Partenariat DLA (dispositifs d'accompagnement)",
+      "cacEstimate": "2-5 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "280 EUR (39 EUR/mois Pro x 7.2)",
+      "ltvCacRatio": "56-140x"
+    },
+    {
+      "channel": "Content marketing (comparatifs, guides)",
+      "cacEstimate": "3-8 EUR",
+      "conversionRate": "2-4%",
+      "ltv": "108 EUR",
+      "ltvCacRatio": "14-36x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Données sources vérifiées via les APIs publiques (data.gouv.fr). Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "17.4K recherches/mois cumulees ('logiciel association' 6 600/mois, 'logiciel gestion association gratuit' 4 400/mois). TAM: 500 millions EUR. Cibles: Associations sportives avec 50-500, Associations culturelles et de, Associations employeuses."
+    },
+    "feasibility": {
+      "score": 25,
+      "detail": "MVP en 10 semaines. 5 APIs a integrer (RNA, HelloAsso API, Stripe). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 52,
+      "detail": "Objectif 10K MRR en 14-16 mois. SOM: 750K EUR/an. Pricing 15-39 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "4 concurrents identifies: AssoConnect, Yapla, Ohme. Leader: AssoConnect (200K-400K visites/mois). Faiblesse principale: Prix élevé pour les petites associations (19 EUR/mois minimum)."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: RGPD et données adhérents, Comptabilite associative."
+    },
+    "overall": {
+      "score": 51,
+      "detail": "Point fort: demande (68/100). Point faible: faisabilite (25/100). Idee interessante, risques significatifs a mitiger."
+    }
+  }
+}

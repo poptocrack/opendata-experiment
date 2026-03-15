@@ -1,0 +1,161 @@
+{
+  "id": "carbone-reporting",
+  "rank": 15,
+  "title": "Reporting carbone simplifié",
+  "slug": "carbone-reporting",
+  "sector": "environnement",
+  "tagline": "Exploiter la Base Carbone + AGRIBALYSE + données énergie pour automatisér les bilans GES des PME",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "PME soumises au reporting ESG + collectivités",
+  "monetization": "SaaS 99-499/mois",
+  "context": "La Base Carbone de l'ADEME (13K visites) contient les facteurs d'émission pour calculer les bilans GES. La CSRD (directive européenne) va obliger de plus en plus d'entreprises a faire un reporting carbone. Mais les outils existants sont chers (5-50K) et complexes. Croise avec les données de consommation énergie par territoire et les données SIRENE (secteur d'activité), on peut pre-remplir 80% du bilan GES d'une PME automatiquement. Marché en forte croissance réglementaire.",
+  "signals": [
+    {
+      "label": "Base Carbone",
+      "value": "13K visites/an",
+      "detail": "Facteurs d'émission officiels de l'ADEME"
+    },
+    {
+      "label": "CSRD",
+      "value": "Obligation croissanté",
+      "detail": "Directive européenne qui etend le reporting ESG aux PME"
+    },
+    {
+      "label": "Consommation énergie",
+      "value": "46 datasets",
+      "detail": "Données de consommation electricite et gaz par territoire"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "65bd0b310a81ca31f396a59a",
+      "name": "Base Carbone (ADEME)",
+      "description": "Facteurs d'émission de GES pour calculer les bilans carbone.",
+      "visits": "13K/an",
+      "downloads": "3.5K/an",
+      "updateFrequency": "Regulier"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Base Carbone (ADEME)",
+      "description": "Accès aux facteurs d'émission par catégorie d'activité.",
+      "baseUrl": "https://data.ademe.fr/data-fair/api/v1/datasets/base-carboner"
+    },
+    {
+      "name": "API Impact CO2 (ADEME)",
+      "description": "Calcul d'impact carbone pour différentes activités.",
+      "baseUrl": "https://impactco2.fr/api/v1"
+    },
+    {
+      "name": "API AGRIBALYSE",
+      "description": "Impact environnemental des produits agricoles et alimentaires.",
+      "baseUrl": "https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-synthese"
+    }
+  ],
+  "productIdeas": [
+    "Bilan GES automatisé pour PME : pre-remplissage à 80% base sur le secteur NAF + taille + localisation",
+    "Dashboard carbone pour collectivités : émissions du territoire + leviers de reduction",
+    "Simulateur pour décisions business : impact carbone d'un changement de fournisseur/transport/énergie",
+    "Certification carbone simplifiée pour TPE/PME avec génération automatique du rapport BEGES"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "PME (CSRD)",
+      "priceRange": "199/mois"
+    },
+    {
+      "segment": "Cabinets comptables (offre ESG)",
+      "priceRange": "499/mois"
+    },
+    {
+      "segment": "Collectivités",
+      "priceRange": "99/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Greenly",
+      "weakness": "Cher (5K+/an), pas adapte aux TPE"
+    },
+    {
+      "name": "Carbo",
+      "weakness": "Bon produit mais focus grandes entreprises"
+    },
+    {
+      "name": "Bilan GES ADEME (outil officiel)",
+      "weakness": "Outil basique, pas d'automatisation"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "La CSRD rend le reporting carbone obligatoire pour un nombre croissant d'entreprises — marche en croissance reglementaire garantie",
+      "La Base Carbone ADEME est la reference officielle francaise — utiliser ces facteurs d'emission donne une credibilite immediate",
+      "Le pre-remplissage automatique via code NAF + taille SIRENE permet une experience utilisateur 10x plus simple que les concurrents",
+      "Les APIs ADEME (Base Carbone, Impact CO2, AGRIBALYSE) sont gratuites et couvrent la majorite des facteurs d'emission"
+    ],
+    "weaknesses": [
+      "Greenly et Carbo ont deja leve des dizaines de millions et occupent le creneau PME — marche encombre",
+      "Le pre-remplissage par secteur NAF est une approximation — les clients exigeants veulent de la precision",
+      "La reglementation CSRD est complexe et evolue rapidement — cout de veille reglementaire eleve",
+      "Les TPE (cible naturelle du low-cost) ne sont pas encore soumises a la CSRD — marche potentiel reduit a court terme"
+    ],
+    "opportunities": [
+      "Les cabinets comptables cherchent a proposer une offre ESG a leurs clients — canal de distribution B2B2C ideal",
+      "Les donneurs d'ordres exigent le bilan carbone de leurs fournisseurs PME — pression en cascade de la supply chain",
+      "L'obligation du bilan GES pour les collectivites de 50K+ habitants cree un marche B2G complementaire",
+      "Les labels RSE (B Corp, Lucie, ISO 14001) demandent un bilan carbone — motivation hors reglementation"
+    ],
+    "threats": [
+      "Greenly et Carbo pourraient baisser leurs prix pour adresser les TPE et couper l'herbe sous le pied",
+      "L'ADEME pourrait ameliorer son propre outil gratuit de bilan GES et reduire le besoin d'un tiers",
+      "Les logiciels comptables (Pennylane, Indy) pourraient integrer le bilan carbone en fonctionnalite native",
+      "Un retour en arriere politique sur la CSRD (pression des lobbies PME) pourrait reduire le marche adressable"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Stephanie",
+      "role": "Dirigeante d'une PME de cosmetiques bio (22 salaries, 3M EUR de CA) basee a Grasse",
+      "age": "43 ans",
+      "context": "Son principal distributeur (Biocoop) exige desormais un bilan carbone de ses fournisseurs. Elle a aussi un objectif B Corp. N'a aucune competence carbone en interne et les consultants sont hors budget (5-15K EUR).",
+      "painPoints": [
+        "Son distributeur Biocoop exige un bilan carbone sous 6 mois — elle ne sait pas par ou commencer",
+        "Les outils existants (Greenly) sont a 5K EUR/an minimum — trop cher pour sa taille",
+        "Ne comprend pas la methodologie Scope 1/2/3 et ne sait pas quelles donnees collecter en interne"
+      ],
+      "currentSolution": "A demande 3 devis a des consultants carbone (5-15K EUR) et a tente l'outil ADEME mais a abandonne apres 2h",
+      "budget": "150-250 EUR/mois — 10x moins qu'un consultant, justifiable par l'exigence Biocoop",
+      "channels": ["Cosmebio (association cosmetiques bio)", "Salon Natexpo Paris", "Communaute B Corp France", "Groupe LinkedIn 'RSE et PME'"]
+    },
+    {
+      "name": "David",
+      "role": "Expert-comptable associe dans un cabinet de 8 collaborateurs a Montpellier, 150 clients TPE/PME",
+      "age": "50 ans",
+      "context": "Voit arriver la demande de bilans carbone de la part de ses clients. Veut developper une offre ESG/carbone pour fideliser ses clients et augmenter ses honoraires. Cherche un outil simple qu'il peut utiliser pour ses clients sans devenir expert carbone.",
+      "painPoints": [
+        "Ses clients lui demandent 'tu peux faire mon bilan carbone ?' et il doit repondre non aujourd'hui",
+        "Les outils existants sont faits pour les entreprises, pas pour les comptables qui gerent plusieurs clients",
+        "Veut facturer 1500-3000 EUR par bilan carbone client mais a besoin d'un outil qui pre-remplit 80% du travail"
+      ],
+      "currentSolution": "Renvoie ses clients vers des consultants carbone externes — perd l'opportunite de facturer ce service",
+      "budget": "350-500 EUR/mois pour un outil multi-clients qui lui permet de facturer 3-5 bilans/mois a ses clients",
+      "channels": ["Ordre des Experts-Comptables", "Congres ECF", "CJEC (Centre des Jeunes Experts-Comptables)", "Revue Compta Online"]
+    },
+    {
+      "name": "Aurelie",
+      "role": "Responsable developpement durable d'une communaute de communes rurales (25 communes, 35K habitants) dans le Lot",
+      "age": "31 ans",
+      "context": "Doit realiser le bilan GES de la collectivite (obligatoire > 50K agents publics) et le Plan Climat (PCAET). Seule sur le sujet, budget limite, premiere fois qu'elle fait un bilan carbone.",
+      "painPoints": [
+        "C'est son premier bilan GES — la methodologie Bilan Carbone de l'ADEME est un document de 200 pages incomprehensible",
+        "Doit collecter les donnees de 25 communes (chauffage batiments, flotte vehicules, eclairage) — galere logistique",
+        "L'outil ADEME gratuit est tellement basique qu'elle ne sait pas si ses resultats sont corrects"
+      ],
+      "currentSolution": "Outil BEGES ADEME gratuit + tableau Excel de collecte des donnees + formation CNFPT de 2 jours",
+      "budget": "80-120 EUR/mois — budget transition ecologique, validation simple sous 5K EUR/an",
+      "channels": ["ADEME (formation et accompagnement)", "CNFPT (formation agents territoriaux)", "Reseau RARE (agences regionales de l'environnement)", "Groupe LinkedIn 'Transition ecologique des collectivites'"]
+    }
+  ]
+}

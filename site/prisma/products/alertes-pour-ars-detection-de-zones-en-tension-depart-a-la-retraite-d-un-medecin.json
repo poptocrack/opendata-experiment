@@ -1,0 +1,336 @@
+{
+  "productSlug": "alertes-pour-ars-detection-de-zones-en-tension-depart-a-la-retraite-d-un-medecin",
+  "oneLiner": "Un système d'alertes prédictives pour les ARS detectant les zones sur le point de basculer en désert médical suite au départ d'un médecin.",
+  "problem": "Les ARS découvrent les crises d'accès aux soins quand elles arrivent: un médecin part à la retraite, 2 000 patients se retrouvent sans médecin, la presse locale s'empare du sujet, et il faut 18 mois pour attirer un remplaçant. Les ARS n'ont pas d'outil prédictif: elles réagissent au lieu d'anticiper. L'age moyen des généralistes est de 52 ans, 30% ont plus de 60 ans. La vague de départs est prévisible.",
+  "solution": "Un système de monitoring qui croise l'age des médecins (annuaire Ameli/RPPS) avec la densité médicale locale pour identifiér les zones à risque: quand un médecin de 62 ans est le dernier généraliste dans un rayon de 15km, l'ARS doit agir MAINTENANT et pas dans 3 ans. Le système généré des alertes automatiques avec un score d'urgence et des recommandations (lancer un CESP, contacter les facs, proposer des aides).",
+  "uniqueValue": "Aucun outil ne fait de la prediction de déserts médicaux. Les tableaux de bord ARS actuels montrent la situation presente, pas les risques futurs. La dimension alertes automatiques avec priorisation par urgence est unique.",
+  "mvpScope": "Alertes pour les médecins généralistes dans 2 régions pilotes. Score de risque base sur: age du médecin, nombre de médecins dans un rayon de 10km, population desservie, présence d'un succèsseur identifié. Dashboard avec liste des zones à risque classées par urgence. Notifications email hebdomadaires.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin avec les ARS",
+      "description": "Contacter les équipes Accès aux soins de 5 ARS. Presenter le concept et un prototype de rapport d'alerte. Identifier le bon interlocuteur et le procèssus d'achat.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "5 entretiens ARS",
+        "2 lettres d'intention",
+        "Prototype rapport d'alerte",
+        "Processus d'achat identifié"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Système d'alertes sur 2 régions",
+      "description": "Ingestion RPPS/Ameli (age, spécialité, localisation des médecins). Calcul du score de risque par zone. Dashboard avec classement par urgence. Alertes email configurables. Déploiement sur 2 régions pilotes.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Pipeline RPPS/Ameli",
+        "Algorithme de scoring risque",
+        "Dashboard alertes",
+        "Email notifications",
+        "2 régions couvertes"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "2 premières ARS clientes",
+      "description": "Proposer un essai gratuit de 3 mois aux 2 ARS pilotes. Iterer sur le produit en fonction de leurs retours. Formaliser un contrat annuel.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "2 ARS en POC",
+        "Retours utilisateurs intégrés",
+        "2 contrats signes"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Extension nationale et spécialités",
+      "description": "Etendre a toutes les 18 ARS metropolitaines + 5 outre-mer. Ajouter les spécialités critiques (dentistes, ophtalmos, sage-femmes). Integrer les données de formation (internes en cours) pour les projections.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Couverture 18 ARS",
+        "5 spécialités",
+        "Projections avec flux de formation",
+        "8 ARS clientes"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "10K MRR et extension CPAM/mutuelles",
+      "description": "Vendre aux CPAM et mutuelles qui ont les mêmes besoins de planification. API pour intégration dans les SI existants des ARS. Rapports trimestriels automatises.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "12 ARS + 5 CPAM clientes",
+        "API disponible",
+        "Rapports automatises"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les ARS ont-elles un budget pour des outils de veille prédictive?",
+      "how": "Etudier les budgets des ARS (publics) et les marchés passés pour des outils numériques/data. Contacter les directions du numérique des ARS.",
+      "successCriteria": "Au moins 3 ARS sur 5 contactees confirment avoir un budget innovation/numérique de plus de 50K euros/an."
+    },
+    {
+      "check": "Les données d'age des médecins sont-elles accèssibles et fiables?",
+      "how": "Télécharger le RPPS sur data.gouv.fr et vérifier la présence de la date de naissance où de l'année de these (proxy d'age).",
+      "successCriteria": "L'age où un proxy d'age est disponible pour 90%+ des médecins en exercice."
+    },
+    {
+      "check": "Le modèle prédictif est-il pertinent?",
+      "how": "Backtester sur les 5 dernières années: les zones qui sont devenues des déserts médicaux auraient-elles été détectées 3 ans avant?",
+      "successCriteria": "Le modèle détecté 80%+ des zones devenues des déserts médicaux avec au moins 2 ans d'anticipation."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "ARS des régions les plus touchees (Centre-Val de Loire, Bourgogne-Franche-Comte, Normandie)",
+      "where": "Directement via les contacts des directions Accès aux soins et Democratie sanitaire",
+      "howToReach": "Email personnalisé avec un rapport d'alerte gratuit montrant les 10 zones les plus à risque de leur région. Proposer une demo de 30 minutes."
+    },
+    {
+      "who": "Ordres départementaux des médecins",
+      "where": "Annuaire CDOM, conferences ordinales",
+      "howToReach": "Les CDOM suivent les installations et cessations. Leur proposer un outil complémentaire à leur atlas de démographie médicale."
+    },
+    {
+      "who": "CPAM départementales",
+      "where": "Réseau Assurance Maladie, contacts locaux",
+      "howToReach": "Les CPAM gèrent les conventions et ont besoin de planifier. Proposer un POC sur un département."
+    }
+  ],
+  "pricingStrategy": "Plan ARS Région a 999 euros/mois (1 région, toutes spécialités, alertes illimitées, dashboard, export). Plan ARS National a 4 999 euros/mois (toutes régions, API, rapports automatises, support dédié). Plan CPAM/Mutuelle a 599 euros/mois (1 département, alertes, rapports). Les ARS ont des budgets significatifs et la sante est un sujet prioritaire.",
+  "pathTo10kMrr": "8 ARS régionales x 999 euros = 7 992 euros + 4 CPAM x 599 euros = 2 396 euros = 10 388 euros MRR. Avec 18 ARS en France metropolitaine, 8 clientes = 44% de pénétration, atteignable en 12-14 mois avec un cycle de vente de 3-6 mois typique du secteur public.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Recharts + Maplibre",
+    "backend": "Next.js API Routes + Python pour le modèle prédictif et le pipeline data",
+    "database": "PostgreSQL + PostGIS sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions + SendGrid pour les alertes email",
+    "apis": [
+      "RPPS data.gouv.fr",
+      "Annuaire Ameli",
+      "API INSEE populations",
+      "API BAN géocodage",
+      "SendGrid email",
+      "Stripe"
+    ],
+    "notes": "Le modèle prédictif est un scoring simple base sur l'age et la densité, pas du ML complexe. Recalcul mensuel. Les alertes sont envoyees quand un score franchit un seuil configurable."
+  },
+  "risks": [
+    {
+      "risk": "Cycle de vente très long avec les ARS (6-12 mois, marchés publics)",
+      "mitigation": "Proposer un POC gratuit de 3 mois pour accélérer la décision. Rester sous les seuils de marchés publics. Cibler le budget innovation qui à des procédures simplifiees."
+    },
+    {
+      "risk": "Les ARS considérént que c'est une mission régalienne et developpent en interne",
+      "mitigation": "Se positionnér comme prestataire SaaS et non concurrent. Les ARS n'ont pas les équipes tech pour développer et maintenir un tel outil."
+    },
+    {
+      "risk": "Le nombre de clients potentiels est très limite (18 ARS + 102 CPAM)",
+      "mitigation": "Etendre aux mutuelles (500+ en France), aux ordres professionnels, et aux collectivites. Diversifier les revenus avec de la formation et du conseil."
+    }
+  ],
+  "inspirations": "Atlas de la démographie médicale (Ordre des Médecins) publié annuellement en PDF. DREES publié des projections nationales mais pas locales. Aux US, HRSA fait des projections de workforce médicale. Au UK, le NHS utilise des modèles prédictifs de workforce.",
+  "searchVolume": [
+    {
+      "keyword": "départ retraite médecin",
+      "monthlyVolume": "880",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "démographie médicale projection",
+      "monthlyVolume": "480",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "zones en tension médicale",
+      "monthlyVolume": "590",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "age moyen médecins France",
+      "monthlyVolume": "720",
+      "difficulty": "low",
+      "intent": "informational"
+    },
+    {
+      "keyword": "prévision désert medical",
+      "monthlyVolume": "260",
+      "difficulty": "low",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "150 millions EUR - Budget total ARS pour l'accès aux soins et l'innovation numérique (18 ARS x budget numérique/innovation moyen) + CPAM + mutuelles",
+    "sam": "10 millions EUR - Sous-segment outils prédictifs et alertes démographie médicale pour les 18 ARS + 102 CPAM + ordres départementaux",
+    "som": "1.2 millions EUR - 8 ARS a 999 EUR/mois + 4 CPAM a 599 EUR/mois, atteignable a M14",
+    "methodology": "TAM = budgets ARS accès aux soins + numérique. SAM = segment prédictif et alertes. SOM = 44% pénétration ARS (8/18). Référence: 30% des généralistes ont >60 ans (DREES 2025), age moyen 49.9 ans."
+  },
+  "competitorDeep": [
+    {
+      "name": "Atlas démographie médicale (CNOM)",
+      "url": "https://www.conseil-national.medecin.fr",
+      "pricing": "Gratuit (PDF annuel)",
+      "trafficEstimate": "N/A (PDF)",
+      "reviews": "Publication de référence, données par département, pyramide des ages",
+      "strengths": "Données détaillées, credibilite Ordre des Médecins, historique sur 15+ ans, projections nationales",
+      "weaknesses": "PDF statique annuel, pas d'alertes, pas de granularite infradépartementale, pas de prédictif local, pas interactif"
+    },
+    {
+      "name": "DREES (projections nationales)",
+      "url": "https://drees.solidarites-sante.gouv.fr",
+      "pricing": "Gratuit (publications)",
+      "trafficEstimate": "200K-500K visites/mois",
+      "reviews": "237 200 médecins en activité au 1er janvier 2025, projections nationales",
+      "strengths": "Données officielles de référence, méthodologie rigoureuse, credibilite ministerielle",
+      "weaknesses": "Projections nationales uniquement (pas locales), publications ponctuelles, pas d'outil interactif, pas d'alertes"
+    },
+    {
+      "name": "CartoSante (AtlaSante)",
+      "url": "https://cartosante.atlasante.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "30K-80K visites/mois",
+      "reviews": "Cartographie sante officielle des ARS",
+      "strengths": "Données ARS, cartographie interactive, indicateurs de densité",
+      "weaknesses": "Pas de dimension prédictive, pas d'alertes, interface technique, pas de scoring d'urgence"
+    },
+    {
+      "name": "HRSA Workforce Projections (US)",
+      "url": "https://bhw.hrsa.gov",
+      "pricing": "Gratuit (service federal US)",
+      "trafficEstimate": "200K+ visites/mois",
+      "reviews": "Modèle de référence mondiale pour les projections de workforce médicale",
+      "strengths": "Modèle prédictif avancé, granularite locale, intégration dans les politiques federales",
+      "weaknesses": "US uniquement, mais référence methodologique pour construire le modèle francais"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données RPPS (age des médecins)",
+      "status": "attention",
+      "detail": "Le RPPS public ne contient pas directement l'age. Utiliser la date de première inscription où l'année de these comme proxy. Ne pas publiér l'age individuel d'un médecin identifiable sans son consentement.",
+      "source": "RPPS - Conditions réutilisation / CNIL"
+    },
+    {
+      "topic": "Modèle prédictif et responsabilite",
+      "status": "attention",
+      "detail": "Les projections de départ à la retraite sont des estimations statistiques, pas des certitudes. Disclaimer clair sur la nature probabiliste des alertes. Ne pas déclenchér de panique infondee.",
+      "source": "Principes de precaution en sante publique"
+    },
+    {
+      "topic": "Données de sante et CNIL",
+      "status": "ok",
+      "detail": "Les données utilisees sont des données professionnelles publiques (RPPS, FINESS, INSEE), pas des données de sante au sens RGPD. Pas de certification HDS requise.",
+      "source": "CNIL - Distinction données professionnelles / données de sante"
+    },
+    {
+      "topic": "Marchés publics ARS",
+      "status": "attention",
+      "detail": "Les ARS sont des établissements publics soumis au Code de la commande publique. POC gratuit pour contourner le cycle d'achat initial. Cibler le budget innovation.",
+      "source": "Code de la commande publique"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Email personnalisé ARS (rapport gratuit)",
+      "cacEstimate": "500-1000 EUR (cycle 3-6 mois)",
+      "conversionRate": "25-35% post-POC",
+      "ltv": "11988 EUR (999 EUR/mois x 12)",
+      "ltvCacRatio": "12-24x"
+    },
+    {
+      "channel": "Prospection CPAM départementales",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "10-15%",
+      "ltv": "7188 EUR (599 EUR/mois x 12)",
+      "ltvCacRatio": "18-36x"
+    },
+    {
+      "channel": "Partenariat CDOM (ordres départementaux)",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "11988 EUR (referral vers ARS)",
+      "ltvCacRatio": "120-240x (indirect)"
+    },
+    {
+      "channel": "Publication étude prédictive (thought leadership)",
+      "cacEstimate": "0-20 EUR (inbound)",
+      "conversionRate": "N/A (brand awareness)",
+      "ltv": "N/A",
+      "ltvCacRatio": "N/A - généré credibilite et inbound"
+    },
+    {
+      "channel": "Conferences sante publique",
+      "cacEstimate": "300-600 EUR par lead",
+      "conversionRate": "15-25%",
+      "ltv": "11988 EUR",
+      "ltvCacRatio": "20-40x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "verifie",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "verifie",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estime",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estime",
+      "detail": "Volumes estimés sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estime",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypotheses discutables."
+    },
+    "legal": {
+      "level": "estime",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS génériques. Aucune donnée terrain. À valider avec des tests reels."
+    },
+    "overall": {
+      "level": "estime",
+      "detail": "Concept base sur des datasets publics vérifiés via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 44,
+      "detail": "2.9K recherches/mois cumulees ('départ retraite médecin' 880/mois, 'age moyen médecins France' 720/mois). TAM: 150 millions EUR. Cibles: ARS des régions les, Ordres départementaux des médecins, CPAM départementales."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 6 APIs a integrer (RPPS, Annuaire Ameli, API INSEE populations). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 95,
+      "detail": "8 clients a 999 EUR pour demarrer. Objectif 10K MRR en 12-14 mois. Pricing 599-999 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Atlas démographie médicale (CN, DREES (projections nationales), CartoSante (AtlaSante). Leader: Atlas démographie médical (N/A (PDF)). Faiblesse principale: PDF statique annuel."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "1 point OK, 3 points d'attention. Vigilance: Données RPPS (age des médecins), Modèle prédictif et responsabilite."
+    },
+    "overall": {
+      "score": 64,
+      "detail": "Point fort: marche (95/100). Point faible: demande (44/100). Potentiel reel mais hypotheses cles a valider."
+    }
+  }
+}

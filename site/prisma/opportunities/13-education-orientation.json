@@ -1,0 +1,168 @@
+{
+  "id": "education-orientation",
+  "rank": 13,
+  "title": "Intelligence scolaire & orientation",
+  "slug": "education-orientation",
+  "sector": "education",
+  "tagline": "Croiser résultats scolaires + Parcoursup + annuaire écoles + démographie pour aider les familles et les étudiants a faire les bons choix",
+  "status": "exploration",
+  "difficulty": "facile",
+  "marketSize": "Familles (12M élevés) + étudiants + collectivités",
+  "monetization": "Freemium + premium 4.99-9.99/mois",
+  "context": "Les résultats du Brevet par établissement génèrent un pic de 6K visites en juillet (annonce des résultats). Parcoursup génère 10K visites avec un pic en juin. L'annuaire de l'Education Nationale est accèssible via API. Mais aucun outil ne croise tout : résultats scolaires + sélectivité Parcoursup + localisation + démographie. Les parents qui choisissent un college/lycee et les étudiants qui font leurs voeux Parcoursup paieraient pour une intelligence claire et actionnable.",
+  "signals": [
+    {
+      "label": "Résultats Brevet",
+      "value": "15K visites (pic juillet)",
+      "detail": "Les parents veulent connaitre la qualité des colleges"
+    },
+    {
+      "label": "Parcoursup",
+      "value": "10K visites (pic juin)",
+      "detail": "Les étudiants cherchent à comprendre la sélectivité"
+    },
+    {
+      "label": "Elections (681 datasets)",
+      "value": "681 datasets",
+      "detail": "Les données électorales par bureau de vote permettent de profiler sociologiquement les quartiers"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5c3ead5e06e3e74fe24cc62c",
+      "name": "Résultats Brevet par établissement",
+      "description": "Taux de réussite et mentions par college.",
+      "visits": "15K/an",
+      "downloads": "2.3K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "5da141da06e3e726b029a305",
+      "name": "Parcoursup — voeux et réponses",
+      "description": "Voeux, taux de sélection, profil des admis par formation.",
+      "visits": "10K/an",
+      "downloads": "5.6K/an",
+      "updateFrequency": "Annuel"
+    }
+  ],
+  "apis": [
+    {
+      "name": "Annuaire Education Nationale",
+      "description": "Liste et localisation de toutes les écoles, colleges, lycees avec contacts.",
+      "baseUrl": "https://data.education.gouv.fr/api/v2"
+    },
+    {
+      "name": "API données ouvertes Education Nationale",
+      "description": "Catalogue complet des jeux de données education.",
+      "baseUrl": "https://data.education.gouv.fr/api/explore/v2.0"
+    },
+    {
+      "name": "API La bonne alternance",
+      "description": "Opportunités emploi et formation en alternance en temps réel.",
+      "baseUrl": "https://api.apprentissage.beta.gouv.fr",
+      "order": 2
+    }
+  ],
+  "productIdeas": [
+    "Comparateur de colleges/lycees : résultats + taux de réussite + profil socio du quartier",
+    "Simulateur Parcoursup : vos chances d'admission par formation base sur l'historique",
+    "Carte scolaire interactive : quel college/lycee pour mon adresse + ses résultats",
+    "Alertes parents : nouveaux résultats publies, ouverture/fermeture de classés",
+    "Guide d'orientation post-bac croise avec les débouchés emploi (ROME)",
+    "Passerelle education/emploi : croiser formations Parcoursup + offres alternance + tensions métiers ROME pour recommander les filières à fort débouché"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Parents d'élevés",
+      "priceRange": "4.99/mois"
+    },
+    {
+      "segment": "Étudiants (orientation)",
+      "priceRange": "Freemium"
+    },
+    {
+      "segment": "Collectivités (politique educative)",
+      "priceRange": "99/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "L'Etudiant",
+      "weakness": "Contenu éditorial, pas de croisement de données"
+    },
+    {
+      "name": "Parcoursup (site officiel)",
+      "weakness": "Données de l'année en cours uniquement, pas d'historique analytique"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Le pic de trafic previsible (juin-juillet pour Parcoursup, juillet pour le Brevet) permet de planifier les campagnes marketing",
+      "Le croisement resultats scolaires + selectivite Parcoursup + debouches emploi (ROME) est unique en France",
+      "L'API Education Nationale et l'API La bonne alternance sont gratuites et bien documentees",
+      "Le modele freemium pour etudiants + premium pour parents est eprouve dans l'edtech (ex: Studyrama Premium)"
+    ],
+    "weaknesses": [
+      "Les resultats du Brevet ne sont qu'un proxy imparfait de la qualite d'un etablissement (effet composition sociale)",
+      "La saisonnalite est extreme — 80% du trafic concentre sur 3 mois (mai-juillet)",
+      "Les donnees Parcoursup publiees en open data sont anonymisees et ne permettent pas un simulateur individuel precis",
+      "Les parents d'eleves sont un segment difficile a atteindre en dehors de la periode de choix scolaire"
+    ],
+    "opportunities": [
+      "La reforme du lycee (specialites, controle continu) rend le choix d'orientation plus complexe — besoin d'outils accru",
+      "L'alternance explose (+15%/an) — l'API La bonne alternance permet de croiser formations et offres d'emploi",
+      "Les collectivites doivent piloter leur politique educative (carte scolaire, ouvertures/fermetures) — marche B2G",
+      "Les ecoles privees post-bac (hors Parcoursup) sont pretes a payer pour du referencement et du lead-gen"
+    ],
+    "threats": [
+      "L'Onisep et l'Etudiant ont des bases de donnees editoriales riches et une forte audience existante",
+      "Parcoursup pourrait enrichir son propre site avec des statistiques historiques et un simulateur",
+      "Les influenceurs YouTube orientation (Thotis, SuperBac) capturent l'audience des jeunes gratuitement",
+      "Le ministere de l'Education pourrait creer un outil officiel de comparaison d'etablissements"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Sophie",
+      "role": "Mere de 2 adolescents (14 ans en 3eme, 17 ans en Terminale) a Bordeaux, cadre dans une banque",
+      "age": "46 ans",
+      "context": "Son fils aine fait ses voeux Parcoursup et stress sur les chances d'admission en prepa commerce. Sa fille cadette entre au lycee et elle doit choisir le secteur. Pas de conseiller d'orientation disponible au lycee (1 pour 1500 eleves).",
+      "painPoints": [
+        "Le conseiller d'orientation du lycee n'est disponible que 2 demi-journees par semaine — impossible d'avoir un RDV",
+        "Ne comprend pas les taux de selectivite Parcoursup — 'taux d'acces' vs 'taux de pression' sont confus",
+        "N'a aucun moyen de comparer les lycees du secteur pour le choix de sa fille (resultats bac, specialites, ambiance)"
+      ],
+      "currentSolution": "Site Parcoursup + classements L'Etudiant + groupe WhatsApp parents d'eleves + bouche-a-oreille",
+      "budget": "4.99 EUR/mois pendant 3-4 mois (periode Parcoursup) — prete a payer 9.99 pour un rapport d'orientation personnalise",
+      "channels": ["Groupe Facebook 'Parents Parcoursup 2026'", "Forum Studyrama", "FCPE (federation parents d'eleves)", "Groupe WhatsApp parents du lycee"]
+    },
+    {
+      "name": "Hugo",
+      "role": "Eleve de Terminale generale (specialites maths/SES) a Lille, hesite entre ecole de commerce et fac d'eco-gestion",
+      "age": "17 ans",
+      "context": "Bons resultats (14.5 de moyenne) mais pas exceptionnel. Hesite entre 8 formations sur Parcoursup et ne sait pas ou il a des chances reelles d'etre accepte. Ses parents ne peuvent pas le guider (n'ont pas fait d'etudes superieures).",
+      "painPoints": [
+        "Ne sait pas si sa moyenne de 14.5 est suffisante pour les prepas qu'il vise — aucune donnee historique",
+        "Les fiches Parcoursup ne disent pas clairement le profil moyen des admis des annees precedentes",
+        "Voudrait savoir quels debouches emploi offrent les formations qu'il hesite a choisir (salaire, taux d'insertion)"
+      ],
+      "currentSolution": "Videos Thotis sur YouTube + site Parcoursup + discussions avec les profs + forum Studyrama",
+      "budget": "Gratuit (freemium) — ses parents paieraient 4.99/mois si l'outil est vraiment utile",
+      "channels": ["YouTube (Thotis, SuperBac)", "TikTok #parcoursup", "Discord serveurs orientation", "Groupe Snapchat de sa classe"]
+    },
+    {
+      "name": "Catherine",
+      "role": "Inspectrice de l'Education nationale (IEN) pour la circonscription de Perpignan, supervise 45 ecoles primaires",
+      "age": "52 ans",
+      "context": "Pilote la carte scolaire de sa circonscription : ouvertures/fermetures de classes, affectation des moyens. Doit produire des analyses demographiques et de resultats pour justifier ses decisions aupres des maires et des parents.",
+      "painPoints": [
+        "Compile manuellement les resultats des evaluations nationales de 45 ecoles — pas de vue d'ensemble automatisee",
+        "N'a pas de projections demographiques fiables pour anticiper les ouvertures/fermetures de classes a 3-5 ans",
+        "Les maires la challengent avec des donnees qu'elle n'a pas — inscriptions privees, mouvements de population"
+      ],
+      "currentSolution": "Tableaux Excel du rectorat + donnees demographiques INSEE + base RAMSESE (interne Education nationale)",
+      "budget": "80-120 EUR/mois — budget academique, validation hierarchique simple sous 5K EUR/an",
+      "channels": ["Reseau Canope (formation continue EN)", "Revue Administration & Education", "Conferences academiques", "SI.EN (Syndicat des Inspecteurs)"]
+    }
+  ]
+}

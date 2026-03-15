@@ -1,0 +1,270 @@
+{
+  "id": "score-quartier",
+  "rank": 4,
+  "title": "Score de quartier pour particuliers",
+  "slug": "score-quartier",
+  "sector": "cadre-de-vie",
+  "tagline": "Un rapport complet sur n'importe quelle adresse en France : sécurité, écoles, prix, risques, transports — en 30 secondes",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "Grand public — tout achetéur/locataire potentiel",
+  "monetization": "Freemium + rapports premium 4.99-14.99/rapport",
+  "context": "108K visites et 102K téléchargements sur les stats de criminalité prouvent que les Français veulent comprendre un quartier avant d'y vivre. Mais aujourd'hui, ils doivent croiser manuellement 10+ sources. Un produit B2C simple qui génère un score et un rapport par adresse à un potentiel viral énorme (partage avant achat). Le modèle économique par rapport (4.99-14.99) est naturel — les gens paient déjà pour des diagnostics et états des lieux. Version freemium avec score basique + rapport premium détaillé.",
+  "signals": [
+    {
+      "label": "Criminalité communale",
+      "value": "108K visites + 102K DL",
+      "detail": "Les gens cherchent activement la sécurité d'un quartier avant d'emménager"
+    },
+    {
+      "label": "DVF",
+      "value": "573K visites/an",
+      "detail": "Verification de prix avant achat"
+    },
+    {
+      "label": "Résultats Brevet",
+      "value": "15K visites (pic 6K en juillet)",
+      "detail": "Les parents veulent connaitre la qualité des écoles"
+    },
+    {
+      "label": "PLU / Urbanisme",
+      "value": "630 datasets",
+      "detail": "Reglementation qui impacte directement la valeur d'un bien"
+    },
+    {
+      "label": "Revenus par commune",
+      "value": "INSEE Filosofi",
+      "detail": "Niveau de vie médian par commune — indicateur socio-économique cle"
+    },
+    {
+      "label": "Bruit / nuisances",
+      "value": "114 datasets",
+      "detail": "Cartes de bruit stratégiques — nuisance sonore par zone"
+    },
+    {
+      "label": "Transport en commun",
+      "value": "53 datasets GTFS",
+      "detail": "Desserte transport par quartier"
+    },
+    {
+      "label": "QPV",
+      "value": "70K visites/an",
+      "detail": "Les quartiers prioritaires intéressent enormêment les acteurs du territoire"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "621df2954fa5a3b5a023e23c",
+      "name": "Délinquance par commune",
+      "description": "Crimes et délits par commune : vols, violences, cambriolages. 16 fichiers détaillés.",
+      "visits": "108K/an",
+      "downloads": "102K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "5cc1b94a634f4165e96436c1",
+      "name": "DVF géolocalisées",
+      "description": "Prix de vente réels avec coordonnées GPS.",
+      "visits": "93K/an",
+      "downloads": "23K/an",
+      "updateFrequency": "Semestriel"
+    },
+    {
+      "datasetId": "5c3ead5e06e3e74fe24cc62c",
+      "name": "Résultats Brevet par établissement",
+      "description": "Taux de réussite et mentions par college — proxy de qualité scolaire.",
+      "visits": "15K/an",
+      "downloads": "2.3K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "61816c6e23197bb34835228e",
+      "name": "Logements vacants",
+      "description": "Taux de vacance du parc privé — indicateur de dynamisme d'une zone.",
+      "visits": "21K/an",
+      "downloads": "6K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "67f7e557cb268460ce66c8d4",
+      "name": "DPE Logements existants",
+      "description": "Performance énergétique des logements du quartier.",
+      "visits": "~28K/an",
+      "downloads": "~4K/an",
+      "updateFrequency": "Hebdomadaire"
+    },
+    {
+      "datasetId": "687ae011ddfd9c43eb553747",
+      "name": "Revenus et pauvreté par commune (INSEE)",
+      "description": "Niveau de vie médian, taux de pauvreté, part des ménages imposes par commune.",
+      "visits": "~5K/an",
+      "downloads": "~2K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "666028129ef292c03b9fc8f5",
+      "name": "Sites et sols pollués (ex-BASOL)",
+      "description": "Terrains pollués à proximité — risque sanitaire et impact sur la valeur.",
+      "visits": "6.5K/an",
+      "downloads": "15K/an",
+      "updateFrequency": "Regulier"
+    },
+    {
+      "datasetId": "5a561801c751df42d7fca9b6",
+      "name": "Quartiers prioritaires (QPV)",
+      "description": "Zonage des quartiers prioritaires de la politique de la ville — 39 datasets, 70K visites.",
+      "visits": "70K/an",
+      "downloads": "14K/an",
+      "updateFrequency": "Regulier",
+      "order": 7
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Georisques",
+      "description": "Inondation, séisme, Seveso, retrait-gonflement argiles, cavites par adresse.",
+      "baseUrl": "https://georisques.gouv.fr/api/v1/"
+    },
+    {
+      "name": "API Adresse (BAN)",
+      "description": "Géocodage gratuit de n'importe quelle adresse française.",
+      "baseUrl": "https://data.geopf.fr/geocodage/"
+    },
+    {
+      "name": "Annuaire Education Nationale",
+      "description": "Liste et localisation de toutes les écoles, colleges, lycees.",
+      "baseUrl": "https://data.education.gouv.fr/api/v2"
+    },
+    {
+      "name": "API DPE logements",
+      "description": "DPE par adresse pour caracteriser le parc immobilier du quartier.",
+      "baseUrl": "https://data.ademe.fr/data-fair/api/v1/datasets/dpe-france"
+    }
+  ],
+  "productIdeas": [
+    "Rapport d'adresse complet : score sécurité + écoles + prix m2 + risques naturels + DPE moyen du quartier",
+    "Comparateur de quartiers : comparez 3 adresses côté à côté avant de choisir",
+    "Alertes : recevez une notification si un indicateur change dans votre quartier (nouveau permis, hausse criminalité)",
+    "Widget embeddable pour sites d'annonces immobilières (monetisation B2B2C)",
+    "Version agents immobiliers : génèrez un rapport quartier PDF brandé a envoyer aux achetéurs",
+    "Score pollution : sols contamines (BASOL) + ICPE + qualité de l'air à proximité",
+    "Score mobilité : desserte transport en commun + pistes cyclables + parking"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Acheteurs immobiliers",
+      "priceRange": "9.99/rapport"
+    },
+    {
+      "segment": "Locataires en recherche",
+      "priceRange": "4.99/rapport"
+    },
+    {
+      "segment": "Sites d'annonces (widget)",
+      "priceRange": "199/mois"
+    },
+    {
+      "segment": "Agents immobiliers (PDF brandé)",
+      "priceRange": "29/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Kelquartier",
+      "weakness": "Données datées, pas de score unifie, pas de risques naturels"
+    },
+    {
+      "name": "Bien'ici",
+      "weakness": "Infos quartier basiques, pas de rapport exportable"
+    },
+    {
+      "name": "City-scan.fr",
+      "weakness": "Focus collectivités, pas grand public"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "108K visites + 102K téléchargements sur les données criminalité prouvent une demande grand public massive et spontanee",
+      "Modele pay-per-report (4.99-14.99 EUR) a conversion naturelle — les gens paient déjà pour des diagnostics immobiliers",
+      "Potentiel viral élevé — les achetéurs partagent le rapport avec leur conjoint, agent, banquier, famille",
+      "Barriere d'entrée technique : croiser 8+ sources hétérogènes (mailles différentes) est complexe a reproduire"
+    ],
+    "weaknesses": [
+      "Les données de criminalité sont à la maille communale, pas au quartier — précision limitee en grande ville",
+      "Risque de stigmatisation de quartiers entiers — sensibilité éditoriale et éthique forte",
+      "Le modèle pay-per-report génère un revenu ponctuel, pas récurrent — LTV limitee",
+      "Le grand public attend de la gratuite sur le web — conversion freemium vers premium difficile sous 3%"
+    ],
+    "opportunities": [
+      "Les portails d'annonces (SeLoger, LeBonCoin) pourraient intégrer le score via widget en marque blanche — B2B2C",
+      "Extension aux expatries qui cherchent où vivre en France — marché premium anglophone sous-exploite",
+      "Les mairies veulent des rapports d'attractivité pour attirer de nouveaux habitants — marché B2G",
+      "L'open data communal s'enrichit chaque année (bruit, qualité air, pistes cyclables) augmentant la valeur du score"
+    ],
+    "threats": [
+      "Bien'ici (groupe SeLoger) ajoute progrèssivement des infos quartier dans ses annonces",
+      "Google Maps enrichit ses données de quartier (temps de trajet, commerces, écoles) gratuitement",
+      "Risque de pression politique/associative contre un outil qui 'note' des quartiers",
+      "Les données les plus demandees (criminalité fine, bruit réel) ne sont pas encore en open data au niveau infra-communal"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Emilie",
+      "role": "Jeune mere de 2 enfants, en recherche active d'un appartement à achetér en banlieue parisienne",
+      "age": "34 ans",
+      "context": "Budget de 350K EUR, hesite entre 5 communes de la petite couronne. Son critère numéro 1 : la sécurité du quartier pour ses enfants, puis les écoles, puis le temps de trajet au travail. Visite 2-3 biens par weekend.",
+      "painPoints": [
+        "Passe ses soirées à chercher les stats de criminalité commune par commune sur le site du ministere — interface horrible",
+        "Ne sait pas comment comparer objectivement la qualité des écoles entre deux communes",
+        "A failli achetér dans une zone inondable sans le savoir — a découvert le PPRI par hasard"
+      ],
+      "currentSolution": "Google 'est-ce que [ville] est dangèreuse' + site ville-idéale.fr (avis subjectifs) + Georisques consultée une fois",
+      "budget": "9.99-14.99 EUR par rapport — va en génèrer 3-5 avant de se decider",
+      "channels": [
+        "Groupe Facebook 'Acheter en banlieue parisienne'",
+        "Forum HardwareR section immobilier",
+        "Blog PAP.fr conseils achat",
+        "Bouche-a-oreille entre parents à l'ecole"
+      ]
+    },
+    {
+      "name": "Karim",
+      "role": "Agent immobilier chez un réseau de mandataires (IAD), couvre le secteur Montpellier Est",
+      "age": "29 ans",
+      "context": "Mandataire indépendant depuis 2 ans, gère 10-15 mandats en parallele. Veut se différencier des autrès agents en offrant un vrai conseil quartier à ses achetéurs. Ses clients lui posent toujours les mêmes questions : 'C'est sécurisé ici ?', 'Les écoles sont bien ?'.",
+      "painPoints": [
+        "Ne peut pas répondre factuellement aux questions des achetéurs sur la sécurité — répond 'oui oui c'est tranquille'",
+        "Ses clients font leurs propres recherches et reviennent avec des infos contradictoires",
+        "N'a aucun document professionnel a remettre pour rassurer un achetéur hesitant"
+      ],
+      "currentSolution": "Connaissance terrain personnelle + quelques scréenshots de Kelquartier envoyes par WhatsApp",
+      "budget": "25-35 EUR/mois pour génèrer des rapports PDF brandés à son nom",
+      "channels": [
+        "Groupe Facebook 'Mandataires immobiliers IAD'",
+        "Formation continue IAD",
+        "Salon RENT Paris",
+        "Groupe WhatsApp agents Montpellier"
+      ]
+    },
+    {
+      "name": "Pierre",
+      "role": "Retraité de la fonction publique, cherche a déménager de Paris vers une ville moyenne pour sa qualité de vie",
+      "age": "63 ans",
+      "context": "Vend son appartement parisien (budget 250K EUR en province). Hesite entre 8 villes moyennes (Angers, La Rochelle, Pau, Vannes...). Ses critères : santé (hôpital à proximité), sécurité, coût de la vie, activités culturelles.",
+      "painPoints": [
+        "Compare 8 villes sur 6 critères différents — impossible de tout synthetiser",
+        "Les classéments 'villes où ill fait bon vivre' des magazines sont subjectifs et sponsorises",
+        "Ne sait pas évaluer la desserte médicale d'une ville sans y aller"
+      ],
+      "currentSolution": "Classements annuels du Point/Express + visites sur place (coûteuses) + discussions sur le forum Seniorplanet",
+      "budget": "14.99 EUR par rapport de ville — prêt a en achetér 5-8",
+      "channels": [
+        "Forum SeniorPlanet",
+        "Magazine Notre Temps",
+        "Groupe Facebook 'Retraités actifs'",
+        "Salons de l'immobilier en région"
+      ]
+    }
+  ]
+}

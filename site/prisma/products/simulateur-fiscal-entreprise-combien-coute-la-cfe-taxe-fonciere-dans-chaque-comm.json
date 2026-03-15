@@ -1,0 +1,295 @@
+{
+  "productSlug": "simulateur-fiscal-entreprise-combien-coute-la-cfe-taxe-fonciere-dans-chaque-comm",
+  "oneLiner": "Simulez le coût fiscal réel d'implantation de votre entreprise commune par commune : CFE, taxe foncière, CVAE, versement mobilité.",
+  "problem": "Les entrepreneurs et dirigeants de PME choisissent leur lieu d'implantation sans connaitre le coût fiscal local réel. La CFE varie de 1 a 10 selon la commune (500 a 5 000 EUR pour le meme CA), la taxe foncière pro de 1 a 3, et le versement mobilité depend de l'EPCI. Ces coûts representent 5-15K EUR/an pour une PME. Un mauvais choix coute des dizaines de milliers d'euros sur la durée du bail. Les experts-comptables font des simulations manuelles pour chaque commune.",
+  "solution": "Un simulateur qui calcule le coût fiscal total d'implantation dans n'importe quelle commune de France : CFE (base minimum + taux communal selon le CA et la surface), taxe foncière pro (selon la surface et le taux communal), CVAE, versement mobilité (selon l'effectif et le taux EPCI). Comparaison de 2 a 5 communes en un clic avec les aides disponibles (ZRR, ZFU, exonerations locales).",
+  "uniqueValue": "Seul simulateur qui agrégé TOUS les impôts locaux entreprise (CFE + TF + CVAE + VM) en un seul calcul personnalise. Les sites existants montrent les taux bruts mais ne font pas la simulation. Le coût total est invisible sans cet outil.",
+  "mvpScope": "Formulaire : CA, effectif, surface de locaux, secteur d'activité. Sélection de 1 a 3 communes. Calcul instantane : CFE (base minimum + taux communal), taxe foncière pro (estimation), versement mobilité (taux EPCI x masse salariale). Comparatif visuel avec le delta en euros et les exonerations possibles.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Collecte des taux fiscaux entreprise",
+      "description": "Recuperer les taux de CFE, taxe foncière sur les proprietes baties (part entreprise), versement mobilité par EPCI, bases minimum CFE par délibération communale. Integrer les zonages d'exonerations (ZRR, ZFU).",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Base taux CFE par commune",
+        "Base taux TF pro par commune",
+        "Base taux versement mobilité par EPCI",
+        "Referentiel zonages exonerations"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Moteur de simulation et interface",
+      "description": "Moteur de calcul CFE + TF + VM + CVAE avec prise en compte des exonerations. Interface de simulation avec formulaire simple, résultats instantanes, comparaison de 3 communes.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Moteur de calcul fiscal complet",
+        "Interface de simulation intuitive",
+        "Comparatif 3 communes côté a cote",
+        "Export PDF du comparatif"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "SEO et acquisition via partenariats",
+      "description": "Pages SEO par commune ('CFE [commune]', 'coût implantation [commune]'). Articles de blog sur l'optimisation fiscale d'implantation. Partenariats experts-comptables et CCI.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "36K pages SEO communes",
+        "5 articles blog",
+        "Kit partenaire expert-comptable",
+        "Intégration CCI pilote"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "La fiscalité locale influence le choix d'implantation des entreprises",
+      "how": "Sondage LinkedIn auprès de 100 dirigeants de PME : 'Connaissez-vous le montant de votre CFE ? Avez-vous compare avec d'autres communes avant de vous implanter ?'",
+      "successCriteria": "60% ne connaissent pas leur CFE exacte, 70% n'ont pas compare avant implantation, 50% disent qu'ils auraient aime un outil"
+    },
+    {
+      "check": "La simulation est suffisamment précise",
+      "how": "Comparer les simulations avec les avis d'imposition réels de 10 entreprises volontaires",
+      "successCriteria": "Écart < 15% sur la CFE et < 20% sur le coût fiscal total"
+    },
+    {
+      "check": "Les experts-comptables veulent recommander l'outil",
+      "how": "Presenter l'outil a 10 cabinets comptables, proposer un partenariat",
+      "successCriteria": "5 cabinets acceptent de le recommander a leurs clients"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Entrepreneurs en création d'entreprise cherchant ou s'implanter",
+      "where": "CCI, pépinières d'entreprises, groupes Facebook création d'entreprise, forums Les Echos Entrepreneurs",
+      "howToReach": "Partenariat CCI pour intégrer le simulateur dans le parcours de création, articles 'Ou créer votre entreprise pour payer moins d'impôts locaux'"
+    },
+    {
+      "who": "PME en croissance cherchant a ouvrir un 2e site ou demenager",
+      "where": "LinkedIn dirigeants PME, groupes CPME/MEDEF, salons Workspace Expo",
+      "howToReach": "Posts LinkedIn avec des simulations comparatives choc ('Meme entreprise, 3 communes, 12K EUR de difference par an')"
+    },
+    {
+      "who": "Experts-comptables conseillant leurs clients sur l'implantation",
+      "where": "Ordre des experts-comptables, salons ECF, RCF, groupes LinkedIn comptabilité",
+      "howToReach": "Outil white-label gratuit pour les cabinets comptables, ils apportent le trafic. Commission sur les upgrades premium."
+    }
+  ],
+  "pricingStrategy": "Freemium + B2B. Gratuit : 1 simulation basique (CFE seule). Plan Entrepreneur : 9.90 EUR/mois (simulations illimitées, tous les impôts, comparatif 5 communes, export PDF). Plan Cabinet Comptable : 49 EUR/mois (multi-clients, white-label, rapports personnalises). Plan Collectivité/CCI : 199 EUR/mois (benchmark territorial, outil d'attractivité).",
+  "pathTo10kMrr": "200 entrepreneurs a 9.90 EUR (1 980 EUR) + 80 cabinets comptables a 49 EUR (3 920 EUR) + 20 collectivités/CCI a 199 EUR (3 980 EUR) = 9 880 EUR MRR. Acquisition : SEO ('CFE + [commune]' = 36K pages longue traine), partenariat CCI (acquisition gratuite), affiliation cabinets comptables. Timeline : 10-12 mois. Le partenariat cabinets comptables est la cle : chaque cabinet a 50-200 clients PME.",
+  "techStack": {
+    "frontend": "Next.js (ISR pour SEO) + Tailwind CSS + Chart.js",
+    "backend": "Next.js API routes",
+    "database": "PostgreSQL (Supabase)",
+    "hosting": "Vercel + Supabase",
+    "apis": [
+      "Impôts locaux DGFiP (data.gouv.fr)",
+      "Referentiel EPCI BANATIC",
+      "API Geo gouv.fr",
+      "API Sirene (auto-complété entreprise)",
+      "Zonages ZRR/ZFU (data.gouv.fr)"
+    ],
+    "notes": "Les taux de CFE et TF sont publiés annuellement par la DGFiP. Les bases minimum CFE dependent des deliberations communales (commencer avec les estimations par tranche de CA). Le versement mobilité est publié par l'URSSAF."
+  },
+  "risks": [
+    {
+      "risk": "Les bases minimum CFE sont fixees par délibération communale et pas toujours disponibles en open data",
+      "mitigation": "Commencer avec les estimations par tranche de CA (bareme national) et affiner progressivement avec les deliberations communales via des demandes CADA si nécessaire."
+    },
+    {
+      "risk": "La suppression progressive de la CVAE réduit l'intérêt du simulateur",
+      "mitigation": "La CFE et la taxe foncière restent et representent l'essentiel du coût. La suppression de la CVAE est une opportunité de contenu ('Que reste-t-il comme impôts locaux pour les entreprises ?')."
+    },
+    {
+      "risk": "Marché de niche avec un volume de recherche limite",
+      "mitigation": "Elargir au-delà de la simulation fiscale : ajouter coût immobilier pro, bassin d'emploi, aides a l'implantation pour devenir un outil d'aide a la localisation complet."
+    }
+  ],
+  "inspirations": "SmartAsset (US, simulateurs fiscaux, valorise 1Md$+), simulation-impôts.gouv.fr (particuliers mais pas entreprises), simulateurs CCI (limites a leur territoire). Le modèle est celui de Qonto/Pennylane : simplifier une complexité administrative pour les PME.",
+  "searchVolume": [
+    {
+      "keyword": "CFE par commune",
+      "monthlyVolume": "6 600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "taxe foncière entreprise commune",
+      "monthlyVolume": "3 600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "coût implantation entreprise",
+      "monthlyVolume": "1 900",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "simulateur CFE",
+      "monthlyVolume": "4 400",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "cotisation foncière entreprise calcul",
+      "monthlyVolume": "8 100",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "200 M EUR (marché des outils d'aide a la décision d'implantation pour les 4M d'entreprises en France, incluant création, déménagement, ouverture de site)",
+    "sam": "30 M EUR (segment des outils de simulation fiscale et d'optimisation de localisation pour les PME en création/déménagement)",
+    "som": "900K EUR (18 mois, via SEO sur 36K pages + partenariats CCI et cabinets comptables)",
+    "methodology": "TAM basé sur 4M d'entreprises, 250K creations/an et 100K demenagements/an. SAM restreint aux outils de fiscalité locale. SOM basé sur 200 entrepreneurs + 80 cabinets + 20 CCI en 18 mois."
+  },
+  "competitorDeep": [
+    {
+      "name": "simulation-impôts.gouv.fr",
+      "url": "https://www.impots.gouv.fr",
+      "pricing": "Gratuit (service public)",
+      "trafficEstimate": "Millions de visites/mois",
+      "reviews": "N/A (site officiel)",
+      "strengths": "Source officielle. Données exhaustives et à jour. Confiance des utilisateurs.",
+      "weaknesses": "Particuliers uniquement, pas d'outils entreprise. Pas de simulation CFE. Pas de comparaison entre communes."
+    },
+    {
+      "name": "Simulateurs CCI",
+      "url": "https://www.cci.fr",
+      "pricing": "Gratuit (service CCI)",
+      "trafficEstimate": "Variable par CCI",
+      "reviews": "N/A",
+      "strengths": "Expertise locale. Accompagnement humain. Connaissances des specificites territoriales.",
+      "weaknesses": "Limites a un seul territoire. Pas de comparaison inter-communes. Pas de simulateur en ligne scalable."
+    },
+    {
+      "name": "Shine / Qonto (infos CFE)",
+      "url": "https://www.shine.fr",
+      "pricing": "Contenu gratuit, neobanque payante",
+      "trafficEstimate": "500K visites/mois (blog)",
+      "reviews": "4.5/5 App Store",
+      "strengths": "Contenu pedagogique de qualité sur la CFE. Audience de PME/auto-entrepreneurs importante.",
+      "weaknesses": "Pas de simulateur par commune. Contenu informatif sans personnalisation. Pas de comparaison."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Taux CFE publics",
+      "status": "ok",
+      "detail": "Les taux de CFE sont publiés annuellement par la DGFiP en open data. Reutilisation commerciale autorisee.",
+      "source": "DGFiP / data.gouv.fr"
+    },
+    {
+      "topic": "Bases minimum CFE par délibération communale",
+      "status": "attention",
+      "detail": "Les bases minimum CFE dependent des deliberations communales qui ne sont pas toujours en open data. Nécessité des estimations par tranche de CA.",
+      "source": "Deliberations communales / DGCL"
+    },
+    {
+      "topic": "Suppression CVAE",
+      "status": "ok",
+      "detail": "La suppression progressive de la CVAE réduit le nombre d'impôts locaux mais CFE et TF restent. Opportunité de contenu.",
+      "source": "Loi de finances"
+    },
+    {
+      "topic": "Versement mobilité par EPCI",
+      "status": "ok",
+      "detail": "Les taux de versement mobilité sont publiés par l'URSSAF. Données publiques et reutilisables.",
+      "source": "URSSAF"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO longue traine (CFE + [commune])",
+      "cacEstimate": "1-3 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "72 EUR (9,90 EUR/mois x 7 mois retention)",
+      "ltvCacRatio": "24-72x"
+    },
+    {
+      "channel": "Partenariat cabinets comptables (affiliation)",
+      "cacEstimate": "10-30 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "360 EUR (cabinet 49 EUR/mois x 7 mois + clients)",
+      "ltvCacRatio": "12-36x"
+    },
+    {
+      "channel": "Partenariat CCI (intégration)",
+      "cacEstimate": "50-150 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "2 400 EUR (CCI 199 EUR/mois x 12 mois)",
+      "ltvCacRatio": "16-48x"
+    },
+    {
+      "channel": "LinkedIn Ads dirigeants PME",
+      "cacEstimate": "15-40 EUR",
+      "conversionRate": "2-3%",
+      "ltv": "72 EUR",
+      "ltvCacRatio": "1,8-4,8x"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 69,
+      "detail": "22 recherches/mois cumulees ('cotisation foncière entreprise calcul' 8/mois, 'CFE par commune' 6/mois). TAM: 200 M EUR. Cibles: Entrepreneurs en création d'entreprise, PME en croissance cherchant, Experts-comptables conseillant leurs clients."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 5 APIs a integrer (Impôts locaux DGFiP, Referentiel EPCI BANATIC, API Geo gouv.fr). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 57,
+      "detail": "200 clients a 90 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 900K EUR/an. Pricing 49-199 EUR."
+    },
+    "competition": {
+      "score": 55,
+      "detail": "3 concurrents identifies: simulation-impôts.gouv.fr, Simulateurs CCI, Shine / Qonto (infos CFE). Leader: simulation-impôts.gouv.fr (Millions de visites/mois). Faiblesse principale: Particuliers uniquement."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Bases minimum CFE par délibération communale."
+    },
+    "overall": {
+      "score": 65,
+      "detail": "Point fort: legal (78/100). Point faible: compétition (55/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

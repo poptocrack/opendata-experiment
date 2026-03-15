@@ -1,0 +1,322 @@
+{
+  "productSlug": "score-de-sante-copropriete-detection-des-coproprietes-en-difficulte-charges-impa",
+  "oneLiner": "Score de santé de copropriété (A-F) croisant registre national, DVF et DPE pour détecter les copros en difficulté.",
+  "problem": "115 000 coproprietes sont en difficulté en France (rapport ANAH). Les coproprietaires et acheteurs decouvrent les problèmes quand les impayes s'accumulent, les travaux sont repousses et la valeur du bien s'effondre. Le registre national des coproprietes (119K visites/mois) contient des signaux d'alerte mais personne ne les exploité systematiquement.",
+  "solution": "Un algorithme qui analyse les données du registre national des coproprietes pour attribuer un score de santé financière de A (saine) a F (en peril). Critères : taux d'impayes, évolution des charges, travaux reportes, anciennété du bâtiment vs DPE, rotation du syndic. Les collectivités identifient les copros a risque, les acheteurs evitent les pièges, les coproprietaires surveillent leur copro.",
+  "uniqueValue": "Le registre des coproprietes contient des données financières (budgets, impayes) mais personne ne les analyse. Ce scoring transforme des données brutes en signal d'alerte actionnable. C'est le score Banque de France, mais pour les coproprietes.",
+  "mvpScope": "Score A-F pour les coproprietes en Ile-de-France et 20 plus grandes villes. 3 critères : taux d'impayes, budget prévisionnel par lot, anciennété du bâtiment. Dashboard web avec recherche par adresse et carte des copros a risque.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Phase 1",
+      "title": "Pipeline data et scoring",
+      "description": "Ingestion registre coproprietes + DVF + DPE. Algorithme de scoring A-F basé sur regression logistique entrainee sur les copros en plan de sauvegarde.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Pipeline import registre coproprietes",
+        "Croisement DVF + DPE",
+        "Algorithme de scoring A-F",
+        "Validation contre copros ANAH connues"
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Dashboard et interface",
+      "description": "Interface de recherche par adresse, fiche copropriété avec score et indicateurs, carte interactive des copros a risque.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Recherche par adresse (BAN)",
+        "Fiche copropriété détaillée",
+        "Carte interactive Maplibre",
+        "Comparaison avec copros similaires"
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Monétisation et premiers clients",
+      "description": "Paywall pour rapports détaillés, prospection collectivités avec diagnostic gratuit de leur territoire, lancement communautés immobilières.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Paywall Stripe",
+        "Diagnostic gratuit pour 3 collectivités",
+        "Lancement forums immo",
+        "Prospection syndics LinkedIn"
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Extension et scale",
+      "description": "Couverture nationale, API pour banques et assureurs, offre B2C avec alertes.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Couverture nationale",
+        "API scoring pour banques",
+        "Offre B2C alertes",
+        "10K MRR"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le registre national contient des données financières exploitables",
+      "how": "Analyser le dataset : vérifier la présence de budget prévisionnel, impayes, nombre de lots sur un echantillon IDF",
+      "successCriteria": "Au moins 50% des coproprietes IDF ont des données financières renseignées"
+    },
+    {
+      "check": "Le scoring est prédictif des copros en difficulté",
+      "how": "Comparer les copros scorees E/F avec la liste des copros en plan de sauvegarde ou OPAH-CD (ANAH)",
+      "successCriteria": "80%+ des copros en plan de sauvegarde sont scorees E ou F par l'algorithme"
+    },
+    {
+      "check": "Les collectivités paieraient pour cet outil",
+      "how": "Proposer un diagnostic gratuit a 5 collectivités (Marseille, Clichy-sous-Bois, Grenoble, Roubaix, Aubervilliers) et mesurer l'intérêt",
+      "successCriteria": "2 lettres d'intention de collectivités en 4 semaines"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Collectivités avec programmes OPAH et plan de sauvegarde coproprietes",
+      "where": "ANAH, prefectures, directions departementales des territoires",
+      "howToReach": "Diagnostic gratuit de leur territoire : identifier les copros a risque non encore detectees. Effet wow garanti."
+    },
+    {
+      "who": "Acheteurs immobiliers et investisseurs locatifs",
+      "where": "r/vosfinances, r/immobilier, forums Avenue des Investisseurs, groupes Facebook LMNP/SCI",
+      "howToReach": "Posts educatifs : 'Les 5 pièges de la copropriete' avec lien vers l'outil. Rapport a 9,90 EUR par copro."
+    },
+    {
+      "who": "Syndics professionnels (Nexity, Foncia, Citya)",
+      "where": "FNAIM Syndics, salons de la copropriete, LinkedIn",
+      "howToReach": "Le scoring permet de prioriser les interventions. Accès gratuit en echange de feedback."
+    }
+  ],
+  "pricingStrategy": "B2C : score basique gratuit + rapport détaillé a 9,90 EUR par copro. Abonnement coproprietaire a 4,90 EUR/mois (alertes, historique, benchmark). B2B collectivités : 399 EUR/mois (scoring tout le territoire). B2B département : 899 EUR/mois. B2B banques/assureurs : API a 0,50-2 EUR/requete.",
+  "pathTo10kMrr": "5 collectivités x 399 EUR = 1 995 EUR + 3 départements x 899 EUR = 2 697 EUR + 1 contrat région/ANAH x 1 999 EUR = 1 999 EUR + 500 coproprietaires x 4,90 EUR = 2 450 EUR + API banques 1 000 EUR/mois. Total = 10 141 EUR MRR. Timeline : 10-12 mois.",
+  "techStack": {
+    "frontend": "Next.js 14 + Tailwind CSS + Maplibre GL JS + Recharts",
+    "backend": "Next.js API Routes + Python pour le scoring et pipeline data",
+    "database": "PostgreSQL sur Supabase",
+    "hosting": "Vercel + Supabase + GitHub Actions (ETL)",
+    "apis": [
+      "Registre national coproprietes (data.gouv.fr)",
+      "DVF / DVF+ (data.gouv.fr)",
+      "API DPE ADEME",
+      "API BAN geocodage",
+      "Stripe"
+    ],
+    "notes": "Scoring recalcule trimestriellement. Modèle simple (regression logistique) entraîné sur les copros en plan de sauvegarde. Pipeline ETL Python sur GitHub Actions."
+  },
+  "risks": [
+    {
+      "risk": "Registre incomplet : beaucoup de copros n'ont pas déclaré leurs données financières",
+      "mitigation": "Commencer par les villes ou le registre est le mieux rempli. Inciter les copros a remplir en offrant un score gratuit."
+    },
+    {
+      "risk": "Copros scorees negativement pourraient faire un recours juridique",
+      "mitigation": "Utiliser uniquement des données publiques. Afficher clairement la méthodologie. Proposer un droit de réponse/correction."
+    },
+    {
+      "risk": "L'ANAH développé son propre outil en interne",
+      "mitigation": "Proposer un partenariat des le debut. L'ANAH sous-traité souvent la tech. Se positionner comme prestataire."
+    }
+  ],
+  "inspirations": "Score Banque de France pour les entreprises. Anil.org pour l'info copropriete. Aux US, les HOA scores sur les plateformes immo. Le registre des coproprietes (119K visites/mois) prouve la demande mais manque d'analyse.",
+  "searchVolume": [
+    {
+      "keyword": "copropriété en difficulté",
+      "monthlyVolume": "2400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "copropriété degradee",
+      "monthlyVolume": "1600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "impayes copropriete",
+      "monthlyVolume": "3600",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "registre copropriete",
+      "monthlyVolume": "5400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "copropriété fragile ANAH",
+      "monthlyVolume": "720",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "plan sauvegarde copropriete",
+      "monthlyVolume": "880",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "115 000 coproprietes en difficulté + 180 000 fragiles = 295K coproprietes concernees. B2B collectivités: 35K communes x scoring = marché énorme. Total: collectivités 399-899 EUR/mois + 9,7M logements en copro (coproprietaires a 4,90 EUR/mois) = 570M EUR/an theorique",
+    "sam": "1 000 collectivités avec OPAH/PIC x 399 EUR x 12 = 4,8M EUR/an + 100 départements x 899 EUR x 12 = 1,1M EUR/an + 50K coproprietaires concernes x 4,90 EUR x 12 = 2,9M EUR/an. Total SAM: 8,8M EUR/an",
+    "som": "5 collectivités + 3 départements + 500 coproprietaires année 1 = 63K EUR/an",
+    "methodology": "TAM: 115K coproprietes en difficulté (ANAH), 180K fragiles (Senat). Plan Initiative Coproprietes: 2Mds EUR sur 10 ans. 873 358 coproprietes en France. RNIC: 619K immatriculees. SAM: collectivités actives dans les programmes OPAH + coproprietaires en zone tendue. B2B banques/assureurs: API scoring en complement."
+  },
+  "competitorDeep": [
+    {
+      "name": "Le Comptoir de la Copropriete",
+      "url": "https://www.le-comptoir-de-la-copropriete.fr",
+      "pricing": "Gratuit (statistiques agregees). Services premium sur devis",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "Référence pour les statistiques copropriete, 619K+ copros dans la base",
+      "strengths": "Base de données la plus complete, statistiques ANAH Q3 2025, couverture nationale",
+      "weaknesses": "Pas de scoring individuel, pas de détection des copros en difficulté, pas d'API, pas d'alertes"
+    },
+    {
+      "name": "Annuaire des Coproprietes (RNIC)",
+      "url": "https://annuairedescoproprietes.fr",
+      "pricing": "Gratuit",
+      "trafficEstimate": "30K-80K visites/mois",
+      "reviews": "Utile mais données brutes, pas d'analyse",
+      "strengths": "Données officielles du registre, recherche par adresse",
+      "weaknesses": "Aucune analyse, aucun scoring, données declaratives non vérifiées, UX basique"
+    },
+    {
+      "name": "ANAH / Outils internes collectivités",
+      "url": "https://www.anah.gouv.fr",
+      "pricing": "Interne (fonds publics)",
+      "trafficEstimate": "300K-500K visites/mois (site ANAH global)",
+      "reviews": "Organisme public référence, mais outils internes lents et non accessibles au public",
+      "strengths": "Autorité sur le sujet coproprietes fragiles, données exclusives, budget 2Mds EUR PIC",
+      "weaknesses": "Pas d'outil public de scoring, processus administratif lent, pas de tech moderne, opportunité de partenariat"
+    },
+    {
+      "name": "Copriciel",
+      "url": "https://www.copriciel.com",
+      "pricing": "Logiciel de gestion de syndic, prix sur devis",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Logiciel pro pour syndics, pas un outil de scoring public",
+      "strengths": "Expertise métier syndic, interface pro",
+      "weaknesses": "Outil de gestion interne, pas de scoring public, pas d'open data, pas B2C"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Registre national des coproprietes (RNIC)",
+      "status": "ok",
+      "detail": "Données open data sur data.gouv.fr. 619K+ coproprietes. Données declaratives remplies par les syndics sans contrôle. Couverture ~2/3. Obligation d'immatriculation depuis 2019 (loi ALUR). Données financières partiellement renseignées.",
+      "source": "https://www.data.gouv.fr/datasets/registre-national-dimmatriculation-des-coproprietes"
+    },
+    {
+      "topic": "Publication d'un score de santé sur une copropriete",
+      "status": "attention",
+      "detail": "Un score negatif peut impacter la valeur des biens et générer des recours de coproprietaires ou syndics. Utiliser uniquement des données publiques. Afficher la méthodologie transparente. Proposer un droit de réponse/correction. Disclaimers clairs que le score est indicatif.",
+      "source": "Code civil - Responsabilité du fait des informations erronees"
+    },
+    {
+      "topic": "Données sur les coproprietes en plan de sauvegarde",
+      "status": "attention",
+      "detail": "Les arrêtés prefectoraux de plan de sauvegarde sont publics mais les listes de coproprietes concernees ne sont pas systematiquement publiees en open data. L'ANAH dispose de ces listes en interne.",
+      "source": "Articles L615-1 et suivants du Code de la construction"
+    },
+    {
+      "topic": "RGPD et données des coproprietaires",
+      "status": "ok",
+      "detail": "Le scoring porte sur la copropriété (personne morale via le syndicat), pas sur les coproprietaires individuels. Pas de données personnelles dans le registre public. Le scoring est basé sur des données financières agregees de la copropriete.",
+      "source": "RGPD - Distinction personne morale / personne physique"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Outbound collectivités (email + telephone)",
+      "cacEstimate": "300-600 EUR",
+      "conversionRate": "5% réponse, 20% demo, 30% conversion. Cycle de vente: 2-4 mois",
+      "ltv": "4 788 EUR (399 EUR x 12 mois collectivité)",
+      "ltvCacRatio": "8:1 a 16:1"
+    },
+    {
+      "channel": "SEO (copropriété en difficulté, impayes copro)",
+      "cacEstimate": "20-35 EUR",
+      "conversionRate": "3% free signup, 5% free-to-paid B2C",
+      "ltv": "59 EUR (4,90 EUR x 12 mois coproprietaire) ou 119 EUR (9,90 EUR rapport)",
+      "ltvCacRatio": "2:1 a 6:1 (B2C)"
+    },
+    {
+      "channel": "Partenariats ANAH / diagnostic gratuit territoire",
+      "cacEstimate": "150-300 EUR (coût du diagnostic offert)",
+      "conversionRate": "40% conversion après diagnostic gratuit",
+      "ltv": "10 788 EUR (899 EUR x 12 mois plan département)",
+      "ltvCacRatio": "36:1 a 72:1"
+    },
+    {
+      "channel": "LinkedIn outbound syndics (Nexity, Foncia, Citya)",
+      "cacEstimate": "200-400 EUR",
+      "conversionRate": "8% réponse, 15% demo, 20% conversion",
+      "ltv": "Variable selon taille portefeuille. API: 500-2 000 EUR/mois",
+      "ltvCacRatio": "15:1 a 60:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 67,
+      "detail": "14.6K recherches/mois cumulees ('registre copropriete' 5 400/mois, 'impayes copropriete' 3 600/mois). TAM: 115 000 coproprietes. Cibles: Collectivités avec programmes OPAH, Acheteurs immobiliers et investisseurs, Syndics professionnels."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines. 5 APIs a integrer (Registre national coproprietes, DVF / DVF+, API DPE ADEME). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 88,
+      "detail": "Objectif 10K MRR en 10-12 mois. SOM: 63K EUR/an. Pricing 2-899 EUR."
+    },
+    "competition": {
+      "score": 45,
+      "detail": "4 concurrents identifies: Le Comptoir de la Copropriete, Annuaire des Coproprietes (RNI, ANAH / Outils internes collect. Leader: Le Comptoir de la Copropr (50K-100K visites/mois). Faiblesse principale: Pas de scoring individuel."
+    },
+    "legal": {
+      "score": 68,
+      "detail": "2 points OK, 2 points d'attention. Vigilance: Publication d'un score de santé sur une copropriet, Données sur les coproprietes en plan de sauvegarde."
+    },
+    "overall": {
+      "score": 69,
+      "detail": "Point fort: marché (88/100). Point faible: compétition (45/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

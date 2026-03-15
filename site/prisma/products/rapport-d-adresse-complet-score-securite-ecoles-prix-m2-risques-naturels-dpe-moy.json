@@ -1,0 +1,320 @@
+{
+  "productSlug": "rapport-d-adresse-complet-score-securite-ecoles-prix-m2-risques-naturels-dpe-moy",
+  "oneLiner": "Tapez une adresse, obtenez un rapport complet sur la sécurité, les écoles, le prix au m2, les risques naturels et la performance énergétique du quartier.",
+  "problem": "Avant d'acheter ou louer un bien, les particuliers passent des heures a croiser manuellement des dizaines de sources (DVF, base DPE, Georisques, stats criminalité, carte scolaire). L'information existe mais elle est eclatee sur 8+ sites differents, avec des interfaces techniques peu accessibles.",
+  "solution": "Un rapport généré automatiquement à partir d'une adresse, qui agrégé en un seul document lisible : score sécurité (stats criminalité communales), écoles a proximité avec leur classement, prix au m2 historique (DVF), risques naturels (Georisques API), DPE moyen du quartier, et qualification QPV. Le rapport est consultable en ligne et telechargeable en PDF.",
+  "uniqueValue": "Première plateforme française qui transforme une simple adresse en un diagnostic quartier complet et actionnable, là où les alternatives demandent de naviguer entre 8 sites gouvernementaux differents.",
+  "mvpScope": "Page web avec un champ adresse (autocompletion BAN), qui généré un rapport HTML avec 4 sections : prix au m2 (DVF des 2 dernières années dans un rayon de 500m), DPE moyen, risques naturels (Georisques), et écoles dans un rayon de 1km. Pas de PDF dans le MVP, pas de score sécurité (ajout en V2).",
+  "timeToMvp": "4-5 semaines solo dev",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "Geocodage et intégration DVF",
+      "description": "Mise en place du frontend avec champ adresse (API BAN), backend qui récupéré les transactions DVF dans un rayon de 500m autour de l'adresse geocodee. Affichage prix moyen au m2 et historique.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Page web avec autocompletion adresse",
+        "API interne DVF avec calcul prix/m2",
+        "Affichage graphique historique prix"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Intégration Georisques et DPE",
+      "description": "Ajout des risques naturels via l'API Georisques (inondation, seisme, radon, mouvement de terrain) et du DPE moyen via la base ADEME dans le périmètre.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Section risques naturels avec pictogrammes",
+        "DPE moyen du quartier",
+        "Carte interactive avec périmètre"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Intégration écoles et mise en page rapport",
+      "description": "Ajout des écoles a proximité (Annuaire Éducation Nationale), mise en page propre du rapport complet, metatags SEO pour chaque adresse.",
+      "duration": "1 semaine",
+      "deliverables": [
+        "Liste écoles avec distance",
+        "Rapport complet généré",
+        "URLs SEO-friendly par adresse"
+      ]
+    },
+    {
+      "phase": "4",
+      "title": "Monétisation et lancement",
+      "description": "Ajout du paywall (rapport gratuit partiel, rapport complet payant), intégration Stripe, landing page, et campagne de lancement sur les forums immobiliers.",
+      "duration": "1-2 semaines",
+      "deliverables": [
+        "Paywall avec Stripe Checkout",
+        "Landing page avec exemples",
+        "30 rapports de demo pre-generes pour le SEO"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les gens cherchent réellement cette info avant d'acheter",
+      "how": "Analyser le volume de recherche Google sur 'quartier + adresse', 'sécurité quartier', 'prix m2 rue'. Poster sur r/france et forums immobiliers pour mesurer l'intérêt.",
+      "successCriteria": "50+ réponses positives sur les forums, >1000 recherches/mois sur les mots-cles cibles"
+    },
+    {
+      "check": "Les gens sont prêts a payer pour un rapport agrégé",
+      "how": "Landing page avec prix affiche (4.90 EUR) et bouton 'Acheter' qui redirige vers une waitlist. Mesurer le taux de clic sur le bouton.",
+      "successCriteria": "Taux de clic >5% sur le bouton d'achat, 100+ inscrits waitlist en 2 semaines"
+    },
+    {
+      "check": "Les données sont suffisamment completes pour etre utiles",
+      "how": "Générer 50 rapports sur des adresses variees (Paris, Lyon, rural) et vérifier la couverture des données.",
+      "successCriteria": ">80% des adresses ont au moins 3 sections sur 4 remplies"
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Primo-accedants en recherche active (25-40 ans)",
+      "where": "Forums immobiliers (ForumConstruire, HardwareFR section immo), groupes Facebook 'Premier achat immobilier', subreddit r/vosfinances",
+      "howToReach": "Posts utiles avec exemples de rapports gratuits, réponses aux questions 'quel quartier choisir' avec lien vers l'outil"
+    },
+    {
+      "who": "Investisseurs locatifs particuliers",
+      "where": "Groupes Facebook et Discord d'investissement immobilier, chaînes YouTube immo (Yann Darwin, Elise Franck)",
+      "howToReach": "Contenus comparatifs de quartiers pour l'investissement, partenariats avec des YouTubeurs immo"
+    },
+    {
+      "who": "Expatries français qui achetent a distance",
+      "where": "Groupes Facebook d'expatries (Français a Londres, Français a Montreal), forums expatries.com",
+      "howToReach": "Angle 'achetez en France sans visiter : tout savoir sur le quartier a distance'"
+    }
+  ],
+  "pricingStrategy": "Freemium : rapport partiel gratuit (prix m2 + risques naturels basiques), rapport complet a 4.90 EUR l'unité. Pack 5 rapports a 14.90 EUR. Abonnement agent immo a 29 EUR/mois (rapports illimités, marque blanche).",
+  "pathTo10kMrr": "Modèle hybride : 500 rapports unitaires/mois a 4.90 EUR = 2 450 EUR + 50 agents immobiliers a 29 EUR/mois = 1 450 EUR + widget B2B pour 5 sites d'annonces a 500 EUR/mois = 2 500 EUR + SEO long tail (100K+ adresses indexees) generant du trafic organique a 6 mois. Total cible : 6 400 EUR a M6, 10K a M9 en augmentant le volume SEO et les partenariats B2B.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) avec Tailwind CSS, Leaflet pour les cartes",
+    "backend": "Next.js API Routes, Node.js",
+    "database": "PostgreSQL avec PostGIS pour les requetes géographiques, Redis pour le cache des rapports",
+    "hosting": "Vercel (frontend) + Railway ou Supabase (PostgreSQL/PostGIS)",
+    "apis": [
+      "API BAN (geocodage)",
+      "API DVF (data.gouv.fr)",
+      "API Georisques",
+      "API ADEME DPE",
+      "API Annuaire Éducation Nationale",
+      "Stripe API"
+    ],
+    "notes": "Pre-calculer les rapports pour les adresses populaires. Utiliser un CDN pour les PDF generes. Les données DVF et DPE peuvent etre importees en base pour des requetes plus rapides que les appels API."
+  },
+  "risks": [
+    {
+      "risk": "Données DVF incompletes dans certaines zones (DOM-TOM, Alsace-Moselle)",
+      "mitigation": "Afficher clairement la couverture, proposer des sources alternatives (notaires), ne pas facturer si le rapport est trop partiel"
+    },
+    {
+      "risk": "Concurrence de services existants (MeilleursAgents, Kelquartier)",
+      "mitigation": "Se differencier par l'exhaustivité (risques naturels + DPE + écoles en un seul rapport) et le prix bien inferieur a un diagnostic pro"
+    },
+    {
+      "risk": "Les APIs gouvernementales peuvent etre instables ou changer",
+      "mitigation": "Cache agressif (rapports valides 30 jours), import des datasets statiques en base, monitoring des APIs avec alertes"
+    }
+  ],
+  "inspirations": "StreetCheck.co.uk (UK, rapport gratuit par adresse avec stats criminalité et écoles, monetise via la publicité et les leads agents immo). Kelquartier.com (France, scores quartier mais UX datee et pas de rapport telechargeable). Homely.com.au (Australie, profils de quartier avec avis communautaires).",
+  "searchVolume": [
+    {
+      "keyword": "score quartier",
+      "monthlyVolume": "2400",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "diagnostic adresse immobilier",
+      "monthlyVolume": "1300",
+      "difficulty": "low",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "prix m2 rue",
+      "monthlyVolume": "8100",
+      "difficulty": "high",
+      "intent": "informational"
+    },
+    {
+      "keyword": "sécurité quartier ville",
+      "monthlyVolume": "3600",
+      "difficulty": "medium",
+      "intent": "informational"
+    },
+    {
+      "keyword": "rapport quartier immobilier",
+      "monthlyVolume": "720",
+      "difficulty": "low",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "2.8 milliards EUR - Marché PropTech France (données immobilières, estimation, outils d'aide a la décision pour les 959K transactions/an)",
+    "sam": "180 millions EUR - Segment données quartier et diagnostic adresse pour particuliers et professionnels (estimation basee sur 3.5M de recherches actives d'acheteurs/an x panier moyen 50 EUR)",
+    "som": "2.4 millions EUR - 500 rapports/mois a 4.90 EUR + 50 agents a 29 EUR/mois + 5 widgets B2B a 500 EUR/mois, atteignable a M12",
+    "methodology": "TAM basé sur le marché PropTech France (source: Global Growth Insights 2025). SAM estimé via le nombre d'acheteurs actifs (INSEE) x willingness-to-pay testee. SOM basé sur le business plan du pathTo10kMrr."
+  },
+  "competitorDeep": [
+    {
+      "name": "Kelquartier",
+      "url": "https://www.kelquartier.com",
+      "pricing": "Gratuit (monetise par la publicité)",
+      "trafficEstimate": "200K-400K visites/mois",
+      "reviews": "Données riches mais UX datee, pas de rapport telechargeable",
+      "strengths": "43K+ quartiers couverts, base de données tres complete, SEO mature sur 10+ ans",
+      "weaknesses": "Design obsolete, pas de score synthetique, pas de PDF, pas de monétisation B2B, pas de comparateur"
+    },
+    {
+      "name": "CityScan",
+      "url": "https://www.cityscan.fr",
+      "pricing": "B2B - abonnement agents immo (tarif non public, estimé 50-100 EUR/mois)",
+      "trafficEstimate": "50K-100K visites/mois",
+      "reviews": "70 indicateurs par emplacement, notation A-E, cible les pros",
+      "strengths": "70 indicateurs, carte interactive, recentrage sur l'estimation de prix, intégration outils agents immo",
+      "weaknesses": "Pas de version grand public accessible, prix élève pour les independants, pas de rapport unitaire payant"
+    },
+    {
+      "name": "MeilleursAgents",
+      "url": "https://www.meilleursagents.com",
+      "pricing": "Gratuit pour les particuliers, abonnement agents immo",
+      "trafficEstimate": "1.3M visiteurs uniques/mois",
+      "reviews": "Référence pour l'estimation de prix, 80% des estimations dans une fourchette de +/-10%",
+      "strengths": "Marque forte, 1.3M visiteurs/mois, filiale Axel Springer, données de prix tres fiables, réseau d'agents partenaires",
+      "weaknesses": "Focus uniquement prix, pas de score sécurité/écoles/risques/DPE, pas de rapport quartier complet"
+    },
+    {
+      "name": "ScoreImmo",
+      "url": "https://score-immo.fr",
+      "pricing": "Gratuit (modèle freemium)",
+      "trafficEstimate": "10K-30K visites/mois",
+      "reviews": "Croise 13 sources officielles, 230+ critères, score sur 100",
+      "strengths": "Score synthetique innovant, multi-sources, approche data-driven",
+      "weaknesses": "Faible notoriété, peu de trafic, pas encore de B2B établi"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données DVF (prix immobilier)",
+      "status": "ok",
+      "detail": "Données ouvertes sous licence Etalab, reutilisation libre y compris commerciale. Attention a ne pas publier de données permettant l'identification de personnes (transactions individuelles).",
+      "source": "data.gouv.fr - Licence Ouverte v2"
+    },
+    {
+      "topic": "Données DPE",
+      "status": "ok",
+      "detail": "Base ADEME en open data. Les DPE individuels sont publics depuis la loi Climat et Resilience 2021.",
+      "source": "ADEME - Open Data"
+    },
+    {
+      "topic": "Georisques",
+      "status": "ok",
+      "detail": "API publique gratuite, reutilisation libre. L'État des Risques et Pollutions (ERP) est un document réglementaire obligatoire pour les transactions.",
+      "source": "georisques.gouv.fr"
+    },
+    {
+      "topic": "Responsabilité editoriale",
+      "status": "attention",
+      "detail": "Le rapport agrégé des données publiques mais sa mise en forme pourrait etre vue comme un 'conseil'. Ajouter un disclaimer clair indiquant que le rapport est a titre informatif et ne remplace pas un diagnostic professionnel.",
+      "source": "Code de la consommation - Information préalable"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (long tail par adresse)",
+      "cacEstimate": "2-5 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "8 EUR (1.6 rapports/client)",
+      "ltvCacRatio": "2.5x"
+    },
+    {
+      "channel": "Google Ads (prix m2 + ville)",
+      "cacEstimate": "60-90 EUR",
+      "conversionRate": "3.3%",
+      "ltv": "15 EUR (pack 5 rapports)",
+      "ltvCacRatio": "0.2x - non rentable seul, sert d'acquisition"
+    },
+    {
+      "channel": "Forums immobiliers (organique)",
+      "cacEstimate": "0-1 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "8 EUR",
+      "ltvCacRatio": "8x+"
+    },
+    {
+      "channel": "Partenariats agents immo (B2B)",
+      "cacEstimate": "50-100 EUR",
+      "conversionRate": "15-20%",
+      "ltv": "348 EUR (29 EUR/mois x 12 mois)",
+      "ltvCacRatio": "4-7x"
+    },
+    {
+      "channel": "Cross-sell depuis comparateur/alertes",
+      "cacEstimate": "0 EUR (coût marginal)",
+      "conversionRate": "10-15%",
+      "ltv": "8 EUR",
+      "ltvCacRatio": "infini"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fondations data solides : datasets verifies via data.gouv.fr avec metriques reelles. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "16.1K recherches/mois cumulees ('prix m2 rue' 8 100/mois, 'sécurité quartier ville' 3 600/mois). TAM: 2.8 milliards EUR. Cibles: Primo-accedants en recherche active, Investisseurs locatifs particuliers, Expatries français qui achetent."
+    },
+    "feasibility": {
+      "score": 63,
+      "detail": "MVP en 4-5 semaines solo dev. 6 APIs a integrer (API BAN, API DVF, API Georisques). Stack: Next.js + PostgreSQL. Scope MVP ambitieux."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Objectif 10K MRR en 6 mois. Pricing 29-90 EUR."
+    },
+    "competition": {
+      "score": 40,
+      "detail": "4 concurrents identifies: Kelquartier, CityScan, MeilleursAgents. Leader: Kelquartier (200K-400K visites/mois). Faiblesse principale: Design obsolete."
+    },
+    "legal": {
+      "score": 78,
+      "detail": "3 points OK, 1 point d'attention. Vigilance: Responsabilité editoriale."
+    },
+    "overall": {
+      "score": 60,
+      "detail": "Point fort: legal (78/100). Point faible: compétition (40/100). Potentiel réel mais hypothèses clés à valider."
+    }
+  }
+}

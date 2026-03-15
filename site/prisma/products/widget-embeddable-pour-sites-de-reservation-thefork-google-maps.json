@@ -1,0 +1,323 @@
+{
+  "productSlug": "widget-embeddable-pour-sites-de-reservation-thefork-google-maps",
+  "oneLiner": "Widget embeddable affichant le score hygiene officiel sur les sites de réservation de restaurants.",
+  "problem": "Les plateformes de réservation (TheFork, Google Maps, TripAdvisor) affichent des avis clients mais jamais le score hygiene officiel. Les restaurateurs bien notes en hygiene n'ont aucun moyen de capitaliser sur cet avantage concurrentiel. Les plateformes perdent un signal de confiance precieux pour leurs utilisateurs.",
+  "solution": "Un widget JavaScript embeddable que les sites de réservation, annuaires ou blogs gastronomiques integrent en une ligne de code. Le widget affiche le score hygiene Alim'confiance avec un badge visuel (vert/orange/rouge), la date du dernier contrôle, et un lien vers le détail. API B2B pour les plateformes qui veulent intégrer les données nativement.",
+  "uniqueValue": "Solution B2B cle en main : une ligne de code pour afficher le score hygiene officiel. Aucun concurrent ne propose cette intégration. Les restaurateurs bien notes y voient un avantage concurrentiel, les plateformes un signal de confiance supplémentaire.",
+  "mvpScope": "Widget JS embeddable avec lookup par SIRET ou nom+adresse, badge visuel du score, documentation d'intégration, et dashboard d'analytics pour les clients B2B. API REST avec cle API et rate limiting.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "1",
+      "title": "API et base de données",
+      "description": "Ingestion des données Alim'confiance, API REST avec lookup par SIRET, nom, adresse. Système de cles API et rate limiting.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "API REST avec lookup SIRET/nom/adresse",
+        "Système de cles API",
+        "Rate limiting et monitoring",
+        "Documentation API Swagger"
+      ]
+    },
+    {
+      "phase": "2",
+      "title": "Widget embeddable",
+      "description": "Developper le widget JavaScript leger, configurable (taille, theme, position), avec un snippet d'intégration simple.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Widget JS < 15KB gzipped",
+        "3 variantes visuelles (badge, inline, tooltip)",
+        "Page de demo interactive",
+        "Snippet d'intégration copier-coller"
+      ]
+    },
+    {
+      "phase": "3",
+      "title": "Dashboard et vente",
+      "description": "Dashboard client avec analytics d'utilisation, page de pricing, et démarrage de la prospection commerciale.",
+      "duration": "1.5 semaines",
+      "deliverables": [
+        "Dashboard analytics par client",
+        "Page pricing avec self-serve signup",
+        "10 emails de prospection envoyes",
+        "Landing page B2B"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les plateformes de réservation sont intéressées par cette donnée",
+      "how": "Contacter 10 product managers de plateformes de réservation (TheFork, TripAdvisor, Google Local Guides) via LinkedIn. Proposer un POC gratuit.",
+      "successCriteria": "3+ réponses positives et 1 POC lance en 4 semaines."
+    },
+    {
+      "check": "Les restaurateurs bien notes veulent afficher leur score",
+      "how": "Contacter 50 restaurateurs avec un bon score via email/telephone. Proposer un badge gratuit pour leur site.",
+      "successCriteria": "20+ restaurateurs installent le badge en 2 semaines."
+    },
+    {
+      "check": "L'intégration technique est faisable sur les plateformes cibles",
+      "how": "Tester l'intégration du widget sur un site WordPress, un site Wix, et vérifier la compatibilité avec les principaux CMS.",
+      "successCriteria": "Widget fonctionnel sur WordPress, Wix, Squarespace, et en JS vanilla."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Blogs et sites gastronomiques independants",
+      "where": "Annuaires de blogs food (Hellocoton Food, Webedia Food), groupes Facebook blogueurs food",
+      "howToReach": "Offrir le widget gratuit aux 100 premiers blogs, avec co-branding. Pitcher via DM Instagram/email."
+    },
+    {
+      "who": "Restaurateurs avec un bon score hygiene",
+      "where": "Chambres de commerce locales, syndicats de restaurateurs (UMIH, GNI), groupes Facebook restaurateurs",
+      "howToReach": "Email personnalise avec leur score + badge prêt a intégrer. Partenariat avec les CCI pour diffusion."
+    },
+    {
+      "who": "Startups de réservation/livraison de repas",
+      "where": "Station F, French Tech, meetups foodtech (FoodTech Paris)",
+      "howToReach": "Pitch lors des meetups, demo sur stand, emails directs aux CTO via LinkedIn."
+    }
+  ],
+  "pricingStrategy": "Freemium B2B : gratuit jusqu'a 1 000 requetes/mois (blogs, petits sites). Pro a 49 EUR/mois pour 10 000 requetes (PME, chaines). Enterprise a 299 EUR/mois pour requetes illimitées + support + SLA (plateformes). Badge restaurateur : gratuit (acquisition) avec upsell vers un profil premium a 9.90 EUR/mois.",
+  "pathTo10kMrr": "Phase 1 (M1-M3) : 50 blogs gratuits + 20 restaurateurs badges gratuits pour la traction. Phase 2 (M3-M6) : conversion de 30 PME/chaines au plan Pro = 30 x 49 EUR = 1 470 EUR MRR + 100 restaurateurs premium = 990 EUR MRR. Phase 3 (M6-M12) : 3 plateformes Enterprise = 3 x 299 EUR = 897 EUR MRR + 150 Pro = 7 350 EUR MRR + 200 restaurateurs = 1 980 EUR MRR. Total M12 : ~10 227 EUR MRR.",
+  "techStack": {
+    "frontend": "Widget en Vanilla JS/Preact (< 15KB), dashboard en Next.js + Tailwind",
+    "backend": "Node.js/Fastify API avec Redis cache",
+    "database": "PostgreSQL avec index SIRET et geospatial",
+    "hosting": "Vercel (dashboard) + Railway (API) + Cloudflare CDN (widget)",
+    "apis": [
+      "Alim'confiance data.gouv.fr",
+      "API Entreprise (enrichissement SIRET)"
+    ],
+    "notes": "Le widget doit etre ultra-leger pour ne pas impacter les performances des sites clients. CDN Cloudflare gratuit pour la distribution. Budget : ~30 EUR/mois."
+  },
+  "risks": [
+    {
+      "risk": "Les grandes plateformes (TheFork, Google) ne veulent pas intégrer un widget tiers",
+      "mitigation": "Cibler d'abord les petites plateformes et blogs. Construire la traction bottom-up. Les grandes plateformes viendront quand la demande utilisateur sera la."
+    },
+    {
+      "risk": "Cycle de vente B2B long pour un solo dev",
+      "mitigation": "Privilegier le self-serve (signup en ligne, intégration en 5 min). Automatiser l'onboarding. Focus sur les segments qui decident vite (blogs, restaurateurs)."
+    },
+    {
+      "risk": "Les données Alim'confiance ne couvrent pas tous les restaurants",
+      "mitigation": "Afficher clairement quand aucune donnée n'est disponible. Proposer aux restaurateurs de soumettre leur attestation de contrôle manuellement."
+    }
+  ],
+  "inspirations": "Trustpilot et ses widgets de score embeddables sur les sites e-commerce ont prouve le modèle. Le badge 'Vérifié par Trustpilot' est devenu un standard. Meme logique appliquee a l'hygiene alimentaire.",
+  "searchVolume": [
+    {
+      "keyword": "résultat contrôle hygiene restaurant",
+      "monthlyVolume": "4400",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "alim confiance restaurant",
+      "monthlyVolume": "2900",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "score hygiene restaurant",
+      "monthlyVolume": "1900",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "API hygiene alimentaire",
+      "monthlyVolume": "320",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "widget avis restaurant site web",
+      "monthlyVolume": "590",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "179 000 restaurants en France (INSEE 2025) + 120 milliards EUR CA restauration. Marché des outils digitaux restauration estimé a 1.5-2 milliards EUR. Segment widgets/API confiance : ~200M EUR (par analogie avec Trustpilot qui fait 180M USD de CA mondial sur le e-commerce).",
+    "sam": "50 000 restaurants en zone urbaine sensibilises au digital + 500 plateformes/blogs gastronomiques/sites de réservation en France. Marché widgets B2B : 500 x 299 EUR/mois x 12 + 5 000 restaurateurs x 9.90 EUR x 12 = 2.4M EUR/an.",
+    "som": "150 sites Pro a 49 EUR + 100 restaurateurs premium a 9.90 EUR + 3 Enterprise a 299 EUR = 9 117 EUR MRR an 1. Objectif : ~110K EUR an 1.",
+    "methodology": "TAM basé sur les 179K restaurants France (INSEE) et le marché mondial des widgets de confiance (Trustpilot). SAM restreint aux restaurants urbains + plateformes/blogs food actifs. SOM prudent basé sur acquisition self-serve et prospection directe."
+  },
+  "competitorDeep": [
+    {
+      "name": "TheFork (LaFourchette)",
+      "url": "https://www.thefork.com",
+      "pricing": "Commission 2.60 EUR/couvert/réservation. TheFork Manager gratuit a payant. Widgets de réservation gratuits pour les restaurants partenaires. API B2B disponible (docs.thefork.io).",
+      "trafficEstimate": "10-15M visites/mois (Europe, 11 pays)",
+      "reviews": "4.5/5 stores. Leader réservation restaurant Europe. Rachété par TripAdvisor.",
+      "strengths": "Leader de la réservation en Europe, base de restaurants massive, API B2B existante, widget réservation natif",
+      "weaknesses": "N'affiche PAS les scores hygiene officiels, commission élevée par couvert, pas de données Alim'confiance"
+    },
+    {
+      "name": "Google Maps (fiches restaurants)",
+      "url": "https://maps.google.com",
+      "pricing": "Gratuit pour les consommateurs. Google Business Profile gratuit pour restaurants. Google Maps Platform API payante (7 USD/1000 requetes).",
+      "trafficEstimate": "1B+ visites/mois mondial",
+      "reviews": "Standard de fait pour la recherche de restaurants. Avis Google omnipresents.",
+      "strengths": "Audience massive, avis integres, position dominante, APIs puissantes",
+      "weaknesses": "N'affiche aucun score hygiene officiel, pas d'intégration Alim'confiance, pas ouvert aux widgets tiers"
+    },
+    {
+      "name": "Trustpilot (modèle analogue e-commerce)",
+      "url": "https://www.trustpilot.com",
+      "pricing": "Gratuit (basique). Standard 199 USD/mois. Growth 499 USD/mois. Enterprise sur devis. Widgets embeddables inclus.",
+      "trafficEstimate": "30-50M visites/mois mondial",
+      "reviews": "Leader mondial des avis verifies. 180M+ USD de CA.",
+      "strengths": "Modèle widget eprouve a l'échelle mondiale, forte brand, standard de confiance e-commerce",
+      "weaknesses": "Pas positionne sur la restauration ni l'hygiene alimentaire (inspiration modèle uniquement)"
+    },
+    {
+      "name": "Alim'confiance (site officiel)",
+      "url": "https://alim-confiance.gouv.fr",
+      "pricing": "100% gratuit. Données ouvertes sur data.gouv.fr. App mobile Alim'Contrôle.",
+      "trafficEstimate": "50-100K visites/mois",
+      "reviews": "Service public utile mais peu connu. Interface datee. App peu telechargee.",
+      "strengths": "Source officielle, données fiables et legales, gratuit",
+      "weaknesses": "Pas de widget embeddable, pas d'API B2B, UX mediocre, aucune intégration avec les plateformes de réservation"
+    },
+    {
+      "name": "Traqfood / ePackPro (outils HACCP)",
+      "url": "https://www.traqfood.com",
+      "pricing": "Traqfood à partir de 19.99 EUR/mois. ePackPro sur devis (estimation 47 EUR+/mois). Octopus HACCP a 47 EUR HT/mois.",
+      "trafficEstimate": "20-50K visites/mois chacun",
+      "reviews": "Traqfood : 50 000+ utilisateurs, bons avis. ePackPro : 20 000+ clients, 12 ans d'experience.",
+      "strengths": "Outils HACCP complets pour la conformité interne du restaurateur",
+      "weaknesses": "Pas de widget public ni d'affichage consommateur, outils internes uniquement, pas de données Alim'confiance"
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Reutilisation données Alim'confiance",
+      "status": "ok",
+      "detail": "Les résultats des contrôles sanitaires sont publiés en open data sur data.gouv.fr sous licence ouverte Etalab. Reutilisation commerciale autorisee.",
+      "source": "data.gouv.fr - dataset Alim'confiance"
+    },
+    {
+      "topic": "Droit a l'image des restaurateurs",
+      "status": "attention",
+      "detail": "L'affichage d'un score hygiene negatif sur un site tiers pourrait etre conteste par le restaurateur. Toutefois, il s'agit de données officielles publiques. Prevoir un mecanisme de droit de réponse pour les restaurateurs.",
+      "source": "Loi pour la confiance dans l'économie numérique (LCEN)"
+    },
+    {
+      "topic": "Responsabilité en cas d'erreur de matching",
+      "status": "attention",
+      "detail": "Un mauvais matching (score d'un restaurant attribué a un autre) pourrait causer un prejudice. Assurer un taux de matching > 95% et afficher un disclaimer. Mettre en place un signalement d'erreur.",
+      "source": "Code civil art. 1240 (responsabilité delictuelle)"
+    },
+    {
+      "topic": "RGPD - Données des utilisateurs du widget",
+      "status": "ok",
+      "detail": "Le widget ne collecte pas de données personnelles des visiteurs (pas de cookies, pas de tracking). Seules les requetes SIRET/nom sont loguees côté serveur. Conformité RGPD assuree par design.",
+      "source": "CNIL - RGPD by design"
+    },
+    {
+      "topic": "Conditions d'utilisation des plateformes tierces",
+      "status": "attention",
+      "detail": "L'intégration du widget sur TheFork, Google Maps etc. peut violer leurs CGU si fait sans accord. Privilegier les blogs/sites independants et les partenariats officiels avec les plateformes.",
+      "source": "CGU TheFork, Google Terms of Service"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Outbound email a blogs food / sites gastronomiques",
+      "cacEstimate": "20-50 EUR",
+      "conversionRate": "5-10%",
+      "ltv": "588 EUR (49 EUR x 12 mois Pro)",
+      "ltvCacRatio": "12:1 a 29:1"
+    },
+    {
+      "channel": "Product Hunt / Hacker News launch",
+      "cacEstimate": "0-5 EUR",
+      "conversionRate": "2-5%",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "118:1+ (quasi gratuit)"
+    },
+    {
+      "channel": "Partenariats CCI / UMIH restaurateurs",
+      "cacEstimate": "30-60 EUR",
+      "conversionRate": "5-8%",
+      "ltv": "118.80 EUR (9.90 EUR x 12 mois restaurateur)",
+      "ltvCacRatio": "2:1 a 4:1"
+    },
+    {
+      "channel": "LinkedIn outbound CTO/PM plateformes food",
+      "cacEstimate": "200-500 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "3 588 EUR (299 EUR x 12 mois Enterprise)",
+      "ltvCacRatio": "7:1 a 18:1"
+    },
+    {
+      "channel": "SEO (score hygiene restaurant, Alim confiance)",
+      "cacEstimate": "5-15 EUR",
+      "conversionRate": "3-5%",
+      "ltv": "588 EUR",
+      "ltvCacRatio": "39:1 a 118:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et metriques proviennent directement de l'API data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et telechargements mesures par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherches sur les sites concurrents. Les prix peuvent avoir change depuis la recherche (mars 2026)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimes sans outil SEO professionnel (Semrush/Ahrefs). Ordres de grandeur, pas des chiffres exacts."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs bases sur des statistiques publiques (INSEE, ANAH, etc.). Méthodologie transparente mais hypothèses discutables."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Recherche sur les textes publics et licences. Non vérifié par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basees sur des benchmarks SaaS generiques. Aucune donnée terrain. A valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Concept basé sur des datasets publics verifies via data.gouv.fr. Hypotheses de marché (taille, willingness-to-pay, CAC) à valider avec des tests terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 60,
+      "detail": "10.1K recherches/mois cumulees ('résultat contrôle hygiene restaurant' 4 400/mois, 'alim confiance restaurant' 2 900/mois). TAM: 120 milliards EUR. Cibles: Blogs et sites gastronomiques, Restaurateurs avec un bon, Startups de réservation/livraison de."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 5 semaines. 2 APIs a integrer (Alim'confiance, API Entreprise). Stack: Widget + PostgreSQL."
+    },
+    "market": {
+      "score": 45,
+      "detail": "SOM: 110K EUR/an. Pricing 49-299 EUR."
+    },
+    "competition": {
+      "score": 20,
+      "detail": "5 concurrents identifies: TheFork (LaFourchette), Google Maps (fiches restaurant, Trustpilot (modèle analogue e-. Leader: TheFork (LaFourchette) (10-15M visites/mois (Europe, 11 pays)). Faiblesse principale: N'affiche PAS les scores hygiene officiels."
+    },
+    "legal": {
+      "score": 55,
+      "detail": "2 points OK, 3 points d'attention. Vigilance: Droit a l'image des restaurateurs, Responsabilité en cas d'erreur de matching."
+    },
+    "overall": {
+      "score": 54,
+      "detail": "Point fort: faisabilité (78/100). Point faible: compétition (20/100). Idee intéressante, risques significatifs à mitiger."
+    }
+  }
+}
