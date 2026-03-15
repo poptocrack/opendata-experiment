@@ -87,8 +87,11 @@ export function Acronym({ children }: { children: string }) {
   const definition = definitions[text];
 
   const triggerRef = useRef<HTMLSpanElement>(null);
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
   const [coords, setCoords] = useState({ top: 0, left: 0 });
+
+  useEffect(() => setMounted(true), []);
 
   const updatePosition = useCallback(() => {
     const el = triggerRef.current;
@@ -122,33 +125,11 @@ export function Acronym({ children }: { children: string }) {
     return <span>{text}</span>;
   }
 
-  const tooltipContent =
-    typeof document !== 'undefined' &&
-    createPortal(
-      <span
-        role="tooltip"
-        className="pointer-events-none fixed z-[9999] w-64 whitespace-normal rounded-md border border-border bg-popover px-3 py-2 text-left text-xs text-popover-foreground shadow-lg transition-opacity duration-150"
-        style={{
-          left: coords.left,
-          top: coords.top,
-          transform: 'translate(-50%, -100%)',
-          opacity: visible ? 1 : 0
-        }}
-      >
-        {definition}
-        <span
-          className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-border"
-          aria-hidden
-        />
-      </span>,
-      document.body
-    );
-
   return (
     <>
       <span
         ref={triggerRef}
-        className="group/acr relative inline-flex"
+        className="relative inline-flex"
         onMouseEnter={show}
         onMouseLeave={hide}
       >
@@ -156,7 +137,26 @@ export function Acronym({ children }: { children: string }) {
           {text}
         </span>
       </span>
-      {tooltipContent}
+      {mounted &&
+        createPortal(
+          <span
+            role="tooltip"
+            className="pointer-events-none fixed z-[9999] w-64 whitespace-normal rounded-md border border-border bg-popover px-3 py-2 text-left text-xs text-popover-foreground shadow-lg transition-opacity duration-150"
+            style={{
+              left: coords.left,
+              top: coords.top,
+              transform: 'translate(-50%, -100%)',
+              opacity: visible ? 1 : 0,
+            }}
+          >
+            {definition}
+            <span
+              className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-border"
+              aria-hidden
+            />
+          </span>,
+          document.body
+        )}
     </>
   );
 }
