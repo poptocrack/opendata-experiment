@@ -19,12 +19,24 @@ type ProductItem = {
   opportunity: { title: string; sector: string };
 };
 
+type AnalyticsData = {
+  totalViews: number;
+  todayViews: number;
+  weekViews: number;
+  monthViews: number;
+  topPages: { path: string; views: number }[];
+  topReferrers: { referrer: string; views: number }[];
+  deviceBreakdown: { device: string; views: number }[];
+  dailyViews: { day: string; views: number }[];
+};
+
 export default function AdminPage() {
   const [secret, setSecret] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
-  const [tab, setTab] = useState<"waitlist" | "products">("waitlist");
+  const [tab, setTab] = useState<"analytics" | "waitlist" | "products">("analytics");
   const [entries, setEntries] = useState<WaitlistEntry[]>([]);
   const [products, setProducts] = useState<ProductItem[]>([]);
+  const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [total, setTotal] = useState(0);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -40,9 +52,10 @@ export default function AdminPage() {
       setError("");
       try {
         const h = { Authorization: `Bearer ${token}`, "Content-Type": "application/json" };
-        const [wRes, pRes] = await Promise.all([
+        const [wRes, pRes, aRes] = await Promise.all([
           fetch("/api/admin/waitlist", { headers: h }),
           fetch("/api/admin/products", { headers: h }),
+          fetch("/api/admin/analytics", { headers: h }),
         ]);
         if (!wRes.ok || !pRes.ok) {
           setError("Accès refusé");
@@ -51,9 +64,11 @@ export default function AdminPage() {
         }
         const wData = await wRes.json();
         const pData = await pRes.json();
+        const aData = aRes.ok ? await aRes.json() : null;
         setEntries(wData.entries);
         setTotal(wData.total);
         setProducts(pData.products);
+        setAnalytics(aData);
         setAuthenticated(true);
         localStorage.setItem("admin_secret", token);
       } catch {
@@ -167,6 +182,12 @@ export default function AdminPage() {
         </div>
         <div className="mx-auto max-w-4xl px-6 flex gap-4">
           <button
+            onClick={() => setTab("analytics")}
+            className={`pb-3 text-sm font-medium border-b-2 transition-colors ${tab === "analytics" ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}
+          >
+            Analytics {analytics ? `(${analytics.totalViews})` : ""}
+          </button>
+          <button
             onClick={() => setTab("waitlist")}
             className={`pb-3 text-sm font-medium border-b-2 transition-colors ${tab === "waitlist" ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}
           >
@@ -182,6 +203,111 @@ export default function AdminPage() {
       </div>
 
       <div className="mx-auto max-w-4xl px-6 py-8 space-y-8">
+        {tab === "analytics" && analytics && (
+          <>
+            {/* KPIs */}
+            <div className="grid gap-4 sm:grid-cols-4">
+              {[
+                { label: "Aujourd'hui", value: analytics.todayViews },
+                { label: "7 derniers jours", value: analytics.weekViews },
+                { label: "30 derniers jours", value: analytics.monthViews },
+                { label: "Total", value: analytics.totalViews },
+              ].map((kpi) => (
+                <Card key={kpi.label}>
+                  <CardContent className="py-4 text-center">
+                    <div className="text-3xl font-bold font-mono text-primary">{kpi.value}</div>
+                    <div className="text-sm text-muted-foreground">{kpi.label}</div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Daily chart (text-based) */}
+            {analytics.dailyViews.length > 0 && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-sm">Vues par jour (30 derniers jours)</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-1">
+                    {analytics.dailyViews.map((d) => {
+                      const max = Math.max(...analytics.dailyViews.map((x) => x.views), 1);
+                      const width = Math.max((d.views / max) * 100, 2);
+                      return (
+                        <div key={d.day} className="flex items-center gap-3 text-xs">
+                          <span className="w-20 text-muted-foreground shrink-0">{d.day.slice(5)}</span>
+                          <div className="flex-1 h-4 bg-muted rounded overflow-hidden">
+                            <div className="h-full bg-primary/60 rounded" style={{ width: `${width}%` }} />
+                          </div>
+                          <span className="w-8 text-right font-mono">{d.views}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {/* Top pages */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-sm">Top pages</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {analytics.topPages.map((p) => (
+                      <div key={p.path} className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground truncate max-w-[70%]">{p.path}</span>
+                        <span className="font-mono">{p.views}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Referrers + Devices */}
+              <div className="space-y-4">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-sm">Referrers</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {analytics.topReferrers.length === 0 ? (
+                      <p className="text-sm text-muted-foreground">Aucun referrer</p>
+                    ) : (
+                      <div className="space-y-2">
+                        {analytics.topReferrers.map((r) => (
+                          <div key={r.referrer} className="flex items-center justify-between text-sm">
+                            <span className="text-muted-foreground truncate max-w-[70%]">{r.referrer}</span>
+                            <span className="font-mono">{r.views}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-sm">Devices</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex gap-4">
+                      {analytics.deviceBreakdown.map((d) => (
+                        <div key={d.device} className="text-center">
+                          <div className="text-lg font-bold font-mono text-primary">{d.views}</div>
+                          <div className="text-xs text-muted-foreground capitalize">{d.device}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </>
+        )}
+
         {tab === "waitlist" && (
           <>
             <div className="grid gap-4 sm:grid-cols-3">

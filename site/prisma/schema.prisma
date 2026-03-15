@@ -125,6 +125,18 @@ model ProductDetail {
   confidenceLevels String? // JSON: {datasets, metrics, competitors, searchVolume, tamSamSom, legal, cac, overall}
 }
 
+model PageView {
+  id        Int      @id @default(autoincrement())
+  path      String
+  referrer  String?
+  country   String?
+  device    String?  // mobile | desktop | tablet
+  createdAt DateTime @default(now())
+
+  @@index([path])
+  @@index([createdAt])
+}
+
 model WaitlistEntry {
   id        Int      @id @default(autoincrement())
   email     String   @unique

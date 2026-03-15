@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/panel-", "/api/admin/"],
     },
     sitemap: "https://lefilon.net/sitemap.xml",
   };
