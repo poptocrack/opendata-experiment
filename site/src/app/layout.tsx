@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Analytics } from '@/components/analytics';
+import { NewsletterBanner } from '@/components/newsletter-banner';
 import './globals.css';
 
 const geistSans = Geist({
@@ -68,6 +69,7 @@ export default function RootLayout({
         <ThemeToggle />
         <Analytics />
         {children}
+        <NewsletterBanner />
       </body>
     </html>
   );
