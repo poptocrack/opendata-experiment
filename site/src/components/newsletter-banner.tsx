@@ -22,7 +22,7 @@ export function NewsletterBanner() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (dismissed && !submitted) return null;
+  if (dismissed) return null;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
