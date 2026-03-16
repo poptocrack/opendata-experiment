@@ -97,7 +97,6 @@ export default async function ProductPage({
   const opp = product.opportunity;
 
   const parsed = detail ? parseDetail(detail) : null;
-    : null;
 
   const mainContent = detail && parsed
     ? <ProductDetailContent detail={detail} opp={opp} parsed={parsed} />

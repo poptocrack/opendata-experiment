@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "DATABASE_URL=\"file:./prisma/dev.db\" next dev",
     "build": "prisma generate && prisma db push && prisma db seed && next build",
-    "build:next": "next build",
+    "build:next": "DATABASE_URL=\"file:./prisma/dev.db\" next build",
     "start": "next start",
     "lint": "eslint"
   },
