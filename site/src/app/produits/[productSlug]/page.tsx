@@ -6,7 +6,6 @@ import {
   type ProductWithDetail,
 } from '@/lib/queries';
 import { Footer } from '@/components/footer';
-import { Paywall } from '@/components/paywall';
 import {
   ProductBreadcrumb,
   ProductHeader,
@@ -97,31 +96,12 @@ export default async function ProductPage({
   const detail = product.detail;
   const opp = product.opportunity;
 
-  // Server-side access control — premium content is NOT sent to the client
-  const hasAccess = product.unlocked;
-
-  const parsed = detail && hasAccess ? parseDetail(detail) : null;
-
-  // Free preview: only problem/solution/score — no roadmap, no validation, no market data
-  const freePreview = detail
-    ? {
-        oneLiner: detail.oneLiner,
-        problem: detail.problem,
-        solution: detail.solution,
-        uniqueValue: detail.uniqueValue,
-        timeToMvp: detail.timeToMvp,
-        viabilityScore: detail.viabilityScore,
-      }
+  const parsed = detail ? parseDetail(detail) : null;
     : null;
 
-  let mainContent: React.ReactNode;
-  if (detail && parsed) {
-    mainContent = <ProductDetailContent detail={detail} opp={opp} parsed={parsed} />;
-  } else if (detail && freePreview) {
-    mainContent = <Paywall freePreview={freePreview} />;
-  } else {
-    mainContent = <ProductEmptyState opportunitySlug={opp.slug} opportunityTitle={opp.title} />;
-  }
+  const mainContent = detail && parsed
+    ? <ProductDetailContent detail={detail} opp={opp} parsed={parsed} />
+    : <ProductEmptyState opportunitySlug={opp.slug} opportunityTitle={opp.title} />;
 
   return (
     <div className="min-h-screen">

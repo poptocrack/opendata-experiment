@@ -119,25 +119,31 @@ export function OpportunityCard({ opp }: { opp: OpportunityWithRelations }) {
         <Separator />
 
         {/* Product ideas */}
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-            Idées de produit
-          </h4>
-          <ul className="space-y-2">
+        <div className="rounded-lg border-2 border-primary/30 bg-primary/5 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-primary">
+              {opp.productIdeas.length} idées de produit — fiches détaillées
+            </h4>
+          </div>
+          <div className="grid gap-2 sm:grid-cols-2">
             {opp.productIdeas.map((idea) => (
-              <li key={idea.id} className="flex gap-2 text-sm">
-                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                <Link href={`/produits/${idea.slug}`} className="hover:underline">
+              <Link
+                key={idea.id}
+                href={`/produits/${idea.slug}`}
+                className="group flex items-start gap-2 rounded-md border border-border/50 bg-card/80 p-3 text-sm hover:border-primary/50 hover:bg-primary/5 transition-colors"
+              >
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60 group-hover:bg-primary" />
+                <span className="group-hover:text-foreground transition-colors">
                   {idea.text}
-                  {idea.detail && (
-                    <Badge variant="outline" className="ml-2 text-[10px] py-0">
-                      fiche
-                    </Badge>
-                  )}
-                </Link>
-              </li>
+                </span>
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
 
         <Separator />
