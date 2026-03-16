@@ -5,9 +5,9 @@ export function Hero({ count }: { count: number }) {
   return (
     <section className="relative overflow-hidden border-b border-border">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
-      <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-32">
+      <div className="relative mx-auto max-w-5xl px-6 py-20 sm:py-28">
         <Badge variant="outline" className="mb-6">
-          Recherche en cours , mis à jour régulièrement
+          Recherche en cours — mis à jour régulièrement
         </Badge>
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           Opportunités cachées dans
@@ -23,16 +23,27 @@ export function Hero({ count }: { count: number }) {
         <div className="mt-8 flex flex-wrap gap-3 text-sm text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-green-500" />
-            {count} opportunité{count > 1 ? 's' : ''} identifiée{count > 1 ? 's' : ''}
+            {count} secteurs analysés
           </span>
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-blue-500" />
-            20+ datasets et 10+ APIs analysés
+            90 fiches produit détaillées
           </span>
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-amber-500" />
-            Phase : exploration
+            Tout est gratuit et open
           </span>
+        </div>
+        <div className="mt-8">
+          <a
+            href="#secteurs"
+            className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Voir les opportunités
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

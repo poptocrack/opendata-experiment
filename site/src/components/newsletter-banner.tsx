@@ -18,7 +18,7 @@ export function NewsletterBanner() {
       if (Date.now() - dismissedAt < 7 * 86400000) return;
     }
     // Show after 30s on the page
-    const timer = setTimeout(() => setDismissed(false), 30000);
+    const timer = setTimeout(() => setDismissed(false), 15000);
     return () => clearTimeout(timer);
   }, []);
 

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getOpportunityBySlug, getOpportunities } from '@/lib/queries';
 import { OpportunityCard } from '@/components/opportunity-card';
+import { NewsletterInline } from '@/components/newsletter-inline';
 import { Footer } from '@/components/footer';
 
 export async function generateStaticParams() {
@@ -63,6 +64,10 @@ export default async function OpportunityPage({
       <section>
         <div className="mx-auto max-w-5xl px-6 py-10">
           <OpportunityCard opp={opp} />
+
+          <div className="mt-8">
+            <NewsletterInline />
+          </div>
 
           <div className="mt-8 flex items-center justify-between">
             {prev ? (
