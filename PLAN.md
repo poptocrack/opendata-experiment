@@ -70,11 +70,6 @@
 - Contenu : nouvelles analyses hebdomadaires
 - Objectif : construire une base email pour les futures offres
 
-### Slack Dev With AI
-
-- Posts dans #experimentations (retour d'expérience technique)
-- 4 visites déjà
-
 ## CTA à ajouter sur le site
 
 - [ ] "Faites analyser votre secteur — 249€" (page dédiée ou section sur la landing)
@@ -97,3 +92,4 @@
 3. Les charger dans Buffer/Typefully
 4. Ajouter le CTA "analyse à la demande" sur le site
 5. Intégrer un outil SEO pour renforcer les données
+6. Benchmark des données UGAP

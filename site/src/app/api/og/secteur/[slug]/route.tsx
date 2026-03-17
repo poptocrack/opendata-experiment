@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/db";
+import { getGeistFont, getGeistFontBold } from "@/lib/og-font";
 
 export const runtime = "nodejs";
 
@@ -13,10 +14,8 @@ export async function GET(
   const opp = await prisma.opportunity.findUnique({
     where: { slug },
     include: {
-      signals: { orderBy: { order: "asc" }, take: 4 },
+      signals: { orderBy: { order: "asc" }, take: 2 },
       productIdeas: { select: { id: true } },
-      datasets: { select: { id: true } },
-      apis: { select: { id: true } },
     },
   });
 
@@ -24,135 +23,166 @@ export async function GET(
     return new Response("Not found", { status: 404 });
   }
 
-  const diffColor =
-    opp.difficulty === "facile" ? "#22c55e" : opp.difficulty === "moyenne" ? "#f59e0b" : "#ef4444";
+  const nbProducts = opp.productIdeas.length;
 
   return new ImageResponse(
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)",
+          background: "#f5f5f0",
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          padding: "60px",
+          fontFamily: "Geist",
         }}
       >
-        {/* Header */}
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+        {/* Left: text */}
+        <div
+          style={{
+            width: "55%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: "56px 56px 48px 56px",
+          }}
+        >
+          {/* Logo + badge */}
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", fontWeight: 700, fontSize: "18px", color: "#1c1917" }}>
+              Le Filon
+            </div>
+            <div
+              style={{
+                display: "flex",
+                background: "#e7e5e4",
+                borderRadius: "4px",
+                padding: "2px 10px",
+                fontSize: "13px",
+                color: "#57534e",
+                fontWeight: 600,
+              }}
+            >
+              Analyse sectorielle
+            </div>
+          </div>
+
+          {/* Title */}
           <div
             style={{
-              background: "#f59e0b",
-              borderRadius: "8px",
-              width: "36px",
-              height: "36px",
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "20px",
-              fontWeight: 900,
-              color: "#0a0a0a",
+              fontSize: "52px",
+              fontWeight: 700,
+              color: "#1c1917",
+              lineHeight: 1.08,
+              letterSpacing: "-0.03em",
+              marginTop: "24px",
             }}
           >
-            F
+            {opp.title}
           </div>
-          <span style={{ color: "#f59e0b", fontSize: "20px", fontWeight: 700 }}>Le Filon</span>
-          <div style={{ display: "flex", gap: "8px", marginLeft: "auto" }}>
-            <span
-              style={{
-                background: "rgba(245,158,11,0.15)",
-                border: "1px solid rgba(245,158,11,0.3)",
-                borderRadius: "6px",
-                padding: "4px 12px",
-                color: "#f59e0b",
-                fontSize: "14px",
-              }}
-            >
-              {opp.sector}
-            </span>
-            <span
-              style={{
-                background: `${diffColor}20`,
-                border: `1px solid ${diffColor}50`,
-                borderRadius: "6px",
-                padding: "4px 12px",
-                color: diffColor,
-                fontSize: "14px",
-              }}
-            >
-              {opp.difficulty}
-            </span>
-          </div>
-        </div>
 
-        {/* Title */}
-        <div
-          style={{
-            marginTop: "40px",
-            fontSize: "44px",
-            fontWeight: 700,
-            color: "#ffffff",
-            lineHeight: 1.2,
-          }}
-        >
-          {opp.title}
-        </div>
-
-        {/* Tagline */}
-        <div
-          style={{
-            marginTop: "16px",
-            fontSize: "22px",
-            color: "#a1a1aa",
-            lineHeight: 1.4,
-            maxWidth: "900px",
-          }}
-        >
-          {opp.tagline.length > 150 ? opp.tagline.substring(0, 150) + "..." : opp.tagline}
-        </div>
-
-        {/* Signals */}
-        <div style={{ marginTop: "auto", display: "flex", gap: "16px", flexWrap: "wrap" }}>
-          {opp.signals.map((signal, i) => (
+          {/* Signal highlight */}
+          {opp.signals[0] && (
             <div
-              key={i}
               style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "10px",
-                padding: "16px 20px",
                 display: "flex",
-                flexDirection: "column",
-                gap: "4px",
-                minWidth: "180px",
+                fontSize: "18px",
+                color: "#78716c",
+                lineHeight: 1.5,
+                marginTop: "16px",
               }}
             >
-              <span style={{ fontSize: "28px", fontWeight: 900, color: "#f59e0b" }}>
-                {signal.value}
-              </span>
-              <span style={{ fontSize: "13px", color: "#71717a" }}>{signal.label}</span>
+              {opp.signals[0].value} — {opp.signals[0].label}
             </div>
-          ))}
+          )}
+
+          {/* Bottom */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
+            <div style={{ display: "flex", fontSize: "15px", color: "#a8a29e" }}>
+              lefilon.net
+            </div>
+            <div style={{ display: "flex", fontSize: "15px", color: "#78716c", fontWeight: 600 }}>
+              {nbProducts} idées de produit
+            </div>
+          </div>
         </div>
 
-        {/* Footer stats */}
+        {/* Right: abstract visual */}
         <div
           style={{
-            marginTop: "24px",
+            width: "45%",
             display: "flex",
-            gap: "24px",
-            fontSize: "14px",
-            color: "#52525b",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "relative",
+            overflow: "hidden",
+            background: "#eeece7",
           }}
         >
-          <span>{opp.productIdeas.length} idées de produit</span>
-          <span>{opp.datasets.length} datasets</span>
-          {opp.apis.length > 0 && <span>{opp.apis.length} APIs</span>}
-          <span>{opp.monetization}</span>
+          {/* Large amber circle */}
+          <div
+            style={{
+              position: "absolute",
+              width: "360px",
+              height: "360px",
+              borderRadius: "180px",
+              background: "#d97706",
+              opacity: 0.85,
+              top: "60px",
+              right: "-60px",
+              display: "flex",
+            }}
+          />
+          {/* Dark circle */}
+          <div
+            style={{
+              position: "absolute",
+              width: "140px",
+              height: "140px",
+              borderRadius: "70px",
+              background: "#1c1917",
+              bottom: "80px",
+              left: "40px",
+              display: "flex",
+            }}
+          />
+          {/* White accent */}
+          <div
+            style={{
+              position: "absolute",
+              width: "200px",
+              height: "200px",
+              borderRadius: "100px",
+              background: "#ffffff",
+              opacity: 0.9,
+              top: "40px",
+              left: "100px",
+              display: "flex",
+            }}
+          />
+          {/* Small pink accent */}
+          <div
+            style={{
+              position: "absolute",
+              width: "40px",
+              height: "40px",
+              borderRadius: "20px",
+              background: "#fde68a",
+              top: "160px",
+              left: "70px",
+              display: "flex",
+            }}
+          />
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    {
+      width: 1200,
+      height: 630,
+      fonts: [
+        { name: "Geist", data: await getGeistFont(), weight: 400, style: "normal" },
+        { name: "Geist", data: await getGeistFontBold(), weight: 700, style: "normal" },
+      ],
+    }
   );
 }
