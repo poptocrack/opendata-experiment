@@ -7,6 +7,10 @@ services:
     environment:
       - ADMIN_SECRET=${ADMIN_SECRET:-changeme}
       - DATABASE_URL=file:/data/dev.db
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+      - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL:-https://lefilon.net}
+      - RESEND_API_KEY=${RESEND_API_KEY}
     volumes:
       - db_data:/data
     restart: unless-stopped
