@@ -32,7 +32,7 @@ export function ClassementPaywall() {
         <SmartText>Débloquez les noms et accédez aux fiches complètes</SmartText>
       </h3>
       <div className="mt-4 flex items-center justify-center gap-3">
-        <span className="text-3xl font-bold">79€</span>
+        <span className="text-3xl font-bold">79€<span className="text-sm font-medium text-muted-foreground ml-1">HT</span></span>
         <span className="text-lg text-muted-foreground line-through">120€</span>
         <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-400">
           Offre de lancement
@@ -48,6 +48,11 @@ export function ClassementPaywall() {
       >
         {loading ? "Redirection..." : "Obtenir l'accès"}
       </button>
+      <p className="mt-3">
+        <a href="/acces" className="text-xs text-muted-foreground underline hover:text-foreground transition-colors">
+          J&apos;ai déjà un accès
+        </a>
+      </p>
     </section>
   );
 }

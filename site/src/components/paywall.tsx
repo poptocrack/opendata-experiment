@@ -100,7 +100,7 @@ export function Paywall() {
 
         {/* Pricing */}
         <div className="mt-8 flex items-center justify-center gap-3">
-          <span className="text-4xl font-bold text-foreground">79€</span>
+          <span className="text-4xl font-bold text-foreground">79€<span className="text-base font-medium text-muted-foreground ml-1">HT</span></span>
           <span className="text-lg text-muted-foreground line-through">
             120€
           </span>
@@ -181,6 +181,11 @@ export function Paywall() {
           <SmartText>
             Paiement sécurisé via Stripe. Satisfait ou remboursé sous 14 jours.
           </SmartText>
+        </p>
+        <p className="mt-3">
+          <a href="/acces" className="text-xs text-muted-foreground underline hover:text-foreground transition-colors">
+            J&apos;ai déjà un accès
+          </a>
         </p>
       </section>
     </div>

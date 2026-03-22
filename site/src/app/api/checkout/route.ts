@@ -5,11 +5,18 @@ export async function POST() {
   try {
     const session = await getStripe().checkout.sessions.create({
       mode: "payment",
+      invoice_creation: {
+        enabled: true,
+      },
+      automatic_tax: {
+        enabled: true,
+      },
       line_items: [
         {
           price_data: {
             currency: "eur",
             unit_amount: 7900,
+            tax_behavior: "exclusive",
             product_data: {
               name: "Le Filon — Accès complet à vie",
               description:
