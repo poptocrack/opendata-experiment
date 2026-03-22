@@ -4,7 +4,7 @@
 
 ### Phase 1 : Analyse sectorielle à la demande (maintenant)
 
-- Prix : 349€ par analyse sectorielle complète
+- Prix : 249€ par analyse sectorielle complète
 - Process : ~30 min de pilotage IA + vérification humaine = ~3€ de coût
 - CTA sur le site : "Votre secteur n'y est pas ? Commandez une analyse"
 - Posts LinkedIn quotidiens → trafic → commandes

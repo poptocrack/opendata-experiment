@@ -1,0 +1,316 @@
+{
+  "productSlug": "tableau-bord-conformite-assainissement",
+  "oneLiner": "Le tableau de bord qui transforme les obligations réglementaires assainissement en indicateurs visuels actionnables.",
+  "problem": "Un responsable assainissement en collectivité doit suivre la conformité de ses stations d'épuration (STEU) vis-à-vis de la directive ERU, déclarer ses indicateurs SISPEA, et anticiper les investissements de mise aux normes. Aujourd'hui, il jongle entre le portail SISPEA (saisie manuelle), les données de l'agence de l'eau, les rapports du SATESE, et ses propres tableurs Excel. La saisie SISPEA seule prend 2 jours/mois. Il n'a aucune vue consolidée de la conformité de ses installations et aucun outil d'alerte en cas de dépassement de seuils.",
+  "solution": "Un tableau de bord SaaS qui agrège automatiquement les données SISPEA, les résultats d'autosurveillance des STEU via Hub'Eau, et les seuils réglementaires ERU pour afficher une vue temps réel de la conformité de chaque station. Alertes automatiques en cas de dépassement, comparaison avec les STEU de même capacité, et génération automatique du rapport annuel du délégataire (RAD). L'outil pré-remplit la saisie SISPEA et identifie les points de non-conformité à corriger en priorité.",
+  "uniqueValue": "Aucun outil ne combine la vue conformité ERU, le pré-remplissage SISPEA et le benchmark entre stations. Les logiciels de supervision (SCADA) pilotent le process en temps réel mais ne font pas le lien avec la conformité réglementaire. SISPEA fait la déclaration mais pas le pilotage. Ce produit comble le gap entre l'opérationnel et le réglementaire.",
+  "mvpScope": "Dashboard web avec : import des données STEU via Hub'Eau (autosurveillance), affichage des indicateurs de conformité ERU (DBO5, DCO, MES, NTK, Pt), alertes en cas de dépassement, comparaison avec la moyenne nationale par tranche de capacité. Couverture : toutes les STEU de France (22 000). Pas de pré-remplissage SISPEA au MVP. Pas de rapport PDF automatisé. Pas de connexion SCADA.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin auprès des techniciens assainissement",
+      "description": "Contacter 15 responsables assainissement via l'ASTEE et les SATESE départementaux. Présenter un mockup du dashboard. Identifier les 3 fonctionnalités prioritaires. Objectif : 5 lettres d'intention.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "15 entretiens techniciens",
+        "5 lettres d'intention",
+        "Mockup validé",
+        "Priorisation fonctionnalités"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Dashboard conformité fonctionnel",
+      "description": "Pipeline d'ingestion Hub'Eau autosurveillance + seuils ERU. Interface web avec vue par STEU, alertes dépassement, comparaison par capacité. Déploiement auprès des 5 premiers testeurs.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Pipeline data Hub'Eau autosurveillance",
+        "Dashboard conformité",
+        "Système d'alertes email",
+        "5 testeurs actifs"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "20 premiers clients payants",
+      "description": "Présence au Carrefour des Gestions Locales de l'Eau. Démonstrations aux SATESE départementaux. Offre de lancement à prix réduit pour les early adopters.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "20 clients payants",
+        "Présence CGLE",
+        "3 partenariats SATESE",
+        "Taux de rétention mesuré"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Pré-remplissage SISPEA et rapport annuel",
+      "description": "Ajout du pré-remplissage automatique de la saisie SISPEA (gain de 2 jours/mois). Génération automatique du rapport annuel du délégataire. Extension aux indicateurs eau potable.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Pré-remplissage SISPEA",
+        "Génération rapport annuel PDF",
+        "Extension eau potable",
+        "50 clients payants"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Partenariats avec les agences de l'eau (6 agences, relais naturels). Offre multi-sites pour les grandes intercommunalités. Module prévisionnel d'investissement (plan pluriannuel). API pour les bureaux d'études.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "3 partenariats agences de l'eau",
+        "100 clients",
+        "Module prévisionnel"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "La saisie SISPEA est-elle réellement un point de douleur majeur pour les techniciens assainissement ?",
+      "how": "Interviewer 10 responsables assainissement en régie. Leur demander combien de temps ils passent sur SISPEA par mois et ce qu'ils voudraient automatiser. Vérifier dans les forums ASTEE.",
+      "successCriteria": "8/10 confirment passer plus d'1 jour/mois sur la saisie SISPEA. 6/10 seraient prêts à payer pour un outil qui automatise cette tâche."
+    },
+    {
+      "check": "Les données Hub'Eau autosurveillance sont-elles suffisamment complètes pour un dashboard ?",
+      "how": "Interroger l'API Hub'Eau pour 30 STEU de tailles variées. Vérifier la fréquence de mise à jour, la couverture des paramètres ERU, et la profondeur historique.",
+      "successCriteria": "Hub'Eau couvre 70%+ des STEU test avec des données de moins de 3 mois. Les paramètres ERU clés (DBO5, DCO, MES) sont disponibles."
+    },
+    {
+      "check": "Les collectivités en régie ont-elles un budget pour ce type d'outil ?",
+      "how": "Contacter 5 EPCI en régie et 5 en délégation. Vérifier si les EPCI en régie ont un budget outils numériques assainissement. Comparer avec le coût d'un SATESE départemental.",
+      "successCriteria": "Au moins 3/5 EPCI en régie confirment un budget > 2 000€/an pour des outils numériques eau/assainissement."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Responsables assainissement des régies intercommunales (EPCI > 20 000 habitants)",
+      "where": "ASTEE (2 000 membres), congrès annuel ASTEE, Carrefour des Gestions Locales de l'Eau (Rennes), SATESE départementaux",
+      "howToReach": "Présentation lors des journées techniques ASTEE. Stand au CGLE. Webinaire gratuit 'Automatisez votre saisie SISPEA'. Contact direct via les annuaires SATESE."
+    },
+    {
+      "who": "SATESE départementaux (Services d'Assistance Technique)",
+      "where": "SATESE présents dans 80+ départements, rattachés aux Conseils départementaux ou syndicats mixtes",
+      "howToReach": "Les SATESE accompagnent les collectivités et pourraient devenir des prescripteurs. Leur proposer un accès gratuit multi-collectivités en échange de recommandations."
+    },
+    {
+      "who": "Bureaux d'études spécialisés assainissement (SAFEGE, Artelia, IRH)",
+      "where": "Pollutec (Lyon, bisannuel), ASTEE section bureaux d'études, LinkedIn 'Ingénieurs eau et assainissement'",
+      "howToReach": "Proposer une licence bureau d'études multi-clients. L'outil leur fait gagner du temps sur les diagnostics de conformité pour leurs clients collectivités."
+    }
+  ],
+  "pricingStrategy": "B2G par taille de collectivité : 149€/mois (< 10 000 habitants, < 3 STEU), 299€/mois (10-50 000 habitants, 3-10 STEU), 599€/mois (50-200 000 habitants, 10-30 STEU), 799€/mois (> 200 000 habitants, illimité). Bureau d'études : 499€/mois (accès multi-clients, export rapports). Le prix est positionné comme 1/10e du coût d'un SATESE départemental (5-10K€/an) et 1/5e du temps technicien économisé (2 jours/mois × 300€/jour = 7 200€/an).",
+  "pathTo10kMrr": "25 collectivités < 10K hab × 149€ = 3 725€ + 12 collectivités 10-50K hab × 299€ = 3 588€ + 3 collectivités 50-200K hab × 599€ = 1 797€ + 2 bureaux d'études × 499€ = 998€ = 10 108€ MRR. Atteignable en 10-14 mois avec une présence au CGLE (janvier) et Pollutec (octobre) + démarchage ciblé des SATESE.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts pour les graphiques de conformité + Maplibre pour la carte des STEU",
+    "backend": "Next.js API Routes + scripts Python pour le pipeline data (Hub'Eau autosurveillance, SISPEA)",
+    "database": "PostgreSQL sur Supabase — données historiques des STEU + seuils réglementaires ERU",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (pipeline data CRON quotidien)",
+    "apis": [
+      "Hub'Eau Qualité cours d'eau (autosurveillance STEU)",
+      "Hub'Eau Indicateurs SISPEA",
+      "API BAN (géocodage)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Les seuils ERU sont codés en dur (directive 91/271/CEE, arrêté du 21 juillet 2015). Le pipeline quotidien met à jour les données d'autosurveillance. Les alertes sont envoyées par email via Resend."
+  },
+  "risks": [
+    {
+      "risk": "Les collectivités en délégation (Veolia/Suez/Saur) n'ont pas besoin de cet outil — elles ont déjà les outils du délégataire",
+      "mitigation": "Cibler exclusivement les régies (40% du marché, soit ~1 200 services) et les EPCI en transfert de compétence qui reprennent la gestion en régie. Le transfert 2026 augmente le nombre de régies."
+    },
+    {
+      "risk": "Cycle de vente B2G très long (6-12 mois) avec processus d'achat public complexe (marchés publics au-dessus de 40K€)",
+      "mitigation": "Positionner le prix sous le seuil des marchés publics (< 40K€/an) pour permettre un achat sur simple bon de commande. Proposer un essai gratuit de 3 mois."
+    },
+    {
+      "risk": "Le portail SISPEA pourrait être modernisé par l'OFB et intégrer les fonctionnalités de dashboard",
+      "mitigation": "L'OFB n'a pas les moyens de moderniser SISPEA rapidement (budget contraint). Se différencier par les alertes, le benchmark et le pré-remplissage — fonctionnalités que SISPEA n'aura jamais."
+    },
+    {
+      "risk": "Données d'autosurveillance Hub'Eau incomplètes pour certaines STEU",
+      "mitigation": "Permettre l'import manuel de fichiers CSV d'autosurveillance. Proposer une intégration directe avec les automates de STEU (protocole SANDRE) en version future."
+    }
+  ],
+  "inspirations": "Utilities Dashboard (US) — plateformes de conformité EPA pour les water utilities américaines. UKWIR (UK) — outils de benchmarking entre les water companies britanniques. WaterInsight (Pays-Bas) — monitoring qualité eau en temps réel avec alertes.",
+  "searchVolume": [
+    {
+      "keyword": "conformité assainissement",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "SISPEA",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "navigational"
+    },
+    {
+      "keyword": "directive ERU",
+      "monthlyVolume": "500-800",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "station épuration conformité",
+      "monthlyVolume": "300-500",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "indicateurs performance assainissement",
+      "monthlyVolume": "200-400",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "250 millions EUR — 22 000 STEU en France + 3 000 services d'assainissement + bureaux d'études (marché global de l'assainissement en France : 8 milliards €/an)",
+    "sam": "30 millions EUR — 1 200 services d'assainissement en régie (hors délégation Veolia/Suez/Saur) + 500 bureaux d'études spécialisés eau",
+    "som": "1,5 million EUR — 42 collectivités × ~280€ moyen × 12 mois + 2 bureaux d'études × 499€ × 12 mois, atteignable en 18 mois",
+    "methodology": "TAM basé sur le nombre de STEU (source: SISPEA 2024, 22 000 STEU) et de services d'assainissement en France. SAM restreint aux régies et aux bureaux d'études spécialisés. SOM basé sur les objectifs de conversion du business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "SISPEA (portail officiel)",
+      "url": "https://www.services.eaufrance.fr",
+      "pricing": "Gratuit (service public OFB).",
+      "trafficEstimate": "50-100K visites/an. Essentiellement des professionnels pour la déclaration obligatoire.",
+      "reviews": "Unanimement critiqué pour son UX. 'Cauchemar de saisie' selon plusieurs techniciens.",
+      "strengths": "Source officielle, obligatoire pour la déclaration annuelle, exhaustif sur les indicateurs.",
+      "weaknesses": "UX catastrophique, pas de dashboard, pas d'alertes, pas de benchmark, saisie manuelle chronophage, pas d'API moderne."
+    },
+    {
+      "name": "Aquadvanced (Suez)",
+      "url": "https://www.suez.com/fr/solutions/aquadvanced",
+      "pricing": "Sur devis — réservé aux collectivités clientes Suez. Estimé 5 000-50 000€/an selon la taille.",
+      "trafficEstimate": "Pas de trafic public — outil interne au groupe Suez.",
+      "reviews": "Très bien noté par les collectivités utilisatrices. Interface moderne, données temps réel.",
+      "strengths": "Outil complet de pilotage réseau et stations. Données temps réel. Machine learning sur les fuites. Support technique Suez.",
+      "weaknesses": "Réservé aux clients Suez. Prix très élevé. Pas d'accès aux collectivités en régie ou sous contrat concurrent. Vendor lock-in."
+    },
+    {
+      "name": "Hubeau.eaufrance.fr (portail API)",
+      "url": "https://hubeau.eaufrance.fr",
+      "pricing": "Gratuit (APIs ouvertes sans clé).",
+      "trafficEstimate": "Trafic technique (développeurs). 20-50K visites/an sur la documentation.",
+      "reviews": "Très bien documenté, APIs modernes REST/JSON. Apprécié des développeurs.",
+      "strengths": "15 APIs gratuites, bien documentées, performantes. Couverture nationale. Données fraîches.",
+      "weaknesses": "APIs brutes sans interface utilisateur. Nécessite des compétences techniques pour exploiter les données. Pas de dashboard, pas d'alertes."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données autosurveillance STEU",
+      "status": "ok",
+      "detail": "Données d'autosurveillance publiées en open data via Hub'Eau. Licence Ouverte. Données techniques sans enjeu RGPD.",
+      "source": "https://hubeau.eaufrance.fr — Hub'Eau"
+    },
+    {
+      "topic": "Indicateurs SISPEA",
+      "status": "ok",
+      "detail": "Indicateurs de performance publiés en open data. Obligation légale de transparence (article L2224-5 du CGCT).",
+      "source": "https://www.services.eaufrance.fr — SISPEA"
+    },
+    {
+      "topic": "Seuils réglementaires ERU",
+      "status": "ok",
+      "detail": "Seuils de la directive ERU et de l'arrêté du 21 juillet 2015 sont publics et opposables. Pas de restriction de réutilisation.",
+      "source": "Directive 91/271/CEE + Arrêté du 21 juillet 2015"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Salons professionnels (CGLE, Pollutec, ASTEE)",
+      "cacEstimate": "400-800€",
+      "conversionRate": "10-15%",
+      "ltv": "3 588€ (299€ × 12 mois)",
+      "ltvCacRatio": "4.5:1 à 9:1"
+    },
+    {
+      "channel": "Démarchage direct SATESE/agences de l'eau",
+      "cacEstimate": "200-500€",
+      "conversionRate": "5-10%",
+      "ltv": "3 588€ (299€ × 12 mois)",
+      "ltvCacRatio": "7:1 à 18:1"
+    },
+    {
+      "channel": "SEO technique (conformité assainissement, SISPEA)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "1-3%",
+      "ltv": "3 588€ (299€ × 12 mois)",
+      "ltvCacRatio": "45:1 à 120:1"
+    },
+    {
+      "channel": "Webinaires techniques gratuits",
+      "cacEstimate": "100-300€",
+      "conversionRate": "5-10%",
+      "ltv": "3 588€ (299€ × 12 mois)",
+      "ltvCacRatio": "12:1 à 36:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr. APIs Hub'Eau testées."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing Suez sur devis, non vérifiable publiquement. SISPEA et Hub'Eau vérifiés."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés — marché de niche technique avec des requêtes très spécifiques."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Nombre de STEU et régies basé sur SISPEA 2024. Hypothèses de pénétration à valider."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Toutes les données sont publiques et sous Licence Ouverte. Seuils réglementaires publics."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basées sur des benchmarks SaaS B2G. Le cycle de vente B2G est notoirement long et variable."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données techniques solides. Le risque principal est commercial : cycle de vente B2G long et willingness-to-pay des régies à valider."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 55,
+      "detail": "2.5K-4.7K recherches/mois cumulées. Niche technique mais besoin urgent lié au transfert 2026. Demande prouvée par la douleur SISPEA (interviews terrain nécessaires)."
+    },
+    "feasibility": {
+      "score": 72,
+      "detail": "MVP en 6 semaines. 3 APIs Hub'Eau à intégrer. Complexité moyenne : nécessite de comprendre la réglementation ERU et les codes SANDRE. Stack standard."
+    },
+    "market": {
+      "score": 58,
+      "detail": "42 clients pour 10K MRR — réaliste mais cycle de vente B2G long. Panier moyen élevé (280€/mois). Marché de niche mais récurrent."
+    },
+    "competition": {
+      "score": 70,
+      "detail": "3 concurrents dont 2 gratuits (SISPEA, Hub'Eau). Aquadvanced (Suez) trop cher et réservé à ses clients. Marché très peu concurrentiel pour les régies."
+    },
+    "legal": {
+      "score": 95,
+      "detail": "3 points OK, 0 point d'attention. Données techniques publiques, seuils réglementaires publics, aucun enjeu RGPD."
+    },
+    "overall": {
+      "score": 66,
+      "detail": "Point fort : faible concurrence (70/100) et cadre légal (95/100). Point faible : demande de niche (55/100) et marché B2G lent (58/100). Produit solide pour un marché de niche."
+    }
+  }
+}

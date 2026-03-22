@@ -1,0 +1,318 @@
+{
+  "productSlug": "plateforme-transfert-competence-eau-assainissement",
+  "oneLiner": "L'outil clé en main pour les intercommunalités qui reprennent la compétence eau et assainissement au 1er janvier 2026.",
+  "problem": "La loi NOTRe impose le transfert de la compétence eau et assainissement aux intercommunalités au 1er janvier 2026. Des centaines d'EPCI doivent reprendre la gestion de services d'eau jusque-là gérés par des communes isolées ou des syndicats. Chaque transfert implique : auditer les infrastructures existantes, harmoniser les tarifs, reprendre les contrats de délégation, fusionner les budgets, former les agents. Les DGS sont submergés, les bureaux d'études débordés (délais de 8-12 mois), et les outils officiels (guides FNCCR) sont des PDF de 200 pages inexploitables au quotidien.",
+  "solution": "Une plateforme web de pilotage du transfert de compétence qui structure les étapes clés : diagnostic automatisé de l'état des services à reprendre (via Hub'Eau et SISPEA), outil de simulation tarifaire (harmonisation des prix de l'eau entre communes), checklist réglementaire interactive (délibérations, conventions, budgets annexes), tableau de bord d'avancement du transfert avec jalons et alertes, et bibliothèque de modèles de documents (délibérations types, conventions, avenants). Le tout basé sur les données open data des services existants.",
+  "uniqueValue": "Aucun outil numérique n'accompagne spécifiquement le transfert de compétence eau. Les guides FNCCR et DGCL sont des documents statiques. Les bureaux d'études vendent du conseil à 800-1 200€/jour. Cette plateforme transforme un processus administratif de 12-18 mois en un parcours guidé et outillé, avec un diagnostic automatisé basé sur les données réelles des services.",
+  "mvpScope": "Plateforme web avec : diagnostic automatisé de l'état des services via Hub'Eau/SISPEA (rendement, prix, conformité, nombre d'abonnés), simulateur tarifaire (calcul du prix moyen harmonisé entre communes), checklist réglementaire du transfert (étapes, documents, échéances), comparaison côte à côte des services à fusionner. Pas de bibliothèque de documents au MVP. Pas de module budget. Pas d'import de données manuelles.",
+  "timeToMvp": "7 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider l'urgence auprès des DGS d'EPCI en transfert",
+      "description": "Identifier les EPCI qui n'ont pas encore finalisé leur transfert (retardataires). Contacter 20 DGS via les associations d'élus. Présenter un mockup du diagnostic automatisé. Objectif : 8 lettres d'intention.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "20 DGS contactés",
+        "8 lettres d'intention",
+        "Mockup validé",
+        "Liste des EPCI retardataires"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Plateforme de diagnostic et simulation tarifaire",
+      "description": "Pipeline Hub'Eau/SISPEA pour le diagnostic automatisé. Simulateur tarifaire multi-communes. Checklist réglementaire interactive. Interface web avec authentification par EPCI.",
+      "duration": "7 semaines",
+      "deliverables": [
+        "Diagnostic automatisé fonctionnel",
+        "Simulateur tarifaire",
+        "Checklist réglementaire",
+        "8 EPCI testeurs"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "30 EPCI clients avant le 1er janvier 2026",
+      "description": "Campagne d'urgence : 'Il vous reste X mois pour finaliser votre transfert'. Webinaires avec la FNCCR. Présence au CGLE. Partenariats avec les préfectures et DDT.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "30 EPCI clients",
+        "5 webinaires FNCCR",
+        "Présence CGLE",
+        "Partenariats DDT"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Bibliothèque de documents et module budget",
+      "description": "Ajout de modèles de documents (délibérations, conventions, avenants) personnalisables par EPCI. Module budget annexe eau/assainissement. Tableau de bord d'avancement pour l'élu (synthèse pour le conseil communautaire). Export PDF rapport de transfert.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Bibliothèque 20 modèles",
+        "Module budget annexe",
+        "Dashboard élu",
+        "Export PDF",
+        "50 EPCI clients"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR et pivoter post-transfert",
+      "description": "Après le transfert (2026), pivoter vers un outil de pilotage permanent des services d'eau repris. Module suivi performance post-transfert. Offre bureaux d'études (diagnostic multi-EPCI). Extension aux autres compétences en transfert (GEMAPI, déchets).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "80 EPCI clients",
+        "Pivot pilotage permanent",
+        "Extension GEMAPI/déchets"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Il reste des EPCI qui n'ont pas finalisé leur transfert de compétence eau en 2026 ?",
+      "how": "Contacter les DDT de 10 départements et demander le taux de transfert effectif. Vérifier les articles de presse locale sur les retards. Consulter les délibérations publiques des EPCI.",
+      "successCriteria": "Au moins 200 EPCI n'ont pas finalisé leur transfert au 1er semestre 2026 (source: DDT ou FNCCR)."
+    },
+    {
+      "check": "Un diagnostic automatisé via open data est-il perçu comme suffisamment fiable par les DGS ?",
+      "how": "Générer un diagnostic automatisé pour 5 EPCI test et le présenter à leur DGS. Comparer avec les rapports de bureaux d'études quand disponibles.",
+      "successCriteria": "4/5 DGS trouvent le diagnostic cohérent avec leur réalité. Les écarts avec les rapports bureaux d'études sont < 10%."
+    },
+    {
+      "check": "Le prix one-shot + abonnement est-il accepté par les collectivités ?",
+      "how": "Proposer 3 formules tarifaires à 10 DGS et mesurer les préférences. Comparer avec le coût d'un bureau d'études (20-50K€).",
+      "successCriteria": "7/10 préfèrent un modèle < 5 000€ total (one-shot + 12 mois d'abonnement). Le coût est perçu comme 1/5e du bureau d'études."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "DGS d'EPCI retardataires sur le transfert de compétence (pas encore délibéré ou en cours)",
+      "where": "FNCCR (Fédération nationale des collectivités concédantes et régies), DDT départementales, préfectures",
+      "howToReach": "La FNCCR connaît les EPCI retardataires. Proposer un webinaire conjoint FNCCR 'Transfert eau : kit de survie numérique'. Demander aux DDT de relayer auprès des EPCI en difficulté."
+    },
+    {
+      "who": "Cabinets de conseil spécialisés collectivités (qui accompagnent les transferts)",
+      "where": "Salon des maires, CGLE, réseau des consultants en gestion publique locale",
+      "howToReach": "Proposer l'outil comme support de leur mission de conseil. Licence cabinet multi-EPCI. L'outil ne les remplace pas mais leur fait gagner du temps sur le diagnostic."
+    },
+    {
+      "who": "Associations départementales des maires (ADM) — relais naturels",
+      "where": "ADM présentes dans chaque département, rattachées à l'Association des Maires de France",
+      "howToReach": "Présentation lors des assemblées générales départementales. L'ADM peut diffuser à tous ses EPCI membres. Offre groupée départementale (prix réduit si > 5 EPCI du même département)."
+    }
+  ],
+  "pricingStrategy": "One-shot diagnostic : 990€ (diagnostic automatisé complet + simulation tarifaire + checklist — livré en 48h). Abonnement pilotage transfert : 299€/mois (accès plateforme complète, mises à jour, modèles documents, support). Pack complet : 2 990€ (diagnostic + 12 mois d'abonnement + 2h d'accompagnement visio). Bureau d'études : 1 499€/mois (accès multi-EPCI, export rapports, marque blanche). Le positionnement est '10x moins cher qu'un bureau d'études, 10x plus rapide'.",
+  "pathTo10kMrr": "10 packs complets (one-shot) restants en pipeline × 2 990€ / 12 = ~2 492€ MRR amorti + 20 EPCI en abonnement mensuel × 299€ = 5 980€ + 1 bureau d'études × 1 499€ = 1 499€ = 9 971€ MRR. Atteignable en 6-10 mois — urgence du transfert 2026 raccourcit le cycle de vente. Les EPCI retardataires sont en panique et décident vite.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + composants de wizard/stepper pour le parcours guidé",
+    "backend": "Next.js API Routes + scripts Python pour le diagnostic automatisé (ingestion Hub'Eau/SISPEA) + génération PDF (Puppeteer)",
+    "database": "PostgreSQL sur Supabase — données par EPCI, progression transfert, documents générés",
+    "hosting": "Vercel (frontend + API) + Supabase (DB + auth + storage pour les documents)",
+    "apis": [
+      "Hub'Eau Indicateurs SISPEA",
+      "Hub'Eau Qualité eau potable",
+      "API BAN (géocodage communes de l'EPCI)",
+      "Stripe pour les paiements",
+      "Puppeteer pour la génération PDF"
+    ],
+    "notes": "Le diagnostic automatisé agrège les données SISPEA de tous les services d'eau des communes de l'EPCI. Le simulateur tarifaire calcule le prix moyen pondéré par le nombre d'abonnés. La checklist est basée sur le guide FNCCR du transfert de compétence (étapes réglementaires codées en dur)."
+  },
+  "risks": [
+    {
+      "risk": "Fenêtre de marché très courte — après le 1er janvier 2026, le transfert est fait (ou reporté)",
+      "mitigation": "Pivoter vers un outil de pilotage permanent des services d'eau repris (dashboard performance, suivi investissements). Le diagnostic one-shot génère du cash rapide, l'abonnement assure la récurrence post-transfert."
+    },
+    {
+      "risk": "Le transfert pourrait être reporté une nouvelle fois (comme de 2020 à 2026)",
+      "mitigation": "Un report serait une bonne nouvelle : la fenêtre de marché s'allonge. Les EPCI qui ont commencé le processus continueront. Le pivot vers le pilotage permanent fonctionne dans tous les cas."
+    },
+    {
+      "risk": "Les DGS préfèrent un bureau d'études humain pour un sujet aussi sensible politiquement",
+      "mitigation": "Ne pas se positionner en remplacement mais en complément. Le diagnostic automatisé est un 'pré-diagnostic' qui permet au DGS de comprendre la situation avant de commander (ou non) un bureau d'études. Proposer un pack 'diagnostic + 2h visio avec un expert' pour rassurer."
+    },
+    {
+      "risk": "Données SISPEA incomplètes pour les très petits services (< 500 abonnés)",
+      "mitigation": "Permettre la saisie manuelle des données manquantes. Afficher clairement le taux de couverture du diagnostic. Proposer un questionnaire simplifié pour les communes non couvertes par SISPEA."
+    }
+  ],
+  "inspirations": "Démarches-simplifiées (France) — plateforme de dématérialisation des démarches administratives, modèle d'UX pour guider un processus complexe. LegalStart — parcours guidé pour la création d'entreprise, modèle de wizard étape par étape. Notion/Monday — outils de gestion de projet adaptés au suivi d'un transfert. CityGo (Pays-Bas) — plateforme de transformation numérique des collectivités.",
+  "searchVolume": [
+    {
+      "keyword": "transfert compétence eau",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "loi NOTRe eau assainissement",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "transfert compétence eau 2026",
+      "monthlyVolume": "2000-5000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "harmonisation tarif eau",
+      "monthlyVolume": "200-500",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "compétence eau intercommunalité",
+      "monthlyVolume": "500-800",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "150 millions EUR — 1 250 EPCI concernés par le transfert × budget moyen transfert 50-200K€ (bureaux d'études, formation, outils)",
+    "sam": "30 millions EUR — 500 EPCI retardataires ou en cours de transfert (source: estimation FNCCR 2025) × budget outil numérique 5-10K€",
+    "som": "600K-1M EUR — 30 EPCI × pack complet 2 990€ + 20 abonnements × 299€ × 12 + 1 bureau d'études × 1 499€ × 12, atteignable en 12 mois",
+    "methodology": "TAM basé sur le nombre d'EPCI concernés par le transfert (source: DGCL, Observatoire des finances et de la gestion publique locale). SAM restreint aux EPCI retardataires ayant un besoin urgent d'outillage. SOM basé sur les objectifs de conversion du business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "FNCCR — Guide du transfert",
+      "url": "https://www.fnccr.asso.fr",
+      "pricing": "Gratuit pour les adhérents FNCCR (cotisation annuelle selon la taille de l'EPCI).",
+      "trafficEstimate": "La FNCCR est la référence du secteur. Son guide PDF est téléchargé par la majorité des EPCI concernés.",
+      "reviews": "Guide très complet mais volumineux (200+ pages). Format PDF statique.",
+      "strengths": "Exhaustivité juridique, légitimité institutionnelle, réseau de 800 adhérents, expertise reconnue.",
+      "weaknesses": "Format PDF statique, pas d'outil interactif, pas de diagnostic automatisé, pas de simulateur tarifaire, pas de suivi d'avancement."
+    },
+    {
+      "name": "Bureaux d'études (Merlin, Ernst & Young, KPMG secteur public)",
+      "url": "N/A — vente directe",
+      "pricing": "20 000-80 000€ par mission de transfert (diagnostic + accompagnement + documents). 800-1 200€/jour.",
+      "trafficEstimate": "Pas de trafic web — démarchage direct et appels d'offres.",
+      "reviews": "Prestations de qualité mais délais longs (6-12 mois) et coûts élevés. Capacité saturée en 2025-2026.",
+      "strengths": "Expertise juridique et technique complète, accompagnement humain, documents contractuels validés, assurance professionnelle.",
+      "weaknesses": "Coût prohibitif pour les petits EPCI (budget < 100K€). Délais de 6-12 mois (saturés par la demande). Livrable statique (rapport PDF). Pas de suivi post-transfert."
+    },
+    {
+      "name": "DGCL — Outils réglementaires",
+      "url": "https://www.collectivites-locales.gouv.fr",
+      "pricing": "Gratuit (service public).",
+      "trafficEstimate": "Trafic modéré, essentiellement des DGS et juristes territoriaux.",
+      "reviews": "Source officielle de référence pour les textes réglementaires. Pas d'outil opérationnel.",
+      "strengths": "Textes juridiques officiels, circulaires, modèles de délibérations types.",
+      "weaknesses": "Information brute sans accompagnement. Pas d'outil interactif. Pas de diagnostic. Navigation complexe. Documents génériques non personnalisés."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données SISPEA par service d'eau",
+      "status": "ok",
+      "detail": "Indicateurs de performance publiés en open data. Données agrégées par service. Licence Ouverte.",
+      "source": "https://hubeau.eaufrance.fr — Hub'Eau Indicateurs SISPEA"
+    },
+    {
+      "topic": "Modèles de documents administratifs (délibérations, conventions)",
+      "status": "attention",
+      "detail": "Les modèles de documents fournis ne sont pas des actes juridiques et ne remplacent pas un conseil juridique. Mention obligatoire : 'Modèle indicatif à adapter — consultez un juriste territorial pour validation'. Responsabilité limitée en cas d'erreur dans un modèle.",
+      "source": "Code général des collectivités territoriales — Responsabilité des actes administratifs"
+    },
+    {
+      "topic": "Hébergement des données collectivités",
+      "status": "attention",
+      "detail": "Les données saisies par les collectivités (budgets, contrats) peuvent contenir des informations sensibles. Hébergement en France ou EU obligatoire. Conformité RGPD et référentiel SecNumCloud recommandé pour les collectivités exigeantes.",
+      "source": "ANSSI — Référentiel SecNumCloud + Doctrine cloud de l'État"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "FNCCR et associations d'élus (prescription directe)",
+      "cacEstimate": "100-300€",
+      "conversionRate": "15-25%",
+      "ltv": "6 578€ (pack complet 2 990€ + 12 mois × 299€)",
+      "ltvCacRatio": "22:1 à 66:1"
+    },
+    {
+      "channel": "Webinaires urgence transfert",
+      "cacEstimate": "50-150€",
+      "conversionRate": "10-20%",
+      "ltv": "6 578€",
+      "ltvCacRatio": "44:1 à 132:1"
+    },
+    {
+      "channel": "DDT/préfectures (relais institutionnel)",
+      "cacEstimate": "50-200€",
+      "conversionRate": "5-15%",
+      "ltv": "6 578€",
+      "ltvCacRatio": "33:1 à 132:1"
+    },
+    {
+      "channel": "SEO (transfert compétence eau 2026)",
+      "cacEstimate": "20-60€",
+      "conversionRate": "2-5%",
+      "ltv": "6 578€",
+      "ltvCacRatio": "110:1 à 329:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Hub'Eau SISPEA testé. Couverture vérifiée sur plusieurs EPCI."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Nombre d'EPCI et échéance transfert basés sur les textes de loi et rapports DGCL."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "FNCCR, DGCL et bureaux d'études sont des acteurs connus et documentés. Pricing bureaux d'études basé sur des devis publics."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Requêtes très spécifiques au contexte réglementaire français. Volumes estimés."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Nombre d'EPCI retardataires estimé (pas de source publique exhaustive). À vérifier auprès des DDT."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Modèles de documents et hébergement : analyse juridique sommaire. Non validée par un avocat territorial."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "CAC très optimistes si la FNCCR et les DDT relaient effectivement l'outil. À valider."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fenêtre de marché claire et urgente. Risque principal : le transfert est déjà fait pour la majorité des EPCI. À vérifier le nombre de retardataires."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 70,
+      "detail": "4.2K-9.3K recherches/mois sur le transfert de compétence. Urgence réglementaire (1er janvier 2026). Demande prouvée par la saturation des bureaux d'études."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 7 semaines. Pipeline Hub'Eau/SISPEA + simulateur tarifaire + checklist. Complexité : nécessite une connaissance approfondie du cadre réglementaire du transfert."
+    },
+    "market": {
+      "score": 65,
+      "detail": "30 EPCI + 1 bureau d'études pour 10K MRR. Panier élevé (pack complet 2 990€). Cycle de vente court (urgence). Fenêtre de marché de 6-12 mois."
+    },
+    "competition": {
+      "score": 80,
+      "detail": "Aucun outil numérique dédié au transfert. Concurrence = PDF FNCCR et bureaux d'études surchargés. Créneau totalement libre."
+    },
+    "legal": {
+      "score": 75,
+      "detail": "2 points OK, 2 points d'attention (modèles documents, hébergement). Risques gérables avec des disclaimers et un hébergement EU."
+    },
+    "overall": {
+      "score": 71,
+      "detail": "Point fort : concurrence quasi nulle (80/100) et urgence marché (65/100). Point faible : fenêtre temporelle courte et nécessité de pivoter post-2026. Produit opportuniste mais potentiel de pivot."
+    }
+  }
+}

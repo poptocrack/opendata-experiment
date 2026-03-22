@@ -18,36 +18,59 @@ export async function GET(req: NextRequest) {
   const sevenDaysAgo = new Date(today.getTime() - 7 * 86400000);
   const thirtyDaysAgo = new Date(today.getTime() - 30 * 86400000);
 
-  const [totalViews, todayViews, weekViews, monthViews, topPages, topReferrers, deviceBreakdown, dailyViews] =
+  const notCta = { path: { not: { startsWith: "/cta/" } } };
+  const isCta = { path: { startsWith: "/cta/" } };
+
+  const [totalViews, todayViews, weekViews, monthViews, topPages, topReferrers, deviceBreakdown, dailyViews, ctaClicks] =
     await Promise.all([
-      prisma.pageView.count(),
-      prisma.pageView.count({ where: { createdAt: { gte: today } } }),
-      prisma.pageView.count({ where: { createdAt: { gte: sevenDaysAgo } } }),
-      prisma.pageView.count({ where: { createdAt: { gte: thirtyDaysAgo } } }),
+      prisma.pageView.count({ where: notCta }),
+      prisma.pageView.count({ where: { ...notCta, createdAt: { gte: today } } }),
+      prisma.pageView.count({ where: { ...notCta, createdAt: { gte: sevenDaysAgo } } }),
+      prisma.pageView.count({ where: { ...notCta, createdAt: { gte: thirtyDaysAgo } } }),
       prisma.pageView.groupBy({
         by: ["path"],
+        where: notCta,
         _count: true,
         orderBy: { _count: { path: "desc" } },
         take: 20,
       }),
       prisma.pageView.groupBy({
         by: ["referrer"],
-        where: { referrer: { not: null } },
+        where: { referrer: { not: null }, ...notCta },
         _count: true,
         orderBy: { _count: { referrer: "desc" } },
         take: 10,
       }),
       prisma.pageView.groupBy({
         by: ["device"],
+        where: notCta,
         _count: true,
         orderBy: { _count: { device: "desc" } },
       }),
-      // Daily views for the last 30 days (raw query for SQLite date grouping)
       prisma.$queryRawUnsafe<{ day: string; count: bigint }[]>(
-        `SELECT date(createdAt) as day, COUNT(*) as count FROM PageView WHERE createdAt >= ? GROUP BY date(createdAt) ORDER BY day DESC LIMIT 30`,
+        `SELECT date(createdAt) as day, COUNT(*) as count FROM PageView WHERE createdAt >= ? AND path NOT LIKE '/cta/%' GROUP BY date(createdAt) ORDER BY day DESC LIMIT 30`,
         thirtyDaysAgo.toISOString()
       ),
+      // CTA clicks grouped by path + referrer (source page)
+      prisma.pageView.groupBy({
+        by: ["path", "referrer"],
+        where: isCta,
+        _count: true,
+        orderBy: { _count: { path: "desc" } },
+      }),
     ]);
+
+  // Aggregate CTA data
+  const ctaSummary = ctaClicks.reduce(
+    (acc, c) => {
+      const key = c.path;
+      if (!acc[key]) acc[key] = { total: 0, sources: [] as { page: string; clicks: number }[] };
+      acc[key].total += c._count;
+      if (c.referrer) acc[key].sources.push({ page: c.referrer, clicks: c._count });
+      return acc;
+    },
+    {} as Record<string, { total: number; sources: { page: string; clicks: number }[] }>
+  );
 
   return NextResponse.json({
     totalViews,
@@ -67,5 +90,6 @@ export async function GET(req: NextRequest) {
       day: d.day,
       views: Number(d.count),
     })),
+    ctaClicks: ctaSummary,
   });
 }

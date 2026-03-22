@@ -185,6 +185,24 @@
       "reviews": "N/A",
       "strengths": "Dashboard énergies renouvelables par territoire, bien fait. Données de référence pour la transition énergétique.",
       "weaknesses": "Pas spécialisé IRVE. Pas de benchmark entre collectivites. Pas d'outil de décision pour le déploiement."
+    },
+    {
+      "name": "Gini by MyTraffic",
+      "url": "https://www.mytraffic.io",
+      "pricing": "Sur devis (plateforme location intelligence B2B)",
+      "trafficEstimate": "80K visites/mois",
+      "reviews": "Levée 30M EUR en 2022, 500+ clients retail/immobilier",
+      "strengths": "Données de flux piétons et véhicules très granulaires par territoire. Interface moderne de visualisation géographique.",
+      "weaknesses": "Pas de module collectivités IRVE. Pas de benchmark entre EPCI. Pas de suivi des objectifs nationaux de déploiement. Pricing élevé pour les budgets collectivités."
+    },
+    {
+      "name": "Mapidea",
+      "url": "https://www.mapidea.com",
+      "pricing": "Sur devis (SaaS analytics géospatiales B2B)",
+      "trafficEstimate": "10K visites/mois",
+      "reviews": "Startup portugaise, clients utilities et retail",
+      "strengths": "Plateforme de geospatial analytics avec capacité de benchmark territorial. Intégration de sources multiples.",
+      "weaknesses": "Pas de module IRVE prêt à l'emploi pour les collectivités. Pas de benchmark EPCI ni d'export schéma directeur. Nécessite un paramétrage sur mesure coûteux."
     }
   ],
   "legalConstraints": [
@@ -285,16 +303,16 @@
       "detail": "20 clients a 349 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 800K EUR/an. Pricing 349-799 EUR."
     },
     "competition": {
-      "score": 65,
-      "detail": "3 concurrents identifies: AVERE France (Barometre), Manty, Opendata.réseaux-énergies.fr. Leader: AVERE France (Barometre) (100K visites/mois). Faiblesse principale: Format PDF statique trimestriel."
+      "score": 58,
+      "detail": "5 concurrents identifiés : AVERE France, Manty, Opendata.réseaux-énergies.fr, Gini by MyTraffic, Mapidea. Leader : AVERE France (100K visites/mois). Gini by MyTraffic et Mapidea sont des menaces indirectes (analytics géospatiales génériques)."
     },
     "legal": {
       "score": 92,
       "detail": "3 points verifies, tous OK. Donnees sous licence ouverte Etalab."
     },
     "overall": {
-      "score": 75,
-      "detail": "Point fort: marche (92/100). Point faible: demande (54/100). Opportunite solide a executer rapidement."
+      "score": 74,
+      "detail": "Point fort : marché (92/100). Point faible : demande (54/100). Opportunité solide, concurrence indirecte modérée."
     }
   }
 }

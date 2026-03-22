@@ -217,6 +217,15 @@
       "reviews": "Complet mais très technique, difficile d'utilisation",
       "strengths": "Toutes les couches cartographiques officielles, gratuit, données fiables",
       "weaknesses": "Interface très technique, pas d'angle investissement, pas de scoring, pas de croisement de données"
+    },
+    {
+      "name": "Prix-immobilier.com",
+      "url": "https://www.prix-immobilier.com",
+      "pricing": "Gratuit (publicité + leads agents)",
+      "trafficEstimate": "300K-500K visites/mois",
+      "reviews": "Connu pour les prix par commune, bon SEO",
+      "strengths": "Données DVF intégrées, couverture nationale, gratuit, bon référencement",
+      "weaknesses": "Uniquement les prix, pas de carte multicritère, pas de scoring de potentiel, pas de croisement sécurité/écoles/permis"
     }
   ],
   "legalConstraints": [

@@ -25,6 +25,11 @@
       "label": "Visites BODACC",
       "value": "57K/an",
       "detail": "Annonces légales : créations, liquidations, cessions"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "1,6M annonces",
+      "detail": "1,6 million d'annonces de marchés publics accessibles via l'API BOAMP"
     }
   ],
   "datasets": [

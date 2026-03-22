@@ -228,6 +228,15 @@
       "reviews": "Bons avis pour le service personnalisé, mais très cher",
       "strengths": "Expertise terrain, accompagnement complet, réseau artisans",
       "weaknesses": "Très cher (3-5% du prix), pas scalable, couverture locale limitee, pas de tech"
+    },
+    {
+      "name": "Homadata",
+      "url": "https://www.homadata.fr",
+      "pricing": "API B2B sur devis. Estimé 500-5 000 EUR/mois.",
+      "trafficEstimate": "< 30K visites/mois (B2B)",
+      "reviews": "Reconnu pour les données DVF enrichies croisées avec DPE et cadastre",
+      "strengths": "Croisement DVF/DPE automatisé côté données, API robuste, données nettoyées",
+      "weaknesses": "Pas d'outil utilisateur final, pas de détection de passoires thermiques, pas d'estimation de coût de rénovation, vend de la donnée brute sans analyse"
     }
   ],
   "legalConstraints": [

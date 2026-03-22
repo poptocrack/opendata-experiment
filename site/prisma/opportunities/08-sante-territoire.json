@@ -30,6 +30,11 @@
       "label": "Qualité eau",
       "value": "57K visites/an",
       "detail": "Contrôles sanitaires eau par commune — indicateur santé environnementale"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "48 400 annonces",
+      "detail": "Marchés publics liés à la santé/médical sur le BOAMP"
     }
   ],
   "datasets": [

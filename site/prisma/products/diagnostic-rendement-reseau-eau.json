@@ -1,0 +1,313 @@
+{
+  "productSlug": "diagnostic-rendement-reseau-eau",
+  "oneLiner": "Visualisez le rendement de votre réseau d'eau, identifiez les fuites prioritaires et planifiez vos investissements sur 10 ans.",
+  "problem": "Les réseaux d'eau français perdent en moyenne 20% de l'eau produite à cause de fuites (1 milliard de m3/an). Les collectivités connaissent mal l'état de leur réseau : le taux de rendement est un chiffre global qui ne dit pas OÙ sont les fuites ni QUAND renouveler les canalisations. Le Plan Eau 2023 fixe un objectif de réduction des fuites de 10% d'ici 2030, mais les petites collectivités n'ont aucun outil de pilotage. Les bureaux d'études facturent 20-50K€ pour un schéma directeur eau potable qui sera obsolète dans 5 ans.",
+  "solution": "Un outil SaaS qui agrège les indicateurs SISPEA (rendement réseau, ILP, taux de renouvellement), les données de production/distribution par Hub'Eau, et les caractéristiques du réseau (âge, matériaux, linéaire) pour produire un diagnostic automatisé : carte de risque de fuites par secteur, plan de renouvellement priorisé par criticité, simulation financière sur 10 ans (investissement vs économies de pertes). L'outil benchmarke chaque réseau avec des services d'eau comparables (même taille, même contexte géographique).",
+  "uniqueValue": "Les outils existants (SCADA, modélisation hydraulique) coûtent 50-200K€ et nécessitent des ingénieurs spécialisés. SISPEA fournit un rendement global sans diagnostic. Les schémas directeurs sont des documents statiques. Ce produit démocratise le diagnostic réseau pour les petites collectivités qui n'ont ni les moyens ni les compétences pour les outils lourds.",
+  "mvpScope": "Dashboard web avec : import des indicateurs SISPEA via Hub'Eau (rendement, ILP, renouvellement), benchmark avec les services d'eau de même catégorie, scoring du réseau (0-100), recommandations de priorisation (basées sur l'âge moyen, le rendement et le taux de renouvellement), simulation financière simplifiée (coût du m3 perdu vs coût de renouvellement). Pas de carte par secteur au MVP (nécessite des données SIG). Pas de connexion compteurs. Pas de modélisation hydraulique.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin auprès des régies et EPCI",
+      "description": "Interviewer 15 responsables eau en régie sur leur gestion des fuites et du renouvellement. Présenter un mockup du diagnostic automatisé. Identifier le prix acceptable. Objectif : 5 lettres d'intention.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "15 entretiens responsables eau",
+        "5 lettres d'intention",
+        "Mockup validé",
+        "Pricing validé"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Diagnostic automatisé fonctionnel",
+      "description": "Pipeline Hub'Eau SISPEA. Algorithme de scoring réseau. Dashboard avec benchmark, scoring et recommandations. Simulation financière simplifiée. Déploiement auprès des 5 testeurs.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Pipeline Hub'Eau SISPEA",
+        "Algorithme de scoring réseau",
+        "Dashboard diagnostic",
+        "Simulation financière",
+        "5 testeurs actifs"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "30 premiers clients",
+      "description": "Présence au CGLE et aux journées FNCCR. Partenariat avec les agences de l'eau (relais vers les collectivités). Offre de lancement couplée avec un webinaire 'Plan Eau : comment réduire vos fuites de 10%'.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "30 clients payants",
+        "Présence CGLE + FNCCR",
+        "2 partenariats agences de l'eau",
+        "Webinaire Plan Eau (100 participants)"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Module cartographique et plan pluriannuel",
+      "description": "Ajout d'une carte de risque par secteur (intégration SIG cadastre des réseaux). Plan pluriannuel d'investissement automatisé sur 10 ans. Export schéma directeur simplifié en PDF. Module prédictif (IA sur les ruptures de canalisation).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "Carte de risque SIG",
+        "Plan pluriannuel investissement",
+        "Export PDF schéma directeur",
+        "60 clients payants"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Offre départementale pour les agences de l'eau (vue consolidée de tous les services du bassin). Offre bureaux d'études (outil d'aide au diagnostic). Partenariats avec les fabricants de compteurs connectés (Sensus, Itron). Extension aux réseaux d'assainissement.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "2 offres agences de l'eau",
+        "5 bureaux d'études clients",
+        "100 collectivités clientes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les petites collectivités en régie ont-elles conscience de leur problème de rendement réseau ?",
+      "how": "Interviewer 10 maires/DGS de communes rurales sur leur connaissance du rendement de leur réseau. Leur montrer leur score SISPEA et mesurer leur réaction.",
+      "successCriteria": "7/10 ne connaissent pas leur rendement réseau précis. 8/10 sont surpris/inquiets en voyant le benchmark avec les communes voisines."
+    },
+    {
+      "check": "Les données SISPEA sont-elles suffisantes pour un diagnostic automatisé pertinent ?",
+      "how": "Télécharger les données SISPEA pour 50 services d'eau de tailles variées. Calculer le scoring et les recommandations. Soumettre le résultat à 5 ingénieurs eau pour validation.",
+      "successCriteria": "SISPEA couvre 80%+ des services test. 4/5 ingénieurs trouvent le diagnostic cohérent avec leur connaissance terrain."
+    },
+    {
+      "check": "Le prix de 199-599€/mois est-il acceptable pour les régies ?",
+      "how": "Proposer 3 niveaux de prix à 10 collectivités en régie et mesurer le taux d'acceptation. Comparer avec le budget schéma directeur (20-50K€).",
+      "successCriteria": "6/10 acceptent le prix de 199€/mois. Le coût annuel (2 400€) est perçu comme négligeable vs le schéma directeur (20-50K€)."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Régies intercommunales en transfert de compétence (découvrent un réseau qu'elles ne connaissent pas)",
+      "where": "Carrefour des Gestions Locales de l'Eau (Rennes), FNCCR (congrès annuel), Associations des maires de France",
+      "howToReach": "Webinaire 'Transfert de compétence eau : diagnostic express de votre réseau'. Stand au CGLE ciblé sur les EPCI en transfert. Partenariat DDT/DEAL pour relayer l'outil."
+    },
+    {
+      "who": "Agences de l'eau (6 agences en France) — prescriptrices naturelles",
+      "where": "Comités de bassin, assemblées générales des agences de l'eau, programmes d'aide aux collectivités",
+      "howToReach": "Proposer l'outil comme support de suivi des aides distribuées (les agences financent le renouvellement de réseau). Démonstration auprès des directeurs de programme."
+    },
+    {
+      "who": "Bureaux d'études eau potable en surcharge de commandes (schémas directeurs)",
+      "where": "Pollutec (Lyon), ASTEE section eau potable, annuaires des bureaux d'études certifiés",
+      "howToReach": "Proposer une licence bureau d'études qui leur fait gagner du temps sur la phase diagnostic. L'outil ne remplace pas le schéma directeur complet mais accélère la phase amont de 50%."
+    }
+  ],
+  "pricingStrategy": "B2G par taille de service : 199€/mois (< 5 000 abonnés), 399€/mois (5-20 000 abonnés), 599€/mois (20-100 000 abonnés), 999€/mois (> 100 000 abonnés). Bureau d'études : 799€/mois (accès multi-clients, export rapports diagnostic). Agence de l'eau : 1 999€/mois (vue consolidée bassin versant). Le prix est positionné comme 1/10e du coût d'un schéma directeur (20-50K€) avec l'avantage d'être actualisé en continu.",
+  "pathTo10kMrr": "20 collectivités < 5K abonnés × 199€ = 3 980€ + 8 collectivités 5-20K abonnés × 399€ = 3 192€ + 2 collectivités 20-100K abonnés × 599€ = 1 198€ + 2 bureaux d'études × 799€ = 1 598€ = 9 968€ MRR. Atteignable en 12-16 mois avec une acquisition concentrée sur les salons (CGLE, Pollutec, FNCCR) et le relais des agences de l'eau.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts pour les graphiques de tendance + Maplibre pour la carte de risque (v2)",
+    "backend": "Next.js API Routes + scripts Python pour le pipeline data et le calcul de scoring",
+    "database": "PostgreSQL sur Supabase — données SISPEA historiques, scoring par service, simulations financières",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (pipeline data CRON mensuel)",
+    "apis": [
+      "Hub'Eau Indicateurs SISPEA",
+      "Hub'Eau Qualité eau potable",
+      "API BAN (géocodage)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Le scoring réseau est basé sur un algorithme multicritère pondéré : rendement réseau (30%), ILP (25%), taux de renouvellement (20%), âge moyen (15%), conformité (10%). Les seuils sont calibrés par catégorie de service (rural/semi-urbain/urbain)."
+  },
+  "risks": [
+    {
+      "risk": "Les données SISPEA ne sont pas assez granulaires pour un diagnostic fin (données agrégées par service, pas par secteur de réseau)",
+      "mitigation": "Positionner le MVP comme un diagnostic de premier niveau (macro) et ajouter en v2 l'intégration des données SIG détaillées du réseau (cadastre des canalisations). Proposer aux collectivités d'uploader leur SIG réseau pour affiner le diagnostic."
+    },
+    {
+      "risk": "Concurrence des éditeurs de modélisation hydraulique (Epanet, MIKE, Porteau) qui pourraient simplifier leurs offres",
+      "mitigation": "Ces outils ciblent les ingénieurs spécialisés et coûtent 50-200K€. Le positionnement est radicalement différent : un outil simple pour les DGS et élus, pas un logiciel technique. Pas le même client, pas le même budget."
+    },
+    {
+      "risk": "Les collectivités pourraient préférer un schéma directeur classique (document contractuel) plutôt qu'un SaaS",
+      "mitigation": "Positionner l'outil comme complémentaire au schéma directeur : il ne le remplace pas mais le prolonge (suivi en continu vs document ponctuel). Proposer un export PDF compatible avec les attentes des financeurs (agences de l'eau)."
+    }
+  ],
+  "inspirations": "Fracta (US) — IA de prédiction des ruptures de canalisations, racheté par Suez. 120Water (US) — plateforme de conformité eau potable pour les water utilities. SWAN (Smart Water Networks Forum) — communauté internationale sur le smart water. En France, Altereo/Sirius et Endetec (Veolia) font de la modélisation lourde pour les gros opérateurs.",
+  "searchVolume": [
+    {
+      "keyword": "rendement réseau eau",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "fuite réseau eau potable",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "schéma directeur eau potable",
+      "monthlyVolume": "500-800",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "plan eau 2030",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "renouvellement canalisation eau",
+      "monthlyVolume": "300-500",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR — 13 000 services d'eau potable en France (source: SISPEA) + marché du renouvellement de réseau estimé à 2 milliards €/an (source: FP2E)",
+    "sam": "45 millions EUR — 5 000 services d'eau en régie (hors opérateurs privés) + 500 bureaux d'études spécialisés eau + 6 agences de l'eau",
+    "som": "1,5 million EUR — 32 collectivités × ~310€ moyen × 12 + 2 bureaux d'études × 799€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur le nombre de services d'eau en France (source: SISPEA 2024). SAM restreint aux services en régie et aux bureaux d'études. SOM basé sur les objectifs de conversion du business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "SISPEA (indicateurs rendement)",
+      "url": "https://www.services.eaufrance.fr",
+      "pricing": "Gratuit (service public).",
+      "trafficEstimate": "50-100K visites/an. Données brutes sans diagnostic.",
+      "reviews": "Source de référence pour les indicateurs mais aucune aide à la décision.",
+      "strengths": "Exhaustivité nationale, données officielles, historique long.",
+      "weaknesses": "Aucun diagnostic, aucun benchmark automatisé, aucune recommandation, aucune simulation financière. Données brutes uniquement."
+    },
+    {
+      "name": "Altereo (Sirius, Patrimoines)",
+      "url": "https://www.altereo.fr",
+      "pricing": "Sur devis — solutions lourdes pour les grandes collectivités. Estimé 20-100K€ en licence + maintenance.",
+      "trafficEstimate": "Faible trafic web. Vente directe B2G.",
+      "reviews": "Référence en France pour la gestion patrimoniale des réseaux. Utilisé par les grandes métropoles.",
+      "strengths": "Modélisation SIG complète, gestion patrimoniale, prédiction de renouvellement, clientèle de référence (métropoles).",
+      "weaknesses": "Prix prohibitif pour les petites collectivités. Complexité d'implémentation (6-12 mois). Nécessite un SIG réseau complet en entrée. Pas adapté aux régies de < 20 000 habitants."
+    },
+    {
+      "name": "G2C Informatique",
+      "url": "https://www.g2c.fr",
+      "pricing": "Sur devis — SIG métier eau/assainissement. Estimé 5-30K€/an.",
+      "trafficEstimate": "Faible trafic web. Vente directe B2G aux collectivités.",
+      "reviews": "Bonne réputation dans les collectivités moyennes. Interface SIG classique.",
+      "strengths": "SIG métier dédié eau et assainissement, interfacé avec les SCADA et les comptages.",
+      "weaknesses": "SIG classique sans diagnostic automatisé. Pas de benchmark. Nécessite une formation. Prix élevé pour les petites collectivités."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données SISPEA (indicateurs réseau)",
+      "status": "ok",
+      "detail": "Indicateurs de performance publiés en open data. Données agrégées par service. Licence Ouverte.",
+      "source": "https://hubeau.eaufrance.fr — Hub'Eau Indicateurs SISPEA"
+    },
+    {
+      "topic": "Données de production/distribution eau",
+      "status": "ok",
+      "detail": "Données techniques sans enjeu RGPD. Volumes produits et distribués sont publics.",
+      "source": "https://hubeau.eaufrance.fr"
+    },
+    {
+      "topic": "Données SIG réseau (v2)",
+      "status": "attention",
+      "detail": "Le cadastre des canalisations est souvent confidentiel (sécurité des infrastructures critiques). La loi Sapin 2 impose la transmission du SIG réseau au propriétaire public, mais la diffusion publique pose des questions de sécurité. Prévoir un accès authentifié et une clause de confidentialité.",
+      "source": "Loi Sapin 2 (article 53) + Code de la sécurité intérieure"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Salons professionnels (CGLE, Pollutec, FNCCR)",
+      "cacEstimate": "500-1000€",
+      "conversionRate": "10-15%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "4.8:1 à 9.6:1"
+    },
+    {
+      "channel": "Relais agences de l'eau (prescription)",
+      "cacEstimate": "100-300€",
+      "conversionRate": "10-20%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "16:1 à 48:1"
+    },
+    {
+      "channel": "Webinaires techniques (Plan Eau, rendement réseau)",
+      "cacEstimate": "150-400€",
+      "conversionRate": "5-10%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "12:1 à 32:1"
+    },
+    {
+      "channel": "SEO technique (rendement réseau, schéma directeur)",
+      "cacEstimate": "50-150€",
+      "conversionRate": "1-3%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "32:1 à 96:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Indicateurs SISPEA vérifiés via Hub'Eau. Couverture nationale confirmée."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Métriques data.gouv.fr vérifiées. Chiffres Plan Eau sourcés (site gouvernement.fr)."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Altereo et G2C prix sur devis — estimations basées sur des retours d'utilisateurs publics et des articles presse spécialisée."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Marché de niche technique. Volumes estimés sans outil SEO professionnel."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Nombre de services d'eau basé sur SISPEA. Marché du renouvellement basé sur les rapports FP2E."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Open data OK. Point d'attention SIG réseau basé sur l'analyse juridique mais non validé par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "CAC B2G basés sur des benchmarks SaaS collectivités. Le relais agences de l'eau est hypothétique et à valider."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données solides, marché identifié. Le risque principal est le cycle de vente B2G et la capacité à convaincre les agences de l'eau de prescrire l'outil."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 60,
+      "detail": "3.3K-6.3K recherches/mois cumulées. Niche technique mais Plan Eau 2023 crée une urgence politique. 1 milliard de m3 perdus/an = problème réel et chiffré."
+    },
+    "feasibility": {
+      "score": 65,
+      "detail": "MVP en 6 semaines. APIs Hub'Eau SISPEA à intégrer. Complexité : algorithme de scoring multicritère et simulation financière. Nécessite une expertise métier eau."
+    },
+    "market": {
+      "score": 55,
+      "detail": "32 clients pour 10K MRR — atteignable mais cycle de vente B2G long. Panier élevé (310€ moyen). Marché en croissance avec le transfert 2026."
+    },
+    "competition": {
+      "score": 72,
+      "detail": "3 concurrents dont aucun ne cible les petites collectivités en régie. Altereo/G2C trop chers et complexes. SISPEA ne fait pas de diagnostic. Créneau libre."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "2 points OK, 1 point d'attention (SIG réseau en v2). MVP sur données open data uniquement."
+    },
+    "overall": {
+      "score": 65,
+      "detail": "Point fort : faible concurrence sur le segment petites collectivités (72/100). Point faible : cycle de vente B2G et niche technique (55/100). Potentiel fort si relais agences de l'eau."
+    }
+  }
+}

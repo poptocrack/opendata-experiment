@@ -17,6 +17,13 @@ export function Footer() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm text-muted-foreground">
+              <a
+                href="/classement"
+                className="underline hover:text-foreground"
+              >
+                Classement des produits
+              </a>{' '}
+              ·{' '}
               Données issues de{' '}
               <a
                 href="https://www.data.gouv.fr"

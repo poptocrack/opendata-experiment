@@ -1,0 +1,325 @@
+{
+  "productSlug": "dashboard-qualite-eau-citoyens",
+  "oneLiner": "Tapez votre adresse, découvrez ce que contient votre eau : PFAS, pesticides, nitrates, plomb — avec un langage compréhensible.",
+  "problem": "La crise des PFAS (polluants éternels) a créé une anxiété massive chez les citoyens français : 'Mon eau est-elle contaminée ?'. Le site officiel eaupotable.sante.gouv.fr donne des résultats bruts en microgrammes par litre que personne ne comprend. La carte Que Choisir est populaire mais manque de granularité et de données récentes. Les parents, femmes enceintes et personnes immunodéprimées ont besoin de savoir concrètement si leur eau est sûre, sans avoir un doctorat en chimie.",
+  "solution": "Un dashboard web centré sur l'adresse de l'utilisateur qui affiche la qualité de son eau potable en langage simple : des pastilles vertes/orange/rouges par paramètre (PFAS, pesticides, nitrates, bactéries, plomb, chlore), des explications sur les risques sanitaires, des comparaisons avec les normes OMS et françaises, et des recommandations pratiques (filtration, eau en bouteille, signalement ARS). Les données proviennent de Hub'Eau (analyses ARS en temps réel). Un mode 'alerte PFAS' met en avant les communes où des PFAS ont été détectés au-dessus des seuils.",
+  "uniqueValue": "Le seul outil qui traduit les résultats d'analyses ARS en langage compréhensible par un citoyen non-expert. eaupotable.sante.gouv.fr donne des chiffres bruts, Que Choisir donne un score global sans détail. Ce dashboard explique CHAQUE paramètre avec des pastilles couleur, des comparaisons avec les normes, et des recommandations d'action. Le mode 'alerte PFAS' capitalise sur l'anxiété ambiante (sujet médiatique n°1 sur l'eau en 2024-2026).",
+  "mvpScope": "Page de recherche par adresse/commune. Fiche qualité eau avec : 6 paramètres clés (PFAS, pesticides, nitrates, bactéries E.coli, plomb, turbidité) en pastilles vert/orange/rouge. Explication de chaque paramètre en langage simple. Comparaison avec les normes. Date de la dernière analyse. Carte nationale des communes avec PFAS détectés. Pas de compte utilisateur. Pas d'alertes. Pas d'historique. Pas de recommandation de filtres.",
+  "timeToMvp": "4 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider la demande citoyenne sur la qualité de l'eau",
+      "description": "Landing page avec 3 exemples de fiches (Paris, Lyon, une commune avec PFAS). Partager sur les réseaux sociaux avec un angle 'PFAS dans votre eau ?'. Mesurer le taux de clic et d'inscription. Objectif : 3 000 inscrits.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Landing page avec 3 exemples",
+        "3 000+ inscrits early access",
+        "Campagne réseaux sociaux",
+        "Taux de clic mesuré"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Dashboard qualité eau fonctionnel sur toutes les communes",
+      "description": "Pipeline Hub'Eau qualité eau potable. Algorithme de scoring par paramètre (vert/orange/rouge). Interface web responsive. Pages SEO par commune. Mode 'alerte PFAS'. Couverture nationale.",
+      "duration": "4 semaines",
+      "deliverables": [
+        "Pipeline Hub'Eau",
+        "Scoring 6 paramètres",
+        "36 000 pages communes",
+        "Mode alerte PFAS",
+        "Interface responsive"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Acquisition virale et premiers revenus",
+      "description": "RP ciblée sur l'angle PFAS (Mediapart, Le Monde, France Inter). SEO sur 'PFAS eau + ville'. Monétisation : publicité contextuelle (filtres à eau, analyses indépendantes) + premium (historique, alertes). Partenariats avec des fabricants de filtres.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "50 000 visiteurs/mois",
+        "Couverture presse nationale",
+        "Premiers revenus pub + premium",
+        "2 partenariats fabricants filtres"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Alertes personnalisées et application mobile",
+      "description": "Alertes email en cas de nouvelle analyse défavorable. Application mobile avec push notifications. Historique des analyses sur 5 ans. Recommandations de filtres (marketplace avec commissions). Widget intégrable pour les communes.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Alertes email",
+        "App mobile",
+        "Historique 5 ans",
+        "Marketplace filtres",
+        "Widget communes"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "SEO agressif (36 000 pages + contenu PFAS). Marketplace de filtres à eau (commission 10-15%). Offre B2G pour les communes (widget + communication citoyenne). API pour les applications immobilières. Expansion Europe (directive eau potable 2026).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "200 000 visiteurs/mois",
+        "Marketplace filtres active",
+        "50 communes clientes",
+        "API B2B"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "L'anxiété PFAS se traduit-elle par une recherche active d'information sur la qualité de l'eau du robinet ?",
+      "how": "Analyser Google Trends sur 'PFAS eau', 'polluants éternels eau', 'qualité eau robinet' sur les 12 derniers mois. Poster un thread Twitter/LinkedIn 'Voici ce que contient l'eau de votre commune' et mesurer la viralité.",
+      "successCriteria": "Volume de recherche 'PFAS eau' en hausse de 50%+ sur 12 mois. Thread viral > 500 partages."
+    },
+    {
+      "check": "Les données Hub'Eau couvrent-elles les PFAS et sont-elles à jour ?",
+      "how": "Interroger l'API Hub'Eau pour les communes médiatisées (Pierre-Bénite, Rumilly, Salindres). Vérifier si les PFAS (PFOA, PFOS) apparaissent dans les paramètres analysés et leur date de dernière mesure.",
+      "successCriteria": "Hub'Eau contient des analyses PFAS pour 50%+ des communes test. Données de moins de 12 mois."
+    },
+    {
+      "check": "Les citoyens sont-ils prêts à payer pour un accès premium (historique, alertes) ?",
+      "how": "Proposer un accès premium à 2,90€/mois sur la landing page. Tester avec un paiement fictif (bouton 'payer' qui redirige vers une page d'attente). Mesurer le taux de clic.",
+      "successCriteria": "Taux de clic sur le bouton premium > 5% des visiteurs de la fiche commune gratuite."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Parents inquiets de la qualité de l'eau (nourrissons, femmes enceintes)",
+      "where": "Forums parents (Magic Maman, Les Maternelles), groupes Facebook grossesse/bébé, Instagram mamans influenceuses",
+      "howToReach": "Contenu ciblé 'L'eau du robinet est-elle sûre pour votre bébé ?'. Partenariat avec des comptes Instagram parentalité. Référencement dans les guides naissance."
+    },
+    {
+      "who": "Militants écologistes et associations environnementales (Générations Futures, France Nature Environnement)",
+      "where": "Réseaux Générations Futures, FNE, collectifs anti-PFAS locaux, groupes Facebook zéro déchet",
+      "howToReach": "Fournir des données de qualité eau par département pour leurs campagnes. Co-créer des cartes PFAS. Les associations relaient l'outil auprès de leurs réseaux."
+    },
+    {
+      "who": "Journalistes investigation environnement",
+      "where": "Mediapart, Le Monde (section Planète), France Inter (La Terre au carré), Disclose, Reporterre",
+      "howToReach": "Fournir un accès presse avec des données exclusives (classement des communes les plus contaminées). Les articles de presse génèrent un trafic massif et gratuit."
+    }
+  ],
+  "pricingStrategy": "Freemium B2C : fiche commune gratuite (6 paramètres, dernière analyse). Premium citoyen : 2,90€/mois (historique 5 ans, alertes email, comparaison multi-communes, recommandations filtres). Marketplace filtres : commission 10-15% sur les ventes de filtres à eau recommandés. B2G communes : 79€/mois (widget intégrable sur le site de la commune + communication citoyenne). Publicité contextuelle : fabricants de filtres, analyses d'eau indépendantes.",
+  "pathTo10kMrr": "2 000 abonnés premium citoyen × 2,90€ = 5 800€ + marketplace filtres : 200 000 visiteurs × 0,5% conversion × 50€ panier moyen × 12% commission = 600€/mois + 30 communes × 79€ = 2 370€ + publicité : 200 000 visiteurs × 3€ RPM = 600€/mois + revenus divers = 630€ = 10 000€ MRR. Atteignable en 8-12 mois grâce au SEO (36 000 pages) et à la viralité du sujet PFAS.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router, SSG) + Tailwind CSS + pastilles couleur SVG + Recharts pour les historiques",
+    "backend": "Next.js API Routes + scripts Python pour le pipeline data Hub'Eau + classification automatique des paramètres",
+    "database": "PostgreSQL sur Supabase — analyses par commune/UDI, seuils normatifs, historique",
+    "hosting": "Vercel (frontend SSG + API) + Supabase (DB + auth) + GitHub Actions (pipeline CRON hebdomadaire)",
+    "apis": [
+      "Hub'Eau Qualité eau potable (analyses ARS)",
+      "API BAN (géocodage adresses)",
+      "Stripe pour les paiements premium",
+      "Resend pour les alertes email"
+    ],
+    "notes": "Les 36 000 fiches communes sont pré-générées en SSG (build time) pour un SEO optimal. Le pipeline hebdomadaire met à jour les analyses. La classification vert/orange/rouge est basée sur les seuils OMS et les limites de qualité françaises (Code de la santé publique). Les PFAS ont des seuils spécifiques (100 ng/L pour la somme des PFAS depuis janvier 2026)."
+  },
+  "risks": [
+    {
+      "risk": "Les données Hub'Eau ne couvrent pas encore tous les PFAS (nouveaux paramètres de surveillance depuis 2026)",
+      "mitigation": "Afficher clairement quels PFAS sont mesurés et lesquels ne le sont pas encore. Proposer aux utilisateurs de demander des analyses complémentaires à leur commune (modèle de courrier fourni). Surveiller l'évolution de Hub'Eau."
+    },
+    {
+      "risk": "Risque de panique injustifiée si les pastilles rouges sont mal calibrées",
+      "mitigation": "Travailler avec un toxicologue pour calibrer les seuils. Afficher systématiquement le contexte (norme OMS, norme française, risque réel). Disclaimer médical clair. Mentionner que l'eau du robinet en France est globalement très sûre."
+    },
+    {
+      "risk": "Le site eaupotable.sante.gouv.fr pourrait être modernisé pour afficher des pastilles similaires",
+      "mitigation": "Se différencier par l'UX (langage simple), les alertes personnalisées, la marketplace filtres, et la viralité sociale (partage de sa fiche commune). L'État ne fera pas de marketplace."
+    },
+    {
+      "risk": "Les fabricants de filtres pourraient ne pas vouloir être référencés (ou payer des commissions)",
+      "mitigation": "La marketplace n'est pas le revenu principal (600€/mois). L'alternative est l'affiliation Amazon sur les filtres à eau (commission 3-5%). Le revenu principal vient du premium citoyen et du B2G."
+    }
+  ],
+  "inspirations": "EWG Tap Water Database (US) — base de données de qualité de l'eau par code postal, très populaire (millions de visites). Water Quality Association (US) — annuaire de solutions de filtration. Yuka — application qui a démocratisé la lecture des étiquettes alimentaires avec un score simple et des pastilles couleur. Le modèle Yuka appliqué à l'eau du robinet.",
+  "searchVolume": [
+    {
+      "keyword": "PFAS eau potable",
+      "monthlyVolume": "8000-15000",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "qualité eau robinet",
+      "monthlyVolume": "5000-10000",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "pesticides eau",
+      "monthlyVolume": "3000-5000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "eau potable analyse commune",
+      "monthlyVolume": "2000-3000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "polluants éternels eau",
+      "monthlyVolume": "5000-10000",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "filtre eau robinet",
+      "monthlyVolume": "10000-20000",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR — 67 millions de consommateurs d'eau du robinet en France + marché des filtres à eau domestiques (200M€/an en France, source: UFC-Que Choisir)",
+    "sam": "60 millions EUR — 20 millions de Français sensibles à la qualité de l'eau (recherche active en ligne) + marché des filtres domestiques e-commerce",
+    "som": "1,8 million EUR — 2 000 premium × 2,90€ × 12 + marketplace 600€ × 12 + 30 communes × 79€ × 12 + pub 600€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur la population française et le marché des filtres à eau (source: UFC-Que Choisir 2024, GfK). SAM restreint aux internautes effectuant des recherches sur la qualité de l'eau. SOM basé sur les objectifs de conversion réalistes du business plan."
+  },
+  "competitorDeep": [
+    {
+      "name": "UFC-Que Choisir — Carte qualité eau",
+      "url": "https://www.quechoisir.org/carte-interactive-qualite-eau",
+      "pricing": "Gratuit pour la carte. Adhésion UFC 4€/mois pour les détails complets.",
+      "trafficEstimate": "200-500K visites/an sur la carte eau. Forte viralité lors des crises PFAS.",
+      "reviews": "Marque de confiance. Carte populaire et relayée par les médias.",
+      "strengths": "Notoriété, confiance, couverture médiatique. Score global par commune facilement compréhensible.",
+      "weaknesses": "Mise à jour irrégulière. Score global sans détail par paramètre. Pas de données PFAS systématiques. Pas d'alertes. Pas de recommandations de filtres."
+    },
+    {
+      "name": "eaupotable.sante.gouv.fr",
+      "url": "https://eaupotable.sante.gouv.fr",
+      "pricing": "Gratuit (Ministère de la Santé).",
+      "trafficEstimate": "100-200K visites/an. Trafic en hausse lors des alertes sanitaires.",
+      "reviews": "Source officielle fiable. UX unanimement critiquée.",
+      "strengths": "Données ARS officielles, résultats détaillés par paramètre, source de confiance institutionnelle.",
+      "weaknesses": "Interface austère, résultats en µg/L incompréhensibles, navigation par code UDI, pas de score synthétique, pas d'explication des risques, pas de recommandations."
+    },
+    {
+      "name": "Yuka (application alimentation)",
+      "url": "https://yuka.io",
+      "pricing": "Freemium : scan gratuit. Premium à 14,99€/an (recommandations alternatives).",
+      "trafficEstimate": "30 millions d'utilisateurs en France.",
+      "reviews": "Phénomène de société. 4.7/5 sur les stores. Modèle de simplification de l'information complexe.",
+      "strengths": "UX exemplaire, pastilles couleur intuitives, 30M utilisateurs, viralité sociale massive.",
+      "weaknesses": "Ne fait pas l'eau du robinet. Uniquement alimentation et cosmétiques. Mais le modèle de simplification est directement transposable."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données qualité eau potable (ARS via Hub'Eau)",
+      "status": "ok",
+      "detail": "Résultats du contrôle sanitaire publiés en open data. Licence Ouverte v2. Données par UDI, pas par individu. Aucune restriction de réutilisation commerciale.",
+      "source": "https://hubeau.eaufrance.fr — Hub'Eau Qualité eau potable"
+    },
+    {
+      "topic": "Recommandations de filtres et allégations santé",
+      "status": "attention",
+      "detail": "Recommander des filtres à eau peut être assimilé à un conseil médical indirect. Ne pas faire de promesses de santé. Mentionner que l'eau du robinet française est globalement conforme. Disclaimer : 'Ces informations ne constituent pas un avis médical'. Respecter la réglementation sur les allégations de santé (Règlement CE 1924/2006).",
+      "source": "DGCCRF — Réglementation des allégations de santé"
+    },
+    {
+      "topic": "Marketplace et commissions",
+      "status": "ok",
+      "detail": "La revente de filtres via une marketplace avec commissions est légale. Obligation de transparence sur les liens commerciaux (mention 'liens affiliés' ou 'partenaire commercial').",
+      "source": "Code de la consommation — Transparence des pratiques commerciales"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (qualité eau + commune, PFAS + ville)",
+      "cacEstimate": "3-8€",
+      "conversionRate": "3-5%",
+      "ltv": "35€ (2,90€ × 12 mois B2C premium)",
+      "ltvCacRatio": "4:1 à 12:1"
+    },
+    {
+      "channel": "Viralité sociale (partage de fiche commune)",
+      "cacEstimate": "0,50-2€",
+      "conversionRate": "2-3%",
+      "ltv": "35€ (B2C premium)",
+      "ltvCacRatio": "18:1 à 70:1"
+    },
+    {
+      "channel": "RP presse (articles PFAS, enquêtes qualité eau)",
+      "cacEstimate": "1-5€",
+      "conversionRate": "1-2%",
+      "ltv": "35€ (B2C premium)",
+      "ltvCacRatio": "7:1 à 35:1"
+    },
+    {
+      "channel": "Partenariats associations environnementales",
+      "cacEstimate": "2-5€",
+      "conversionRate": "3-5%",
+      "ltv": "35€ (B2C premium)",
+      "ltvCacRatio": "7:1 à 18:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Hub'Eau qualité eau potable testé. Paramètres PFAS vérifiés dans les dernières analyses ARS."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "58K visites/an sur le dataset ARS (data.gouv.fr). Google Trends PFAS vérifié."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "Que Choisir, eaupotable.sante.gouv.fr et Yuka sont des services publics/connus avec des fonctionnalités vérifiables."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés sur Google Trends. Le sujet PFAS est en forte croissance — les volumes pourraient être supérieurs."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Marché des filtres à eau basé sur les estimations UFC-Que Choisir et GfK. Population sensible estimée."
+    },
+    "legal": {
+      "level": "estimé",
+      "detail": "Open data OK. Point allégations santé basé sur la réglementation européenne mais non validé par un avocat."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Le CAC SEO est très optimiste si le sujet PFAS reste médiatique. La viralité sociale est hypothétique. À valider."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fort potentiel viral sur le sujet PFAS. Données solides. Risque : sujet médiatique qui peut retomber. Modèle de revenus hybride à valider."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 88,
+      "detail": "33K-63K recherches/mois cumulées ('PFAS eau potable' 8-15K, 'qualité eau robinet' 5-10K, 'filtre eau robinet' 10-20K). Sujet médiatique majeur 2024-2026. 58K visites/an dataset ARS."
+    },
+    "feasibility": {
+      "score": 82,
+      "detail": "MVP en 4 semaines. 2 APIs principales (Hub'Eau, BAN). SSG avec 36 000 pages. Classification par seuils normatifs — algorithme simple. Stack standard Next.js."
+    },
+    "market": {
+      "score": 55,
+      "detail": "2 000 premium + marketplace + 30 communes + pub pour 10K MRR. Revenus diversifiés mais faible marge unitaire B2C. Dépendance au trafic SEO."
+    },
+    "competition": {
+      "score": 60,
+      "detail": "4 concurrents dont Que Choisir (forte notoriété). Aucun ne fait le 'Yuka de l'eau' avec pastilles couleur et recommandations. Mais le risque de copie est élevé."
+    },
+    "legal": {
+      "score": 80,
+      "detail": "2 points OK, 1 point d'attention (allégations santé). Données open data sûres. Vigilance sur les recommandations de filtres."
+    },
+    "overall": {
+      "score": 74,
+      "detail": "Point fort : demande exceptionnelle (88/100) et faisabilité (82/100). Point faible : marché fragmenté avec faible panier B2C (55/100). Le 'Yuka de l'eau' a un potentiel viral énorme."
+    }
+  }
+}

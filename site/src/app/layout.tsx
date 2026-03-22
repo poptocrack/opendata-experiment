@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Analytics } from '@/components/analytics';
 import { NewsletterBanner } from '@/components/newsletter-banner';
+import { DevFab } from '@/components/dev-fab';
 import './globals.css';
 
 const geistSans = Geist({
@@ -29,13 +30,22 @@ export const metadata: Metadata = {
     siteName: 'Le Filon',
     title: 'Le Filon — Opportunités cachées dans les données publiques françaises',
     description:
-      '16 secteurs analysés, 85 idées de produit avec roadmap, validation marché et score de viabilité. Basé sur les données ouvertes data.gouv.fr.',
+      '17 secteurs analysés, 90 idées de produit avec roadmap, validation marché et score de viabilité. Basé sur les données ouvertes data.gouv.fr.',
+    images: [
+      {
+        url: '/api/og',
+        width: 1200,
+        height: 630,
+        alt: 'Le Filon — Opportunités cachées dans les données publiques françaises',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Le Filon — Opportunités open data françaises',
     description:
-      '85 idées de produits SaaS basées sur les données publiques françaises. Étude de marché complète.',
+      '90 idées de produits SaaS basées sur les données publiques françaises. Étude de marché complète.',
+    images: ['/api/og'],
   },
   keywords: [
     'open data',
@@ -70,6 +80,7 @@ export default function RootLayout({
         <Analytics />
         {children}
         <NewsletterBanner />
+        <DevFab />
       </body>
     </html>
   );

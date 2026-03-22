@@ -1,0 +1,259 @@
+{
+  "id": "eau-assainissement",
+  "rank": 18,
+  "title": "Eau & Assainissement",
+  "slug": "eau-assainissement",
+  "sector": "Eau & Assainissement",
+  "tagline": "15 APIs Hub'Eau gratuites, 58 000 visites/an sur la qualité de l'eau, transfert de compétence 2026 : le secteur le mieux équipé en données ouvertes de France",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "Marché de l'eau en France : 13 milliards €/an. 3 000+ services d'eau, 1 250 intercommunalités. Transfert de compétence obligatoire au 1er janvier 2026 crée une urgence d'outillage.",
+  "monetization": "SaaS B2G 99-799€/mois pour collectivités et régies. B2C freemium pour citoyens. One-shot 990-2990€ pour diagnostics transfert.",
+  "context": "Le secteur de l'eau traverse une transformation structurelle sans précédent. La loi NOTRe impose le transfert de la compétence eau et assainissement aux intercommunalités au 1er janvier 2026 : 3 000 services doivent être repris, fusionnés, harmonisés — souvent par des EPCI qui n'ont ni les outils ni les compétences techniques. En parallèle, les sécheresses récurrentes (2022, 2023, 2024) ont mis la gestion de l'eau au centre du débat public, avec le Plan Eau du gouvernement (mars 2023) qui fixe des objectifs de réduction des fuites de 10% d'ici 2030. La crise des PFAS (polluants éternels) détectés dans l'eau potable de centaines de communes alimente une anxiété citoyenne croissante. Côté données, l'écosystème est exceptionnellement riche : 15 APIs Hub'Eau gratuites et documentées, des datasets massifs sur la qualité de l'eau avec 58 000 visites/an, et 200 000 téléchargements/an sur VigiEau. Pourtant, les outils officiels (SISPEA, eaupotable.sante.gouv.fr) restent austères, lents et inutilisables par des non-experts. Le décalage entre la richesse des données disponibles et la pauvreté des outils de visualisation crée une opportunité majeure pour des SaaS modernes ciblant à la fois les collectivités (B2G) et les citoyens (B2C).",
+  "signals": [
+    {
+      "label": "Visites qualité eau potable",
+      "value": "58 231/an",
+      "detail": "sur le dataset contrôle sanitaire eau potable commune par commune"
+    },
+    {
+      "label": "Téléchargements VigiEau",
+      "value": "200 252/an",
+      "detail": "sur le dataset VigiEau (restrictions sécheresse)"
+    },
+    {
+      "label": "APIs Hub'Eau",
+      "value": "15 APIs gratuites",
+      "detail": "gratuites, documentées, sans clé API — écosystème le plus riche de data.gouv.fr"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "53 000 annonces",
+      "detail": "de marchés publics eau et assainissement sur le BOAMP"
+    },
+    {
+      "label": "Services d'eau en France",
+      "value": "3 000 services",
+      "detail": "en France, la plupart sans outils numériques modernes"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5cf8d9ed8b4c4110294c841d",
+      "name": "Contrôle sanitaire eau distribuée",
+      "description": "Résultats du contrôle sanitaire de l'eau distribuée commune par commune, avec analyses microbiologiques et physicochimiques.",
+      "visits": "58K/an",
+      "downloads": "21K/an",
+      "updateFrequency": "Mensuel"
+    },
+    {
+      "datasetId": "662a5e2cd71b24df5e9a0827",
+      "name": "VigiEau — Restrictions sécheresse",
+      "description": "Données temps réel des arrêtés de restriction d'eau par commune et niveau de gravité (vigilance, alerte, crise).",
+      "visits": "20K/an",
+      "downloads": "200K/an",
+      "updateFrequency": "Quotidien"
+    },
+    {
+      "datasetId": "5c5a8b88634f4117716d5656",
+      "name": "Contrôle sanitaire eau du robinet",
+      "description": "Résultats détaillés des analyses de l'eau du robinet : conformité bactériologique, pesticides, nitrates, plomb.",
+      "visits": "20K/an",
+      "downloads": "10K/an",
+      "updateFrequency": "Mensuel"
+    },
+    {
+      "datasetId": "668c7eb795f6fdcf5436b516",
+      "name": "SISPEA — Indicateurs eau potable",
+      "description": "Indicateurs de performance des services d'eau potable : rendement réseau, prix, conformité, taux de renouvellement.",
+      "visits": "2.6K/an",
+      "downloads": "1K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "594c298ec751df76726294d9",
+      "name": "Pesticides eaux souterraines",
+      "description": "Concentrations en pesticides dans les eaux souterraines par station de surveillance.",
+      "visits": "3K/an",
+      "downloads": "1.5K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "53698f17a3a729239d20364c",
+      "name": "Assainissement collectif",
+      "description": "Données sur les stations d'épuration : capacité, conformité, rejets, performance épuratoire.",
+      "visits": "1.9K/an",
+      "downloads": "800/an",
+      "updateFrequency": "Annuel"
+    }
+  ],
+  "apis": [
+    {
+      "name": "Hub'Eau Qualité eau potable",
+      "description": "Résultats du contrôle sanitaire de l'eau potable par commune, paramètre et période. Données ARS.",
+      "baseUrl": "https://hubeau.eaufrance.fr/api"
+    },
+    {
+      "name": "Hub'Eau Indicateurs SISPEA",
+      "description": "Indicateurs de performance des services d'eau et d'assainissement (rendement, prix, conformité).",
+      "baseUrl": "https://hubeau.eaufrance.fr/api"
+    },
+    {
+      "name": "API VigiEau",
+      "description": "Restrictions d'eau en temps réel par commune : niveau de gravité, mesures applicables, arrêtés préfectoraux.",
+      "baseUrl": "https://api.vigieau.beta.gouv.fr"
+    },
+    {
+      "name": "Hub'Eau Qualité nappes",
+      "description": "Analyses physicochimiques des eaux souterraines par station de surveillance.",
+      "baseUrl": "https://hubeau.eaufrance.fr/api"
+    },
+    {
+      "name": "Hub'Eau Hydrométrie",
+      "description": "Débits et hauteurs d'eau en temps réel sur les cours d'eau français (4 500 stations).",
+      "baseUrl": "https://hubeau.eaufrance.fr/api"
+    },
+    {
+      "name": "Hub'Eau Piézométrie",
+      "description": "Niveaux des nappes phréatiques en temps réel (2 200 piézomètres).",
+      "baseUrl": "https://hubeau.eaufrance.fr/api"
+    }
+  ],
+  "productIdeas": [
+    "Comparateur du prix et de la qualité de l'eau par commune — croisant SISPEA, analyses ARS et prix du m3",
+    "Tableau de bord conformité assainissement — suivi STEU, conformité ERU, alertes réglementaires",
+    "Alertes sécheresse et gestion de crise eau — restrictions VigiEau temps réel + prévisions nappes",
+    "Diagnostic rendement réseau et pilotage investissements — pertes, renouvellement, benchmarks",
+    "Dashboard qualité eau potable pour citoyens — PFAS, pesticides, nitrates, bactéries par adresse",
+    "Plateforme aide au transfert compétence eau assainissement — diagnostic, harmonisation, plan d'action"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Intercommunalités (EPCI)",
+      "priceRange": "500-5000€/an"
+    },
+    {
+      "segment": "Régies d'eau",
+      "priceRange": "200-2000€/an"
+    },
+    {
+      "segment": "Bureaux d'études environnement",
+      "priceRange": "1000-5000€/an"
+    },
+    {
+      "segment": "Opérateurs privés (Veolia/Suez/Saur)",
+      "priceRange": "5000-50000€/an"
+    },
+    {
+      "segment": "Citoyens",
+      "priceRange": "0-5€/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "services.eaufrance.fr (SISPEA)",
+      "weakness": "Observatoire officiel des services d'eau — UX austère, données brutes sans aide à la décision, navigation complexe"
+    },
+    {
+      "name": "eaupotable.sante.gouv.fr",
+      "weakness": "Résultats du contrôle sanitaire ARS — interface minimale, pas de visualisation, pas d'historique exploitable"
+    },
+    {
+      "name": "VigiEau (vigieau.gouv.fr)",
+      "weakness": "Restrictions sécheresse — carte basique, pas de prévisions, pas d'alertes personnalisées"
+    },
+    {
+      "name": "Que Choisir — carte qualité eau",
+      "weakness": "Carte interactive populaire mais données parfois anciennes, pas de granularité fine, pas d'API"
+    },
+    {
+      "name": "Veolia/Suez outils internes",
+      "weakness": "Outils complets de pilotage réseau mais propriétaires, chers, réservés à leurs contrats de délégation"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Écosystème de données le plus riche de data.gouv.fr : 15 APIs Hub'Eau gratuites, documentées, sans clé API",
+      "Urgence réglementaire du transfert de compétence 2026 qui crée une fenêtre de marché de 12-18 mois",
+      "Données fraîches et à jour : mises à jour quotidiennes (VigiEau), mensuelles (ARS), annuelles (SISPEA)",
+      "Sujet d'intérêt public croissant (PFAS, sécheresses, prix de l'eau) qui garantit un trafic organique naturel"
+    ],
+    "weaknesses": [
+      "Marché B2G avec des cycles de vente longs (6-12 mois) et des processus d'achat complexes (marchés publics)",
+      "Faible willingness-to-pay des collectivités rurales (budgets numériques souvent inférieurs à 5 000€/an)",
+      "Complexité technique de l'harmonisation des données entre sources hétérogènes (mailles UDI, commune, STEU)",
+      "Dépendance à la pérennité des APIs Hub'Eau gérées par l'OFB/BRGM — risque de changement de politique d'accès"
+    ],
+    "opportunities": [
+      "Transfert de compétence eau 2026 : 1 250 EPCI doivent reprendre la gestion et ont besoin d'outils de diagnostic",
+      "Plan Eau 2023 : objectif national de réduction des fuites de 10% d'ici 2030 nécessite des outils de pilotage",
+      "Crise PFAS : anxiété citoyenne croissante sur la qualité de l'eau crée une demande B2C forte",
+      "Directive européenne eau potable révisée (2020/2184) impose de nouveaux paramètres de surveillance dès 2026"
+    ],
+    "threats": [
+      "L'État pourrait améliorer les outils officiels (SISPEA, eaupotable.sante.gouv.fr) et réduire le besoin d'outils tiers",
+      "Veolia/Suez pourraient ouvrir leurs outils de pilotage aux collectivités en régie pour capter ce marché",
+      "Le report du transfert de compétence (déjà repoussé de 2020 à 2026) pourrait être repoussé une nouvelle fois",
+      "La concentration du marché (3 opérateurs privés couvrent 60% du marché) limite le nombre de clients potentiels en régie"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Claire",
+      "role": "DGS d'une intercommunalité rurale (25 communes, 18 000 habitants) en Bourgogne",
+      "age": "42 ans",
+      "context": "Doit reprendre la compétence eau et assainissement au 1er janvier 2026. Gère actuellement 8 syndicats d'eau différents avec des tarifs, des contrats et des niveaux de service hétérogènes. N'a aucun agent technique spécialisé eau dans son équipe. A commandé un audit à un bureau d'études pour 35 000€ mais le rapport de 200 pages est inexploitable au quotidien.",
+      "painPoints": [
+        "Doit harmoniser 8 services d'eau avec des tarifs allant de 1,80€ à 4,50€/m3 sans outil de simulation",
+        "Ne sait pas évaluer l'état réel des réseaux (rendement, âge des canalisations, priorités de renouvellement)",
+        "Passe 3h/semaine à compiler manuellement les données SISPEA dans un tableau Excel pour le conseil communautaire"
+      ],
+      "currentSolution": "Rapport du bureau d'études + tableaux Excel manuels + navigation laborieuse sur SISPEA et eaupotable.sante.gouv.fr",
+      "budget": "3 000-5 000€/an pour un outil numérique — négligeable face aux 35 000€ de l'audit papier",
+      "channels": [
+        "Congrès des maires et salon des maires",
+        "FNCCR (Fédération nationale des collectivités concédantes et régies)",
+        "Carrefour des Gestions Locales de l'Eau (Rennes, chaque année)",
+        "Association des maires ruraux de France"
+      ]
+    },
+    {
+      "name": "Marc",
+      "role": "Technicien responsable assainissement dans une régie intercommunale (45 000 habitants) en Bretagne",
+      "age": "55 ans",
+      "context": "35 ans d'expérience terrain, connaît chaque regard de visite de son réseau. Mais la régie doit désormais rendre des comptes sur les indicateurs SISPEA, la conformité ERU et le rendement réseau. Il passe ses journées entre le terrain et la saisie de données dans des tableurs obsolètes. Son directeur lui demande des tableaux de bord que SISPEA ne fournit pas.",
+      "painPoints": [
+        "Jongle entre 4 logiciels (SISPEA, Excel, SIG maison, SANDRE) qui ne communiquent pas entre eux",
+        "Passe 2 jours/mois à saisir manuellement les indicateurs de performance sur le portail SISPEA",
+        "N'a aucun outil de priorisation pour les renouvellements de réseau — décide au feeling et aux plaintes"
+      ],
+      "currentSolution": "SISPEA pour la déclaration obligatoire + Excel pour le suivi quotidien + mémoire personnelle pour la priorisation",
+      "budget": "1 000-2 000€/an — budget serré mais gagnerait facilement 2 jours/mois de productivité",
+      "channels": [
+        "ASTEE (Association scientifique et technique pour l'eau et l'environnement)",
+        "Forum technique Eaufrance",
+        "Journées techniques de l'ONEMA/OFB",
+        "Groupe LinkedIn 'Professionnels de l'eau et de l'assainissement'"
+      ]
+    },
+    {
+      "name": "Sophie",
+      "role": "Ingénieure dans un bureau d'études environnement spécialisé eau (15 personnes) à Lyon",
+      "age": "34 ans",
+      "context": "Réalise des études de diagnostic et schéma directeur eau/assainissement pour les collectivités. Chaque étude nécessite de collecter et croiser des dizaines de sources de données. Depuis l'annonce du transfert de compétence, les commandes ont doublé mais l'équipe n'a pas grandi.",
+      "painPoints": [
+        "Passe 2h/jour à télécharger et nettoyer des données depuis Hub'Eau, SISPEA, ARS et les DDT",
+        "Chaque étude de diagnostic nécessite de reformater les mêmes données dans des templates différents selon le client",
+        "N'a pas d'outil de benchmark automatisé pour comparer un service d'eau à ses pairs (même taille, même contexte)"
+      ],
+      "currentSolution": "Scripts Python maison + QGIS + Excel + copier-coller depuis les sites officiels",
+      "budget": "3 000-5 000€/an par licence — le bureau d'études facture 800-1 200€/jour, l'outil s'amortit en 1 journée gagnée",
+      "channels": [
+        "Pollutec (salon bisannuel Lyon)",
+        "Carrefour des Gestions Locales de l'Eau",
+        "ASTEE — section bureaux d'études",
+        "Réseau IDEAL (réseau des collectivités pour la gestion des services publics)"
+      ]
+    }
+  ]
+}

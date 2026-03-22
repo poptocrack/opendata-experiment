@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -19,6 +20,15 @@ type ProductItem = {
   opportunity: { title: string; sector: string };
 };
 
+type PurchaseItem = {
+  id: number;
+  email: string;
+  stripeSessionId: string;
+  createdAt: string;
+};
+
+type CtaData = Record<string, { total: number; sources: { page: string; clicks: number }[] }>;
+
 type AnalyticsData = {
   totalViews: number;
   todayViews: number;
@@ -28,14 +38,27 @@ type AnalyticsData = {
   topReferrers: { referrer: string; views: number }[];
   deviceBreakdown: { device: string; views: number }[];
   dailyViews: { day: string; views: number }[];
+  ctaClicks: CtaData;
 };
 
 export default function AdminPage() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const validTabs = ["analytics", "waitlist", "products", "purchases"] as const;
+  type Tab = typeof validTabs[number];
+  const initialTab = validTabs.includes(searchParams.get("tab") as Tab) ? (searchParams.get("tab") as Tab) : "analytics";
+
   const [secret, setSecret] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
-  const [tab, setTab] = useState<"analytics" | "waitlist" | "products">("analytics");
+  const [tab, setTab] = useState<Tab>(initialTab);
+
+  function changeTab(t: Tab) {
+    setTab(t);
+    router.replace(`?tab=${t}`, { scroll: false });
+  }
   const [entries, setEntries] = useState<WaitlistEntry[]>([]);
   const [products, setProducts] = useState<ProductItem[]>([]);
+  const [purchases, setPurchases] = useState<PurchaseItem[]>([]);
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [total, setTotal] = useState(0);
   const [error, setError] = useState("");
@@ -52,10 +75,11 @@ export default function AdminPage() {
       setError("");
       try {
         const h = { Authorization: `Bearer ${token}`, "Content-Type": "application/json" };
-        const [wRes, pRes, aRes] = await Promise.all([
+        const [wRes, pRes, aRes, purchRes] = await Promise.all([
           fetch("/api/admin/waitlist", { headers: h }),
           fetch("/api/admin/products", { headers: h }),
           fetch("/api/admin/analytics", { headers: h }),
+          fetch("/api/admin/purchases", { headers: h }),
         ]);
         if (!wRes.ok || !pRes.ok) {
           setError("Accès refusé");
@@ -65,9 +89,11 @@ export default function AdminPage() {
         const wData = await wRes.json();
         const pData = await pRes.json();
         const aData = aRes.ok ? await aRes.json() : null;
+        const purchData = purchRes.ok ? await purchRes.json() : { purchases: [] };
         setEntries(wData.entries);
         setTotal(wData.total);
         setProducts(pData.products);
+        setPurchases(purchData.purchases);
         setAnalytics(aData);
         setAuthenticated(true);
         localStorage.setItem("admin_secret", token);
@@ -182,22 +208,28 @@ export default function AdminPage() {
         </div>
         <div className="mx-auto max-w-4xl px-6 flex gap-4">
           <button
-            onClick={() => setTab("analytics")}
+            onClick={() => changeTab("analytics")}
             className={`pb-3 text-sm font-medium border-b-2 transition-colors ${tab === "analytics" ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}
           >
             Analytics {analytics ? `(${analytics.totalViews})` : ""}
           </button>
           <button
-            onClick={() => setTab("waitlist")}
+            onClick={() => changeTab("waitlist")}
             className={`pb-3 text-sm font-medium border-b-2 transition-colors ${tab === "waitlist" ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}
           >
             Waitlist ({total})
           </button>
           <button
-            onClick={() => setTab("products")}
+            onClick={() => changeTab("products")}
             className={`pb-3 text-sm font-medium border-b-2 transition-colors ${tab === "products" ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}
           >
             Produits ({unlockedCount}/{products.length} déverrouillés)
+          </button>
+          <button
+            onClick={() => changeTab("purchases")}
+            className={`pb-3 text-sm font-medium border-b-2 transition-colors ${tab === "purchases" ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}
+          >
+            Achats ({purchases.length})
           </button>
         </div>
       </div>
@@ -305,6 +337,41 @@ export default function AdminPage() {
                 </Card>
               </div>
             </div>
+
+            {/* CTA Clicks */}
+            {analytics.ctaClicks && Object.keys(analytics.ctaClicks).length > 0 && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-sm">Clics CTA</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {Object.entries(analytics.ctaClicks)
+                      .sort((a, b) => b[1].total - a[1].total)
+                      .map(([cta, data]) => (
+                        <div key={cta}>
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="text-sm font-medium">{cta.replace("/cta/", "")}</span>
+                            <Badge variant="outline">{data.total} clic{data.total > 1 ? "s" : ""}</Badge>
+                          </div>
+                          {data.sources.length > 0 && (
+                            <div className="ml-4 space-y-1">
+                              {data.sources
+                                .sort((a, b) => b.clicks - a.clicks)
+                                .map((s) => (
+                                  <div key={s.page} className="flex items-center justify-between text-xs text-muted-foreground">
+                                    <span className="truncate max-w-[80%]">{s.page}</span>
+                                    <span className="font-mono">{s.clicks}</span>
+                                  </div>
+                                ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </>
         )}
 
@@ -420,6 +487,52 @@ export default function AdminPage() {
                   </div>
                 </div>
               ))}
+          </>
+        )}
+
+        {tab === "purchases" && (
+          <>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <Card>
+                <CardContent className="py-4 text-center">
+                  <div className="text-3xl font-bold font-mono text-primary">{purchases.length}</div>
+                  <div className="text-sm text-muted-foreground">achats total</div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="py-4 text-center">
+                  <div className="text-3xl font-bold font-mono text-primary">
+                    {purchases.length * 79}€
+                  </div>
+                  <div className="text-sm text-muted-foreground">revenu total</div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="py-4 text-center">
+                  <div className="text-3xl font-bold font-mono text-primary">
+                    {purchases.filter((p) => Date.now() - new Date(p.createdAt).getTime() < 7 * 86400000).length}
+                  </div>
+                  <div className="text-sm text-muted-foreground">cette semaine</div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {purchases.length === 0 ? (
+              <p className="text-center text-muted-foreground py-12">Aucun achat pour l&apos;instant.</p>
+            ) : (
+              <div className="space-y-1">
+                {purchases.map((p) => (
+                  <div key={p.id} className="flex items-center justify-between rounded border border-border/50 px-3 py-2 text-sm">
+                    <span className="font-mono">{p.email}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {new Date(p.createdAt).toLocaleDateString("fr-FR", {
+                        day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
+                      })}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </>
         )}
       </div>

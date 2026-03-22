@@ -187,6 +187,33 @@
       "reviews": "N/A (association professionnelle)",
       "strengths": "Référence institutionnelle. Barometre trimestriel très cite par les medias. Legitimite auprès des pouvoirs publics",
       "weaknesses": "Format rapport statique (PDF trimestriel), pas d'outil interactif. Pas de scoring ni de recommandation d'implantation."
+    },
+    {
+      "name": "Gini by MyTraffic",
+      "url": "https://www.mytraffic.io",
+      "pricing": "Sur devis (plateforme location intelligence B2B)",
+      "trafficEstimate": "80K visites/mois",
+      "reviews": "Levée 30M EUR en 2022, 500+ clients retail/immobilier",
+      "strengths": "Données de flux piétons et véhicules très granulaires. Couverture européenne. Clients grands comptes (foncières, enseignes). Interface moderne.",
+      "weaknesses": "Plateforme généraliste (retail, immobilier commercial), pas spécialisée IRVE. Pas de croisement avec les données de bornes existantes ni de scoring de zones blanches EV. Pas de modèle de ROI spécifique recharge."
+    },
+    {
+      "name": "Mapidea",
+      "url": "https://www.mapidea.com",
+      "pricing": "Sur devis (SaaS analytics géospatiales B2B)",
+      "trafficEstimate": "10K visites/mois",
+      "reviews": "Startup portugaise, clients utilities et retail",
+      "strengths": "Plateforme de geospatial analytics puissante. Visualisation de données géographiques. Intégration de sources multiples.",
+      "weaknesses": "Plateforme générique, pas de module IRVE ni de connaissance métier bornes de recharge. Pas de données IRVE pré-intégrées. Nécessite un paramétrage important pour chaque cas d'usage."
+    },
+    {
+      "name": "Driivz",
+      "url": "https://www.driivz.com",
+      "pricing": "Sur devis (SaaS de gestion de réseau de bornes, acquis par Vontier)",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "Acquis par Vontier (2022), 1M+ bornes gérées mondialement",
+      "strengths": "Plateforme complète de gestion de réseau IRVE (CPMS). Forte base installée mondiale. Données d'utilisation réelles des bornes gérées. Smart charging et tarification dynamique.",
+      "weaknesses": "Outil de gestion opérationnelle (CPO/eMSP), pas d'aide à la décision pour de nouveaux emplacements. Pas d'analyse de zones blanches ni de scoring prédictif. Focalisé sur l'exploitation, pas sur le déploiement stratégique."
     }
   ],
   "legalConstraints": [
@@ -287,16 +314,16 @@
       "detail": "4 clients a 499 EUR pour demarrer. Objectif 10K MRR en 10-12 mois. SOM: 1,5 M EUR/an. Pricing 499-999 EUR."
     },
     "competition": {
-      "score": 65,
-      "detail": "3 concurrents identifies: Chargemap, Gireve, AVERE France. Leader: Chargemap (2M+ visites/mois). Faiblesse principale: Focalisee sur les conducteurs."
+      "score": 55,
+      "detail": "6 concurrents identifiés : Chargemap, Gireve, AVERE France, Gini by MyTraffic, Mapidea, Driivz. Leader : Chargemap (2M+ visites/mois). Gini by MyTraffic (location intelligence) et Driivz (gestion réseau IRVE) sont des menaces indirectes mais crédibles."
     },
     "legal": {
       "score": 92,
       "detail": "3 points verifies, tous OK. Donnees sous licence ouverte Etalab."
     },
     "overall": {
-      "score": 77,
-      "detail": "Point fort: legal (92/100). Point faible: competition (65/100). Opportunite solide a executer rapidement."
+      "score": 75,
+      "detail": "Point fort : legal (92/100). Point faible : compétition (55/100). Opportunité solide mais concurrence indirecte croissante (Gini by MyTraffic, Driivz)."
     }
   }
 }

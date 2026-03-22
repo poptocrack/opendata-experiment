@@ -25,6 +25,11 @@
       "label": "Elections (681 datasets)",
       "value": "681 datasets",
       "detail": "Les données électorales par bureau de vote permettent de profiler sociologiquement les quartiers"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "33 700 annonces",
+      "detail": "Marchés publics liés à la formation/éducation sur le BOAMP"
     }
   ],
   "datasets": [

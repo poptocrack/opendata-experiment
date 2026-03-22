@@ -25,6 +25,11 @@
       "label": "Croissance VE",
       "value": "+25%/an",
       "detail": "Part de marché des VE en forte croissance en France"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "4 040 annonces",
+      "detail": "Marchés publics IRVE/bornes de recharge sur le BOAMP, en forte croissance"
     }
   ],
   "datasets": [
@@ -79,7 +84,19 @@
     },
     {
       "name": "Gireve",
-      "weakness": "Interopérabilite technique, pas d'intelligence géographique"
+      "weakness": "Interopérabilité technique, pas d'intelligence géographique"
+    },
+    {
+      "name": "Gini by MyTraffic",
+      "weakness": "Plateforme de location intelligence généraliste (retail, immobilier), pas spécialisée IRVE ni mobilité électrique"
+    },
+    {
+      "name": "Mapidea",
+      "weakness": "Analytics géospatiales génériques, pas de focus sur les bornes de recharge ni de scoring d'emplacement IRVE"
+    },
+    {
+      "name": "Driivz",
+      "weakness": "Software de gestion de réseau de bornes (CPO), pas d'outil d'aide au choix d'emplacement ni d'analyse de zones blanches"
     }
   ],
   "swot": {

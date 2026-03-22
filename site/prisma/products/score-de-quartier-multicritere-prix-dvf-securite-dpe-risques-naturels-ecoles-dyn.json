@@ -221,6 +221,33 @@
       "reviews": "4.6/5 Trustpilot. Tres apprecie pour le gain de temps. Seul bemol: prix legerement superieur a la concurrence.",
       "strengths": "Moteur de recherche sur 1500+ sites. Calcul de rendement et cashflow intégré. Analyse par quartier/IRIS avec données DVF. Bonne UX.",
       "weaknesses": "Focalise sur l'investissement locatif, pas un score de quartier généraliste. Pas de données sécurité ou risques naturels. Prix élève pour une utilisation occasionnelle."
+    },
+    {
+      "name": "Pappers Immobilier",
+      "url": "https://immobilier.pappers.fr",
+      "pricing": "Gratuit (site web). API payante sur devis (100 crédits gratuits pour test).",
+      "trafficEstimate": "500K-1M visites/mois. Forte marque Pappers, référence open data.",
+      "reviews": "Très positif, considéré comme la référence gratuite pour les données immobilières DVF en France.",
+      "strengths": "Gratuit, 28M transactions DVF, DPE intégré, permis de construire, interface moderne, forte marque open data.",
+      "weaknesses": "Pas de score de quartier multicritère, pas de données sécurité/écoles/risques naturels intégrées. Interface générique, pas de scoring ni d'aide à la décision."
+    },
+    {
+      "name": "Homadata",
+      "url": "https://www.homadata.fr",
+      "pricing": "API B2B sur devis. Offre Data-as-a-Service pour professionnels immobiliers. Estimé 500-5 000 EUR/mois selon volume.",
+      "trafficEstimate": "Faible trafic B2C (< 30K visites/mois). Cible exclusivement le B2B (banques, assureurs, foncières).",
+      "reviews": "Reconnu dans l'écosystème proptech français pour la qualité des données enrichies (DVF + DPE + cadastre).",
+      "strengths": "Données DVF enrichies et nettoyées, croisement DVF/DPE/cadastre automatisé, API robuste, clients institutionnels (banques, assurances).",
+      "weaknesses": "Pas d'outil grand public, pas de score de quartier, vend de la donnée brute enrichie sans interface utilisateur. Prix B2B inaccessible pour un particulier."
+    },
+    {
+      "name": "Prix-immobilier.com",
+      "url": "https://www.prix-immobilier.com",
+      "pricing": "Gratuit (financé par la publicité et les leads agents immobiliers).",
+      "trafficEstimate": "300K-500K visites/mois. Bon SEO sur les requêtes prix immobilier + ville.",
+      "reviews": "Site connu pour les estimations de prix par commune et quartier. UX correcte mais datée.",
+      "strengths": "Bon référencement SEO sur les requêtes prix immobilier, données DVF intégrées, couverture nationale, gratuit.",
+      "weaknesses": "Uniquement les prix immobiliers, aucun croisement avec DPE/sécurité/risques naturels/écoles. Pas de score de quartier. Monétisation par la pub et les leads, pas de valeur ajoutée analytique."
     }
   ],
   "legalConstraints": [
@@ -341,7 +368,7 @@
     },
     "competition": {
       "score": 40,
-      "detail": "4 concurrents identifies: Kelquartier, CityScan, MeilleursAgents. Leader: Kelquartier (Trafic modéré, base de 43 000 quartiers et communes couvertes. Pas de données Similarweb publiques.). Faiblesse principale: UX datee."
+      "detail": "7 concurrents identifiés : Kelquartier, CityScan, MeilleursAgents, LyBox, Pappers Immobilier, Homadata, Prix-immobilier.com. Leader : MeilleursAgents (5-8M visites/mois). Aucun ne propose un score multicritère croisant DVF+DPE+sécurité+risques+écoles."
     },
     "legal": {
       "score": 55,

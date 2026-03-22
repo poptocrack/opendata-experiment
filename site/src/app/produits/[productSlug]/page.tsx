@@ -5,12 +5,17 @@ import {
   getProductSlugs,
   type ProductWithDetail,
 } from '@/lib/queries';
+import { hasValidAccess } from '@/lib/access';
 import { Footer } from '@/components/footer';
+import { CtaAnalyse } from '@/components/cta-analyse';
+import { Paywall } from '@/components/paywall';
 import {
   ProductBreadcrumb,
   ProductHeader,
   ProductEmptyState,
-  ProductDetailContent
+  ProductDetailContent,
+  ViabilityScoreCard,
+  VisionCards,
 } from '@/components/product-detail';
 import type {
   Milestone,
@@ -51,6 +56,18 @@ export async function generateMetadata({
     openGraph: {
       title: `${product.text} — Le Filon`,
       description: detail?.oneLiner ?? product.text,
+      images: [{
+        url: `/api/og/produit/${productSlug}`,
+        width: 1200,
+        height: 630,
+        alt: product.text,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.text} — Le Filon`,
+      description: detail?.oneLiner ?? product.text,
+      images: [`/api/og/produit/${productSlug}`],
     },
   };
 }
@@ -83,6 +100,8 @@ function parseDetail(detail: ProductWithDetail['detail']) {
   };
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function ProductPage({
   params
 }: Readonly<{
@@ -95,12 +114,31 @@ export default async function ProductPage({
 
   const detail = product.detail;
   const opp = product.opportunity;
-
   const parsed = detail ? parseDetail(detail) : null;
 
-  const mainContent = detail && parsed
-    ? <ProductDetailContent detail={detail} opp={opp} parsed={parsed} />
-    : <ProductEmptyState opportunitySlug={opp.slug} opportunityTitle={opp.title} />;
+  const access = await hasValidAccess();
+
+  let mainContent;
+  if (!detail || !parsed) {
+    mainContent = <ProductEmptyState opportunitySlug={opp.slug} opportunityTitle={opp.title} />;
+  } else if (access) {
+    mainContent = <ProductDetailContent detail={detail} opp={opp} parsed={parsed} />;
+  } else {
+    // Free teaser: ViabilityScoreCard + VisionCards, then Paywall
+    mainContent = (
+      <>
+        {parsed.viabilityScore && (
+          <ViabilityScoreCard viabilityScore={parsed.viabilityScore} />
+        )}
+        <VisionCards
+          problem={detail.problem}
+          solution={detail.solution}
+          uniqueValue={detail.uniqueValue}
+        />
+        <Paywall />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen">
@@ -115,6 +153,10 @@ export default async function ProductPage({
         />
 
         {mainContent}
+      </div>
+
+      <div className="mx-auto max-w-4xl px-6 pb-12">
+        <CtaAnalyse />
       </div>
 
       <Footer />

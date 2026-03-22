@@ -185,6 +185,24 @@
       "reviews": "Référence mondiale analytics immobilier commercial",
       "strengths": "Base de données immobilier commercial la plus complète. Analytics de foot traffic. Modèles de ROI sophistiques.",
       "weaknesses": "Pas présent en France. Pas spécialisé IRVE/mobilite électrique. Données US uniquement."
+    },
+    {
+      "name": "Gini by MyTraffic",
+      "url": "https://www.mytraffic.io",
+      "pricing": "Sur devis (plateforme location intelligence B2B)",
+      "trafficEstimate": "80K visites/mois",
+      "reviews": "Levée 30M EUR en 2022, 500+ clients retail/immobilier",
+      "strengths": "Données de flux piétons et véhicules très granulaires autour des parkings. Clients foncières existants (Klepierre, Unibail). Interface de visualisation moderne.",
+      "weaknesses": "Pas de modèle de ROI spécifique aux bornes de recharge. Pas de croisement avec les données IRVE (bornes concurrentes). L'outil mesure le trafic existant mais ne prédit pas les sessions de recharge EV."
+    },
+    {
+      "name": "Driivz",
+      "url": "https://www.driivz.com",
+      "pricing": "Sur devis (SaaS gestion de réseau de bornes, acquis par Vontier)",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "Acquis par Vontier (2022), 1M+ bornes gérées mondialement",
+      "strengths": "Données d'utilisation réelles des bornes gérées. Gestion complète du réseau IRVE. Smart charging et tarification dynamique.",
+      "weaknesses": "Outil pour opérateurs (CPO), pas pour foncières. Pas de calcul de ROI pré-installation. Pas d'estimation du potentiel d'un parking non équipé. Suppose que les bornes sont déjà installées."
     }
   ],
   "legalConstraints": [
@@ -285,16 +303,16 @@
       "detail": "Objectif 10K MRR en 10-12 mois. SOM: 900K EUR/an. Pricing 299-999 EUR."
     },
     "competition": {
-      "score": 65,
-      "detail": "3 concurrents identifiés: ChargePoint ROI Calculator, Cabinets de conseil (Sia Partn, CoStar (US, référence). Leader: ChargePoint ROI Calculato (N/A (outil interne))."
+      "score": 52,
+      "detail": "5 concurrents identifiés : ChargePoint ROI Calculator, Cabinets de conseil, CoStar, Gini by MyTraffic, Driivz. Gini by MyTraffic a déjà des clients foncières (Klepierre, Unibail) et pourrait ajouter un module ROI bornes."
     },
     "legal": {
       "score": 78,
       "detail": "2 points OK, 1 point d'attention. Vigilance: Données de parkings."
     },
     "overall": {
-      "score": 62,
-      "detail": "Point fort: légal (78/100). Point faible: marché (52/100). Potentiel réel mais hypotheses cles a valider."
+      "score": 60,
+      "detail": "Point fort : légal (78/100). Point faible : compétition (52/100). Gini by MyTraffic déjà client des foncières cibles, menace directe."
     }
   }
 }

@@ -214,6 +214,15 @@
       "reviews": "Bien note par les pros. Note Finary community: précision variable selon les zones",
       "strengths": "IA avancee, API B2B, présence europeenne (CH, FR, DE, UK), clients banques et agents",
       "weaknesses": "Pas accessible aux particuliers, tres cher, pas d'angle investisseur locatif, pas de DPE/rénovation"
+    },
+    {
+      "name": "Homadata",
+      "url": "https://www.homadata.fr",
+      "pricing": "API B2B sur devis. Data-as-a-Service. Estimé 500-5 000 EUR/mois selon volume.",
+      "trafficEstimate": "< 30K visites/mois (B2B uniquement)",
+      "reviews": "Reconnu dans l'écosystème proptech pour les données DVF enrichies et nettoyées",
+      "strengths": "Données DVF enrichies avec DPE et cadastre, API robuste, clients institutionnels",
+      "weaknesses": "Pas d'outil grand public, pas de simulateur de rentabilité, pas d'estimation de loyer, vend de la donnée brute"
     }
   ],
   "legalConstraints": [

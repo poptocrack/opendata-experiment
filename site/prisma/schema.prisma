@@ -144,6 +144,14 @@ model WaitlistEntry {
   createdAt DateTime @default(now())
 }
 
+model Purchase {
+  id              Int      @id @default(autoincrement())
+  email           String
+  token           String   @unique
+  stripeSessionId String   @unique
+  createdAt       DateTime @default(now())
+}
+
 model TargetCustomer {
   id            Int         @id @default(autoincrement())
   segment       String

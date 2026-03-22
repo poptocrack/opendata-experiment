@@ -31,10 +31,10 @@ export function Hero({ count }: { count: number }) {
           </span>
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-amber-500" />
-            Tout est gratuit et open
+            Scores de viabilité et classement
           </span>
         </div>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap gap-3">
           <a
             href="#secteurs"
             className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
@@ -43,6 +43,16 @@ export function Hero({ count }: { count: number }) {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
+          </a>
+          <a
+            href="/classement"
+            className="inline-flex items-center gap-2 rounded-md border border-amber-500/30 bg-amber-500/10 px-5 py-2.5 text-sm font-medium text-amber-700 dark:text-amber-400 hover:bg-amber-500/20 transition-colors"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            Classement par viabilité
           </a>
         </div>
       </div>

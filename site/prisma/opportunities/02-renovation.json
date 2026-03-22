@@ -25,6 +25,11 @@
       "label": "MaPrimeRenov",
       "value": "5Mds budget",
       "detail": "Budget massif de l'État pour la rénovation"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "12 200 annonces",
+      "detail": "Marchés publics liés à l'environnement/énergie sur le BOAMP"
     }
   ],
   "datasets": [

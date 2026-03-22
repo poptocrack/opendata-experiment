@@ -186,6 +186,33 @@
       "reviews": "Référence US",
       "strengths": "Outil complet de localisation et d'analyse du déploiement aux US. Référence pour le secteur.",
       "weaknesses": "Non applicable a la France. Pas de scoring personnalise par opérateur. Outil institutionnel, pas commercial."
+    },
+    {
+      "name": "Gini by MyTraffic",
+      "url": "https://www.mytraffic.io",
+      "pricing": "Sur devis (plateforme location intelligence B2B)",
+      "trafficEstimate": "80K visites/mois",
+      "reviews": "Levée 30M EUR en 2022, 500+ clients retail/immobilier",
+      "strengths": "Données de flux véhicules et piétons très granulaires. Couverture européenne. Capacité à estimer le trafic autour d'un point donné.",
+      "weaknesses": "Plateforme généraliste (retail, immobilier), pas de scoring spécifique IRVE. Pas de croisement avec les bornes existantes ni estimation de ROI par borne. L'opérateur devrait assembler lui-même les analyses."
+    },
+    {
+      "name": "Mapidea",
+      "url": "https://www.mapidea.com",
+      "pricing": "Sur devis (SaaS analytics géospatiales B2B)",
+      "trafficEstimate": "10K visites/mois",
+      "reviews": "Startup portugaise, clients utilities et retail",
+      "strengths": "Analytics géospatiales puissantes. Capacité à intégrer des sources de données multiples et produire des scores de localisation.",
+      "weaknesses": "Plateforme générique sans module IRVE prêt à l'emploi. Pas de données IRVE pré-intégrées. Pas de modèle de scoring spécifique aux bornes de recharge. Nécessite un projet de paramétrage sur mesure."
+    },
+    {
+      "name": "Driivz",
+      "url": "https://www.driivz.com",
+      "pricing": "Sur devis (SaaS gestion de réseau de bornes, acquis par Vontier)",
+      "trafficEstimate": "30K visites/mois",
+      "reviews": "Acquis par Vontier (2022), 1M+ bornes gérées mondialement",
+      "strengths": "Gestion complète du réseau IRVE (CPMS). Données d'utilisation réelles. Smart charging. Base installée massive.",
+      "weaknesses": "Outil d'exploitation opérationnelle, pas de scoring prédictif pour de nouveaux emplacements. Pas d'intégration des données publiques (trafic CEREMA, immatriculations VE). Ne répond pas au besoin 'où installer ma prochaine borne'."
     }
   ],
   "legalConstraints": [
@@ -286,16 +313,16 @@
       "detail": "4 clients a 999 EUR pour demarrer. Objectif 10K MRR en 8-12 mois. SOM: 1,2 M EUR/an. Pricing 499-999 EUR."
     },
     "competition": {
-      "score": 65,
-      "detail": "3 concurrents identifies: Chargemap Business, Cabinets de conseil ad hoc (Si, NREL AFDC (US, référence). Leader: Chargemap Business (50K visites/mois (section business)). Faiblesse principale: Pas de scoring prédictif."
+      "score": 52,
+      "detail": "6 concurrents identifiés : Chargemap Business, Cabinets de conseil, NREL AFDC, Gini by MyTraffic, Mapidea, Driivz. Leader : Chargemap Business (50K visites/mois). Gini by MyTraffic (flux véhicules) et Mapidea (geospatial analytics) pourraient développer un module scoring IRVE."
     },
     "legal": {
       "score": 92,
       "detail": "3 points vérifiés, tous OK. Données sous licence ouverte sur."
     },
     "overall": {
-      "score": 71,
-      "detail": "Point fort: legal (92/100). Point faible: faisabilité (58/100). Potentiel réel mais hypothèses clés à valider."
+      "score": 69,
+      "detail": "Point fort : legal (92/100). Point faible : compétition (52/100). Potentiel réel mais concurrence indirecte significative (Gini, Mapidea)."
     }
   }
 }

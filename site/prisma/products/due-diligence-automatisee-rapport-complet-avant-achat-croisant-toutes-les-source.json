@@ -217,6 +217,24 @@
       "reviews": "Excellente réputation grand public.",
       "strengths": "Données de prix très fiables. Audience massive. Marque reconnue.",
       "weaknesses": "Ne fait que l'estimation de prix. Aucun rapport consolide couvrant risques, DPE, environnement. Pas de service de due diligence."
+    },
+    {
+      "name": "Pappers Immobilier",
+      "url": "https://immobilier.pappers.fr",
+      "pricing": "Gratuit (site web). API payante sur devis.",
+      "trafficEstimate": "500K-1M visites/mois",
+      "reviews": "Référence open data immobilier. DVF + DPE + permis de construire en un seul endroit.",
+      "strengths": "Gratuit, 28M transactions DVF, DPE intégré, permis de construire, interface moderne.",
+      "weaknesses": "Pas de rapport consolidé PDF, pas d'analyse de quartier (sécurité, écoles, risques), pas de scoring, pas de recommandations."
+    },
+    {
+      "name": "Homadata",
+      "url": "https://www.homadata.fr",
+      "pricing": "API B2B sur devis. Estimé 500-5 000 EUR/mois.",
+      "trafficEstimate": "< 30K visites/mois (B2B uniquement)",
+      "reviews": "Reconnu dans l'écosystème proptech pour les données DVF enrichies.",
+      "strengths": "Données DVF enrichies et croisées avec DPE/cadastre, API robuste, données de qualité institutionnelle.",
+      "weaknesses": "Pas de rapport de due diligence, pas d'outil grand public, pas de couverture risques/sécurité/écoles. Vend de la donnée brute, pas de l'analyse."
     }
   ],
   "legalConstraints": [

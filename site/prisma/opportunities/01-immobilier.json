@@ -40,6 +40,11 @@
       "label": "Zonage TLV",
       "value": "13K visites/an",
       "detail": "Zones tendues — la où la demande locative dépasse l'offre"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "67 700 annonces",
+      "detail": "Marchés publics liés au bâtiment/immobilier sur le BOAMP"
     }
   ],
   "datasets": [
@@ -192,6 +197,18 @@
     {
       "name": "Kelquartier",
       "weakness": "Données datées, pas de croisement DVF/DPE"
+    },
+    {
+      "name": "Pappers Immobilier",
+      "weakness": "Gratuit et très complet sur DVF/DPE mais pas de scoring multicritère ni d'aide à la décision"
+    },
+    {
+      "name": "Homadata",
+      "weakness": "API B2B pure, pas d'outil grand public ni de score de quartier — vend de la donnée brute enrichie"
+    },
+    {
+      "name": "Prix-immobilier.com",
+      "weakness": "Visualisation DVF basique, pas de croisement avec DPE/risques/sécurité"
     }
   ],
   "swot": {

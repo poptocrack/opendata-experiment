@@ -3,6 +3,7 @@ import { Methodology } from "@/components/methodology";
 import { RankingTable } from "@/components/ranking-table";
 import { OpportunitySummary } from "@/components/opportunity-summary";
 import { NewsletterInline } from "@/components/newsletter-inline";
+import { CtaAnalyse } from "@/components/cta-analyse";
 import { Footer } from "@/components/footer";
 import { getOpportunities } from "@/lib/queries";
 
@@ -61,6 +62,10 @@ export default async function Home() {
             {opportunities.map((opp) => (
               <OpportunitySummary key={opp.id} opp={opp} />
             ))}
+          </div>
+
+          <div className="mt-12">
+            <CtaAnalyse />
           </div>
 
           <div className="mt-12">

@@ -25,6 +25,11 @@
       "label": "Mise à jour",
       "value": "Hebdomadaire",
       "detail": "Flux continu de nouveaux contrôles sanitaires"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "67 600 annonces",
+      "detail": "Marchés publics liés à l'alimentaire/restauration sur le BOAMP"
     }
   ],
   "datasets": [

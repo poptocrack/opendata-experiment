@@ -1,39 +1,32 @@
 import type { MetadataRoute } from "next";
-import { prisma } from "@/lib/db";
+import { getOpportunities, getProductSlugs } from "@/lib/queries";
+
+const BASE_URL = "https://lefilon.net";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://lefilon.net";
+  const [opportunities, productSlugs] = await Promise.all([
+    getOpportunities(),
+    getProductSlugs(),
+  ]);
 
-  try {
-    const opportunities = await prisma.opportunity.findMany({
-      select: { slug: true, updatedAt: true },
-    });
-
-    const products = await prisma.productIdea.findMany({
-      select: { slug: true },
-    });
-
-    return [
-      {
-        url: baseUrl,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 1,
-      },
-      ...opportunities.map((opp) => ({
-        url: `${baseUrl}/opportunites/${opp.slug}`,
-        lastModified: opp.updatedAt,
-        changeFrequency: "weekly" as const,
-        priority: 0.8,
-      })),
-      ...products.map((p) => ({
-        url: `${baseUrl}/produits/${p.slug}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-      })),
-    ];
-  } catch {
-    return [{ url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 }];
-  }
+  return [
+    {
+      url: BASE_URL,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
+    ...opportunities.map((opp) => ({
+      url: `${BASE_URL}/opportunites/${opp.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    ...productSlugs.map((product) => ({
+      url: `${BASE_URL}/produits/${product.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
 }
