@@ -1,0 +1,318 @@
+{
+  "productSlug": "smartlight-plan-planification-renovation-eclairage-public",
+  "oneLiner": "Planifiez la rénovation de votre parc d'éclairage public sur 5-10 ans avec un budget optimisé.",
+  "problem": "Sophie, DST d'une commune de 8 000 habitants, doit rénover 2 500 points lumineux en LED sur 5-10 ans avec un budget contraint. Elle n'a aucun outil pour prioriser : quelles rues rénover en premier ? Quel budget annuel prévoir ? Quel ROI attendre par tranche ? Les bureaux d'études proposent des schémas directeurs éclairage à 25 000-40 000€, mais le rapport reste un PDF de 300 pages que personne ne met à jour. Marc, au syndicat d'énergie, doit planifier pour 80 communes simultanément avec des niveaux de vétusté et des budgets différents.",
+  "solution": "SmartLight Plan est une plateforme de planification pluriannuelle de la rénovation éclairage. À partir du diagnostic LumiAudit (ou d'un import de données communales), l'outil génère un plan de rénovation optimisé : priorisation des zones par vétusté, consommation et coût/bénéfice, planification budgétaire année par année, simulation du ROI (économies d'énergie + CEE + maintenance), suivi de l'exécution. Le plan est vivant : il se met à jour à chaque rénovation effectuée.",
+  "uniqueValue": "Les schémas directeurs éclairage coûtent 25 000-40 000€ et deviennent obsolètes dès la première année. SmartLight Plan est un outil de planification vivant à 299€/mois qui s'adapte au rythme réel de la rénovation. C'est le Gantt chart de la rénovation éclairage, avec le budget et le ROI intégrés.",
+  "mvpScope": "Import du parc éclairage (CSV/Excel ou données LumiAudit). Algorithme de priorisation par vétusté et consommation. Plan pluriannuel avec budget année par année. Simulation ROI (économies énergie + CEE estimés). Export PDF du plan pour le conseil municipal. Pas de suivi d'exécution. Pas d'intégration avec les marchés publics. Pas de module achat/devis.",
+  "timeToMvp": "8 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin de planification pluriannuelle",
+      "description": "Contacter 10 DST et 5 syndicats d'énergie. Demander comment ils planifient la rénovation. Quantifier le coût du schéma directeur actuel et sa durée de vie.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "15 interviews (10 DST + 5 syndicats)",
+        "Coût moyen du schéma directeur mesuré",
+        "Critères de priorisation identifiés",
+        "Prototype de plan pluriannuel pour 2 communes test"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Plateforme de planification fonctionnelle",
+      "description": "Module d'import CSV/Excel. Algorithme de priorisation (vétusté × consommation × coût). Générateur de plan pluriannuel 5-10 ans. Simulation ROI. Export PDF.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Module import données parc",
+        "Algorithme de priorisation multi-critères",
+        "Générateur de plan 5-10 ans",
+        "Simulation ROI avec CEE",
+        "Export PDF conseil municipal"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers syndicats d'énergie et communes pilotes",
+      "description": "Déployer auprès des syndicats pilotes identifiés lors de la validation. Offre packagée : LumiAudit + SmartLight Plan. Démonstration aux Assises de l'énergie.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "3 syndicats pilotes (plan pour 150 communes)",
+        "10 communes directes",
+        "Premiers plans pluriannuels générés",
+        "Retours terrain pour itération"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Module de suivi d'exécution et marketplace",
+      "description": "Suivi d'exécution : marquer les rénovations effectuées, recalculer le plan. Module achat : connexion avec les catalogues fabricants (Signify, Schréder, Trilux). Appels d'offres pré-remplis.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "Module suivi d'exécution",
+        "Intégration catalogues fabricants",
+        "Module appel d'offres pré-rempli",
+        "30 syndicats/communes actifs"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Bundle LumiAudit + CEE-Lumière + SmartLight Plan. Offre de gestion complète du patrimoine éclairage. Partenariats fabricants (commission sur ventes). Expansion européenne.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR atteint",
+        "50 clients actifs",
+        "Bundle produits éclairage",
+        "Partenariats fabricants signés"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les communes planifient-elles réellement la rénovation de leur éclairage sur plusieurs années ?",
+      "how": "Contacter 10 DST. Demander : 'Avez-vous un plan pluriannuel de rénovation éclairage ? Si oui, sous quelle forme ? Si non, pourquoi ?'",
+      "successCriteria": "7/10 n'ont pas de plan formalisé. Ceux qui en ont un utilisent un PDF/Excel obsolète."
+    },
+    {
+      "check": "Les communes acceptent-elles de partager les données de leur parc éclairage ?",
+      "how": "Demander à 10 communes de partager leur inventaire (même partiel) ou leurs factures EDF éclairage. Évaluer la facilité d'import.",
+      "successCriteria": "7/10 acceptent de partager au moins les factures EDF. 5/10 ont un inventaire même partiel (Excel, plan papier)."
+    },
+    {
+      "check": "Le prix de 299€/mois est-il justifié par rapport au coût d'un schéma directeur ?",
+      "how": "Comparer : schéma directeur 30 000€ (one-shot, obsolète en 2 ans) vs SmartLight Plan 299€/mois × 24 mois = 7 176€ (vivant et mis à jour). Tester l'argument auprès des DST.",
+      "successCriteria": "8/10 trouvent le ratio attractif. 5/10 préfèrent l'outil SaaS au schéma directeur classique."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Syndicats d'énergie départementaux avec programme de rénovation actif",
+      "where": "AMORCE (groupe de travail éclairage public), FNCCR, réseau FLAME, Assises de l'énergie",
+      "howToReach": "Identifier les syndicats ayant obtenu des financements ACTEE ou DSIL pour l'éclairage. Proposer l'outil comme complément à leur programme de rénovation. Offre pilote gratuite sur 10 communes."
+    },
+    {
+      "who": "DST de communes ayant voté un budget rénovation éclairage",
+      "where": "AITF, Congrès des Maires, ForumLED Europe, annonces BOAMP (marchés publics éclairage en cours)",
+      "howToReach": "Veille sur les marchés publics éclairage (BOAMP). Contacter les communes qui lancent un marché : 'Vous avez besoin d'un plan de priorisation avant de lancer votre marché de rénovation.'"
+    },
+    {
+      "who": "Bureaux d'études éclairage proposant des schémas directeurs",
+      "where": "Syndicat de l'éclairage, AFE, annuaires professionnels éclairage, Pollutec",
+      "howToReach": "Proposer SmartLight Plan comme outil complémentaire à leurs études terrain. L'outil prolonge la durée de vie de leur schéma directeur (mise à jour continue vs PDF statique)."
+    }
+  ],
+  "pricingStrategy": "SaaS B2G : 149€/mois (commune < 10 000 hab, 1 plan), 299€/mois (commune 10 000-50 000 hab, plan + suivi), 499€/mois (EPCI/métropole, multi-communes + simulation). Syndicat d'énergie : 799€/mois (toutes les communes adhérentes + priorisation inter-communes). Bureau d'études : 399€/mois (accès illimité + marque blanche + export). Bundle LumiAudit + SmartLight Plan : -20%.",
+  "pathTo10kMrr": "8 syndicats × 799€ = 6 392€ + 10 communes directes × 224€ (prix moyen) = 2 240€ + 5 bureaux d'études × 399€ = 1 995€ = 10 627€ MRR. Atteignable en 12-14 mois. Les syndicats sont le canal principal (1 contrat = 50-80 communes couvertes).",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts (graphiques budget/ROI) + Gantt chart (react-gantt)",
+    "backend": "Next.js API Routes — algorithme de priorisation multi-critères, simulation financière, calcul ROI",
+    "database": "PostgreSQL sur Supabase — données du parc par commune, plans pluriannuels, historique rénovations",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (calculs batch)",
+    "apis": [
+      "Données ADEME énergie patrimoine communal",
+      "Barèmes CEE ATEE (calcul subventions)",
+      "API BAN (géocodage)",
+      "Stripe pour les paiements",
+      "LumiAudit API (diagnostic initial)"
+    ],
+    "notes": "L'algorithme de priorisation utilise un scoring multi-critères configurable par le client (poids vétusté, consommation, coût, urgence). La simulation financière inclut les économies d'énergie, les CEE et la réduction de maintenance. Le Gantt chart est interactif (drag & drop pour ajuster le plan)."
+  },
+  "risks": [
+    {
+      "risk": "Les communes n'ont pas de données d'inventaire à importer — le produit dépend de LumiAudit",
+      "mitigation": "Proposer un import simplifié (factures EDF + nombre de points lumineux suffit pour un plan de base). Le diagnostic satellite LumiAudit peut servir de données initiales. Offrir un module de saisie terrain sur smartphone."
+    },
+    {
+      "risk": "Le plan pluriannuel nécessite une stabilité budgétaire que les communes n'ont pas",
+      "mitigation": "Le plan s'adapte au budget réel chaque année (re-priorisation automatique). Présenter comme un outil de négociation budgétaire auprès du conseil municipal (chiffrage du ROI)."
+    },
+    {
+      "risk": "Les bureaux d'études perçoivent SmartLight Plan comme un concurrent qui cannibalise leurs schémas directeurs",
+      "mitigation": "Positionner comme un complément, pas un remplaçant. Le BE fait l'audit terrain, SmartLight Plan fait le suivi pluriannuel. Offre marque blanche pour que le BE propose l'outil sous sa marque."
+    },
+    {
+      "risk": "Complexité technique de l'algorithme de priorisation multi-critères",
+      "mitigation": "V1 simple : scoring pondéré linéaire (pas d'optimisation combinatoire). Les poids sont configurables par le client. Itérer vers des algorithmes plus sophistiqués en V2 si nécessaire."
+    }
+  ],
+  "inspirations": "PlanGuru (US) — planification financière pluriannuelle pour les PME. Elysia (France) — plateforme de planification de la rénovation énergétique des bâtiments. Inframanager (DE) — gestion du patrimoine infrastructure des collectivités allemandes.",
+  "searchVolume": [
+    {
+      "keyword": "schéma directeur éclairage public",
+      "monthlyVolume": "400-800",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "plan rénovation éclairage public",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "budget éclairage public commune",
+      "monthlyVolume": "200-400",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "passage LED éclairage public coût",
+      "monthlyVolume": "500-1000",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "programme ACTEE éclairage",
+      "monthlyVolume": "100-300",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "250 millions EUR — 34 000 communes × 600€/mois moyen pour un outil de planification éclairage × 12",
+    "sam": "30 millions EUR — 80 syndicats × 10 000€/an + 3 000 communes > 5 000 hab × 3 000€/an + 300 BE × 5 000€/an",
+    "som": "1,3 million EUR — 8 syndicats × 799€ × 12 + 10 communes × 224€ × 12 + 5 BE × 399€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur les 34 000 communes (DGCL). SAM restreint aux syndicats actifs (AMORCE), communes > 5 000 hab avec budget rénovation, et BE éclairage. SOM basé sur la conversion via le réseau AMORCE/FNCCR."
+  },
+  "competitorDeep": [
+    {
+      "name": "Bureaux d'études éclairage (OTEIS, Citeos, etc.)",
+      "url": "https://www.oteis.fr",
+      "pricing": "Schéma directeur éclairage : 25 000-40 000€ one-shot. Audit terrain : 15 000-25 000€.",
+      "trafficEstimate": "Trafic faible par BE individuel. Marché fragmenté (200+ BE en France).",
+      "reviews": "Expertise terrain reconnue. Mais rapports PDF longs, coûteux et vite obsolètes.",
+      "strengths": "Expertise terrain approfondie. Connaissance des normes. Relation de confiance avec les collectivités. Audit physique point par point.",
+      "weaknesses": "Coût élevé (30K€+). Rapport PDF statique obsolète en 1-2 ans. Pas de suivi continu. Pas d'outil de priorisation dynamique."
+    },
+    {
+      "name": "Citelum (EDF) — offre de gestion de patrimoine",
+      "url": "https://www.citelum.com",
+      "pricing": "Contrat de performance énergétique incluant la planification : 100-500K€/an.",
+      "trafficEstimate": "Intégré au site Citelum global.",
+      "reviews": "Solution complète mais réservée aux grandes villes. Opacité contractuelle critiquée.",
+      "strengths": "Planification intégrée dans un contrat global (audit + rénovation + maintenance). Garantie de performance. Financement intégré.",
+      "weaknesses": "Réservé aux grandes villes (> 30 000 hab). Contrats pluriannuels rigides. Lock-in complet. Pas adapté aux syndicats multi-communes."
+    },
+    {
+      "name": "Excel/tableurs artisanaux",
+      "url": "N/A",
+      "pricing": "Gratuit (mais coût en temps considérable).",
+      "trafficEstimate": "N/A — concurrent principal des petites communes.",
+      "reviews": "Utilisé par défaut faute d'alternative. Erreurs fréquentes. Pas de visualisation.",
+      "strengths": "Gratuit. Flexible. Connu de tous. Pas de dépendance à un éditeur.",
+      "weaknesses": "Pas de priorisation automatisée. Pas de simulation ROI. Pas de visualisation. Erreurs humaines. Pas de mise à jour automatique. Impossible à partager entre services."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données d'inventaire du parc éclairage (importées par le client)",
+      "status": "ok",
+      "detail": "Les données du parc éclairage appartiennent à la commune. Aucun enjeu RGPD (pas de données personnelles). Le client garde la propriété de ses données.",
+      "source": "CNIL — Données techniques des équipements publics"
+    },
+    {
+      "topic": "Recommandations de priorisation",
+      "status": "attention",
+      "detail": "L'outil fournit des recommandations de planification, pas des prescriptions techniques. Disclaimer nécessaire : 'Le plan ne se substitue pas à une étude technique terrain. Les recommandations doivent être validées par un professionnel qualifié.'",
+      "source": "Responsabilité civile — outil d'aide à la décision"
+    },
+    {
+      "topic": "Données ADEME et Cerema utilisées pour l'estimation",
+      "status": "ok",
+      "detail": "Données open data en Licence Ouverte v2. Réutilisation commerciale autorisée.",
+      "source": "https://www.data.gouv.fr"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Réseau AMORCE et FNCCR (syndicats d'énergie)",
+      "cacEstimate": "200-400€",
+      "conversionRate": "10-20%",
+      "ltv": "9 588€ (799€ × 12 mois syndicat)",
+      "ltvCacRatio": "24:1 à 48:1"
+    },
+    {
+      "channel": "Veille BOAMP (communes lançant un marché éclairage)",
+      "cacEstimate": "50-150€",
+      "conversionRate": "5-10%",
+      "ltv": "2 688€ (224€ × 12 mois commune moyenne)",
+      "ltvCacRatio": "18:1 à 54:1"
+    },
+    {
+      "channel": "SEO (schéma directeur éclairage, plan rénovation LED)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "3-6%",
+      "ltv": "2 688€ (commune) ou 4 788€ (BE)",
+      "ltvCacRatio": "34:1 à 160:1"
+    },
+    {
+      "channel": "Cross-sell depuis LumiAudit et CEE-Lumière",
+      "cacEstimate": "0-10€",
+      "conversionRate": "20-30%",
+      "ltv": "2 688€ (commune) ou 9 588€ (syndicat)",
+      "ltvCacRatio": "270:1+"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Données ADEME et Cerema vérifiées. Le produit dépend aussi des données client (inventaire)."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Métriques data.gouv.fr vérifiées."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Prix des schémas directeurs basés sur des retours de collectivités et des appels d'offres BOAMP. Citelum pricing estimé."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés sur une niche B2G très spécialisée. Le SEO vise la longue traîne."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Basé sur le nombre de syndicats actifs et communes > 5 000 hab. Hypothèse de willingness-to-pay à valider."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Données client sans enjeu RGPD. Un point d'attention sur la responsabilité des recommandations (disclaimer standard)."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Le cross-sell depuis les autres produits éclairage est le canal le plus prometteur mais dépend de l'adoption de LumiAudit. Autres canaux : benchmarks B2G génériques."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Produit de planification avec forte valeur ajoutée mais dépendant des données client. Le bundle avec LumiAudit et CEE-Lumière crée un écosystème cohérent."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 62,
+      "detail": "1,5-3K recherches/mois. Demande de niche B2G mais urgence réelle (crise énergétique, interdiction sodium/mercure). Le besoin de planification croît avec chaque hausse de facture."
+    },
+    "feasibility": {
+      "score": 65,
+      "detail": "MVP en 8 semaines. Algorithme de priorisation + simulation financière + Gantt chart interactif. Complexité technique modérée mais nombreuses fonctionnalités."
+    },
+    "market": {
+      "score": 72,
+      "detail": "23 clients (8 syndicats + 10 communes + 5 BE) pour 10K MRR. Panier moyen élevé. Le cross-sell depuis LumiAudit réduit le CAC."
+    },
+    "competition": {
+      "score": 80,
+      "detail": "Seul concurrent : les schémas directeurs PDF à 30K€. Aucun SaaS de planification éclairage. Excel est le vrai concurrent — facile à battre sur l'UX."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "2 points OK, 1 point d'attention (disclaimer recommandations). Pas d'enjeu RGPD."
+    },
+    "overall": {
+      "score": 72,
+      "detail": "Forte compétition favorable (80/100) et cadre légal OK (85/100). Point faible : faisabilité plus complexe (65/100). Le bundle avec les autres produits éclairage est le vrai levier."
+    }
+  }
+}

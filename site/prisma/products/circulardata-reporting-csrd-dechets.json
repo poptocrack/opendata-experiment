@@ -1,0 +1,323 @@
+{
+  "productSlug": "circulardata-reporting-csrd-dechets",
+  "oneLiner": "Le reporting déchets CSRD automatisé : de la collecte terrain au rapport ESRS E5 en quelques clics.",
+  "problem": "Depuis 2025, 10 000 entreprises françaises doivent publier un rapport CSRD incluant le volet ESRS E5 (économie circulaire et déchets). Or la collecte des données déchets est un cauchemar : les données sont dispersées entre 5 à 20 sites, chaque site a ses propres prestataires de collecte, les bordereaux sont en papier ou en PDF, et les catégories de déchets ne correspondent pas aux nomenclatures ESRS. Les responsables RSE passent 2 à 4 semaines par an à consolider manuellement les données déchets dans des tableurs, avec un risque d'erreur élevé. Les cabinets de conseil HSE facturent 650€/jour pour cette mission. Les outils carbone généralistes (Greenly, Toovalu) traitent les déchets comme un sous-module avec 3 champs à remplir, sans la granularité exigée par l'ESRS E5 (flux entrants, flux sortants, taux de circularité, objectifs de réduction).",
+  "solution": "Une plateforme SaaS spécialisée dans la collecte et le reporting des données déchets pour la CSRD. Module 1 — Collecte multi-sites : formulaire simplifié pour chaque site (scan de bordereau, import Trackdéchets, saisie manuelle). Classification automatique selon la nomenclature ESRS E5. Module 2 — Consolidation : agrégation automatique multi-sites avec contrôle de cohérence. Calcul des indicateurs ESRS E5 (taux de circularité, taux de valorisation, intensité déchets/CA). Module 3 — Reporting : génération du volet ESRS E5 du rapport CSRD en format auditable. Historique N-1/N-2 et trajectoire de réduction.",
+  "uniqueValue": "Les outils carbone généralistes (Greenly, Toovalu, Sweep) traitent les déchets en 3 champs. L'ESRS E5 exige une granularité que seul un outil spécialisé peut fournir : flux entrants par catégorie, flux sortants par filière de traitement, taux de circularité, objectifs de réduction chiffrés. CircularData est le premier outil dédié au volet déchets de la CSRD, avec une collecte terrain adaptée aux opérationnels (scan de bordereau, import Trackdéchets) et un reporting conforme aux exigences des auditeurs.",
+  "mvpScope": "Module collecte simplifié : formulaire web par site avec les catégories ESRS E5 (déchets dangereux, non dangereux, radioactifs). Import CSV des données Trackdéchets. Consolidation multi-sites avec 3 indicateurs clés (tonnage total, taux de valorisation, taux de dangereux). Export PDF du volet ESRS E5 simplifié. Pas de scan de bordereau. Pas de calcul de taux de circularité. Pas d'historique N-1/N-2.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin d'un outil dédié au reporting déchets CSRD",
+      "description": "Interviews de 15 responsables RSE/HSE d'ETI soumises à la CSRD. Vérifier que le volet déchets est un point de douleur spécifique et que les outils actuels sont insuffisants.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "15 interviews responsables RSE/HSE",
+        "Cartographie des outils utilisés",
+        "Analyse des exigences ESRS E5 vs. capacités des outils existants",
+        "10 lettres d'intention"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Collecte multi-sites et export ESRS E5",
+      "description": "Formulaire de saisie par site avec nomenclature ESRS E5. Import CSV Trackdéchets. Consolidation multi-sites. Export PDF volet ESRS E5.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Formulaire collecte par site",
+        "Import CSV Trackdéchets",
+        "Consolidation multi-sites",
+        "Export PDF ESRS E5"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients et scan de bordereaux",
+      "description": "Déploiement chez 5 ETI pilotes. Ajout du scan de bordereau (OCR) pour la saisie terrain. Module contrôle de cohérence (détection des anomalies dans les données saisies).",
+      "duration": "8 semaines",
+      "deliverables": [
+        "5 ETI pilotes",
+        "OCR scan bordereaux",
+        "Contrôle de cohérence",
+        "10 clients payants"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Taux de circularité et trajectoire de réduction",
+      "description": "Calcul du taux de circularité (flux entrants recyclés / flux totaux). Historique N-1/N-2 et projection de la trajectoire de réduction. Alertes sur les écarts à la trajectoire.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Calcul taux de circularité ESRS E5",
+        "Historique et trajectoire",
+        "15 clients payants",
+        "Partenariat cabinet audit"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Intégration API avec les plateformes CSRD généralistes (export du module déchets). Partenariat avec les cabinets d'audit (EY, KPMG, Deloitte) comme outil de vérification. Extension aux filières REP.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "20 entreprises clientes",
+        "Intégration API plateformes CSRD",
+        "Partenariat cabinet audit"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Le volet déchets de la CSRD est-il réellement un point de douleur spécifique pour les responsables RSE ?",
+      "how": "Interviews de 15 responsables RSE d'ETI soumises CSRD. Questions : quel temps passé sur le volet déchets vs. les autres volets ? Quel outil utilisez-vous ? Les données sont-elles prêtes pour un audit ?",
+      "successCriteria": "10/15 identifient les déchets comme l'un des 3 volets les plus chronophages de la CSRD. 12/15 utilisent Excel pour consolider les données déchets."
+    },
+    {
+      "check": "Les outils carbone généralistes sont-ils vraiment insuffisants pour le volet ESRS E5 ?",
+      "how": "Tester Greenly, Toovalu et Sweep sur un cas réel de reporting déchets multi-sites (données anonymisées d'une ETI). Comparer les indicateurs produits avec les exigences ESRS E5.",
+      "successCriteria": "Aucun des 3 outils ne produit plus de 50% des indicateurs requis par l'ESRS E5. Le taux de circularité et les flux par catégorie ne sont pas calculables."
+    },
+    {
+      "check": "Les entreprises sont-elles prêtes à payer 200-1000€/mois pour un outil dédié au reporting déchets ?",
+      "how": "Présenter la maquette et le pricing à 10 responsables RSE. Comparer avec le coût actuel (consultant HSE à 650€/jour × 10-20 jours = 6 500-13 000€/an).",
+      "successCriteria": "7/10 trouvent le prix acceptable. Le coût annuel (2 400-12 000€) est inférieur au coût d'un consultant HSE pour la même mission."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Responsables RSE d'ETI industrielles (50-500 salariés) soumises à la CSRD dès 2025",
+      "where": "Pollutec (Lyon, espace CSRD/RSE), ORSE (Observatoire de la RSE, 120 membres), C3D (Collège des Directeurs du Développement Durable, 200 membres)",
+      "howToReach": "Webinaire gratuit : 'ESRS E5 économie circulaire : comment collecter vos données déchets multi-sites sans y passer 3 semaines'. Offrir un audit gratuit de conformité ESRS E5 pour les 10 premières entreprises inscrites."
+    },
+    {
+      "who": "Consultants RSE et cabinets HSE accompagnant les ETI dans leur reporting CSRD",
+      "where": "LinkedIn groupes RSE/CSRD (RSE et Développement Durable : 45 000 membres), réseau ORSE, congrès Produrable",
+      "howToReach": "Proposer un accès consultant avec marque blanche. L'outil accélère leurs missions CSRD (focus déchets) et leur permet de facturer l'accompagnement stratégique plutôt que la collecte de données."
+    },
+    {
+      "who": "CCI régionales accompagnant les ETI locales dans la transition CSRD",
+      "where": "CCI France (réseau des 122 CCI), ateliers CSRD régionaux, webinaires Bpifrance",
+      "howToReach": "Proposer un partenariat CCI : tarif préférentiel pour les ETI accompagnées. La CCI recommande l'outil dans ses ateliers CSRD, CircularData offre un diagnostic gratuit."
+    }
+  ],
+  "pricingStrategy": "SaaS mensuel par nombre de sites et complexité. Pack Essentiel (1-5 sites, reporting basique) : 199€/mois. Pack Standard (5-20 sites, tous les indicateurs ESRS E5) : 499€/mois. Pack Enterprise (> 20 sites, intégration ERP, audit trail) : 999€/mois. Engagement annuel : -20%. Le coût annuel (2 400-12 000€) est 1/2 à 1/5e du coût d'un consultant HSE (6 500-13 000€/an pour le volet déchets seul).",
+  "pathTo10kMrr": "8 entreprises pack Essentiel × 199€ = 1 592€ + 10 entreprises pack Standard × 499€ = 4 990€ + 3 entreprises pack Enterprise × 999€ = 2 997€ + 1 consultant marque blanche × 499€ = 499€ = 10 078€ MRR. Atteignable en 12-14 mois : 21 entreprises sur 10 000 soumises CSRD = 0,2% de pénétration.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts pour les graphiques d'indicateurs ESRS E5",
+    "backend": "Next.js API Routes — pipeline de collecte multi-sites, moteur de calcul ESRS E5, OCR bordereaux (Tesseract.js)",
+    "database": "PostgreSQL sur Supabase — données sites, flux déchets, indicateurs, historiques, audit trail",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (mise à jour nomenclatures ESRS)",
+    "apis": [
+      "API Trackdéchets (import bordereaux déchets dangereux)",
+      "Nomenclature ESRS E5 (référentiel interne)",
+      "Tesseract.js (OCR bordereaux papier)",
+      "Stripe pour les paiements",
+      "API d'export vers plateformes CSRD (Greenly, Toovalu)"
+    ],
+    "notes": "Le moteur de calcul ESRS E5 est le cœur du produit : il doit mapper les données terrain (bordereaux, catégories prestataires) vers la nomenclature ESRS E5 (flux entrants, flux sortants, dangerosité, filière de traitement). Maintenir un référentiel de mapping à jour."
+  },
+  "risks": [
+    {
+      "risk": "Les plateformes CSRD généralistes (Greenly, Toovalu, Sweep) améliorent leur module déchets",
+      "mitigation": "Le volet déchets est l'un des 12 chapitres ESRS. Les plateformes généralistes n'investiront pas massivement dans un seul chapitre. Se positionner comme le module expert qui s'intègre via API aux plateformes existantes plutôt que comme un concurrent frontal."
+    },
+    {
+      "risk": "La CSRD est reportée ou simplifiée par la Commission européenne (directive Omnibus)",
+      "mitigation": "Même en cas de simplification, les grandes entreprises continueront le reporting ESG pour des raisons d'image et de pression des investisseurs. Pivoter vers le reporting volontaire (GRI, CDP) si l'ESRS E5 est allégé."
+    },
+    {
+      "risk": "Les entreprises délèguent tout le reporting CSRD à un cabinet et ne veulent pas d'outil interne",
+      "mitigation": "Proposer l'outil aux cabinets comme un accélérateur de mission (marque blanche). Le cabinet utilise CircularData pour la collecte, garde la valeur ajoutée sur le conseil stratégique."
+    },
+    {
+      "risk": "La collecte des données terrain (bordereaux, prestataires) reste trop manuelle malgré l'outil",
+      "mitigation": "Le MVP commence avec un import CSV/saisie manuelle simple. L'OCR bordereaux et l'intégration Trackdéchets réduisent progressivement la saisie. Viser 80% de données importées automatiquement à terme."
+    }
+  ],
+  "inspirations": "Greenly (France) — plateforme bilan carbone qui a levé 52M€, mais module déchets minimaliste. Sweep (France) — plateforme carbone enterprise, déchets = sous-module. Wastebox (Autriche) — marketplace de déchets industriels avec traçabilité. Rubicon (US) — plateforme de gestion des déchets commerciaux avec reporting ESG.",
+  "searchVolume": [
+    {
+      "keyword": "CSRD reporting déchets",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "ESRS E5 économie circulaire",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "reporting ESG déchets entreprise",
+      "monthlyVolume": "400-800",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "obligation CSRD 2025 ETI",
+      "monthlyVolume": "2000-4000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "taux de valorisation déchets industriels",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "200 millions EUR — 10 000 entreprises soumises CSRD × budget moyen reporting ESG déchets estimé à 20 000€/an (logiciel + conseil)",
+    "sam": "30 millions EUR — 3 000 ETI industrielles avec enjeux déchets significatifs (production, logistique, distribution) et budget RSE",
+    "som": "1,2 million EUR — 20 entreprises × 5 000€/an (prix moyen pondéré), atteignable en 14 mois via Pollutec, ORSE et LinkedIn RSE",
+    "methodology": "TAM basé sur le calendrier CSRD (10 000 entreprises d'ici 2026, source : AMF/EFRAG). SAM restreint aux ETI industrielles avec un volume de déchets significatif. SOM basé sur le business plan avec 0,7% de pénétration du SAM."
+  },
+  "competitorDeep": [
+    {
+      "name": "Greenly",
+      "url": "https://www.greenly.earth",
+      "pricing": "À partir de 300€/mois pour les PME. 500-1 500€/mois pour les ETI. Module déchets inclus mais basique.",
+      "trafficEstimate": "Estimé 200-400K visites/an. Leader français du bilan carbone PME/ETI.",
+      "reviews": "Plateforme carbone très complète. Mais le module déchets se limite à 3-5 catégories agrégées. Pas de conformité ESRS E5 granulaire. Pas de collecte terrain multi-sites.",
+      "strengths": "Marque reconnue. 52M€ levés. Écosystème complet (carbone + énergie + achats). Base clients large.",
+      "weaknesses": "Déchets = sous-module mineur. Pas de collecte multi-sites. Pas de conformité ESRS E5 détaillée. Pas d'import Trackdéchets. Pas d'OCR bordereaux."
+    },
+    {
+      "name": "Toovalu",
+      "url": "https://www.toovalu.com",
+      "pricing": "Sur devis — estimé 500-1 000€/mois pour les ETI. Plateforme CSRD complète.",
+      "trafficEstimate": "Estimé 30-80K visites/an. Positionnement ETI/grandes entreprises.",
+      "reviews": "Plateforme CSRD complète couvrant tous les chapitres ESRS. Module déchets plus développé que Greenly mais reste généraliste.",
+      "strengths": "Couverture CSRD complète (tous les ESRS). Interface professionnelle. Accompagnement conseil inclus.",
+      "weaknesses": "Prix élevé. Module déchets encore généraliste. Pas de collecte terrain spécialisée. Pas d'intégration Trackdéchets."
+    },
+    {
+      "name": "Consultants HSE indépendants",
+      "url": "N/A",
+      "pricing": "500-800€/jour. Mission volet déchets CSRD : 10-20 jours = 6 500-13 000€.",
+      "trafficEstimate": "N/A — marché fragmenté de consultants indépendants et petits cabinets.",
+      "reviews": "Expertise terrain et réglementaire forte. Mais prestation one-shot, pas de suivi dans le temps. Coût élevé. Données livrées en Excel, pas d'historique automatique.",
+      "strengths": "Expertise réglementaire pointue. Connaissance terrain des filières de traitement. Relation de confiance avec les directions RSE.",
+      "weaknesses": "Coût élevé (650€/jour). Pas d'outil pérenne (livrable Excel). Pas de suivi dans le temps. Pas d'automatisation de la collecte. Scalabilité limitée."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Directive CSRD et ESRS E5",
+      "status": "ok",
+      "detail": "La CSRD est en vigueur depuis janvier 2024 (grandes entreprises) et s'étend aux ETI en 2025-2026. L'ESRS E5 (économie circulaire) est un standard obligatoire. L'outil aide à se conformer — alignement réglementaire total.",
+      "source": "https://eur-lex.europa.eu — Directive CSRD 2022/2464"
+    },
+    {
+      "topic": "API Trackdéchets — import de données",
+      "status": "ok",
+      "detail": "API publique avec authentification. L'entreprise autorise l'import de ses propres données Trackdéchets dans un outil tiers. Pas de restriction identifiée.",
+      "source": "https://trackdechets.beta.gouv.fr — Conditions d'utilisation"
+    },
+    {
+      "topic": "RGPD — données de sites industriels",
+      "status": "attention",
+      "detail": "Les données de production de déchets par site peuvent être considérées comme des données commerciales sensibles. Hébergement en France obligatoire pour certains clients. Clause de confidentialité dans les CGU.",
+      "source": "CNIL — Recommandations données industrielles"
+    },
+    {
+      "topic": "Directive Omnibus — simplification potentielle CSRD",
+      "status": "attention",
+      "detail": "La Commission européenne travaille sur une directive Omnibus qui pourrait simplifier certaines exigences CSRD pour les plus petites ETI. Surveiller l'évolution réglementaire. Le volet E5 pourrait être allégé mais pas supprimé.",
+      "source": "Commission européenne — Consultation Omnibus 2025"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Pollutec et congrès RSE (Produrable, Universités d'été CSRD)",
+      "cacEstimate": "400-700€",
+      "conversionRate": "8-15%",
+      "ltv": "5 988€ (499€ × 12 mois)",
+      "ltvCacRatio": "9:1 à 15:1"
+    },
+    {
+      "channel": "LinkedIn groupes RSE/CSRD (outreach ciblé)",
+      "cacEstimate": "80-200€",
+      "conversionRate": "3-6%",
+      "ltv": "5 988€ (499€ × 12 mois)",
+      "ltvCacRatio": "30:1 à 75:1"
+    },
+    {
+      "channel": "SEO (requêtes CSRD déchets, ESRS E5)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "2-5%",
+      "ltv": "5 988€ (499€ × 12 mois)",
+      "ltvCacRatio": "75:1 à 200:1"
+    },
+    {
+      "channel": "Partenariat cabinets HSE/RSE (recommandation)",
+      "cacEstimate": "100-300€",
+      "conversionRate": "10-20%",
+      "ltv": "5 988€ (499€ × 12 mois)",
+      "ltvCacRatio": "20:1 à 60:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "API Trackdéchets vérifiée et documentée. Nomenclature ESRS E5 publiée par l'EFRAG."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Le calendrier CSRD est officiel (directive européenne). Le nombre d'entreprises soumises (10 000) provient de l'AMF et de l'EFRAG."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "Greenly, Toovalu et Sweep analysés via leurs sites et tarifs publics. Consultants HSE vérifiés via les grilles tarifaires du marché."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés. Les recherches CSRD sont en forte croissance depuis 2024. Le volet déchets spécifique est encore peu recherché (marché émergent)."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Budget moyen reporting ESG déchets estimé à 20 000€/an incluant le conseil. Le budget logiciel seul est probablement 5 000-10 000€/an."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "CSRD et ESRS E5 sont des textes publiés et en vigueur. Point d'attention sur la directive Omnibus qui pourrait alléger certaines exigences."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Pollutec et LinkedIn RSE comme canaux principaux sont des hypothèses. Le partenariat avec les cabinets HSE est une stratégie prometteuse mais non validée."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Obligation réglementaire forte (CSRD). Marché émergent avec peu de concurrence spécialisée sur le volet déchets. Risque principal : la directive Omnibus et la maturité du marché (les ETI découvrent encore la CSRD)."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "3-6K recherches/mois sur les requêtes CSRD liées. 10 000 entreprises soumises d'ici 2026. Mais le volet déchets spécifique est encore peu recherché — marché émergent."
+    },
+    "feasibility": {
+      "score": 72,
+      "detail": "MVP en 5 semaines (formulaire + import CSV + export PDF ESRS E5). Le mapping nomenclature ESRS E5 est le défi principal mais la norme est publiée et documentée."
+    },
+    "market": {
+      "score": 65,
+      "detail": "20 clients pour 10K MRR = 0,2% de pénétration sur 10 000 entreprises. Cycle B2B plus court que le B2G. Prix acceptable vs. consultant HSE."
+    },
+    "competition": {
+      "score": 70,
+      "detail": "Greenly et Toovalu traitent les déchets en sous-module. Pas de concurrent spécialisé sur le volet déchets CSRD. Créneau accessible mais risque que les généralistes améliorent leur module."
+    },
+    "legal": {
+      "score": 75,
+      "detail": "2 points OK, 2 attention. L'outil aide à se conformer à la CSRD. Point d'attention sur la directive Omnibus et la confidentialité des données industrielles."
+    },
+    "overall": {
+      "score": 70,
+      "detail": "Obligation réglementaire forte (75/100 légal) et faisabilité bonne (72/100). Point faible : marché émergent (68/100 demande, 65/100 marché). Le timing est crucial : trop tôt si les ETI ne sont pas encore mobilisées."
+    }
+  }
+}

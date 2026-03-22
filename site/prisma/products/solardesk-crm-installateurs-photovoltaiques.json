@@ -1,0 +1,318 @@
+{
+  "productSlug": "solardesk-crm-installateurs-photovoltaiques",
+  "oneLiner": "Le CRM conçu pour les installateurs PV : de la prise de contact au raccordement, tout en un.",
+  "problem": "Un installateur photovoltaïque gère ses prospects, devis, chantiers et raccordements avec un mélange de carnet papier, Excel, WhatsApp et post-it. Il perd 20% de ses prospects par manque de relance, met 3 jours à produire un devis (quand le concurrent répond en 24h), et n'a aucune visibilité sur son pipeline commercial. Les CRM génériques (HubSpot, Pipedrive) ne comprennent pas les spécificités du métier : certification RGE, dimensionnement PV, dossier d'aides, raccordement Enedis, consuel.",
+  "solution": "Un CRM vertical pour installateurs PV qui intègre les données métier : import automatique des leads (formulaire site web, In Sun We Trust, Otovo), fiche prospect enrichie par la BAN (géolocalisation, irradiation locale), générateur de devis rapide avec dimensionnement PV (puissance, productible, tarifs CRE, aides), suivi du pipeline (prospect → visite technique → devis → signature → chantier → raccordement → consuel), et alertes automatiques (relance prospect, échéance raccordement, fin de validité RGE).",
+  "uniqueValue": "Les CRM génériques ne connaissent pas le parcours installateur PV (visite technique → devis → dossier aides → chantier → consuel → raccordement Enedis). SolarDesk est le seul CRM qui intègre le dimensionnement PV dans le devis (calcul automatique basé sur l'irradiation locale), vérifie la certification RGE de l'installateur, et suit le raccordement jusqu'à la mise en service.",
+  "mvpScope": "Pipeline commercial personnalisé PV (7 étapes : lead → qualification → visite → devis → signature → chantier → raccordement). Fiche prospect avec géolocalisation et irradiation locale. Générateur de devis simplifié (puissance, nombre de panneaux, productible, prix, aides nationales). Alertes de relance automatiques (J+2, J+7, J+14). Dashboard commercial (CA prévisionnel, taux de conversion, délai moyen). Application mobile pour saisie terrain. Pas d'intégration comptable. Pas de gestion de stock. Pas de planning équipe.",
+  "timeToMvp": "7 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin de CRM métier auprès des installateurs",
+      "description": "Prototype Figma du pipeline et du générateur de devis. Présenter à 15 installateurs RGE. Mesurer l'intérêt et les fonctionnalités prioritaires.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Prototype Figma",
+        "15 entretiens installateurs",
+        "Priorisation fonctionnalités",
+        "10 inscrits beta"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "CRM fonctionnel avec pipeline et devis",
+      "description": "Pipeline commercial 7 étapes. Fiche prospect avec BAN et irradiation. Générateur de devis avec calcul PV. Alertes de relance. Dashboard commercial. App mobile basique.",
+      "duration": "7 semaines",
+      "deliverables": [
+        "CRM fonctionnel web + mobile",
+        "Pipeline 7 étapes",
+        "Générateur de devis PV",
+        "Dashboard commercial"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Acquisition des premiers installateurs",
+      "description": "Onboarding 1-à-1 des 10 beta testeurs. Distribution via GMPV-FFB et Qualit'EnR. Présence à Energaïa. Campagne emailing listing RGE.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "30 installateurs inscrits",
+        "15 abonnés payants",
+        "NPS > 40",
+        "2K MRR"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Intégrations et module chantier",
+      "description": "Import leads depuis In Sun We Trust, Otovo, EDF ENR. Module suivi chantier (planning, photos, PV réception). Export comptable. Gestion des dossiers d'aides (MaPrimeRénov', prime autoconsommation).",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Intégration 3 plateformes leads",
+        "Module chantier",
+        "Export comptable",
+        "60 abonnés payants"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Module planning équipe et gestion de stock. Partenariat grossistes (Rexel Solar, Sonepar) pour commande directe depuis le CRM. Extension aux installateurs PAC, bornes de recharge et isolation.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "100 installateurs abonnés",
+        "Partenariat grossiste",
+        "Extension multi-métier"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les installateurs PV utilisent-ils un CRM aujourd'hui, et si oui lequel ?",
+      "how": "Sondage auprès de 30 installateurs RGE via le groupe Facebook 'Installateurs photovoltaïques France' et les salons Energaïa/BePOSITIVE. Demander les outils utilisés et les frustrations.",
+      "successCriteria": "70% n'utilisent pas de CRM. 20% utilisent un CRM générique et le trouvent inadapté. 80% citent la perte de prospects comme problème numéro 1."
+    },
+    {
+      "check": "Le générateur de devis rapide est-il la fonctionnalité killer ?",
+      "how": "Proposer 3 prototypes : A) CRM simple (pipeline + relances), B) CRM + devis rapide, C) CRM + devis + dossier aides. Mesurer la préférence.",
+      "successCriteria": "80% choisissent B ou C. Le devis rapide est cité comme la fonctionnalité la plus attractive."
+    },
+    {
+      "check": "Les installateurs sont-ils prêts à payer un abonnement mensuel pour un CRM métier ?",
+      "how": "Proposer 3 prix (49€, 79€, 149€/mois) avec les fonctionnalités correspondantes. Mesurer la disposition à payer.",
+      "successCriteria": "60% acceptent 79€/mois pour le CRM + devis. 30% acceptent 149€/mois pour le CRM + devis + dossier aides + multi-utilisateur."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Installateurs PV PME (5-20 salariés) en forte croissance",
+      "where": "GMPV-FFB (Groupement des Métiers du Photovoltaïque), Qualit'EnR, Groupe Facebook 'Installateurs photovoltaïques France' (3 200 membres), Energaïa Montpellier",
+      "howToReach": "Emailing ciblé via le listing RGE ADEME (4 500 entreprises PV). Stand à Energaïa avec démo live. Offre d'essai gratuit 30 jours. Onboarding 1-à-1 avec migration des données Excel."
+    },
+    {
+      "who": "Groupements d'installateurs et franchises (Monabee, Cap Soleil Énergie)",
+      "where": "Salons Energaïa, BePOSITIVE, Intersolar Europe, SER (Syndicat des Énergies Renouvelables)",
+      "howToReach": "Proposer une offre multi-sites avec dashboard consolidé pour le siège. Le CRM uniforme les pratiques commerciales entre les agences. Pilote gratuit avec 1 franchise."
+    },
+    {
+      "who": "Installateurs PAC/isolation qui se diversifient dans le PV",
+      "where": "FFB (Fédération Française du Bâtiment), CAPEB, Interclima, salons BePOSITIVE",
+      "howToReach": "Proposer un CRM multi-métier (PV + PAC + isolation). L'installateur gère tous ses métiers dans un seul outil. Migration simple depuis les outils métier isolation existants."
+    }
+  ],
+  "pricingStrategy": "Solo 49€/mois : 1 utilisateur, pipeline, fiche prospect, alertes relance, dashboard. Pro 99€/mois : + générateur de devis PV, dimensionnement automatique, export PDF devis brandé. Business 199€/mois : + multi-utilisateur (5 sièges), dossier aides, import leads plateformes, module chantier, export comptable. Enterprise sur devis : + API, marque blanche, multi-agences, SSO.",
+  "pathTo10kMrr": "30 abonnés Solo × 49€ = 1 470€ + 50 abonnés Pro × 99€ = 4 950€ + 20 abonnés Business × 199€ = 3 980€ = 10 400€ MRR. 100 installateurs abonnés sur 4 500 RGE PV = taux de pénétration de 2,2%. Atteignable en 10-14 mois avec onboarding 1-à-1 et distribution via GMPV-FFB.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + React Native (app mobile) ou PWA",
+    "backend": "Next.js API Routes + Prisma ORM — gestion des leads, devis, pipeline, alertes",
+    "database": "PostgreSQL sur Supabase — multi-tenant (1 base par installateur avec row-level security)",
+    "hosting": "Vercel (frontend + API) + Supabase (DB + Auth) + Resend (emails alertes) + GitHub Actions",
+    "apis": [
+      "API BAN (géocodage prospect)",
+      "Données irradiation solaire par commune (dimensionnement devis)",
+      "API Professionnels RGE (vérification certification)",
+      "Tarifs CRE (calcul devis)",
+      "Stripe (paiement abonnement)",
+      "Resend (emails de relance)"
+    ],
+    "notes": "Architecture multi-tenant avec Supabase Row Level Security. App mobile via PWA (pas de React Native au MVP pour réduire la complexité). Générateur de devis PDF avec Puppeteer. Webhooks pour l'import de leads depuis les plateformes partenaires."
+  },
+  "risks": [
+    {
+      "risk": "Les installateurs artisans résistent à l'adoption de nouveaux outils numériques",
+      "mitigation": "UX mobile-first ultra-simple. Onboarding 1-à-1 avec migration des données (Excel, carnet). Support téléphonique dédié. Formation vidéo de 15 minutes. Période d'essai gratuit 30 jours."
+    },
+    {
+      "risk": "HubSpot ou Pipedrive pourraient lancer un vertical PV avec leur base de clients existante",
+      "mitigation": "Les CRM généralistes n'intégreront jamais le dimensionnement PV, les tarifs CRE et les dossiers d'aides. La valeur est dans le métier, pas dans le CRM. Construire une communauté d'installateurs fidèles."
+    },
+    {
+      "risk": "Le churn pourrait être élevé si les installateurs ne voient pas de ROI rapide",
+      "mitigation": "Onboarding orienté ROI : mesurer le nombre de prospects perdus le premier mois SANS le CRM, puis AVEC. Objectif : démontrer un gain de 2-3 devis/mois dès le premier trimestre."
+    },
+    {
+      "risk": "Les plateformes de leads (In Sun We Trust, Otovo) pourraient refuser l'intégration API",
+      "mitigation": "Import par email forwarding (transfert de mail de lead → création automatique dans le CRM) en alternative à l'API. Ne dépend pas de la coopération des plateformes."
+    }
+  ],
+  "inspirations": "Jobber (Canada) — CRM vertical pour les métiers de service (plombiers, électriciens). 200M$ ARR. Prouve la viabilité du CRM vertical artisan. ServiceTitan (US) — CRM + ERP pour HVAC/plomberie. Valorisation 9,5 milliards $. Housecall Pro (US) — gestion d'entreprise pour artisans du bâtiment. 100M$ ARR.",
+  "searchVolume": [
+    {
+      "keyword": "CRM installateur",
+      "monthlyVolume": "500-1000",
+      "difficulty": "moyenne",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "logiciel devis photovoltaïque",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "gestion chantier solaire",
+      "monthlyVolume": "200-500",
+      "difficulty": "faible",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "logiciel installateur panneaux solaires",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "suivi prospect photovoltaïque",
+      "monthlyVolume": "100-300",
+      "difficulty": "faible",
+      "intent": "commercial"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "108 millions EUR — 4 500 installateurs RGE PV × 2 000€/an budget outils gestion moyen (CRM + devis + planning)",
+    "sam": "36 millions EUR — 1 500 installateurs de plus de 5 salariés avec un besoin structuré de CRM (33% du marché)",
+    "som": "1,5 million EUR — 100 abonnés × 125€ moyen × 12 mois, atteignable en 18 mois",
+    "methodology": "TAM basé sur le listing RGE ADEME (4 500 entreprises PV). SAM restreint aux PME structurées (> 5 salariés, source Qualit'EnR). SOM basé sur un taux de pénétration de 2,2% avec pricing moyen pondéré (Solo/Pro/Business)."
+  },
+  "competitorDeep": [
+    {
+      "name": "HubSpot CRM",
+      "url": "https://www.hubspot.com/products/crm",
+      "pricing": "Gratuit (CRM de base). Starter 20€/mois. Pro 890€/mois. Enterprise 3 600€/mois.",
+      "trafficEstimate": "Trafic massif mondial (> 50M visites/mois globalement).",
+      "reviews": "CRM de référence. Très complet. Mais trop complexe et pas adapté aux artisans. Pas de fonctionnalités métier PV.",
+      "strengths": "Écosystème complet (marketing, vente, service). Gratuit au démarrage. Intégrations nombreuses. Formation HubSpot Academy.",
+      "weaknesses": "Pas de dimensionnement PV. Pas de tarifs CRE. Pas de dossier d'aides. Interface trop complexe pour des artisans. Plans payants chers pour les PME."
+    },
+    {
+      "name": "Pipedrive",
+      "url": "https://www.pipedrive.com",
+      "pricing": "Essential 14,90€/mois. Advanced 27,90€/mois. Professional 49,90€/mois. Power 64,90€/mois.",
+      "trafficEstimate": "Fort trafic B2B (10-20M visites/mois globalement).",
+      "reviews": "Simple et efficace pour le pipeline commercial. Bien adapté aux PME. Mais pas de fonctionnalités métier.",
+      "strengths": "Pipeline visuel intuitif. Simple à prendre en main. Bon rapport qualité-prix. App mobile correcte.",
+      "weaknesses": "Aucune fonctionnalité métier PV (pas de devis PV, pas de dimensionnement, pas de dossier aides). Pipeline générique, pas adapté au parcours installateur."
+    },
+    {
+      "name": "Solo Stacks / SolarNexus (US)",
+      "url": "https://www.solarnexus.com",
+      "pricing": "Sur devis — estimé 200-500$/mois pour un installateur US.",
+      "trafficEstimate": "Très faible en France (< 1K visites/an). Marché exclusivement américain.",
+      "reviews": "Bonne solution pour le marché US. Pas disponible en France. Pas adapté à la réglementation française.",
+      "strengths": "CRM vertical solaire complet (pipeline + design + permitting + interconnection). Référence aux US.",
+      "weaknesses": "Pas disponible en France. Pas de RGE, tarifs CRE, aides françaises. Prix élevé. Interface en anglais."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "RGPD — données prospects (particuliers)",
+      "status": "attention",
+      "detail": "Le CRM stocke des données personnelles de prospects (nom, adresse, téléphone, email, consommation électrique). L'installateur est responsable de traitement, SolarDesk est sous-traitant. DPA (Data Processing Agreement) obligatoire. Conformité RGPD standard : droit d'accès, rectification, suppression, portabilité.",
+      "source": "CNIL — Sous-traitance et CRM"
+    },
+    {
+      "topic": "Listing RGE ADEME pour vérification certification",
+      "status": "ok",
+      "detail": "Utilisation du listing RGE pour vérifier la certification de l'installateur. Données publiques, Licence Ouverte v2.",
+      "source": "https://data.ademe.fr/datasets/liste-des-entreprises-rge"
+    },
+    {
+      "topic": "Données irradiation pour dimensionnement devis",
+      "status": "ok",
+      "detail": "Données publiques utilisées pour le calcul de productible dans les devis. Pas de restriction de réutilisation.",
+      "source": "PVGIS / data.gouv.fr"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Onboarding 1-à-1 (bouche-à-oreille installateurs)",
+      "cacEstimate": "100-250€",
+      "conversionRate": "30-50%",
+      "ltv": "1 188€ (99€ × 12 mois Pro)",
+      "ltvCacRatio": "5:1 à 12:1"
+    },
+    {
+      "channel": "Salons EnR (Energaïa, BePOSITIVE)",
+      "cacEstimate": "200-500€",
+      "conversionRate": "10-25%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "2:1 à 6:1"
+    },
+    {
+      "channel": "Emailing listing RGE ADEME",
+      "cacEstimate": "30-80€",
+      "conversionRate": "2-5%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "15:1 à 40:1"
+    },
+    {
+      "channel": "Partenariat GMPV-FFB / Qualit'EnR",
+      "cacEstimate": "50-150€",
+      "conversionRate": "5-12%",
+      "ltv": "2 388€ (199€ × 12 mois Business)",
+      "ltvCacRatio": "16:1 à 48:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Listing RGE et données irradiation vérifiés. Utilisés pour l'enrichissement des fiches prospects et le dimensionnement devis."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "56K visites/an listing RGE vérifié. Nombre d'installateurs RGE PV (4 500) vérifié sur data.gouv.fr."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "Pricing HubSpot et Pipedrive vérifiés sur leurs sites. SolarNexus vérifié (US uniquement). Aucun CRM vertical PV français identifié."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes faibles car marché niche. Les installateurs ne cherchent pas 'CRM PV' mais 'logiciel devis photovoltaïque'. Volumes estimés par autocomplete Google."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Nombre d'installateurs vérifié. Budget outils estimé par benchmark avec les artisans du bâtiment (source : FFB)."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "RGPD standard pour un CRM B2B. DPA nécessaire — bien documenté."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "CAC estimé par benchmark avec d'autres CRM verticaux (Jobber, ServiceTitan). L'onboarding 1-à-1 est coûteux mais maximise la rétention."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Le besoin est réel (80% des installateurs sans CRM) mais l'adoption par des artisans peu numérisés est le risque principal. Les inspirations internationales (Jobber, ServiceTitan) prouvent la viabilité du modèle."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 65,
+      "detail": "2-5K recherches/mois sur les requêtes logiciel/devis PV. Demande latente forte (80% sans CRM) mais pas exprimée en recherche. Le besoin se révèle lors des salons et du bouche-à-oreille."
+    },
+    "feasibility": {
+      "score": 60,
+      "detail": "MVP en 7 semaines — le plus complexe du secteur. CRM complet + générateur de devis + app mobile. Multi-tenant + auth + emails. Faisable pour un dev expérimenté mais ambitieux."
+    },
+    "market": {
+      "score": 70,
+      "detail": "100 abonnés × 125€ moyen pour 10K MRR. Panier moyen correct. Rétention élevée attendue (un CRM métier est sticky). LTV potentiellement élevée (24-36 mois)."
+    },
+    "competition": {
+      "score": 75,
+      "detail": "Aucun CRM vertical PV en France. HubSpot/Pipedrive sont généralistes. SolarNexus est US-only. Créneau vierge en France. Mais les CRM généralistes sont un concurrent indirect fort."
+    },
+    "legal": {
+      "score": 80,
+      "detail": "1 point OK, 1 point d'attention (RGPD données prospects). Standard pour un CRM. DPA et conformité bien documentés."
+    },
+    "overall": {
+      "score": 69,
+      "detail": "Point fort : absence de concurrent français (75/100) et marché sticky (70/100). Point faible : complexité du MVP (60/100) et adoption artisans (65/100). Produit à forte valeur si l'adoption décolle."
+    }
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "productSlug": "wastemap-cartographie-tri",
+  "oneLiner": "Trouvez où trier, recycler et déposer vos déchets en un clic, partout en France.",
+  "problem": "Un citoyen ou une entreprise veut savoir où déposer un type de déchet spécifique (carton, DEEE, huile de friture, gravats, piles...). Aujourd'hui, il doit chercher sur le site de sa mairie, de son syndicat de déchets, ou appeler un numéro. Chaque collectivité a son propre site avec des informations fragmentées. Il n'existe pas de cartographie nationale unifiée du tri et du recyclage. Les consignes de tri varient d'une commune à l'autre (extension des consignes de tri). Résultat : des erreurs de tri massives (25% de refus en centre de tri) et des dépôts sauvages par méconnaissance.",
+  "solution": "Une application web et mobile qui géolocalise l'utilisateur et affiche tous les points de collecte, déchèteries, bornes de tri, ressourceries et recycleurs autour de lui, avec les consignes de tri spécifiques à sa commune. L'utilisateur cherche un type de déchet ('piles', 'huile de vidange', 'canapé') et voit instantanément où le déposer avec les horaires et conditions. Données agrégées depuis SINOE (annuaire installations), acteurs de l'économie circulaire, et bases communales.",
+  "uniqueValue": "Aucune application ne croise les données de localisation des points de collecte (SINOE), les consignes de tri communales (extension des consignes), et les acteurs de l'économie circulaire (réemploi, réparation) dans une interface unique géolocalisée. L'app Guide du Tri de Citeo est limitée aux emballages et ne couvre pas les DEEE, gravats, encombrants ni le réemploi.",
+  "mvpScope": "Recherche par type de déchet + géolocalisation. Affichage des points de collecte et déchèteries dans un rayon de 20 km (données SINOE + acteurs éco circulaire). Consignes de tri basiques par commune. Fiche par point de collecte (adresse, horaires, types acceptés). Couverture nationale. Pas de contribution utilisateur. Pas d'application mobile native. Pas de suivi des quantités déposées.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider la demande de cartographie unifiée du tri",
+      "description": "Landing page avec recherche par code postal et type de déchet. Tests utilisateurs avec 30 citoyens. Analyse du trafic sur les requêtes 'où jeter + déchet'.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Landing page avec 3 exemples de recherche",
+        "30 tests utilisateurs",
+        "Analyse SEO des requêtes 'où jeter'",
+        "1 000 inscrits early access"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Cartographie nationale fonctionnelle",
+      "description": "Ingestion des données SINOE (déchèteries) et acteurs éco circulaire. Carte interactive avec filtres par type de déchet. Fiche par point de collecte. SEO : une page par commune.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Carte interactive nationale",
+        "10 000+ points de collecte référencés",
+        "Recherche par type de déchet",
+        "Pages SEO par commune"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Acquisition trafic SEO et premiers partenariats",
+      "description": "Indexation des pages communes. Partenariat avec des blogs zéro déchet. Campagne réseaux sociaux. Widget intégrable pour les sites de collectivités.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "20 000 visiteurs/mois",
+        "Widget intégrable déployé sur 10 sites",
+        "5 partenariats blogs/associations",
+        "Premiers revenus publicitaires"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Contribution collaborative et offre B2G",
+      "description": "Module de contribution utilisateur (ajouter/corriger un point de collecte). Offre B2G pour les collectivités (widget personnalisé, analytics de fréquentation). Application mobile PWA.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Module contribution collaborative",
+        "Offre B2G widget",
+        "PWA mobile",
+        "500 contributions utilisateurs"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "SEO massif (36 000 pages communes). Offre premium B2B pour les recycleurs (visibilité, leads). Partenariat Citeo ou ADEME. Monétisation publicitaire optimisée.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "100 000 visiteurs/mois",
+        "30 collectivités B2G",
+        "50 recycleurs B2B premium"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les citoyens cherchent-ils activement où déposer leurs déchets en ligne ?",
+      "how": "Analyser les volumes de recherche Google ('où jeter + type de déchet', 'déchèterie + ville', 'tri sélectif + commune'). Poster sur des groupes Facebook zéro déchet et mesurer l'engagement.",
+      "successCriteria": "Volume cumulé > 50 000 recherches/mois sur les requêtes 'où jeter' + type de déchet. Engagement > 5% sur les posts."
+    },
+    {
+      "check": "Les données SINOE et acteurs éco circulaire couvrent-elles suffisamment de points de collecte ?",
+      "how": "Croiser les données SINOE (déchèteries) et acteurs éco circulaire pour 10 départements test. Comparer avec les sites des collectivités locales.",
+      "successCriteria": "Couverture > 70% des points de collecte connus. Au moins 1 point par commune de plus de 5 000 habitants."
+    },
+    {
+      "check": "Les collectivités sont-elles prêtes à payer pour un widget de cartographie intégrable ?",
+      "how": "Proposer un widget gratuit à 10 collectivités et mesurer l'intérêt pour une version premium avec analytics.",
+      "successCriteria": "7/10 intègrent le widget. 3/10 demandent la version premium avec analytics."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Communautés zéro déchet et associations environnementales",
+      "where": "Groupe Facebook 'Zéro Déchet France' (80 000 membres), Zero Waste France (réseau local dans 50 villes), associations AMAP et jardins partagés",
+      "howToReach": "Proposer l'outil comme ressource gratuite aux groupes locaux. Co-créer des guides de tri par commune avec les ambassadeurs zéro déchet."
+    },
+    {
+      "who": "Collectivités en phase de déploiement de l'extension des consignes de tri",
+      "where": "AMORCE, Cercle National du Recyclage, Citeo (programme d'accompagnement des collectivités)",
+      "howToReach": "Proposer un widget gratuit de cartographie des points de tri pour les sites web des collectivités. Convertir en offre premium avec analytics."
+    },
+    {
+      "who": "Recycleurs et ressourceries indépendants cherchant de la visibilité",
+      "where": "Réseau national des Ressourceries (180 structures), FEDEREC (800 entreprises de recyclage), annuaire Emmaüs",
+      "howToReach": "Offrir une fiche gratuite de base et proposer une fiche premium (photos, avis, mise en avant) pour 29-99€/mois."
+    }
+  ],
+  "pricingStrategy": "Freemium multi-face. Citoyens : gratuit (financé par la pub et les widgets B2G). B2G collectivités : widget intégrable à 99€/mois (standard) ou 299€/mois (premium avec analytics et personnalisation). B2B recycleurs/ressourceries : fiche gratuite de base, fiche premium à 29€/mois (photos, mise en avant, leads), fiche sponsorisée à 99€/mois (position top).",
+  "pathTo10kMrr": "30 collectivités × 149€/mois (mix standard/premium) = 4 470€ + 50 recycleurs premium × 49€/mois (mix 29/99€) = 2 450€ + publicité contextuelle 100K visiteurs × 30€ RPM = 3 000€/mois = 9 920€ MRR. Atteignable en 10-12 mois avec un SEO agressif (36 000 pages communes) et des partenariats communautés zéro déchet.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Leaflet/Mapbox pour la cartographie interactive",
+    "backend": "Next.js API Routes + scripts d'ingestion SINOE et acteurs éco circulaire",
+    "database": "PostgreSQL avec PostGIS sur Supabase — données géolocalisées des points de collecte",
+    "hosting": "Vercel (frontend + API) + Supabase (DB + PostGIS) + GitHub Actions (ingestion data mensuelle)",
+    "apis": [
+      "Données SINOE ADEME (déchèteries, installations)",
+      "Acteurs économie circulaire (data.gouv.fr)",
+      "API BAN (géocodage adresses)",
+      "API Mapbox/Leaflet (cartographie)"
+    ],
+    "notes": "Pages statiques SSG par commune pour le SEO. PostGIS pour les requêtes géospatiales (rayon de recherche). Données actualisées mensuellement via pipeline automatique."
+  },
+  "risks": [
+    {
+      "risk": "L'application Guide du Tri de Citeo pourrait s'étendre au-delà des emballages et devenir une cartographie universelle",
+      "mitigation": "Citeo est un éco-organisme emballages, sa mission est limitée par son agrément. Se différencier par le réemploi, la réparation et les acteurs de l'économie circulaire que Citeo ne couvre pas."
+    },
+    {
+      "risk": "Données géolocalisées incomplètes ou obsolètes (horaires, types de déchets acceptés)",
+      "mitigation": "Module de contribution collaborative (les utilisateurs signalent les erreurs). Partenariats avec les collectivités pour la mise à jour. Afficher la date de dernière vérification."
+    },
+    {
+      "risk": "Faible monétisation publicitaire si le trafic reste trop dispersé géographiquement",
+      "mitigation": "La publicité est un revenu complémentaire, pas le revenu principal. Le B2G (widgets collectivités) et le B2B (fiches recycleurs) sont les piliers du modèle."
+    }
+  ],
+  "inspirations": "TooGoodToGo (France) — marketplace géolocalisée anti-gaspillage alimentaire. Doctolib (France) — cartographie des professionnels de santé avec prise de RDV. iFixit (US) — communauté de réparation avec guides et localisation des réparateurs.",
+  "searchVolume": [
+    {
+      "keyword": "déchèterie près de moi",
+      "monthlyVolume": "15000-25000",
+      "difficulty": "élevée",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "où jeter + type de déchet",
+      "monthlyVolume": "20000-40000",
+      "difficulty": "moyenne",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "tri sélectif commune",
+      "monthlyVolume": "5000-8000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "recyclage + matériau",
+      "monthlyVolume": "10000-20000",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ressourcerie + ville",
+      "monthlyVolume": "3000-6000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "80 millions EUR — 67 millions de Français qui trient + 1 200 collectivités + 5 000 recycleurs/ressourceries susceptibles de payer pour de la visibilité",
+    "sam": "8 millions EUR — 300 collectivités avec budget numérique + 1 000 recycleurs/ressourceries en zone urbaine + revenus publicitaires sur 1 million de visiteurs/mois",
+    "som": "1,2 million EUR — 30 collectivités × 1 788€/an + 50 recycleurs × 588€/an + pub 36 000€/an, atteignable en 18 mois",
+    "methodology": "TAM basé sur la population française et le nombre de collectivités (DGCL) et recycleurs (FEDEREC). SAM restreint aux acteurs numériquement actifs en zone urbaine. SOM basé sur le business plan avec un SEO agressif (36 000 pages communes)."
+  },
+  "competitorDeep": [
+    {
+      "name": "Guide du Tri (Citeo)",
+      "url": "https://www.triercestdonner.fr",
+      "pricing": "Gratuit (financé par les contributions REP emballages via Citeo).",
+      "trafficEstimate": "Estimé 500K-1M visites/an. Application mobile téléchargée 500K+ fois.",
+      "reviews": "Apprécié pour sa simplicité. Critiqué pour sa couverture limitée aux emballages et papiers. Ne couvre pas DEEE, encombrants, gravats, huiles, etc.",
+      "strengths": "Marque reconnue. Financé par Citeo (budget important). Application mobile native. Couverture nationale emballages.",
+      "weaknesses": "Limité aux emballages et papiers (agrément Citeo). Pas de géolocalisation des déchèteries. Pas de réemploi ni réparation. Pas d'offre B2G/B2B."
+    },
+    {
+      "name": "Sites web des collectivités et syndicats",
+      "url": "Variable (1 200 sites différents)",
+      "pricing": "Gratuit (service public).",
+      "trafficEstimate": "Variable. Souvent < 5K visites/mois par site.",
+      "reviews": "Informations souvent à jour mais fragmentées. Chaque collectivité a son propre site, design, navigation.",
+      "strengths": "Informations locales précises (horaires, types acceptés). Source officielle.",
+      "weaknesses": "Fragmenté : 1 200 sites différents. Pas de recherche nationale. Pas de recherche par type de déchet. Design souvent obsolète."
+    },
+    {
+      "name": "Google Maps (recherche 'déchèterie')",
+      "url": "https://maps.google.com",
+      "pricing": "Gratuit.",
+      "trafficEstimate": "Dominant sur les recherches géolocalisées.",
+      "reviews": "Premier réflexe des utilisateurs mais informations incomplètes (pas de types de déchets acceptés, horaires parfois faux).",
+      "strengths": "Réflexe universel. Géolocalisation précise. Avis utilisateurs.",
+      "weaknesses": "Pas de filtrage par type de déchet. Informations souvent incomplètes ou obsolètes. Pas de consignes de tri. Pas de réemploi."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données SINOE (annuaire installations)",
+      "status": "ok",
+      "detail": "Annuaire des installations de traitement publié en open data par l'ADEME. Licence Ouverte v2.",
+      "source": "https://www.sinoe.org — ADEME"
+    },
+    {
+      "topic": "Acteurs économie circulaire (data.gouv.fr)",
+      "status": "ok",
+      "detail": "Cartographie des acteurs publiée en open data. Licence Ouverte v2.",
+      "source": "https://www.data.gouv.fr — Dataset acteurs éco circulaire"
+    },
+    {
+      "topic": "Données de géolocalisation (API BAN)",
+      "status": "ok",
+      "detail": "Base Adresse Nationale en open data. Géocodage gratuit et illimité.",
+      "source": "https://adresse.data.gouv.fr"
+    },
+    {
+      "topic": "RGPD — contribution collaborative",
+      "status": "attention",
+      "detail": "Si contribution utilisateur : collecte a minima d'un email pour la modération. Nécessite une politique de confidentialité et un consentement RGPD. Données anonymisables après modération.",
+      "source": "CNIL — Recommandations contribution participative"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages communes + requêtes 'où jeter')",
+      "cacEstimate": "2-8€",
+      "conversionRate": "1-3% (B2C vers recycleur premium)",
+      "ltv": "588€ (49€ × 12 mois recycleur premium)",
+      "ltvCacRatio": "74:1 à 294:1"
+    },
+    {
+      "channel": "Communautés zéro déchet (Facebook, Zero Waste France)",
+      "cacEstimate": "1-3€",
+      "conversionRate": "0,5-1% (vers visiteur récurrent)",
+      "ltv": "Indirect (trafic publicitaire)",
+      "ltvCacRatio": "Acquisition de trafic — ROI via pub et B2G"
+    },
+    {
+      "channel": "Démarchage collectivités (widget B2G)",
+      "cacEstimate": "200-500€",
+      "conversionRate": "10-20%",
+      "ltv": "1 788€ (149€ × 12 mois)",
+      "ltvCacRatio": "4:1 à 9:1"
+    },
+    {
+      "channel": "Partenariats FEDEREC/Réseau Ressourceries",
+      "cacEstimate": "10-30€",
+      "conversionRate": "5-10%",
+      "ltv": "588€ (49€ × 12 mois recycleur premium)",
+      "ltvCacRatio": "20:1 à 59:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "SINOE et acteurs éco circulaire vérifiés sur data.gouv.fr. Couverture nationale confirmée."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites SINOE et acteurs éco circulaire mesurées via API data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Guide du Tri Citeo analysé. Trafic estimé via app store et SimilarWeb. Sites collectivités analysés manuellement."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes 'où jeter' et 'déchèterie' estimés. La requête 'déchèterie près de moi' est très concurrentielle (Google Maps)."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "TAM basé sur la population française et le nombre de recycleurs (FEDEREC). Hypothèses de monétisation pub à valider."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Licences Ouvertes vérifiées. Point d'attention RGPD si contribution collaborative."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Le SEO est le pari principal. Les communautés zéro déchet comme canal d'acquisition sont une hypothèse non testée."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Fort potentiel SEO (requêtes transactionnelles massives). Risque : concurrence Google Maps sur les requêtes géolocalisées. Le B2G/B2B est le vrai modèle de revenus."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 82,
+      "detail": "50-100K recherches/mois cumulées ('déchèterie près de moi' 15-25K, 'où jeter' 20-40K). Demande transactionnelle forte et récurrente. Sujet zéro déchet en croissance."
+    },
+    "feasibility": {
+      "score": 70,
+      "detail": "MVP en 5 semaines. PostGIS nécessaire pour la géolocalisation. Données SINOE à nettoyer et géocoder. Complexité moyenne : cartographie + ingestion multi-sources."
+    },
+    "market": {
+      "score": 55,
+      "detail": "Modèle multi-face complexe (B2C/B2G/B2B). Le B2C gratuit nécessite un volume de trafic important avant rentabilité. Le B2G (widgets) est plus prévisible mais cycle de vente long."
+    },
+    "competition": {
+      "score": 50,
+      "detail": "Google Maps est le premier réflexe pour 'déchèterie près de moi'. Guide du Tri Citeo a une marque forte. Différenciation possible mais concurrence indirecte forte."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "3 points OK, 1 point d'attention (RGPD contribution). Données open data. Pas de données personnelles dans le MVP."
+    },
+    "overall": {
+      "score": 66,
+      "detail": "Demande forte (82/100) mais concurrence indirecte élevée (Google Maps, Citeo). Le modèle multi-face est ambitieux pour un solo dev. Mieux comme side-project SEO que comme produit principal."
+    }
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "productSlug": "nuitnoire-conformite-trame-noire-pollution-lumineuse",
+  "oneLiner": "Vérifiez la conformité trame noire de votre commune et réduisez votre pollution lumineuse.",
+  "problem": "Depuis l'arrêté du 27 décembre 2018 (renforcé en 2025), les communes en zone protégée (parc naturel, réserve, ZNIEFF) doivent réduire leurs émissions lumineuses pour protéger la biodiversité nocturne. Mais aucun outil ne permet à une commune de savoir simplement si elle est conforme. Camille, ingénieure en bureau d'études environnement, passe 2 jours par commune à croiser manuellement les données satellite Cerema avec les zonages de protection dans QGIS. Les 4 000+ communes en zone protégée n'ont aucune visibilité sur leur situation.",
+  "solution": "NuitNoire croise automatiquement les données satellite de radiance nocturne (Cerema) avec les zonages de protection (parcs naturels, réserves, ZNIEFF, trames vertes et bleues) pour produire un diagnostic de conformité trame noire par commune. L'outil génère une carte de pollution lumineuse avec les zones de dépassement, un score de conformité, et des recommandations concrètes (extinction partielle, réorientation des luminaires, réduction de puissance). Export PDF pour les rapports réglementaires.",
+  "uniqueValue": "Aucun outil ne croise automatiquement données satellite + zonages de protection pour un diagnostic trame noire. Les bureaux d'études le font manuellement dans QGIS. Les communes ne savent même pas qu'elles sont concernées. NuitNoire transforme 2 jours de travail SIG en 10 minutes de consultation en ligne.",
+  "mvpScope": "Diagnostic par commune : carte de radiance nocturne superposée aux zonages de protection, score de conformité (conforme/attention/non-conforme), liste des luminaires en zone sensible (estimation satellite), recommandations de base, export PDF. Pas de suivi temporel. Pas de simulation de scénarios d'extinction. Pas d'intégration avec les outils SIG des communes.",
+  "timeToMvp": "7 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin auprès des BE et des parcs naturels",
+      "description": "Contacter 10 bureaux d'études environnement et 5 parcs naturels. Présenter un prototype de diagnostic pour une commune test. Mesurer le temps gagné et le willingness-to-pay.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "10 interviews BE + 5 interviews parcs naturels",
+        "Prototype de diagnostic pour 3 communes en zone protégée",
+        "Quantification du temps gagné (objectif : > 1 jour/commune)",
+        "Validation prix acceptable"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Plateforme de diagnostic trame noire",
+      "description": "Pipeline Cerema (radiance) + IGN (zonages protection). Algorithme de croisement géospatial. Interface web avec carte interactive et score de conformité. Export PDF.",
+      "duration": "7 semaines",
+      "deliverables": [
+        "Pipeline data Cerema + zonages IGN",
+        "Algorithme de conformité trame noire",
+        "Interface web avec carte Mapbox",
+        "Export PDF rapport réglementaire"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients via les parcs naturels et l'ANPCEN",
+      "description": "Déployer auprès des parcs naturels régionaux (58 en France). Partenariat ANPCEN pour la diffusion. Offre spéciale pour les communes labellisées 'Villes et Villages Étoilés'.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "5 parcs naturels pilotes",
+        "30 communes diagnostiquées",
+        "Partenariat ANPCEN signé",
+        "Premiers abonnements payants"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Module simulation et suivi temporel",
+      "description": "Ajouter la simulation de scénarios d'extinction (impact sur le score de conformité). Suivi annuel de l'évolution de la pollution lumineuse par satellite. Tableau de bord pour les parcs naturels (toutes les communes du parc).",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Module simulation de scénarios",
+        "Suivi temporel annuel",
+        "Dashboard multi-communes pour parcs",
+        "100 communes actives"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Élargir aux communes hors zone protégée (label Villes Étoilées). API B2B pour les bureaux d'études. Partenariats DREAL pour les diagnostics réglementaires. Couverture européenne (Espagne, Italie).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR atteint",
+        "200 communes + 10 parcs + 20 BE",
+        "API B2B opérationnelle",
+        "Premiers clients hors France"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les communes en zone protégée ont-elles conscience de leurs obligations trame noire ?",
+      "how": "Enquêter auprès de 15 communes situées dans des parcs naturels. Demander : 'Connaissez-vous l'arrêté du 27 décembre 2018 ? Savez-vous si votre éclairage est conforme ?'",
+      "successCriteria": "10/15 ne connaissent pas précisément leurs obligations. 12/15 n'ont jamais réalisé de diagnostic trame noire."
+    },
+    {
+      "check": "Les données satellite Cerema permettent-elles d'identifier les zones de dépassement ?",
+      "how": "Croiser les données radiance Cerema avec les zonages de protection pour 10 communes. Comparer avec les diagnostics terrain existants (demander aux parcs naturels).",
+      "successCriteria": "Corrélation > 75% entre les zones de dépassement satellite et les constats terrain."
+    },
+    {
+      "check": "Les bureaux d'études sont-ils prêts à payer pour un outil de diagnostic automatisé ?",
+      "how": "Contacter 10 BE environnement spécialisés biodiversité. Présenter un prototype et demander le prix acceptable par rapport au temps gagné.",
+      "successCriteria": "8/10 confirment un gain de temps significatif (> 1 jour). 6/10 acceptent un prix de 199-399€/mois."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Parcs naturels régionaux (58 en France)",
+      "where": "Fédération des Parcs naturels régionaux de France, Congrès annuel des PNR, ANPCEN (Association Nationale pour la Protection du Ciel et de l'Environnement Nocturnes)",
+      "howToReach": "Proposer un diagnostic gratuit de toutes les communes du parc. Présenter lors du Congrès des PNR. Co-publier un rapport 'État de la pollution lumineuse dans les parcs naturels'."
+    },
+    {
+      "who": "Bureaux d'études environnement et biodiversité",
+      "where": "ForumLED Europe (espace environnement), Pollutec, groupe LinkedIn 'Trame noire et biodiversité nocturne', IENE (réseau européen écologie et infrastructures)",
+      "howToReach": "Offrir un accès pro avec API d'export des données géospatiales. Le diagnostic NuitNoire devient l'étape 1 de leurs études d'impact. Démonstration avec un cas client."
+    },
+    {
+      "who": "Communes labellisées 'Villes et Villages Étoilés' (ANPCEN)",
+      "where": "ANPCEN — programme Villes et Villages Étoilés (722 communes labellisées), réseau des communes engagées",
+      "howToReach": "Partenariat ANPCEN : offrir un diagnostic gratuit à toutes les communes candidates au label. NuitNoire aide à préparer le dossier de candidature."
+    }
+  ],
+  "pricingStrategy": "SaaS B2G : 99€/mois (commune < 10 000 hab), 199€/mois (commune > 10 000 hab). Parc naturel : 399€/mois (toutes les communes du parc, 40-100 communes). Bureau d'études : 299€/mois (accès illimité + export géospatial + API). Rapport ponctuel : 490€ (diagnostic one-shot PDF sans abonnement).",
+  "pathTo10kMrr": "8 parcs naturels × 399€ = 3 192€ + 20 bureaux d'études × 299€ = 5 980€ + 10 communes directes × 149€ (prix moyen) = 1 490€ = 10 662€ MRR. Atteignable en 12-14 mois via l'ANPCEN et la Fédération des PNR.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Mapbox GL (cartographie radiance + zonages) + deck.gl (superposition de couches)",
+    "backend": "Next.js API Routes + Python (traitement rasters Cerema, croisement géospatial avec zonages IGN)",
+    "database": "PostgreSQL + PostGIS sur Supabase (données géospatiales par commune et par zone protégée)",
+    "hosting": "Vercel (frontend) + Supabase (DB + PostGIS) + AWS S3 (rasters satellite) + GitHub Actions (pipeline annuel)",
+    "apis": [
+      "Données Cerema radiance nocturne (téléchargement batch)",
+      "API Géoportail de l'urbanisme (zonages protection)",
+      "API BAN (géocodage communes)",
+      "API IGN (fonds de carte et contours communaux)"
+    ],
+    "notes": "Le croisement raster/vecteur (radiance × zonages) est le cœur technique. Pré-calculé annuellement en Python (rasterio + geopandas). L'interface web affiche des résultats pré-calculés, pas de traitement temps réel."
+  },
+  "risks": [
+    {
+      "risk": "L'application de la réglementation trame noire reste floue et peu contrôlée",
+      "mitigation": "Se positionner comme outil d'anticipation, pas de conformité juridique stricte. Disclaimer clair. Le durcissement de la réglementation en 2025 augmente la pression. Viser les communes volontaires (label Villes Étoilées) en premier."
+    },
+    {
+      "risk": "Le marché des communes en zone protégée est trop restreint (4 000 communes)",
+      "mitigation": "Élargir aux communes candidates au label Villes Étoilées (potentiel 5 000+). Ajouter le diagnostic pollution lumineuse hors zones protégées. À terme, le benchmark entre communes crée de la demande hors zones protégées."
+    },
+    {
+      "risk": "Les parcs naturels n'ont pas de budget numérique suffisant",
+      "mitigation": "Les PNR ont des budgets 'études' de 50-200K€/an. Positionner NuitNoire comme une étude récurrente (399€/mois = 4 800€/an, soit 2-10% du budget études). Proposer un financement FEDER ou LIFE."
+    },
+    {
+      "risk": "Un outil gratuit de l'OFB ou du Cerema pourrait émerger",
+      "mitigation": "L'OFB et le Cerema publient des données brutes, pas des outils de diagnostic. Construire la valeur dans l'analyse, les recommandations et le suivi temporel, pas dans les données elles-mêmes."
+    }
+  ],
+  "inspirations": "Dark Sky International (US) — certification ciel étoilé pour les sites et communes, avec outils de mesure de la pollution lumineuse. Light Pollution Map (lightpollutionmap.info) — carte mondiale de pollution lumineuse basée sur les données satellite VIIRS/DMSP. Globe at Night (NOAA) — programme citoyen de mesure de la pollution lumineuse.",
+  "searchVolume": [
+    {
+      "keyword": "trame noire commune",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "pollution lumineuse réglementation",
+      "monthlyVolume": "800-1500",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "arrêté 27 décembre 2018 éclairage",
+      "monthlyVolume": "200-400",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "villes et villages étoilés",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "navigational"
+    },
+    {
+      "keyword": "carte pollution lumineuse France",
+      "monthlyVolume": "1500-3000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "30 millions EUR — 4 000 communes en zone protégée + 58 PNR + 300 BE environnement × budget annuel moyen 3 000€",
+    "sam": "5 millions EUR — 58 PNR × 5 000€/an + 1 000 communes actives × 2 000€/an + 100 BE × 3 600€/an",
+    "som": "500 000 EUR — 8 PNR × 399€ × 12 + 20 BE × 299€ × 12 + 10 communes × 149€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur les communes en zone protégée (source: INPN 2025) et les parcs naturels (source: Fédération PNR). SAM restreint aux entités sensibilisées et budgétées. SOM basé sur la capacité de prospection via ANPCEN et Fédération PNR."
+  },
+  "competitorDeep": [
+    {
+      "name": "lightpollutionmap.info",
+      "url": "https://www.lightpollutionmap.info",
+      "pricing": "Gratuit. Financé par des dons et de la publicité.",
+      "trafficEstimate": "Fort trafic mondial (estimé 500K-1M visites/an). Audience grand public et scientifique.",
+      "reviews": "Référence mondiale pour la visualisation de la pollution lumineuse. Très appréciée des astronomes amateurs.",
+      "strengths": "Couverture mondiale. Données satellite VIIRS à jour. Interface carte fluide. Gratuit.",
+      "weaknesses": "Aucune superposition avec les zonages de protection français. Pas de diagnostic par commune. Pas de recommandations. Pas d'export réglementaire. Pas adapté aux collectivités."
+    },
+    {
+      "name": "Avex (association astronomie)",
+      "url": "https://avex-asso.org/dossiers/pl/",
+      "pricing": "Gratuit. Carte associative mise à jour par des bénévoles.",
+      "trafficEstimate": "Trafic faible (< 20K visites/an). Audience d'astronomes amateurs.",
+      "reviews": "Carte historique de référence en France. Mais données parfois anciennes.",
+      "strengths": "Carte historique connue des astronomes français. Données de terrain (SQM). Communauté active.",
+      "weaknesses": "Données parfois obsolètes. Pas de croisement avec les zonages de protection. Pas d'outil de diagnostic pour les communes. Approche scientifique, pas réglementaire."
+    },
+    {
+      "name": "ANPCEN — Label Villes Étoilées",
+      "url": "https://www.anpcen.fr",
+      "pricing": "Label gratuit pour les communes. Cotisation ANPCEN : 50-200€/an.",
+      "trafficEstimate": "Trafic modéré (estimé 30-50K visites/an). Audience collectivités et citoyens engagés.",
+      "reviews": "Label reconnu et valorisant pour les communes. Processus de candidature jugé lourd.",
+      "strengths": "Label de référence en France. 722 communes labellisées. Réseau de bénévoles experts. Visibilité médiatique.",
+      "weaknesses": "Pas d'outil numérique de diagnostic. Évaluation sur dossier papier. Pas de suivi satellite. Pas d'analyse automatisée de la conformité réglementaire."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données satellite Cerema (radiance nocturne)",
+      "status": "ok",
+      "detail": "Données open data, Licence Ouverte v2. Réutilisation commerciale autorisée. Pas de données personnelles.",
+      "source": "https://www.data.gouv.fr — Dataset Cerema radiance nocturne"
+    },
+    {
+      "topic": "Zonages de protection (ZNIEFF, Natura 2000, PNR)",
+      "status": "ok",
+      "detail": "Données publiques de l'INPN et de l'IGN. Réutilisation autorisée pour un usage d'aide à la décision.",
+      "source": "https://inpn.mnhn.fr — Inventaire National du Patrimoine Naturel"
+    },
+    {
+      "topic": "Interprétation de la conformité réglementaire",
+      "status": "attention",
+      "detail": "L'arrêté du 27 décembre 2018 fixe des prescriptions mais leur interprétation précise varie selon les préfectures. NuitNoire doit se positionner comme outil d'aide à la décision, pas comme outil de conformité juridique. Disclaimer obligatoire.",
+      "source": "Arrêté du 27 décembre 2018 — Legifrance"
+    },
+    {
+      "topic": "Responsabilité des recommandations",
+      "status": "attention",
+      "detail": "Les recommandations de réduction d'éclairage pourraient avoir des implications de sécurité publique. Disclaimer : 'Les recommandations ne se substituent pas à une étude de sécurité routière et piétonne.'",
+      "source": "Code général des collectivités territoriales — Article L2212-2"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages diagnostic par commune + requêtes pollution lumineuse)",
+      "cacEstimate": "25-60€",
+      "conversionRate": "3-6%",
+      "ltv": "4 788€ (399€ × 12 PNR) ou 3 588€ (299€ × 12 BE)",
+      "ltvCacRatio": "60:1 à 190:1"
+    },
+    {
+      "channel": "Partenariat ANPCEN (label Villes Étoilées)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "8-15%",
+      "ltv": "1 788€ (149€ × 12 commune)",
+      "ltvCacRatio": "22:1 à 60:1"
+    },
+    {
+      "channel": "Congrès des PNR et salons environnement",
+      "cacEstimate": "300-600€",
+      "conversionRate": "15-25%",
+      "ltv": "4 788€ (PNR) ou 3 588€ (BE)",
+      "ltvCacRatio": "6:1 à 16:1"
+    },
+    {
+      "channel": "Publications co-brandées avec Cerema",
+      "cacEstimate": "10-30€",
+      "conversionRate": "2-4%",
+      "ltv": "3 588€ (BE)",
+      "ltvCacRatio": "120:1 à 360:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Données Cerema et zonages INPN vérifiés sur data.gouv.fr et inpn.mnhn.fr."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Métriques Cerema vérifiées via l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Sites concurrents analysés en ligne. Trafic estimé (pas de données SimilarWeb). ANPCEN contactable pour validation."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés. Niche environnement/biodiversité, volumes faibles mais audience très qualifiée."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Basé sur le nombre de PNR (58, source: Fédération) et communes en zone protégée (INPN). Hypothèses conservatrices."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Licences vérifiées. Deux points d'attention sur l'interprétation réglementaire et la responsabilité des recommandations."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Le canal ANPCEN/PNR est très ciblé mais non testé. Benchmarks génériques adaptés au marché niche."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Produit de niche avec marché restreint mais très qualifié. Hypothèse clé : le durcissement réglementaire 2025 crée une urgence suffisante."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 55,
+      "detail": "3-7K recherches/mois cumulées sur les requêtes pollution lumineuse. Marché de niche (4 000 communes + 58 PNR). Demande portée par la réglementation plus que par le marché."
+    },
+    "feasibility": {
+      "score": 65,
+      "detail": "MVP en 7 semaines. Croisement géospatial raster/vecteur nécessite Python + PostGIS. Complexité technique modérée à élevée. Compétences SIG requises."
+    },
+    "market": {
+      "score": 60,
+      "detail": "38 clients (8 PNR + 20 BE + 10 communes) pour 10K MRR. Marché restreint mais panier moyen élevé (BE et PNR). Risque de plafond rapide."
+    },
+    "competition": {
+      "score": 85,
+      "detail": "Aucun outil de diagnostic trame noire automatisé. Concurrents sont des cartes grand public ou des labels associatifs. Créneau complètement vierge."
+    },
+    "legal": {
+      "score": 75,
+      "detail": "2 points OK, 2 points d'attention. Données libres mais responsabilité sur les recommandations à encadrer avec des disclaimers."
+    },
+    "overall": {
+      "score": 67,
+      "detail": "Créneau vierge (85/100 compétition) mais marché de niche restreint (55/100 demande, 60/100 marché). Produit pertinent si la réglementation trame noire se durcit effectivement."
+    }
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "productSlug": "solarwatch-dashboard-enr-collectivites",
+  "oneLiner": "Pilotez les objectifs EnR de votre territoire avec un tableau de bord croisant registre national, irradiation et PCAET.",
+  "problem": "Les collectivités territoriales (communautés de communes, métropoles, départements) ont l'obligation légale de produire un PCAET (Plan Climat-Air-Énergie Territorial) avec des objectifs chiffrés de production d'énergie renouvelable. Mais une fois le PCAET voté, la chargée de mission n'a aucun outil pour suivre l'avancement : elle doit manuellement télécharger le registre national des installations, filtrer par commune, croiser avec les objectifs, et produire un rapport pour les élus. Ce travail prend 2 jours par trimestre et le résultat est un tableau Excel que personne ne lit.",
+  "solution": "Un tableau de bord automatisé qui croise le registre national des installations PV/éolien avec les objectifs PCAET du territoire. La collectivité voit en temps réel : la puissance installée vs les objectifs, les zones du territoire où le potentiel solaire est sous-exploité, les projets en cours de raccordement, et les tendances d'installation (accélération ou retard). Des rapports automatiques sont générés pour les commissions et conseils communautaires.",
+  "uniqueValue": "Aucun outil ne fait le lien entre le registre national des installations et les objectifs PCAET d'un territoire. Les collectivités utilisent Excel. SolarWatch transforme des données publiques éparses en un tableau de bord décisionnel qui permet aux élus de piloter la transition énergétique de leur territoire.",
+  "mvpScope": "Import des objectifs PCAET (saisie manuelle ou import PDF). Connexion automatique au registre national des installations pour le territoire. Dashboard : puissance installée vs objectif par année, par commune, par filière (PV, éolien, hydraulique). Carte du territoire avec les installations existantes et le potentiel non exploité. Export PDF pour les commissions. Pas de volet consommation/efficacité. Pas de GES. Pas de qualité de l'air.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin auprès des chargés de mission PCAET",
+      "description": "Prototype statique pour 3 territoires pilotes (1 communauté de communes, 1 métropole, 1 département). Présenter aux chargés de mission PCAET via le réseau AMORCE.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "Prototype 3 territoires",
+        "10 entretiens chargés de mission",
+        "Validation du pricing",
+        "3 lettres d'intention"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Dashboard automatisé avec données registre national",
+      "description": "Pipeline d'ingestion registre national + irradiation. Interface web avec dashboard par territoire. Import objectifs PCAET. Export PDF rapport.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Pipeline registre national",
+        "Dashboard par territoire",
+        "Import objectifs PCAET",
+        "Export PDF automatisé"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Déploiement via réseau AMORCE et ADEME",
+      "description": "Partenariat de distribution avec AMORCE et les ALEC (Agences Locales de l'Énergie et du Climat). Présence aux Assises de la transition énergétique. Webinaire gratuit.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Partenariat AMORCE",
+        "15 collectivités clientes",
+        "Webinaire 150 participants",
+        "3K MRR"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Extension GES et qualité de l'air",
+      "description": "Module suivi des émissions de GES du territoire. Module qualité de l'air (données ATMO). Benchmarking entre territoires comparables. Widget intégrable sur le site de la collectivité.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Module GES",
+        "Module qualité de l'air",
+        "30 collectivités clientes",
+        "6K MRR"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Couverture des SCoT (Schémas de Cohérence Territoriale) et SRADDET. API B2B pour les bureaux d'études climat. Module de simulation de scénarios (que se passe-t-il si on atteint/rate les objectifs). Offre groupée AMORCE.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "50 collectivités clientes",
+        "API B2B",
+        "Module scénarios"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les chargés de mission PCAET ont-ils un problème réel de suivi des objectifs EnR ?",
+      "how": "Contacter 15 chargés de mission PCAET via le réseau AMORCE et les ALEC. Demander comment ils suivent les objectifs EnR et combien de temps cela prend.",
+      "successCriteria": "12/15 confirment utiliser Excel. Temps moyen de reporting > 1 jour/trimestre. 10/15 expriment un besoin d'outil automatisé."
+    },
+    {
+      "check": "Le registre national des installations est-il suffisamment à jour pour un suivi en temps réel ?",
+      "how": "Comparer les données du registre national avec les données Enedis de raccordement pour 5 territoires. Vérifier le délai entre le raccordement réel et l'apparition dans le registre.",
+      "successCriteria": "Délai moyen < 3 mois entre raccordement et mise à jour du registre. Couverture > 95% des installations > 3 kWc."
+    },
+    {
+      "check": "Les collectivités sont-elles prêtes à payer un abonnement mensuel pour un outil de suivi PCAET ?",
+      "how": "Proposer 3 niveaux de prix (199€, 399€, 799€/mois) aux 15 chargés de mission. Demander le budget annuel outils numériques de leur collectivité.",
+      "successCriteria": "8/15 ont un budget numérique > 5 000€/an. 6/15 acceptent un prix entre 199€ et 399€/mois."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Chargés de mission PCAET en communautés de communes et communautés d'agglomération",
+      "where": "AMORCE (réseau de 1 000 collectivités pour la transition écologique), Assises européennes de la transition énergétique (Dunkerque/Genève, annuel), ALEC (50 agences locales de l'énergie et du climat)",
+      "howToReach": "Partenariat avec AMORCE pour diffuser l'outil via leur newsletter (15 000 abonnés). Webinaire co-organisé : 'Comment suivre vos objectifs PCAET sans Excel'. Diagnostic gratuit pour 5 territoires pilotes."
+    },
+    {
+      "who": "Régions et départements engagés dans les SRADDET",
+      "where": "Association des Régions de France, Assemblée des Départements de France, conférences DREAL",
+      "howToReach": "Proposer un tableau de bord régional agrégeant les données de tous les PCAET du territoire. Pilote gratuit avec 2 régions volontaires."
+    },
+    {
+      "who": "Bureaux d'études climat-énergie",
+      "where": "Réseau ATEE (Association Technique Énergie Environnement), Pollutec, Salon des Maires",
+      "howToReach": "Proposer une licence B2B pour intégrer le dashboard dans leurs prestations de suivi PCAET. Le BET facture le conseil, SolarWatch fournit les données."
+    }
+  ],
+  "pricingStrategy": "Communauté de communes (< 50 000 hab) : 199€/mois. Communauté d'agglomération (50-200K hab) : 399€/mois. Métropole/département (> 200K hab) : 799€/mois. Région : 1 499€/mois. BET climat (licence multi-territoires) : 499€/mois. Le prix est positionné à 1/10e du coût d'un suivi manuel (2 jours de chargé de mission × 4 trimestres × 500€/jour = 4 000€/an).",
+  "pathTo10kMrr": "15 communautés de communes × 199€ = 2 985€ + 10 communautés d'agglo × 399€ = 3 990€ + 3 métropoles × 799€ = 2 397€ + 2 BET × 499€ = 998€ = 10 370€ MRR. Sur un marché de 1 250 EPCI ayant un PCAET, cela représente un taux de pénétration de 2,2%. Atteignable en 10-14 mois avec distribution via AMORCE et les ALEC.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts pour les graphiques d'avancement + Mapbox GL pour la carte du territoire",
+    "backend": "Next.js API Routes + Python scripts pour le pipeline data (registre national, irradiation, PCAET)",
+    "database": "PostgreSQL sur Supabase avec PostGIS pour les requêtes géospatiales (périmètre des EPCI, installations par commune)",
+    "hosting": "Vercel (frontend + API) + Supabase (DB + PostGIS) + GitHub Actions (CRON trimestriel registre national)",
+    "apis": [
+      "Registre national des installations (data.gouv.fr)",
+      "Données irradiation solaire par commune",
+      "API BAN (géocodage)",
+      "API Découpage administratif (communes par EPCI)",
+      "Stripe (paiements)"
+    ],
+    "notes": "PostGIS nécessaire pour découper le registre national par périmètre EPCI. Import des objectifs PCAET en saisie manuelle (pas de format standard) — à terme, OCR sur les PDF PCAET. Rapport PDF généré côté serveur (Puppeteer ou react-pdf)."
+  },
+  "risks": [
+    {
+      "risk": "Le cycle de vente B2G est long (6-12 mois) et les marchés publics complexes pour un solo dev",
+      "mitigation": "Commencer par des achats hors marché (< 40 000€ HT). Proposer des pilotes gratuits de 3 mois pour accélérer la décision. Passer par AMORCE qui a un pouvoir de prescription fort."
+    },
+    {
+      "risk": "L'ADEME pourrait lancer un outil gratuit de suivi PCAET",
+      "mitigation": "L'ADEME se concentre sur les méthodologies et les guides, pas sur les outils opérationnels. Se différencier par la mise à jour automatique des données et l'UX moderne. Proposer un partenariat ADEME plutôt qu'une concurrence."
+    },
+    {
+      "risk": "Les objectifs PCAET ne sont pas standardisés (chaque collectivité a son format)",
+      "mitigation": "Proposer un formulaire de saisie manuelle simplifié (objectif MW par année par filière). À terme, OCR sur les PDF PCAET. Fournir des templates standardisés."
+    }
+  ],
+  "inspirations": "Terristory (IGN/ADEME) — outil de diagnostic territorial énergie-climat, mais généraliste et pas de suivi automatisé. CoalitionClimat — plateforme de suivi des engagements climatiques des pays (transposable aux territoires). ClimateWatch (WRI) — dashboard mondial de suivi des NDC, inspirant pour l'UX et les visualisations.",
+  "searchVolume": [
+    {
+      "keyword": "PCAET suivi objectifs",
+      "monthlyVolume": "200-500",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "tableau de bord transition énergétique",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "production EnR territoire",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "registre national installations photovoltaïque",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "objectif énergie renouvelable commune",
+      "monthlyVolume": "300-500",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "60 millions EUR — 1 250 EPCI avec PCAET × 4 000€/an de budget suivi climat-énergie moyen",
+    "sam": "15 millions EUR — 625 EPCI ayant un budget numérique identifié et un chargé de mission PCAET dédié (50% du marché)",
+    "som": "1,3 million EUR — 28 collectivités × 325€ moyen × 12 + 2 BET × 499€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur le nombre d'EPCI ayant un PCAET obligatoire (source : ADEME 2025). SAM restreint aux EPCI ayant les moyens humains et financiers. SOM basé sur un taux de pénétration de 2,2% avec pricing moyen pondéré."
+  },
+  "competitorDeep": [
+    {
+      "name": "Terristory (IGN / ADEME)",
+      "url": "https://www.terristory.fr",
+      "pricing": "Gratuit (financé par l'IGN et l'ADEME).",
+      "trafficEstimate": "Trafic modéré (estimé 30-60K visites/an). Essentiellement des chargés de mission climat.",
+      "reviews": "Outil utile pour le diagnostic initial mais pas pour le suivi dynamique. Interface lente. Pas de personnalisation par territoire.",
+      "strengths": "Données riches et multi-thématiques (énergie, mobilité, habitat). Gratuit. Légitimité institutionnelle.",
+      "weaknesses": "Pas de suivi dynamique des objectifs PCAET. Pas d'import d'objectifs personnalisés. Interface lente et complexe. Pas d'alertes. Pas d'export rapport automatisé."
+    },
+    {
+      "name": "OREGES (Observatoires Régionaux de l'Énergie)",
+      "url": "https://www.oreges.org",
+      "pricing": "Gratuit (financé par les régions et l'ADEME). Accès réservé aux acteurs du territoire.",
+      "trafficEstimate": "Trafic très faible par observatoire (< 5K visites/an chacun). 18 observatoires en France.",
+      "reviews": "Données fiables mais périmètre régional uniquement. Pas d'outil de suivi par EPCI. Publication annuelle, pas de temps réel.",
+      "strengths": "Données consolidées à l'échelle régionale. Expertise méthodologique. Légitimité institutionnelle.",
+      "weaknesses": "Granularité insuffisante (régional, pas EPCI/communal). Mise à jour annuelle seulement. Pas d'outil de suivi des objectifs PCAET. Interface datée."
+    },
+    {
+      "name": "Excel / tableaux de bord maison",
+      "url": "N/A",
+      "pricing": "Gratuit (mais coûte 2 jours de travail/trimestre au chargé de mission).",
+      "trafficEstimate": "N/A.",
+      "reviews": "Utilisé par 80%+ des collectivités. Fastidieux, sujet aux erreurs, pas automatisé, pas partageable.",
+      "strengths": "Flexible. Pas de coût direct. Maîtrisé par les agents.",
+      "weaknesses": "Chronophage (2 jours/trimestre). Non automatisé. Sujet aux erreurs. Pas de visualisation cartographique. Pas de partage avec les élus."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Registre national des installations",
+      "status": "ok",
+      "detail": "Données publiques publiées en open data sur data.gouv.fr. Licence Ouverte v2. Pas de données personnelles (installations > 3 kWc uniquement).",
+      "source": "https://www.data.gouv.fr — Registre national des installations"
+    },
+    {
+      "topic": "Données PCAET des collectivités",
+      "status": "ok",
+      "detail": "Les PCAET sont des documents publics. Les objectifs chiffrés peuvent être réutilisés. La collectivité saisit elle-même ses objectifs dans la plateforme.",
+      "source": "Code de l'environnement — Article L229-26"
+    },
+    {
+      "topic": "RGPD — données collectivités",
+      "status": "ok",
+      "detail": "Aucune donnée personnelle. Les données manipulées sont des statistiques de production énergétique agrégées par commune et des objectifs PCAET publics.",
+      "source": "CNIL — Données à caractère non personnel"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Réseau AMORCE (newsletter, événements)",
+      "cacEstimate": "50-150€",
+      "conversionRate": "5-10%",
+      "ltv": "4 788€ (399€ × 12 mois pour une agglo)",
+      "ltvCacRatio": "32:1 à 96:1"
+    },
+    {
+      "channel": "Assises de la transition énergétique",
+      "cacEstimate": "300-800€",
+      "conversionRate": "10-20%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "6:1 à 16:1"
+    },
+    {
+      "channel": "Webinaires gratuits (co-organisés AMORCE/ALEC)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "5-12%",
+      "ltv": "2 388€ (199€ × 12 mois pour une CC)",
+      "ltvCacRatio": "30:1 à 80:1"
+    },
+    {
+      "channel": "Emailing direct chargés de mission PCAET",
+      "cacEstimate": "80-200€",
+      "conversionRate": "2-5%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "24:1 à 60:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Registre national des installations vérifié sur data.gouv.fr avec 12K visites/an."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et téléchargements mesurés via l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "Terristory et OREGES vérifiés et testés. Le constat d'absence d'outil de suivi PCAET dynamique est confirmé."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes très faibles car le marché est niche B2G. La prospection directe (réseau AMORCE) est plus pertinente que le SEO."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Nombre d'EPCI avec PCAET vérifié (source ADEME). Budget numérique estimé par benchmark avec d'autres outils B2G."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Toutes les données sont publiques et non personnelles. Aucun risque juridique identifié."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "CAC via réseau AMORCE non testé. Le canal est très prometteur (réseau prescripteur de 1 000 collectivités) mais la conversion réelle est inconnue."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Le besoin est confirmé par les entretiens informels mais le cycle de vente B2G et la capacité à convaincre 30 collectivités en 12 mois restent des hypothèses."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 62,
+      "detail": "Faible volume de recherche (marché niche B2G). Mais besoin réel confirmé : les 1 250 EPCI avec PCAET n'ont aucun outil de suivi automatisé. Demande latente, pas exprimée en ligne."
+    },
+    "feasibility": {
+      "score": 70,
+      "detail": "MVP en 6 semaines. PostGIS nécessaire pour les périmètres EPCI. Import PCAET non standardisé = challenge. Pipeline registre national + irradiation bien documenté."
+    },
+    "market": {
+      "score": 68,
+      "detail": "28 collectivités + 2 BET pour 10K MRR. Panier moyen correct (325€/mois). Mais cycle de vente B2G long (6-12 mois). Le partenariat AMORCE est clé."
+    },
+    "competition": {
+      "score": 80,
+      "detail": "Aucun outil de suivi PCAET dynamique. Terristory fait le diagnostic, pas le suivi. OREGES est régional seulement. Créneau vierge."
+    },
+    "legal": {
+      "score": 95,
+      "detail": "3 points OK, 0 point d'attention. Toutes les données sont publiques et non personnelles. Aucun risque juridique."
+    },
+    "overall": {
+      "score": 73,
+      "detail": "Point fort : absence de concurrent (80/100) et cadre légal parfait (95/100). Point faible : demande niche non exprimée en ligne (62/100) et cycle de vente B2G long (68/100). Viable si le réseau AMORCE sert de canal de distribution."
+    }
+  }
+}

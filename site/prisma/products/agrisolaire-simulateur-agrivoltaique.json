@@ -1,0 +1,319 @@
+{
+  "productSlug": "agrisolaire-simulateur-agrivoltaique",
+  "oneLiner": "Simulez la rentabilité d'un projet agrivoltaïque sur votre exploitation en croisant irradiation, PAC et réglementation.",
+  "problem": "Un exploitant agricole intéressé par l'agrivoltaïsme ne sait pas si son exploitation est éligible, combien il peut produire, ni si c'est rentable. Le décret agrivoltaïsme de mars 2024 impose des conditions strictes (production agricole significative maintenue, taux de couverture limité) et les tarifs de rachat varient selon la puissance et le type d'installation. Aujourd'hui, l'agriculteur doit consulter un bureau d'études (3 000-10 000€) pour obtenir une première estimation, attendre 4-8 semaines le rapport, et souvent le résultat est un PDF inexploitable de 80 pages.",
+  "solution": "Un simulateur en ligne qui permet à l'exploitant de saisir les caractéristiques de son exploitation (localisation, surface, type de culture, structure existante) et obtient en quelques minutes : l'éligibilité au décret agrivoltaïsme, l'irradiation locale et le productible PV estimé, le tarif de rachat applicable, la rentabilité sur 20 ans (CAPEX, OPEX, revenus), et l'impact sur la production agricole. Le simulateur croise les données d'irradiation, les tarifs CRE, les aides PAC, et les contraintes du décret.",
+  "uniqueValue": "Aucun simulateur ne combine les contraintes spécifiques de l'agrivoltaïsme (décret 2024, maintien de la production agricole) avec un calcul de rentabilité intégrant les aides PAC et les tarifs CRE. Les simulateurs PV existants (PVGIS, AutoCalSol) ne tiennent pas compte de l'agrivoltaïsme. Les bureaux d'études facturent des milliers d'euros pour une première estimation.",
+  "mvpScope": "Formulaire de saisie : localisation (code postal), surface disponible, type de culture actuelle, structure souhaitée (ombrière, tracker, serres). Résultat : éligibilité décret (oui/non avec justification), irradiation locale, puissance PV recommandée, productible annuel, tarif de rachat applicable, ROI simplifié sur 20 ans. Couverture France métropolitaine. Pas de modélisation 3D. Pas de dossier complet pour la CRE. Pas de conseil juridique.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider l'intérêt des exploitants agricoles",
+      "description": "Landing page avec un mini-simulateur (3 champs : localisation, surface, culture). Diffuser via les chambres d'agriculture et les coopératives. Mesurer les inscriptions.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Landing page avec mini-simulateur",
+        "Diffusion via 3 chambres d'agriculture",
+        "200 simulations effectuées",
+        "30 contacts email récoltés"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Simulateur complet avec rentabilité",
+      "description": "Pipeline d'ingestion irradiation + tarifs CRE + contraintes décret agrivoltaïsme. Formulaire de saisie détaillé. Calcul de rentabilité sur 20 ans. Export PDF du résultat.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Formulaire de simulation détaillé",
+        "Calcul de rentabilité 20 ans",
+        "Vérification éligibilité décret",
+        "Export PDF résultat"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Distribution via le réseau agricole",
+      "description": "Partenariats avec les chambres d'agriculture et les coopératives. Webinaires gratuits sur l'agrivoltaïsme. Articles dans la presse agricole (France Agricole, Réussir).",
+      "duration": "8 semaines",
+      "deliverables": [
+        "5 partenariats chambres d'agriculture",
+        "3 webinaires (100 participants chacun)",
+        "500 simulations payantes",
+        "2K MRR"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Dossier CRE et mise en relation développeurs",
+      "description": "Génération automatique du pré-dossier CRE (appel d'offres ou guichet ouvert). Mise en relation avec des développeurs agrivoltaïques partenaires (commission). Module de suivi de projet.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Génération pré-dossier CRE",
+        "5 développeurs partenaires",
+        "1 000 simulations/mois",
+        "5K MRR"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "API B2B pour les développeurs agrivoltaïques et les bureaux d'études. Module de suivi post-installation (production réelle vs estimée). Extension aux serres photovoltaïques et hangars agricoles.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "API B2B",
+        "2 000 simulations/mois",
+        "Extension serres et hangars"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les exploitants agricoles cherchent-ils activement des informations sur l'agrivoltaïsme en ligne ?",
+      "how": "Analyser les volumes de recherche Google ('agrivoltaïsme', 'panneaux solaires exploitation agricole', 'agrivoltaïque rentabilité'). Poster sur les groupes Facebook agricoles et mesurer l'engagement.",
+      "successCriteria": "Volume de recherche cumulé > 5 000/mois. Taux d'engagement > 8% sur les posts agricoles."
+    },
+    {
+      "check": "Les exploitants sont-ils prêts à payer pour une simulation avant de contacter un bureau d'études ?",
+      "how": "Proposer le mini-simulateur gratuit (résultat partiel) avec une option payante (résultat complet + export PDF). Mesurer le taux de conversion.",
+      "successCriteria": "Taux de conversion gratuit → payant > 5%. Prix acceptable entre 29€ et 99€ par simulation."
+    },
+    {
+      "check": "Les données disponibles permettent-elles un calcul de rentabilité suffisamment fiable ?",
+      "how": "Comparer les estimations du simulateur avec 10 études réelles de bureaux d'études (données fournies par des développeurs partenaires).",
+      "successCriteria": "Écart < 20% entre l'estimation automatisée et l'étude de bureau d'études sur 8/10 projets."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Exploitants agricoles en grandes cultures (céréaliers, viticulteurs) intéressés par la diversification",
+      "where": "Chambres d'agriculture (réseau des conseillers énergie), FNSEA et Jeunes Agriculteurs (syndicats), Salon de l'Agriculture (Paris, février), SIMA (salon du machinisme agricole)",
+      "howToReach": "Partenariat avec les conseillers énergie des chambres d'agriculture pour diffuser le simulateur. Stand au Salon de l'Agriculture. Publication dans France Agricole et Réussir."
+    },
+    {
+      "who": "Développeurs agrivoltaïques et bureaux d'études ENR",
+      "where": "SER (Syndicat des Énergies Renouvelables) — commission solaire, Energaïa, BePOSITIVE, Assises de l'agrivoltaïsme",
+      "howToReach": "Proposer l'outil en marque blanche pour pré-qualifier les projets. Le développeur utilise AgriSolaire pour filtrer les exploitations éligibles avant de lancer une étude complète."
+    },
+    {
+      "who": "Coopératives agricoles et CUMA",
+      "where": "Coop de France (fédération des coopératives), réseau CUMA, Groupe LinkedIn 'Agriculture et énergie'",
+      "howToReach": "Webinaire gratuit co-organisé avec une coopérative : 'L'agrivoltaïsme en 2026 : opportunité ou piège ?'. Accès gratuit pour les adhérents de la coopérative partenaire."
+    }
+  ],
+  "pricingStrategy": "Simulation de base gratuite (éligibilité + irradiation + estimation grossière). Simulation détaillée à 49€ (rentabilité 20 ans + export PDF + tarifs CRE). Pack projet à 99€ (+ pré-dossier CRE + liste installateurs). Abonnement développeur 299€/mois (API + simulations illimitées + mise en relation agriculteurs). Abonnement BET 199€/mois (simulations illimitées + marque blanche).",
+  "pathTo10kMrr": "Mix one-shot + récurrent : 150 simulations détaillées/mois × 49€ = 7 350€ (non récurrent mais régulier) + 5 développeurs × 299€/mois = 1 495€ + 10 BET × 199€/mois = 1 990€ = 3 485€ MRR récurrent + 7 350€ mensuel one-shot. MRR récurrent pur : 15 développeurs × 299€ + 20 BET × 199€ = 8 465€ + packs projet 20/mois × 99€ = 1 980€ = 10 445€. Atteignable en 12-14 mois avec un réseau de distribution via les chambres d'agriculture.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts pour les graphiques de rentabilité",
+    "backend": "Next.js API Routes + Python (calculs de productible, modèle de rentabilité agrivoltaïque)",
+    "database": "PostgreSQL sur Supabase — données irradiation par commune, tarifs CRE, paramètres décret agrivoltaïsme",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (CRON mise à jour tarifs CRE trimestriel)",
+    "apis": [
+      "Données irradiation solaire par commune (PVGIS / data.gouv.fr)",
+      "Tarifs CRE en vigueur",
+      "API BAN (géocodage exploitation)",
+      "API RPG (Registre Parcellaire Graphique — cultures en place)",
+      "Stripe (paiements)"
+    ],
+    "notes": "Modèle de rentabilité intégrant CAPEX (panneaux, structure, raccordement), OPEX (maintenance, assurance, bail), revenus (autoconsommation + vente surplus), et perte de rendement agricole estimée. Formules de calcul documentées et transparentes pour la crédibilité."
+  },
+  "risks": [
+    {
+      "risk": "Le décret agrivoltaïsme pourrait être modifié ou durci, rendant les simulations obsolètes",
+      "mitigation": "Architecture modulaire permettant de mettre à jour les règles réglementaires rapidement. Veille réglementaire active. Communication transparente sur la date de dernière mise à jour."
+    },
+    {
+      "risk": "Les exploitants agricoles pourraient préférer le conseil personnalisé d'un BET plutôt qu'un simulateur en ligne",
+      "mitigation": "Positionner AgriSolaire comme un pré-diagnostic (49€) qui ne remplace pas le BET mais le prépare. L'agriculteur arrive chez le BET avec un dossier pré-rempli, ce qui accélère et réduit le coût de l'étude complète."
+    },
+    {
+      "risk": "La rentabilité de l'agrivoltaïsme dépend fortement des tarifs CRE qui peuvent baisser",
+      "mitigation": "Inclure des scénarios de sensibilité (tarif bas, moyen, haut) dans la simulation. Alerter l'utilisateur si le projet n'est rentable qu'avec le tarif le plus favorable."
+    }
+  ],
+  "inspirations": "Agri-PV (Allemagne) — plateforme de simulation agrivoltaïque développée par le Fraunhofer ISE. AutoCalSol (INES, France) — simulateur PV simplifié mais sans volet agrivoltaïque. MaPrimeRénov' simulateur — exemple de simulateur gouvernemental d'aides qui a prouvé la demande de self-service en ligne.",
+  "searchVolume": [
+    {
+      "keyword": "agrivoltaïsme",
+      "monthlyVolume": "5000-8000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "panneaux solaires agricole",
+      "monthlyVolume": "3000-5000",
+      "difficulty": "moyenne",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "agrivoltaïque rentabilité",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "décret agrivoltaïsme 2024",
+      "monthlyVolume": "2000-4000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "simulateur photovoltaïque agricole",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "500 millions EUR — 100 000 exploitations agricoles potentiellement concernées par l'agrivoltaïsme × 5 000€ coût moyen d'une étude de faisabilité",
+    "sam": "50 millions EUR — 10 000 exploitations activement intéressées par l'agrivoltaïsme (source : enquête Chambres d'agriculture 2025)",
+    "som": "1,3 million EUR — 150 simulations/mois × 49€ × 12 + 15 développeurs × 299€ × 12 + 20 BET × 199€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur l'estimation du nombre d'exploitations éligibles à l'agrivoltaïsme (source : France Agrivoltaïsme, SER). SAM restreint aux exploitations ayant manifesté un intérêt actif. SOM basé sur les objectifs de conversion réalistes."
+  },
+  "competitorDeep": [
+    {
+      "name": "AutoCalSol (INES / CEA)",
+      "url": "https://autocalsol.ines-solaire.org",
+      "pricing": "Gratuit (financé par l'INES/CEA).",
+      "trafficEstimate": "Trafic modéré. Estimé 50-100K visites/an. Essentiellement des professionnels et étudiants.",
+      "reviews": "Simulateur fiable pour le PV classique. Très technique, pas adapté aux agriculteurs. Pas de volet agrivoltaïque.",
+      "strengths": "Calcul de productible fiable. Institution de référence (CEA). Gratuit.",
+      "weaknesses": "Pas de volet agrivoltaïsme (décret, impact culture, double usage). Interface datée. Pas de calcul de rentabilité économique. Pas de données PAC."
+    },
+    {
+      "name": "France Agrivoltaïsme (association)",
+      "url": "https://france-agrivoltaisme.fr",
+      "pricing": "Adhésion 100-500€/an. Pas d'outil de simulation en ligne.",
+      "trafficEstimate": "Faible trafic (< 20K visites/an). Site vitrine associatif.",
+      "reviews": "Bonne source d'information réglementaire. Pas d'outil pratique pour les agriculteurs.",
+      "strengths": "Expertise réglementaire. Réseau de professionnels. Légitimité sectorielle.",
+      "weaknesses": "Pas d'outil de simulation. Site informatif uniquement. Pas de service payant pour les agriculteurs."
+    },
+    {
+      "name": "Développeurs agrivoltaïques (TSE, Valorem, Glasspoint)",
+      "url": "https://www.tse.solar",
+      "pricing": "Gratuit pour l'agriculteur (le développeur finance l'étude en échange d'un bail). Mais l'agriculteur perd le contrôle du projet.",
+      "trafficEstimate": "Trafic variable par acteur (10-50K visites/an chacun).",
+      "reviews": "Compétence technique forte mais modèle opaque pour l'agriculteur. Contrats de bail longs (30-40 ans) parfois critiqués.",
+      "strengths": "Étude gratuite. Financement complet du projet. Expertise technique. Prise en charge administrative.",
+      "weaknesses": "L'agriculteur ne maîtrise pas le projet (bail long, revenus captés par le développeur). Pas de comparaison possible entre les offres. Conflit d'intérêt sur la rentabilité annoncée."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Décret agrivoltaïsme (mars 2024)",
+      "status": "attention",
+      "detail": "Le décret définit les conditions d'éligibilité (maintien d'une production agricole significative, taux de couverture limité). Le simulateur doit refléter fidèlement ces conditions et être mis à jour à chaque évolution réglementaire. Responsabilité de conseil limitée par un disclaimer clair.",
+      "source": "https://www.legifrance.gouv.fr — Décret n° 2024-318 du 8 avril 2024"
+    },
+    {
+      "topic": "Données RPG (Registre Parcellaire Graphique)",
+      "status": "ok",
+      "detail": "Le RPG est publié en open data par l'IGN. Licence Ouverte v2. Données anonymisées (pas d'identité de l'exploitant, uniquement le type de culture par parcelle).",
+      "source": "https://www.data.gouv.fr — RPG IGN"
+    },
+    {
+      "topic": "Tarifs CRE et appels d'offres",
+      "status": "ok",
+      "detail": "Les tarifs de rachat et les résultats d'appels d'offres sont publics (publiés au Journal Officiel et sur le site de la CRE). Réutilisation libre.",
+      "source": "https://www.cre.fr — Tarifs d'achat"
+    },
+    {
+      "topic": "Responsabilité sur les estimations de rentabilité",
+      "status": "attention",
+      "detail": "Les estimations de rentabilité sont des projections basées sur des hypothèses. Un disclaimer clair doit indiquer que la simulation ne constitue pas un conseil financier et que les résultats réels peuvent varier. Assurance RC Pro recommandée.",
+      "source": "Code de la consommation — Pratiques commerciales trompeuses"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Chambres d'agriculture (conseillers énergie)",
+      "cacEstimate": "10-30€",
+      "conversionRate": "8-15%",
+      "ltv": "49€ (simulation détaillée) ou 3 588€ (développeur 299€ × 12)",
+      "ltvCacRatio": "2:1 (B2C) à 120:1 (B2B)"
+    },
+    {
+      "channel": "SEO (requêtes agrivoltaïsme)",
+      "cacEstimate": "15-40€",
+      "conversionRate": "3-6%",
+      "ltv": "49€ (simulation) ou 99€ (pack projet)",
+      "ltvCacRatio": "1:1 à 7:1"
+    },
+    {
+      "channel": "Salons agricoles (SIA, SIMA)",
+      "cacEstimate": "200-500€",
+      "conversionRate": "5-12%",
+      "ltv": "2 388€ (BET 199€ × 12)",
+      "ltvCacRatio": "5:1 à 12:1"
+    },
+    {
+      "channel": "Presse agricole (France Agricole, Réussir)",
+      "cacEstimate": "50-150€",
+      "conversionRate": "2-5%",
+      "ltv": "49€ (simulation détaillée)",
+      "ltvCacRatio": "0,3:1 à 1:1 (acquisition, pas rentable seul)"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Données d'irradiation (PVGIS), RPG (IGN) et tarifs CRE vérifiés sur les sites sources."
+    },
+    "metrics": {
+      "level": "estimé",
+      "detail": "Métriques data.gouv.fr vérifiées pour l'irradiation. Trafic des sites agrivoltaïques estimé."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "AutoCalSol et France Agrivoltaïsme vérifiés. Pricing des développeurs estimé par articles de presse et témoignages."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés par Google Trends et autocomplete. Le terme 'agrivoltaïsme' est en forte croissance depuis 2023."
+    },
+    "tamSamSom": {
+      "level": "opine",
+      "detail": "Le nombre d'exploitations intéressées par l'agrivoltaïsme est une estimation grossière. Le marché est naissant et les chiffres varient fortement selon les sources."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Décret agrivoltaïsme vérifié sur Légifrance. Points d'attention documentés."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "CAC via chambres d'agriculture non testé. Le canal est prometteur mais la conversion effective est inconnue."
+    },
+    "overall": {
+      "level": "opine",
+      "detail": "Marché naissant avec un fort potentiel mais des incertitudes importantes sur la taille réelle de la demande et la willingness-to-pay des agriculteurs."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 68,
+      "detail": "11-19K recherches/mois sur l'agrivoltaïsme. Sujet en forte croissance. Mais marché naissant — les agriculteurs en sont encore à la phase d'information, pas d'achat."
+    },
+    "feasibility": {
+      "score": 75,
+      "detail": "MVP en 5 semaines. Calcul de productible + rentabilité = modèle financier à implémenter. Complexité du décret agrivoltaïsme à modéliser. Données disponibles."
+    },
+    "market": {
+      "score": 60,
+      "detail": "Modèle mixte one-shot (49€/simulation) + récurrent (299€/mois développeurs). Faible panier unitaire B2C. Le récurrent dépend du nombre de développeurs agrivoltaïques."
+    },
+    "competition": {
+      "score": 78,
+      "detail": "Aucun simulateur agrivoltaïque dédié n'existe. AutoCalSol ne couvre pas l'agrivoltaïsme. Créneau vierge. Mais les développeurs agrivoltaïques offrent des études gratuites (concurrent indirect)."
+    },
+    "legal": {
+      "score": 75,
+      "detail": "2 points OK, 2 points d'attention (décret évolutif + responsabilité estimations). Gérables avec des disclaimers et une mise à jour réglementaire active."
+    },
+    "overall": {
+      "score": 70,
+      "detail": "Point fort : absence totale de concurrent (78/100) sur un marché en forte croissance. Point faible : marché naissant (60/100) avec une willingness-to-pay incertaine. Pari sur la croissance du segment agrivoltaïque."
+    }
+  }
+}

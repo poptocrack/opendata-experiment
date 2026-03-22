@@ -1,0 +1,328 @@
+{
+  "productSlug": "dechetboard-pilotage-collectivites",
+  "oneLiner": "Le tableau de bord déchets qui donne enfin aux collectivités une vision claire de leur politique déchets.",
+  "problem": "Les directeurs déchets des EPCI pilotent une politique à 10-50 millions €/an avec des tableurs Excel et des rapports SINOE annuels en PDF. Ils doivent croiser manuellement les données de 3 à 10 prestataires différents (collecte, tri, traitement, déchèteries), jongler entre les bilans SINOE, les données Trackdéchets et les rapports des exploitants privés. Résultat : les élus n'ont pas de vision consolidée des performances, les comparaisons entre communes du territoire sont impossibles, et les dérives (augmentation du taux de refus de tri, baisse de fréquentation des déchèteries) sont détectées avec 6 à 12 mois de retard. Les collectivités qui ont tenté de construire un tableau de bord interne y ont passé 6 à 12 mois d'ETP et se retrouvent avec un outil figé qui ne survit pas au changement de prestataire.",
+  "solution": "Un SaaS qui agrège automatiquement les données SINOE, Trackdéchets, les flux des prestataires et les données locales pour produire un tableau de bord décisionnel en temps réel. Module 1 — Agrégation : connexion automatique aux sources de données (SINOE, Trackdéchets, import fichiers prestataires). Module 2 — Pilotage : indicateurs clés (coût €/habitant, taux de valorisation, taux de refus de tri, fréquentation déchèteries) avec alertes sur les dérives. Module 3 — Benchmark : comparaison avec les collectivités de même strate démographique. Module 4 — Reporting : génération automatique du rapport annuel déchets (obligatoire) et des fiches pour les élus.",
+  "uniqueValue": "SINOE fournit des statistiques nationales annuelles avec une UX datée (données N-2). Les outils internes Veolia/Suez sont propriétaires et ne couvrent que leurs flux. Hoali propose un outil similaire mais à un prix élevé et avec une approche très technique. DéchetBoard est le premier tableau de bord accessible, multi-prestataires, connecté aux données open data nationales, avec un benchmark inter-collectivités automatique.",
+  "mvpScope": "Module agrégation simplifié : import manuel de fichiers CSV/Excel des prestataires + connexion SINOE. Dashboard avec 5 indicateurs clés (coût €/hab, taux de valorisation, taux de refus, kg/hab/an OMR, kg/hab/an collecte sélective). Comparaison avec la moyenne de la strate démographique (données SINOE). Pas de connexion automatique Trackdéchets. Pas de benchmark personnalisé. Pas de génération de rapport annuel.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin d'un tableau de bord consolidé déchets",
+      "description": "Interviews de 15 directeurs déchets d'EPCI. Vérifier qu'ils passent plus de 2 jours/mois à consolider les données déchets et qu'un tableau de bord automatisé les intéresse.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "15 interviews directeurs déchets",
+        "Cartographie des sources de données utilisées",
+        "Maquette Figma du dashboard",
+        "10 lettres d'intention"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Dashboard déchets avec import CSV et benchmark SINOE",
+      "description": "Import de fichiers CSV/Excel des prestataires. 5 indicateurs clés avec visualisation graphique. Comparaison avec la moyenne nationale SINOE par strate démographique.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Import CSV multi-format",
+        "Dashboard 5 indicateurs clés",
+        "Benchmark strate SINOE",
+        "Export PDF synthèse"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients et connexion Trackdéchets",
+      "description": "Déploiement chez 8 collectivités pilotes. Ajout de la connexion API Trackdéchets pour les déchets dangereux. Présentation à Pollutec.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "8 collectivités pilotes",
+        "Connexion API Trackdéchets",
+        "12 clients payants",
+        "Présentation Pollutec"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Benchmark inter-collectivités et rapport annuel automatique",
+      "description": "Benchmark personnalisé entre collectivités abonnées (anonymisé). Génération automatique du rapport annuel déchets obligatoire. Alertes dérives en temps réel.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Benchmark inter-collectivités",
+        "Génération rapport annuel automatique",
+        "Alertes dérives",
+        "25 collectivités clientes"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Partenariat AMORCE pour diffusion nationale. Module prévisionnel (projection des tonnages à 3 ans). Connexion automatique aux principaux prestataires (Veolia, Suez, PAPREC).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "34 collectivités clientes",
+        "Partenariat AMORCE",
+        "Module prévisionnel"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les directeurs déchets passent-ils réellement plus de 2 jours/mois à consolider leurs données ?",
+      "how": "Interviews de 15 directeurs déchets. Questions : combien de sources de données différentes ? Combien de temps pour préparer un bilan mensuel ? Quel outil utilisez-vous ? Avez-vous déjà tenté un tableau de bord ?",
+      "successCriteria": "12/15 passent plus de 2 jours/mois. 10/15 utilisent Excel comme outil principal. 8/15 ont déjà tenté un tableau de bord maison."
+    },
+    {
+      "check": "Le benchmark inter-collectivités est-il un levier de décision réel pour les élus ?",
+      "how": "Présenter des comparaisons anonymisées (coût €/hab, taux de valorisation) à 10 élus et directeurs déchets. Vérifier si ces données influencent les arbitrages budgétaires.",
+      "successCriteria": "8/10 trouvent la comparaison 'très utile' pour justifier des investissements. 5/10 citent un exemple concret où une comparaison aurait changé une décision."
+    },
+    {
+      "check": "Les collectivités sont-elles prêtes à payer 200-500€/mois pour un tableau de bord déchets ?",
+      "how": "Présenter la maquette et le pricing à 10 directeurs déchets. Comparer avec le coût actuel (temps interne + prestataires) et avec le prix d'un observatoire déchets externalisé (15 000-30 000€/an).",
+      "successCriteria": "7/10 trouvent le prix acceptable. Le coût annuel (2 400-6 000€) est inférieur au coût d'un ETP consacré à la consolidation."
+    },
+    {
+      "check": "Les données SINOE sont-elles suffisamment à jour et complètes pour servir de base de benchmark ?",
+      "how": "Analyser la couverture et la fraîcheur des données SINOE pour 50 collectivités > 20 000 habitants. Vérifier le décalage entre les données publiées et l'année en cours.",
+      "successCriteria": "80% des collectivités > 20 000 hab. ont des données SINOE de moins de 2 ans. Les indicateurs clés (tonnages, coûts) sont disponibles pour 90% d'entre elles."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Directeurs déchets d'EPCI > 50 000 habitants en cours de renégociation de contrat DSP",
+      "where": "AMORCE (950 adhérents collectivités), Assises Nationales des Déchets (Nantes, biennal), Pollutec (Lyon)",
+      "howToReach": "Webinaire gratuit via AMORCE : 'Piloter votre politique déchets par la donnée : de SINOE au tableau de bord opérationnel'. Offrir un diagnostic gratuit des indicateurs clés pour les 15 premières collectivités inscrites."
+    },
+    {
+      "who": "Responsables déchets de syndicats mixtes gérant plusieurs EPCI",
+      "where": "Cercle National du Recyclage (130 adhérents), réseau des syndicats de traitement des déchets, congrès FNADE",
+      "howToReach": "Cibler les syndicats qui publient des rapports annuels détaillés (signal d'un besoin de pilotage). Proposer un benchmark automatisé entre les EPCI membres du syndicat."
+    },
+    {
+      "who": "Consultants et bureaux d'études spécialisés déchets réalisant des audits pour les collectivités",
+      "where": "Annuaire ADEME des prestataires, Pollutec espace conseil, AFITE, réseau AMORCE",
+      "howToReach": "Proposer un accès bureau d'études avec marque blanche. L'outil accélère leurs diagnostics et devient un support de mission récurrent (abonnement annuel vs. mission one-shot)."
+    }
+  ],
+  "pricingStrategy": "SaaS mensuel par taille de collectivité. EPCI < 50 000 hab. : 199€/mois. EPCI 50 000-150 000 hab. : 349€/mois. EPCI > 150 000 hab. ou syndicat : 499€/mois. Module rapport annuel automatique : +100€/mois. Engagement annuel : -20%. Le prix annuel (2 400-7 200€) est 1/5e à 1/10e du coût d'un observatoire déchets externalisé (15 000-30 000€/an).",
+  "pathTo10kMrr": "10 EPCI < 50K hab. × 199€ = 1 990€ + 14 EPCI 50-150K hab. × 349€ = 4 886€ + 6 EPCI > 150K hab. × 499€ = 2 994€ + 4 modules rapport annuel × 100€ = 400€ = 10 270€ MRR. Atteignable en 12-14 mois : 34 collectivités sur 1 200 = 2,8% de pénétration.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts pour les graphiques de pilotage + React-Table pour les tableaux de données",
+    "backend": "Next.js API Routes — pipeline d'import CSV/Excel (SheetJS) + agrégation des données SINOE",
+    "database": "PostgreSQL sur Supabase — données collectivités, indicateurs, historiques, benchmarks",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (mise à jour données SINOE annuelle)",
+    "apis": [
+      "Données SINOE ADEME (tonnages, coûts, installations)",
+      "API Trackdéchets (traçabilité déchets dangereux)",
+      "API BAN (géocodage communes)",
+      "Données INSEE (population, strates démographiques)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Le parsing multi-format CSV/Excel est le défi technique du MVP : chaque prestataire a son propre format. Prévoir un module de mapping de colonnes configurable par l'utilisateur. À terme, connexions API directes avec les principaux prestataires."
+  },
+  "risks": [
+    {
+      "risk": "SINOE se modernise et propose un tableau de bord intégré aux collectivités",
+      "mitigation": "SINOE est un observatoire national géré par l'ADEME avec des cycles de développement longs (3-5 ans). Son rôle est la statistique nationale, pas le pilotage opérationnel local. Le benchmark temps réel et la consolidation multi-prestataires restent hors de son périmètre."
+    },
+    {
+      "risk": "Les prestataires (Veolia, Suez) développent des portails clients plus complets",
+      "mitigation": "Les portails prestataires ne couvrent que leurs propres flux. Une collectivité avec 3 prestataires a toujours besoin d'un agrégateur. Positionner DéchetBoard comme le tableau de bord multi-prestataires indépendant."
+    },
+    {
+      "risk": "Le cycle de vente B2G est trop long (6-12 mois) pour atteindre 10K MRR en 12 mois",
+      "mitigation": "Cibler les collectivités en fin de contrat DSP (moment de décision budgétaire). Proposer un essai gratuit de 2 mois avec import des données existantes. Passer par les réseaux AMORCE et Cercle National du Recyclage pour raccourcir le cycle."
+    },
+    {
+      "risk": "La qualité des données importées (CSV prestataires) est trop hétérogène pour être exploitable",
+      "mitigation": "Prévoir un module de contrôle qualité à l'import (détection des anomalies, valeurs manquantes). Commencer avec les 5 formats de prestataires les plus courants et ajouter les autres au fur et à mesure."
+    }
+  ],
+  "inspirations": "Agicap (France) — a transformé la gestion de trésorerie multi-banques (Excel → SaaS agrégateur). Datami (France) — agrégation de données multi-sources pour les collectivités. Recygo (La Poste) — suivi du recyclage bureau mais pas de pilotage global. WasteHero (Danemark) — SaaS de gestion des déchets pour les collectivités (smart bins + routing).",
+  "searchVolume": [
+    {
+      "keyword": "SINOE déchets",
+      "monthlyVolume": "2000-4000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "tableau de bord déchets collectivité",
+      "monthlyVolume": "200-500",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "coût gestion déchets par habitant",
+      "monthlyVolume": "800-1500",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "rapport annuel déchets EPCI",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "taux de valorisation déchets",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "72 millions EUR — 1 200 EPCI × budget moyen logiciel/observatoire déchets estimé à 60 000€/an (incluant observatoires externalisés, outils, temps ETP)",
+    "sam": "14,4 millions EUR — 240 EPCI > 50 000 habitants avec budget numérique, prêts à adopter un outil SaaS de pilotage",
+    "som": "1,5 million EUR — 34 collectivités × 3 600€/an (prix moyen pondéré), atteignable en 14 mois via AMORCE, Pollutec et le Cercle National du Recyclage",
+    "methodology": "TAM basé sur le nombre d'EPCI à compétence déchets (DGCL). SAM restreint aux EPCI > 50 000 hab. avec un besoin avéré de pilotage multi-prestataires. SOM basé sur le business plan avec 2,8% de pénétration du SAM."
+  },
+  "competitorDeep": [
+    {
+      "name": "SINOE (ADEME)",
+      "url": "https://www.sinoe.org",
+      "pricing": "Gratuit (service public). Accès libre aux données nationales.",
+      "trafficEstimate": "Estimé 100-200K visites/an. Référence incontournable du secteur.",
+      "reviews": "Base de données la plus complète sur les déchets en France. Mais UX très datée (formulaires complexes, exports laborieux), données avec 1-2 ans de décalage, pas de vision temps réel.",
+      "strengths": "Exhaustivité des données nationales. Crédibilité ADEME. Gratuit. Référence pour les rapports annuels et les études.",
+      "weaknesses": "UX datée (interface des années 2010). Données avec 1-2 ans de retard. Pas de pilotage opérationnel. Pas de consolidation multi-prestataires. Pas d'alertes."
+    },
+    {
+      "name": "Hoali",
+      "url": "https://www.hoali.fr",
+      "pricing": "Sur devis — estimé 300-600€/mois selon la taille de la collectivité.",
+      "trafficEstimate": "Estimé 5-15K visites/an. Positionnement niche.",
+      "reviews": "Solution technique solide pour l'optimisation des collectes (capteurs, routing). Mais prix élevé et approche très technique (capteurs IoT requis). Pas adapté aux collectivités qui veulent juste un tableau de bord.",
+      "strengths": "Technologie IoT avancée (capteurs de remplissage). Optimisation de la collecte en temps réel. Cas d'usage concrets avec ROI mesurable.",
+      "weaknesses": "Prix élevé (capteurs + abonnement). Nécessite un déploiement matériel. Focalisé sur l'optimisation des collectes, pas sur le pilotage global de la politique déchets. Pas de benchmark inter-collectivités."
+    },
+    {
+      "name": "Portails prestataires (Veolia, Suez, PAPREC)",
+      "url": "https://www.veolia.fr",
+      "pricing": "Inclus dans le contrat DSP — pas de facturation séparée pour le portail client.",
+      "trafficEstimate": "Non mesurable (accès client privé).",
+      "reviews": "Portails clients fournis par les grands prestataires. Données uniquement sur les flux gérés par le prestataire. Pas de vision consolidée multi-prestataires.",
+      "strengths": "Données en temps réel sur les flux gérés. Intégré au contrat existant (pas de coût additionnel). Interface moderne pour les gros prestataires.",
+      "weaknesses": "Chaque prestataire a son propre portail. Pas de consolidation multi-prestataires. Pas de benchmark. Le prestataire contrôle les données et leur présentation. Lock-in."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données SINOE (ADEME)",
+      "status": "ok",
+      "detail": "Données SINOE publiées en open data sur data.gouv.fr. Licence Ouverte v2. Utilisation libre pour un usage commercial.",
+      "source": "https://www.data.gouv.fr — Données SINOE"
+    },
+    {
+      "topic": "API Trackdéchets",
+      "status": "ok",
+      "detail": "API publique avec authentification. Données de traçabilité des déchets dangereux accessibles via l'API. Conditions d'utilisation du Ministère de la Transition Écologique.",
+      "source": "https://trackdechets.beta.gouv.fr — API documentation"
+    },
+    {
+      "topic": "Données prestataires importées par les collectivités",
+      "status": "attention",
+      "detail": "Les données importées depuis les rapports prestataires peuvent contenir des clauses de confidentialité dans les contrats DSP. Vérifier que la collectivité a le droit de partager ses données dans un outil tiers. En pratique, les collectivités sont propriétaires de leurs données de service public.",
+      "source": "Code des marchés publics — propriété des données de service public"
+    },
+    {
+      "topic": "Benchmark inter-collectivités et anonymisation",
+      "status": "attention",
+      "detail": "Le benchmark entre collectivités nécessite leur consentement explicite pour le partage de leurs indicateurs. Anonymisation par défaut des comparaisons. Opt-in pour le partage nominatif.",
+      "source": "RGPD — données des personnes morales publiques (moins contraignant que les données personnelles)"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "AMORCE (webinaires et réseau)",
+      "cacEstimate": "200-400€",
+      "conversionRate": "5-10%",
+      "ltv": "4 188€ (349€ × 12 mois)",
+      "ltvCacRatio": "10:1 à 21:1"
+    },
+    {
+      "channel": "Pollutec et Assises des Déchets",
+      "cacEstimate": "500-800€",
+      "conversionRate": "8-15%",
+      "ltv": "5 988€ (499€ × 12 mois)",
+      "ltvCacRatio": "7:1 à 12:1"
+    },
+    {
+      "channel": "SEO (requêtes SINOE, coût déchets habitant)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "2-5%",
+      "ltv": "4 188€ (349€ × 12 mois)",
+      "ltvCacRatio": "52:1 à 140:1"
+    },
+    {
+      "channel": "Cercle National du Recyclage (recommandation)",
+      "cacEstimate": "100-250€",
+      "conversionRate": "8-15%",
+      "ltv": "4 188€ (349€ × 12 mois)",
+      "ltvCacRatio": "17:1 à 42:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Données SINOE et Trackdéchets vérifiées sur data.gouv.fr. API Trackdéchets documentée et accessible."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Le nombre d'EPCI à compétence déchets (1 200) provient de la DGCL. Le coût moyen de gestion des déchets est publié par l'ADEME."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "SINOE analysé en détail. Hoali identifié via recherche web. Portails prestataires vérifiés auprès de collectivités."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés à partir de tendances Google Trends et de la fréquentation SINOE. Les requêtes 'SINOE déchets' et 'coût déchets habitant' sont stables."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Budget moyen logiciel/observatoire déchets estimé. Le chiffre de 60 000€/an inclut les observatoires externalisés, ce qui surestime le budget dédié au logiciel seul."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Données SINOE en open data. API Trackdéchets publique. Points d'attention sur la confidentialité des données prestataires et le benchmark."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "AMORCE et Pollutec comme canaux principaux sont des hypothèses de canal raisonnables mais non validées. Le cycle de vente B2G reste à tester."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données open data riches et vérifiées. Pas de concurrent SaaS direct abordable. Le principal risque est le cycle de vente B2G long. Le benchmark inter-collectivités est le différenciateur clé à valider."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 72,
+      "detail": "3-6K recherches/mois sur les requêtes liées. 1 200 EPCI gèrent les déchets. SINOE reçoit 100-200K visites/an = demande réelle de données. Le rapport annuel déchets est obligatoire."
+    },
+    "feasibility": {
+      "score": 70,
+      "detail": "MVP en 6 semaines (import CSV + 5 indicateurs + benchmark SINOE). Le parsing multi-format CSV est le défi technique principal mais résolvable avec un module de mapping."
+    },
+    "market": {
+      "score": 65,
+      "detail": "34 clients pour 10K MRR = 2,8% de pénétration. Cycle B2G long mais prix accessible (< budget observatoire externalisé). Rapport annuel obligatoire = récurrence naturelle."
+    },
+    "competition": {
+      "score": 72,
+      "detail": "SINOE est gratuit mais UX datée et pas de pilotage opérationnel. Hoali est cher et nécessite du matériel. Portails prestataires ne couvrent que leurs flux. Créneau accessible."
+    },
+    "legal": {
+      "score": 80,
+      "detail": "3 points OK, 1 attention. Données open data. Point d'attention sur la confidentialité des données prestataires et le benchmark inter-collectivités."
+    },
+    "overall": {
+      "score": 72,
+      "detail": "Besoin réel (72/100 demande) avec un créneau accessible (72/100 compétition). Point faible : le cycle B2G (65/100 marché). Le benchmark inter-collectivités est le différenciateur clé."
+    }
+  }
+}

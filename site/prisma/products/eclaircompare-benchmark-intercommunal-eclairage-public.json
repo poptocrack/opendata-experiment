@@ -1,0 +1,319 @@
+{
+  "productSlug": "eclaircompare-benchmark-intercommunal-eclairage-public",
+  "oneLiner": "Comparez les dépenses et performances éclairage de votre commune avec les autres en 3 clics.",
+  "problem": "Marc, chargé de mission énergie dans un syndicat départemental, doit prioriser les investissements éclairage entre 80 communes adhérentes. Il n'a aucun outil de benchmark : il compare manuellement des factures EDF, des données Cerema en PDF et des inventaires Excel hétérogènes. Quand un élu lui demande 'Est-ce que notre commune dépense plus que les autres en éclairage ?', il met 3 jours à trouver une réponse approximative. Les 34 000 communes françaises n'ont aucun référentiel pour savoir si leur éclairage est performant ou non.",
+  "solution": "ÉclairCompare agrège les données ouvertes ADEME (consommation énergie), Cerema (radiance nocturne), CEE et BOAMP (marchés publics) pour calculer des indicateurs de performance éclairage par commune : coût par habitant, consommation par point lumineux (estimé), intensité lumineuse par km², ratio avant/après rénovation. L'outil permet de comparer une commune à sa strate démographique, à son département et aux communes voisines. Classement national et tableau de bord pour les syndicats d'énergie.",
+  "uniqueValue": "Aucun outil ne permet de comparer les performances éclairage entre communes. L'ADEME publie des données brutes, le Cerema des cartes satellite, mais personne ne les croise en un benchmark actionnable. ÉclairCompare transforme des données éparpillées en un classement national qui aide les élus et techniciens à se situer et à prioriser.",
+  "mvpScope": "Fiche comparative par commune : coût éclairage/habitant (ADEME), intensité lumineuse (Cerema), comparaison strate démographique et département, évolution sur 3 ans. Classement départemental et national. Pas de recommandation de rénovation. Pas d'intégration avec les factures réelles. Pas de suivi temps réel.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin de benchmark auprès des syndicats d'énergie",
+      "description": "Contacter 10 syndicats d'énergie via AMORCE et FNCCR. Présenter un prototype de classement départemental. Mesurer l'utilité perçue et le prix acceptable.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "10 interviews syndicats d'énergie",
+        "Prototype de classement pour 3 départements",
+        "Validation du besoin de benchmark (objectif : 8/10)",
+        "Identification des indicateurs prioritaires"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Plateforme de benchmark fonctionnelle",
+      "description": "Pipeline ADEME + Cerema + BOAMP. Calcul des indicateurs par commune. Interface web avec recherche et comparaison. Classement départemental et national.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Pipeline data multi-sources",
+        "6 indicateurs de performance calculés",
+        "Interface web avec recherche par commune",
+        "Classement national et départemental"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers syndicats d'énergie clients",
+      "description": "Offre de déploiement mutualisé pour les syndicats. Dashboard personnalisé avec les communes du syndicat. Présentation aux Assises de l'énergie.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "5 syndicats d'énergie pilotes",
+        "200 communes benchmarkées",
+        "Dashboard multi-communes",
+        "Premiers revenus récurrents"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "SEO massif et offre B2C/presse",
+      "description": "Générer 34 000 pages SEO (une par commune). Classements médiatiques ('Les communes qui dépensent le plus en éclairage'). Partenariats presse locale.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "34 000 pages SEO générées",
+        "10 000 visiteurs/mois",
+        "3 reprises presse",
+        "Offre presse/média lancée"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Enrichir avec les données de marchés publics (BOAMP) et les retours terrain des syndicats. API B2B. Module d'aide à la décision pour les élus (simulation budget).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR atteint",
+        "15 syndicats + 50 communes directes",
+        "API B2B opérationnelle",
+        "Module simulation budget"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les syndicats d'énergie ont-ils un besoin de benchmark intercommunal éclairage ?",
+      "how": "Contacter 10 syndicats via AMORCE. Demander : 'Comment priorisez-vous les investissements éclairage entre vos communes ? Avez-vous un outil de comparaison ?'",
+      "successCriteria": "8/10 confirment prioriser à l'intuition ou sur demande politique. 9/10 n'ont pas d'outil de benchmark."
+    },
+    {
+      "check": "Les données ADEME + Cerema sont-elles suffisantes pour calculer des indicateurs pertinents ?",
+      "how": "Croiser les données ADEME (consommation) et Cerema (radiance) pour 50 communes et vérifier la cohérence des indicateurs avec les données terrain des syndicats.",
+      "successCriteria": "Indicateurs cohérents pour 80%+ des communes test. Corrélation entre coût ADEME et radiance Cerema > 60%."
+    },
+    {
+      "check": "Les élus locaux sont-ils sensibles au classement comparatif ?",
+      "how": "Présenter le classement départemental à 10 maires ou adjoints. Observer la réaction. Demander si un mauvais classement les inciterait à agir.",
+      "successCriteria": "7/10 réagissent au classement. 5/10 confirment que le classement serait un levier de décision au conseil municipal."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Syndicats d'énergie départementaux",
+      "where": "AMORCE (900 collectivités), FNCCR — commission éclairage public, Assises de l'énergie des collectivités (Bordeaux, annuel)",
+      "howToReach": "Dashboard gratuit pour les 3 premiers syndicats pilotes. Présentation en comité technique AMORCE. Webinaire 'Comment se comparent vos communes en éclairage ?'"
+    },
+    {
+      "who": "DGS et élus de communes moyennes (5 000-30 000 hab)",
+      "where": "Congrès des Maires (Paris, novembre), AITF, Association des Maires de France, salons Maires Expo",
+      "howToReach": "Pages SEO par commune avec classement gratuit. Emailing ciblé aux DGS : 'Votre commune est classée Xème sur Y dans votre département en dépenses éclairage.' Call-to-action : voir le détail."
+    },
+    {
+      "who": "Journalistes et médias locaux",
+      "where": "Rédactions France 3 régions, France Bleu, presse quotidienne régionale",
+      "howToReach": "Communiqués de presse avec classements départementaux exclusifs. Les journalistes relaient le classement et citent l'outil comme source."
+    }
+  ],
+  "pricingStrategy": "Freemium B2C : fiche commune de base gratuite (classement, coût/habitant). Pro commune : 99€/mois (historique, comparaison multi-critères, export PDF conseil municipal). Syndicat d'énergie : 399€/mois (dashboard multi-communes, priorisation, export). EPCI/métropole : 599€/mois (benchmark intercommunal complet + simulation). Bureau d'études : 249€/mois (accès illimité + API export).",
+  "pathTo10kMrr": "12 syndicats d'énergie × 399€ = 4 788€ + 3 EPCI/métropoles × 599€ = 1 797€ + 20 communes directes × 99€ = 1 980€ + 8 bureaux d'études × 249€ = 1 992€ = 10 557€ MRR. Atteignable en 10-12 mois via le réseau AMORCE et le SEO (34 000 pages communes).",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts (graphiques comparatifs) + Mapbox GL (carte classement)",
+    "backend": "Next.js API Routes + Python (pipeline data ADEME, Cerema, calcul indicateurs)",
+    "database": "PostgreSQL sur Supabase — indicateurs pré-calculés par commune, historique sur 3-5 ans",
+    "hosting": "Vercel (frontend + API + SSG 34K pages) + Supabase (DB) + GitHub Actions (pipeline data annuel)",
+    "apis": [
+      "Données ADEME énergie patrimoine communal",
+      "Données Cerema radiance nocturne",
+      "API BOAMP (marchés publics éclairage)",
+      "API BAN (géocodage communes)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Pages statiques SSG pour les 34 000 communes (SEO). Indicateurs pré-calculés lors de l'ingestion annuelle. Le classement se met à jour automatiquement à chaque nouvelle publication ADEME/Cerema."
+  },
+  "risks": [
+    {
+      "risk": "Les données ADEME ne sont pas assez granulaires pour isoler la dépense éclairage de la dépense énergie globale",
+      "mitigation": "L'enquête ADEME 'Énergie et patrimoine communal' distingue l'éclairage public des autres postes. Vérifier la couverture et la granularité sur l'échantillon test. Compléter avec les données Cerema (proxy de l'intensité lumineuse)."
+    },
+    {
+      "risk": "Les élus refusent de voir leur commune mal classée et boycottent l'outil",
+      "mitigation": "Présenter le classement comme un outil d'amélioration, pas de sanction. Mettre en avant les communes qui progressent. Proposer un mode 'privé' pour les abonnés (données visibles uniquement par le client)."
+    },
+    {
+      "risk": "L'ADEME ou le Cerema lance un outil de benchmark similaire",
+      "mitigation": "L'ADEME publie des données brutes, pas des outils de benchmark interactifs. Se différencier par l'UX, la comparaison en temps réel et l'export pour les conseils municipaux."
+    }
+  ],
+  "inspirations": "EnergyCAP (US) — plateforme de benchmarking énergétique pour les bâtiments publics. Energy Star Portfolio Manager (US EPA) — classement de la performance énergétique des bâtiments. Ofwat (UK) — benchmark public des compagnies d'eau britanniques qui pousse à l'amélioration.",
+  "searchVolume": [
+    {
+      "keyword": "dépense éclairage public commune",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "coût éclairage public par habitant",
+      "monthlyVolume": "200-400",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "comparatif éclairage public",
+      "monthlyVolume": "100-300",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "facture éclairage public mairie",
+      "monthlyVolume": "400-800",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "économie éclairage public LED",
+      "monthlyVolume": "600-1200",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "150 millions EUR — 34 000 communes × 400€/mois moyen × 12 pour un outil de benchmark énergie",
+    "sam": "20 millions EUR — 80 syndicats × 5 000€/an + 5 000 communes > 3 000 hab × 1 500€/an + 200 BE × 3 000€/an",
+    "som": "1,3 million EUR — 12 syndicats × 399€ × 12 + 3 EPCI × 599€ × 12 + 20 communes × 99€ × 12 + 8 BE × 249€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur les 34 000 communes (DGCL). SAM restreint aux communes de plus de 3 000 hab et aux syndicats d'énergie actifs. SOM basé sur la conversion via AMORCE et le SEO."
+  },
+  "competitorDeep": [
+    {
+      "name": "Observatoire ADEME DPE-Énergie",
+      "url": "https://www.ademe.fr",
+      "pricing": "Gratuit. Données brutes téléchargeables.",
+      "trafficEstimate": "Trafic fort sur le site ADEME global (millions de visites). Pages énergie patrimoine communal : estimé 10-20K/an.",
+      "reviews": "Source de référence pour les données énergie. Mais pas d'outil de benchmark interactif.",
+      "strengths": "Données officielles et exhaustives. Couverture nationale. Licence Ouverte. Mis à jour régulièrement.",
+      "weaknesses": "Données brutes sans outil de visualisation. Pas de classement. Pas de comparaison entre communes. Pas d'export pour conseil municipal."
+    },
+    {
+      "name": "Cerema — Cartographie radiance",
+      "url": "https://www.cerema.fr",
+      "pricing": "Gratuit. Données satellite en téléchargement.",
+      "trafficEstimate": "3,6K visites/an sur le dataset data.gouv.fr. Audience technique (urbanistes, BE).",
+      "reviews": "Données satellite de qualité. Mais format technique (raster) inaccessible aux non-spécialistes.",
+      "strengths": "Données satellite nationales actualisées annuellement. Résolution spatiale suffisante pour le niveau communal.",
+      "weaknesses": "Format raster technique (GeoTIFF) nécessitant QGIS. Pas de benchmark. Pas d'indicateurs pré-calculés. Pas d'interface web."
+    },
+    {
+      "name": "SDES — Enquête énergie collectivités",
+      "url": "https://www.statistiques.developpement-durable.gouv.fr",
+      "pricing": "Gratuit. Publications PDF et données téléchargeables.",
+      "trafficEstimate": "Faible trafic (< 5K/an sur les pages énergie collectivités). Audience statisticiens et chercheurs.",
+      "reviews": "Données statistiques officielles. Mais échantillon, pas exhaustif. Publications annuelles avec retard.",
+      "strengths": "Statistiques officielles du ministère. Méthodologie rigoureuse. Séries temporelles longues.",
+      "weaknesses": "Données sur échantillon, pas exhaustives par commune. Publications PDF, pas d'outil interactif. Retard de publication (données N-2)."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données ADEME énergie patrimoine communal",
+      "status": "ok",
+      "detail": "Données agrégées par commune en open data. Licence Ouverte v2. Pas de données personnelles.",
+      "source": "https://www.data.gouv.fr — Dataset ADEME énergie patrimoine communal"
+    },
+    {
+      "topic": "Données Cerema radiance nocturne",
+      "status": "ok",
+      "detail": "Données satellite open data. Licence Ouverte v2. Réutilisation commerciale autorisée.",
+      "source": "https://www.data.gouv.fr — Dataset Cerema radiance nocturne"
+    },
+    {
+      "topic": "Classement public des communes",
+      "status": "attention",
+      "detail": "Publier un classement des communes par performance éclairage est légal (données publiques). Mais risque de réaction politique. Prévoir un droit de réponse et la possibilité pour la commune de compléter ses données.",
+      "source": "Jurisprudence liberté de la presse — classements publics d'entités publiques"
+    },
+    {
+      "topic": "Données marchés publics BOAMP",
+      "status": "ok",
+      "detail": "Données de marchés publics librement réutilisables. Licence Ouverte. Informations publiques par nature.",
+      "source": "https://www.boamp.fr — Bulletin officiel des annonces de marchés publics"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (34 000 pages communes)",
+      "cacEstimate": "5-15€",
+      "conversionRate": "2-4%",
+      "ltv": "4 788€ (399€ × 12 syndicat) ou 1 188€ (99€ × 12 commune)",
+      "ltvCacRatio": "80:1 à 960:1"
+    },
+    {
+      "channel": "Réseau AMORCE (prescripteur syndicats)",
+      "cacEstimate": "100-250€",
+      "conversionRate": "10-20%",
+      "ltv": "4 788€ (syndicat)",
+      "ltvCacRatio": "19:1 à 48:1"
+    },
+    {
+      "channel": "Reprises presse locale (classements)",
+      "cacEstimate": "0-5€",
+      "conversionRate": "1-2%",
+      "ltv": "1 188€ (commune)",
+      "ltvCacRatio": "240:1+"
+    },
+    {
+      "channel": "Emailing ciblé DGS (annuaires EPCI)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "2-5%",
+      "ltv": "1 188€ (commune) ou 7 188€ (EPCI)",
+      "ltvCacRatio": "15:1 à 240:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Données ADEME et Cerema vérifiées sur data.gouv.fr. BOAMP accessible en open data."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Métriques data.gouv.fr vérifiées via l'API get_metrics."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Sites sources analysés. Pas de concurrent direct en benchmark éclairage — comparaison avec des outils génériques."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes faibles car niche B2G. Le SEO repose sur les 34 000 pages communes, pas sur les mots-clés seuls."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Basé sur le nombre de syndicats (AMORCE) et communes (DGCL). Hypothèses de conversion conservatrices."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Données publiques. Un point d'attention sur la publication de classements (risque politique, pas juridique)."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Le SEO sur 34 000 pages est un levier puissant mais nécessite 3-6 mois d'indexation. CAC salon et réseau AMORCE à valider."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données solides et gratuites. Le benchmark est un concept éprouvé dans d'autres secteurs (eau, énergie bâtiment). Hypothèse clé : les élus sont sensibles au classement comparatif."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 60,
+      "detail": "1,5-3K recherches/mois cumulées. Demande latente portée par la crise énergétique. Le SEO sur 34 000 pages crée sa propre demande (longue traîne)."
+    },
+    "feasibility": {
+      "score": 78,
+      "detail": "MVP en 5 semaines. Pipeline data simple (ADEME + Cerema). 34 000 pages SSG faisables avec Next.js. Pas de traitement complexe."
+    },
+    "market": {
+      "score": 70,
+      "detail": "43 clients (12 syndicats + 3 EPCI + 20 communes + 8 BE) pour 10K MRR. Diversification B2G + SEO. Le benchmark crée un effet réseau (plus il y a de communes, plus c'est utile)."
+    },
+    "competition": {
+      "score": 90,
+      "detail": "Aucun concurrent en benchmark éclairage intercommunal. Les données sources sont gratuites mais personne ne les croise. Créneau complètement vierge."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "3 points OK, 1 point d'attention politique (pas juridique). Données open data sans enjeu RGPD."
+    },
+    "overall": {
+      "score": 74,
+      "detail": "Créneau vierge (90/100 compétition), forte faisabilité (78/100), cadre légal favorable (85/100). Point faible : demande de niche (60/100). Le SEO sur 34K pages est le levier de croissance principal."
+    }
+  }
+}

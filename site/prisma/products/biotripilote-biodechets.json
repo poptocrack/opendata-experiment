@@ -1,0 +1,318 @@
+{
+  "productSlug": "biotripilote-biodechets",
+  "oneLiner": "Le copilote du déploiement biodéchets pour les collectivités : de la planification au suivi terrain.",
+  "problem": "Depuis le 1er janvier 2024, toutes les collectivités doivent proposer une solution de tri des biodéchets à leurs habitants (loi AGEC). Mais la plupart avancent à l'aveugle : pas d'estimation fiable des volumes de biodéchets à collecter, pas d'outil pour choisir entre les solutions (compostage de proximité, collecte séparée, PAV), pas de suivi de la participation des habitants. Les collectivités qui ont déployé constatent un taux de participation de 15-30% sans savoir comment l'améliorer. L'ADEME propose des guides PDF de 200 pages mais aucun outil de pilotage opérationnel.",
+  "solution": "Un SaaS de pilotage du déploiement biodéchets en 3 modules. Module 1 — Planification : estimation des volumes par territoire (modèle statistique basé sur les données SINOE et MODECOM), comparaison des scénarios (compostage, collecte, PAV) avec coûts estimés. Module 2 — Déploiement : suivi de l'avancement par quartier/commune, gestion des sites de compostage, distribution des bioseaux. Module 3 — Pilotage : suivi des tonnages collectés, taux de participation, qualité du tri (taux de refus), benchmark avec les collectivités comparables.",
+  "uniqueValue": "Aucun outil ne couvre le cycle complet du déploiement biodéchets : planification → déploiement → pilotage. L'ADEME produit des guides statiques. SINOE fournit des statistiques annuelles. Les prestataires (Upcycle, Les Alchimistes) vendent du matériel, pas du logiciel de pilotage. BioTriPilote est le premier SaaS dédié au pilotage opérationnel des biodéchets pour les collectivités.",
+  "mvpScope": "Module planification uniquement : estimation des volumes de biodéchets par territoire (modèle basé sur la population, le type d'habitat et les données MODECOM). Comparaison de 3 scénarios (compostage de proximité, collecte séparée porte-à-porte, points d'apport volontaire) avec coûts estimés. Export PDF du pré-diagnostic. Pas de module déploiement. Pas de suivi terrain. Pas de module pilotage.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin de planification biodéchets",
+      "description": "Interviews de 15 responsables déchets de collectivités en phase de déploiement biodéchets. Vérifier que le pré-diagnostic est un besoin réel et que les collectivités seraient prêtes à payer.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "15 interviews collectivités",
+        "Cartographie des collectivités en phase de déploiement",
+        "Modèle d'estimation des volumes validé avec 3 collectivités",
+        "10 lettres d'intention"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Outil de pré-diagnostic biodéchets",
+      "description": "Formulaire de caractéristiques du territoire (population, type d'habitat, densité). Estimation des volumes de biodéchets. Comparaison de 3 scénarios avec coûts. Export PDF.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Formulaire de diagnostic",
+        "Modèle d'estimation des volumes",
+        "Comparateur 3 scénarios",
+        "Export PDF pré-diagnostic"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients et module déploiement",
+      "description": "Déploiement chez 5 collectivités pilotes. Ajout du module déploiement (suivi avancement par quartier). Présentation aux Assises des Déchets.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "5 collectivités pilotes",
+        "Module déploiement (suivi avancement)",
+        "10 clients payants",
+        "Présentation Assises des Déchets"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Module pilotage et benchmark",
+      "description": "Suivi des tonnages collectés et taux de participation. Benchmark avec les collectivités comparables. Alertes sur les dérives (taux de refus élevé, participation en baisse).",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Module pilotage tonnages",
+        "Benchmark inter-collectivités",
+        "25 collectivités clientes",
+        "Alertes qualité de tri"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Partenariat AMORCE et ADEME. Module de communication habitants (QR codes bioseaux, page web commune). Extension aux biodéchets des professionnels (restauration, marchés).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "40 collectivités clientes",
+        "Partenariat AMORCE",
+        "Module communication habitants"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les collectivités en phase de déploiement biodéchets manquent-elles réellement d'outils de planification ?",
+      "how": "Interviews de 15 collectivités ayant lancé ou en train de lancer le tri des biodéchets. Questions : quels outils utilisez-vous ? Combien de temps passé sur la planification ? Avez-vous commandé un diagnostic externe ?",
+      "successCriteria": "12/15 utilisent uniquement Excel et les guides ADEME. 10/15 ont passé plus de 3 mois sur la planification. 5/15 ont commandé un diagnostic externe (5 000-20 000€)."
+    },
+    {
+      "check": "Le modèle d'estimation des volumes est-il suffisamment précis pour être utile ?",
+      "how": "Comparer les estimations du modèle avec les volumes réels constatés par 5 collectivités ayant déjà déployé. Variables d'entrée : population, type d'habitat, données MODECOM.",
+      "successCriteria": "Écart < 20% entre l'estimation et les volumes réels. Les collectivités jugent l'estimation 'suffisamment précise pour planifier'."
+    },
+    {
+      "check": "Les collectivités sont-elles prêtes à payer 200-500€/mois pour un outil de pilotage biodéchets ?",
+      "how": "Présenter le pré-diagnostic à 10 directeurs déchets. Comparer le prix (200-500€/mois) avec le coût d'un bureau d'études (10 000-20 000€ en one-shot).",
+      "successCriteria": "7/10 trouvent le prix acceptable. Le coût est < 1/10e du budget total de déploiement biodéchets."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Collectivités en phase de planification du tri biodéchets (pas encore déployé)",
+      "where": "AMORCE (950 adhérents), ADEME (appels à projets biodéchets), Assises Nationales des Déchets (Nantes)",
+      "howToReach": "Webinaire gratuit via AMORCE : 'Tri des biodéchets : quel scénario choisir pour votre territoire ?'. Pré-diagnostic gratuit pour les 20 premières collectivités inscrites."
+    },
+    {
+      "who": "Bureaux d'études spécialisés déchets mandatés pour des diagnostics biodéchets",
+      "where": "Annuaire ADEME des prestataires, Pollutec espace conseil, AFITE",
+      "howToReach": "Proposer un accès bureau d'études : l'outil accélère leurs diagnostics et leur permet de traiter plus de missions. Commission sur les clients recommandés."
+    },
+    {
+      "who": "Collectivités ayant déjà déployé mais sans outil de suivi",
+      "where": "Réseau des collectivités pilotes ADEME biodéchets, retours d'expérience publiés par AMORCE, Cercle National du Recyclage",
+      "howToReach": "Cibler les collectivités ayant publié des retours d'expérience biodéchets. Proposer le module pilotage gratuit pendant 3 mois."
+    }
+  ],
+  "pricingStrategy": "SaaS mensuel par taille de collectivité et modules. Pré-diagnostic seul : 99€/mois (ou 990€ en one-shot). Planification + Déploiement : 299€/mois. Pack complet (Planification + Déploiement + Pilotage) : 499€/mois. Engagement annuel : -20%. Le prix du pack complet est 1/20e du coût d'un accompagnement bureau d'études (10 000-20 000€).",
+  "pathTo10kMrr": "10 collectivités pré-diagnostic × 99€ = 990€ + 15 collectivités planification+déploiement × 299€ = 4 485€ + 10 collectivités pack complet × 499€ = 4 990€ = 10 465€ MRR. Atteignable en 10-12 mois : 1 200 collectivités doivent déployer les biodéchets, 3% de conversion suffit.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts pour les graphiques de suivi",
+    "backend": "Next.js API Routes — modèle d'estimation volumes (statistique, basé sur MODECOM/SINOE)",
+    "database": "PostgreSQL sur Supabase — données territoires, scénarios, suivi déploiement",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (mise à jour données SINOE)",
+    "apis": [
+      "Données SINOE ADEME (tonnages, composition)",
+      "API BAN (géocodage communes)",
+      "Données INSEE (population, habitat)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Le modèle d'estimation est le cœur technique du produit. Basé sur les données MODECOM (composition des ordures ménagères) et les retours d'expérience des collectivités pilotes. Variables : population, type d'habitat (individuel/collectif), saison, zone touristique."
+  },
+  "risks": [
+    {
+      "risk": "L'ADEME développe un outil gratuit de diagnostic biodéchets pour les collectivités",
+      "mitigation": "L'ADEME produit des guides et des études, pas des outils SaaS opérationnels. Le module déploiement et pilotage va au-delà du diagnostic (suivi terrain continu vs. one-shot)."
+    },
+    {
+      "risk": "Le déploiement des biodéchets ralentit (manque de budget, de capacité de traitement)",
+      "mitigation": "L'obligation légale est inscrite dans la loi AGEC et renforcée par la directive européenne. Le retard de certaines collectivités prolonge la fenêtre de marché pour l'outil de planification."
+    },
+    {
+      "risk": "Les collectivités préfèrent des bureaux d'études en présentiel plutôt qu'un outil SaaS",
+      "mitigation": "Proposer l'outil aux bureaux d'études comme un accélérateur de leurs missions (et pas un remplacement). Le bureau d'études amène l'expertise terrain, l'outil amène les données et le suivi."
+    }
+  ],
+  "inspirations": "Agicap (France) — a transformé la gestion de trésorerie (Excel → SaaS), même logique pour les biodéchets. Compost Now (US) — plateforme de gestion du compostage communautaire. OLIO (UK) — application de partage alimentaire avec suivi d'impact.",
+  "searchVolume": [
+    {
+      "keyword": "tri biodéchets obligation 2024",
+      "monthlyVolume": "3000-6000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "déploiement biodéchets collectivité",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "compostage collectif mise en place",
+      "monthlyVolume": "800-1500",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "loi AGEC biodéchets",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "collecte biodéchets coût",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "48 millions EUR — 1 200 collectivités × budget moyen biodéchets estimé à 40 000€/an (logiciel + accompagnement)",
+    "sam": "9,6 millions EUR — 240 collectivités > 20 000 habitants en phase de planification ou déploiement avec budget numérique",
+    "som": "1,3 million EUR — 35 collectivités × 3 600€/an (prix moyen pondéré), atteignable en 18 mois via AMORCE et Assises des Déchets",
+    "methodology": "TAM basé sur le nombre de collectivités à compétence déchets (DGCL) et le budget moyen de déploiement biodéchets (source : ADEME, retours d'expérience). SAM restreint aux collectivités > 20 000 hab. en phase active. SOM basé sur le business plan avec conversion via les réseaux professionnels."
+  },
+  "competitorDeep": [
+    {
+      "name": "Guides ADEME biodéchets",
+      "url": "https://librairie.ademe.fr",
+      "pricing": "Gratuit (service public).",
+      "trafficEstimate": "Non mesurable (téléchargements PDF). Guides largement diffusés.",
+      "reviews": "Référence technique mais format PDF statique de 200 pages. Pas d'outil interactif. Pas d'aide à la décision personnalisée.",
+      "strengths": "Exhaustivité technique. Crédibilité ADEME. Données nationales de référence (MODECOM).",
+      "weaknesses": "Format PDF non interactif. Pas de personnalisation au territoire. Pas de suivi dans le temps. Pas de benchmark."
+    },
+    {
+      "name": "Upcycle",
+      "url": "https://www.upcycle.org",
+      "pricing": "Sur devis — composteurs électromécaniques à 15 000-50 000€ l'unité + maintenance.",
+      "trafficEstimate": "Estimé 20-50K visites/an.",
+      "reviews": "Solution matérielle appréciée pour le compostage en restauration collective. Pas de logiciel de pilotage global.",
+      "strengths": "Composteurs performants et connectés. Suivi des volumes composté via IoT. Marque reconnue dans la restauration.",
+      "weaknesses": "Hardware coûteux. Pas de logiciel de planification pour les collectivités. Focalisé sur la restauration collective, pas les ménages."
+    },
+    {
+      "name": "Les Alchimistes",
+      "url": "https://www.alchimistes.co",
+      "pricing": "Sur devis — prestation de collecte et compostage. Modèle opérateur, pas SaaS.",
+      "trafficEstimate": "Estimé 30-60K visites/an. Marque médiatique forte.",
+      "reviews": "Très médiatisé. Modèle inspirant mais opérateur local (Île-de-France principalement). Pas un outil SaaS.",
+      "strengths": "Marque forte. Modèle d'opérateur intégré (collecte + compostage). Présence médiatique.",
+      "weaknesses": "Opérateur local, pas national. Pas de SaaS. Pas d'outil de planification pour d'autres collectivités. Modèle non réplicable facilement."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Obligation de tri des biodéchets (loi AGEC)",
+      "status": "ok",
+      "detail": "L'obligation de tri à la source des biodéchets est inscrite dans la loi AGEC (article L541-21-1 du Code de l'environnement). L'outil aide les collectivités à se conformer — alignement réglementaire total.",
+      "source": "https://www.legifrance.gouv.fr — Article L541-21-1"
+    },
+    {
+      "topic": "Données SINOE et MODECOM (ADEME)",
+      "status": "ok",
+      "detail": "Données de composition des ordures ménagères (MODECOM) et tonnages (SINOE) publiées en open data. Licence Ouverte v2.",
+      "source": "https://www.sinoe.org et https://www.data.gouv.fr"
+    },
+    {
+      "topic": "Données INSEE (population, habitat)",
+      "status": "ok",
+      "detail": "Données de recensement publiées en open data. Licence Ouverte. Nécessaires pour le modèle d'estimation.",
+      "source": "https://www.insee.fr — Données locales"
+    },
+    {
+      "topic": "RGPD — suivi de participation",
+      "status": "attention",
+      "detail": "Le module pilotage pourrait intégrer des données de participation par adresse (biodéchets collectés par foyer). Nécessite une anonymisation si suivi individuel. Le MVP ne collecte que des données agrégées par quartier.",
+      "source": "CNIL — Recommandations collecte des déchets"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "AMORCE (webinaires et newsletter)",
+      "cacEstimate": "150-350€",
+      "conversionRate": "5-10%",
+      "ltv": "3 588€ (299€ × 12 mois)",
+      "ltvCacRatio": "10:1 à 24:1"
+    },
+    {
+      "channel": "Assises des Déchets et Pollutec",
+      "cacEstimate": "400-700€",
+      "conversionRate": "8-15%",
+      "ltv": "5 988€ (499€ × 12 mois)",
+      "ltvCacRatio": "9:1 à 15:1"
+    },
+    {
+      "channel": "SEO (requêtes biodéchets obligation 2024)",
+      "cacEstimate": "20-60€",
+      "conversionRate": "3-6%",
+      "ltv": "3 588€ (299€ × 12 mois)",
+      "ltvCacRatio": "60:1 à 179:1"
+    },
+    {
+      "channel": "Bureaux d'études partenaires (recommandation)",
+      "cacEstimate": "50-150€",
+      "conversionRate": "10-20%",
+      "ltv": "3 588€ (299€ × 12 mois)",
+      "ltvCacRatio": "24:1 à 72:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Données SINOE et MODECOM vérifiées sur le site ADEME. Méthodologie MODECOM publique."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "L'obligation biodéchets 2024 est inscrite dans la loi AGEC. Le nombre de collectivités (1 200) provient de la DGCL."
+    },
+    "competitors": {
+      "level": "vérifié",
+      "detail": "Upcycle et Les Alchimistes analysés via leurs sites. Guides ADEME consultés. Pas de SaaS concurrent identifié."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés. Les recherches 'tri biodéchets obligation 2024' sont en forte croissance depuis mi-2023."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Budget moyen biodéchets estimé à partir des retours d'expérience ADEME. Le chiffre de 40 000€/an est une moyenne qui varie fortement selon la taille."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Obligation légale vérifiée (loi AGEC). Données open data. Point d'attention RGPD sur le suivi de participation individuel."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "AMORCE comme canal principal est une hypothèse. Les bureaux d'études comme prescripteurs n'ont pas été validés."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Obligation réglementaire forte et vérifiée. Pas de concurrent SaaS. Mais le marché B2G reste à cycle long. Le modèle d'estimation des volumes est l'actif technique clé à valider."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 75,
+      "detail": "5-11K recherches/mois sur les requêtes biodéchets. Obligation légale 2024 = 1 200 collectivités doivent agir. Retard massif constaté (< 30% ont déployé). Urgence réglementaire forte."
+    },
+    "feasibility": {
+      "score": 68,
+      "detail": "MVP en 5 semaines pour le pré-diagnostic. Le modèle d'estimation des volumes est le défi technique principal : nécessite des données MODECOM et des retours d'expérience pour être calibré."
+    },
+    "market": {
+      "score": 62,
+      "detail": "35 clients pour 10K MRR. Cycle B2G long mais obligation légale raccourcit la décision. Prix acceptable (< 1/10e du budget biodéchets)."
+    },
+    "competition": {
+      "score": 80,
+      "detail": "Aucun SaaS dédié au pilotage biodéchets sur le marché français. Guides ADEME statiques. Upcycle/Alchimistes sont des opérateurs, pas des outils. Créneau vierge."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "3 points OK, 1 attention (RGPD suivi individuel). L'outil aide à se conformer à la loi AGEC — alignement réglementaire total."
+    },
+    "overall": {
+      "score": 73,
+      "detail": "Créneau vierge (80/100 compétition) sur une obligation légale (75/100 demande). Point faible : cycle B2G (62/100 marché). Le modèle d'estimation est le différenciateur clé."
+    }
+  }
+}
