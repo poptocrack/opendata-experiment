@@ -1,0 +1,332 @@
+{
+  "productSlug": "dechetboard-collectivites",
+  "oneLiner": "Le tableau de bord qui transforme les données déchets des collectivités en décisions opérationnelles.",
+  "problem": "Une directrice déchets d'un syndicat ou d'un EPCI passe 4h/semaine à consolider manuellement les données de collecte envoyées par ses prestataires dans des formats différents (PDF, Excel, CSV). Elle n'a aucun benchmark pour savoir si ses coûts de collecte sont normaux comparés aux syndicats voisins. SINOE fournit des statistiques annuelles avec 18 mois de décalage — inutilisable pour piloter au quotidien. Le rapport annuel déchets, obligatoire, nécessite 3 semaines de travail de compilation.",
+  "solution": "Un SaaS qui agrège automatiquement les données de collecte (imports prestataires, SINOE, Trackdéchets) et les présente dans un tableau de bord interactif : tonnages par flux, coûts par habitant, taux de valorisation, évolution mensuelle. Benchmark automatique avec les collectivités de même taille et même contexte (urbain/rural/touristique). Génération automatique du rapport annuel réglementaire. Alertes sur les dérives de coûts ou de tonnages.",
+  "uniqueValue": "SINOE fait de l'observation statistique annuelle, pas du pilotage opérationnel. Trackdéchets ne gère que les déchets dangereux. Aucun outil SaaS ne croise les données de collecte prestataires avec les benchmarks SINOE et les données Trackdéchets dans un tableau de bord unifié pour les collectivités.",
+  "mvpScope": "Import des données de collecte par fichier (CSV/Excel). Tableau de bord avec 5 indicateurs clés : tonnages par flux, coûts de collecte, taux de valorisation, coût par habitant, évolution mensuelle. Benchmark avec la moyenne départementale et nationale (données SINOE). Export PDF du rapport annuel simplifié. Pas de connexion temps réel aux prestataires. Pas de module biodéchets. Pas de cartographie.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin de benchmark et de pilotage",
+      "description": "Contacter 15 directeurs déchets via AMORCE. Présenter un prototype Figma du dashboard. Mesurer le temps passé actuellement sur la consolidation Excel.",
+      "duration": "3 semaines",
+      "deliverables": [
+        "15 entretiens avec des directeurs déchets",
+        "Prototype Figma validé",
+        "Cartographie des formats de données prestataires",
+        "10 lettres d'intention signées"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Dashboard fonctionnel avec import et benchmark",
+      "description": "Pipeline d'import multi-format (CSV, Excel). Calcul des 5 KPI. Intégration des benchmarks SINOE. Interface web responsive.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Import CSV/Excel fonctionnel",
+        "Dashboard 5 KPI",
+        "Benchmark SINOE intégré",
+        "Export PDF rapport annuel"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients pilotes et itérations",
+      "description": "Déploiement chez 5 collectivités pilotes gratuites. Itérations UX basées sur les retours terrain. Présentation aux Assises des Déchets.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "5 collectivités pilotes actives",
+        "NPS > 40",
+        "Premiers revenus (3 clients payants)",
+        "Stand aux Assises des Déchets"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Module biodéchets et intégrations prestataires",
+      "description": "Ajout du module biodéchets (suivi du déploiement, tonnages, participation). Connecteurs automatiques avec les principaux prestataires (Paprec, Suez, Veolia). Module cartographique des points de collecte.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Module biodéchets",
+        "3 connecteurs prestataires",
+        "20 collectivités clientes",
+        "Cartographie interactive"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Partenariats AMORCE et Cercle National du Recyclage. Offre premium avec IA de prévision des tonnages. Intégration TEOM (taxe d'enlèvement des ordures ménagères).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "35 collectivités clientes",
+        "Partenariat AMORCE signé",
+        "Module prévision IA"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les directeurs déchets passent-ils réellement plus de 3h/semaine sur la consolidation de données ?",
+      "how": "Interviews structurées avec 15 directeurs déchets identifiés via AMORCE et le Cercle National du Recyclage. Chronométrage du processus actuel.",
+      "successCriteria": "12/15 confirment passer plus de 3h/semaine. Temps moyen constaté > 4h/semaine."
+    },
+    {
+      "check": "Le benchmark intercommunal est-il perçu comme une valeur ajoutée suffisante pour justifier un abonnement ?",
+      "how": "Présenter 3 exemples de benchmarks réels (données SINOE anonymisées) à 10 directeurs. Demander s'ils paieraient 300€/mois pour ce type de comparaison.",
+      "successCriteria": "7/10 jugent le benchmark utile. 5/10 acceptent un prix de 200-500€/mois."
+    },
+    {
+      "check": "Les formats de données des prestataires sont-ils suffisamment standardisés pour automatiser l'import ?",
+      "how": "Collecter les fichiers de reporting de 5 prestataires différents (Paprec, Suez, Veolia, Nicollin, opérateurs locaux). Analyser les formats et champs communs.",
+      "successCriteria": "Les 5 formats partagent au moins 80% de champs communs (tonnages, flux, dates, coûts)."
+    },
+    {
+      "check": "La génération automatique du rapport annuel est-elle un argument de vente déterminant ?",
+      "how": "Demander aux 15 directeurs combien de temps ils passent sur le rapport annuel et combien ils paieraient pour l'automatiser.",
+      "successCriteria": "Temps moyen > 2 semaines/an. 10/15 citent le rapport annuel comme motivation principale d'achat."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Directeurs déchets des syndicats mixtes et EPCI membres d'AMORCE",
+      "where": "AMORCE (950 collectivités adhérentes, réseau national déchets et énergie), Assises Nationales des Déchets (Nantes), Pollutec (Lyon)",
+      "howToReach": "Proposer un webinaire gratuit via AMORCE : 'Benchmark déchets : comment se situer face aux collectivités comparables'. Offrir 3 mois gratuits aux 10 premières collectivités inscrites."
+    },
+    {
+      "who": "Responsables déchets des communautés d'agglomération en transition biodéchets",
+      "where": "Cercle National du Recyclage (90 collectivités adhérentes), journées techniques ADEME, groupe LinkedIn 'Gestion des Déchets en Collectivité'",
+      "howToReach": "Cibler les collectivités ayant publié des marchés publics biodéchets sur le BOAMP. Proposer un diagnostic gratuit de leur situation actuelle basé sur les données SINOE."
+    },
+    {
+      "who": "Bureaux d'études spécialisés déchets (consultants plans de prévention)",
+      "where": "FNADE (Fédération Nationale des Activités de la Dépollution et de l'Environnement), Pollutec, annuaire ADEME des prestataires",
+      "howToReach": "Proposer un accès bureau d'études avec extraction de données multi-collectivités. L'outil leur fait gagner 2 jours par étude."
+    }
+  ],
+  "pricingStrategy": "SaaS mensuel par taille de collectivité. Commune isolée : 199€/mois (jusqu'à 20 000 habitants). Syndicat intercommunal : 399€/mois (20 000 à 100 000 habitants). Grande agglomération : 799€/mois (100 000+ habitants). Engagement annuel : -20%. Le prix est positionné à 1/10e du coût d'un prestataire Excel externalisé (4 000-8 000€/an) et remplace 2 semaines de travail sur le rapport annuel.",
+  "pathTo10kMrr": "5 communes × 199€ = 995€ + 15 syndicats intercommunaux × 399€ = 5 985€ + 4 grandes agglomérations × 799€ = 3 196€ = 10 176€ MRR. Atteignable en 10-12 mois : 5 pilotes gratuits convertis en payants à M3, puis acquisition via AMORCE (950 adhérents), Assises des Déchets et Pollutec.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Recharts pour les graphiques de suivi",
+    "backend": "Next.js API Routes + scripts Python pour le pipeline d'import multi-format (Pandas)",
+    "database": "PostgreSQL sur Supabase — données de collecte historisées par mois et par flux",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (ingestion SINOE mensuelle)",
+    "apis": [
+      "SINOE (données ADEME benchmarks)",
+      "API Trackdéchets (déchets dangereux)",
+      "API BOAMP (marchés publics déchets)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Import multi-format : parsers CSV/Excel avec mapping intelligent des colonnes. Données SINOE pré-calculées et mises à jour annuellement. Benchmarks calculés par strate démographique et type de territoire."
+  },
+  "risks": [
+    {
+      "risk": "Trackdéchets évolue vers un outil complet de pilotage des déchets pour les collectivités",
+      "mitigation": "Trackdéchets est focalisé sur la traçabilité réglementaire des déchets dangereux. La roadmap beta.gouv.fr ne mentionne pas de dashboard collectivités. Se positionner comme complément, pas concurrent : intégrer l'API Trackdéchets."
+    },
+    {
+      "risk": "Les prestataires de collecte (Veolia, Suez) développent leurs propres dashboards pour leurs clients collectivités",
+      "mitigation": "Se positionner sur les collectivités en régie ou multi-prestataires (qui ont besoin d'un outil neutre). La valeur du benchmark inter-collectivités n'est pas réplicable par un prestataire unique."
+    },
+    {
+      "risk": "Cycle de vente B2G long et budgets numériques contraints des collectivités",
+      "mitigation": "Proposer un essai gratuit de 3 mois avec données réelles. Cibler le budget 'études et conseil' plutôt que 'informatique'. Prix positionné sous le seuil de marché public (< 40 000€/an)."
+    }
+  ],
+  "inspirations": "WasteDataFlow (UK) — plateforme nationale de reporting déchets pour les collectivités britanniques. Waste Analytics (US) — SaaS de pilotage de la collecte pour les villes américaines. Greyparrot (UK) — IA de tri des déchets avec tableaux de bord de composition.",
+  "searchVolume": [
+    {
+      "keyword": "gestion déchets collectivité",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "rapport annuel déchets",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "SINOE déchets",
+      "monthlyVolume": "800-1500",
+      "difficulty": "faible",
+      "intent": "navigational"
+    },
+    {
+      "keyword": "coût collecte déchets par habitant",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "tri biodéchets collectivité",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "60 millions EUR — 1 200 EPCI et syndicats de traitement × budget moyen numérique déchets estimé à 50 000€/an",
+    "sam": "12 millions EUR — 250 collectivités de plus de 20 000 habitants avec budget numérique identifié et besoin de pilotage avéré",
+    "som": "1,2 million EUR — 24 collectivités × 4 200€/an (prix moyen pondéré), atteignable en 18 mois via AMORCE et salons",
+    "methodology": "TAM basé sur le nombre d'EPCI à compétence déchets (source : DGCL 2025) et budget numérique moyen constaté dans les rapports d'activité. SAM restreint aux collectivités > 20 000 hab. ayant publié des marchés publics numériques. SOM basé sur les objectifs du business plan avec conversion réaliste de 2% des collectivités ciblées."
+  },
+  "competitorDeep": [
+    {
+      "name": "SINOE (ADEME)",
+      "url": "https://www.sinoe.org",
+      "pricing": "Gratuit (service public financé par l'ADEME).",
+      "trafficEstimate": "Estimé 50-80K visites/an. Trafic essentiellement professionnel (collectivités, bureaux d'études).",
+      "reviews": "Référence pour les données nationales mais unanimement critiqué pour son ergonomie. Données avec 18-24 mois de décalage.",
+      "strengths": "Couverture nationale, données historiques sur 15 ans, indicateurs standardisés, source officielle ADEME.",
+      "weaknesses": "Interface datée et peu ergonomique. Données annuelles avec 18-24 mois de décalage. Pas de tableau de bord personnalisable. Pas d'alertes. Export limité."
+    },
+    {
+      "name": "Trackdéchets (beta.gouv.fr)",
+      "url": "https://trackdechets.beta.gouv.fr",
+      "pricing": "Gratuit (service public obligatoire depuis 2022).",
+      "trafficEstimate": "Estimé 200-400K visites/an (usage obligatoire pour les BSD).",
+      "reviews": "Critiqué pour son ergonomie par les PME. Perçu comme une contrainte réglementaire, pas un outil d'aide à la décision.",
+      "strengths": "Obligatoire pour les BSD. API GraphQL ouverte. Couverture nationale. Données temps réel.",
+      "weaknesses": "Limité aux déchets dangereux. UX austère. Pas de tableaux de bord analytiques. Pas de benchmark. Pas de reporting CSRD."
+    },
+    {
+      "name": "Hoali",
+      "url": "https://www.hoali.co",
+      "pricing": "Sur devis — estimé 100-500€/mois selon la taille du restaurant.",
+      "trafficEstimate": "Faible (< 5K visites/mois). Niche restauration.",
+      "reviews": "Apprécié dans la restauration collective pour le suivi des biodéchets. Peu de présence hors restauration.",
+      "strengths": "Spécialisation biodéchets en restauration. Interface simple. Rapports réglementaires automatisés.",
+      "weaknesses": "Exclusivement restauration. Pas de couverture collectivités ni industrie. Pas de données open data. Pas de benchmark."
+    },
+    {
+      "name": "Waste Analytics (éditeurs étrangers)",
+      "url": "https://www.wasteanalytics.com",
+      "pricing": "Sur devis — estimé 500-2000$/mois. Marché US/UK.",
+      "trafficEstimate": "Trafic international. Pas de présence en France.",
+      "reviews": "Solution mature sur le marché anglo-saxon. Pas d'adaptation au contexte réglementaire français.",
+      "strengths": "Interface moderne. Intégrations IoT (capteurs de bennes). Prévision des tonnages par IA.",
+      "weaknesses": "Pas d'adaptation au contexte français (SINOE, Trackdéchets, TEOM, REP). Prix élevé. Support en anglais uniquement."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données SINOE (tonnages et indicateurs)",
+      "status": "ok",
+      "detail": "Données agrégées par collectivité, publiées en open data par l'ADEME. Licence Ouverte v2. Aucune donnée personnelle.",
+      "source": "https://www.sinoe.org — ADEME"
+    },
+    {
+      "topic": "API Trackdéchets (déchets dangereux)",
+      "status": "attention",
+      "detail": "L'API est ouverte mais certaines données sont soumises à habilitation (identité des producteurs). Les données agrégées et anonymisées sont librement accessibles.",
+      "source": "https://developers.trackdechets.beta.gouv.fr"
+    },
+    {
+      "topic": "Données ICPE (installations classées)",
+      "status": "ok",
+      "detail": "Registre public des installations classées. Données publiées en open data. Licence Ouverte.",
+      "source": "https://www.georisques.gouv.fr — ICPE"
+    },
+    {
+      "topic": "RGPD — données de collecte des collectivités",
+      "status": "ok",
+      "detail": "Les données manipulées sont des tonnages agrégés par flux et par territoire. Aucune donnée individuelle de production de déchets. Pas de risque de ré-identification.",
+      "source": "CNIL — Recommandations open data collectivités"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Réseau AMORCE (webinaires et newsletter)",
+      "cacEstimate": "200-400€",
+      "conversionRate": "5-10%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "12:1 à 24:1"
+    },
+    {
+      "channel": "Salons (Assises des Déchets, Pollutec)",
+      "cacEstimate": "500-800€",
+      "conversionRate": "8-15%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "6:1 à 10:1"
+    },
+    {
+      "channel": "SEO (requêtes gestion déchets collectivité)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "2-4%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "60:1 à 160:1"
+    },
+    {
+      "channel": "Emailing ciblé EPCI (annuaires DGCL)",
+      "cacEstimate": "100-250€",
+      "conversionRate": "2-5%",
+      "ltv": "4 788€ (399€ × 12 mois)",
+      "ltvCacRatio": "19:1 à 48:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et métriques proviennent directement de l'API data.gouv.fr et du site SINOE. Liens cliquables."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic estimés à partir des sites publics. Hoali et Waste Analytics ont des prix opaques (sur devis)."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés sans outil SEO professionnel. Ordres de grandeur basés sur la comparaison avec le secteur eau."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs basés sur les statistiques DGCL (nombre d'EPCI) et les budgets numériques moyens constatés. Hypothèses transparentes."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Licences vérifiées sur les sites sources. Point d'attention sur Trackdéchets (habilitation pour certaines données)."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basées sur des benchmarks SaaS B2G. AMORCE comme canal privilégié est une hypothèse à valider."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données solides (SINOE, Trackdéchets vérifiés). Hypothèses de conversion B2G à valider terrain. Le benchmark est la vraie valeur ajoutée à tester."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 65,
+      "detail": "3-5K recherches/mois sur les requêtes déchets collectivité. 4K visites/an sur SINOE data.gouv.fr. Demande réelle mais niche B2G. La pression biodéchets 2024 crée une urgence."
+    },
+    "feasibility": {
+      "score": 72,
+      "detail": "MVP en 6 semaines. Import multi-format + dashboard + benchmarks SINOE. Complexité principale : parser les formats hétérogènes des prestataires. API Trackdéchets bien documentée."
+    },
+    "market": {
+      "score": 60,
+      "detail": "24 clients pour 10K MRR. Cycle de vente B2G long (6-12 mois). Mais panier élevé (399€/mois) et marché captif (obligation réglementaire)."
+    },
+    "competition": {
+      "score": 70,
+      "detail": "SINOE gratuit mais inutilisable pour le pilotage. Trackdéchets limité aux déchets dangereux. Pas de SaaS moderne de dashboard déchets pour les collectivités françaises."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "3 points OK, 1 point d'attention (Trackdéchets habilitation). Données agrégées, pas d'enjeu RGPD. Licences Ouvertes."
+    },
+    "overall": {
+      "score": 69,
+      "detail": "Produit solide sur un créneau sans concurrent SaaS direct. Point faible : cycle de vente B2G long. Point fort : pression réglementaire (biodéchets, SINOE) qui pousse à l'outillage."
+    }
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "productSlug": "cee-lumiere-simulateur-certificats-economie-energie-eclairage",
+  "oneLiner": "Calculez vos CEE éclairage public en 5 minutes et financez jusqu'à 60% de votre rénovation LED.",
+  "problem": "Un chargé de mission énergie dans un syndicat départemental doit monter des dossiers CEE pour chaque commune qui rénove son éclairage. Chaque dossier prend 3-5 jours : collecter les caractéristiques de l'ancien parc, identifier les fiches d'opérations standardisées éligibles (RES-EC-104, RES-EC-107), calculer les volumes de CEE en kWh cumac, estimer le gain financier. Pour 80 communes, c'est 3 mois de travail administratif. Résultat : beaucoup de communes renoncent aux CEE ou sous-estiment leur montant, laissant des dizaines de milliers d'euros sur la table.",
+  "solution": "CEE-Lumière est un simulateur en ligne qui pré-remplit automatiquement le calcul des CEE éclairage public à partir des données ouvertes (consommation ADEME, parc estimé par satellite Cerema). L'utilisateur sélectionne sa commune, décrit son projet de rénovation (nombre de points, technologie cible), et l'outil calcule instantanément le volume de CEE éligible, le gain financier estimé et génère un dossier pré-rempli compatible avec les fiches standardisées ATEE.",
+  "uniqueValue": "Les calculateurs CEE existants sont génériques (bâtiment, industrie, transport). Aucun n'est spécialisé éclairage public avec pré-remplissage des données communales. CEE-Lumière est le seul outil qui dit à une commune : 'Votre projet de remplacement de 500 luminaires sodium par des LED vous rapportera 45 000€ de CEE' en 5 minutes.",
+  "mvpScope": "Simulateur web : sélection commune + saisie du projet (nombre de points, technologie actuelle, technologie cible) = calcul CEE en kWh cumac + estimation financière (€) + export PDF du dossier pré-rempli. Fiches RES-EC-104 et RES-EC-107 uniquement. Pas de soumission automatique aux obligés. Pas de marketplace CEE. Pas de suivi post-travaux.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider que les dossiers CEE sont un vrai pain point",
+      "description": "Interviewer 10 chargés de mission énergie dans des syndicats départementaux. Quantifier le temps passé sur les dossiers CEE éclairage. Vérifier le taux de recours aux CEE et le montant moyen.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "10 interviews syndicats d'énergie",
+        "Quantification du temps/dossier (objectif : > 3 jours)",
+        "Taux de recours CEE éclairage mesuré",
+        "Montant moyen CEE par projet identifié"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Simulateur fonctionnel avec export PDF",
+      "description": "Développer le moteur de calcul CEE basé sur les fiches ATEE. Intégrer les données ADEME pour le pré-remplissage. Interface web avec formulaire guidé. Export PDF du dossier pré-rempli.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Moteur de calcul CEE (RES-EC-104, RES-EC-107)",
+        "Pré-remplissage données ADEME par commune",
+        "Interface web avec formulaire guidé",
+        "Export PDF dossier pré-rempli"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Acquisition via les syndicats d'énergie et AMORCE",
+      "description": "Déployer l'outil auprès des syndicats pilotes. Offre freemium : simulation gratuite, export PDF payant. Partenariat AMORCE pour diffusion nationale.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "5 syndicats d'énergie utilisateurs",
+        "200 simulations réalisées",
+        "50 exports PDF payants",
+        "Partenariat AMORCE signé"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Marketplace CEE et partenariats obligés",
+      "description": "Connecter les communes avec les obligés (EDF, TotalEnergies, Engie) pour la valorisation des CEE. Commission sur chaque transaction. Élargir aux autres fiches CEE éclairage.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Marketplace CEE opérationnelle",
+        "3 partenariats obligés",
+        "500 simulations/mois",
+        "Premiers revenus transactionnels"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Commission marketplace CEE + abonnements SaaS syndicats. Élargir aux CEE bâtiment public. Partenariats fabricants LED pour recommandations produit.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR atteint",
+        "1 000 simulations/mois",
+        "10 syndicats abonnés",
+        "Marketplace CEE active"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les dossiers CEE éclairage représentent-ils un vrai pain point en temps pour les syndicats ?",
+      "how": "Interviewer 10 chargés de mission énergie. Demander le temps passé par dossier CEE et le nombre de dossiers/an. Identifier les tâches les plus chronophages.",
+      "successCriteria": "Temps moyen > 3 jours/dossier. Plus de 10 dossiers/an par syndicat. 80% citent la constitution du dossier comme le problème principal."
+    },
+    {
+      "check": "Les communes laissent-elles des CEE sur la table faute de complexité administrative ?",
+      "how": "Comparer le nombre de projets de rénovation éclairage (BOAMP) avec le nombre de dossiers CEE déposés (données PNCEE). Interviewer des communes ayant rénové sans CEE.",
+      "successCriteria": "Taux de recours CEE < 50% sur les projets éligibles. 5+ communes confirment avoir renoncé aux CEE."
+    },
+    {
+      "check": "Le pré-remplissage à partir des données ADEME est-il suffisamment précis ?",
+      "how": "Comparer les données ADEME avec 10 dossiers CEE réels fournis par les syndicats. Mesurer l'écart entre estimation et réalité.",
+      "successCriteria": "Écart < 20% sur le volume CEE estimé pour 8/10 projets test."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Chargés de mission énergie des syndicats départementaux",
+      "where": "AMORCE (900 collectivités adhérentes), FNCCR commission éclairage, réseau FLAME (200 agences locales de l'énergie)",
+      "howToReach": "Webinaire gratuit 'Maximisez vos CEE éclairage public'. Démo avec un vrai projet de leur territoire. Offre pilote : 10 simulations gratuites."
+    },
+    {
+      "who": "Conseillers en énergie partagés (CEP) des collectivités",
+      "where": "Programme CEP de l'ADEME (800+ conseillers en France), réseau des Espaces Conseil FAIRE",
+      "howToReach": "Partenariat ADEME pour intégrer CEE-Lumière dans la boîte à outils des CEP. Formation en ligne gratuite de 30 minutes."
+    },
+    {
+      "who": "Bureaux d'études spécialisés éclairage public",
+      "where": "Syndicat de l'éclairage, AFE, ForumLED Europe, groupe LinkedIn 'Éclairage public France'",
+      "howToReach": "Offrir un accès pro avec calcul CEE intégré dans leurs propositions commerciales. Le bureau d'études valorise le service auprès de ses clients."
+    }
+  ],
+  "pricingStrategy": "Freemium : simulation CEE gratuite (résultat flou, fourchette large). Pro : 149€/mois — simulation précise + export PDF dossier pré-rempli + historique. Syndicat : 499€/mois — accès illimité pour toutes les communes adhérentes + tableau de bord multi-communes. À terme, commission marketplace CEE : 3-5% du montant CEE valorisé (moyenne 2 000-5 000€/projet = 60-250€/transaction).",
+  "pathTo10kMrr": "10 syndicats d'énergie × 499€ = 4 990€ + 15 communes/BE directes × 149€ = 2 235€ + commission marketplace : 50 transactions/mois × 150€ moyen = 7 500€ (objectif 18 mois). Scénario initial sans marketplace : 10 syndicats × 499€ + 30 communes/BE × 149€ = 4 990€ + 4 470€ = 9 460€ MRR. Atteignable en 10-12 mois via AMORCE et FNCCR.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + formulaire guidé multi-étapes",
+    "backend": "Next.js API Routes — moteur de calcul CEE basé sur les fiches ATEE (règles métier en TypeScript)",
+    "database": "PostgreSQL sur Supabase — données ADEME par commune, barèmes CEE, historique simulations",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (mise à jour barèmes CEE trimestrielle)",
+    "apis": [
+      "Données ADEME énergie patrimoine communal",
+      "API BAN (géocodage communes)",
+      "Barèmes CEE ATEE (import manuel trimestriel)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Le moteur de calcul implémente les règles des fiches ATEE en TypeScript pur (pas besoin de Python). Les barèmes CEE changent trimestriellement — mise à jour manuelle rapide. L'export PDF utilise Puppeteer ou @react-pdf/renderer."
+  },
+  "risks": [
+    {
+      "risk": "Les barèmes CEE changent fréquemment et pourraient rendre les calculs obsolètes",
+      "mitigation": "Mise à jour trimestrielle des barèmes (1-2h de travail). Afficher la date de dernière mise à jour. Alerter les utilisateurs quand un nouveau barème est disponible."
+    },
+    {
+      "risk": "Les obligés (EDF, TotalEnergies) proposent déjà des simulateurs CEE gratuits",
+      "mitigation": "Les simulateurs des obligés sont généralistes et orientés vers leurs propres offres. CEE-Lumière est spécialisé éclairage public avec pré-remplissage communal. Positionner comme outil indépendant et objectif."
+    },
+    {
+      "risk": "La réforme des CEE pourrait supprimer ou réduire les fiches éclairage public",
+      "mitigation": "Diversifier vers les autres fiches CEE collectivités (bâtiment, chauffage). Ajouter d'autres mécanismes de financement (fonds chaleur, DSIL, DETR, programme ACTEE)."
+    },
+    {
+      "risk": "Les données ADEME ne couvrent pas toutes les communes",
+      "mitigation": "Permettre la saisie manuelle quand les données ADEME ne sont pas disponibles. Compléter avec les données satellite Cerema pour l'estimation."
+    }
+  ],
+  "inspirations": "Oscar (ADEME) — plateforme de simulation des aides à la rénovation énergétique pour les particuliers. PrimeRénov' simulateur — calcul des aides à la rénovation. NR-Pro (logiciel CEE) — outil pro de calcul CEE multi-secteurs mais pas spécialisé éclairage et très cher (5 000€/an).",
+  "searchVolume": [
+    {
+      "keyword": "CEE éclairage public",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "certificat économie énergie commune",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "financement rénovation éclairage public",
+      "monthlyVolume": "400-800",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "fiche CEE RES-EC-104",
+      "monthlyVolume": "200-400",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "aide LED éclairage public",
+      "monthlyVolume": "600-1200",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "50 millions EUR — 34 000 communes × 1 500€/an moyen pour un outil de gestion CEE et financement",
+    "sam": "8 millions EUR — 80 syndicats d'énergie × 6 000€/an + 3 000 communes > 3 000 hab actives en rénovation × 2 000€/an",
+    "som": "1,1 million EUR — 10 syndicats × 499€ × 12 + 30 communes/BE × 149€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur les 34 000 communes et le coût moyen des outils de financement. SAM restreint aux syndicats d'énergie et communes actives en rénovation éclairage. SOM basé sur la capacité de prospection via AMORCE et FNCCR."
+  },
+  "competitorDeep": [
+    {
+      "name": "NR-Pro",
+      "url": "https://www.nr-pro.fr",
+      "pricing": "À partir de 5 000€/an. Solution professionnelle multi-secteurs pour les bureaux d'études et installateurs.",
+      "trafficEstimate": "Trafic modéré (10-20K visites/an). Cible les professionnels du BTP et de l'énergie.",
+      "reviews": "Reconnu comme la référence CEE en France. Mais jugé trop cher et complexe pour l'éclairage public seul.",
+      "strengths": "Exhaustivité des fiches CEE. Calcul précis et certifié. Reconnaissance par les obligés. Mise à jour régulière.",
+      "weaknesses": "Prix prohibitif (5 000€/an) pour un usage uniquement éclairage public. Interface complexe, courbe d'apprentissage longue. Pas de pré-remplissage communal. Pas de spécialisation éclairage."
+    },
+    {
+      "name": "Calculateur CEE EDF",
+      "url": "https://www.edf.fr/entreprises/cee",
+      "pricing": "Gratuit — mais orienté vers la souscription des CEE chez EDF (obligé).",
+      "trafficEstimate": "Fort trafic (intégré au site EDF). Mais taux de conversion spécifique éclairage inconnu.",
+      "reviews": "Simple d'utilisation mais biaisé (oriente vers les CEE EDF). Résultats imprécis pour l'éclairage public.",
+      "strengths": "Gratuit. Marque de confiance EDF. Simplicité d'utilisation.",
+      "weaknesses": "Biaisé vers EDF comme obligé. Pas de spécialisation éclairage public. Pas de pré-remplissage communal. Résultat générique."
+    },
+    {
+      "name": "Simulateur ATEE",
+      "url": "https://atee.fr/efficacite-energetique/club-c2e",
+      "pricing": "Accès gratuit aux fiches. Pas de simulateur en ligne intégré.",
+      "trafficEstimate": "Faible trafic grand public. Référence pour les professionnels CEE.",
+      "reviews": "Source officielle des fiches d'opérations standardisées. Mais pas d'outil de calcul automatisé.",
+      "strengths": "Source officielle et à jour des fiches CEE. Documentation technique complète.",
+      "weaknesses": "Aucun outil de calcul en ligne. Fiches PDF à lire et appliquer manuellement. Pas adapté aux non-experts."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Fiches d'opérations standardisées CEE",
+      "status": "ok",
+      "detail": "Les fiches ATEE sont publiques et les barèmes librement utilisables. Le calcul des CEE suit des formules réglementaires publiées au Journal Officiel.",
+      "source": "https://atee.fr — Fiches d'opérations standardisées CEE"
+    },
+    {
+      "topic": "Données ADEME énergie patrimoine communal",
+      "status": "ok",
+      "detail": "Données agrégées par commune en open data. Licence Ouverte v2. Réutilisation commerciale autorisée.",
+      "source": "https://www.data.gouv.fr — Dataset ADEME énergie patrimoine communal"
+    },
+    {
+      "topic": "Responsabilité du calcul CEE",
+      "status": "attention",
+      "detail": "L'outil fournit une estimation, pas un calcul certifié. Le dossier CEE final doit être validé par un obligé. Disclaimer obligatoire : 'Estimation indicative, le montant final dépend de la validation par l'obligé.'",
+      "source": "PNCEE — Pôle national des certificats d'économie d'énergie"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages simulation CEE par commune)",
+      "cacEstimate": "15-40€",
+      "conversionRate": "4-8%",
+      "ltv": "5 988€ (499€ × 12 mois syndicat) ou 1 788€ (149€ × 12 commune)",
+      "ltvCacRatio": "45:1 à 400:1"
+    },
+    {
+      "channel": "Réseau AMORCE et FNCCR (prescripteurs)",
+      "cacEstimate": "100-250€",
+      "conversionRate": "10-15%",
+      "ltv": "5 988€ (syndicat)",
+      "ltvCacRatio": "24:1 à 60:1"
+    },
+    {
+      "channel": "Webinaires et formations CEP ADEME",
+      "cacEstimate": "30-80€",
+      "conversionRate": "5-10%",
+      "ltv": "1 788€ (commune/BE)",
+      "ltvCacRatio": "22:1 à 60:1"
+    },
+    {
+      "channel": "Partenariats fabricants LED (Signify, Schréder)",
+      "cacEstimate": "50-150€",
+      "conversionRate": "8-15%",
+      "ltv": "1 788€ (commune)",
+      "ltvCacRatio": "12:1 à 36:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Fiches ATEE publiques et barèmes vérifiés. Données ADEME sur data.gouv.fr."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Métriques data.gouv.fr vérifiées via l'API get_metrics."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Prix NR-Pro vérifié sur leur site. Simulateurs obligés analysés en ligne. Trafic estimé."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés. Niche très spécialisée, volumes faibles mais intention d'achat forte."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Basé sur le nombre de syndicats d'énergie (AMORCE) et communes actives en rénovation. Hypothèses transparentes."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Fiches CEE publiques. Point d'attention sur la responsabilité du calcul (disclaimer nécessaire)."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Benchmarks SaaS B2G génériques. Le canal AMORCE/FNCCR est spécifique et potentiellement très efficace mais non testé."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Produit à forte valeur ajoutée (économies chiffrées pour le client). Hypothèse clé : les syndicats valorisent suffisamment le gain de temps pour payer 499€/mois."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 70,
+      "detail": "2-4K recherches/mois cumulées. Intention d'achat forte sur les requêtes CEE. 19 000 marchés publics éclairage sur le BOAMP confirment un marché actif."
+    },
+    "feasibility": {
+      "score": 82,
+      "detail": "MVP en 5 semaines. Règles de calcul CEE publiques et implémentables en TypeScript. Pas de traitement satellite. Stack simple Next.js + Supabase."
+    },
+    "market": {
+      "score": 72,
+      "detail": "40 clients (10 syndicats + 30 communes/BE) pour 10K MRR. Cycle d'acquisition rapide via AMORCE. Valeur ajoutée directement monétisable (économies CEE chiffrées)."
+    },
+    "competition": {
+      "score": 80,
+      "detail": "NR-Pro est le seul concurrent sérieux mais trop cher et généraliste. Aucun outil spécialisé éclairage public avec pré-remplissage. Créneau libre."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "Fiches CEE publiques. Un point d'attention sur la responsabilité du calcul (disclaimer). Pas d'enjeu RGPD."
+    },
+    "overall": {
+      "score": 76,
+      "detail": "Forte faisabilité (82/100) et faible concurrence (80/100). Valeur ajoutée immédiate et chiffrable pour le client. Risque principal : dépendance à la pérennité du dispositif CEE."
+    }
+  }
+}

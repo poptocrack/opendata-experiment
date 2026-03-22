@@ -1,0 +1,328 @@
+{
+  "productSlug": "solarpark-compliance-audit-ombriere-parkings",
+  "oneLiner": "Identifiez vos parkings soumis à l'obligation ombrière et pilotez leur mise en conformité.",
+  "problem": "Depuis la loi Climat et Résilience, tous les parkings extérieurs de plus de 1 500 m² doivent être équipés d'ombrières photovoltaïques d'ici juillet 2026. Les gestionnaires de parcs de stationnement (grandes surfaces, centres commerciaux, collectivités) doivent identifier lesquels de leurs parkings sont concernés, estimer les coûts et la rentabilité de chaque installation, prioriser les chantiers, et suivre l'avancement — le tout sans outil dédié. Aujourd'hui, ils jonglent entre des fichiers Excel, des échanges emails avec des bureaux d'études, et des vérifications manuelles sur PVGIS.",
+  "solution": "Une plateforme SaaS qui croise les données de parkings (surface, localisation), d'irradiation solaire par commune, de tarifs CRE et du listing RGE pour fournir un audit automatisé de conformité. L'utilisateur importe sa liste de parkings ou saisit ses adresses, et obtient pour chacun : l'obligation réglementaire applicable, la puissance PV optimale, le productible annuel estimé, le ROI sur 20 ans, et une shortlist d'installateurs RGE certifiés dans la zone. Un tableau de bord centralise le suivi de tous les parkings avec des alertes sur les échéances.",
+  "uniqueValue": "Aucun outil ne combine conformité réglementaire ombrière + dimensionnement PV + estimation financière + annuaire installateurs RGE en un seul endroit. Les bureaux d'études facturent 5 000-15 000€ par audit de parking — SolarPark Compliance automatise 80% du travail pour une fraction du prix.",
+  "mvpScope": "Import CSV ou saisie manuelle de parkings (adresse + surface). Diagnostic réglementaire automatique (soumis/non soumis, échéance). Estimation de puissance PV et productible basé sur l'irradiation locale. Calcul de ROI simplifié avec tarifs CRE en vigueur. Liste des installateurs RGE dans un rayon de 50 km. Export PDF du rapport d'audit. Pas de suivi de chantier. Pas d'intégration comptable. Pas de marketplace d'installateurs.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin auprès des gestionnaires de parkings",
+      "description": "Landing page avec simulateur simplifié (1 parking). Contacter les responsables RSE des enseignes de grande distribution et les gestionnaires de centres commerciaux. Objectif : 20 demandes de démo.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Landing page avec simulateur 1 parking",
+        "20 demandes de démo",
+        "10 entretiens gestionnaires parkings",
+        "Validation du pricing"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Plateforme d'audit automatisé multi-parkings",
+      "description": "Pipeline d'ingestion données parkings + irradiation + tarifs CRE + RGE. Interface web avec import CSV et diagnostic automatique. Export PDF du rapport d'audit.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Import CSV de parkings",
+        "Diagnostic réglementaire automatisé",
+        "Estimation PV et ROI par parking",
+        "Export PDF rapport d'audit"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients et bouche-à-oreille",
+      "description": "Commercialisation directe auprès des enseignes de grande distribution et foncières commerciales. Présence aux salons Energaïa et BePOSITIVE. Partenariat avec des cabinets de conseil RSE.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "15 entreprises clientes",
+        "Présence à 2 salons EnR",
+        "3 partenariats cabinets RSE",
+        "Premiers revenus récurrents"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Suivi de chantier et marketplace",
+      "description": "Module de suivi d'avancement des installations par parking. Mise en relation avec les installateurs RGE (commission). Alertes réglementaires et rappels d'échéance.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Module suivi chantier",
+        "Marketplace installateurs",
+        "30 entreprises clientes",
+        "5K MRR"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Extension aux collectivités (parkings publics). API B2B pour les bureaux d'études. Module de financement (mise en relation avec des financeurs). Couverture européenne (directive EPBD).",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "50 entreprises clientes",
+        "10 collectivités clientes",
+        "API B2B disponible"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les gestionnaires de parkings ont-ils identifié quels parkings sont soumis à l'obligation ?",
+      "how": "Contacter 15 responsables RSE de grandes surfaces et centres commerciaux. Demander s'ils ont déjà un inventaire de leurs parkings concernés et comment ils gèrent le sujet.",
+      "successCriteria": "10/15 confirment ne pas avoir d'outil centralisé. 8/15 utilisent Excel ou un bureau d'études externe."
+    },
+    {
+      "check": "Le prix d'un audit ombrière par un bureau d'études justifie-t-il un SaaS ?",
+      "how": "Demander 5 devis de bureaux d'études pour un audit ombrière (1 parking puis parc de 20 parkings). Comparer avec le pricing SaaS envisagé.",
+      "successCriteria": "Coût moyen d'un audit BET > 5 000€ par parking. Le SaaS à 499€/mois est 10x moins cher."
+    },
+    {
+      "check": "Les données d'irradiation et de surface sont-elles suffisantes pour un dimensionnement fiable ?",
+      "how": "Tester le calcul de productible sur 20 parkings connus (avec des données réelles de production). Comparer les estimations avec les résultats PVGIS.",
+      "successCriteria": "Écart < 15% entre l'estimation automatisée et PVGIS sur 18/20 parkings test."
+    },
+    {
+      "check": "Les gestionnaires sont-ils prêts à payer un abonnement mensuel plutôt qu'un audit one-shot ?",
+      "how": "Proposer deux offres aux 15 contacts : one-shot 1 990€ ou abonnement 499€/mois avec suivi. Mesurer la préférence.",
+      "successCriteria": "60% préfèrent l'abonnement mensuel pour le suivi continu et les mises à jour réglementaires."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Responsables RSE et directeurs immobilier des enseignes de grande distribution",
+      "where": "Club Développement Durable de la FCD, Fédération des Entreprises du Commerce et de la Distribution, salons MAPIC et SIEC (immobilier commercial)",
+      "howToReach": "Emailing ciblé sur les obligations ombrières avec un diagnostic gratuit de 3 parkings. Webinaire 'Obligation ombrières 2026 : êtes-vous prêts ?'. Partenariat avec des cabinets RSE (Carbone 4, Greenflex)."
+    },
+    {
+      "who": "Foncières commerciales et gestionnaires de centres commerciaux",
+      "where": "CNCC (Conseil National des Centres Commerciaux), FSIF (Fédération des Sociétés Immobilières et Foncières), salons Energaïa et BePOSITIVE",
+      "howToReach": "Stand ou conférence aux salons EnR. Étude de cas chiffrée sur un centre commercial type (ROI, économies, conformité). Prise de contact via LinkedIn avec les directeurs techniques."
+    },
+    {
+      "who": "Collectivités territoriales avec des parkings publics soumis",
+      "where": "AMORCE (réseau transition écologique), Salon des Maires, ADEME — réseau des chargés de mission énergie",
+      "howToReach": "Partenariat avec l'ADEME pour diffuser l'outil auprès des collectivités. Proposition de diagnostic gratuit pour les parkings publics de 5 collectivités pilotes."
+    }
+  ],
+  "pricingStrategy": "Offre one-shot pour l'audit initial : 490€ (1-5 parkings), 990€ (6-20 parkings), 1 990€ (21-100 parkings). Abonnement mensuel pour le suivi et les mises à jour : 199€/mois (PME, < 10 parkings), 499€/mois (ETI/grande distribution, 10-100 parkings), 999€/mois (foncières, > 100 parkings). Le one-shot sert de porte d'entrée, l'abonnement couvre le suivi de chantier, les alertes réglementaires et les mises à jour tarifaires CRE.",
+  "pathTo10kMrr": "Cible mixte one-shot + récurrent : 5 audits one-shot/mois × 990€ = 4 950€ (non récurrent, sert de cash flow) + 8 ETI × 499€/mois = 3 992€ + 5 PME × 199€/mois = 995€ + 5 collectivités × 199€/mois = 995€ + 2 foncières × 999€/mois = 1 998€ = 7 980€ MRR récurrent + 4 950€ one-shot. MRR récurrent pur atteignable avec 12 ETI × 499€ + 8 PME × 199€ + 3 foncières × 999€ = 10 577€ MRR. Atteignable en 6-8 mois grâce à l'urgence réglementaire 2026.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Mapbox GL pour la cartographie des parkings",
+    "backend": "Next.js API Routes + Python scripts pour le pipeline data (irradiation, RGE, tarifs CRE)",
+    "database": "PostgreSQL sur Supabase — données parkings, irradiation précalculée par commune, tarifs CRE",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + GitHub Actions (CRON mise à jour tarifs CRE et listing RGE)",
+    "apis": [
+      "API Professionnels RGE (ADEME)",
+      "API BAN (géocodage parkings)",
+      "Données irradiation solaire par commune",
+      "Tarifs CRE en vigueur",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Import CSV pour les gestionnaires multi-sites. Export PDF du rapport d'audit avec branding client. Calcul de productible basé sur les données d'irradiation PVGIS + correctifs locaux. Pas de PostGIS nécessaire — les données sont à la maille commune."
+  },
+  "risks": [
+    {
+      "risk": "L'obligation ombrières parkings pourrait être repoussée une nouvelle fois (déjà décalée de 2024 à 2026)",
+      "mitigation": "Diversifier vers les toitures tertiaires et les ombrières volontaires (ROI positif même sans obligation). L'outil reste pertinent pour le dimensionnement PV indépendamment de l'obligation."
+    },
+    {
+      "risk": "L'ADEME ou un acteur public pourrait lancer un outil gratuit de diagnostic ombrières",
+      "mitigation": "Se positionner sur le suivi multi-sites et la mise en relation avec les installateurs — fonctionnalités que l'État ne fournira pas. Construire une base de données propriétaire de parkings auditados."
+    },
+    {
+      "risk": "Les gestionnaires de parkings préfèrent déléguer à un bureau d'études plutôt qu'utiliser un SaaS",
+      "mitigation": "Proposer l'outil en marque blanche aux bureaux d'études (licence B2B). Le BET utilise SolarPark pour accélérer ses audits et reste l'interlocuteur du client."
+    },
+    {
+      "risk": "Données de surface des parkings incomplètes ou imprécises dans les datasets publics",
+      "mitigation": "Permettre la saisie manuelle et la correction collaborative. Utiliser les images satellite (Google Maps API) pour valider les surfaces déclarées."
+    }
+  ],
+  "inspirations": "Egis/Artelia outils internes d'audit ombrières — facturés 5-15K€ par projet. AutoCalSol (INES) — simulateur PV simplifié mais sans volet réglementaire ni multi-sites. EnergyHub (US) — plateforme de gestion de portefeuille d'actifs EnR pour les utilities. SolarEdge Designer — outil de conception PV pour installateurs, pas pour gestionnaires de parkings.",
+  "searchVolume": [
+    {
+      "keyword": "obligation ombrière parking",
+      "monthlyVolume": "3000-5000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "ombrière photovoltaïque parking",
+      "monthlyVolume": "2000-4000",
+      "difficulty": "moyenne",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "loi climat parking solaire",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "audit ombrière solaire",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "coût ombrière parking photovoltaïque",
+      "monthlyVolume": "1500-3000",
+      "difficulty": "moyenne",
+      "intent": "commercial"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "750 millions EUR — 150 000 parkings soumis à l'obligation × 5 000€ coût moyen d'un audit/dimensionnement par parking",
+    "sam": "75 millions EUR — 15 000 gestionnaires multi-sites (enseignes, foncières, collectivités) qui ont besoin d'un outil centralisé",
+    "som": "1,2 million EUR — 20 ETI × 499€ × 12 + 15 PME × 199€ × 12 + 5 foncières × 999€ × 12 + audits one-shot 5 × 990€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur le nombre de parkings soumis (source : estimation gouvernementale 150 000 parkings > 1 500 m²). SAM restreint aux gestionnaires multi-sites ayant un besoin d'outil centralisé (estimé à 10% des gestionnaires). SOM basé sur les objectifs commerciaux réalistes."
+  },
+  "competitorDeep": [
+    {
+      "name": "PVGIS (Commission Européenne)",
+      "url": "https://re.jrc.ec.europa.eu/pvg_tools/",
+      "pricing": "Gratuit (financé par la Commission Européenne).",
+      "trafficEstimate": "Très fort trafic mondial. Estimé 2-5M visites/an dont 200-400K depuis la France.",
+      "reviews": "Référence incontestée pour le calcul d'irradiation. Très technique, apprécié des ingénieurs mais inadapté aux gestionnaires non-experts.",
+      "strengths": "Données d'irradiation fiables et mondiales. Calcul de productible précis. Gratuit. API disponible.",
+      "weaknesses": "Pas de volet réglementaire français (obligation ombrières). Un seul site à la fois (pas de multi-parkings). Pas de dimensionnement économique (pas de tarifs CRE). UX austère. Pas d'annuaire installateurs."
+    },
+    {
+      "name": "In Sun We Trust / Otovo",
+      "url": "https://www.insunwetrust.solar",
+      "pricing": "Gratuit pour les particuliers (lead gen). Commission 10-15% sur les installateurs. Offre location à partir de 69€/mois.",
+      "trafficEstimate": "Fort trafic B2C. Estimé 300-500K visites/an.",
+      "reviews": "Bonne UX, processus de devis rapide. Critiqué par les installateurs pour la commission élevée et le manque de transparence.",
+      "strengths": "Marque connue. UX soignée. Bon SEO sur les requêtes résidentielles. Partenariats installateurs établis.",
+      "weaknesses": "Exclusivement résidentiel B2C. Pas d'outil B2B pour les gestionnaires de parkings. Pas de conformité ombrière. Modèle marketplace qui capte la marge des installateurs."
+    },
+    {
+      "name": "Bureaux d'études spécialisés (Artelia, Egis, BET locaux)",
+      "url": "https://www.artelia.com",
+      "pricing": "5 000-15 000€ par audit de parking. 50 000-200 000€ pour un parc complet (> 50 parkings).",
+      "trafficEstimate": "N/A — canal direct commercial.",
+      "reviews": "Expertise technique reconnue. Rapports exhaustifs mais longs à produire (4-8 semaines par audit). Coûteux.",
+      "strengths": "Expertise technique approfondie. Rapports validés par des ingénieurs. Accompagnement personnalisé.",
+      "weaknesses": "Prix élevé (5-15K€ par parking). Délais longs (4-8 semaines). Pas d'outil en ligne. Pas de suivi continu. Pas scalable pour un parc de 100 parkings."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Obligation ombrières solaires parkings (Art. L171-4 Code de la construction)",
+      "status": "ok",
+      "detail": "L'obligation est bien en vigueur pour les parkings > 1 500 m² avec échéance juillet 2026. Les données de surface sont publiques. Le service d'audit n'est pas soumis à autorisation spécifique.",
+      "source": "https://www.legifrance.gouv.fr — Loi n° 2021-1104 du 22 août 2021"
+    },
+    {
+      "topic": "Données RGE ADEME",
+      "status": "ok",
+      "detail": "Le listing des entreprises RGE est publié en open data par l'ADEME sous Licence Ouverte v2. Réutilisation commerciale autorisée.",
+      "source": "https://data.ademe.fr/datasets/liste-des-entreprises-rge"
+    },
+    {
+      "topic": "Données d'irradiation solaire",
+      "status": "ok",
+      "detail": "Les données d'irradiation sont publiques (PVGIS, Météo-France open data). Pas de restriction de réutilisation pour le calcul de productible.",
+      "source": "https://re.jrc.ec.europa.eu/pvg_tools/"
+    },
+    {
+      "topic": "RGPD — données des gestionnaires de parkings",
+      "status": "attention",
+      "detail": "Les données de contact des gestionnaires et les informations de leurs parkings sont des données d'entreprise, pas personnelles. Cependant, le stockage des adresses email des utilisateurs de la plateforme nécessite une conformité RGPD standard (mentions légales, DPO, droit de suppression).",
+      "source": "CNIL — Obligations des éditeurs de services en ligne"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (requêtes obligation ombrière)",
+      "cacEstimate": "30-80€",
+      "conversionRate": "3-6%",
+      "ltv": "5 988€ (499€ × 12 mois)",
+      "ltvCacRatio": "75:1 à 200:1"
+    },
+    {
+      "channel": "Salons professionnels (Energaïa, BePOSITIVE, MAPIC)",
+      "cacEstimate": "500-1500€",
+      "conversionRate": "10-25%",
+      "ltv": "5 988€ (499€ × 12 mois ETI)",
+      "ltvCacRatio": "4:1 à 12:1"
+    },
+    {
+      "channel": "Emailing ciblé RSE / directeurs immobilier",
+      "cacEstimate": "100-300€",
+      "conversionRate": "3-8%",
+      "ltv": "5 988€ (499€ × 12 mois)",
+      "ltvCacRatio": "20:1 à 60:1"
+    },
+    {
+      "channel": "Partenariats cabinets RSE (Carbone 4, Greenflex)",
+      "cacEstimate": "200-500€",
+      "conversionRate": "15-30%",
+      "ltv": "11 988€ (999€ × 12 mois foncières)",
+      "ltvCacRatio": "24:1 à 60:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Datasets identifiés sur data.gouv.fr. Le dataset RGE ADEME est vérifié avec 56K visites/an."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et téléchargements mesurés via l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing des bureaux d'études estimé sur la base de devis publics et articles de presse. Trafic PVGIS estimé via SimilarWeb."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés par extrapolation Google Trends et suggestions autocomplete. Pas de données Semrush/Ahrefs."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "TAM basé sur l'estimation gouvernementale de 150 000 parkings. Chiffre à confirmer avec le recensement en cours."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Obligation ombrières vérifiée sur Légifrance. Licences open data vérifiées sur les sites sources."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "CAC estimé sur des benchmarks SaaS B2B génériques. Aucun test réel effectué. À valider avec des campagnes pilotes."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Urgence réglementaire vérifiée et données disponibles. Hypothèses de pricing et conversion à valider auprès des gestionnaires de parkings."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 82,
+      "detail": "8-14K recherches/mois cumulées sur les requêtes ombrière solaire parking. 150 000 parkings soumis créent un marché captif. Échéance 2026 génère une urgence immédiate."
+    },
+    "feasibility": {
+      "score": 72,
+      "detail": "MVP en 6 semaines. 4-5 sources de données à intégrer. Calcul de productible à implémenter (formules PVGIS). Stack classique Next.js + PostgreSQL. Cartographie Mapbox."
+    },
+    "market": {
+      "score": 80,
+      "detail": "20 ETI + 15 PME + 5 foncières pour 10K MRR. Panier moyen élevé (499€/mois). Marché captif avec obligation légale. Cycle de vente accéléré par l'urgence 2026."
+    },
+    "competition": {
+      "score": 75,
+      "detail": "PVGIS est gratuit mais inadapté (pas de multi-sites, pas de réglementaire). BET sont chers et lents. Pas de SaaS dédié conformité ombrières identifié. Créneau vierge."
+    },
+    "legal": {
+      "score": 90,
+      "detail": "3 points OK, 1 point d'attention (RGPD standard). Données publiques et licences ouvertes. Obligation légale claire et en vigueur."
+    },
+    "overall": {
+      "score": 79,
+      "detail": "Point fort : demande captive (82/100) grâce à l'obligation légale et marché à fort panier moyen (80/100). Point faible : faisabilité technique moyenne (72/100) due au calcul de productible. Fenêtre de marché courte mais intense."
+    }
+  }
+}

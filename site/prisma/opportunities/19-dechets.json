@@ -1,0 +1,253 @@
+{
+  "id": "dechets",
+  "rank": 19,
+  "title": "Gestion des Déchets",
+  "slug": "dechets",
+  "sector": "Gestion des déchets",
+  "tagline": "1 763 datasets, API Trackdéchets obligatoire, loi AGEC : 18 milliards €/an de marché sous pression réglementaire massive",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "18 milliards €/an. 1 200 EPCI gestionnaires de la collecte, 200 000 entreprises soumises aux REP, 10 000 entreprises concernées par le reporting CSRD déchets.",
+  "monetization": "SaaS B2G 200-800€/mois pour les collectivités. B2B 50-200€/mois pour les PME soumises aux REP. B2B 200-1000€/mois pour le reporting CSRD déchets.",
+  "context": "La gestion des déchets en France traverse une transformation réglementaire sans précédent. La loi AGEC (Anti-Gaspillage pour une Économie Circulaire, 2020) a créé 12 nouvelles filières REP entre 2021 et 2025, imposant à 200 000 entreprises de déclarer et financer la fin de vie de leurs produits. Le tri des biodéchets est devenu obligatoire pour tous au 1er janvier 2024. Trackdéchets, la plateforme numérique de traçabilité des déchets dangereux, est devenue obligatoire pour tous les bordereaux de suivi de déchets depuis 2022. En parallèle, la directive CSRD impose à 10 000 entreprises en France de reporter leurs données déchets dans leur bilan extra-financier dès 2025. Côté données, l'écosystème est riche : 1 763 datasets liés aux déchets sur data.gouv.fr, l'API Trackdéchets ouverte, les données SINOE de l'ADEME sur les tonnages et installations. Pourtant, les outils restent fragmentés : Trackdéchets est un outil de traçabilité réglementaire austère, SINOE est un observatoire statistique peu ergonomique, et les collectivités gèrent leurs données déchets dans des tableurs. Le décalage entre la pression réglementaire croissante et la pauvreté des outils d'aide à la décision crée une opportunité majeure pour des SaaS spécialisés.",
+  "signals": [
+    {
+      "label": "Visites Trackdéchets",
+      "value": "4 155/an",
+      "detail": "sur Trackdéchets déchets dangereux (data.gouv.fr)"
+    },
+    {
+      "label": "Visites SINOE tonnages",
+      "value": "3 902/an",
+      "detail": "sur SINOE tonnages déchèteries par département"
+    },
+    {
+      "label": "Marchés publics déchets",
+      "value": "37 700 annonces",
+      "detail": "de marchés publics déchets sur le BOAMP"
+    },
+    {
+      "label": "Datasets déchets",
+      "value": "1 763 datasets",
+      "detail": "liés aux déchets sur data.gouv.fr"
+    },
+    {
+      "label": "Nouvelles filières REP",
+      "value": "12 filières",
+      "detail": "créées entre 2021 et 2025 par la loi AGEC"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "649af611",
+      "name": "Trackdéchets — Bordereaux déchets dangereux",
+      "description": "Données de traçabilité des déchets dangereux : bordereaux de suivi, producteurs, transporteurs, installations de traitement.",
+      "visits": "4.2K/an",
+      "downloads": "1.5K/an",
+      "updateFrequency": "Mensuel"
+    },
+    {
+      "datasetId": "5e9dc6fb50e78562fdf2d2a5",
+      "name": "SINOE — Tonnages déchèteries par département",
+      "description": "Tonnages collectés en déchèterie par type de déchet et par département. Source ADEME.",
+      "visits": "3.9K/an",
+      "downloads": "2.1K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "62052b50a12707d1c66150d5",
+      "name": "SINOE — Annuaire des installations de traitement",
+      "description": "Annuaire des installations de traitement des déchets ménagers en France : centres de tri, ISDND, incinérateurs, composteurs.",
+      "visits": "2.1K/an",
+      "downloads": "900/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "66631f6d5ff38efa62d385ac",
+      "name": "ICPE — Installations classées déchets",
+      "description": "Base des installations classées pour la protection de l'environnement (ICPE) liées au traitement des déchets.",
+      "visits": "3.5K/an",
+      "downloads": "1.2K/an",
+      "updateFrequency": "Trimestriel"
+    },
+    {
+      "datasetId": "6419b09847c2a0503b3fa6a4",
+      "name": "REP — Registre des producteurs",
+      "description": "Liste des producteurs et importateurs enregistrés dans les différentes filières REP avec leurs déclarations.",
+      "visits": "1.8K/an",
+      "downloads": "600/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "6763da0a8e03c6a65efb4a70",
+      "name": "Acteurs de l'économie circulaire",
+      "description": "Cartographie des acteurs de l'économie circulaire en France : recycleurs, réparateurs, réemploi, ressourceries.",
+      "visits": "1.2K/an",
+      "downloads": "400/an",
+      "updateFrequency": "Semestriel"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Trackdéchets",
+      "description": "API GraphQL de traçabilité des déchets dangereux : création de BSD, suivi des mouvements, signature dématérialisée.",
+      "baseUrl": "https://api.trackdechets.beta.gouv.fr"
+    },
+    {
+      "name": "API Base Carbone",
+      "description": "Facteurs d'émission CO2 par type de déchet et filière de traitement. Indispensable pour le reporting CSRD.",
+      "baseUrl": "https://data.ademe.fr/datasets/base-carbone"
+    },
+    {
+      "name": "API Ecobalyse",
+      "description": "Calcul d'impact environnemental des produits incluant la fin de vie et le recyclage.",
+      "baseUrl": "https://ecobalyse.beta.gouv.fr/api"
+    },
+    {
+      "name": "API Impact CO2",
+      "description": "Équivalences carbone pour la sensibilisation : convertir les tonnages de déchets en impact concret.",
+      "baseUrl": "https://impactco2.fr/api"
+    }
+  ],
+  "productIdeas": [
+    "DéchetBoard — Tableau de bord collecte et valorisation pour les collectivités avec benchmarks intercommunaux",
+    "REPTracker — Conformité REP automatisée pour les PME : déclarations, contributions, suivi des 12 filières",
+    "WasteMap — Cartographie collaborative du tri et du recyclage pour les citoyens et entreprises",
+    "TrackWaste Pro — Simplification des bordereaux de suivi de déchets pour les PME productrices",
+    "BioTriPilote — Pilotage du déploiement du tri des biodéchets pour les collectivités",
+    "CircularData — Reporting CSRD déchets et économie circulaire pour les ETI et grands groupes"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "EPCI et syndicats de traitement des déchets",
+      "priceRange": "200-800€/mois"
+    },
+    {
+      "segment": "PME soumises aux filières REP",
+      "priceRange": "50-200€/mois"
+    },
+    {
+      "segment": "ETI et grands groupes (reporting CSRD)",
+      "priceRange": "200-1000€/mois"
+    },
+    {
+      "segment": "PME productrices de déchets dangereux",
+      "priceRange": "30-100€/mois"
+    },
+    {
+      "segment": "Bureaux d'études environnement",
+      "priceRange": "200-500€/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Trackdéchets (beta.gouv.fr)",
+      "weakness": "Outil réglementaire de traçabilité — gratuit mais UX austère, pas de tableaux de bord, pas d'aide à la décision, pas de reporting"
+    },
+    {
+      "name": "SINOE (ADEME)",
+      "weakness": "Observatoire statistique des déchets — données agrégées annuelles, pas d'outil opérationnel, interface datée"
+    },
+    {
+      "name": "Hoali",
+      "weakness": "Solution de suivi des déchets en restauration — niche restauration, pas de couverture REP ni collectivités"
+    },
+    {
+      "name": "Upcycle",
+      "weakness": "Composteurs et biodéchets — hardware + logiciel, pas de données open data, prix élevé pour les collectivités"
+    },
+    {
+      "name": "Toovalu / Greenly",
+      "weakness": "Bilan carbone généraliste — les déchets sont un sous-module, pas de spécialisation déchets, pas de lien Trackdéchets"
+    },
+    {
+      "name": "Paprec / Veolia digital",
+      "weakness": "Outils internes des grands opérateurs — propriétaires, réservés à leurs clients, pas accessibles aux PME autonomes"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Pression réglementaire massive : loi AGEC, tri biodéchets obligatoire 2024, CSRD 2025 — chaque réglementation crée un besoin d'outil",
+      "API Trackdéchets gratuite et ouverte : accès direct aux données de traçabilité réglementaire sans scraping",
+      "1 763 datasets sur data.gouv.fr : écosystème de données mature et diversifié (tonnages, installations, filières REP)",
+      "Marché fragmenté sans leader SaaS dominant : ni Veolia ni l'ADEME ne proposent d'outil moderne d'aide à la décision"
+    ],
+    "weaknesses": [
+      "Complexité réglementaire élevée : 12 filières REP avec des règles différentes, nécessite une veille juridique constante",
+      "Marché B2G avec des cycles de vente longs (6-12 mois) et des budgets contraints pour le numérique",
+      "Données SINOE mises à jour annuellement avec un décalage de 18-24 mois — peu adaptées au pilotage opérationnel",
+      "Concurrence indirecte forte des outils internes Veolia/Suez déjà déployés chez leurs clients collectivités"
+    ],
+    "opportunities": [
+      "Loi AGEC : 12 nouvelles filières REP entre 2021 et 2025 créent 200 000 entreprises assujetties qui ont besoin d'outils de conformité",
+      "Tri biodéchets obligatoire depuis le 1er janvier 2024 : 1 200 collectivités doivent déployer de nouvelles collectes sans outil de pilotage",
+      "CSRD 2025 : 10 000 entreprises doivent reporter leurs données déchets dans un format standardisé (ESRS E5)",
+      "Plan national de prévention des déchets 2021-2027 : objectif -15% de déchets ménagers d'ici 2030 nécessite des outils de suivi"
+    ],
+    "threats": [
+      "Trackdéchets pourrait évoluer d'un outil de traçabilité à une plateforme complète d'aide à la décision (roadmap beta.gouv.fr)",
+      "Les éco-organismes (Citeo, Ecosystem, etc.) pourraient développer leurs propres outils de conformité gratuits pour leurs adhérents",
+      "Changement politique pourrait ralentir ou assouplir les obligations AGEC/CSRD, réduisant l'urgence d'outillage",
+      "Les grands éditeurs ERP (SAP, Oracle) intègrent progressivement des modules déchets dans leurs offres enterprise"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Sophie",
+      "role": "Directrice déchets d'un syndicat mixte de traitement (35 communes, 120 000 habitants) en Occitanie",
+      "age": "47 ans",
+      "context": "Gère la collecte, le tri et le traitement des déchets pour 35 communes. Doit déployer le tri des biodéchets pour se conformer à la loi AGEC. Jongle entre les données SINOE, les rapports annuels de l'ADEME, et les tableaux Excel transmis par les prestataires de collecte. Son syndicat est en régie pour la collecte mais délègue le traitement à un opérateur privé.",
+      "painPoints": [
+        "Passe 4h/semaine à consolider les données de collecte dans Excel car chaque prestataire envoie ses chiffres dans un format différent",
+        "N'a aucun outil de benchmark pour comparer ses coûts de collecte avec les syndicats voisins de taille similaire",
+        "Le déploiement du tri des biodéchets avance à l'aveugle : pas de données sur les volumes attendus ni de suivi en temps réel"
+      ],
+      "currentSolution": "Excel + rapports PDF des prestataires + SINOE une fois par an + copier-coller depuis le site de l'ADEME",
+      "budget": "3 000-8 000€/an — budget numérique limité mais justifiable par les économies de temps et l'optimisation des coûts de collecte",
+      "channels": [
+        "AMORCE (réseau national des collectivités pour la gestion des déchets, 950 adhérents)",
+        "Assises Nationales des Déchets (Nantes, tous les 2 ans)",
+        "Pollutec (Lyon, bisannuel)",
+        "Cercle National du Recyclage"
+      ]
+    },
+    {
+      "name": "Marc",
+      "role": "Responsable HSE d'une ETI industrielle (450 salariés, chimie fine) en Auvergne-Rhône-Alpes",
+      "age": "39 ans",
+      "context": "Gère les déchets dangereux et non-dangereux de 3 sites industriels. Doit utiliser Trackdéchets pour les BSD, reporter les déchets dans le bilan CSRD de l'entreprise, et gérer les déclarations REP pour les emballages industriels. Travaille seul sur ces sujets, sans assistant. La direction lui demande de réduire les coûts déchets de 15% d'ici 2027.",
+      "painPoints": [
+        "Jongle entre Trackdéchets (BSD), Citeo (REP emballages), le bilan carbone (Base Carbone) et les tableaux CSRD — aucune donnée centralisée",
+        "Les BSD sur Trackdéchets sont fastidieux : saisie manuelle, interface peu ergonomique, erreurs fréquentes qui bloquent les enlèvements",
+        "Passe 3 jours à préparer les données déchets pour le rapport CSRD parce qu'il faut convertir les tonnages en impact CO2 avec des facteurs d'émission dispersés"
+      ],
+      "currentSolution": "Trackdéchets (obligatoire) + Excel pour le suivi interne + calculs manuels pour le CSRD + prestataire comptable pour les déclarations REP",
+      "budget": "5 000-12 000€/an — l'ETI investit dans les outils de conformité si le ROI est démontré en temps gagné",
+      "channels": [
+        "Pollutec (Lyon)",
+        "Groupe LinkedIn 'Responsables HSE France'",
+        "AFITE (Association Française des Ingénieurs et Techniciens de l'Environnement)",
+        "Webinaires ADEME sur la CSRD"
+      ]
+    },
+    {
+      "name": "Lucie",
+      "role": "Chargée de mission conformité dans un éco-organisme REP (filière DEEE) à Paris",
+      "age": "31 ans",
+      "context": "Travaille pour un éco-organisme agréé qui collecte les contributions de 3 000 producteurs et finance le recyclage des DEEE. Doit vérifier que chaque producteur déclare correctement ses mises en marché, calculer les contributions, et reporter les taux de collecte et recyclage à l'État. L'éco-organisme est sous pression : les objectifs de recyclage augmentent chaque année et les contrôles se durcissent.",
+      "painPoints": [
+        "Les déclarations des 3 000 producteurs arrivent dans des formats hétérogènes : CSV, Excel, PDF — nécessitent un nettoyage manuel colossal",
+        "Pas d'outil pour détecter automatiquement les anomalies de déclaration (volumes incohérents, producteurs manquants)",
+        "Le croisement entre les données de collecte terrain et les contributions financières se fait manuellement dans Excel"
+      ],
+      "currentSolution": "ERP interne vieillissant + Excel pour les analyses + emails pour relancer les producteurs en retard",
+      "budget": "10 000-30 000€/an — l'éco-organisme a les moyens d'investir dans des outils de productivité",
+      "channels": [
+        "Fédérations des éco-organismes (FEDEREC, FNADE)",
+        "Assises Nationales des Déchets",
+        "Réseau RECORD (recherche environnement)",
+        "Conférences ADEME Économie Circulaire"
+      ]
+    }
+  ]
+}

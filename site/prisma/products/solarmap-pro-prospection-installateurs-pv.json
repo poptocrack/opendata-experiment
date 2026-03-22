@@ -1,0 +1,320 @@
+{
+  "productSlug": "solarmap-pro-prospection-installateurs-pv",
+  "oneLiner": "Trouvez vos prochains chantiers PV en croisant potentiel solaire, installations existantes et leads qualifiés.",
+  "problem": "Un installateur photovoltaïque perd un temps considérable à prospecter : il ne sait pas quelles zones de son territoire ont le meilleur potentiel solaire, quels quartiers sont déjà équipés (donc moins rentables à prospecter), ni quels propriétaires ont un projet en cours. Aujourd'hui, il prospecte au porte-à-porte ou via des leads achetés à des plateformes (In Sun We Trust, Otovo) qui prennent 10-15% de commission et fournissent des leads partagés avec 3-4 concurrents.",
+  "solution": "Une plateforme de prospection qui croise les données d'irradiation solaire par commune, le registre des installations PV existantes (pour identifier les zones non équipées à fort potentiel), le listing RGE (pour cartographier la concurrence), et les permis de construire (pour identifier les constructions neuves nécessitant du PV). L'installateur visualise sur une carte interactive les zones à fort potentiel non exploité dans son périmètre, avec des scores de priorité et des estimations de productible.",
+  "uniqueValue": "Les plateformes existantes (In Sun We Trust, Otovo) vendent des leads partagés à commission. SolarMap Pro donne à l'installateur l'intelligence terrain pour générer ses propres leads exclusifs. C'est un outil d'aide à la décision, pas une marketplace qui capture la relation client.",
+  "mvpScope": "Carte interactive par département avec couches : irradiation solaire, installations PV existantes, densité d'installateurs RGE concurrents. Score de potentiel par commune (irradiation × taux d'équipement inversé). Export de liste de communes prioritaires avec données de contact mairie. Couverture France métropolitaine. Pas de leads individuels (pas de données propriétaires). Pas d'intégration CRM. Pas de suivi de conversion.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider l'intérêt des installateurs PV pour un outil de prospection data",
+      "description": "Créer une carte statique de 3 départements avec le score de potentiel par commune. Présenter à 15 installateurs RGE. Mesurer l'intérêt et le prix acceptable.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "Carte statique 3 départements",
+        "15 entretiens installateurs",
+        "Validation pricing",
+        "50 inscrits early access"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Carte interactive nationale avec scores de potentiel",
+      "description": "Pipeline d'ingestion irradiation + registre installations + listing RGE. Carte interactive Mapbox avec couches superposables. Score de potentiel par commune. Export CSV.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Carte interactive nationale",
+        "Score de potentiel par commune",
+        "3 couches superposables",
+        "Export CSV communes prioritaires"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Acquisition via salons et Qualit'EnR",
+      "description": "Partenariat distribution avec Qualit'EnR et GMPV-FFB. Présence à Energaïa. Campagne emailing ciblée sur les 4 500 entreprises RGE PV.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "Partenariat Qualit'EnR",
+        "100 installateurs inscrits",
+        "30 abonnés payants",
+        "2K MRR"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Intégration leads permis de construire et alertes",
+      "description": "Couche permis de construire (constructions neuves = prospects PV). Alertes hebdomadaires par zone. Intégration basique avec CRM (export API).",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Couche permis de construire",
+        "Alertes hebdomadaires",
+        "API export CRM",
+        "80 abonnés payants"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Module de devis rapide intégré (dimensionnement + tarifs CRE). Partenariats avec les grossistes (Rexel, Sonepar) pour distribution. Extension aux installateurs PAC et bornes de recharge.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "150 abonnés payants",
+        "Module devis rapide",
+        "Extension PAC/bornes"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les installateurs PV souffrent-ils réellement d'un manque de visibilité sur le potentiel de leur zone ?",
+      "how": "Interviewer 15 installateurs RGE PV (via GMPV-FFB et Qualit'EnR). Demander comment ils prospectent et combien ils dépensent en acquisition de leads.",
+      "successCriteria": "10/15 confirment prospecter au feeling ou via des leads achetés. Budget moyen d'acquisition > 200€/mois."
+    },
+    {
+      "check": "Les données d'irradiation × registre installations permettent-elles de calculer un score de potentiel fiable ?",
+      "how": "Calculer le score sur 50 communes et le comparer avec les données de raccordement Enedis des 12 derniers mois. Les communes à haut score devraient avoir plus de raccordements récents.",
+      "successCriteria": "Corrélation positive > 0,6 entre le score de potentiel et le nombre de raccordements récents."
+    },
+    {
+      "check": "Les installateurs sont-ils prêts à payer un abonnement mensuel pour de l'intelligence terrain ?",
+      "how": "Proposer 3 niveaux de prix (49€, 99€, 199€/mois) aux 15 installateurs interviewés. Demander quel prix est acceptable et pour quelles fonctionnalités.",
+      "successCriteria": "8/15 acceptent un prix entre 49€ et 99€/mois. 5/15 acceptent 199€/mois avec les alertes et permis de construire."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Installateurs PV indépendants et PME (5-20 salariés) certifiés RGE",
+      "where": "GMPV-FFB (Groupement des Métiers du Photovoltaïque), Qualit'EnR (organisme de qualification), Energaïa Montpellier, BePOSITIVE Lyon",
+      "howToReach": "Partenariat avec Qualit'EnR pour diffuser l'outil lors des formations RGE. Stand à Energaïa avec démo live sur la zone de chalandise de chaque visiteur. Emailing ciblé via le listing RGE ADEME (4 500 entreprises PV)."
+    },
+    {
+      "who": "Groupements d'installateurs et franchises PV",
+      "where": "Groupe Facebook 'Installateurs photovoltaïques France' (3 200 membres), forums Photovoltaïque.info, LinkedIn groupe 'Énergie solaire France'",
+      "howToReach": "Post de démonstration avec la carte de potentiel d'un département. Offre d'essai gratuit 30 jours. Webinaire 'Comment identifier les zones sous-exploitées de votre territoire'."
+    },
+    {
+      "who": "Grossistes en matériel PV (Rexel Solar, Sonepar, BayWa r.e.)",
+      "where": "Salons Intersolar Europe, Energaïa, BePOSITIVE, conférences SER (Syndicat des Énergies Renouvelables)",
+      "howToReach": "Proposer un partenariat de distribution : le grossiste offre SolarMap Pro en bonus à ses clients installateurs. Commission de 20% sur les abonnements."
+    }
+  ],
+  "pricingStrategy": "Freemium : carte nationale en lecture seule avec score de potentiel par département (sans détail commune). Solo 49€/mois : détail par commune + 1 département + export CSV. Pro 99€/mois : tous les départements + alertes hebdomadaires + couche installations existantes. Business 199€/mois : + couche permis de construire + couche concurrents RGE + API export CRM + multi-utilisateur (jusqu'à 5). Le freemium sert à démontrer la valeur et à collecter des leads installateurs.",
+  "pathTo10kMrr": "70 abonnés Solo × 49€ = 3 430€ + 40 abonnés Pro × 99€ = 3 960€ + 15 abonnés Business × 199€ = 2 985€ = 10 375€ MRR. Sur un marché de 4 500 installateurs RGE PV, cela représente un taux de pénétration de 2,8%. Atteignable en 10-12 mois avec distribution via Qualit'EnR et présence aux salons.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Mapbox GL JS pour la carte interactive avec couches",
+    "backend": "Next.js API Routes + Python scripts pour le pipeline data (irradiation, registre PV, RGE, permis)",
+    "database": "PostgreSQL sur Supabase avec PostGIS pour les requêtes géospatiales (zones de chalandise, rayon)",
+    "hosting": "Vercel (frontend) + Supabase (DB + PostGIS) + GitHub Actions (CRON hebdomadaire mise à jour registre)",
+    "apis": [
+      "API Professionnels RGE (ADEME)",
+      "API BAN (géocodage)",
+      "Registre national installations PV",
+      "Données irradiation solaire par commune",
+      "Mapbox API (cartographie)",
+      "Stripe (paiements)"
+    ],
+    "notes": "Tuiles vectorielles Mapbox pour la performance sur 36 000 communes. Pré-calcul du score de potentiel par commune (batch quotidien). PostGIS nécessaire pour les requêtes de zone de chalandise et la couche concurrents."
+  },
+  "risks": [
+    {
+      "risk": "In Sun We Trust ou Otovo pourraient lancer un outil de prospection similaire pour fidéliser leurs installateurs partenaires",
+      "mitigation": "Se positionner comme l'anti-marketplace : pas de commission, pas de leads partagés, l'installateur garde 100% de sa relation client. Construire une communauté d'installateurs indépendants."
+    },
+    {
+      "risk": "Les installateurs artisans sont peu numérisés et pourraient ne pas adopter un outil SaaS",
+      "mitigation": "UX ultra-simple (carte, clic, résultat). Application mobile first pour l'usage terrain. Onboarding en 5 minutes. Support téléphonique dédié les 3 premiers mois."
+    },
+    {
+      "risk": "Le score de potentiel pourrait être imprécis et décrédibiliser l'outil",
+      "mitigation": "Valider le modèle sur des données historiques de raccordement Enedis. Afficher clairement la méthodologie et les limites. Permettre les retours terrain des installateurs pour affiner le modèle."
+    }
+  ],
+  "inspirations": "Aurora Solar (US) — plateforme de conception et prospection PV pour installateurs, levée 250M$. Mais cher (200-500$/mois) et pas adapté au marché français. Mesvoisins.fr — carte de déploiement fibre qui a inspiré la prospection par zone sous-équipée. Prospecteur (FR) — outil de prospection immobilière par croisement de données publiques.",
+  "searchVolume": [
+    {
+      "keyword": "installateur photovoltaïque",
+      "monthlyVolume": "15000-25000",
+      "difficulty": "élevée",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "potentiel solaire commune",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "panneau solaire rentabilité",
+      "monthlyVolume": "5000-8000",
+      "difficulty": "élevée",
+      "intent": "informational"
+    },
+    {
+      "keyword": "prospection solaire",
+      "monthlyVolume": "200-500",
+      "difficulty": "faible",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "entreprise RGE photovoltaïque",
+      "monthlyVolume": "2000-4000",
+      "difficulty": "moyenne",
+      "intent": "commercial"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "54 millions EUR — 4 500 installateurs RGE PV × 1 000€/an de budget outils de prospection moyen",
+    "sam": "13,5 millions EUR — 2 250 installateurs de plus de 5 salariés ayant un budget numérique identifié (50% du marché)",
+    "som": "1,5 million EUR — 125 abonnés × 99€ moyen × 12 mois, atteignable en 18 mois avec distribution Qualit'EnR et salons",
+    "methodology": "TAM basé sur le listing RGE ADEME (4 500 entreprises certifiées PV en France). SAM restreint aux entreprises de plus de 5 salariés (source : Qualit'EnR). SOM basé sur un taux de pénétration de 2,8% avec pricing moyen à 99€/mois."
+  },
+  "competitorDeep": [
+    {
+      "name": "In Sun We Trust / Otovo",
+      "url": "https://www.insunwetrust.solar",
+      "pricing": "Gratuit pour l'installateur partenaire mais commission 10-15% sur chaque chantier signé via la plateforme. Coût réel : 500-2000€ par lead converti.",
+      "trafficEstimate": "300-500K visites/an. Forte présence SEO sur les requêtes résidentielles.",
+      "reviews": "Bonne marque B2C. Les installateurs critiquent les commissions élevées et les leads partagés avec 3-4 concurrents.",
+      "strengths": "Forte notoriété. SEO puissant. Processus de devis automatisé. Marque de confiance pour les particuliers.",
+      "weaknesses": "Modèle marketplace : l'installateur paie une commission et ne maîtrise pas la relation client. Leads partagés avec des concurrents. Pas d'outil de prospection propre."
+    },
+    {
+      "name": "Aurora Solar",
+      "url": "https://www.aurorasolar.com",
+      "pricing": "200-500$/mois selon la taille de l'installateur. Plan enterprise sur devis.",
+      "trafficEstimate": "Forte fréquentation US. Quasi-inexistant en France (< 5K visites/an depuis la France).",
+      "reviews": "Excellent produit, référence aux US. Trop cher et mal adapté au marché français (pas de données RGE, pas de tarifs CRE, irradiation US-centrique).",
+      "strengths": "Conception PV avancée (modélisation 3D toiture). Prospection par zone. Calcul financier intégré. 250M$ de levée de fonds.",
+      "weaknesses": "Pas adapté à la France (pas de RGE, pas de tarifs CRE, pas d'aides françaises). Prix élevé pour un artisan français. Interface en anglais."
+    },
+    {
+      "name": "Cadastres solaires municipaux (divers)",
+      "url": "https://cadastre-solaire.fr",
+      "pricing": "Gratuit (financé par les collectivités locales).",
+      "trafficEstimate": "Trafic très local. Chaque ville a son propre cadastre. Couverture fragmentaire (30 villes).",
+      "reviews": "Utile pour les citoyens mais inadapté aux professionnels. Données non exportables. Pas de mise à jour régulière.",
+      "strengths": "Données de potentiel solaire par toiture (lidar). Gratuit. Interface visuelle.",
+      "weaknesses": "Couverture limitée à 30 villes. Pas de données d'installations existantes. Pas d'export. Pas d'outil pro. Pas de prospection."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Listing RGE ADEME",
+      "status": "ok",
+      "detail": "Publié en open data sous Licence Ouverte v2. Réutilisation commerciale autorisée. Données d'entreprises, pas de données personnelles.",
+      "source": "https://data.ademe.fr/datasets/liste-des-entreprises-rge"
+    },
+    {
+      "topic": "Registre national des installations PV",
+      "status": "ok",
+      "detail": "Données publiques de raccordement. Pas de données personnelles (localisation à la commune, pas à l'adresse). Licence Ouverte.",
+      "source": "https://www.data.gouv.fr — Registre national des installations"
+    },
+    {
+      "topic": "Données d'irradiation solaire",
+      "status": "ok",
+      "detail": "Données publiques PVGIS / Météo-France. Pas de restriction de réutilisation commerciale.",
+      "source": "https://re.jrc.ec.europa.eu/pvg_tools/"
+    },
+    {
+      "topic": "RGPD — données installateurs RGE",
+      "status": "attention",
+      "detail": "Le listing RGE contient des noms de dirigeants et adresses email professionnelles. Ces données sont publiées en open data mais la prospection directe par email nécessite un intérêt légitime documenté (Art. 6.1.f RGPD).",
+      "source": "CNIL — Prospection B2B et intérêt légitime"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "Salons EnR (Energaïa, BePOSITIVE)",
+      "cacEstimate": "150-400€",
+      "conversionRate": "10-20%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "3:1 à 8:1"
+    },
+    {
+      "channel": "Partenariat Qualit'EnR / GMPV-FFB",
+      "cacEstimate": "30-80€",
+      "conversionRate": "5-10%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "15:1 à 40:1"
+    },
+    {
+      "channel": "Emailing listing RGE ADEME",
+      "cacEstimate": "20-60€",
+      "conversionRate": "2-5%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "20:1 à 60:1"
+    },
+    {
+      "channel": "Facebook/LinkedIn ads ciblant installateurs",
+      "cacEstimate": "80-200€",
+      "conversionRate": "2-4%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "6:1 à 15:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Listing RGE, registre installations et données irradiation vérifiés sur data.gouv.fr et PVGIS."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et téléchargements mesurés via l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing In Sun We Trust estimé via articles de presse et témoignages installateurs. Aurora Solar vérifié sur le site. Trafic estimé via SimilarWeb."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés par extrapolation Google Trends. Les requêtes 'installateur photovoltaïque' sont B2C, pas B2B — le volume de recherche B2B est plus faible."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Nombre d'installateurs RGE vérifié sur data.gouv.fr. Budget outils estimé par benchmark avec d'autres métiers artisanaux."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Licences open data vérifiées. Point RGPD sur la prospection B2B documenté."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "CAC estimé sur des benchmarks SaaS B2B artisanat. Aucune campagne test réalisée."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données sources vérifiées et marché identifié. Le taux de conversion d'artisans peu numérisés vers un SaaS reste l'hypothèse la plus risquée."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 70,
+      "detail": "56K visites/an sur le listing RGE prouve l'intérêt. Mais les installateurs cherchent des clients, pas des outils de prospection — le besoin est latent, pas exprimé."
+    },
+    "feasibility": {
+      "score": 80,
+      "detail": "MVP en 5 semaines. Stack classique + Mapbox. Données disponibles et structurées. PostGIS nécessaire mais maîtrisé. Pipeline data simple."
+    },
+    "market": {
+      "score": 65,
+      "detail": "125 abonnés nécessaires pour 10K MRR sur 4 500 installateurs RGE (2,8% de pénétration). Faible panier moyen (99€/mois). Marché niche."
+    },
+    "competition": {
+      "score": 72,
+      "detail": "Pas de concurrent direct en France sur la prospection data PV. Aurora Solar trop cher et US-centric. Risque : In Sun We Trust pourrait lancer un outil similaire."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "3 points OK, 1 point d'attention (RGPD prospection B2B). Risque mineur et gérable avec un intérêt légitime documenté."
+    },
+    "overall": {
+      "score": 73,
+      "detail": "Point fort : faisabilité (80/100) et absence de concurrent direct (72/100). Point faible : marché niche avec panier moyen faible (65/100). Nécessite un volume d'abonnés important."
+    }
+  }
+}

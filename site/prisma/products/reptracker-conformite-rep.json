@@ -1,0 +1,322 @@
+{
+  "productSlug": "reptracker-conformite-rep",
+  "oneLiner": "La conformité REP simplifiée pour les PME : 12 filières, un seul outil.",
+  "problem": "Un dirigeant de PME de 50 salariés qui fabrique des produits électroniques, des textiles ou des emballages doit déclarer ses mises en marché auprès de plusieurs éco-organismes (Citeo, Ecosystem, Refashion...). Chaque filière REP a ses propres barèmes, ses propres formulaires, ses propres échéances. La loi AGEC a créé 12 nouvelles filières entre 2021 et 2025 : articles de sport, jouets, articles de bricolage, textiles sanitaires... Beaucoup de PME ne savent même pas qu'elles sont assujetties. Résultat : des amendes, des déclarations en retard, et un temps fou passé à comprendre des obligations fragmentées.",
+  "solution": "Un SaaS qui centralise la conformité REP : l'utilisateur renseigne ses produits et volumes, REPTracker identifie automatiquement les filières REP applicables, calcule les contributions estimées, génère les déclarations dans le format de chaque éco-organisme, et envoie des alertes avant chaque échéance. Un tableau de bord unique remplace la navigation entre 12 portails d'éco-organismes différents.",
+  "uniqueValue": "Aucun outil ne couvre les 12 filières REP dans une interface unique. Chaque éco-organisme a son propre portail. Les PME doivent naviguer entre Citeo (emballages), Ecosystem (DEEE), Refashion (textiles), Valdélia (meubles), etc. REPTracker est le premier outil transversal de conformité REP pour les PME françaises.",
+  "mvpScope": "Couverture de 4 filières REP majeures (emballages, DEEE, textiles, meubles). Questionnaire de diagnostic : 'Êtes-vous assujetti ?'. Calcul des contributions estimées par filière. Calendrier des échéances avec alertes email. Export des déclarations au format requis. Pas de connexion directe aux portails éco-organismes. Pas de paiement intégré des contributions.",
+  "timeToMvp": "5 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider que les PME peinent avec la conformité REP",
+      "description": "Sondage auprès de 50 PME via les CCI et CPME. Interviews de 15 responsables qualité/achats. Analyse des sanctions DGCCRF publiées.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "50 réponses au sondage",
+        "15 interviews qualitatives",
+        "Cartographie des 12 filières REP et barèmes",
+        "10 lettres d'intention"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Diagnostic REP et calculateur de contributions",
+      "description": "Questionnaire de diagnostic filières REP. Calculateur de contributions pour 4 filières. Calendrier des échéances. Interface web responsive.",
+      "duration": "5 semaines",
+      "deliverables": [
+        "Diagnostic 4 filières REP",
+        "Calculateur de contributions",
+        "Calendrier avec alertes",
+        "Export déclarations"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Acquisition via CCI et CPME",
+      "description": "Partenariats CCI pour diffuser l'outil. Landing page SEO sur 'REP + filière'. Webinaires gratuits 'Êtes-vous en conformité REP ?'.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "3 partenariats CCI signés",
+        "200 inscrits",
+        "50 utilisateurs actifs",
+        "30 clients payants"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Couverture des 12 filières et automatisation",
+      "description": "Extension aux 12 filières REP. Connexion aux API des éco-organismes (quand disponibles). Module de suivi des paiements de contributions.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "12 filières REP couvertes",
+        "2 intégrations éco-organismes",
+        "100 clients payants",
+        "API ouverte pour les experts-comptables"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Offre experts-comptables (multi-clients). Module CSRD déchets. Partenariat éco-organismes pour la data. SEO agressif sur 'conformité REP + filière'.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR",
+        "200 PME clientes",
+        "20 cabinets comptables partenaires",
+        "Module CSRD intégré"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les PME sont-elles réellement perdues face aux obligations REP multiples ?",
+      "how": "Sondage auprès de 50 PME industrielles via les CCI régionales et la CPME. Question clé : 'Combien de filières REP vous concernent et lesquelles ?'.",
+      "successCriteria": "30/50 ne savent pas exactement combien de filières les concernent. 20/50 ont déjà été en retard sur une déclaration."
+    },
+    {
+      "check": "Les PME sont-elles prêtes à payer 50-150€/mois pour un outil de conformité REP ?",
+      "how": "Présenter le calculateur REP à 15 dirigeants de PME. Comparer avec le coût actuel (temps interne + risque d'amende).",
+      "successCriteria": "10/15 trouvent le prix acceptable. Le coût interne actuel estimé > 200€/mois (temps passé × coût horaire)."
+    },
+    {
+      "check": "Les barèmes REP sont-ils suffisamment stables pour automatiser le calcul ?",
+      "how": "Analyser l'historique des changements de barèmes sur les 4 filières principales (2021-2025). Estimer la fréquence de mise à jour nécessaire.",
+      "successCriteria": "Les barèmes changent au maximum 1 fois/an par filière. Les changements sont prévisibles (publiés au JO)."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "PME industrielles assujetties à 3+ filières REP (emballages + DEEE + meubles)",
+      "where": "CCI (réseau de 122 CCI en France), CPME (confédération des PME), salons Pollutec et Produrable",
+      "howToReach": "Webinaire gratuit via les CCI : 'Loi AGEC : les 12 nouvelles obligations REP des PME'. Proposer un diagnostic gratuit 'Combien de filières REP vous concernent ?'."
+    },
+    {
+      "who": "Experts-comptables et cabinets de conseil RSE qui gèrent les déclarations REP pour leurs clients",
+      "where": "Ordre des Experts-Comptables (21 000 cabinets), congrès annuel de l'OEC, salons Solutions CSE",
+      "howToReach": "Proposer une offre multi-clients pour les cabinets : un seul abonnement pour gérer les déclarations REP de tous leurs clients PME."
+    },
+    {
+      "who": "Startups e-commerce importatrices (assujetties REP emballages + REP produits importés)",
+      "where": "French Tech, France Digitale, groupes Facebook 'E-commerce France', forums Shopify/PrestaShop FR",
+      "howToReach": "Article de blog SEO : 'E-commerce : êtes-vous en conformité avec les 5 filières REP qui vous concernent ?'. Plugin PrestaShop/Shopify."
+    }
+  ],
+  "pricingStrategy": "SaaS mensuel par nombre de filières REP. Starter (1-2 filières) : 49€/mois. Pro (3-6 filières) : 99€/mois. Entreprise (7-12 filières) : 199€/mois. Offre cabinet comptable : 29€/mois par client. Le prix est positionné à 1/5e du coût d'un consultant REP (500-1 500€/an par filière) et 1/100e du risque d'amende (jusqu'à 100 000€).",
+  "pathTo10kMrr": "40 PME Starter × 49€ = 1 960€ + 50 PME Pro × 99€ = 4 950€ + 10 PME Entreprise × 199€ = 1 990€ + 20 cabinets × 3 clients × 29€ = 1 740€ = 10 640€ MRR. Atteignable en 8-10 mois : le diagnostic gratuit 'Combien de filières REP vous concernent ?' convertit à 15-20% en payant.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + shadcn/ui pour les formulaires de diagnostic",
+    "backend": "Next.js API Routes — logique métier de calcul des contributions REP par filière",
+    "database": "PostgreSQL sur Supabase — barèmes REP versionnés, déclarations clients, calendrier",
+    "hosting": "Vercel (frontend + API) + Supabase (DB) + Resend (alertes email échéances)",
+    "apis": [
+      "Données REP data.gouv.fr (registre producteurs)",
+      "API Base Carbone ADEME (facteurs émission)",
+      "API Sirene (identification entreprises)",
+      "Stripe pour les paiements"
+    ],
+    "notes": "Barèmes REP stockés dans des fichiers JSON versionnés, mis à jour manuellement 1 fois/an à la publication des arrêtés. Calcul des contributions côté serveur. Export PDF/CSV des déclarations."
+  },
+  "risks": [
+    {
+      "risk": "Les éco-organismes développent leurs propres outils de diagnostic et déclaration simplifiés",
+      "mitigation": "Les éco-organismes sont mono-filière par définition. La valeur de REPTracker est le multi-filière. Même si Citeo améliore son portail, ça ne couvre pas DEEE, textiles, meubles, etc."
+    },
+    {
+      "risk": "Les barèmes REP changent fréquemment et rendent l'outil inexact",
+      "mitigation": "Veille réglementaire automatisée (JO, sites éco-organismes). Les barèmes sont publiés 6 mois avant application. Prévoir un budget de maintenance réglementaire de 2h/mois."
+    },
+    {
+      "risk": "Les PME sous-estiment leurs obligations REP et ne cherchent pas activement un outil",
+      "mitigation": "Le diagnostic gratuit sert d'acquisition : 'Découvrez en 2 minutes si vous êtes en conformité'. Les amendes DGCCRF (publiées) servent de levier de communication."
+    },
+    {
+      "risk": "Difficulté à maintenir la précision des calculs sur 12 filières avec des règles différentes",
+      "mitigation": "Démarrer avec 4 filières majeures (80% du marché). Ajouter les filières progressivement. Afficher clairement les estimations vs. les calculs certifiés."
+    }
+  ],
+  "inspirations": "Pennylane (France) — a simplifié la comptabilité des PME comme REPTracker simplifie la conformité REP. PayFit (France) — a automatisé les fiches de paie, même logique d'automatisation réglementaire. LUCIDYA (Arabie Saoudite) — compliance SaaS pour les obligations réglementaires. Avalara (US) — automatisation de la taxe de vente, même modèle de 'conformité as a service'.",
+  "searchVolume": [
+    {
+      "keyword": "REP emballages déclaration",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "loi AGEC obligations entreprise",
+      "monthlyVolume": "2000-4000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "éco-organisme REP liste",
+      "monthlyVolume": "800-1500",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "filière REP 2025",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "contribution REP calcul",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "240 millions EUR — 200 000 entreprises assujetties REP × contribution moyenne de conformité estimée à 1 200€/an (temps interne + outils)",
+    "sam": "24 millions EUR — 20 000 PME assujetties à 3+ filières REP qui ont un besoin réel d'outillage multi-filière",
+    "som": "1,5 million EUR — 120 PME × 1 100€/an (prix moyen pondéré) + 20 cabinets × 10 400€/an, atteignable en 18 mois",
+    "methodology": "TAM basé sur le nombre d'entreprises assujetties REP (source : éco-organismes agréés, rapports ADEME 2024). SAM restreint aux PME multi-filières. SOM basé sur le business plan avec taux de conversion réaliste via CCI et CPME."
+  },
+  "competitorDeep": [
+    {
+      "name": "Portails éco-organismes (Citeo, Ecosystem, Refashion...)",
+      "url": "https://www.citeo.com / https://www.ecosystem.eco / https://refashion.fr",
+      "pricing": "Gratuit (financé par les contributions REP elles-mêmes).",
+      "trafficEstimate": "Citeo : 200-500K visites/an. Ecosystem : 100-300K. Refashion : 50-100K.",
+      "reviews": "Chaque portail est fonctionnel pour sa filière mais la navigation entre 12 portails est un cauchemar pour les PME multi-filières.",
+      "strengths": "Outils officiels et gratuits. Chaque portail connaît parfaitement les barèmes de sa filière. Support dédié.",
+      "weaknesses": "Mono-filière par nature. Pas de vue consolidée multi-REP. Interfaces hétérogènes. Chaque portail a ses propres identifiants, formats, échéances."
+    },
+    {
+      "name": "Veolia / Suez (conseil REP)",
+      "url": "https://www.veolia.fr",
+      "pricing": "Prestations de conseil sur devis — estimé 2 000-10 000€ par accompagnement REP.",
+      "trafficEstimate": "Non pertinent (service de conseil, pas de plateforme SaaS).",
+      "reviews": "Service complet mais réservé aux grandes entreprises. Pas accessible aux PME < 100 salariés.",
+      "strengths": "Expertise réglementaire complète. Réseau d'éco-organismes. Accompagnement personnalisé.",
+      "weaknesses": "Prix élevé (> 5 000€). Pas d'outil self-service. Pas adapté aux PME. Pas de plateforme SaaS."
+    },
+    {
+      "name": "Toovalu",
+      "url": "https://www.toovalu.com",
+      "pricing": "Sur devis — estimé 300-1 500€/mois. Bilan carbone incluant un module déchets.",
+      "trafficEstimate": "Estimé 10-30K visites/an. Positionnement RSE/CSRD généraliste.",
+      "reviews": "Apprécié pour le bilan carbone global. Module déchets basique, pas de spécialisation REP.",
+      "strengths": "Vue globale RSE. Module CSRD intégré. Interface moderne.",
+      "weaknesses": "Déchets = sous-module basique. Pas de calcul de contributions REP. Pas de couverture multi-filière. Prix élevé pour une PME."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Barèmes REP (arrêtés d'agrément)",
+      "status": "ok",
+      "detail": "Les barèmes REP sont publiés au Journal Officiel et sur les sites des éco-organismes. Données publiques, librement réutilisables.",
+      "source": "https://www.legifrance.gouv.fr — Arrêtés d'agrément éco-organismes"
+    },
+    {
+      "topic": "Registre des producteurs REP (data.gouv.fr)",
+      "status": "ok",
+      "detail": "Liste des producteurs enregistrés publiée en open data. Licence Ouverte v2.",
+      "source": "https://www.data.gouv.fr — Dataset REP producteurs"
+    },
+    {
+      "topic": "Conseil réglementaire vs. exercice illégal",
+      "status": "attention",
+      "detail": "Le calcul des contributions REP est une information, pas un conseil juridique. Mais les déclarations officielles doivent être signées par le producteur lui-même. REPTracker fournit une estimation et un pré-remplissage, pas une déclaration certifiée.",
+      "source": "Article L541-10 du Code de l'environnement"
+    },
+    {
+      "topic": "RGPD — données entreprises",
+      "status": "ok",
+      "detail": "Les données manipulées sont des données d'entreprise (SIREN, volumes de production, contributions). Pas de données personnelles au sens du RGPD. Le registre des producteurs est public.",
+      "source": "CNIL — Données des personnes morales"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (requêtes REP, conformité, loi AGEC)",
+      "cacEstimate": "15-40€",
+      "conversionRate": "5-8%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "30:1 à 79:1"
+    },
+    {
+      "channel": "CCI et CPME (webinaires, newsletter)",
+      "cacEstimate": "50-120€",
+      "conversionRate": "8-15%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "10:1 à 24:1"
+    },
+    {
+      "channel": "Google Ads (requêtes REP)",
+      "cacEstimate": "80-200€",
+      "conversionRate": "3-6%",
+      "ltv": "1 188€ (99€ × 12 mois)",
+      "ltvCacRatio": "6:1 à 15:1"
+    },
+    {
+      "channel": "Partenariats cabinets comptables",
+      "cacEstimate": "20-50€",
+      "conversionRate": "15-25%",
+      "ltv": "348€ (29€ × 12 mois par client)",
+      "ltvCacRatio": "7:1 à 17:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "Registre REP producteurs et barèmes éco-organismes vérifiés sur data.gouv.fr et sites officiels."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Nombre de filières REP et entreprises assujetties proviennent des rapports ADEME et des éco-organismes agréés."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Portails éco-organismes analysés. Pricing Toovalu et Veolia estimés (sur devis). Trafic estimé via SimilarWeb."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés sans outil SEO professionnel. La loi AGEC génère un trafic de recherche croissant depuis 2021."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Nombre d'entreprises assujetties basé sur les rapports éco-organismes. Le chiffre de 200 000 est une estimation ADEME."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Barèmes REP publiés au JO. Point d'attention sur la distinction information vs. conseil certifié."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basées sur des benchmarks SaaS B2B PME. Les CCI comme canal n'ont pas été testées."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Opportunité réglementaire forte (loi AGEC vérifiée). Le nombre exact de PME multi-filières et leur willingness-to-pay restent à valider."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 72,
+      "detail": "4-8K recherches/mois sur les requêtes REP et loi AGEC. 200 000 entreprises assujetties. Pression réglementaire croissante avec les nouvelles filières 2024-2025."
+    },
+    "feasibility": {
+      "score": 75,
+      "detail": "MVP en 5 semaines. 4 filières REP au démarrage. Barèmes publics et stables. Pas de données en temps réel nécessaires. Stack simple."
+    },
+    "market": {
+      "score": 70,
+      "detail": "120 clients pour 10K MRR. PME avec des cycles de décision courts (1-3 mois). Le prix est faible (49-199€/mois). Le risque d'amende est un levier de conversion puissant."
+    },
+    "competition": {
+      "score": 75,
+      "detail": "Pas de SaaS multi-filières REP sur le marché français. Les portails éco-organismes sont mono-filière. Toovalu est généraliste. Créneau ouvert."
+    },
+    "legal": {
+      "score": 80,
+      "detail": "3 points OK, 1 point d'attention (distinction information vs. conseil). Barèmes publics. Données entreprises, pas de RGPD."
+    },
+    "overall": {
+      "score": 74,
+      "detail": "Créneau de conformité réglementaire avec une forte urgence (loi AGEC) et pas de concurrent SaaS direct. Point faible : fragmentation des 12 filières à couvrir progressivement."
+    }
+  }
+}

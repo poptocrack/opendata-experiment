@@ -1,0 +1,227 @@
+{
+  "id": "eclairage-public",
+  "rank": 20,
+  "title": "Éclairage Public",
+  "slug": "eclairage-public",
+  "sector": "Éclairage public",
+  "tagline": "11 millions de points lumineux, 41% de la consommation électrique des communes, transition LED obligatoire et données satellite Cerema nationales",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "2 milliards €/an de dépenses communales. 34 000 communes, 80 syndicats d'énergie départementaux.",
+  "monetization": "SaaS B2G 99-499€/mois pour communes et syndicats d'énergie. One-shot 1 500-5 000€ pour audits/diagnostics patrimoine. B2B 200-800€/mois pour bureaux d'études éclairage.",
+  "context": "L'éclairage public représente 41% de la consommation électrique des communes françaises et constitue leur premier poste de dépense énergétique. Sur 11 millions de points lumineux, 40% utilisent encore des technologies obsolètes (sodium, mercure) dont l'interdiction progressive par la directive européenne EcoDesign force le remplacement. La crise énergétique de 2022-2023 a amplifié l'urgence : les factures d'électricité des communes ont doublé, poussant des milliers d'entre elles à éteindre partiellement la nuit. En parallèle, la réglementation sur la pollution lumineuse se durcit (arrêté du 27 décembre 2018 renforcé en 2025) et la trame noire devient un enjeu de biodiversité majeur, avec l'obligation de réduire les émissions lumineuses dans les zones protégées. Les données ouvertes du Cerema (cartographie radiance nocturne par satellite, cartographie des extinctions) combinées aux données ADEME sur l'énergie du patrimoine communal et aux certificats d'économie d'énergie (CEE) créent un écosystème de données suffisant pour construire des outils de diagnostic, simulation et planification. Pourtant, les 34 000 communes gèrent leur parc d'éclairage avec des tableurs Excel quand elles ont de la chance, et à l'intuition le plus souvent. Les syndicats d'énergie départementaux tentent de mutualiser l'expertise mais manquent d'outils numériques modernes.",
+  "signals": [
+    {
+      "label": "Visites éclairage public Paris",
+      "value": "4 751/an",
+      "detail": "sur le dataset éclairage public de Paris"
+    },
+    {
+      "label": "Visites radiance nocturne Cerema",
+      "value": "3 663/an",
+      "detail": "sur la cartographie radiance nocturne Cerema"
+    },
+    {
+      "label": "Marchés publics BOAMP",
+      "value": "19 000 annonces",
+      "detail": "de marchés publics éclairage sur le BOAMP"
+    },
+    {
+      "label": "Points lumineux en France",
+      "value": "11 millions",
+      "detail": "de points lumineux en France, 40% encore en technologie obsolète"
+    },
+    {
+      "label": "Consommation électrique communale",
+      "value": "41%",
+      "detail": "de la consommation électrique des communes"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "59590cf0a3a7291a9a1e0bdb",
+      "name": "Éclairage public de Paris",
+      "description": "Inventaire des points lumineux de la Ville de Paris : localisation, type de luminaire, puissance, technologie, date d'installation.",
+      "visits": "4.7K/an",
+      "downloads": "1.2K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "65cdc7e1a09481ae99e5f651",
+      "name": "Cartographie radiance nocturne — Cerema",
+      "description": "Données satellite de radiance nocturne sur l'ensemble du territoire français. Mesure de la pollution lumineuse par commune et zone protégée.",
+      "visits": "3.6K/an",
+      "downloads": "900/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "683ef7d1a09481ae99e5f652",
+      "name": "Cartographie des extinctions nocturnes — Cerema",
+      "description": "Recensement des communes pratiquant l'extinction partielle ou totale de l'éclairage public la nuit, avec horaires et périmètres.",
+      "visits": "1.8K/an",
+      "downloads": "500/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "5eb048eda09481ae99e5f653",
+      "name": "Énergie et patrimoine communal — ADEME",
+      "description": "Consommations énergétiques des bâtiments et équipements communaux, dont l'éclairage public, par commune et type d'énergie.",
+      "visits": "2.1K/an",
+      "downloads": "800/an",
+      "updateFrequency": "Bisannuel"
+    },
+    {
+      "datasetId": "689c42f3a09481ae99e5f654",
+      "name": "Certificats d'économie d'énergie par EPCI",
+      "description": "Volume de CEE délivrés par EPCI, incluant les opérations standardisées éclairage public (fiche RES-EC-104).",
+      "visits": "1.5K/an",
+      "downloads": "600/an",
+      "updateFrequency": "Trimestriel"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Géoportail de l'urbanisme",
+      "description": "Zones de protection (parcs naturels, réserves, trames vertes et bleues) pour identifier les zones soumises à la réglementation trame noire.",
+      "baseUrl": "https://apicarto.ign.fr"
+    },
+    {
+      "name": "API BAN (Base Adresse Nationale)",
+      "description": "Géocodage et localisation des communes pour le croisement avec les données éclairage et radiance.",
+      "baseUrl": "https://api-adresse.data.gouv.fr"
+    },
+    {
+      "name": "API BOAMP",
+      "description": "Marchés publics éclairage : consultations en cours, attributions, montants, pour le benchmark et la veille.",
+      "baseUrl": "https://boamp.fr/api"
+    }
+  ],
+  "productIdeas": [
+    "LumiAudit — Diagnostic automatisé du patrimoine éclairage public d'une commune à partir des données ouvertes et satellite",
+    "CEE-Lumière — Simulateur de certificats d'économie d'énergie pour les projets de rénovation éclairage public",
+    "NuitNoire — Outil de conformité trame noire et pollution lumineuse pour les communes en zone protégée",
+    "ÉclairCompare — Benchmark intercommunal des dépenses et performances éclairage public",
+    "SmartLight Plan — Plateforme de planification et priorisation de la rénovation du parc d'éclairage public"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Communes (toutes tailles)",
+      "priceRange": "99-499€/mois"
+    },
+    {
+      "segment": "Syndicats d'énergie départementaux",
+      "priceRange": "300-2000€/mois"
+    },
+    {
+      "segment": "Bureaux d'études éclairage/environnement",
+      "priceRange": "200-800€/mois"
+    },
+    {
+      "segment": "EPCI et métropoles",
+      "priceRange": "500-5000€/mois"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Citelum (EDF)",
+      "weakness": "Filiale EDF leader historique — offre complète mais coûteuse (contrats pluriannuels > 100K€/an), réservée aux grandes villes, opacité tarifaire"
+    },
+    {
+      "name": "Citylone",
+      "weakness": "Télégestion et smart lighting — focus hardware (capteurs, boîtiers), pas d'outil de diagnostic ou planification accessible aux petites communes"
+    },
+    {
+      "name": "Schréder Exedra",
+      "weakness": "Plateforme IoT du fabricant Schréder — lock-in matériel, uniquement pour les luminaires Schréder, pas d'approche open data"
+    },
+    {
+      "name": "Signify Interact City",
+      "weakness": "Plateforme Philips/Signify — même lock-in fabricant, prix élevés, pas adaptée aux petites communes rurales"
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Données satellite Cerema nationales et gratuites permettant un diagnostic sans intervention terrain",
+      "Urgence réglementaire double : interdiction des lampes obsolètes (EcoDesign) et obligation trame noire (arrêté 2018/2025)",
+      "Marché massif et fragmenté : 34 000 communes sans outils numériques, vulnérables à la hausse des coûts énergétiques",
+      "CEE comme levier financier : le simulateur CEE aide à financer la rénovation et crée un effet d'entraînement sur l'adoption"
+    ],
+    "weaknesses": [
+      "Données d'inventaire du parc disponibles uniquement pour quelques grandes villes (Paris, Lyon) — couverture nationale incomplète",
+      "Marché B2G avec décisions lentes et budgets contraints dans les petites communes rurales",
+      "Expertise technique nécessaire en photométrie et réglementation éclairage pour crédibiliser les recommandations",
+      "Pas d'API centralisée type Hub'Eau — les données sont éparpillées entre Cerema, ADEME, BOAMP et collectivités"
+    ],
+    "opportunities": [
+      "Crise énergétique 2022-2025 : factures d'éclairage doublées, les communes cherchent désespérément à réduire leurs coûts",
+      "Interdiction progressive des lampes sodium/mercure crée un marché captif de rénovation sur 5-10 ans",
+      "Programme ACTEE (Action des Collectivités Territoriales pour l'Efficacité Énergétique) finance les audits et outils numériques",
+      "Montée en puissance de la trame noire : les PLU doivent intégrer la pollution lumineuse, créant un nouveau besoin réglementaire"
+    ],
+    "threats": [
+      "Citelum/EDF pourrait démocratiser son offre et cibler les communes moyennes avec des prix agressifs",
+      "Les syndicats d'énergie pourraient développer leurs propres outils en interne avec leurs données propriétaires",
+      "Un retard dans l'application de la réglementation trame noire réduirait l'urgence d'adoption de NuitNoire",
+      "La baisse des prix de l'énergie atténuerait la motivation financière des communes à investir dans la rénovation"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Sophie",
+      "role": "Directrice des services techniques d'une commune de 8 000 habitants en Normandie",
+      "age": "47 ans",
+      "context": "Gère un parc de 2 500 points lumineux dont 60% en sodium haute pression. La facture d'éclairage a augmenté de 85% en 2 ans. Le maire veut un plan de rénovation LED mais elle n'a aucun inventaire fiable de son parc. A fait faire un audit par un bureau d'études pour 18 000€ il y a 3 ans, mais les données sont déjà obsolètes.",
+      "painPoints": [
+        "Aucun inventaire numérique à jour de ses 2 500 points lumineux — gère avec un plan papier et sa mémoire",
+        "Ne sait pas prioriser les rues à rénover en premier (vétusté, consommation, coût/bénéfice)",
+        "Incapable de chiffrer les économies attendues d'un passage LED pour convaincre le conseil municipal"
+      ],
+      "currentSolution": "Audit bureau d'études tous les 5 ans (18 000€) + tableur Excel de suivi des pannes + factures EDF pour la consommation globale",
+      "budget": "2 000-5 000€/an pour un outil numérique — négligeable face aux 180 000€/an de facture d'éclairage",
+      "channels": [
+        "AITF (Association des Ingénieurs Territoriaux de France)",
+        "FNCCR — commission éclairage public",
+        "ForumLED Europe (salon professionnel annuel)",
+        "Congrès des Maires (Paris, novembre)"
+      ]
+    },
+    {
+      "name": "Marc",
+      "role": "Chargé de mission énergie dans un syndicat départemental d'énergie (80 communes adhérentes)",
+      "age": "38 ans",
+      "context": "Le syndicat d'énergie accompagne ses 80 communes adhérentes dans la maîtrise de l'énergie. Marc est responsable du programme de rénovation de l'éclairage public mutualisé. Il doit prioriser les investissements entre 80 communes aux situations très différentes, négocier les marchés groupés avec les fabricants, et monter les dossiers CEE. Il utilise un tableur Excel de 200 lignes qu'il met à jour manuellement.",
+      "painPoints": [
+        "Doit comparer 80 communes sur des critères multiples (vétusté, consommation, coût/point, CEE éligibles) sans outil de benchmark",
+        "Passe 3 semaines/an à constituer les dossiers CEE manuellement pour chaque commune rénovée",
+        "N'a aucune vue satellite pour identifier les communes les plus sur-éclairées et prioriser les actions"
+      ],
+      "currentSolution": "Tableur Excel de 200 lignes + données Cerema en PDF + calculateur CEE du ministère + mémoire institutionnelle",
+      "budget": "5 000-15 000€/an — budget mutualisé entre les 80 communes (60-180€/commune/an)",
+      "channels": [
+        "AMORCE (réseau national des collectivités territoriales pour la gestion de l'énergie)",
+        "FNCCR — groupe de travail éclairage public",
+        "Assises de l'énergie des collectivités territoriales",
+        "Réseau FLAME (Fédération des agences locales de l'énergie et du climat)"
+      ]
+    },
+    {
+      "name": "Camille",
+      "role": "Ingénieure dans un bureau d'études environnement spécialisé biodiversité et trame noire",
+      "age": "31 ans",
+      "context": "Son bureau d'études (8 personnes) réalise des études d'impact et des diagnostics de pollution lumineuse pour les communes et les parcs naturels. La demande explose depuis le renforcement de la réglementation trame noire. Chaque étude nécessite de croiser les données satellite Cerema avec les inventaires d'éclairage communaux et les zonages de protection. Le travail est essentiellement manuel.",
+      "painPoints": [
+        "Passe 2 jours par étude à télécharger et traiter les données radiance satellite Cerema dans QGIS",
+        "Doit recréer manuellement la cartographie de conformité trame noire pour chaque commune étudiée",
+        "N'a pas de référentiel national pour comparer la pollution lumineuse d'une commune à ses voisines"
+      ],
+      "currentSolution": "QGIS + données Cerema en téléchargement + scripts Python maison + rapports Word manuels",
+      "budget": "3 000-6 000€/an par licence — le bureau facture 700-1 000€/jour, l'outil s'amortit en 1 journée gagnée",
+      "channels": [
+        "ANPCEN (Association Nationale pour la Protection du Ciel et de l'Environnement Nocturnes)",
+        "Journées nationales de la lumière (SFEN/AFE)",
+        "Groupe LinkedIn 'Trame noire et biodiversité nocturne'",
+        "ForumLED Europe — espace environnement"
+      ]
+    }
+  ]
+}

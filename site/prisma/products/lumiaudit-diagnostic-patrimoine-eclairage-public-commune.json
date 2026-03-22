@@ -1,0 +1,332 @@
+{
+  "productSlug": "lumiaudit-diagnostic-patrimoine-eclairage-public-commune",
+  "oneLiner": "Diagnostiquez votre parc d'éclairage public en 10 minutes, sans audit terrain à 18 000€.",
+  "problem": "Une commune de 8 000 habitants possède 2 500 points lumineux mais n'a aucun inventaire numérique fiable. Le dernier audit terrain date de 3 ans et a coûté 18 000€. La DST gère avec un plan papier et sa mémoire. Quand le maire demande un chiffrage pour passer en LED, elle passe 2 semaines à compiler des données approximatives. Les 34 000 communes françaises sont dans la même situation : elles dépensent collectivement 2 milliards €/an en éclairage sans savoir précisément ce qu'elles éclairent.",
+  "solution": "LumiAudit croise les données satellite de radiance nocturne du Cerema, les consommations énergétiques ADEME et les données d'inventaire disponibles en open data pour générer un diagnostic automatisé du patrimoine éclairage d'une commune. L'outil estime le nombre de points lumineux, identifie les zones sur-éclairées par satellite, calcule la consommation énergétique par secteur et produit un rapport PDF de pré-diagnostic avec des recommandations de rénovation chiffrées. Le tout sans intervention terrain.",
+  "uniqueValue": "Les audits terrain coûtent 15 000-25 000€ et sont obsolètes en 2 ans. LumiAudit offre un pré-diagnostic à 99€/mois basé sur des données satellite actualisées annuellement. Ce n'est pas un remplacement de l'audit terrain, mais un outil de cadrage qui permet à la commune de savoir où elle en est avant de lancer un investissement lourd.",
+  "mvpScope": "Diagnostic par commune : carte de radiance nocturne (données Cerema), estimation de la consommation éclairage (données ADEME), comparaison avec les communes de même strate démographique, rapport PDF exportable avec recommandations de base. Pas d'inventaire point par point. Pas de calcul CEE. Pas de suivi temps réel. Pas d'intégration SIG.",
+  "timeToMvp": "6 semaines",
+  "milestones": [
+    {
+      "phase": "Validation",
+      "title": "Valider le besoin de pré-diagnostic chez les DST",
+      "description": "Contacter 15 DST de communes 5 000-20 000 hab via l'AITF. Présenter un prototype de rapport pour leur commune. Mesurer l'intérêt et le prix acceptable.",
+      "duration": "2 semaines",
+      "deliverables": [
+        "15 interviews DST réalisées",
+        "Prototype de rapport PDF pour 5 communes test",
+        "Validation du prix acceptable (objectif : 80% OK à 99€/mois)",
+        "Identification des 3 fonctionnalités prioritaires"
+      ]
+    },
+    {
+      "phase": "MVP",
+      "title": "Plateforme de diagnostic fonctionnelle",
+      "description": "Pipeline d'ingestion des données Cerema (radiance) et ADEME (consommation). Algorithme d'estimation du parc par commune. Génération automatique du rapport PDF. Interface web avec recherche par commune.",
+      "duration": "6 semaines",
+      "deliverables": [
+        "Pipeline data Cerema + ADEME",
+        "Algorithme d'estimation du parc",
+        "Générateur de rapport PDF",
+        "Interface web responsive"
+      ]
+    },
+    {
+      "phase": "Lancement",
+      "title": "Premiers clients via les syndicats d'énergie",
+      "description": "Présenter l'outil aux syndicats d'énergie départementaux (AMORCE, FNCCR). Offre de déploiement mutualisé : le syndicat souscrit pour ses communes adhérentes. Démo lors des Assises de l'énergie.",
+      "duration": "8 semaines",
+      "deliverables": [
+        "3 syndicats d'énergie pilotes",
+        "50 communes couvertes",
+        "Premiers revenus récurrents",
+        "Retours terrain pour itération"
+      ]
+    },
+    {
+      "phase": "Croissance",
+      "title": "Enrichissement avec données terrain",
+      "description": "Permettre aux communes d'enrichir le diagnostic satellite avec leurs propres données (inventaire partiel, factures réelles, photos). Comparaison avant/après rénovation. Module de suivi annuel.",
+      "duration": "10 semaines",
+      "deliverables": [
+        "Module d'import de données communales",
+        "Dashboard de suivi annuel",
+        "150 communes actives",
+        "5 syndicats d'énergie clients"
+      ]
+    },
+    {
+      "phase": "Scale",
+      "title": "Atteindre 10K MRR",
+      "description": "Élargir à toutes les strates de communes. Partenariats avec les fabricants LED (Signify, Schréder) pour recommandations produit. Offre premium avec audit terrain assisté par IA.",
+      "duration": "12 semaines",
+      "deliverables": [
+        "10K MRR atteint",
+        "300 communes + 10 syndicats",
+        "Partenariats fabricants",
+        "Couverture nationale"
+      ]
+    }
+  ],
+  "validationChecks": [
+    {
+      "check": "Les DST de communes moyennes ressentent-elles un besoin urgent de diagnostic éclairage ?",
+      "how": "Contacter 15 DST via l'AITF et la FNCCR. Demander : 'Comment gérez-vous votre parc d'éclairage aujourd'hui ? Quand avez-vous fait votre dernier audit ? Combien a-t-il coûté ?'",
+      "successCriteria": "12/15 confirment gérer à l'intuition ou avec un tableur. 10/15 n'ont pas d'audit de moins de 3 ans."
+    },
+    {
+      "check": "Les données satellite Cerema permettent-elles un diagnostic pertinent à l'échelle communale ?",
+      "how": "Télécharger les données radiance pour 10 communes test et comparer avec les audits terrain existants (demander aux syndicats d'énergie).",
+      "successCriteria": "Corrélation > 70% entre la radiance satellite et la consommation réelle mesurée par les audits terrain."
+    },
+    {
+      "check": "Les syndicats d'énergie sont-ils prêts à mutualiser l'achat pour leurs communes ?",
+      "how": "Contacter 5 syndicats d'énergie via AMORCE. Présenter l'offre mutualisée (prix/commune dégressif). Demander une lettre d'intention.",
+      "successCriteria": "3/5 syndicats intéressés par un pilote. 1 lettre d'intention signée."
+    },
+    {
+      "check": "Le prix de 99€/mois est-il acceptable pour une commune de 5 000-20 000 hab ?",
+      "how": "Test de prix auprès des DST interviewées. Proposer 3 paliers : 49€, 99€, 199€/mois et mesurer le willingness-to-pay.",
+      "successCriteria": "80% acceptent 99€/mois. 50% acceptent 199€/mois."
+    }
+  ],
+  "earlyAdopters": [
+    {
+      "who": "Directeurs des services techniques de communes 5 000-20 000 habitants",
+      "where": "AITF (Association des Ingénieurs Territoriaux de France — 4 500 membres), FNCCR commission éclairage public, ForumLED Europe (Lyon, annuel)",
+      "howToReach": "Webinaire gratuit 'Connaissez-vous vraiment votre parc d'éclairage ?' via AITF. Démo live avec le diagnostic satellite de leur commune. Offre pilote 3 mois gratuit."
+    },
+    {
+      "who": "Chargés de mission énergie des syndicats départementaux",
+      "where": "AMORCE (900 collectivités adhérentes), FNCCR (groupe de travail éclairage), Assises de l'énergie des collectivités (Bordeaux, annuel)",
+      "howToReach": "Présentation en comité technique AMORCE. Offre mutualisée : diagnostic de toutes les communes adhérentes à prix dégressif. Comparatif automatique entre communes du syndicat."
+    },
+    {
+      "who": "Bureaux d'études éclairage et énergie",
+      "where": "Syndicat de l'éclairage, AFE (Association Française de l'Éclairage), salons Pollutec et ForumLED",
+      "howToReach": "Offrir un accès API pour intégrer les données satellite dans leurs études. Le pré-diagnostic LumiAudit devient l'étape 1 de leur offre d'audit complet."
+    }
+  ],
+  "pricingStrategy": "SaaS B2G : 99€/mois (commune < 10 000 hab), 199€/mois (commune 10 000-50 000 hab), 399€/mois (commune > 50 000 hab). Syndicat d'énergie : 49€/mois/commune avec minimum 20 communes (dégressif). Bureau d'études : 299€/mois (accès illimité + export + API). Positionnement : 1/15e du coût d'un audit terrain.",
+  "pathTo10kMrr": "30 communes directes × 149€ (prix moyen) = 4 470€ + 5 syndicats d'énergie × 60 communes × 49€ = 14 700€ (plafonné car dégressif, réel = 5 syndicats × 800€ = 4 000€) + 5 bureaux d'études × 299€ = 1 495€ = 9 965€ MRR. Scénario simplifié : 30 communes × 149€ + 5 syndicats × 800€ + 5 BE × 299€ = 4 470€ + 4 000€ + 1 495€ = 9 965€ MRR. Atteignable en 10-12 mois via les réseaux AITF et AMORCE.",
+  "techStack": {
+    "frontend": "Next.js 14 (App Router) + Tailwind CSS + Mapbox GL (cartographie radiance) + Recharts (graphiques)",
+    "backend": "Next.js API Routes + Python (traitement rasters satellite Cerema, calculs géospatiaux)",
+    "database": "PostgreSQL + PostGIS sur Supabase (données géospatiales par commune)",
+    "hosting": "Vercel (frontend) + Supabase (DB) + AWS S3 (stockage rasters satellite) + GitHub Actions (pipeline data annuel)",
+    "apis": [
+      "Données Cerema radiance nocturne (téléchargement batch)",
+      "Données ADEME énergie patrimoine communal",
+      "API BAN (géocodage communes)",
+      "API IGN (fonds de carte)"
+    ],
+    "notes": "Le traitement des rasters satellite nécessite Python (rasterio, geopandas). Les données sont pré-agrégées par commune lors de l'ingestion annuelle. L'interface web affiche des tuiles vectorielles pré-calculées."
+  },
+  "risks": [
+    {
+      "risk": "Les données satellite Cerema ne sont pas assez précises pour un diagnostic fiable à l'échelle d'une rue",
+      "mitigation": "Positionner LumiAudit comme un pré-diagnostic (cadrage), pas un audit terrain. Les données satellite identifient les zones sur-éclairées, les audits terrain font le détail. Compléter avec l'import de données communales."
+    },
+    {
+      "risk": "Les syndicats d'énergie développent leurs propres outils en interne",
+      "mitigation": "Les syndicats n'ont ni le budget ni les compétences data/dev en interne. Proposer une offre marque blanche pour que le syndicat distribue LumiAudit sous sa propre marque."
+    },
+    {
+      "risk": "Cycle de vente B2G trop long (6-12 mois) qui retarde les premiers revenus",
+      "mitigation": "Commencer par les syndicats d'énergie (1 décision = 50-80 communes). Proposer un pilote gratuit de 3 mois pour accélérer la décision. Viser les budgets 'études' plutôt que 'investissement'."
+    }
+  ],
+  "inspirations": "Vaisala Xweather (US) — données satellite pour l'analyse environnementale. Light Aware (UK) — cartographie pollution lumineuse pour les autorités locales. Nightlight Maps (NASA/NOAA) — données satellite VIIRS utilisées pour la recherche sur l'éclairage nocturne mondial.",
+  "searchVolume": [
+    {
+      "keyword": "audit éclairage public",
+      "monthlyVolume": "800-1500",
+      "difficulty": "faible",
+      "intent": "transactional"
+    },
+    {
+      "keyword": "rénovation éclairage public LED",
+      "monthlyVolume": "500-1000",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "consommation éclairage public commune",
+      "monthlyVolume": "300-600",
+      "difficulty": "faible",
+      "intent": "informational"
+    },
+    {
+      "keyword": "pollution lumineuse commune",
+      "monthlyVolume": "1000-2000",
+      "difficulty": "moyenne",
+      "intent": "informational"
+    },
+    {
+      "keyword": "diagnostic éclairage public",
+      "monthlyVolume": "400-800",
+      "difficulty": "faible",
+      "intent": "transactional"
+    }
+  ],
+  "tamSamSom": {
+    "tam": "200 millions EUR — 34 000 communes × 500€/mois moyen pour un outil de gestion éclairage × 12 mois",
+    "sam": "25 millions EUR — 5 000 communes de 3 000-50 000 hab (strate la plus réceptive) × 200€/mois × 12 + 80 syndicats × 10 000€/an",
+    "som": "1,2 million EUR — 30 communes × 149€ × 12 + 5 syndicats × 800€ × 12 + 5 BE × 299€ × 12, atteignable en 18 mois",
+    "methodology": "TAM basé sur les 34 000 communes françaises (source: DGCL 2025). SAM restreint aux communes de la strate 3 000-50 000 hab les plus sensibilisées à la transition énergétique. SOM basé sur les objectifs de conversion réalistes via AITF et AMORCE."
+  },
+  "competitorDeep": [
+    {
+      "name": "Citelum (groupe EDF)",
+      "url": "https://www.citelum.com",
+      "pricing": "Contrats de performance énergétique pluriannuels, 100 000-500 000€/an selon la taille de la ville. Inaccessible aux petites communes.",
+      "trafficEstimate": "Trafic B2B modéré. Estimé 20-50K visites/an. Cible les villes > 30 000 hab.",
+      "reviews": "Reconnu pour son expertise technique. Critiqué pour l'opacité tarifaire et le lock-in contractuel.",
+      "strengths": "Leader historique en France. Expertise terrain complète. Contrats de performance garantis. Réseau commercial national.",
+      "weaknesses": "Prix prohibitifs pour les petites communes. Contrats pluriannuels rigides. Pas d'outil SaaS léger. Pas d'approche open data."
+    },
+    {
+      "name": "Citylone",
+      "url": "https://www.citylone.com",
+      "pricing": "Boîtier de télégestion : 50-100€/point lumineux + abonnement SaaS 2-5€/point/mois. Investissement initial lourd.",
+      "trafficEstimate": "Faible trafic B2C (< 5K visites/mois). Marché de niche smart lighting.",
+      "reviews": "Apprécié pour la qualité technique des boîtiers. Critiqué pour le coût d'installation.",
+      "strengths": "Solution française de télégestion. Hardware robuste. Pilotage point par point. Économies mesurables.",
+      "weaknesses": "Nécessite un investissement hardware initial important. Pas de diagnostic sans installation. Pas adapté aux communes qui veulent juste un audit."
+    },
+    {
+      "name": "Schréder Exedra",
+      "url": "https://www.schreder.com/fr-fr/exedra",
+      "pricing": "Inclus dans l'achat de luminaires Schréder. Plateforme gratuite mais lock-in matériel total.",
+      "trafficEstimate": "Trafic intégré au site Schréder. Estimé 10-20K visites/an sur les pages Exedra.",
+      "reviews": "Interface moderne et fonctionnelle. Mais réservée aux clients Schréder.",
+      "strengths": "Plateforme IoT complète et bien conçue. Intégration native avec les luminaires Schréder. Gratuite pour les clients.",
+      "weaknesses": "Lock-in fabricant total : uniquement pour les luminaires Schréder. Pas de diagnostic du parc existant. Inutile tant que la commune n'a pas rénové avec du Schréder."
+    },
+    {
+      "name": "Syndicat de l'éclairage — Guide AFE",
+      "url": "https://www.syndicat-eclairage.com",
+      "pricing": "Guides et recommandations gratuits. Pas d'outil numérique.",
+      "trafficEstimate": "Trafic faible (< 10K visites/an). Audience très spécialisée.",
+      "reviews": "Référence technique pour les normes et recommandations. Mais pas d'outil opérationnel.",
+      "strengths": "Expertise normative reconnue. Guides techniques de qualité. Réseau professionnel dense.",
+      "weaknesses": "Aucun outil numérique. Guides PDF statiques. Pas d'aide à la décision personnalisée. Pas de données par commune."
+    }
+  ],
+  "legalConstraints": [
+    {
+      "topic": "Données satellite Cerema (radiance nocturne)",
+      "status": "ok",
+      "detail": "Données publiées en open data sur data.gouv.fr. Licence Ouverte v2. Réutilisation commerciale autorisée. Images satellite traitées, pas de données personnelles.",
+      "source": "https://www.data.gouv.fr — Dataset Cerema radiance nocturne"
+    },
+    {
+      "topic": "Données ADEME (énergie patrimoine communal)",
+      "status": "ok",
+      "detail": "Données agrégées par commune publiées en open data. Licence Ouverte. Pas de données personnelles — consommations des bâtiments publics uniquement.",
+      "source": "https://www.data.gouv.fr — Dataset ADEME énergie patrimoine communal"
+    },
+    {
+      "topic": "Données CEE (certificats d'économie d'énergie)",
+      "status": "ok",
+      "detail": "Volumes de CEE par EPCI publiés en open data. Données agrégées, pas d'identification des bénéficiaires individuels.",
+      "source": "https://www.data.gouv.fr — Dataset CEE par EPCI"
+    },
+    {
+      "topic": "Réglementation pollution lumineuse (arrêté 27/12/2018)",
+      "status": "attention",
+      "detail": "L'arrêté impose des obligations aux communes mais les critères de conformité sont encore sujets à interprétation. Les recommandations de l'outil doivent être accompagnées d'un disclaimer juridique.",
+      "source": "Arrêté du 27 décembre 2018 relatif à la prévention, la réduction et la limitation des nuisances lumineuses"
+    }
+  ],
+  "cacEstimate": [
+    {
+      "channel": "SEO (pages diagnostics par commune)",
+      "cacEstimate": "20-50€",
+      "conversionRate": "3-6%",
+      "ltv": "1 788€ (149€ × 12 mois B2G)",
+      "ltvCacRatio": "36:1 à 89:1"
+    },
+    {
+      "channel": "Salons professionnels (ForumLED, Assises énergie)",
+      "cacEstimate": "400-800€",
+      "conversionRate": "10-20%",
+      "ltv": "1 788€ (149€ × 12 mois commune) ou 9 600€ (800€ × 12 syndicat)",
+      "ltvCacRatio": "2:1 à 24:1"
+    },
+    {
+      "channel": "Réseaux AITF et AMORCE (prescripteurs)",
+      "cacEstimate": "50-150€",
+      "conversionRate": "5-10%",
+      "ltv": "1 788€ (commune) ou 9 600€ (syndicat)",
+      "ltvCacRatio": "12:1 à 192:1"
+    },
+    {
+      "channel": "Partenariats syndicats d'énergie (acquisition groupée)",
+      "cacEstimate": "100-300€",
+      "conversionRate": "15-25%",
+      "ltv": "9 600€ (800€ × 12 mois syndicat)",
+      "ltvCacRatio": "32:1 à 96:1"
+    }
+  ],
+  "confidenceLevels": {
+    "datasets": {
+      "level": "vérifié",
+      "detail": "IDs et métriques proviennent de data.gouv.fr. Liens cliquables vers chaque dataset."
+    },
+    "metrics": {
+      "level": "vérifié",
+      "detail": "Visites et téléchargements mesurés par l'API get_metrics de data.gouv.fr."
+    },
+    "competitors": {
+      "level": "estimé",
+      "detail": "Pricing et trafic recherchés sur les sites concurrents. Les prix Citelum sont des estimations basées sur des retours de collectivités."
+    },
+    "searchVolume": {
+      "level": "estimé",
+      "detail": "Volumes estimés sans outil SEO professionnel. Ordres de grandeur basés sur la niche 'éclairage public'."
+    },
+    "tamSamSom": {
+      "level": "estimé",
+      "detail": "Calculs basés sur le nombre de communes (DGCL) et les budgets éclairage moyens (ADEME). Méthodologie transparente."
+    },
+    "legal": {
+      "level": "vérifié",
+      "detail": "Licences vérifiées sur les sites sources. Un point d'attention sur l'interprétation de l'arrêté pollution lumineuse."
+    },
+    "cac": {
+      "level": "opine",
+      "detail": "Fourchettes basées sur des benchmarks SaaS B2G. Aucune donnée terrain. À valider avec des tests réels."
+    },
+    "overall": {
+      "level": "estimé",
+      "detail": "Données satellite vérifiées et gratuites. Hypothèses de marché B2G (willingness-to-pay des petites communes) à valider terrain."
+    }
+  },
+  "viabilityScore": {
+    "demand": {
+      "score": 65,
+      "detail": "3-6K recherches/mois cumulées sur les requêtes éclairage public. 4,7K visites/an sur le dataset Paris, 3,6K sur Cerema. Demande réelle mais marché de niche B2G."
+    },
+    "feasibility": {
+      "score": 70,
+      "detail": "MVP en 6 semaines. Traitement satellite nécessite Python + PostGIS. 5 sources de données à croiser. Complexité technique modérée (rasters géospatiaux)."
+    },
+    "market": {
+      "score": 68,
+      "detail": "40 clients (30 communes + 5 syndicats + 5 BE) pour 10K MRR. Marché B2G fragmenté avec de nombreuses petites communes. Cycle de vente via les syndicats accélère l'adoption."
+    },
+    "competition": {
+      "score": 75,
+      "detail": "Concurrents axés hardware (Citylone, Schréder) ou gros contrats (Citelum). Aucun outil SaaS léger de diagnostic accessible aux petites communes. Créneau libre."
+    },
+    "legal": {
+      "score": 85,
+      "detail": "3 points OK, 1 point d'attention. Données open data sans enjeu RGPD. Attention sur l'interprétation de la réglementation trame noire."
+    },
+    "overall": {
+      "score": 71,
+      "detail": "Créneau libre (75/100 compétition) et cadre légal favorable (85/100). Point faible : demande de niche (65/100). Levier clé : les syndicats d'énergie comme canal d'acquisition groupée."
+    }
+  }
+}

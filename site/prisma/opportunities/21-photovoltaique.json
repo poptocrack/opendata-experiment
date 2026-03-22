@@ -1,0 +1,248 @@
+{
+  "id": "photovoltaique",
+  "rank": 21,
+  "title": "Photovoltaïque & Énergies Renouvelables",
+  "slug": "photovoltaique",
+  "sector": "Photovoltaïque",
+  "tagline": "184 datasets, 56 000 visites/an sur le listing RGE, obligation solarisation parkings 2026 : le solaire explose et les données sont là",
+  "status": "exploration",
+  "difficulty": "moyenne",
+  "marketSize": "Marché PV français en forte croissance. Objectif 44 GW en 2028 (22 GW actuellement). 150 000 parkings concernés par l'obligation ombrière. Marché de l'installation solaire résidentiel estimé à 4 milliards €/an, marché professionnel (ombrières, agrivoltaïque, toitures tertiaires) à 6 milliards €/an.",
+  "monetization": "SaaS B2B 49-499€/mois pour installateurs et bureaux d'études. B2G 199-999€/mois pour collectivités. B2C freemium avec premium à 4,90€/simulation détaillée. One-shot 490-1990€ pour audits ombrières.",
+  "context": "Le photovoltaïque français vit un moment charnière. La loi Climat et Résilience (2021) impose l'installation d'ombrières solaires sur tous les parkings de plus de 1 500 m² d'ici juillet 2026, créant un marché captif de 150 000 parkings. En parallèle, la PPE (Programmation Pluriannuelle de l'Énergie) vise 44 GW de puissance solaire installée en 2028, soit un doublement en 4 ans. L'agrivoltaïsme, encadré par le décret de mars 2024, ouvre un nouveau segment massif : 100 000 exploitations agricoles pourraient combiner production agricole et solaire. Côté données, l'écosystème est riche : le listing RGE de l'ADEME (56 000 visites/an) recense tous les installateurs certifiés, le registre national des installations suit chaque raccordement, l'irradiation solaire par commune permet de calculer le productible partout en France, et les arrêtés tarifaires CRE fixent les prix de rachat. Pourtant, les outils existants (PVGIS, cadastres solaires municipaux) restent fragmentés, techniques et mal adaptés aux besoins des professionnels du secteur. L'urgence réglementaire des ombrières parkings et la croissance explosive des installations créent une fenêtre d'opportunité pour des SaaS verticaux ciblant installateurs, collectivités et exploitants agricoles.",
+  "signals": [
+    {
+      "label": "Visites listing RGE",
+      "value": "56 392/an",
+      "detail": "sur le dataset liste entreprises RGE (ADEME)"
+    },
+    {
+      "label": "Visites registre installations PV",
+      "value": "12 003/an",
+      "detail": "sur le registre national des installations PV"
+    },
+    {
+      "label": "Visites irradiation solaire",
+      "value": "9 077/an",
+      "detail": "sur le dataset irradiation solaire par commune"
+    },
+    {
+      "label": "Marchés publics PV",
+      "value": "3 800 annonces",
+      "detail": "de marchés publics photovoltaïque sur le BOAMP, x4 en 2025"
+    },
+    {
+      "label": "Parkings obligation ombrière",
+      "value": "150 000 parkings",
+      "detail": "concernés par l'obligation d'ombrière solaire (loi Climat)"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "5fb76af7e436e4044dbff5a9",
+      "name": "Liste des entreprises RGE (ADEME)",
+      "description": "Annuaire complet des entreprises certifiées RGE (Reconnu Garant de l'Environnement) : installateurs PV, pompes à chaleur, isolation. Coordonnées, certifications, zones d'intervention.",
+      "visits": "56K/an",
+      "downloads": "18K/an",
+      "updateFrequency": "Mensuel"
+    },
+    {
+      "datasetId": "5b3c2e36634f4119c1514bdd",
+      "name": "Registre national des installations de production d'électricité",
+      "description": "Toutes les installations de production d'électricité raccordées au réseau : puissance, localisation, date de mise en service, filière (PV, éolien, hydraulique).",
+      "visits": "12K/an",
+      "downloads": "8K/an",
+      "updateFrequency": "Trimestriel"
+    },
+    {
+      "datasetId": "5f5e4e8206e3e749c8ffb680",
+      "name": "Irradiation solaire par commune",
+      "description": "Données d'ensoleillement et d'irradiation solaire pour chaque commune de France métropolitaine. Permet le calcul du productible PV.",
+      "visits": "9K/an",
+      "downloads": "4K/an",
+      "updateFrequency": "Annuel"
+    },
+    {
+      "datasetId": "5b3c5e26634f4119c1514be0",
+      "name": "Production nationale d'électricité par filière",
+      "description": "Production mensuelle et annuelle d'électricité par filière (solaire, éolien, hydraulique, nucléaire, thermique). Données RTE.",
+      "visits": "5K/an",
+      "downloads": "3K/an",
+      "updateFrequency": "Mensuel"
+    },
+    {
+      "datasetId": "5f6e8a4006e3e749c8ffb7a2",
+      "name": "Parc éolien et solaire en France",
+      "description": "Cartographie et caractéristiques du parc installé éolien et solaire : localisation, puissance, exploitant, date de mise en service.",
+      "visits": "4K/an",
+      "downloads": "2K/an",
+      "updateFrequency": "Semestriel"
+    },
+    {
+      "datasetId": "5c5a9b25634f4117716d5700",
+      "name": "Arrêtés tarifaires CRE",
+      "description": "Historique des tarifs de rachat de l'électricité photovoltaïque fixés par la CRE : prix par kWh, conditions d'éligibilité, évolution trimestrielle.",
+      "visits": "3K/an",
+      "downloads": "1K/an",
+      "updateFrequency": "Trimestriel"
+    },
+    {
+      "datasetId": "5f8e2c4006e3e749c8ffb8b0",
+      "name": "Parkings de plus de 1 500 m²",
+      "description": "Recensement des parkings extérieurs de plus de 1 500 m² concernés par l'obligation d'ombrière solaire (loi Climat et Résilience). Localisation, surface, propriétaire.",
+      "visits": "2K/an",
+      "downloads": "1.5K/an",
+      "updateFrequency": "Annuel"
+    }
+  ],
+  "apis": [
+    {
+      "name": "API Professionnels RGE (ADEME)",
+      "description": "Recherche d'installateurs certifiés RGE par localisation, type de travaux (PV, PAC, isolation), rayon de recherche. Données à jour mensuellement.",
+      "baseUrl": "https://data.ademe.fr/datasets/liste-des-entreprises-rge"
+    },
+    {
+      "name": "API Entreprise",
+      "description": "Données légales et financières des entreprises (SIREN, chiffre d'affaires, effectifs, dirigeants). Enrichissement des fiches installateurs.",
+      "baseUrl": "https://entreprise.api.gouv.fr"
+    },
+    {
+      "name": "API BAN (Base Adresse Nationale)",
+      "description": "Géocodage et recherche d'adresses pour la localisation des installations PV et des parkings.",
+      "baseUrl": "https://api-adresse.data.gouv.fr"
+    }
+  ],
+  "productIdeas": [
+    "SolarPark Compliance — audit et conformité ombrière solaire pour les gestionnaires de parkings soumis à l'obligation 2026",
+    "SolarMap Pro — outil de prospection et dimensionnement pour les installateurs PV, croisant RGE, irradiation et registre installations",
+    "AgriSolaire — simulateur de rentabilité agrivoltaïque pour les exploitants agricoles, croisant irradiation, PAC et cadastre",
+    "MonSolaire — simulation et comparaison d'offres PV pour les particuliers, avec calcul de rentabilité personnalisé",
+    "SolarWatch — tableau de bord de suivi des objectifs EnR pour les collectivités territoriales et PCAET",
+    "SolarDesk CRM — CRM vertical pour les installateurs photovoltaïques, intégrant RGE, leads et suivi chantier"
+  ],
+  "targetCustomers": [
+    {
+      "segment": "Gestionnaires de parkings et grandes surfaces",
+      "priceRange": "490-1990€ one-shot + 199-499€/mois"
+    },
+    {
+      "segment": "Installateurs PV (4 500 entreprises RGE)",
+      "priceRange": "49-199€/mois"
+    },
+    {
+      "segment": "Exploitants agricoles",
+      "priceRange": "29-99€/simulation"
+    },
+    {
+      "segment": "Collectivités (PCAET, EPCI)",
+      "priceRange": "199-999€/mois"
+    },
+    {
+      "segment": "Particuliers",
+      "priceRange": "0-4,90€/simulation"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "In Sun We Trust / Otovo",
+      "weakness": "Marketplace d'installateurs axée génération de leads. Pas d'outil pro pour les installateurs eux-mêmes. Pas de conformité ombrières. Modèle fermé qui capte la marge des installateurs."
+    },
+    {
+      "name": "Hello Watt",
+      "weakness": "Comparateur énergie généraliste (électricité, gaz, solaire). Bonne UX B2C mais pas d'outil B2B pour les installateurs. Pas de données open data exploitées. Pas de volet ombrière ou agrivoltaïque."
+    },
+    {
+      "name": "PVGIS (Commission Européenne)",
+      "weakness": "Outil de référence pour le calcul d'irradiation. Gratuit mais interface austère, pas adapté aux non-experts, pas de données françaises spécifiques (RGE, tarifs CRE, aides locales). Pas d'outil métier."
+    },
+    {
+      "name": "Cadastres solaires municipaux",
+      "weakness": "Outils de potentiel solaire par toiture développés ville par ville. Couverture fragmentaire (30 villes seulement). Pas interopérables. Pas de volet économique ni réglementaire."
+    }
+  ],
+  "swot": {
+    "strengths": [
+      "Données open data riches et complémentaires : listing RGE (56K visites), registre installations, irradiation par commune, tarifs CRE",
+      "Urgence réglementaire forte : obligation ombrières parkings juillet 2026 crée un marché captif de 150 000 entreprises",
+      "Marché en croissance exponentielle : +40% d'installations PV par an, objectif national de doublement en 4 ans",
+      "Possibilité de croiser des données uniques (RGE + irradiation + installations + tarifs) que personne ne fusionne aujourd'hui"
+    ],
+    "weaknesses": [
+      "Marché B2C ultra-concurrentiel (In Sun We Trust, Hello Watt, Otovo) avec des acteurs bien financés",
+      "Données de parkings encore incomplètes — le recensement exhaustif n'est pas terminé",
+      "Les installateurs PV sont souvent des artisans peu numérisés, difficiles à convertir sur un SaaS",
+      "Dépendance aux tarifs de rachat CRE qui peuvent évoluer défavorablement et refroidir le marché"
+    ],
+    "opportunities": [
+      "Obligation ombrières parkings 2026 : 150 000 gestionnaires cherchent des outils de conformité et de dimensionnement",
+      "Décret agrivoltaïsme 2024 : 100 000 exploitations agricoles potentiellement concernées, marché quasi vierge",
+      "PPE 2028 : l'État pousse massivement le solaire, subventions et simplifications administratives en cours",
+      "Consolidation du marché des installateurs : les groupements cherchent des outils de pilotage pour passer à l'échelle"
+    ],
+    "threats": [
+      "In Sun We Trust/Otovo ou Hello Watt pourraient lancer des outils B2B pour installateurs et capter le marché",
+      "L'ADEME ou la CRE pourraient développer des outils publics de conformité ombrières rendant les outils tiers inutiles",
+      "Un report de l'obligation ombrières (déjà repoussé de 2024 à 2026) réduirait l'urgence du marché SolarPark",
+      "La baisse des tarifs de rachat ou la fin du guichet ouvert pourrait freiner les installations et réduire la demande d'outils"
+    ]
+  },
+  "personas": [
+    {
+      "name": "Sophie",
+      "role": "Responsable RSE et développement durable d'une enseigne de grande distribution (120 magasins)",
+      "age": "38 ans",
+      "context": "Doit mettre en conformité 85 parkings de plus de 1 500 m² avec l'obligation ombrière solaire avant juillet 2026. Budget de 50 millions € alloué par le groupe mais aucun outil centralisé pour piloter le déploiement. Gère le sujet avec un tableur Excel de 200 lignes et des échanges emails avec 15 bureaux d'études différents.",
+      "painPoints": [
+        "Ne sait pas prioriser les 85 parkings : lesquels sont les plus rentables ? les plus urgents réglementairement ?",
+        "Impossible de comparer les devis des installateurs sans données de référence (irradiation, puissance optimale, tarif rachat)",
+        "Passe 5h/semaine à consolider les avancements de chaque parking dans un Excel partagé qui plante régulièrement"
+      ],
+      "currentSolution": "Excel + emails avec bureaux d'études + navigation manuelle sur PVGIS pour vérifier les calculs d'irradiation",
+      "budget": "5 000-20 000€/an pour un outil de pilotage — négligeable face au budget d'investissement de 50M€",
+      "channels": [
+        "Energaïa (salon ENR à Montpellier, décembre)",
+        "BePOSITIVE (salon ENR à Lyon, mars)",
+        "Club Développement Durable de la FCD (Fédération du Commerce et de la Distribution)",
+        "Groupe LinkedIn 'RSE et Développement Durable'"
+      ]
+    },
+    {
+      "name": "Thomas",
+      "role": "Gérant d'une entreprise d'installation PV de 12 salariés, certifiée RGE, en Occitanie",
+      "age": "45 ans",
+      "context": "Installateur historique de panneaux solaires résidentiels, il voit la demande exploser depuis 2023. Son carnet de commandes est plein à 6 mois mais il perd des prospects faute de réactivité sur les devis. Veut se positionner sur les ombrières parking (marges meilleures) mais manque d'outils de dimensionnement rapide.",
+      "painPoints": [
+        "Met 3 jours à produire un devis complet avec calcul de rentabilité — les prospects signent chez le concurrent qui répond en 24h",
+        "N'a aucun outil pour identifier les parkings soumis à l'obligation ombrière dans sa zone de chalandise",
+        "Gère ses leads sur papier et perd 20% des prospects par manque de relance"
+      ],
+      "currentSolution": "PVGIS + Excel pour les calculs de dimensionnement + carnet de contacts papier + bouche-à-oreille",
+      "budget": "50-200€/mois pour un outil qui lui fait gagner du temps et des chantiers",
+      "channels": [
+        "GMPV-FFB (Groupement des Métiers du Photovoltaïque de la FFB)",
+        "Qualit'EnR (organisme de qualification RGE)",
+        "Energaïa Montpellier",
+        "Groupe Facebook 'Installateurs photovoltaïques France'"
+      ]
+    },
+    {
+      "name": "Marie",
+      "role": "Chargée de mission PCAET (Plan Climat-Air-Énergie Territorial) dans une communauté de communes de 50 000 habitants",
+      "age": "32 ans",
+      "context": "Doit piloter le volet EnR du PCAET et rendre des comptes annuels sur les objectifs de production solaire du territoire. Suit manuellement les installations raccordées via les données Enedis et le registre national. N'a aucun tableau de bord pour visualiser l'avancement par rapport aux objectifs.",
+      "painPoints": [
+        "Passe 2 jours/trimestre à extraire et recouper les données du registre national avec les objectifs PCAET",
+        "Ne peut pas identifier les zones du territoire où le potentiel solaire est sous-exploité",
+        "N'a pas d'outil pour simuler l'impact des projets en cours sur l'atteinte des objectifs 2030"
+      ],
+      "currentSolution": "Registre national des installations (téléchargement CSV) + PCAET validé en PDF + Excel de suivi maison",
+      "budget": "200-500€/mois — budget limité mais le PCAET est une obligation légale avec des financements ADEME",
+      "channels": [
+        "ADEME — réseau des chargés de mission PCAET",
+        "Assises européennes de la transition énergétique",
+        "AMORCE (réseau de collectivités pour la transition écologique)",
+        "Groupe LinkedIn 'Transition énergétique des territoires'"
+      ]
+    }
+  ]
+}
