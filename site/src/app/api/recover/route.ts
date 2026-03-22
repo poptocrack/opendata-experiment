@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
   try {
     const { email } = await req.json();
@@ -25,6 +23,7 @@ export async function POST(req: NextRequest) {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://lefilon.net";
     const magicLink = `${baseUrl}/acces?magic=${purchase.token}`;
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "Le Filon <noreply@lefilon.net>",
       to: email.toLowerCase().trim(),
