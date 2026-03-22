@@ -1,12 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { SmartText } from "@/components/smart-text";
 
 type Status = "idle" | "loading" | "success" | "error" | "email-sent";
 
 export default function AccesPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-muted border-t-primary" />
+      </div>
+    }>
+      <AccesContent />
+    </Suspense>
+  );
+}
+
+function AccesContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
