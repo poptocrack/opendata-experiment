@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { Suspense, useState, useEffect, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -42,6 +42,14 @@ type AnalyticsData = {
 };
 
 export default function AdminPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="h-12 w-12 animate-spin rounded-full border-4 border-muted border-t-primary" /></div>}>
+      <AdminContent />
+    </Suspense>
+  );
+}
+
+function AdminContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const validTabs = ["analytics", "waitlist", "products", "purchases"] as const;
