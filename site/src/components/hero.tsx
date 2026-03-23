@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { SmartText } from '@/components/smart-text';
 
-export function Hero({ count }: { count: number }) {
+export function Hero({ count, productCount }: { count: number; productCount: number }) {
   return (
     <section className="relative overflow-hidden border-b border-border">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
@@ -27,7 +27,7 @@ export function Hero({ count }: { count: number }) {
           </span>
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-blue-500" />
-            90 fiches produit détaillées
+            {productCount} fiches produit détaillées
           </span>
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-amber-500" />

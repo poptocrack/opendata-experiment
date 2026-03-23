@@ -29,7 +29,7 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Hero count={opportunities.length} />
+      <Hero count={opportunities.length} productCount={opportunities.reduce((acc, o) => acc + o.productIdeas.length, 0)} />
 
       {/* CTA direct vers les opportunités — réduit le drop */}
       <section className="border-b border-border bg-muted/30">
