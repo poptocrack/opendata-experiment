@@ -119,8 +119,11 @@ export default async function ProductPage({
   const opp = product.opportunity;
   const parsed = detail ? parseDetail(detail) : null;
 
-  // Accès payant (cookie d'achat) OU déverrouillé manuellement par l'admin.
-  const fullAccess = (await hasValidAccess()) || product.unlocked;
+  // Accès payant uniquement (cookie d'achat vérifié côté serveur).
+  // NB : on n'utilise PAS le flag DB `product.unlocked` pour le gating public —
+  // la fiche offerte en démo est pilotée par le code (isFreeSample) pour rester
+  // prévisible et indépendante de l'état de la base.
+  const fullAccess = await hasValidAccess();
   // Fiche offerte en démo : visible par tous, mais on garde un CTA d'achat pour convertir.
   const sampleAccess = !fullAccess && isFreeSample(productSlug);
 
