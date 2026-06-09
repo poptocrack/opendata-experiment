@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SmartText } from "@/components/smart-text";
+import { FREE_SAMPLE_SLUG } from "@/lib/sample";
 
 function trackClick(label: string) {
   fetch("/api/track", {
@@ -182,6 +183,17 @@ export function Paywall() {
             Paiement sécurisé via Stripe. Satisfait ou remboursé sous 14 jours.
           </SmartText>
         </p>
+
+        {/* Dé-risque l'achat : preuve concrète de la profondeur avant de payer */}
+        <p className="mt-5">
+          <a
+            href={`/produits/${FREE_SAMPLE_SLUG}`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-700 dark:text-amber-400 underline hover:text-amber-900 dark:hover:text-amber-300 transition-colors"
+          >
+            👁 Voir une fiche complète en exemple, gratuitement
+          </a>
+        </p>
+
         <p className="mt-3">
           <a href="/acces" className="text-xs text-muted-foreground underline hover:text-foreground transition-colors">
             J&apos;ai déjà un accès

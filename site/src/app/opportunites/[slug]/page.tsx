@@ -5,6 +5,7 @@ import { getOpportunityBySlug, getOpportunities } from '@/lib/queries';
 import { OpportunityCard } from '@/components/opportunity-card';
 import { NewsletterInline } from '@/components/newsletter-inline';
 import { CtaAnalyse } from '@/components/cta-analyse';
+import { BuyAccessCTA } from '@/components/buy-access-cta';
 import { Footer } from '@/components/footer';
 
 export async function generateStaticParams() {
@@ -77,6 +78,14 @@ export default async function OpportunityPage({
       <section>
         <div className="mx-auto max-w-5xl px-6 py-10">
           <OpportunityCard opp={opp} />
+
+          <div className="mt-8">
+            <BuyAccessCTA
+              source="opp-checkout"
+              headline={`${opp.productIdeas.length} idées de produit détaillées dans ce secteur`}
+              subtext="Pour chaque idée : scope MVP, validation terrain, analyse concurrentielle, stack technique et chemin vers 10K€ MRR. Accès à vie aux 90 fiches."
+            />
+          </div>
 
           <div className="mt-8">
             <CtaAnalyse />
