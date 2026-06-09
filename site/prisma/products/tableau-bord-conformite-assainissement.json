@@ -1,5 +1,5 @@
 {
-  "productSlug": "tableau-bord-conformite-assainissement",
+  "productSlug": "tableau-de-bord-conformite-assainissement-suivi-steu-conformite-eru-alertes-regl",
   "oneLiner": "Le tableau de bord qui transforme les obligations réglementaires assainissement en indicateurs visuels actionnables.",
   "problem": "Un responsable assainissement en collectivité doit suivre la conformité de ses stations d'épuration (STEU) vis-à-vis de la directive ERU, déclarer ses indicateurs SISPEA, et anticiper les investissements de mise aux normes. Aujourd'hui, il jongle entre le portail SISPEA (saisie manuelle), les données de l'agence de l'eau, les rapports du SATESE, et ses propres tableurs Excel. La saisie SISPEA seule prend 2 jours/mois. Il n'a aucune vue consolidée de la conformité de ses installations et aucun outil d'alerte en cas de dépassement de seuils.",
   "solution": "Un tableau de bord SaaS qui agrège automatiquement les données SISPEA, les résultats d'autosurveillance des STEU via Hub'Eau, et les seuils réglementaires ERU pour afficher une vue temps réel de la conformité de chaque station. Alertes automatiques en cas de dépassement, comparaison avec les STEU de même capacité, et génération automatique du rapport annuel du délégataire (RAD). L'outil pré-remplit la saisie SISPEA et identifie les points de non-conformité à corriger en priorité.",

@@ -1,5 +1,5 @@
 {
-  "productSlug": "lumiaudit-diagnostic-patrimoine-eclairage-public-commune",
+  "productSlug": "lumiaudit-diagnostic-automatise-du-patrimoine-eclairage-public-d-une-commune-a-p",
   "oneLiner": "Diagnostiquez votre parc d'éclairage public en 10 minutes, sans audit terrain à 18 000€.",
   "problem": "Une commune de 8 000 habitants possède 2 500 points lumineux mais n'a aucun inventaire numérique fiable. Le dernier audit terrain date de 3 ans et a coûté 18 000€. La DST gère avec un plan papier et sa mémoire. Quand le maire demande un chiffrage pour passer en LED, elle passe 2 semaines à compiler des données approximatives. Les 34 000 communes françaises sont dans la même situation : elles dépensent collectivement 2 milliards €/an en éclairage sans savoir précisément ce qu'elles éclairent.",
   "solution": "LumiAudit croise les données satellite de radiance nocturne du Cerema, les consommations énergétiques ADEME et les données d'inventaire disponibles en open data pour générer un diagnostic automatisé du patrimoine éclairage d'une commune. L'outil estime le nombre de points lumineux, identifie les zones sur-éclairées par satellite, calcule la consommation énergétique par secteur et produit un rapport PDF de pré-diagnostic avec des recommandations de rénovation chiffrées. Le tout sans intervention terrain.",

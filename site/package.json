@@ -44,6 +44,7 @@
     "onlyBuiltDependencies": [
       "@prisma/client",
       "@prisma/engines",
+      "msw",
       "prisma"
     ]
   }

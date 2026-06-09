@@ -1,5 +1,5 @@
 {
-  "productSlug": "solarwatch-dashboard-enr-collectivites",
+  "productSlug": "solarwatch-tableau-de-bord-de-suivi-des-objectifs-enr-pour-les-collectivites-ter",
   "oneLiner": "Pilotez les objectifs EnR de votre territoire avec un tableau de bord croisant registre national, irradiation et PCAET.",
   "problem": "Les collectivités territoriales (communautés de communes, métropoles, départements) ont l'obligation légale de produire un PCAET (Plan Climat-Air-Énergie Territorial) avec des objectifs chiffrés de production d'énergie renouvelable. Mais une fois le PCAET voté, la chargée de mission n'a aucun outil pour suivre l'avancement : elle doit manuellement télécharger le registre national des installations, filtrer par commune, croiser avec les objectifs, et produire un rapport pour les élus. Ce travail prend 2 jours par trimestre et le résultat est un tableau Excel que personne ne lit.",
   "solution": "Un tableau de bord automatisé qui croise le registre national des installations PV/éolien avec les objectifs PCAET du territoire. La collectivité voit en temps réel : la puissance installée vs les objectifs, les zones du territoire où le potentiel solaire est sous-exploité, les projets en cours de raccordement, et les tendances d'installation (accélération ou retard). Des rapports automatiques sont générés pour les commissions et conseils communautaires.",

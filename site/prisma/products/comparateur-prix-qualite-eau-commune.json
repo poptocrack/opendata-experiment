@@ -1,5 +1,5 @@
 {
-  "productSlug": "comparateur-prix-qualite-eau-commune",
+  "productSlug": "comparateur-du-prix-et-de-la-qualite-de-l-eau-par-commune-croisant-sispea-analys",
   "oneLiner": "Comparez le prix et la qualité de l'eau de n'importe quelle commune de France en 3 clics.",
   "problem": "Un citoyen ou un élu veut savoir si l'eau de sa commune est de bonne qualité et si son prix est juste. Aujourd'hui, il doit consulter séparément SISPEA (prix), eaupotable.sante.gouv.fr (qualité sanitaire) et éventuellement la carte UFC-Que Choisir. Ces sites sont austères, les données brutes, et il est impossible de comparer deux communes côte à côte. Les élus locaux n'ont aucun outil simple pour benchmarker leur service d'eau face aux communes voisines.",
   "solution": "Une application web qui agrège les données Hub'Eau (qualité eau potable), SISPEA (prix, rendement, conformité) et ARS (contrôles sanitaires) pour afficher un tableau de bord clair par commune : score de qualité global, prix du m3 avec comparaison départementale, dernières analyses (nitrates, pesticides, bactéries, PFAS), et classement relatif. L'utilisateur entre un code postal et voit instantanément la situation de sa commune avec des comparaisons visuelles.",

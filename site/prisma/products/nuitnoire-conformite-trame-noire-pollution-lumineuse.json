@@ -1,5 +1,5 @@
 {
-  "productSlug": "nuitnoire-conformite-trame-noire-pollution-lumineuse",
+  "productSlug": "nuitnoire-outil-de-conformite-trame-noire-et-pollution-lumineuse-pour-les-commun",
   "oneLiner": "Vérifiez la conformité trame noire de votre commune et réduisez votre pollution lumineuse.",
   "problem": "Depuis l'arrêté du 27 décembre 2018 (renforcé en 2025), les communes en zone protégée (parc naturel, réserve, ZNIEFF) doivent réduire leurs émissions lumineuses pour protéger la biodiversité nocturne. Mais aucun outil ne permet à une commune de savoir simplement si elle est conforme. Camille, ingénieure en bureau d'études environnement, passe 2 jours par commune à croiser manuellement les données satellite Cerema avec les zonages de protection dans QGIS. Les 4 000+ communes en zone protégée n'ont aucune visibilité sur leur situation.",
   "solution": "NuitNoire croise automatiquement les données satellite de radiance nocturne (Cerema) avec les zonages de protection (parcs naturels, réserves, ZNIEFF, trames vertes et bleues) pour produire un diagnostic de conformité trame noire par commune. L'outil génère une carte de pollution lumineuse avec les zones de dépassement, un score de conformité, et des recommandations concrètes (extinction partielle, réorientation des luminaires, réduction de puissance). Export PDF pour les rapports réglementaires.",

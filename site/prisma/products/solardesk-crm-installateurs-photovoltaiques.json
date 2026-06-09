@@ -1,5 +1,5 @@
 {
-  "productSlug": "solardesk-crm-installateurs-photovoltaiques",
+  "productSlug": "solardesk-crm-crm-vertical-pour-les-installateurs-photovoltaiques-integrant-rge-",
   "oneLiner": "Le CRM conçu pour les installateurs PV : de la prise de contact au raccordement, tout en un.",
   "problem": "Un installateur photovoltaïque gère ses prospects, devis, chantiers et raccordements avec un mélange de carnet papier, Excel, WhatsApp et post-it. Il perd 20% de ses prospects par manque de relance, met 3 jours à produire un devis (quand le concurrent répond en 24h), et n'a aucune visibilité sur son pipeline commercial. Les CRM génériques (HubSpot, Pipedrive) ne comprennent pas les spécificités du métier : certification RGE, dimensionnement PV, dossier d'aides, raccordement Enedis, consuel.",
   "solution": "Un CRM vertical pour installateurs PV qui intègre les données métier : import automatique des leads (formulaire site web, In Sun We Trust, Otovo), fiche prospect enrichie par la BAN (géolocalisation, irradiation locale), générateur de devis rapide avec dimensionnement PV (puissance, productible, tarifs CRE, aides), suivi du pipeline (prospect → visite technique → devis → signature → chantier → raccordement → consuel), et alertes automatiques (relance prospect, échéance raccordement, fin de validité RGE).",

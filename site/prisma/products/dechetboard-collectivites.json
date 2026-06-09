@@ -1,5 +1,5 @@
 {
-  "productSlug": "dechetboard-collectivites",
+  "productSlug": "dechetboard-tableau-de-bord-collecte-et-valorisation-pour-les-collectivites-avec",
   "oneLiner": "Le tableau de bord qui transforme les données déchets des collectivités en décisions opérationnelles.",
   "problem": "Une directrice déchets d'un syndicat ou d'un EPCI passe 4h/semaine à consolider manuellement les données de collecte envoyées par ses prestataires dans des formats différents (PDF, Excel, CSV). Elle n'a aucun benchmark pour savoir si ses coûts de collecte sont normaux comparés aux syndicats voisins. SINOE fournit des statistiques annuelles avec 18 mois de décalage — inutilisable pour piloter au quotidien. Le rapport annuel déchets, obligatoire, nécessite 3 semaines de travail de compilation.",
   "solution": "Un SaaS qui agrège automatiquement les données de collecte (imports prestataires, SINOE, Trackdéchets) et les présente dans un tableau de bord interactif : tonnages par flux, coûts par habitant, taux de valorisation, évolution mensuelle. Benchmark automatique avec les collectivités de même taille et même contexte (urbain/rural/touristique). Génération automatique du rapport annuel réglementaire. Alertes sur les dérives de coûts ou de tonnages.",

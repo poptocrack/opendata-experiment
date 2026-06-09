@@ -9,8 +9,7 @@ export async function hasValidAccess(): Promise<boolean> {
   const cookieStore = await cookies();
 
   if (process.env.NODE_ENV === "development") {
-    const devPaid = cookieStore.get("lefilon_dev_paid")?.value;
-    return devPaid === "true";
+    return true;
   }
 
   const token = cookieStore.get("lefilon_access")?.value;

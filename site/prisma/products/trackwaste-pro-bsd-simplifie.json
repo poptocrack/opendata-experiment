@@ -1,5 +1,5 @@
 {
-  "productSlug": "trackwaste-pro-bsd-simplifie",
+  "productSlug": "trackwaste-pro-simplification-des-bordereaux-de-suivi-de-dechets-pour-les-pme-pr",
   "oneLiner": "Le copilote Trackdéchets qui simplifie les BSD pour les PME productrices de déchets dangereux.",
   "problem": "Un responsable HSE de PME industrielle doit créer et signer des bordereaux de suivi de déchets (BSD) sur Trackdéchets pour chaque enlèvement de déchets dangereux. L'interface Trackdéchets est conçue pour la conformité réglementaire, pas pour l'ergonomie : saisie manuelle fastidieuse, codes nomenclature obscurs, erreurs de saisie qui bloquent les enlèvements, pas de vue consolidée de tous les BSD. Une PME avec 3 sites industriels et 20 enlèvements/mois perd 2-3h/semaine sur la saisie et le suivi des BSD.",
   "solution": "Un SaaS qui se connecte à l'API Trackdéchets et offre une interface simplifiée pour créer, signer et suivre les BSD. Templates pré-remplis par type de déchet récurrent. Auto-complétion des codes nomenclature. Vue consolidée multi-sites. Alertes sur les BSD en attente de signature. Tableau de bord des volumes et coûts par type de déchet. Export du registre chronologique obligatoire en un clic.",

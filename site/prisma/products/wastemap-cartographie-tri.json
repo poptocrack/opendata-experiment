@@ -1,5 +1,5 @@
 {
-  "productSlug": "wastemap-cartographie-tri",
+  "productSlug": "wastemap-cartographie-collaborative-du-tri-et-du-recyclage-pour-les-citoyens-et-",
   "oneLiner": "Trouvez où trier, recycler et déposer vos déchets en un clic, partout en France.",
   "problem": "Un citoyen ou une entreprise veut savoir où déposer un type de déchet spécifique (carton, DEEE, huile de friture, gravats, piles...). Aujourd'hui, il doit chercher sur le site de sa mairie, de son syndicat de déchets, ou appeler un numéro. Chaque collectivité a son propre site avec des informations fragmentées. Il n'existe pas de cartographie nationale unifiée du tri et du recyclage. Les consignes de tri varient d'une commune à l'autre (extension des consignes de tri). Résultat : des erreurs de tri massives (25% de refus en centre de tri) et des dépôts sauvages par méconnaissance.",
   "solution": "Une application web et mobile qui géolocalise l'utilisateur et affiche tous les points de collecte, déchèteries, bornes de tri, ressourceries et recycleurs autour de lui, avec les consignes de tri spécifiques à sa commune. L'utilisateur cherche un type de déchet ('piles', 'huile de vidange', 'canapé') et voit instantanément où le déposer avec les horaires et conditions. Données agrégées depuis SINOE (annuaire installations), acteurs de l'économie circulaire, et bases communales.",

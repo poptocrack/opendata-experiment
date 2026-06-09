@@ -74,7 +74,17 @@ const definitions: Record<string, string> = {
     'Union nationale des amis et familles de personnes malades et/ou handicapees psychiques , Soutien aux proches',
   DYS: 'Troubles DYS , Dyslexie, dyspraxie, dysphasie, dyscalculie, etc. Troubles cognitifs specifiques des apprentissages',
   UNAPEI:
-    'Union nationale des associations de parents de personnes handicapees intellectuelles et de leurs amis , Representation et defense des droits'
+    'Union nationale des associations de parents de personnes handicapees intellectuelles et de leurs amis , Representation et defense des droits',
+  REP: "Responsabilite Elargie du Producteur , Obligation pour les fabricants/importateurs de financer la collecte et le recyclage de leurs produits",
+  AGEC: "Loi Anti-Gaspillage pour une Economie Circulaire , Loi de 2020 qui reforme la gestion des dechets et etend les filieres REP",
+  ADEME: "Agence de la transition ecologique , Etablissement public qui accompagne la transition energetique et ecologique",
+  DEEE: "Dechets d'Equipements Electriques et Electroniques , Filiere REP pour les appareils electroniques en fin de vie",
+  DGCCRF: "Direction Generale de la Concurrence, de la Consommation et de la Repression des Fraudes",
+  CCI: "Chambre de Commerce et d'Industrie , Organisme representant les entreprises commerciales et industrielles",
+  CPME: "Confederation des Petites et Moyennes Entreprises , Syndicat patronal representant les PME",
+  CSE: "Comite Social et Economique , Instance representant les salaries dans les entreprises de 11+ salaries",
+  OEC: "Ordre des Experts-Comptables , Organisme professionnel regroupant les experts-comptables",
+  RSE: "Responsabilite Societale des Entreprises , Demarche volontaire d'integration des enjeux sociaux et environnementaux"
 };
 
 /** Clés des acronymes reconnus, triées par longueur décroissante pour le matching (ex. LTV/CAC avant LTV). */

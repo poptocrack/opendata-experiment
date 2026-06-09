@@ -1,5 +1,5 @@
 {
-  "productSlug": "eclaircompare-benchmark-intercommunal-eclairage-public",
+  "productSlug": "eclaircompare-benchmark-intercommunal-des-depenses-et-performances-eclairage-pub",
   "oneLiner": "Comparez les dépenses et performances éclairage de votre commune avec les autres en 3 clics.",
   "problem": "Marc, chargé de mission énergie dans un syndicat départemental, doit prioriser les investissements éclairage entre 80 communes adhérentes. Il n'a aucun outil de benchmark : il compare manuellement des factures EDF, des données Cerema en PDF et des inventaires Excel hétérogènes. Quand un élu lui demande 'Est-ce que notre commune dépense plus que les autres en éclairage ?', il met 3 jours à trouver une réponse approximative. Les 34 000 communes françaises n'ont aucun référentiel pour savoir si leur éclairage est performant ou non.",
   "solution": "ÉclairCompare agrège les données ouvertes ADEME (consommation énergie), Cerema (radiance nocturne), CEE et BOAMP (marchés publics) pour calculer des indicateurs de performance éclairage par commune : coût par habitant, consommation par point lumineux (estimé), intensité lumineuse par km², ratio avant/après rénovation. L'outil permet de comparer une commune à sa strate démographique, à son département et aux communes voisines. Classement national et tableau de bord pour les syndicats d'énergie.",

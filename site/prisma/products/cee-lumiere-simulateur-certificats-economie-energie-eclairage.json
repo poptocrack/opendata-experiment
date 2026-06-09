@@ -1,5 +1,5 @@
 {
-  "productSlug": "cee-lumiere-simulateur-certificats-economie-energie-eclairage",
+  "productSlug": "cee-lumiere-simulateur-de-certificats-d-economie-d-energie-pour-les-projets-de-r",
   "oneLiner": "Calculez vos CEE éclairage public en 5 minutes et financez jusqu'à 60% de votre rénovation LED.",
   "problem": "Un chargé de mission énergie dans un syndicat départemental doit monter des dossiers CEE pour chaque commune qui rénove son éclairage. Chaque dossier prend 3-5 jours : collecter les caractéristiques de l'ancien parc, identifier les fiches d'opérations standardisées éligibles (RES-EC-104, RES-EC-107), calculer les volumes de CEE en kWh cumac, estimer le gain financier. Pour 80 communes, c'est 3 mois de travail administratif. Résultat : beaucoup de communes renoncent aux CEE ou sous-estiment leur montant, laissant des dizaines de milliers d'euros sur la table.",
   "solution": "CEE-Lumière est un simulateur en ligne qui pré-remplit automatiquement le calcul des CEE éclairage public à partir des données ouvertes (consommation ADEME, parc estimé par satellite Cerema). L'utilisateur sélectionne sa commune, décrit son projet de rénovation (nombre de points, technologie cible), et l'outil calcule instantanément le volume de CEE éligible, le gain financier estimé et génère un dossier pré-rempli compatible avec les fiches standardisées ATEE.",

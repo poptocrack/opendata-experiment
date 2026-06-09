@@ -1,5 +1,5 @@
 {
-  "productSlug": "reptracker-conformite-rep",
+  "productSlug": "reptracker-conformite-rep-automatisee-pour-les-pme-declarations-contributions-su",
   "oneLiner": "La conformité REP simplifiée pour les PME : 12 filières, un seul outil.",
   "problem": "Un dirigeant de PME de 50 salariés qui fabrique des produits électroniques, des textiles ou des emballages doit déclarer ses mises en marché auprès de plusieurs éco-organismes (Citeo, Ecosystem, Refashion...). Chaque filière REP a ses propres barèmes, ses propres formulaires, ses propres échéances. La loi AGEC a créé 12 nouvelles filières entre 2021 et 2025 : articles de sport, jouets, articles de bricolage, textiles sanitaires... Beaucoup de PME ne savent même pas qu'elles sont assujetties. Résultat : des amendes, des déclarations en retard, et un temps fou passé à comprendre des obligations fragmentées.",
   "solution": "Un SaaS qui centralise la conformité REP : l'utilisateur renseigne ses produits et volumes, REPTracker identifie automatiquement les filières REP applicables, calcule les contributions estimées, génère les déclarations dans le format de chaque éco-organisme, et envoie des alertes avant chaque échéance. Un tableau de bord unique remplace la navigation entre 12 portails d'éco-organismes différents.",

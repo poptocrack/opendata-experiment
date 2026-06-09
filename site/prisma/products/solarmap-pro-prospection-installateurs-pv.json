@@ -1,5 +1,5 @@
 {
-  "productSlug": "solarmap-pro-prospection-installateurs-pv",
+  "productSlug": "solarmap-pro-outil-de-prospection-et-dimensionnement-pour-les-installateurs-pv-c",
   "oneLiner": "Trouvez vos prochains chantiers PV en croisant potentiel solaire, installations existantes et leads qualifiés.",
   "problem": "Un installateur photovoltaïque perd un temps considérable à prospecter : il ne sait pas quelles zones de son territoire ont le meilleur potentiel solaire, quels quartiers sont déjà équipés (donc moins rentables à prospecter), ni quels propriétaires ont un projet en cours. Aujourd'hui, il prospecte au porte-à-porte ou via des leads achetés à des plateformes (In Sun We Trust, Otovo) qui prennent 10-15% de commission et fournissent des leads partagés avec 3-4 concurrents.",
   "solution": "Une plateforme de prospection qui croise les données d'irradiation solaire par commune, le registre des installations PV existantes (pour identifier les zones non équipées à fort potentiel), le listing RGE (pour cartographier la concurrence), et les permis de construire (pour identifier les constructions neuves nécessitant du PV). L'installateur visualise sur une carte interactive les zones à fort potentiel non exploité dans son périmètre, avec des scores de priorité et des estimations de productible.",
